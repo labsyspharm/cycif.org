@@ -1,3 +1,7 @@
 theme: jekyll-theme-hacker
+title: [CycIF &mdash; Cyclic Immunofluoresence]
+description: [Highly multiplexed immunofluorescence imaging]
 sass:
     sass_dir: ./_scss
+plugins:
+    - jekyll-redirect-from
