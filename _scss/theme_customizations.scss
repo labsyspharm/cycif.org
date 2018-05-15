@@ -144,3 +144,26 @@ figure.image {
   text-align: center;
 
 }
+
+.sidebar-cta {
+
+  float: right;
+  width: 230px;
+  text-align: center;
+  border: 1px solid #eaeaea;
+  padding: 10px;
+  border-radius: 10px;
+  background: #3a4a60;
+
+  a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: inherit;
+  }
+
+  img.cta-button {
+    margin-top: 10px;
+  }
+
+}

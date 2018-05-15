@@ -2,6 +2,13 @@
 redirect_from: /pca2018/
 ---
 
+<p class="sidebar-cta">
+    <a href="http://pca2018.s3-website-us-east-1.amazonaws.com/">
+        View the dynamic melanoma patient sample browser!
+        <img class="cta-button" src="cta_button.png" alt="Browse">
+    </a>
+</p>
+
 ## t-CyCIF
 ### Tissue-based cyclic immunofluorescence
 
