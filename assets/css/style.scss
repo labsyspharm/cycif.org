@@ -3,16 +3,3 @@
 @import "{{ site.theme }}";
 @import "fonts";
 @import "theme_customizations";
-
-
-header h1::before {
-    content: "";
-}
-
-header h1 {
-    margin-left: -3px;
-}
-
-#downloads {
-    display: none;
-}
