@@ -1,5 +1,5 @@
 theme: jekyll-theme-hacker
-title: "CycIF: A Simple Approach to Highly Multiplexed Cellular and Tissue Imaging"
+title: "CycIF: A Simple Approach to Highly Multiplexed Cell and Tissue Imaging"
 description: " "
 sass:
     sass_dir: ./_scss
