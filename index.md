@@ -1,5 +1,5 @@
 ---
-redirect_from: /pca2018
+redirect_from: /pca2018/
 ---
 
 ## t-CyCIF
