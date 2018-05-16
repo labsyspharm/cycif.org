@@ -19,6 +19,12 @@ redirect_from: /pca2018/
 * Antibodies can be selected based on the requirements of the project: no
   proprietary or unusual reagents required.
 
+The key publication for t-CycIF is Lin et al. (2018), *A simple open source
+method for highly multiplexed imaging of single cells in tissues and tumors*.
+
+* [Read the manuscript at eLife]()
+* [Access supporting data and software code](http://lincs.hms.harvard.edu/lin-elife-2018/)
+
 t-CyCIF is a method for highly multiplexed immunofluorescence imaging
 of [formalin-fixed, paraffin-embedded](https://en.wikipedia.org/wiki/Histology)
 (FFPE) specimens mounted on glass slides, the most widely used specimens for
@@ -40,8 +46,6 @@ immunophenotypes using immune cell lineage markers. The key features of t-CyCIF
 are that it is simple to implement on existing microscopes, it requires no
 special or proprietary reagents and antibodies can be combined as needed to
 investigate specific questions.
-
-[View the dynamic melanoma patient sample browser!](http://pca2018.s3-website-us-east-1.amazonaws.com/)
 
 ### The t-CyCIF Process
 
@@ -128,6 +132,11 @@ Human specimens were retrieved from the archives of the Brigham and Women’s
 Hospital under a discarded/excess tissue protocol as detailed in Institutional
 Review Board (IRB) protocol IRB17-1688 (2018) for research deemed to “involve no
 more than minimal risk to the subjects.”
+
+### Funding
+
+This work was made possible by NIH grants P50-GM107618, U54-HL127365 and the
+Ludwig Center at Harvard.
 
 ### Publications
 
