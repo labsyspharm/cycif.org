@@ -122,6 +122,13 @@ in much the same way as with mass cytometry and other high-dimensional data
     </figcaption>
 </figure>
 
+### Human subjects disclaimer
+
+Human specimens were retrieved from the archives of the Brigham and Women’s
+Hospital under a discarded/excess tissue protocol as detailed in Institutional
+Review Board (IRB) protocol IRB17-1688 (2018) for research deemed to “involve no
+more than minimal risk to the subjects.”
+
 ### Publications
 
 1. Gerdes MJ, Sevinsky CJ, Sood A, Adak S, Bello MO, Bordwell A, Can A, Corwin
