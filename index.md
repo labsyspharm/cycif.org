@@ -19,10 +19,11 @@ redirect_from: /pca2018/
 * Antibodies can be selected based on the requirements of the project: no
   proprietary or unusual reagents required.
 
-The key publication for t-CycIF is Lin et al. (2018), *A simple open source
-method for highly multiplexed imaging of single cells in tissues and tumors*.
+The key publication for t-CycIF is Lin et al. (2018), *Highly multiplexed
+immunofluorescence imaging of human tissues and tumors using t-CyCIF and
+conventional optical microscopes*.
 
-* [Read the manuscript at eLife]()
+* [Read the manuscript](https://doi.org/10.1101/151738)
 * [Access supporting data and software code](http://lincs.hms.harvard.edu/lin-elife-2018/)
 
 t-CyCIF is a method for highly multiplexed immunofluorescence imaging
