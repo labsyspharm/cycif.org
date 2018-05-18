@@ -115,7 +115,7 @@ primary antibodies that we have tested.
 Image processing and data analysis are demanding in the case of high-plex tissue
 images; we use software tools developed by others supplemented by a growing
 number of specialized methods (code can be found
-at [our GitHub repository](https://github.com/sorgerlab/). Once cells are
+at [our GitHub repository](https://github.com/sorgerlab/cycif/). Once cells are
 segmented and turned into intensity information, tools such as t-SNE can be used
 in much the same way as with mass cytometry and other high-dimensional data
 (Figure 3).
