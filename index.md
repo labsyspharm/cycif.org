@@ -19,7 +19,7 @@ redirect_from: /pca2018/
 * Antibodies can be selected based on the requirements of the project: no
   proprietary or unusual reagents required.
 
-The key publication for t-CycIF is Lin et al. (2018), *Highly multiplexed
+The key publication for t-CyCIF is Lin et al. (2018), *Highly multiplexed
 immunofluorescence imaging of human tissues and tumors using t-CyCIF and
 conventional optical microscopes*.
 
@@ -68,7 +68,7 @@ segmentation to identify cells and other structures.
 <figure class="image">
     <img src="figure1.jpg" alt="Figure 1" width="700">
     <figcaption>
-        Figure 1: Assembling a high-plex t-CycIF image using an
+        Figure 1: Assembling a high-plex t-CyCIF image using an
         iterative process
     </figcaption>
 </figure>
@@ -90,7 +90,7 @@ illumination microscopes.
 <figure class="image">
     <img src="figure2.jpg" alt="Figure 2" width="500">
     <figcaption>
-        Figure 2: t-CycIF of a metastatic melanoma at different resolutions
+        Figure 2: t-CyCIF of a metastatic melanoma at different resolutions
     </figcaption>
 </figure>
 
@@ -123,7 +123,7 @@ in much the same way as with mass cytometry and other high-dimensional data
 <figure class="image">
     <img src="figure3.jpg" alt="Figure 3" width="800">
     <figcaption>
-        Figure 3: t-CycIF of human small intestine with analysis
+        Figure 3: t-CyCIF of human small intestine with analysis
     </figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ Ludwig Center at Harvard.
    2015 Sep 24;6:8390. PMCID: PMC4587398
 
 1. Lin J-R, Fallahi-Sichani M, Chen J-Y, Sorger PK. Cyclic Immunofluorescence
-   (CycIF), A Highly Multiplexed Method for Single-cell Imaging. Curr Protoc
+   (CyCIF), A Highly Multiplexed Method for Single-cell Imaging. Curr Protoc
    Chem Biol. 2016 Dec 7;8(4):251-264. PMCID: PMC5233430
 
 1. Lin J-R, Izar B, Mei S, Wang S, Shah P, Sorger P. A simple open-source method
