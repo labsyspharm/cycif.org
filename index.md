@@ -25,6 +25,7 @@ conventional optical microscopes*.
 
 * [Read the manuscript](https://doi.org/10.1101/151738)
 * [Access supporting data and software code](http://lincs.hms.harvard.edu/lin-elife-2018/)
+* Please cite this resource as `(CycIF.org, RRID:SCR_016267)`
 
 t-CyCIF is a method for highly multiplexed immunofluorescence imaging
 of [formalin-fixed, paraffin-embedded](https://en.wikipedia.org/wiki/Histology)
@@ -40,6 +41,13 @@ then assembled into a high dimensional representation.
      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
+<div class="embed-container">
+    <iframe width="900" height="506" src="https://player.vimeo.com/video/270692465"
+     frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+
+
 t-CyCIF requires no specialized instruments or reagents and is compatible with
 super-resolution imaging. We have shown that t-CyCIF can be used to quantify
 signal transduction cascades, measure the levels of tumor antigens and determine
@@ -51,7 +59,7 @@ investigate specific questions.
 ### The t-CyCIF Process
 
 In t-CyCIF, ~5 µm thick are cut from FFPE blocks, the standard in most
-histopathology services, followed be dewaxing and antigen retrieval in the usual
+histopathology services, followed by dewaxing and antigen retrieval in the usual
 manner; to reduce auto-fluorescence a cycle of “pre-staining” is performed.
 Subsequent t-CyCIF cycles each involve four steps (Figure 1): (i)
 immuno-staining with antibodies against protein antigens (three antigens per
@@ -94,12 +102,7 @@ illumination microscopes.
     </figcaption>
 </figure>
 
-### Antibodies
-
-A wide variety of antibodies have been tested for use in t-CyCIF (Table 1). To
-date we have compared patterns of t-CyCIF staining with previously published
-immuno-histochemistry data but have not performed additional validation. Such
-validation is currently underway for specific tissue and tumor types.
+### Antibodies for tissue-based CyCIF
 
 In the first cycle of t-CyCIF is possible to use indirect immunofluorescence and
 secondary antibodies. In all other cycles antibodies are directly conjugated to
@@ -108,7 +111,47 @@ coupling we have tested the Zenon™ antibody labelling method from ThermoFisher
 in which isotype-specific Fab fragments pre-labelled with fluorophores are bound
 to primary antibodies to create immune complexes; the immune complexes are then
 incubated with tissue samples. This method is effective with some but not all
-primary antibodies that we have tested.
+primary antibodies.
+
+To date, we have tested commercial antibodies against ~200 proteins for their
+compatibility with t-CyCIF. These antibodies include lineage makers,
+cytoskeletal proteins, cell cycle regulators, the phosphorylated forms of
+signaling proteins and kinases, transcription factors, markers of cell state
+including quiescence, senescence, apoptosis, stress, etc.
+(see [Table 1](CyCIF-Tested-Antibodies-May2018.xlsx)). Currently we rely
+exclusively on commercial antibodies that have previously been validated using
+immuno-histochemistry (IHC) or conventional immunofluorescence. We compare
+staining by t-CyCIF and what has previously been reported for IHC staining
+(Figure 3) We also compare directly antibodies against the same antigen by using
+different antibodies in different channels; this enables pixel-level comparison
+of the same cells (Figure 4).
+
+<figure class="image">
+    <img src="figure3.jpg" alt="Figure 3" width="800">
+    <figcaption>
+        Figure 3: Anti-PD1 staining in two successive sections of human tonsil
+        by t-CyCIF on the left and IHC in the middle; DNA stained in blue. Right
+        panel shows fraction of positive cells for several antibodies by the
+        t-CyCIF and IHC.
+    </figcaption>
+</figure>
+
+<figure class="image">
+  <img src="figure4.jpg" alt="Figure 4" width="290">
+  <figcaption>
+    Figure 4: Correlation of anti-PD1 staining by four different antibodies
+    scored on a pixel-by-pixel basis as determined from a single section of
+    human tonsil. Antibody 2 performs poorly in this comparison.
+  </figcaption>
+</figure>
+
+Efforts to date do not constitute a sufficient level of testing or validation
+for clinical studies and patterns of staining described in this site or in our
+publications should therefore be considered illustrative of the t-CyCIF approach
+rather than definitive descriptions. We are currently assembling an OMERO
+(https://www.openmicroscopy.org/omero/) database of matched t-CyCIF and IHC
+images across multiple tissues and knockdown cell lines to further advance
+antibody validation. This date will be available near the end of 2018.
 
 ### Image processing and data analysis
 
@@ -118,12 +161,12 @@ number of specialized methods (code can be found
 at [our GitHub repository](https://github.com/sorgerlab/cycif/). Once cells are
 segmented and turned into intensity information, tools such as t-SNE can be used
 in much the same way as with mass cytometry and other high-dimensional data
-(Figure 3).
+(Figure 5).
 
 <figure class="image">
-    <img src="figure3.jpg" alt="Figure 3" width="800">
+    <img src="figure5.jpg" alt="Figure 5" width="800">
     <figcaption>
-        Figure 3: t-CyCIF of human small intestine with analysis
+        Figure 5: t-CyCIF of human small intestine with analysis
     </figcaption>
 </figure>
 
