@@ -5,7 +5,10 @@ redirect_from: /pca2018/
 <p class="sidebar-cta">
     <a href="http://pca2018.s3-website-us-east-1.amazonaws.com/">
         View the dynamic melanoma patient sample browser!
-        <img class="cta-button" src="cta_button.png" alt="Browse">
+
+        <img class="cta-button"
+             src="{{ "/assets/img/cta_button.png" | absolute_url }}"
+             alt="Browse">
     </a>
 </p>
 
@@ -75,7 +78,9 @@ stitched together and registered across cycles followed by image processing and
 segmentation to identify cells and other structures.
 
 <figure class="image">
-    <img src="figure1.jpg" alt="Figure 1" width="700">
+    <img src="{{ "/assets/img/figure1.jpg" | absolute_url }}"
+         alt="Figure 1"
+         width="700">
     <figcaption>
         Figure 1: Assembling a high-plex t-CyCIF image using an
         iterative process
@@ -97,7 +102,9 @@ scanners, but high resolution image is obtained using confocal or structured
 illumination microscopes.
 
 <figure class="image">
-    <img src="figure2.jpg" alt="Figure 2" width="500">
+    <img src="{{ "/assets/img/figure2.jpg" | absolute_url }}"
+         alt="Figure 2"
+         width="500">
     <figcaption>
         Figure 2: t-CyCIF of a metastatic melanoma at different resolutions
     </figcaption>
@@ -119,7 +126,7 @@ compatibility with t-CyCIF. These antibodies include lineage makers,
 cytoskeletal proteins, cell cycle regulators, the phosphorylated forms of
 signaling proteins and kinases, transcription factors, markers of cell state
 including quiescence, senescence, apoptosis, stress, etc.
-(see [Table 1](CyCIF-Tested-Antibodies-May2018.xlsx)). Currently we rely
+(see [Table 1]({{ "/assets/data/CyCIF-Tested-Antibodies-May2018.xlsx" | absolute_url }})). Currently we rely
 exclusively on commercial antibodies that have previously been validated using
 immuno-histochemistry (IHC) or conventional immunofluorescence. We compare
 staining by t-CyCIF and what has previously been reported for IHC staining
@@ -128,7 +135,9 @@ different antibodies in different channels; this enables pixel-level comparison
 of the same cells (Figure 4).
 
 <figure class="image">
-    <img src="figure3.jpg" alt="Figure 3" width="800">
+    <img src="{{ "/assets/img/figure3.jpg" | absolute_url }}"
+         alt="Figure 3"
+         width="800">
     <figcaption>
         Figure 3: Anti-PD1 staining in two successive sections of human tonsil
         by t-CyCIF on the left and IHC in the middle; DNA stained in blue. Right
@@ -138,7 +147,9 @@ of the same cells (Figure 4).
 </figure>
 
 <figure class="image">
-  <img src="figure4.jpg" alt="Figure 4" width="290">
+  <img src="{{ "/assets/img/figure4.jpg" | absolute_url }}"
+       alt="Figure 4"
+       width="290">
   <figcaption>
     Figure 4: Correlation of anti-PD1 staining by four different antibodies
     scored on a pixel-by-pixel basis as determined from a single section of
@@ -165,7 +176,9 @@ in much the same way as with mass cytometry and other high-dimensional data
 (Figure 5).
 
 <figure class="image">
-    <img src="figure5.jpg" alt="Figure 5" width="800">
+    <img src="{{ "/assets/img/figure5.jpg" | absolute_url }}"
+         alt="Figure 5"
+         width="800">
     <figcaption>
         Figure 5: t-CyCIF of human small intestine with analysis
     </figcaption>
