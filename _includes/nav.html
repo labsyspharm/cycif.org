@@ -1,0 +1,9 @@
+<nav class="main-nav">
+  <ul>
+    <li><a href="/" {% if page.active == 'home' %}class='active'{% endif %}>Home</a></li>
+    <li><a href="/training" {% if page.active == 'training' %}class='active'{% endif %}>Training</a></li>
+    <li><a href="/example1" {% if page.active == 'example1' %}class='active'{% endif %}>Example 1</a></li>
+    <li><a href="/example2" {% if page.active == 'example2' %}class='active'{% endif %}>Example 2</a></li>
+    <li><a href="/osd1" {% if page.active == 'osd1' %}class='active'{% endif %}>OSD 1</a></li>
+  </ul>
+</nav>
