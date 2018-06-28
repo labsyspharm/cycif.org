@@ -179,3 +179,25 @@ figure.image {
   }
 
 }
+
+.main-nav {
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+  }
+  li {
+      float: left;
+      list-style-image: none;
+  }
+  li a {
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  li a:hover {
+      background-color: #111;
+  }
+}
