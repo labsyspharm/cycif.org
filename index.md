@@ -41,12 +41,12 @@ low-plex fluorescence images are repeatedly collected from the same sample and
 then assembled into a high dimensional representation.
 
 <div class="embed-container">
-    <iframe width="900" height="506" src="https://player.vimeo.com/video/269885646"
+    <iframe src="https://player.vimeo.com/video/269885646"
      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
 <div class="embed-container">
-    <iframe width="900" height="506" src="https://player.vimeo.com/video/270692465"
+    <iframe src="https://player.vimeo.com/video/270692465"
      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
