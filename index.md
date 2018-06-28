@@ -89,7 +89,7 @@ segmentation to identify cells and other structures.
 </figure>
 
 <div class="embed-container">
-    <iframe width="400" height="400" src="https://player.vimeo.com/video/269904895"
+    <iframe src="https://player.vimeo.com/video/269904895"
      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
