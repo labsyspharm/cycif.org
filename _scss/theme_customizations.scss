@@ -66,7 +66,9 @@ dt {
   font-weight: normal;
 }
 
-#header {
+header {
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   nav {
 
@@ -83,6 +85,13 @@ dt {
     }
   }
 
+  .container {
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 5px;
+  }
 }
 
 section {
@@ -186,21 +195,24 @@ figure.image {
 }
 
 .main-nav {
+
   ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
+      text-align: center;
   }
   li {
-      float: left;
       list-style-image: none;
+      display:inline;
   }
   li a {
       display: block;
       text-align: center;
-      padding: 10px 10px;
+      padding: 5px 5px;
       text-decoration: none;
+      display:inline-block;
   }
   li a:hover {
       background-color: #111;
