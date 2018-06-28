@@ -1,3 +1,7 @@
+---
+active: example1
+---
+
 ## Example 1
 
 An example page

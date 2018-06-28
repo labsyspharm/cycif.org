@@ -1,5 +1,6 @@
 ---
 redirect_from: /pca2018/
+active: home
 ---
 
 <p class="sidebar-cta">

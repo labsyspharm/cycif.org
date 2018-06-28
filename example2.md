@@ -1,3 +1,7 @@
+---
+active: example2
+---
+
 ## Example 2
 
 Another example page
