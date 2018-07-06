@@ -14,3 +14,9 @@ bundle install
 ```bash
 bundle exec jekyll serve
 ```
+
+### Add twitter bootstrap 4
+Refer to [this](https://simpleit.rocks/how-to-add-bootstrap-4-to-jekyll-the-right-way/#fnref:safe-mode)
+
+### Site structure reference
+[Github on demand training](https://github.com/github/training-kit)
