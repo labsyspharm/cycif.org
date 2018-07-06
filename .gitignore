@@ -1,2 +1,5 @@
 _site/
 Gemfile.lock
+
+yarn.lock
+*.log
