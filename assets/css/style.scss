@@ -1,5 +1,8 @@
 ---
 ---
-@import "{{ site.theme }}";
-@import "fonts";
-@import "theme_customizations";
+// @import "{{ site.theme }}";
+// @import "fonts";
+// @import "theme_customizations";
+@import "bootstrap/scss/functions";
+@import "variables";
+@import "bootstrap/scss/bootstrap";
