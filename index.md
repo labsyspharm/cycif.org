@@ -3,7 +3,7 @@ redirect_from: /pca2018/
 active: home
 ---
 
-<p class="sidebar-cta">
+<!-- <p class="sidebar-cta">
     <a href="http://pca2018.s3-website-us-east-1.amazonaws.com/">
         View the dynamic melanoma patient sample browser!
 
@@ -11,7 +11,11 @@ active: home
              src="{{ "/assets/img/cta_button.png" | absolute_url }}"
              alt="Browse">
     </a>
-</p>
+</p> -->
+
+CyCIF is a novel, robust and inexpensive method for highly multiplexed immunofluorescence imaging using standard instrumentation and reagents. 
+The rich data collected using CycIF are amenable to state-of-the-art, high-dimensionality analysis tools developed for CyTOF, 
+including ViSNE and Wanderlust, that allow investigation of complex associations and interdependencies between observed features and phenotypes.
 
 ## t-CyCIF
 ### Tissue-based cyclic immunofluorescence

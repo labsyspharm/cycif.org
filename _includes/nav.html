@@ -1,9 +1,25 @@
-<nav class="main-nav">
-  <ul>
-    <li><a href="/" {% if page.active == 'home' %}class='active'{% endif %}>Home</a></li>
-    <li><a href="/training" {% if page.active == 'training' %}class='active'{% endif %}>Training</a></li>
-    <li><a href="/example1" {% if page.active == 'example1' %}class='active'{% endif %}>Example 1</a></li>
-    <li><a href="/example2" {% if page.active == 'example2' %}class='active'{% endif %}>Example 2</a></li>
-    <li><a href="/osd1" {% if page.active == 'osd1' %}class='active'{% endif %}>OSD 1</a></li>
-  </ul>
+<nav class="main-nav navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">
+    <strong>CyCIF</strong>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      {% for item in site.data.nav-links %}
+      <li class="nav-item">
+        <a href="{{ item.url }}" class="nav-link {% if page.url == item.url %} active {% endif %}">
+          {{ item.label }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <strong>CyCIF</strong>
+  </a>
 </nav>
