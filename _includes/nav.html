@@ -1,25 +1,29 @@
-<nav class="main-nav navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="/">
-    <strong>CyCIF</strong>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      {% for item in site.data.nav-links %}
-      <li class="nav-item">
-        <a href="{{ item.url }}" class="nav-link {% if page.url == item.url %} active {% endif %}">
-          {{ item.label }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
+<nav class="main-nav navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-md-4">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>CyCIF</strong>
+    </a>
+    <button class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="text-white">MENU</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        {% for item in site.data.nav-links %}
+        <li class="nav-item">
+          <a href="{{ item.url }}" class="nav-link {% if page.url == item.url %} active {% endif %}">
+            {{ item.label }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </nav>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">
-    <strong>CyCIF</strong>
-  </a>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <strong>CyCIF</strong>
+    </a>
+  </div>
 </nav>

@@ -1,10 +1,10 @@
 - label: Home
   url: /
+- label: Method
+  url: /method.html
 - label: Training
   url: /training.html
-- label: Example 1
-  url: /example1.html
-- label: Example 2
-  url: /example2.html
-- label: OSD
+- label: Publications
+  url: /publications.html
+- label: CyCIF Viewer
   url: /osd1.html
