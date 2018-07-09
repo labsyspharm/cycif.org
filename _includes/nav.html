@@ -11,7 +11,7 @@
       <ul class="navbar-nav mr-auto">
         {% for item in site.data.nav-links %}
         <li class="nav-item">
-          <a href="{{ item.url }}" class="nav-link {% if page.url == item.url %} active {% endif %}">
+          <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %} active {% endif %}">
             {{ item.label }}
           </a>
         </li>
