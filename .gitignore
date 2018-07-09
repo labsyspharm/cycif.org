@@ -3,3 +3,5 @@ Gemfile.lock
 
 yarn.lock
 *.log
+
+.DS_Store
