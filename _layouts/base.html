@@ -10,15 +10,17 @@
 
 <body>
 
-  <header>
+  <header class="mb-5">
 
     {% include nav.html %}
 
     <div id="cycif-banner" class="bg-dark" style="background-image: url({{ '/assets/img/cycif-banner.jpg' | absolute_url }});">
-      <div class="jumbotron jumbotron-fluid text-white" style="background-color: rgba(0, 0, 0, 0.3)">
-        <div class="container">
-          <h1 class="display-4">{{ site.title | default: site.github.repository_name }}</h1>
+      <div class="d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.3); {% if page.url == '/'%} min-height: 75vh {% endif %}">
+        <div class="container my-4">
+          <h1 class="display-4">{{ page.title | default: site.github.repository_name }}</h1>
+          {% if page.url == '/'%}
           <p class="lead">{{ site.description | default: site.github.project_tagline }}</p>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -35,7 +37,13 @@
     </div>
   </header>
 
-  {{ content }} {% include scripts.html %}
+  {{ content }} 
+
+  <footer class="mt-5">
+    {% include footer.html %}
+  </footer>
+
+  {% include scripts.html %}
 
 </body>
 
