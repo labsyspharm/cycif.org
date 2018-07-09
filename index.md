@@ -15,7 +15,7 @@ title: Cyclic Immunofluorescence
 </p> -->
 <div class="row py-3">
     <div class="col-md-7 d-flex-colume    my-4 pb-md-5">
-        <h2 class="h1">Simple yet robust</h2>
+        <h2 class="h1">Simple, flexible and robust</h2>
         CyCIF is a novel, robust and inexpensive method for highly multiplexed immunofluorescence imaging using standard instrumentation and reagents. 
         The rich data collected using CycIF are amenable to state-of-the-art, high-dimensionality analysis tools developed for CyTOF, 
         including ViSNE and Wanderlust, that allow investigation of complex associations and interdependencies between observed features and phenotypes.

@@ -4,12 +4,14 @@ body {
 
 /* position: absolute; top: 0; bottom: 0; width: 100%; */
 #openseadragon1 {
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  width: 100%;
+  bottom: 0; */
+  width: 80%;
+  height: 90vh;
   pointer-events: fill;
+  border: 1px solid #fff;
 }
 
 .overlap {
