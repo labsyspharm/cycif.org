@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US " }}">
+<html lang="{{ site.lang | default: " en-US " }}" class="h-100">
 
 <head>
   <meta charset='utf-8'>
@@ -8,14 +8,15 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
   <header class="mb-5">
 
     {% include nav.html %}
 
     <div id="cycif-banner" class="bg-dark" style="background-image: url({{ '/assets/img/cycif-banner.jpg' | absolute_url }});">
-      <div class="d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.3); {% if page.url == '/'%} min-height: 75vh {% endif %}">
+      <div class="d-flex align-items-center banner-text-container 
+        {% if page.url == '/'%} banner-tall {% endif %}">
         <div class="container my-4">
           <h1 class="display-4">{{ page.title | default: site.github.repository_name }}</h1>
           {% if page.url == '/'%}
@@ -38,6 +39,8 @@
   </header>
 
   {{ content }} 
+
+  <div class="flex-grow-1"></div>
 
   <footer class="mt-5">
     {% include footer.html %}
