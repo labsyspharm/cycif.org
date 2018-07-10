@@ -82,11 +82,11 @@ title: Cyclic Immunofluorescence
     <div class=" col-md-4 offset-md-1">
             <h3 class="h2 bd-highlight">Explore t-CyCIF</h3>
         <div class="d-flex flex-column flex-wrap justify-content-center">
-            <a href="/method" class="btn btn-outline-primary m-2">Method</a>
-            <a href="/method" class="btn btn-outline-primary m-2">Data &amp; code</a>
-            <a href="/publications" class="btn btn-outline-primary m-2">Publications</a>
-            <a href="/training" class="btn btn-outline-primary m-2">Training</a>
-            <a href="/osd1" class="btn btn-primary m-2">CyCIF Viewer</a>
+            <a href="{{ site.baseurl }}/method" class="btn btn-outline-primary m-2">Method</a>
+            <a href="https://github.com/sorgerlab/cycif/" class="btn btn-outline-primary m-2">Data &amp; code</a>
+            <a href="{{ site.baseurl }}/publications" class="btn btn-outline-primary m-2">Publications</a>
+            <a href="{{ site.baseurl }}/training" class="btn btn-outline-primary m-2">Training</a>
+            <a href="{{ site.baseurl }}/osd1" class="btn btn-primary m-2">CyCIF Viewer</a>
         </div>
     </div>
 </div>

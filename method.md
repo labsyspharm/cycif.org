@@ -111,8 +111,8 @@ of the same cells (Figure 4).
 Efforts to date do not constitute a sufficient level of testing or validation
 for clinical studies and patterns of staining described in this site or in our
 publications should therefore be considered illustrative of the t-CyCIF approach
-rather than definitive descriptions. We are currently assembling an OMERO
-(https://www.openmicroscopy.org/omero/) database of matched t-CyCIF and IHC
+rather than definitive descriptions. We are currently assembling an [OMERO](https://www.openmicroscopy.org/omero/) 
+database of matched t-CyCIF and IHC
 images across multiple tissues and knockdown cell lines to further advance
 antibody validation. This date will be available near the end of 2018.
 
