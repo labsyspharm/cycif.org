@@ -25,6 +25,8 @@ conventional optical microscopes*.
 
 * [Read the manuscript](https://doi.org/10.1101/151738)
 * [Access supporting data and software code](http://lincs.hms.harvard.edu/lin-elife-2018/)
+* [Download the validated antibody list](CyCIF-Tested-Antibodies-May2018.xlsx)
+  --- [more details below](#antibodies-for-tissue-based-cycif)
 * [Learn more and get training](training)
 * Please cite this resource as `(CycIF.org, RRID:SCR_016267)`
 
