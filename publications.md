@@ -4,6 +4,13 @@ title: Publications
 
 ### Publications
 
+
+1. Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly 
+   multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF 
+   and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
+   <br/>
+   [Publication summary](http://lincs.hms.harvard.edu/lin-elife-2018/) | [Available images](https://google.com)
+
 1. Gerdes MJ, Sevinsky CJ, Sood A, Adak S, Bello MO, Bordwell A, Can A, Corwin
    A, Dinn S, Filkins RJ, Hollman D, Kamath V, Kaanumalle S, Kenny K, Larsen M,
    Lazare M, Li Q, Lowes C, McCulloch CC, McDonough E, Montalto MC, Pang Z,
