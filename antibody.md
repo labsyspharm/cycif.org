@@ -32,7 +32,7 @@ Antibodies have been tested for a mimum level of perfomance as descrbed in footn
 }
 </style>
 
-{% assign mydata=site.data.CyCIF-Tested-Antibodies-May2018 %}
+{% assign abData=site.data.CyCIF-Tested-Antibodies-May2018 %}
 <div class="container-fluid px-0" id="abSearchContainer">
 <div class="input-group py-5 container" >
   <div class="input-group-prepend">
@@ -45,12 +45,12 @@ Antibodies have been tested for a mimum level of perfomance as descrbed in footn
 <div class="table-responsive">
     <table class="table table-sm table-hover table-dark" id="abTable">
         <thead>
-        {% for column in mydata[0] %}
+        {% for column in abData[0] %}
             <th onclick="sortAbTable({{ forloop.index0 }})" style="cursor:pointer" class="my-3">{{ column[0] }}</th>
         {% endfor %}
         </thead>
         <tbody>
-        {% for row in mydata %}
+        {% for row in abData %}
             <tr>
             {% for cell in row %}
                 {% if cell[0] contains 'Link' %}
@@ -82,7 +82,7 @@ function abSearch() {
     td = tr[i].getElementsByTagName("td");
     if (td.length) {
       var tdInnerAll = '';
-      for (j=0; j<td.length; j++) {
+      for (j=0; j<td.length-1; j++) {
       	tdInnerAll += ' ' + td[j].innerHTML;
       }
       if (tdInnerAll.toUpperCase().indexOf(filter) > -1) {
