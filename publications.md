@@ -9,7 +9,7 @@ title: Publications
    multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF 
    and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
    <br/>
-   [Publication summary](http://lincs.hms.harvard.edu/lin-elife-2018/) | [Available images](https://google.com)
+   [Publication summary](http://lincs.hms.harvard.edu/lin-elife-2018/) | [Available images]({{ "lin-elife-2018" | absolute_url }})
 
 1. Gerdes MJ, Sevinsky CJ, Sood A, Adak S, Bello MO, Bordwell A, Can A, Corwin
    A, Dinn S, Filkins RJ, Hollman D, Kamath V, Kaanumalle S, Kenny K, Larsen M,

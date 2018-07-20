@@ -1,29 +1,39 @@
+--- 
+title: Featured publication for t-CyCIF 
 ---
-title: Featured publication for t-CyCIF
----
+
+{% assign pubData=site.data.lin-elife-2018 %}
+
 <h2 class="h2">
-    Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF 
-    and conventional optical microscopes
+    {{ pubData.publication.title }}
 </h2>
 <p class="lead">
-    Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. <br>
-    eLife. 2018 Jul 11;7:e31657. PMID: 29993362
+    {{ pubData.publication.authors }}
+    <br> {{ pubData.publication.journal }}
 </p>
+<a href="{{ pubData.publication.link.url }}" class="lead">{{ pubData.publication.link.name }}</a>
+
 
 <h3>Available images</h3>
-<div class="media">
-        <img class="mr-3 w-25" src="{{ "/assets/img/lin-elife-2018/figure5.jpg" | absolute_url }}" alt="Generic placeholder image">
-        <div class="media-body">
-          <h5 class="mt-0">Figure 5 and 6</h5>
-          <p>
-              Representative images of Slide A (top panels) and
-              Slide B specimens (bottom panels) after each t-CyCIF cycle. The color coding highlighting specific cycles is
-              the same as in A.
-            </p>
-            <a class="btn btn-outline-primary" href="https://omero.hms.harvard.edu/webgateway/img_detail/514684/?dataset=3174">Tonsil A mosaic</a>
-            <a class="btn btn-outline-primary" href="https://omero.hms.harvard.edu/webgateway/img_detail/514687/?dataset=3175">Tonsil B mosaic</a>
-            
-        </div>
-      </div>
 
-<h3>Tools ans source code</h3>
+<div class="row">
+{% for img in pubData['stitched mosaic images'] %}
+<div class="media col-md-6 my-4">
+    <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}{{ "/assets/img/lin-elife-2018/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
+    <div class="media-body">
+        <h5 class="mt-0 mb-2">{{ img.title }}</h5>
+        <p>
+            {{ img.description }}
+        </p>
+        {% for link_hash in img.links %}
+            {% for link in link_hash %}
+            <a class="btn btn-outline-primary m-1" href="{{ link[1] }}">{{ link[0] }}</a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+</div>
+
+
+<!-- <h3>Tools and source code</h3> -->
