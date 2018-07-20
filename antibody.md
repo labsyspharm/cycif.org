@@ -43,7 +43,7 @@ Antibodies have been tested for a mimum level of perfomance as descrbed in footn
 </div>
 
 <div class="table-responsive">
-    <table class="table table-sm table-hover table-dark" id="abTable">
+    <table class="table table-sm table-hover table-dark" id="abTable" style="font-size: 0.8rem">
         <thead>
         {% for column in abData[0] %}
             <th onclick="sortAbTable({{ forloop.index0 }})" style="cursor:pointer" class="my-3">{{ column[0] }}</th>
