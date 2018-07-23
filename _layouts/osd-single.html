@@ -1,0 +1,391 @@
+--- 
+layout: base 
+---
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="{{ '/assets/css/osd.css?v=' | append: site.github.build_revision | relative_url }}">
+
+<div id="content">
+
+    <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-trans">
+            <a class="navbar-brand" href="#">{{ page.title }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAtlas" aria-controls="navbarAtlas"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-trans" id="navbarAtlas">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="help" href="#help" title="Help">
+                            <i class="fas fa-question-circle"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" id="zoom-home" href="#zoom-home" title="Zoom home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" id="zoom-out" href="#zoom-out" title="Zoom out">
+                            <i class="fas fa-search-minus"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" id="zoom-in" href="#zoom-in" title="Zoom in">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+                <span class="navbar-text text-white ml-auto pr-2">Select a marker group:</span>
+                <ul class="navbar-nav">
+                <li class="nav-item channel-picker active">
+                        <a class="nav-link" id="S100-CD45RO-SMA" href="javascript:;" title="S100-CD45RO-SMA">Tumor Architecture</a>
+                    </li>
+                    <li class="nav-item channel-picker">
+                        <a class="nav-link" id="CD8-FOXP3-CD3" href="javascript:;" title="CD8-FOXP3-CD3">T-Cells</a>
+                    </li>
+                    <li class="nav-item channel-picker">
+                        <a class="nav-link" id="PD1-CD3-PDL1" href="javascript:;" title="PD1-CD3-PDL1">PD-1/PD-L1</a>
+                    </li>
+                    <li class="nav-item channel-picker">
+                        <a class="nav-link" id="pS6-pRB-HES1" href="javascript:;" title="pS6-pRB-HES1">Signaling</a>
+                    </li>
+                </ul>
+            </div>
+        </nav> -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <div id="openseadragon1" class="openseadragon"></div>
+                <div id="legend" class="position-absolute text-white p-2 bg-trans" style="top: 5px; right:20px">
+                    <ul class="list-unstyled">
+                        <li>
+                            <span class="badge legend-color legend-green">&nbsp;</span>
+                            <span class="legend-label px-2"></span>
+                        </li>
+                        <li>
+                            <span class="badge legend-color legend-white">&nbsp;</span>
+                            <span class="legend-label px-2"></span>
+                        </li>
+                        <li>
+                            <span class="badge legend-color legend-red">&nbsp;</span>
+                            <span class="legend-label px-2"></span>
+                        </li>
+                        <li>
+                            <span class="badge legend-color legend-blue">&nbsp;</span>
+                            <span class="legend-label px-2">DNA</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="position-absolute bg-trans" style="right: 30px; top: 30vh;">
+                    <div class="btn-group-vertical">
+                        <a class="btn" id="zoom-home" href="#zoom-home" title="Zoom home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                        <a class="btn" id="zoom-out" href="#zoom-out" title="Zoom out">
+                            <i class="fas fa-search-minus"></i>
+                        </a>
+                        <a class="btn" id="zoom-in" href="#zoom-in" title="Zoom in">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-xs-first col-sm-3">
+                <h2 class="h5 mt-1 mb-2">
+                    Figure 2
+                </h2>
+                <p>
+                    Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using
+                    the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
+                </p>
+                <p class="mb-1 mt-5">Select a marker group:</p>
+                <div class="nav flex nav-pills">
+                    <a class="nav-link active" id="S100-CD45RO-SMA" data-toggle="pill" href="javascript:;" title="S100-CD45RO-SMA" aria-selected="true">Tumor Architecture</a>
+                    <a class="nav-link" id="CD8-FOXP3-CD3" data-toggle="pill" href="javascript:;" title="CD8-FOXP3-CD3" aria-selected="false">T-Cells</a>
+                    <a class="nav-link" id="PD1-CD3-PDL1" data-toggle="pill" href="javascript:;" title="PD1-CD3-PDL1" aria-selected="false">PD-1/PD-L1</a>
+                    <a class="nav-link" id="pS6-pRB-HES1" data-toggle="pill" href="javascript:;" title="pS6-pRB-HES1" arial-selected="false">Signaling</a>
+                </div>
+
+                <p class="mb-2 mt-5">Figure from:</p>
+                <p>Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362</p>
+                <!-- <ul class="navbar-nav">
+                    <li class="nav-item channel-picker active">
+                        <a class="nav-link" id="S100-CD45RO-SMA" href="javascript:;" title="S100-CD45RO-SMA">Tumor Architecture</a>
+                    </li>
+                    <li class="nav-item channel-picker">
+                        <a class="nav-link" id="CD8-FOXP3-CD3" href="javascript:;" title="CD8-FOXP3-CD3">T-Cells</a>
+                    </li>
+                    <li class="nav-item channel-picker">
+                        <a class="nav-link" id="PD1-CD3-PDL1" href="javascript:;" title="PD1-CD3-PDL1">PD-1/PD-L1</a>
+                    </li>
+                    <li class="nav-item channel-picker">
+                        <a class="nav-link" id="pS6-pRB-HES1" href="javascript:;" title="pS6-pRB-HES1">Signaling</a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="readme" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">What am I looking at?</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                {{ content }}
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
+<script type="text/javascript">
+    const images = [
+        [{
+                name: "26531PRE",
+                width: 13888,
+                height: 15936,
+                levels: 4
+            },
+            {
+                name: "#26531POST",
+                width: 31616,
+                height: 22272,
+                levels: 5,
+            }
+        ],
+        // [
+        //   {
+        //     name: "27960PRE",
+        //     width: 21504,
+        //     height: 22272,
+        //     levels: 5
+        //   },
+        //   {
+        //     name: "27960POST",
+        //     width: 25344,
+        //     height: 18048,
+        //     levels: 5,
+        //   }
+        // ],
+        // [
+        //   {
+        //     name: "36844PRE",
+        //     width: 46848,
+        //     height: 25600,
+        //     levels: 6
+        //   },
+        //   {
+        //     name: "36844POST",
+        //     width: 40448,
+        //     height: 24576,
+        //     levels: 6
+        //   }
+        // ],
+        // [
+        //   {
+        //     name: "37648PRE",
+        //     width: 35328,
+        //     height: 16128,
+        //     levels: 6
+        //   },
+        //   {
+        //     name: "37648POST",
+        //     width: 39168,
+        //     height: 26624,
+        //     levels: 6
+        //   }
+        // ]
+    ];
+    const numColumns = 1;
+    const numRows = images.length;
+
+    const cgs = [{
+            name: "Tumor Architecture",
+            path: "S100-CD45RO-SMA"
+        },
+        {
+            name: "T-Cells",
+            path: "CD8-FOXP3-CD3"
+        },
+        {
+            name: "PD-1/PD-L1",
+            path: "PD1-CD3-PDL1"
+        },
+        {
+            name: "Signaling",
+            path: "pS6-pRB-HES1"
+        }
+    ];
+
+    const base = "https://s3.amazonaws.com/pca2018";
+
+    const tileSources = {};
+
+    const viewer = OpenSeadragon({
+        id: "openseadragon1",
+        prefixUrl: "https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/images/",
+        //minScrollDeltaTime: 0,
+        //animationTime: 0,
+        // sequenceMode: true,
+        preserveViewport: true,
+        showNavigator: true,
+        navigatorPosition: "BOTTOM_RIGHT",
+        zoomInButton: "zoom-in",
+        zoomOutButton: "zoom-out",
+        homeButton: "zoom-home",
+    });
+
+    const spacingFraction = 0.05;
+    const flatten = function (items) {
+        return items.reduce(function (flat, item) {
+            return flat.concat(item)
+        })
+    };
+    const maxImageWidth = flatten(images).reduce(function (max, img) {
+        return Math.max(max, img.width)
+    }, 0);
+    const maxImageHeight = flatten(images).reduce(function (max, img) {
+        return Math.max(max, img.height)
+    }, 0);
+
+    const cellHeight = (1 + spacingFraction) / numRows - spacingFraction;
+    const cellWidth = cellHeight * maxImageWidth / maxImageHeight;
+
+    for (var yi = 0; yi < numRows; yi++) {
+        const y = yi * (cellHeight + spacingFraction);
+
+        for (var xi = 0; xi < numColumns; xi++) {
+            const image = images[yi][xi];
+            const displayHeight = (1 - (numRows - 1) * spacingFraction) / numRows * image.height / maxImageHeight;
+            const displayWidth = displayHeight * image.width / image.height
+            const x = xi * (cellWidth + spacingFraction) + (cellWidth - displayWidth) / 2;
+
+            for (var j = 0; j < cgs.length; j++) {
+                const cg = cgs[j];
+                viewer.addTiledImage({
+                    tileSource: {
+                        height: image.height,
+                        width: image.width,
+                        tileSize: 1024,
+                        maxLevel: image.levels,
+                        getTileUrl: function (level, x, y) {
+                            return base + "/" + image.name + "/" + cg.path + "/" + (image.levels - level) +
+                                "_" + x + "_" + y + ".jpg";
+                        }
+                    },
+                    x: x,
+                    y: y,
+                    width: displayWidth,
+                    opacity: cg === cgs[0] ? 1 : 0,
+                    // preload: true,
+                    success: function (data) {
+                        const item = data.item;
+                        if (!tileSources.hasOwnProperty(cg.path)) {
+                            tileSources[cg.path] = [];
+                        }
+                        tileSources[cg.path].push(item);
+                    }
+                });
+            }
+            const titleElt = $('<p>');
+            const title = image.name.toLowerCase().replace(/(\d+)(\w+)/, '# $1, $2-treatment');
+            titleElt.addClass('overlay-title').text(title);
+            viewer.addOverlay({
+                element: titleElt[0],
+                x: x + displayWidth / 2,
+                y: y,
+                placement: 'BOTTOM',
+                checkResize: false
+            });
+            viewer.addOverlay({
+                x: x,
+                y: y,
+                width: displayWidth,
+                height: image.height / image.width * displayWidth,
+                className: 'slide-border'
+            });
+
+        }
+
+    }
+
+    $(function () {
+        viewer.viewport.fitBoundsWithConstraints(
+            new OpenSeadragon.Rect(-0.2, -0.2, 1.3, 1.3), true
+        );
+    });
+
+    // Change view
+    const changeView = function (e) {
+        for (var property in tileSources) {
+            if (tileSources.hasOwnProperty(property)) {
+                if (property === e.data.cg) {
+                    for (var i = 0; i < tileSources[property].length; i++) {
+                        const tileSource = tileSources[property][i];
+                        tileSource.setOpacity(1);
+                    }
+                    $("#" + property).parent().addClass('active');
+                } else {
+                    for (var i = 0; i < tileSources[property].length; i++) {
+                        const tileSource = tileSources[property][i];
+                        tileSource.setOpacity(0);
+                    }
+                    $("#" + property).parent().removeClass('active');
+                }
+            }
+        }
+        updateLegend(e.data.cg);
+    };
+
+    // Update legend from encoded channel group id string
+    const updateLegend = function (cg) {
+        const label_text = cg.split('-');
+        $('#legend .legend-label').slice(0, 3).each(function (i, elt) {
+            return $(elt).text(label_text[i])
+        });
+    }
+
+    $("#S100-CD45RO-SMA").click({
+        cg: "S100-CD45RO-SMA"
+    }, changeView);
+    $("#CD8-FOXP3-CD3").click({
+        cg: "CD8-FOXP3-CD3"
+    }, changeView);
+    $("#PD1-CD3-PDL1").click({
+        cg: "PD1-CD3-PDL1"
+    }, changeView);
+    $("#pS6-pRB-HES1").click({
+        cg: "pS6-pRB-HES1"
+    }, changeView);
+    updateLegend("S100-CD45RO-SMA");
+
+    $("#help").click(function () {
+        $('#readme').modal('show')
+    });
+
+    // $(document).ready(function () {
+    //     $('#readme').modal('show');
+    // });
+</script>

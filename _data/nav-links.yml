@@ -8,9 +8,9 @@
   url: /training.html
 - label: Publications
   url: /publications.html
-- label: CyCIF Viewer
-  url: /osd1.html
-- label: People
-  url: /people.html
 - label: Featured Paper
   url: /lin-elife-2018.html
+# - label: CyCIF Viewer
+#   url: /osd1.html
+- label: People
+  url: /people.html

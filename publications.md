@@ -22,6 +22,8 @@ title: Publications
 1. Lin J-R, Fallahi-Sichani M, Sorger PK. Highly multiplexed imaging of single
    cells using a high-throughput cyclic immunofluorescence method. Nat Commun.
    2015 Sep 24;6:8390. PMCID: PMC4587398
+   <br/>
+   [Publication summary](http://lincs.hms.harvard.edu/lin-natcommun-2015/)
 
 1. Lin J-R, Fallahi-Sichani M, Chen J-Y, Sorger PK. Cyclic Immunofluorescence
    (CyCIF), A Highly Multiplexed Method for Single-cell Imaging. Curr Protoc

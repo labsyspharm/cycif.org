@@ -7,6 +7,11 @@ publication:
     url: http://lincs.hms.harvard.edu/lin-elife-2018/
 
 stitched mosaic images:
+  - title: Figure 2
+    description: Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
+    thumbnail file name: figure2.jpg
+    links:
+      - Melanoma mosaic: osd-figure2.html
   - title: Figure 5 and 6
     description: Representative images of Slide A (top panels) and Slide B specimens (bottom panels) after each t-CyCIF cycle. The color coding highlighting specific cycles is the same as in A.
     thumbnail file name: figure5.jpg

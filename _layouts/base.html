@@ -18,12 +18,14 @@
     <!-- style="background-image: url({{ '/assets/img/cycif-banner.jpg' | absolute_url }});"> -->
       <div class="d-flex align-items-center banner-text-container" >
         <!-- {% if page.url == '/'%} banner-tall {% endif %}"> -->
+        {% unless page.url contains 'osd' %}
         <div class="container my-4">
           <h1 class="display-4 my-4">{{ page.title | default: site.github.repository_name }}</h1>
           {% if page.url == '/'%}
           <p class="lead">{{ site.description | default: site.github.project_tagline }}</p>
           {% endif %}
         </div>
+        {% endunless %}
       </div>
     </div>
 
