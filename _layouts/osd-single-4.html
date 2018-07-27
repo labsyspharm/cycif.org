@@ -263,7 +263,7 @@ layout: base
     const updateLegend = function (cg) {
         const label_text = cg.replace(/\d+___/g, '').split('---').slice(1);
         $('#legend .legend-label').slice(0, 3).each(function (i, elt) {
-            return $(elt).text(label_text[i])
+            return $(elt).text(label_text[i].replace('aderin', 'adherin'))
         });
     }
 
