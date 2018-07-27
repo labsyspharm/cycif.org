@@ -11,7 +11,7 @@ stitched mosaic images:
     description: Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
     thumbnail file name: figure2.jpg
     links:
-      - Melanoma mosaic: osd-figure2.html
+      - Melanoma mosaic: figures/osd-figure2.html
   - title: Figure 5 and 6
     description: Representative images of Slide A (top panels) and Slide B specimens (bottom panels) after each t-CyCIF cycle. The color coding highlighting specific cycles is the same as in A.
     thumbnail file name: figure5.jpg
@@ -22,14 +22,14 @@ stitched mosaic images:
     description: t-CyCIF of a large resection specimen from a patient with pancreatic cancer. The entire sample comprising 143 stitched 10X fields of view is shown.
     thumbnail file name: figure7.jpg
     links:
-      - PDAC mosaic: https://omero.hms.harvard.edu/webgateway/img_detail/511686/?dataset=3127
+      - PDAC mosaic: figures/osd-figure7.html
   - title: Figure 10
     description: Eight-cycle t-CyCIF of a tissue microarray (TMA) including 13 normal tissues and corresponding tumor types. The TMA includes normal tissue types, and corresponding high and low grade tumors, for a total of 39 specimens.
     thumbnail file name: figure10.jpg
     links: 
-      - TMA mosaic: https://omero.hms.harvard.edu/webgateway/img_detail/511685/?dataset=3127
+      - TMA mosaic: figures/osd-figure10.html
   - title: Figure 11 and 12
     description: Molecular heterogeneity in a single GBM tumor. (A) Representative low magnification image of a GBM specimen generated from 221 stitched 10X frames; the sample was subjected to 10 rounds of t-CyCIF.
     thumbnail file name: figure11.jpg
     links: 
-      - GBM mosaic: https://omero.hms.harvard.edu/webgateway/img_detail/511023/?dataset=3118
+      - GBM mosaic: figures/osd-figure11.html

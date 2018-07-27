@@ -14,13 +14,13 @@ title: Cyclic Immunofluorescence
     </a>
 </p> -->
 <div class="row py-3">
-    <div class="col-md-7 d-flex-colume    my-4 pb-md-5">
+    <div class="col-md-6 d-flex-colume    my-4 pb-md-5">
         <h2 class="h1">Simple, flexible and robust</h2>
         CyCIF is a novel, robust and inexpensive method for highly multiplexed immunofluorescence imaging using standard instrumentation and reagents. 
         The rich data collected using CycIF are amenable to state-of-the-art, high-dimensionality analysis tools developed for CyTOF, 
         including ViSNE and Wanderlust, that allow investigation of complex associations and interdependencies between observed features and phenotypes.
     </div>
-    <div class="col-md-12  d-flex align-items-center my-4 pb-md-5">
+    <div class="col-md-6  d-flex align-items-center my-4 pb-md-5">
         <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/269885646" mozallowfullscreen allowfullscreen></iframe>
         </div>
@@ -30,14 +30,14 @@ title: Cyclic Immunofluorescence
 <hr>
 
 <div class="row py-3">
-    <div class="col-md-7 d-flex-colume    my-4 pb-md-5">
+    <div class="col-md-6 d-flex-colume    my-4 pb-md-5">
         <h2 class="h1">Tumor ecosystem in its preserved architecture</h2>
         t-CyCIF (Tissue-based cyclic immunofluorescence) can be used to quantify
         signal transduction cascades, measure the levels of tumor antigens and determine
         immunophenotypes using immune cell lineage markers. t-CyCIF is a powerful tool 
         to study drug resistance of immunotherapy in different patients.
     </div>
-    <div class="col-md-12  d-flex align-items-center my-4 pb-md-5">
+    <div class="col-md-6  d-flex align-items-center my-4 pb-md-5">
         <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/270692465" mozallowfullscreen allowfullscreen></iframe>
         </div>
@@ -47,7 +47,7 @@ title: Cyclic Immunofluorescence
 <hr>
 
 <div class="row py-3">
-    <div class="col-md-7 d-flex flex-column justify-content-start   my-4">
+    <div class="col-md-6 d-flex flex-column justify-content-start   my-4">
         <h2 class="h1 bd-highlight">t-CyCIF</h2>
         <label for="">Tissue-based cyclic immunofluorescence</label>
         <p>
@@ -61,14 +61,14 @@ title: Cyclic Immunofluorescence
         </p>
         
     </div>
-    <div class="col-md-5 d-flex align-items-center my-4 pb-md-5">
+    <div class="col-md-6 d-flex align-items-center my-4 pb-md-5">
         <div class="embed-responsive embed-responsive-1by1">
             <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/269904895"></iframe>
         </div>
     </div>
 </div>
 <div class="row py-3">
-    <div class="col col-md-7">
+    <div class="col col-md-6">
         <h3 class="h2 bd-highlight">Key features of t-CyCIF</h3>
         <ul>
             <li>Works with a wide range of FFPE human and mouse tumors and tissues.</li>

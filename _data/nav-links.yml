@@ -4,13 +4,13 @@
   url: /method.html
 - label: Antibody
   url: /antibody.html
-- label: Training
-  url: /training.html
+- label: Featured Paper
+  url: /featured-paper/lin-elife-2018/
 - label: Publications
   url: /publications.html
-- label: Featured Paper
-  url: /lin-elife-2018.html
 # - label: CyCIF Viewer
 #   url: /osd1.html
 - label: People
   url: /people.html
+- label: Training
+  url: /training.html
