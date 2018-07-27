@@ -1,53 +1,3 @@
-const CognitoUser = AmazonCognitoIdentity.CognitoUser;
-const CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
-const AuthenticationDetails = AmazonCognitoIdentity.AuthenticationDetails;
-
-/*
- * from /sorgerlab/minerva-client-js/master/index.js
- */
-
-const authenticateUser = function(cognitoUser, authenticationDetails) {
-  return new Promise(function(resolve, reject) {
-    cognitoUser.authenticateUser(authenticationDetails, {
-      onSuccess: result => resolve(result),
-      onFailure: err => reject(err),
-      mfaRequired: codeDeliveryDetails => reject(codeDeliveryDetails),
-      newPasswordRequired: (fields, required) => reject({fields, required})
-    });
-  });
-};
-
-const authenticate = function(username, pass) {
-
-  return pass.then(function(password) {
-
-    const minervaPoolId = 'us-east-1_d9h9zgWpx'; 
-    const minervaClientId = '5m75aiie05v28astdpu2noap6m';
-    const minervaPool = new CognitoUserPool({
-      UserPoolId : minervaPoolId,
-      ClientId : minervaClientId
-    });
- 
-    const cognitoUser = new CognitoUser({
-      Username: username,
-      Pool: minervaPool
-    });
- 
-    const authenticationDetails = new AuthenticationDetails({
-      Username: username,
-      Password: password
-    });
- 
-    return authenticateUser(cognitoUser, authenticationDetails)
-      .then(response => response.getIdToken().getJwtToken());
-  });
-};
-
-
-/*
- *
- */
-
 const flatten = function(items) {
   return items.reduce(function(flat, item) {
     return flat.concat(item);
@@ -1855,7 +1805,7 @@ const index_name = function(list, name) {
   return list.indexOf(item);
 };
 
-const load_yaml = function(url) {
+const load_json = function(url) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -1874,5 +1824,7 @@ const load_yaml = function(url) {
   xhttp.send();
 };
 
-load_yaml('./config.yaml');
+load_json(`
+  
+`);
 
