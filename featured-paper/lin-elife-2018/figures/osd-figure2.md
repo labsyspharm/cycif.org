@@ -1,6 +1,6 @@
 ---
 title: Figure 2
-layout: osd-exhibit
+layout: osd-single
 image name: 26531PRE
 tests2:
     - name: 26531PRE
