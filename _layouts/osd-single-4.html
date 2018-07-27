@@ -2,57 +2,9 @@
 layout: base 
 ---
 
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"> -->
 <link rel="stylesheet" href="{{ '/assets/css/osd.css?v=' | append: site.github.build_revision | relative_url }}">
 
 <div id="content">
-
-    <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-trans">
-            <a class="navbar-brand" href="#">{{ page.title }}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAtlas" aria-controls="navbarAtlas"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse navbar-trans" id="navbarAtlas">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" id="help" href="#help" title="Help">
-                            <i class="fas fa-question-circle"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" id="zoom-home" href="#zoom-home" title="Zoom home">
-                            <i class="fas fa-home"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" id="zoom-out" href="#zoom-out" title="Zoom out">
-                            <i class="fas fa-search-minus"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" id="zoom-in" href="#zoom-in" title="Zoom in">
-                            <i class="fas fa-search-plus"></i>
-                        </a>
-                    </li>
-                </ul>
-                <span class="navbar-text text-white ml-auto pr-2">Select a marker group:</span>
-                <ul class="navbar-nav">
-                <li class="nav-item channel-picker active">
-                        <a class="nav-link" id="S100-CD45RO-SMA" href="javascript:;" title="S100-CD45RO-SMA">Tumor Architecture</a>
-                    </li>
-                    <li class="nav-item channel-picker">
-                        <a class="nav-link" id="CD8-FOXP3-CD3" href="javascript:;" title="CD8-FOXP3-CD3">T-Cells</a>
-                    </li>
-                    <li class="nav-item channel-picker">
-                        <a class="nav-link" id="PD1-CD3-PDL1" href="javascript:;" title="PD1-CD3-PDL1">PD-1/PD-L1</a>
-                    </li>
-                    <li class="nav-item channel-picker">
-                        <a class="nav-link" id="pS6-pRB-HES1" href="javascript:;" title="pS6-pRB-HES1">Signaling</a>
-                    </li>
-                </ul>
-            </div>
-        </nav> -->
 
     <div class="container-fluid">
         <div class="row">
@@ -95,61 +47,30 @@ layout: base
             </div>
             <div class="order-xs-first col-sm-3">
                 <h2 class="h5 mt-1 mb-2">
-                    Figure 2
+                    {{ page.title }}
                 </h2>
                 <p>
-                    Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using
-                    the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
+                    {{ page.description }}
                 </p>
                 <p class="mb-1 mt-5">Select a marker group:</p>
                 <div class="nav flex nav-pills">
-                    <a class="nav-link active" id="S100-CD45RO-SMA" data-toggle="pill" href="javascript:;" title="S100-CD45RO-SMA" aria-selected="true">Tumor Architecture</a>
-                    <a class="nav-link" id="CD8-FOXP3-CD3" data-toggle="pill" href="javascript:;" title="CD8-FOXP3-CD3" aria-selected="false">T-Cells</a>
-                    <a class="nav-link" id="PD1-CD3-PDL1" data-toggle="pill" href="javascript:;" title="PD1-CD3-PDL1" aria-selected="false">PD-1/PD-L1</a>
-                    <a class="nav-link" id="pS6-pRB-HES1" data-toggle="pill" href="javascript:;" title="pS6-pRB-HES1" arial-selected="false">Signaling</a>
+                    <a class="nav-link active" id="channel-group-1" data-toggle="pill" href="javascript:;" title="channel-group-1" aria-selected="true">Cycle 1</a>
+                    <a class="nav-link" id="channel-group-2" data-toggle="pill" href="javascript:;" title="channel-group-2" aria-selected="false">Cycle 2</a>
+                    <a class="nav-link" id="channel-group-3" data-toggle="pill" href="javascript:;" title="channel-group-3" aria-selected="false">Cycle 3</a>
+                    <a class="nav-link" id="channel-group-4" data-toggle="pill" href="javascript:;" title="channel-group-4" arial-selected="false">Cycle 4</a>
+                    <a class="nav-link" id="channel-group-5" data-toggle="pill" href="javascript:;" title="channel-group-4" arial-selected="false">Cycle 5</a>
+                    <a class="nav-link" id="channel-group-6" data-toggle="pill" href="javascript:;" title="channel-group-4" arial-selected="false">Cycle 6</a>
+                    <a class="nav-link" id="channel-group-7" data-toggle="pill" href="javascript:;" title="channel-group-4" arial-selected="false">Cycle 7</a>
+                    <a class="nav-link" id="channel-group-8" data-toggle="pill" href="javascript:;" title="channel-group-4" arial-selected="false">Cycle 8</a>
+                    <a class="nav-link" id="channel-group-9" data-toggle="pill" href="javascript:;" title="channel-group-4" arial-selected="false">Cycle 9</a>
                 </div>
 
                 <p class="mb-2 mt-5">Figure from:</p>
                 <p>Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362</p>
-                <!-- <ul class="navbar-nav">
-                    <li class="nav-item channel-picker active">
-                        <a class="nav-link" id="S100-CD45RO-SMA" href="javascript:;" title="S100-CD45RO-SMA">Tumor Architecture</a>
-                    </li>
-                    <li class="nav-item channel-picker">
-                        <a class="nav-link" id="CD8-FOXP3-CD3" href="javascript:;" title="CD8-FOXP3-CD3">T-Cells</a>
-                    </li>
-                    <li class="nav-item channel-picker">
-                        <a class="nav-link" id="PD1-CD3-PDL1" href="javascript:;" title="PD1-CD3-PDL1">PD-1/PD-L1</a>
-                    </li>
-                    <li class="nav-item channel-picker">
-                        <a class="nav-link" id="pS6-pRB-HES1" href="javascript:;" title="pS6-pRB-HES1">Signaling</a>
-                    </li>
-                </ul> -->
             </div>
         </div>
     </div>
 
-</div>
-
-<div id="readme" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">What am I looking at?</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                {{ content }}
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -163,9 +84,10 @@ layout: base
 <script type="text/javascript">
     const images = [
         [{
-                name: "{{ page['image name'] }}",
-                width: 13888,
-                height: 15936,
+                // name: "{{ page['image name'] }}",
+                name: 'TMA0809-prerendered',
+                width: 16458,
+                height: 11749,
                 levels: 4
             },
             {
@@ -175,71 +97,49 @@ layout: base
                 levels: 5,
             }
         ],
-        // [
-        //   {
-        //     name: "27960PRE",
-        //     width: 21504,
-        //     height: 22272,
-        //     levels: 5
-        //   },
-        //   {
-        //     name: "27960POST",
-        //     width: 25344,
-        //     height: 18048,
-        //     levels: 5,
-        //   }
-        // ],
-        // [
-        //   {
-        //     name: "36844PRE",
-        //     width: 46848,
-        //     height: 25600,
-        //     levels: 6
-        //   },
-        //   {
-        //     name: "36844POST",
-        //     width: 40448,
-        //     height: 24576,
-        //     levels: 6
-        //   }
-        // ],
-        // [
-        //   {
-        //     name: "37648PRE",
-        //     width: 35328,
-        //     height: 16128,
-        //     levels: 6
-        //   },
-        //   {
-        //     name: "37648POST",
-        //     width: 39168,
-        //     height: 26624,
-        //     levels: 6
-        //   }
-        // ]
     ];
     const numColumns = 1;
     const numRows = images.length;
 
     const cgs = [{
-            name: "Tumor Architecture",
-            path: "S100-CD45RO-SMA"
+            name: "EMT Markers",
+            path: "0___Hoechst1---1___A488---2___A555---3___A647"
         },
         {
-            name: "T-Cells",
-            path: "CD8-FOXP3-CD3"
+            name: "Proliferation",
+            path: "4___Hoechst2---5___pAKT---6___empty---7___5hmC"
         },
         {
-            name: "PD-1/PD-L1",
-            path: "PD1-CD3-PDL1"
+            name: "Immune Markers",
+            path: "8___Hoechst3---9___Ki67---10___pCTD2---11___p21"
         },
         {
             name: "Signaling",
-            path: "pS6-pRB-HES1"
+            path: "12___Hoechst4---13___pERK---14___CD45---15___pS6_235"
+        },
+        {
+            name: "Signaling",
+            path: "16___Hoechst5---17___EGFR---18___VEGFR---19___HER2"
+        },
+        {
+            name: "Signaling",
+            path: "20___Hoechst6---21___E-Caderin---22___Keratin---23___Vimentin"
+        },
+        {
+            name: "Signaling",
+            path: "24___Hoechst7---25___PCNA---26___PD-L1---27___Beta-Catenin"
+        },
+        {
+            name: "Signaling",
+            path: "28___Hoechst8---29___MET---30___CD4---31___NGFR"
+        },
+        {
+            name: "Signaling",
+            path: "32___Hoechst9---33___Mitotracker---34___ActinRed---35___HCSred"
         }
     ];
 
-    const base = "https://s3.amazonaws.com/pca2018";
+    const base = "https://s3.amazonaws.com/www.cycif.org/lin-elife-2018";
 
     const tileSources = {};
 
@@ -310,7 +210,7 @@ layout: base
                 });
             }
             const titleElt = $('<p>');
-            const title = image.name.toLowerCase().replace(/(\d+)(\w+)/, '# $1, $2-treatment');
+            const title = 'TMA0809';
             titleElt.addClass('overlay-title').text(title);
             viewer.addOverlay({
                 element: titleElt[0],
@@ -361,25 +261,49 @@ layout: base
 
     // Update legend from encoded channel group id string
     const updateLegend = function (cg) {
-        const label_text = cg.split('-');
+        const label_text = cg.replace(/\d+___/g, '').split('---').slice(1);
         $('#legend .legend-label').slice(0, 3).each(function (i, elt) {
             return $(elt).text(label_text[i])
         });
     }
 
-    $("#S100-CD45RO-SMA").click({
-        cg: "S100-CD45RO-SMA"
+    $("#channel-group-1").click({
+        cg: "0___Hoechst1---1___A488---2___A555---3___A647",
+        cgLabel: "E-Caderin___Keratin___Vimentin"
     }, changeView);
-    $("#CD8-FOXP3-CD3").click({
-        cg: "CD8-FOXP3-CD3"
+    $("#channel-group-2").click({
+        cg: "4___Hoechst2---5___pAKT---6___empty---7___5hmC",
+        cgLabel: "PCNA___Ki67___p21"
     }, changeView);
-    $("#PD1-CD3-PDL1").click({
-        cg: "PD1-CD3-PDL1"
+    $("#channel-group-3").click({
+        cg: "8___Hoechst3---9___Ki67---10___pCTD2---11___p21",
+        cgLabel: "CD45___CD4___PD-L1"
     }, changeView);
-    $("#pS6-pRB-HES1").click({
-        cg: "pS6-pRB-HES1"
+    $("#channel-group-4").click({
+        cg: "12___Hoechst4---13___pERK---14___CD45---15___pS6_235",
+        cgLabel: "pERK___pS6_235___Beta-Catenin"
     }, changeView);
-    updateLegend("S100-CD45RO-SMA");
+    $("#channel-group-5").click({
+        cg: "16___Hoechst5---17___EGFR---18___VEGFR---19___HER2",
+        cgLabel: "pERK___pS6_235___Beta-Catenin"
+    }, changeView);
+    $("#channel-group-6").click({
+        cg: "20___Hoechst6---21___E-Caderin---22___Keratin---23___Vimentin",
+        cgLabel: "pERK___pS6_235___Beta-Catenin"
+    }, changeView);
+    $("#channel-group-7").click({
+        cg: "24___Hoechst7---25___PCNA---26___PD-L1---27___Beta-Catenin",
+        cgLabel: "pERK___pS6_235___Beta-Catenin"
+    }, changeView);
+    $("#channel-group-8").click({
+        cg: "28___Hoechst8---29___MET---30___CD4---31___NGFR",
+        cgLabel: "pERK___pS6_235___Beta-Catenin"
+    }, changeView);
+    $("#channel-group-9").click({
+        cg: "32___Hoechst9---33___Mitotracker---34___ActinRed---35___HCSred",
+        cgLabel: "pERK___pS6_235___Beta-Catenin"
+    }, changeView);
+    updateLegend("0___Hoechst1---1___A488---2___A555---3___A647");
 
     $("#help").click(function () {
         $('#readme').modal('show')
