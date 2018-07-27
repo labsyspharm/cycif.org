@@ -1,0 +1,82 @@
+Exhibit:
+  Images:
+    - Name: i0
+      Description: '# 26531, pre-treatment'
+      Path: https://s3.amazonaws.com/pca2018/26531PRE
+      Width: 13888
+      Height: 15936
+      MaxLevel: 4
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: S100-CD45RO-SMA
+      Name: Tumor Architecture
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - S100
+        - CD45
+        - SMA
+        - DNA
+    - Path: CD8-FOXP3-CD3
+      Name: T-Cells
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - CD8
+        - FOXP3
+        - CD3
+        - DNA
+    - Path: PD1-CD3-PDL1
+      Name: PD-1/PD-L1
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - PD-1
+        - CD3
+        - PD-L1
+        - DNA
+    - Path: pS6-pRB-HES1
+      Name: Signaling
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - pS6
+        - pRB
+        - HES1
+        - DNA
+  Stories:
+  - Name: The Story
+    Description: |
+      ## Figure 2
+
+      Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
+
+
+    Waypoints:
+    - Name: The Waypoint
+      Group: The Group
+      Description: |
+        The waypoint description
+      Overlay:
+        x: 0.6945
+        y: 0.5863
+        width: 0.1166
+        height: 0.1135
+      Pan:
+        - 0.7121
+        - 0.5896
+      Zoom: 0.7883

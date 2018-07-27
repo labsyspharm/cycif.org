@@ -1,0 +1,141 @@
+Exhibit:
+  Images:
+    - Name: i0
+      Description: '# 36844, pre-treatment'
+      Path: https://s3.amazonaws.com/www.cycif.org/lin-elife-2018/TMA0809-prerendered
+      Width: 16458
+      Height: 11749
+      MaxLevel: 4
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Name: Cycle 1
+      Path: 0___Hoechst1---1___A488---2___A555---3___A647
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - A488
+        - A555
+        - A647
+        - DNA
+    - Name: Cycle 2
+      Path: 4___Hoechst2---5___pAKT---6___empty---7___5hmC
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - pAKT
+        - empty
+        - 5hmC
+        - DNA
+    - Name: Cycle 3
+      Path: 8___Hoechst3---9___Ki67---10___pCTD2---11___p21
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - Ki67
+        - pCTD2
+        - p21
+        - DNA
+    - Name: Cycle 4
+      Path: 12___Hoechst4---13___pERK---14___CD45---15___pS6_235
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - pERK
+        - CD45
+        - pS6_235
+        - DNA
+    - Name: Cycle 5
+      Path: 16___Hoechst5---17___EGFR---18___VEGFR---19___HER2
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - EGFR
+        - VEGFR
+        - HER2
+        - DNA
+    - Name: Cycle 6
+      Path: 20___Hoechst6---21___E-Caderin---22___Keratin---23___Vimentin
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - E-Caderin
+        - Keratin
+        - Vimentin
+        - DNA
+    - Name: Cycle 7
+      Path: 24___Hoechst7---25___PCNA---26___PD-L1---27___Beta-Catenin
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - PCNA
+        - PD-L1
+        - Beta-Catenin
+        - DNA
+    - Name: Cycle 8
+      Path: 28___Hoechst8---29___MET---30___CD4---31___NGFR
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - MET
+        - CD4
+        - NGFR
+        - DNA
+    - Name: Cycle 9
+      Path: 32___Hoechst9---33___Mitotracker---34___ActinRed---35___HCSred
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - Mitotracker
+        - ActinRed
+        - HCSred
+        - DNA
+  Stories:
+  - Name: The Story
+    Description: |
+      ## Figure 10
+      
+      
+      Eight-cycle t-CyCIF of a tissue microarray (TMA) including 13 normal tissues and corresponding tumor types. The TMA includes normal tissue types, and corresponding high and low grade tumors, for a total of 39 specimens.
+    Waypoints:
+    - Name: The Waypoint
+      Group: The Group
+      Description: |
+        The waypoint description
+      Overlay:
+        x: 0.6945
+        y: 0.5863
+        width: 0.1166
+        height: 0.1135
+      Pan:
+        - 0.7121
+        - 0.5896
+      Zoom: 0.7883

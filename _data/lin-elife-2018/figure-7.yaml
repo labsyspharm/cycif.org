@@ -1,0 +1,80 @@
+Exhibit:
+  Images:
+    - Name: i0
+      Description: 'PAN0809'
+      Path: https://s3.amazonaws.com/www.cycif.org/lin-elife-2018/PAN0809-prerendered
+      Width: 16454
+      Height: 11751
+      MaxLevel: 4
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: E-Caderin-Keratin-Vimentin
+      Name: EMT Markers
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - E-Cadherin
+        - Keratin
+        - Vimentin
+        - DNA
+    - Path: PCNA-Ki67-p21
+      Name: Proliferation
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - PCNA
+        - Ki67
+        - p21
+        - DNA
+    - Path: CD45-CD4-PD-L1
+      Name: Immune Markers
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - CD45
+        - CD4
+        - PD-L1
+        - DNA
+    - Path: pERK-pS6_235-Beta-Catenin
+      Name: Signaling
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - pERK
+        - pS6_235
+        - Beta-Catenin
+        - DNA
+  Stories:
+  - Name: The Story
+    Description: |
+      ## Figure 7 and 8
+
+      t-CyCIF of a large resection specimen from a patient with pancreatic cancer. The entire sample comprising 143 stitched 10X fields of view is shown.
+    Waypoints:
+    - Name: The Waypoint
+      Group: The Group
+      Description: |
+        The waypoint description
+      Overlay:
+        x: 0.6945
+        y: 0.5863
+        width: 0.1166
+        height: 0.1135
+      Pan:
+        - 0.7121
+        - 0.5896
+      Zoom: 0.7883
