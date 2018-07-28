@@ -1805,26 +1805,26 @@ const index_name = function(list, name) {
   return list.indexOf(item);
 };
 
-const load_json = function(url) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      try {
-        config = jsyaml.safeLoad(this.responseText);
-      } catch (e) {
-        console.error(e);
-      }
-      if (config) {
-        // Handle Yaml Configuration file
-        build_page(config.Exhibit);
-      }
-    }
-  };
-  xhttp.open('GET', url, true);
-  xhttp.send();
-};
+// const load_json = function(url) {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       try {
+//         config = jsyaml.safeLoad(this.responseText);
+//       } catch (e) {
+//         console.error(e);
+//       }
+//       if (config) {
+//         // Handle Yaml Configuration file
+//         build_page(config.Exhibit);
+//       }
+//     }
+//   };
+//   xhttp.open('GET', url, true);
+//   xhttp.send();
+// };
 
-load_json(`
+// load_json(`
   
-`);
+// `);
 
