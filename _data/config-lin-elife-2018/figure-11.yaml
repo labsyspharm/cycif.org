@@ -1,0 +1,81 @@
+Exhibit:
+  Images:
+    - Name: i0
+      Description: 'GBM0801'
+      Path: https://s3.amazonaws.com/www.cycif.org/lin-elife-2018/GBM0801-prerendered
+      Width: 21501
+      Height: 13887
+      MaxLevel: 5
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+      - Name: Tumor Markers
+        Path: pERK-Keratin-EGFR
+        Channels:
+          - pERK
+          - Keratin
+          - EGFR
+          - DNA
+        Colors:
+          - 00FF00 
+          - FFFFFF
+          - FF0000
+          - 0000FF
+      - Name: Proliferation
+        Path: Ki67-pRB-gH2ax
+        Channels:
+          - Ki67
+          - pRB
+          - gH2ax
+          - DNA
+        Colors:
+          - 00FF00 
+          - FFFFFF
+          - FF0000
+          - 0000FF
+      - Name: Signaling
+        Path: Vimentin-cJun-MITF
+        Channels:
+          - Vimentin
+          - cJun
+          - MITF
+          - DNA
+        Colors:
+          - 00FF00 
+          - FFFFFF
+          - FF0000
+          - 0000FF
+      - Name: Receptors
+        Path: pS6-VEGFR2-NGFR
+        Channels:
+          - pS6
+          - VEGFR2
+          - NGFR
+          - DNA
+        Colors:
+          - 00FF00 
+          - FFFFFF
+          - FF0000
+          - 0000FF
+  Stories:
+  - Name: The Story
+    Description: |
+        ## Figure 11 and 12
+        
+        Molecular heterogeneity in a single GBM tumor. (A) Representative low magnification image of a GBM specimen generated from 221 stitched 10X frames; the sample was subjected to 10 rounds of t-CyCIF.
+    Waypoints:
+    - Name: The Waypoint
+      Group: The Group
+      Description: |
+        The waypoint description
+      Overlay:
+        x: 0.6945
+        y: 0.5863
+        width: 0.1166
+        height: 0.1135
+      Pan:
+        - 0.7121
+        - 0.5896
+      Zoom: 0.7883
+
