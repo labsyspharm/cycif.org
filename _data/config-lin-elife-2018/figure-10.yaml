@@ -1,7 +1,8 @@
 Exhibit:
+  Name: Figure 10
   Images:
     - Name: i0
-      Description: '# 36844, pre-treatment'
+      Description: 'TMA0809'
       Path: https://s3.amazonaws.com/www.cycif.org/lin-elife-2018/TMA0809-prerendered
       Width: 16458
       Height: 11749
@@ -119,23 +120,20 @@ Exhibit:
         - HCSred
         - DNA
   Stories:
-  - Name: The Story
-    Description: |
-      ## Figure 10
-      
-      
-      Eight-cycle t-CyCIF of a tissue microarray (TMA) including 13 normal tissues and corresponding tumor types. The TMA includes normal tissue types, and corresponding high and low grade tumors, for a total of 39 specimens.
+  - Name: Overview
+    Description:
     Waypoints:
-    - Name: The Waypoint
-      Group: The Group
-      Description: |
-        The waypoint description
-      Overlay:
-        x: 0.6945
-        y: 0.5863
-        width: 0.1166
-        height: 0.1135
+    - Zoom: 0.4803
       Pan:
-        - 0.7121
-        - 0.5896
-      Zoom: 0.7883
+        - 0.9752
+        - 0.4477
+      Group: Cycle 6
+      Description: |
+        Eight-cycle t-CyCIF of a tissue microarray (TMA) including 13 normal tissues and corresponding tumor types. The TMA includes normal tissue types, and corresponding high and low grade tumors, for a total of 39 specimens.
+      Name: The Waypoint
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+      

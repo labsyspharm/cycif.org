@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US " }}" class="h-100">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- style="position:relative" -->
+
+  <header class="mb-5">
+    {% include nav.html %}
+  </header>
+
+<link rel="stylesheet" href="{{ '/assets/css/osd-exhibit.css' | relative_url }}">
+
+
+    <div id="content" style="position:fixed; top: 0;left: 0; width: 100%;">
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div id="openseadragon1" class="openseadragon"></div>
+                <div id="legend" class="position-absolute text-white p-2 bg-trans" style="top: 4rem; right:26%">
+                    <ul id="channel-legend" class="list-unstyled m-0"></ul>
+                </div>
+                <div id="viewer-tool" class="position-absolute bg-trans" style="right:26%; top: 40vh;">
+                    <div class="btn-group-vertical">
+                        <a class="btn text-light" id="zoom-home" href="#zoom-home" title="Zoom home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                        <a class="btn text-light" id="zoom-out" href="#zoom-out" title="Zoom out">
+                            <i class="fas fa-search-minus"></i>
+                        </a>
+                        <a class="btn text-light" id="zoom-in" href="#zoom-in" title="Zoom in">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                        <span id="draw-switch" class="nav-item draw-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-edit"></i></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="osd-side-nav" class="col-sm-3 pt-5 mt-2 bg-dark px-2" style="height: 100vh; overflow-y: scroll; position: absolute; right: 0">
+                <!-- <div class="shadow px-3 py-1   bg-black d-block d-sm-none osition-absolute">
+                    <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav osition-absolute">SHOW TEXT</a>
+                </div> -->
+                <button class="position-absolute js-toggle-osd-side-nav btn btn-link btn-block py-2 bg-black" style="top: 0.25rem; left: 0;"><i class="fas fa-chevron-up"></i> SHOW STORY</button>
+                    <div class="shadow px-3 mb-2   bg-black">
+                        <div class="">
+                            <a id="story-title" href="#story-board" class="py-3 text-white d-block bg-black clearfix"  data-toggle="collapse" style="text-decoration: none;">
+                                <span class="h5">
+                                    <!-- t-CyCIF for tissue secions from patients with metastatic melanoma -->
+                                    {{ content }}
+                                </span>
+                                <span id="js-story-collapse-indicator" class="d-block my-2 text-primary">
+                                    LESS
+                                    <i class="fas fa-chevron-up"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="collapse show" id="story-board">
+                            <ul class="nav nav-tabs nav-justified w-100" role="tablist" id="story-indices"></ul>
+                            <div class="tab-content collapse show" id="story-content"></div>
+                        </div>
+                    </div>
+                    <div class="shadow px-3 my-2 py-3   bg-black">
+                        <p class="mb-1 font-weight-bold">Select a marker group:</p>
+                        <div id="channel-groups" class="nav flex nav-pills"></div>
+                    </div>
+                    <div class="shadow px-3 py-1   bg-black d-block d-sm-none">
+                        <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav"><i class="fas fa-chevron-down"></i> HIDE STORY</i></a>
+                    </div>
+
+                <div class="exhibit-content">
+                    <!-- <ul id="story-nav" class="nav small round-nav justify-content-end">
+                        <li id="draw-switch" class="nav-item draw-switch">
+                            <a class="btn btn-sm btn-default">
+                                <span class="white glyphicon glyphicon-screenshot">1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#story-content" class="btn btn-sm btn-default" data-toggle="collapse">
+                                <span class="white glyphicon glyphicon-eye-close">2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="btn btn-sm btn-default" data-toggle="collapse" id="step-back">
+                                <span class="white glyphicon glyphicon-arrow-up">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="btn btn-sm btn-default" data-toggle="collapse" id="step-next">
+                                <span class="white glyphicon glyphicon-arrow-down">4</span>
+                            </a>
+                        </li>
+                        <li>
+                            <ul class="nav nav-tabs" role="tablist" id="story-indices">
+                            </ul>
+                        </li>
+                    </ul> -->
+                    <ul id="edit-menu" class="nav justify-content-end position-relative">
+                        <li id="edit-switches" class="nav-item d-none d-inline">
+                            <ul class="nav">
+                                <li id="edit-switch" class="nav-item">
+                                    <a class="btn btn-sm btn-default">
+                                        <span class="white glyphicon glyphicon-edit"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item draw-switch">
+                                    <a id="edit-overlay" class="btn btn-sm btn-default">
+                                        <span class="white glyphicon glyphicon-screenshot"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul id="edit-nav" class="d-none nav nav-tabs small">
+                                <li>
+                                    <ul class="nav" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link list-group-item-action active" role="tab" data-toggle="list" id="edit-mode-1" href="#">Edit</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link list-group-item-action" role="tab" data-toggle="list" id="edit-mode-2" href="#">Source</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="copy_yaml_input">
+                                    <button class="btn btn-default edit_copy_button" data-toggle="tooltip" data-placement="bottom">
+                                        Copy
+                                    </button>
+                                </li>
+                                <li id="edit-import" class="copy_yaml_input nav-item d-none d-inline">
+                                    <button class="btn btn-sm btn-default">
+                                        Import
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="tab-content collapse show" id="story-content"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+            
+    </div>
+
+    <div class="d-none">
+        <input type="file" id="file-upload" class="d-none" />
+        <ul>
+            <li class="nav-item rounded-0" id="proto-story-index">
+                <a class="nav-link list-group-item-action font-weight-bold" role="tab" data-toggle="list"></a>
+            </li>
+        </ul>
+        <div class="tab-pane fade" id="proto-story" role="tabpanel">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <div class="vertical-bar"></div>
+                    <div class="waypoint-indices list-group nav nav-pills" role="tablist">
+                        <a class="nav-link" role="tab" data-toggle="list"></a>
+                    </div>
+                </div>
+                <div class="col border-top pt-4">
+                    <div class="waypoint-content tab-content">
+                        <div class="tab-pane fade" role="tabpanel"></div>
+                        <div class="tab-pane fade" role="tabpanel">
+                            <form class="form save_edits_form">
+                                <div class="input-group">
+                                    <div style="width: 100%; margin-bottom: 5px">
+                                        <textarea class="form-control edit_text editable" rows="10">
+                                        </textarea>
+                                    </div>
+                                    <span class="mr-auto">
+                                        <h6>
+                                            <span class="d-inline-block">X
+                                                <span class="edit_code edit_x">3.14</span>
+                                            </span>
+                                            <span class="d-inline-block">Y
+                                                <span class="edit_code edit_y">3.14</span>
+                                            </span>
+                                            <span class="d-inline-block">
+                                                <span class="white glyphicon glyphicon-resize-horizontal"></span>
+                                                <span class="edit_code edit_w">3.14</span>
+                                            </span>
+                                            <span class="d-inline-block">
+                                                <span class="white glyphicon glyphicon-resize-vertical"></span>
+                                                <span class="edit_code edit_h">3.14</span>
+                                            </span>
+                                        </h6>
+                                    </span>
+                                    <span class="ml-auto">
+                                        <h6>
+                                            <span class="d-inline-block">X
+                                                <span class="edit_code edit_panx">3.14</span>
+                                            </span>
+                                            <span class="d-inline-block">Y
+                                                <span class="edit_code edit_pany">3.14</span>
+                                            </span>
+                                            <span class="d-inline-block">
+                                                <span class="white glyphicon glyphicon-resize-full"></span>
+                                                <span class="edit_code edit_zoom">3.14</span>
+                                            </span>
+                                        </h6>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" role="tabpanel">
+                            <form class="form copy_yaml_form">
+                                <div class="input-group">
+                                    <textarea readonly class="form-control edit_text edit_code" name="copy_content" rows="12">
+                                    </textarea>
+                                    <span class="input-group-btn copy_yaml_input">
+                                        <button class="btn btn-default edit_copy_button" type="submit" data-toggle="tooltip" data-placement="bottom">
+                                            Copy
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-*">
+                    <div class="vertical-bar"></div>
+                    <div class="waypoint-indices list-group" role="tablist">
+                        <a class="waypoint-index btn btn-sm list-group-item list-group-item-action" role="tab" data-toggle="list"></a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="readme" style="font-size: 9pt; line-height: 11pt;">
+        </div>
+    </div>
+
+
+    <div id="password_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Minerva Password</h2>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form">
+                        <div class="form-group">
+                            <input type=password class="form-control" name="p"></input>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="edit_description_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h2 class="modal-title m-0 h5">Region of Interest</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form">
+                        <div class="form-group text-bold">
+                            <label> Enter a description for the selected region. </label>
+                            <textarea class="form-control" name="d" rows="4"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Make Shareable Link</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="copy_link_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h2 class="modal-title m-0 h5">Region of Interest</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="copy_link" name="copy_content" placeholder="Some path">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default modal_copy_button" type="submit" data-toggle="tooltip" data-placement="bottom">
+                                    Copy
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="current-overlay-0" class="white overlay"></div>
+
+
+    <!-- <link href="bootstrap-glyphicons.min.css" type="text/css" rel="stylesheet"> -->
+    {% include scripts.html %}
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script>
+        {% include exhibits.js %}
+    </script>
+    <script>
+        const siteData = {{ site.data | jsonify }};
+        const figurePath = '{{ page['figure path in _data folder'] }}';
+
+        const getTargetExhibit = (siteData, path) => {
+            let output = { ...siteData };
+            const dirs = path.split('/');
+
+            dirs.forEach(element => output = output[element]);
+            return output;
+        }
+        build_page(getTargetExhibit(siteData, figurePath).Exhibit)
+    </script>
+
+{{ content }}
+
+
+<script>
+        $('#story-board').on('hidden.bs.collapse', function() { 
+            $('#js-story-collapse-indicator')[0].innerHTML = 'MORE <i class="fas fa-chevron-down"></i>'
+        });
+        $('#story-board').on('shown.bs.collapse', function() { 
+            $('#js-story-collapse-indicator')[0].innerHTML = 'LESS <i class="fas fa-chevron-up"></i>'
+        });
+        
+
+        $(document).ready(() => {
+            $('#osd-side-nav').scrollTop(0);
+            topAnchor = $('#story-title').position().top;
+
+            var storyTitleAdded = false;
+            $('#osd-side-nav').scroll(() => {
+                if ($('#story-title').position().top == topAnchor && $('#story-title-sticky')[0]) {
+                    $('#story-title-sticky')[0].parentNode.removeChild($('#story-title-sticky')[0]);
+                    storyTitleAdded = false;
+                }
+                if ($('#story-title').position().top < topAnchor && !storyTitleAdded) {
+                    var clNode = $('#story-title')[0].cloneNode(true);
+                    clNode.setAttribute('id', 'story-title-sticky');
+                    $('#story-title')[0].parentNode.insertBefore(clNode, $('#story-title')[0].nextSibling);
+                    $('#story-title-sticky')
+                        .css('top', topAnchor)
+                        .addClass('border-bottom border-secondary')
+                    storyTitleAdded = true;
+                }
+            });
+        })
+
+        $('.js-toggle-osd-side-nav').click(()=> {
+            $('#osd-side-nav').position().top == 0 
+                ? $('#osd-side-nav').css('bottom', '-90vh').css('top', '')
+                : $('#osd-side-nav').css('top', 0);
+            $('#osd-side-nav').scrollTop(0);
+        })
+
+        $(document).ready(() => {
+            if ($( window ).width() < 576) {
+                $('#viewer-tool').css('right', 0);
+                $('#legend').css('right', 0);
+            }
+
+        })
+        
+    
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 Exhibit:
+  Name: Figure 2
   Images:
     - Name: i0
       Description: '# 26531, pre-treatment'
@@ -59,24 +60,23 @@ Exhibit:
         - HES1
         - DNA
   Stories:
-  - Name: The Story
-    Description: |
-      ## Figure 2
-
-      Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
-
-
+  - Name: Overview
+    Description: 
     Waypoints:
-    - Name: The Waypoint
-      Group: The Group
-      Description: |
-        The waypoint description
-      Overlay:
-        x: 0.6945
-        y: 0.5863
-        width: 0.1166
-        height: 0.1135
+    - Zoom: 0.4803
       Pan:
-        - 0.7121
-        - 0.5896
-      Zoom: 0.7883
+        - 0.4357
+        - 0.4513
+      Group: Tumor Architecture
+      Name: The Waypoint
+      Description: |
+        Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
+
+        Figure from:
+
+        Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200

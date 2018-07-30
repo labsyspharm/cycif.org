@@ -1,4 +1,5 @@
 Exhibit:
+  Name: Figure 7 and 8
   Images:
     - Name: i0
       Description: 'PAN0809'
@@ -59,22 +60,23 @@ Exhibit:
         - Beta-Catenin
         - DNA
   Stories:
-  - Name: The Story
-    Description: |
-      ## Figure 7 and 8
-
-      t-CyCIF of a large resection specimen from a patient with pancreatic cancer. The entire sample comprising 143 stitched 10X fields of view is shown.
+  - Name: Overview
+    Description: 
     Waypoints:
-    - Name: The Waypoint
-      Group: The Group
-      Description: |
-        The waypoint description
-      Overlay:
-        x: 0.6945
-        y: 0.5863
-        width: 0.1166
-        height: 0.1135
+    - Zoom: 0.4803
       Pan:
-        - 0.7121
-        - 0.5896
-      Zoom: 0.7883
+        - 0.9698
+        - 0.4552
+      Group: EMT Markers
+      Description: |
+        t-CyCIF of a large resection specimen from a patient with pancreatic cancer. The entire sample comprising 143 stitched 10X fields of view is shown.
+
+        Figure from:
+
+        Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
+      Name: The Waypoint
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200

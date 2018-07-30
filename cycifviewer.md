@@ -21,7 +21,7 @@ implemented using  <a href="https://openseadragon.github.io/" target="_blank">Op
       The unpublished 13-plex t-CyCIF images of tissue specimens from four patients with BRAF-mutant metastatic melanoma resected before (left) and after (right) treatment with BRAF and MEK inhibitors (dabrafenib/trametinib). Each image is composed of 150-200 image tiles at a nominal resolution of ~0.9 μm.
     </p>
     <div class="text-right">
-      <a href="https://s3.amazonaws.com/pca2018/cycif.org-osd-dev/index.html#s=0#w=0#g=0#v=0.4_0.5_0.5" class="btn btn-outline-primary">View</a>
+      <a href="{{ site.baseurl }}/osd-exhibit" class="btn btn-outline-primary">View</a>
     </div>
   </div>
 </div>
