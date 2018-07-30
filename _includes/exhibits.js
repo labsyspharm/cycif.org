@@ -319,6 +319,9 @@ HashState.prototype = {
     this.startEditing();
     this.pushState();
 
+    // Edit name
+    $('#exhibit-name').text(this.exhibit.Name);
+
     // back and forward
     $('#step-back').click(this, function(e) {
       const THIS = e.data;
@@ -896,33 +899,8 @@ HashState.prototype = {
 
   newExhibit() {
     const exhibit = this.exhibit;
-    const cgs = deepCopy(exhibit.Groups);
-    const readme = document.getElementById('readme');
-    const style = $(readme).css([
-      'font-size', 'line-height'
-    ]);
-    const md = readme.innerHTML;
-    const stories = deepCopy(exhibit.Stories);
-    if (stories[0].Name != 'Overview') {
-      stories.unshift({
-        Description: '',
-        Name: 'Overview',
-        Waypoints: [{
-          Zoom: 0.4,
-          Pan: [0.5, 0.5],
-          Group: cgs[0].Name,
-          Description: md,
-          Style: style,
-          Name: 'Readme',
-          Overlay: {
-            x: -100,
-            y: -100,
-            width: 200,
-            height: 200,
-          },
-        }]
-      });
-    }
+    const cgs = deepCopy(exhibit.Groups || []);
+    const stories = deepCopy(exhibit.Stories || []);
     this.design = {
       chans: deepCopy(exhibit.Channels || []),
       layout: deepCopy(exhibit.Layout || {}),
