@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US " }}" class="h-100">
+<html lang="{{ site.lang | default: 'en-US' }}" class="h-100">
 
 <head>
   <meta charset='utf-8'>
@@ -72,7 +72,7 @@
                         <div id="channel-groups" class="nav flex nav-pills"></div>
                     </div>
                     <div class="shadow px-3 py-1   bg-black d-block d-sm-none">
-                        <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav"><i class="fas fa-chevron-down"></i> HIDE STORY</i></a>
+                        <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav"><i class="fas fa-chevron-down"></i> HIDE STORY</a>
                     </div>
 
                 <div class="exhibit-content">
@@ -116,7 +116,6 @@
                             </ul>
                         </li>
                     </ul>
-                    <div class="tab-content collapse show" id="story-content"></div>
                 </div>
             </div>
         </div>
@@ -229,7 +228,7 @@
 
                     <form class="form">
                         <div class="form-group">
-                            <input type=password class="form-control" name="p"></input>
+                            <input type=password class="form-control" name="p">
                         </div>
                         <button type="submit" class="btn btn-primary">Enter</button>
                     </form>
@@ -353,8 +352,6 @@
             }
 
         })
-        
-    
     </script>
 </body>
 
