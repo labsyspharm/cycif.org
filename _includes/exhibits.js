@@ -1274,9 +1274,9 @@ HashState.prototype = {
 
   addGroups() {
     $('#channel-groups').empty();
-    this.cgs.forEach(this.addGroup2, this);
+    this.cgs.forEach(this.addGroup, this);
   },
-  addGroup2(group, g) {
+  addGroup(group, g) {
     var aEl = document.createElement('a');
     aEl = Object.assign(aEl, {
       className: this.g === g ? 'nav-link active' : 'nav-link',
@@ -1294,32 +1294,6 @@ HashState.prototype = {
 
     // Update Channel Group
     $(aEl).click(this, function(e) {
-      THIS = e.data;
-      THIS.g = g;
-      THIS.pushState();
-    });
-  },
-
-  addGroup(group, g) {
-    var li = document.createElement('li');
-    className = 'nav-item channel-picker';
-    className += this.g === g? ' active': '';
-    li.className = className;
-
-    var a = document.createElement('a');
-    a.innerText = group.Name;
-    a.className = 'nav-link';
-    a.href = 'javascript:;';
-    a.title = group.Path;
-    a.id = group.Path;
-
-    // Append everything
-    var ul = document.getElementById('channel-groups');
-    li.appendChild(a);
-    ul.appendChild(li);
-
-    // Update Channel Group
-    $(a).click(this, function(e) {
       THIS = e.data;
       THIS.g = g;
       THIS.pushState();

@@ -1,5 +1,6 @@
 ---
-layout: osd-exhibit2
-figure path in _data folder: config-lin-elife-2018/figure-11
+title: Figure 11 and 12
+layout: osd-exhibit
+paper: config-lin-elife-2018
+figure: figure-11
 ---
-{{ site.data.config-lin-elife-2018.figure-11.Exhibit.Name }}
