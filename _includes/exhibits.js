@@ -1414,8 +1414,7 @@ HashState.prototype = {
 
     // Remove vertical bar
     if (story.Waypoints.length < 2 || this.editing) {
-      const vertical_bar = sid_story.getElementsByClassName('vertical-bar')[0];
-      vertical_bar.remove();
+      $(sid_story).find('.if-many-waypoint').remove();
     }
 
     // Add configured waypoints
