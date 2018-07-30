@@ -336,6 +336,20 @@ HashState.prototype = {
 
     $('.modal_copy_button').each(newCopyButton);
 
+    $('#zoom-in').tooltip({
+      title: 'Zoom in'
+    });
+    $('#zoom-out').tooltip({
+      title: 'Zoom out'
+    });
+    $('#zoom-home').tooltip({
+      title: 'Reset Zoom'
+    });
+    $('#draw-switch').tooltip({
+      title: 'Share Link'
+    });
+
+
     $('#help').click(this, function(e) {
       const THIS = e.data;
       THIS.s = 0;
