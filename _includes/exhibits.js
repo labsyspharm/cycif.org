@@ -322,18 +322,6 @@ HashState.prototype = {
     // Edit name
     $('#exhibit-name').text(this.exhibit.Name);
 
-    // back and forward
-    $('#step-back').click(this, function(e) {
-      const THIS = e.data;
-      THIS.w -= 1;
-      THIS.pushState();
-    });
-    $('#step-next').click(this, function(e) {
-      const THIS = e.data;
-      THIS.w += 1;
-      THIS.pushState();
-    });
-
     $('.modal_copy_button').each(newCopyButton);
 
     $('#zoom-in').tooltip({
@@ -1028,6 +1016,18 @@ HashState.prototype = {
       this.addGroups();
       this.newStories();
 
+      // back and forward
+      $('.step-back').click(this, function(e) {
+        const THIS = e.data;
+        THIS.w -= 1;
+        THIS.pushState();
+      });
+      $('.step-next').click(this, function(e) {
+        const THIS = e.data;
+        THIS.w += 1;
+        THIS.pushState();
+      });
+
       // Waypoint-specific Copy Buttons
       const STATE = this;
       $('.edit_copy_button').each(function() {
@@ -1379,7 +1379,6 @@ HashState.prototype = {
 
     // Copy the story
     var sid_story = container.s0_story.cloneNode(true);
-    var sid_row = sid_story.children[0];
 
     sid_story.setAttribute('aria-labeledby', sid_index.id);
     sid_story.id = sid_index.getAttribute('aria-controls');
@@ -1404,18 +1403,18 @@ HashState.prototype = {
     const editing = this.editing;
 
     // Remove default waypoint index
-    const waypoint_indices = sid_row.getElementsByClassName('waypoint-indices')[0];
+    const waypoint_indices = sid_story.getElementsByClassName('waypoint-indices')[0];
     const w0_index = waypoint_indices.children[0];
     $(waypoint_indices).empty();
 
     // Remove default waypoint
-    const waypoint_elems = sid_row.getElementsByClassName('waypoint-content')[0];
+    const waypoint_elems = sid_story.getElementsByClassName('waypoint-content')[0];
     const w0_waypoint = waypoint_elems.children[editing];
     $(waypoint_elems).empty();
 
     // Remove vertical bar
     if (story.Waypoints.length < 2 || this.editing) {
-      const vertical_bar = sid_row.getElementsByClassName('vertical-bar')[0];
+      const vertical_bar = sid_story.getElementsByClassName('vertical-bar')[0];
       vertical_bar.remove();
     }
 

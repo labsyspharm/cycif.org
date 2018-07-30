@@ -32,13 +32,13 @@
                 </div>
                 <div id="viewer-tool" class="position-absolute bg-trans" style="right:26%; top: 40vh;">
                     <div class="btn-group-vertical">
-                        <a class="btn text-light" id="zoom-home" href="#zoom-home" title="Zoom home">
+                        <a class="btn text-light" id="zoom-home" href="#zoom-home">
                             <i class="fas fa-home"></i>
                         </a>
-                        <a class="btn text-light" id="zoom-out" href="#zoom-out" title="Zoom out">
+                        <a class="btn text-light" id="zoom-out" href="#zoom-out">
                             <i class="fas fa-search-minus"></i>
                         </a>
-                        <a class="btn text-light" id="zoom-in" href="#zoom-in" title="Zoom in">
+                        <a class="btn text-light" id="zoom-in" href="#zoom-in">
                             <i class="fas fa-search-plus"></i>
                         </a>
                         <span id="draw-switch" class="nav-item draw-switch">
@@ -133,12 +133,22 @@
         </ul>
         <div class="tab-pane fade" id="proto-story" role="tabpanel">
             <div class="row no-gutters">
-                <div class="col-12">
+                <div class="col-11">
                     <div class="vertical-bar"></div>
                     <div class="waypoint-indices list-group nav nav-pills" role="tablist">
                         <a class="nav-link" role="tab" data-toggle="list"></a>
                     </div>
                 </div>
+                <div class="col-1">
+                    <a class="btn text-light step-back" href="javascript:;">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+                    <a class="btn text-light step-next" href="javascript:;">
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row no-gutters">
                 <div class="col border-top pt-4">
                     <div class="waypoint-content tab-content">
                         <div class="tab-pane fade" role="tabpanel"></div>
