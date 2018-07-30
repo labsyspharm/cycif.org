@@ -20,10 +20,24 @@
         <!-- {% if page.url == '/'%} banner-tall {% endif %}"> -->
         {% unless page.url contains 'osd' %}
         <div class="container my-4">
-          <h1 class="display-4 my-4">{{ page.title | default: site.github.repository_name }}</h1>
-          {% if page.url == '/'%}
-          <p class="lead">{{ site.description | default: site.github.project_tagline }}</p>
-          {% endif %}
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h1 class="display-4 my-4">{{ page.title | default: site.github.repository_name }}</h1>
+              {% if page.url == '/'%}
+              <p class="lead">{{ site.description | default: site.github.project_tagline }}</p>
+              {% endif %}
+            </div>
+            <div class="">
+              <div class="rounded-circle" style="background: url(assets/img/explore_button.jpg) center; background-size: cover; width: 100px;height: 100px;">
+                <a href="" class="btn text-light align-items-center d-flex rounded-circle" style="width: 100px; height: 100px; background-color: rgba(0, 0, 0, 0.2)">
+                  <span class="h4 m-0">
+                      Explore<br/>
+                      CyCIF
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         {% endunless %}
       </div>
