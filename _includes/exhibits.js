@@ -1336,7 +1336,7 @@ HashState.prototype = {
     const color = this.indexColor(c, '#FFF');
 
     var label = document.createElement('span');
-    label.className = 'legend-label';
+    label.className = 'legend-label pl-3';
     label.innerText = channel;
 
     var badge = document.createElement('span');
@@ -1347,8 +1347,8 @@ HashState.prototype = {
     // Append everything
     var ul = document.getElementById('channel-legend');
     var li = document.createElement('li');
-    li.appendChild(label);
     li.appendChild(badge);
+    li.appendChild(label);
     ul.appendChild(li);
   },
 
