@@ -903,10 +903,10 @@ HashState.prototype = {
     ]);
     const md = readme.innerHTML;
     const stories = deepCopy(exhibit.Stories);
-    if (stories[0].Name != 'Introduction') {
+    if (stories[0].Name != 'Overview') {
       stories.unshift({
         Description: '',
-        Name: 'Introduction',
+        Name: 'Overview',
         Waypoints: [{
           Zoom: 0.4,
           Pan: [0.5, 0.5],
@@ -1274,7 +1274,30 @@ HashState.prototype = {
 
   addGroups() {
     $('#channel-groups').empty();
-    this.cgs.forEach(this.addGroup, this);
+    this.cgs.forEach(this.addGroup2, this);
+  },
+  addGroup2(group, g) {
+    var aEl = document.createElement('a');
+    aEl = Object.assign(aEl, {
+      className: this.g === g ? 'nav-link active' : 'nav-link',
+      href: 'javascript:;',
+      innerText: group.Name,
+      title: group.Path,
+      id: group.Path,
+    });
+    var ariaSelected = this.g === g ? true : false;
+    aEl.setAttribute('aria-selected', ariaSelected);
+    aEl.setAttribute('data-toggle', 'pill');
+
+    // Append everything
+    document.getElementById('channel-groups').appendChild(aEl);
+
+    // Update Channel Group
+    $(aEl).click(this, function(e) {
+      THIS = e.data;
+      THIS.g = g;
+      THIS.pushState();
+    });
   },
 
   addGroup(group, g) {
