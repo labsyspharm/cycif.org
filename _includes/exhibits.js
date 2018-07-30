@@ -680,10 +680,6 @@ HashState.prototype = {
     const count = this.stories.length;
     this.state.s = modulo(s, count);
 
-    // Only needed to prevent JQuery error
-    var sid_index = $('#-s-' + this.s);
-    $(sid_index).addClass('active');
-
     // Update waypoint
     this.w = this.w;
     if (this.s != s || !this.editing) {
