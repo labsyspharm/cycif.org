@@ -2,8 +2,11 @@
 title: Publications
 ---
 
-### Publications
+## Featured Publications
 
+{% include featured-paper.html %}
+
+## Publications
 
 1. Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly 
    multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF 

@@ -42,7 +42,7 @@ body {
   
   .legend-label {
       display: inline-block;
-      width: 4.5em;
+      min-width: 4.5em;
   }
   
   .legend-color {
@@ -192,24 +192,30 @@ body {
   .waypoint-content img {
       max-width: 100%;
   }
-  /* .waypoint-content h1 {
-      font-size: 1.2rem;
+  .waypoint-content h1 {
+      font-size: 1.25rem;
+      margin: 0 0 1rem 0;
   }
   .waypoint-content h2 {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
+      margin: 0 0 1rem 0;
   }
   .waypoint-content h3 {
-      font-size: 1.0rem;
+      font-size: 1.1rem;
+      margin: 0 0 1rem 0;
   }
   .waypoint-content h4 {
-      font-size: 0.9rem;
+      font-size: 1.1rem;
+      margin: 0 0 1rem 0;
   }
   .waypoint-content h5 {
-      font-size: .8rem;
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
   }
   .waypoint-content h6 {
-      font-size: .8rem;
-  } */
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+  }
   
   .waypoint-content .edit_text {
       background-color: black;
@@ -262,6 +268,5 @@ body {
 
   #story-title-sticky {
     position: fixed;
-    margin-right: 2.4rem;
     z-index: 999;
 }

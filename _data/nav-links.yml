@@ -1,11 +1,9 @@
-- label: Home
-  url: /
-- label: Method
+- label: Methods and Reagents
   url: /method.html
-- label: Antibody
-  url: /antibody.html
-- label: Featured Paper
-  url: /featured-paper/lin-elife-2018/
+- label: Antibodies
+  url: /antibodies.html
+# - label: Featured Paper
+#   url: /featured-paper/lin-elife-2018/
 - label: Publications
   url: /publications.html
 - label: CyCIF Viewer

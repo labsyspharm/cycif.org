@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="{{ '/assets/css/osd-exhibit.css' | relative_url }}">
 
 
-    <div id="content" style="position:fixed; top: 0;left: 0; width: 100%;">
+    <div id="content" class="position-fixed w-100" style="top: 0;left: 0;">
         <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -46,15 +46,11 @@
                 </div>
             </div>
             <div id="osd-side-nav" class="col-sm-3 pt-5 mt-2 bg-dark px-2" style="height: 100vh; overflow-y: scroll; position: absolute; right: 0">
-                <!-- <div class="shadow px-3 py-1   bg-black d-block d-sm-none osition-absolute">
-                    <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav osition-absolute">SHOW TEXT</a>
-                </div> -->
                 <button class="position-absolute js-toggle-osd-side-nav btn btn-link btn-block py-2 bg-black" style="top: 0.25rem; left: 0;"><i class="fas fa-chevron-up"></i> SHOW STORY</button>
                     <div class="shadow px-3 mb-2   bg-black">
                         <div class="">
                             <a id="story-title" href="#story-board" class="py-3 text-white d-block bg-black clearfix"  data-toggle="collapse" style="text-decoration: none;">
                                 <span class="h5">
-                                    <!-- t-CyCIF for tissue secions from patients with metastatic melanoma -->
                                     {{ content }}
                                 </span>
                                 <span id="js-story-collapse-indicator" class="d-block my-2 text-primary">
@@ -235,7 +231,7 @@
             </div>
         </div>
 
-        <div id="readme" style="font-size: 9pt; line-height: 11pt;">
+        <div id="readme">
         </div>
     </div>
 
@@ -365,6 +361,7 @@
                     $('#story-title')[0].parentNode.insertBefore(clNode, $('#story-title')[0].nextSibling);
                     $('#story-title-sticky')
                         .css('top', topAnchor)
+                        .css('width', $('#story-title').width())
                         .addClass('border-bottom border-secondary')
                     storyTitleAdded = true;
                 }
