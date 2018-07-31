@@ -267,6 +267,7 @@ const newCopyButton = function() {
   });
 };
 
+<<<<<<< HEAD
 const changeSprings = function(viewer, seconds, stiffness) {
   const springs = [
     'centerSpringX', 'centerSpringY', 'zoomSpring'
@@ -279,9 +280,10 @@ const changeSprings = function(viewer, seconds, stiffness) {
   });
 };
 
-const HashState = function(viewer, tileSources, exhibit) {
+const HashState = function(viewer, tileSources, exhibit, options) {
 
   this.resetCount = 0;
+  this.embedded = options.embedded || false;
   this.showdown = new showdown.Converter();
   this.tileSources = tileSources;
   this.exhibit = exhibit;
@@ -963,7 +965,7 @@ HashState.prototype = {
       return;
     }
 
-    if (this.hashKeys === hashKeys) {
+    if (!this.embedded && this.hashKeys === hashKeys) {
       history.pushState(design, title, url);
     }
     else {
@@ -1789,7 +1791,7 @@ const arrange_images = function(viewer, tileSources, state, init) {
   }
 };
 
-const build_page = function(exhibit) {
+const build_page = function(exhibit, options) {
 
   // Initialize openseadragon
   const viewer = OpenSeadragon({
@@ -1801,7 +1803,7 @@ const build_page = function(exhibit) {
     homeButton: 'zoom-home',
   });
   const tileSources = {};
-  const state = new HashState(viewer, tileSources, exhibit);
+  const state = new HashState(viewer, tileSources, exhibit, options);
   const init = state.init.bind(state);
   arrange_images(viewer, tileSources, state, init);
 };
