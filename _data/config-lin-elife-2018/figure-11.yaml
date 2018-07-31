@@ -90,10 +90,10 @@ Exhibit:
         y: 0.0523
         width: 1.4188
         height: 0.8313
-      Zoom: 0.5224
+      Zoom: 0.5813
       Pan:
-        - 1.0749
-        - 0.3873
+        - 0.8081
+        - 0.3563
     - Name: Zoom level 2 (hundreds micrometers)
       Description: |
         Zoom level 2 (several hundred micrometers): Zoomed into a single lobe of this GBM sample, the clear territories can be defined by either `EGFR` high and `p-ERK` high.
@@ -103,10 +103,10 @@ Exhibit:
         y: 0.2901
         width: 0.342
         height: 0.2668
-      Zoom: 1.8719
+      Zoom: 2.1666
       Pan:
-        - 1.1053
-        - 0.419
+        - 1.0425
+        - 0.4112
     - Name: Zoom level 3 (Single-cell)
       Description: |
         Zoom level 3 (Single-cell): When zoomed into single-cell resolution, though now you can still appreciate the heterogeneity while in the `EGFR` (Red) high region there are still few sparse `p-ERK` high cells (Green).
@@ -118,8 +118,8 @@ Exhibit:
         height: 0.0535
       Zoom: 9.2749
       Pan:
-        - 1.1099
-        - 0.413
+        - 1.098
+        - 0.4099
     - Name: Zoom level 3 (Cont.)
       Description: |
         Zoom level 3 (Cont.): The heterogeneity is less obvious in other dimensions, as shown here with PCNA staining (Gree). Such demonstrated that the proliferative status can be governed by different upstream signalling pathways or their combinations.
@@ -131,7 +131,7 @@ Exhibit:
         height: 0.0535
       Zoom: 9.2749
       Pan:
-        - 1.1099
-        - 0.413
+        - 1.098
+        - 0.4099
       
 

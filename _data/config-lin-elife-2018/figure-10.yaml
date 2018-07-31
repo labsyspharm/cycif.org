@@ -154,7 +154,7 @@ Exhibit:
         height: 0.1357
       Zoom: 3.4827
       Pan:
-        - 0.6351
+        - 0.5944
         - 0.7241
     - Name: Normal Kidney (Cont.)
       Description: |
@@ -167,7 +167,7 @@ Exhibit:
         height: 0.0255
       Zoom: 7.8469
       Pan:
-        - 0.6096
+        - 0.5952
         - 0.7268
     - Name: Lung Tumors (I)
       Description: |
@@ -180,19 +180,18 @@ Exhibit:
         height: 0.1316
       Zoom: 2.628
       Pan:
-        - 0.7168
+        - 0.6809
         - 0.5156
     - Name: Lung Tumors (II)
       Description: |
         TMA snapshot 2 (Lung tumors, Cont.): Squamous cell carcinoma (right) expressed high level of `Keratin`, while the Adenocarcinoma on the left only show `E-Cadherin` & `Vimentin` stains.
       Group: Cycle 6
       Overlay:
-        x: 0.5283
-        y: 0.4702
-        width: 0.2857
-        height: 0.1256
+        x: 0.5307
+        y: 0.4674
+        width: 0.2858
+        height: 0.1316
       Zoom: 2.628
       Pan:
-        - 0.7168
+        - 0.6809
         - 0.5156
-      

@@ -93,10 +93,10 @@ Exhibit:
         y: 0.1873
         width: 0.1306
         height: 0.1271
-      Zoom: 2.5735
+      Zoom: 4.447
       Pan:
-        - 1.2101
-        - 0.2492
+        - 1.1365
+        - 0.2423
     - Name: PDAC Region
       Description: |
         PDAC are inflated with immune cells, labeled with `CD45` and `CD4`. Notably, this region also expressed highest `PD-L1`, eliciting a possible immune evasion mechanism. Corresponsive figures and data for Figure 8B-D.
@@ -106,10 +106,10 @@ Exhibit:
         y: 0.773
         width: 0.082
         height: 0.0638
-      Zoom: 6.4037
+      Zoom: 9.2213
       Pan:
-        - 1.1421
-        - 0.8019
+        - 1.1392
+        - 0.803
     - Name: Normal Pancreas
       Description: |
         A co-resected normal pancreas show nice organization with EMT markers, `E-Cadherin` and `Vimentin` (red). Some representative images and data collected are in Figure 8B-D.
@@ -119,7 +119,7 @@ Exhibit:
         y: 0.7612
         width: 0.0642
         height: 0.0435
-      Zoom: 7.6842
+      Zoom: 13.4647
       Pan:
-        - 0.3743
-        - 0.7828
+        - 0.3577
+        - 0.7796
