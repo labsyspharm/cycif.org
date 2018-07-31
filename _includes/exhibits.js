@@ -21,7 +21,12 @@ const encode = function(txt) {
 };
 
 const decode = function(txt) {
-  return decodeURIComponent(atob(txt));
+  try {
+    return decodeURIComponent(atob(txt));
+  }
+  catch (e) {
+    return '';
+  }
 };
 
 const arrayEqual = function(a, b) {
