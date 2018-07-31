@@ -130,6 +130,10 @@ Exhibit:
       Group: Cycle 6
       Description: |
         Eight-cycle t-CyCIF of a tissue microarray (TMA) including 13 normal tissues and corresponding tumor types. The TMA includes normal tissue types, and corresponding high and low grade tumors, for a total of 39 specimens.
+
+        Figure from:
+
+        Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
       Name: The Waypoint
       Overlay:
         x: -100
