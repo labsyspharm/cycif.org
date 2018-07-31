@@ -339,7 +339,6 @@ HashState.prototype = {
       title: 'Share Link'
     });
 
-
     $('#help').click(this, function(e) {
       const THIS = e.data;
       THIS.s = 0;
@@ -506,6 +505,9 @@ HashState.prototype = {
       ];
       THIS.pushState();
     }, this);
+
+    // Display viewer
+    displayOrNot(this.viewer.element, true);
   },
 
   /*
@@ -1009,9 +1011,7 @@ HashState.prototype = {
     // Redraw design
     if(redraw) {
       // Update OpenSeadragon
-      const viewport = this.viewer.viewport;
-      viewport.panTo(this.viewport.pan);
-      viewport.zoomTo(this.viewport.scale);
+      this.activateViewport();
       newMarkers(this.tileSources, this.group);
       // Redraw HTML Menus
       this.addChannelLegends();
@@ -1288,6 +1288,12 @@ HashState.prototype = {
       THIS.g = g;
       THIS.pushState();
     });
+  },
+
+  activateViewport: function() {
+    const viewport = this.viewer.viewport;
+    viewport.panTo(this.viewport.pan);
+    viewport.zoomTo(this.viewport.scale);
   },
 
   addChannelLegends: function() {
@@ -1736,6 +1742,7 @@ const arrange_images = function(viewer, tileSources, state, init) {
 
               // Initialize hash state
               nLoaded += 1;
+              state.activateViewport();
               if (nLoaded == nTotal) {
                 init();
               }
