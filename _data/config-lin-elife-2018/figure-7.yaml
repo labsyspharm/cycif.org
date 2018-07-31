@@ -63,15 +63,15 @@ Exhibit:
   - Name: Overview
     Description: 
     Waypoints:
-    - Zoom: 0.4803
+    - Zoom: 0.5761
       Pan:
-        - 0.9698
-        - 0.4552
+        - 0.7084
+        - 0.4447
       Group: EMT Markers
       Description: |
         t-CyCIF of a large resection specimen from a patient with pancreatic cancer. The entire sample comprising 143 stitched 10X fields of view is shown.
 
-        Figure from:
+        #### Figure from:
 
         Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
       Name: The Waypoint

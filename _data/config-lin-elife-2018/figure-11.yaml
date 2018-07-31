@@ -67,7 +67,7 @@ Exhibit:
       Description: |
         Molecular heterogeneity in a single GBM tumor. (A) Representative low magnification image of a GBM specimen generated from 221 stitched 10X frames; the sample was subjected to 10 rounds of t-CyCIF.
 
-        ###### Figure from:
+        #### Figure from:
 
         Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
       Overlay:
@@ -76,9 +76,9 @@ Exhibit:
         width: 200
         height: 200
       Pan:
-        - 1.0432
-        - 0.4433
-      Zoom: 0.4803
+        - 0.7551
+        - 0.4424
+      Zoom: 0.5761
   - Name: ROIs
     Waypoints:
     - Name: Zoom level 1 (millimeters)
@@ -92,8 +92,8 @@ Exhibit:
         height: 0.8313
       Zoom: 0.5813
       Pan:
-        - 0.8081
-        - 0.3563
+        - 0.8187
+        - 0.4149
     - Name: Zoom level 2 (hundreds micrometers)
       Description: |
         Zoom level 2 (several hundred micrometers): Zoomed into a single lobe of this GBM sample, the clear territories can be defined by either `EGFR` high and `p-ERK` high.
