@@ -138,13 +138,7 @@ const sort_keys = function(a, b){
 };
 
 const ctrlC = function(str) {
-  const listener = function(e) {
-    e.clipboardData.setData('text/plain', str);
-    e.preventDefault();
-  };
-  document.addEventListener('copy', listener);
-  document.execCommand('copy');
-  document.removeEventListener('copy', listener);
+  Clipboard.copy(str);
 };
 
 const newMarkers = function(tileSources, group) {
