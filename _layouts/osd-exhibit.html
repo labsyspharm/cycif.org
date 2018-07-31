@@ -24,12 +24,12 @@
     <div id="content" class="position-fixed w-100" style="top: 0;left: 0;">
         <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col px-0">
                     <div id="openseadragon1" class="openseadragon"></div>
-                    <div id="legend" class="position-absolute text-white p-2 bg-trans" style="top: 4rem; right:26%">
+                    <div id="legend" class="position-absolute text-white p-2 bg-trans" style="top: 4rem; right:1.5%">
                         <ul id="channel-legend" class="list-unstyled m-0"></ul>
                     </div>
-                    <div id="viewer-tool" class="position-absolute bg-trans" style="right:26%; top: 40vh;">
+                    <div id="viewer-tool" class="position-absolute bg-trans" style="right:1.5%; top: 40vh;">
                         <div class="btn-group-vertical">
                             <a class="btn text-light" id="zoom-home" href="#zoom-home">
                                 <i class="fas fa-home"></i>
@@ -48,8 +48,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-3 d-none d-sm-block">.</div>
                 <div id="osd-side-nav" class="col-sm-3 pt-5 mt-2 bg-dark px-2" style="height: 100vh; overflow-y: auto; position: absolute; right: 0">
-                    <button class="position-absolute js-toggle-osd-side-nav btn btn-link btn-block py-2 bg-black" style="top: 0.25rem; left: 0;"><i class="fas fa-chevron-up"></i> SHOW STORY</button>
+                    <div class="position-absolute px-2 py-1 w-100 bg-l" style="top: 0; left: 0;">
+                        <a href="javascript:;" class="rounded-0 js-toggle-osd-side-nav btn btn-link btn-block py-2 bg-black" ><i class="fas fa-chevron-up"></i> SHOW STORY</a>
+                    </div>
+                    
                     <div class="shadow px-3 mb-2   bg-black">
                         <div class="">
                             <a id="story-title" href="#story-board" class="py-3 text-white d-block bg-black clearfix" data-toggle="collapse" style="text-decoration: none;">
@@ -346,14 +350,6 @@
                 ? $('#osd-side-nav').css('bottom', '-90vh').css('top', '')
                 : $('#osd-side-nav').css('top', 0);
             $('#osd-side-nav').scrollTop(0);
-        })
-
-        $(document).ready(function() {
-            if ($( window ).width() < 576) {
-                $('#viewer-tool').css('right', 0);
-                $('#legend').css('right', 0);
-            }
-
         })
     </script>
 </body>
