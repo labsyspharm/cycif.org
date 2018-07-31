@@ -1,0 +1,82 @@
+Exhibit:
+  Name: Figure 2
+  Images:
+    - Name: i0
+      Description: '# 26531, pre-treatment'
+      Path: https://s3.amazonaws.com/pca2018/26531PRE
+      Width: 13888
+      Height: 15936
+      MaxLevel: 4
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: S100-CD45RO-SMA
+      Name: Tumor Architecture
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - S100
+        - CD45
+        - SMA
+        - DNA
+    - Path: CD8-FOXP3-CD3
+      Name: T-Cells
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - CD8
+        - FOXP3
+        - CD3
+        - DNA
+    - Path: PD1-CD3-PDL1
+      Name: PD-1/PD-L1
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - PD-1
+        - CD3
+        - PD-L1
+        - DNA
+    - Path: pS6-pRB-HES1
+      Name: Signaling
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - pS6
+        - pRB
+        - HES1
+        - DNA
+  Stories:
+  - Name: Overview
+    Description: 
+    Waypoints:
+    - Zoom: 0.4803
+      Pan:
+        - 0.4357
+        - 0.4513
+      Group: Tumor Architecture
+      Name: The Waypoint
+      Description: |
+        Representative t-CyCIF staining of a large metastatic melanoma lesion and adjacent benign tissue stitched together using the Ashlar software from 165 successive CyteFinder fields using a 20X/0.8NA objective.
+
+        #### Figure from:
+
+        Lin JR, Izar B, Wang S, Yapp C, Mei S, Shah P, Santagata S, Sorger PK. Highly multiplexed immunofluorescence imaging of human tissues and tumors using t-CyCIF and conventional optical microscopes. eLife. 2018 Jul 11;7:e31657. PMID: 29993362
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200

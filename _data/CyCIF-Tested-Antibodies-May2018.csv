@@ -1,0 +1,301 @@
+﻿Antibody Name,Target Protein,Performance  ,Vendor,Catalog no. ,Clone,Fluorophore,Research Resource Identifier,FILTER SET,Note,Link
+Bax-488,Bax,***,BioLegend,633603,2D2,Alexa Fluor 488,AB_2562171,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-bax-antibody-8595
+CD11b-488,CD11b,***,Abcam,AB204271,EPR1344,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/cd11b-antibody-epr1344-alexa-fluor-488-ab204271.html
+CD4-488,CD4,***,R&D Systems,FAB8165G,Polyclonal,Alexa Fluor 488,,488/FITC,,https://www.rndsystems.com/products/human-cd4-alexa-fluor-488-conjugated-antibody_fab8165g
+CD8a-488,CD8,***,eBioscience,53-0008-80,AMC908,Alexa Fluor 488,AB_2574412,488/FITC,,https://www.thermofisher.com/antibody/product/CD8a-Antibody-clone-AMC908-Monoclonal/53-0008-80
+cJUN-488,cJUN,***,Abcam,AB193780,E254,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/c-jun-antibody-e254-alexa-fluor-488-ab193780.html
+CK18-488,Cytokeratin 18,***,eBioscience,53-9815-80,LDK18,Alexa Fluor 488,AB_2574480,488/FITC,,https://www.thermofisher.com/antibody/product/Cytokeratin-18-Antibody-clone-LDK18-Monoclonal/53-9815-80
+CK8-FITC,Cytokeratin 8,***,eBioscience,11-9938-80,LP3K,FITC,AB_10548518,488/FITC,,https://www.thermofisher.com/antibody/product/Cytokeratin-8-Antibody-clone-LP3K-Monoclonal/11-9938-80
+CycD1-488,CycD1,***,Abcam,AB190194,EPR2241,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/cyclin-d1-antibody-epr2241-alexa-fluor-488-ab190194.html
+Ecad-488,E-Cadherin,***,CST,3199,24E10,Alexa Fluor 488,AB_10691457,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/e-cadherin-24e10-rabbit-mab-alexa-fluor-488-conjugate/3199?N=4294956287&Ntt=3199&fromPage=plp&_requestid=2089116
+EGFR-488,EGFR,***,CST,5616,D38B1,Alexa Fluor 488,AB_10691853,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/egf-receptor-d38b1-xp-rabbit-mab-alexa-fluor-488-conjugate/5616
+EpCAM-488,EpCAM,***,CST,5198,VU1D9,Alexa Fluor 488,AB_10692105,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/epcam-vu1d9-mouse-mab-alexa-fluor-488-conjugate/5198
+HES1-488,HES1,***,Abcam,AB196328,EPR4226,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/hes1-antibody-epr4226-alexa-fluor-488-ab196328.html
+Ki67-488,Ki67,***,CST,11882,D3B5,Alexa Fluor 488,AB_2687824,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/ki-67-d3b5-rabbit-mab-alexa-fluor-488-conjugate/11882
+LaminA/C-488,Lamin A/C,***,CST,8617,4C11,Alexa Fluor 488,AB_10997529,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/lamin-a-c-4c11-mouse-mab-alexa-fluor-488-conjugate/8617?_=1521135220314&Ntt=8617&tahead=true
+LaminB1-488,Lamin B1,***,Abcam,AB194106,EPR8985(B),Alexa Fluor 488,,488/FITC,,http://www.abcam.com/lamin-b1-antibody-epr8985b-nuclear-envelope-marker-alexa-fluor-488-ab194106.html
+mCD3E-FITC,ms_CD3E,***,BioLegend,100306,145-2C11,FITC,AB_312671,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-mouse-cd3epsilon-antibody-23
+mCD4-488,ms_CD4,***,BioLegend,100532,RM4-5,Alexa Fluor 488,AB_493373,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-mouse-cd4-antibody-2697
+MET-488,c-MET,***,CST,8494,D1C2,Alexa Fluor 488,AB_10999405,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/met-d1c2-xp-rabbit-mab-alexa-fluor-488-conjugate/8494
+mF4/80-488,ms_F4/80,***,BioLegend,123120,BM8,Alexa Fluor 488,AB_893479,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-mouse-f4-80-antibody-4073
+MITF-488,MITF,***,Abcam,AB201675,D5,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/mitf-antibody-d5-alexa-fluor-488-ab201675.html
+Ncad-488,N-Cadherin,***,BioLegend,350809,8C11,Alexa Fluor 488,AB_11218797,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-cd325-n-cadherin-antibody-7911
+p53-488,p53,***,CST,5429,7F5,Alexa Fluor 488,AB_10695458,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/p53-7f5-rabbit-mab-alexa-fluor-488-conjugate/5429
+PCNA-488,PCNA,***,CST,8580,PC10,Alexa Fluor 488,AB_11178664,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/pcna-pc10-mouse-mab-alexa-fluor-488-conjugate/8580
+PD1-488,PD1,***,CST,15131,D3W4U,Alexa Fluor 488,,488/FITC,Discontinued,https://www.cellsignal.com/product/productDetail.jsp?productId=15131
+PDI-488,PDI,***,CST,5051,C81H6,Alexa Fluor 488,AB_10950503,488/FITC,,https://www.cellsignal.com/product/productDetail.jsp?productId=5051
+pERK-488,pERK(T202/Y204),***,CST,4344,D13.14.4E,Alexa Fluor 488,AB_10695876,488/FITC,Discontinued,https://www.cellsignal.com/product/productDetail.jsp?productId=4344
+pNDG1-488,pNDG1(T346),***,CST,6992,D98G11,Alexa Fluor 488,AB_10827648,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/phospho-ndrg1-thr346-d98g11-xp-rabbit-mab-alexa-fluor-488-conjugate/6992
+POL2A-488,POL2A,***,Novus Biologicals,NB200-598AF488,4H8,Alexa Fluor 488,AB_2167465,488/FITC,,https://www.novusbio.com/products/rna-polymerase-ii-polr2a-antibody-4h8_nb200-598af488
+pS6(S240/244)-488,pS6(240/244),***,CST,5018,D68F8,Alexa Fluor 488,AB_10695861,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/phospho-s6-ribosomal-protein-ser240-244-d68f8-xp-rabbit-mab-alexa-fluor-488-conjugate/5018
+S100a-488,S100alpha,***,Abcam,AB207367,EPR5251,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/s100-alpha-antibody-epr5251-alexa-fluor-488-ab207367.html
+SQSTM1-488,SQSTM1/p62,***,CST,8833,D1D9E3,Alexa Fluor 488,,488/FITC,Discontinued,https://www.cellsignal.com/product/productDetail.jsp?productId=8833
+STAT3-488,STAT3,***,CST,14047,B3Z2G,Alexa Fluor 488,,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/stat3-d3z2g-rabbit-mab-alexa-fluor-488-conjugate/14047
+Survivin-488,Survivin,***,CST,2810,71G4B7,Alexa Fluor 488,AB_10691462,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/survivin-71g4b7-rabbit-mab-alexa-fluor-488-conjugate/2810?_=1521136750066&Ntt=2810&tahead=true
+Catenin-488,β-Catenin,***,CST,2849,L54E2,Alexa Fluor 488,AB_10693296,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/b-catenin-l54e2-mouse-mab-alexa-fluor-488-conjugate/2849
+Actin-555,Actin,***,CST,8046,13E5,Alexa Fluor 555,AB_11179208,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/b-actin-13e5-rabbit-mab-alexa-fluor-555-conjugate/8046
+CD11c-570,CD11c,***,eBioscience,41-9761-80,118/A5,eFluor 570,AB_2573632,555/Cy3,,https://www.thermofisher.com/antibody/product/CD11c-Antibody-clone-118-A5-Monoclonal/41-9761-80
+CD3D-555,CD3D,***,Abcam,AB208514,EP4426,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/cd3d-antibody-ep4426-alexa-fluor-555-ab208514.html
+CD4-570,CD4,***,eBioscience,41-2444-80,N1UG0,eFluor 570,AB_2573601,555/Cy3,,https://www.thermofisher.com/antibody/product/CD4-Antibody-clone-N1UG0-Monoclonal/41-2444-80
+CD45-PE,CD45,***,R&D Systems,FAB1430P-100,2D1,PE,AB_2237898,555/Cy3,,https://www.rndsystems.com/products/human-cd45-pe-conjugated-antibody-2d1_fab1430p
+CK7-555,Cytokeratin 7,***,Abcam,AB209601,EPR17078,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/cytokeratin-7-antibody-epr17078-alexa-fluor-555-ab209601.html
+cMYC-555,cMYC,***,Abcam,AB201780,Y69,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/c-myc-antibody-y69-alexa-fluor-555-ab201780.html
+E2F1-555,E2F1,***,Abcam,AB208078,EPR3818(3),Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/e2f1-antibody-epr38183-alexa-fluor-555-ab208078.html
+Ecad-555,E-Cadherin,***,CST,4295,24E10,Alexa Fluor 555,,555/Cy3,Discontinued,https://www.cellsignal.com/product/productDetail.jsp?productId=4295
+EpCAM-PE,EpCAM,***,BioLegend,324205,9C4,PE,AB_756079,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd326-epcam-antibody-3757
+FOXO1a-555,FOXO1a,***,Abcam,AB207244,EP927Y,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/foxo1a-antibody-ep927y-alexa-fluor-555-ab207244.html
+FOXP3-570,FOXP3,***,eBioscience,41-4777-80,236A/E7,eFluor 570,AB_2573608,555/Cy3,,https://www.thermofisher.com/antibody/product/FOXP3-Antibody-clone-236A-E7-Monoclonal/41-4777-80
+GFAP-570,GFAP,***,eBioscience,41-9892-80,GA5,eFluor 570,AB_2573655 ,555/Cy3,,https://www.thermofisher.com/antibody/product/GFAP-Antibody-clone-GA5-Monoclonal/41-9892-80
+HSP90-PE,HSP90b,***,Abcam,AB115641,Polyclonal,PE,AB_10936222,555/Cy3,,http://www.abcam.com/hsp90-beta-antibody-phycoerythrin-ab115641.html
+KAP1-594,KAP1,***,BioLegend,619304,20A1,Alexa Fluor 594,AB_2563298,555/Cy3,Hard to inactivate,https://www.biolegend.com/en-us/products/alexa-fluor-594-anti-tif1beta-kap-1--trim28-antibody-9637
+Keratin-555,pan-Keratin,***,CST,3478,C11,Alexa Fluor 555,AB_10829040,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/pan-keratin-c11-mouse-mab-alexa-fluor-555-conjugate/3478
+Keratin-570,pan-Keratin,***,eBioscience,41-9003-80,AE1/AE3,eFluor 570,AB_11217482,555/Cy3,,https://www.thermofisher.com/antibody/product/Pan-Cytokeratin-Antibody-clone-AE1-AE3-Monoclonal/41-9003-80
+Ki67-570,Ki67,***,eBioscience,41-5699-80,20Raj1,eFluor 570,AB_11220088,555/Cy3,,https://www.thermofisher.com/antibody/product/Ki-67-Antibody-clone-20Raj1-Monoclonal/41-5699-80
+LC3-555,LC3,***,CST,13173,D3U4C,Alexa Fluor 555,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/lc3a-b-d3u4c-xp-rabbit-mab-alexa-fluor-555-conjugate/13173
+MAP2-570,MAP2,***,eBioscience,41-9763-80,AP20,eFluor 570,AB_2573634,555/Cy3,,https://www.thermofisher.com/antibody/product/MAP2-Antibody-clone-AP20-Monoclonal/41-9763-80
+pAUR-555,pAUR1/2/3(T288/T232/T198),***,CST,13464,D13A11,Alexa Fluor 555,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-aurora-a-thr288-aurora-b-thr232-aurora-c-thr198-d13a11-xp-rabbit-mab-alexa-fluor-555-conjugate/13464
+pCHK2-PE,pChk2(T68),***,CST,12812,C13C1,PE,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-chk2-thr68-c13c1-rabbit-mab-pe-conjugate/12812?_=1521138542994&Ntt=12812&tahead=true
+PDL1-555,PD-L1/CD274,***,Abcam,AB213358,28-8,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/pd-l1-antibody-28-8-alexa-fluor-555-ab213358.html
+pH3-555,pH3(S10),***,CST,3475,D2C8,Alexa Fluor 555,AB_10694639,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-histone-h3-ser10-d2c8-xp-rabbit-mab-alexa-fluor-555-conjugate/3475
+pRB-555,pRB(S807/811),***,CST,8957,D20B12,Alexa Fluor 555,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-rb-ser807-811-d20b12-xp-rabbit-mab-alexa-fluor-555-conjugate/8957
+pS6(235/236)-555,pS6(235/236),***,CST,3985,D57.2.2E,Alexa Fluor 555,AB_10693792,555/Cy3,Discontinued,https://www.cellsignal.com/products/antibody-conjugates/phospho-s6-ribosomal-protein-ser235-236-d57-2-2e-xp-rabbit-mab-alexa-fluor-555-conjugate/3985
+pSRC-PE,pSRC(Y418),***,eBioscience,12-9034-41,SC1T2M3,PE,AB_2572680 ,555/Cy3,,https://www.thermofisher.com/antibody/product/Phospho-SRC-Tyr418-Antibody-clone-SC1T2M3-Monoclonal/12-9034-41
+S6-555,S6,***,CST,6989,54D2,Alexa Fluor 555,AB_10828226,555/Cy3,,https://www.cellsignal.com/product/productDetail.jsp?productId=6989
+SQSTM1-555,SQSTM1/p62,***,Abcam,AB203430,EPR4844,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/sqstm1-p62-antibody-epr4844-autophagosome-marker-alexa-fluor-555-ab203430.html
+VEGFR2-555,VEGFR2,***,CST,12872,D5B1,Alexa Fluor 555,,555/Cy3,Discontinued,https://www.cellsignal.com/product/productDetail.jsp?productId=12872
+VEGFR2-PE,VEGFR2,***,CST,12634,D5B1,PE,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/vegf-receptor-2-d5b1-rabbit-mab-pe-conjugate/12634
+Vimentin-555,Vimentin,***,CST,9855,D21H3,Alexa Fluor 555,AB_10859896,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/vimentin-d21h3-xp-rabbit-mab-alexa-fluor-555-conjugate/9855
+Vinculin-570,Vinculin,***,eBioscience,41-9777-80,7F9,eFluor 570,AB_2573646 ,555/Cy3,,https://www.thermofisher.com/antibody/product/Vinculin-Antibody-clone-7F9-Monoclonal/41-9777-80
+gH2ax-PE,gH2ax,***,BioLegend,613412,2F3,PE,AB_2616871,555/Cy5,,https://www.biolegend.com/en-us/products/pe-anti-h2a-x-phospho-ser139-antibody-13292
+AKT-647,AKT,***,CST,5186,C67E7,Alexa Fluor 647,AB_10695877,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/akt-pan-c67e7-rabbit-mab-alexa-fluor-647-conjugate/5186
+aSMA-660,aSMA,***,eBioscience,50-9760-80,1A4,eFluor 660,AB_2574361,647/Cy5,,https://www.thermofisher.com/antibody/product/Alpha-Smooth-Muscle-Actin-Antibody-clone-1A4-Monoclonal/50-9760-80
+B220-647,CD45R/B220,***,BioLegend,103226,RA3-6B2,Alexa Fluor 647,AB_389330,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-mouse-human-cd45r-b220-antibody-2708
+Bcl2-647,Bcl2,***,BioLegend,658705,100,Alexa Fluor 647,AB_2563279 ,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-bcl-2-antibody-9358
+Catenin-647,Beta-Catenin,***,CST,4627,L54E2,Alexa Fluor 647,AB_10691326,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/b-catenin-l54e2-mouse-mab-alexa-fluor-647-conjugate/4627
+CD20-660,CD20,***,eBioscience,50-0202-80,L26,eFluor 660,AB_11151691 ,647/Cy5,,https://www.thermofisher.com/antibody/product/CD20-Antibody-clone-L26-Monoclonal/50-0202-80
+CD45-647,CD45,***,BioLegend,304020,HI30,Alexa Fluor 647,AB_493034,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-cd45-antibody-2739
+CD8a-660,CD8,***,eBioscience,50-0008-80,AMC908,eFluor 660,AB_2574148,647/Cy5,,https://www.thermofisher.com/antibody/product/CD8a-Antibody-clone-AMC908-Monoclonal/50-0008-80
+CK5-647,Cytokeratin 5,***,Abcam,AB193895,EP1601Y,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/cytokeratin-5-antibody-ep1601y-alexa-fluor-647-ab193895.html
+CoIIV-647,Collagen IV,***,eBioscience,51-9871-80,1042,Alexa Fluor 647,AB_10854267,647/Cy5,,https://www.thermofisher.com/antibody/product/Collagen-IV-Antibody-clone-1042-Monoclonal/51-9871-80
+COXIV-647,COXIV,***,CST,7561,3E11,Alexa Fluor 647,AB_10994876,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/cox-iv-3e11-rabbit-mab-alexa-fluor-647-conjugate/7561
+cPARP-647,cPARP,***,CST,6987,D64E10,Alexa Fluor 647,AB_10858215,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/cleaved-parp-asp214-d64e10-xp-rabbit-mab-alexa-fluor-647-conjugate/6987
+FOXA2-660,FOXA2,***,eBioscience,50-4778-82,3C10,eFluor 660,AB_2574221,647/Cy5,,https://www.thermofisher.com/antibody/product/FOXA2-Antibody-clone-3C10-Monoclonal/50-4778-82
+FOXP3-647,FOXP3,***,BioLegend,320113,206D,Alexa Fluor 647,AB_439753,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-foxp3-antibody-2945
+gH2ax-647,H2ax(S139),***,CST,9720,20E3,Alexa Fluor 647,AB_10692910,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/phospho-histone-h2a-x-ser139-20e3-rabbit-mab-alexa-fluor-647-conjugate/9720
+gH2ax-647,H2ax(S139),***,BioLegend,613407,2F3,Alexa Fluor 647,AB_2114994,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-h2a-x-phospho-ser139-antibody-3503
+HES1-647,HES1,***,Abcam,AB196577,EPR4226,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/hes1-antibody-epr4226-alexa-fluor-647-ab196577.html
+Ki67-647,Ki67,***,CST,12075,D3B5,Alexa Fluor 647,,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/ki-67-d3b5-rabbit-mab-alexa-fluor-647-conjugate/12075
+Ki67-647,Ki67,***,BioLegend,350509,Ki-67,Alexa Fluor 647,AB_10900810,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-ki-67-antibody-7346
+mCD45-647,ms_CD45,***,BioLegend,103124,30-F11,Alexa Fluor 647,AB_493533,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-mouse-cd45-antibody-3101
+mCD4-647,ms_CD4,***,BioLegend,100426,GK1.5,Alexa Fluor 647,AB_493519 ,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-mouse-cd4-antibody-2694
+mEPCAM-647,ms_EPCAM,***,BioLegend,118211,G8.8,Alexa Fluor 647,AB_1134104,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-mouse-cd326-ep-cam-antibody-4973
+MHCI-647,MHCI/HLAA,***,Abcam,AB199837,EP1395Y,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/hla-a-antibody-ep1395y-alexa-fluor-647-ab199837.html
+MHCII-647,MHCII,***,Abcam,AB201347,EPR11226,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/mhc-class-ii-antibody-epr11226-alexa-fluor-647-ab201347.html
+mLy6C-647,ms_Ly6C,***,BioLegend,128009,HK1.4,Alexa Fluor 647,AB_1236551,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-mouse-ly-6c-antibody-4897
+mTOR-647,mTOR,***,CST,5048,7C10,Alexa Fluor 647,AB_10828101,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/mtor-7c10-rabbit-mab-alexa-fluor-647-conjugate/5048
+NFkB-647,NFkB (p65),***,Abcam,AB190589,E379,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/nf-kb-p65-antibody-e379-alexa-fluor-647-ab190589.html
+NGFR-647,NGFR/CD271,***,Abcam,AB195180,EP1039Y,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/p75-ngf-receptor-antibody-ep1039y-alexa-fluor-647-ab195180.html
+NUP98-647,NUP98,***,CST,13393,C39A3,Alexa Fluor 647,,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/nup98-c39a3-rabbit-mab-alexa-fluor-647-conjugate/13393
+p21-647,p21,***,CST,8587,12D1,Alexa Fluor 647,AB_10892861 ,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/p21-waf1-cip1-12d1-rabbit-mab-alexa-fluor-647-conjugate/8587
+p27-647,p27,***,Abcam,AB194234,Y236,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/p27-kip-1-antibody-y236-alexa-fluor-647-ab194234.html
+pATM-660,pATM(S1981),***,eBioscience,50-9046-41,10H11.E12,eFluor 660,AB_2574312 ,647/Cy5,,https://www.thermofisher.com/antibody/product/Phospho-ATM-Ser1981-Antibody-clone-10H11-E12-Monoclonal/50-9046-41
+PAX8-647,PAX8,***,Abcam,AB215953,EPR18715,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/pax8-antibody-epr18715-alexa-fluor-647-ab215953.html
+PDL1-647,PD-L1/CD274,***,CST,15005,E1L3N,Alexa Fluor 647,,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/pd-l1-e1l3n-xp-rabbit-mab-alexa-fluor-647-conjugate/15005
+pMK2-647,pMK2(T334),***,CST,4320,27B7,Alexa Fluor 647,AB_10695401 ,647/Cy5,Discontinued,https://www.cellsignal.com/product/productDetail.jsp?productId=4320
+pmTOR-660,pmTOR(S2448),***,eBioscience,50-9718-41,MRRBY,eFluor 660,AB_2574351,647/Cy5,,https://www.thermofisher.com/antibody/product/Phospho-mTOR-Ser2448-Antibody-clone-MRRBY-Monoclonal/50-9718-41
+pS6_235-647,pS6(S235/S236),***,CST,4851,D57.2.2E,Alexa Fluor 647,AB_10695457 ,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/phospho-s6-ribosomal-protein-ser235-236-d57-2-2e-xp-rabbit-mab-alexa-fluor-647-conjugate/4851
+pSTAT3-647,pSTAT3(Y705),***,CST,4324,D3A7,Alexa Fluor 647,AB_10694637,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/phospho-stat3-tyr705-d3a7-xp-rabbit-mab-alexa-fluor-647-conjugate/4324?_=1521141742788&Ntt=4324&tahead=true
+pTyr-647,p-Tyrosine,***,CST,9415,p-Tyr-100,Alexa Fluor 647,AB_10693160,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/phospho-tyrosine-mouse-mab-p-tyr-100-alexa-fluor-647-conjugate/9415
+S100A4-647,S100A4,***,Abcam,AB196168,EPR2761(2),Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/s100a4-antibody-epr27612-alexa-fluor-647-ab196168.html
+Survivin-647,Survivin,***,CST,2866,71G4B7,Alexa Fluor 647,AB_10698609,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/survivin-71g4b7-rabbit-mab-alexa-fluor-647-conjugate/2866
+TUBB3-647,TUBB3,***,BioLegend,657405,AA10,Alexa Fluor 647,AB_2563609,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-tubulin-beta-3-tubb3-antibody-9848
+Tubulin-647,beta-Tubulin,***,CST,3624,9F3,Alexa Fluor 647,AB_10694204,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/b-tubulin-9f3-rabbit-mab-alexa-fluor-647-conjugate/3624
+Vimentin-647,Vimentin,***,BioLegend,677807,O91D3,Alexa Fluor 647,AB_2616801 ,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-vimentin-antibody-13224
+anti-14-3-3,14-3-3,***,Santa Cruz,SC-629-G,Polyclonal,N/D,AB_630820,N/D,,https://www.scbt.com/scbt/product/pan-14-3-3-antibody-k-19
+anti-53BP1,53BP1,***,Bethyl,A303-906A,Polyclonal,N/D,AB_2620256 ,N/D,,https://www.bethyl.com/product/A303-906A/53BP1+Antibody
+anti-5HMC,5HMC,***,Active Motif,39769,Polyclonal,N/D,AB_10013602,N/D,,https://www.activemotif.com/catalog/details/39769.html
+anti-CD11b,CD11b,***,Abcam,AB133357,EPR1344,N/D,AB_2650514,N/D,,http://www.abcam.com/cd11b-antibody-epr1344-ab133357.html
+anti-CD2,CD2,***,Abcam,AB37212,Polyclonal,N/D,AB_726228,N/D,,http://www.abcam.com/cd2-antibody-ab37212.html
+anti-CD20,CD20,***,Dako,M0755,L26,N/D,AB_2282030,N/D,,https://www.agilent.com/en-us/products/immunohistochemistry/antibodies-controls/primary-antibodies/cd20cy
+anti-CD3,CD3,***,Dako,A0452,Polyclonal,N/D,AB_2335677,N/D,,https://www.agilent.com/en-us/products/immunohistochemistry/antibodies-controls/primary-antibodies/cd3#relatedproducts
+anti-CD4,CD4,***,Dako,M7310,4B12,N/D,,N/D,,https://www.agilent.com/en-us/products/immunohistochemistry/antibodies-controls/primary-antibodies/cd4
+anti-CD45RO,CD45RO,***,Dako,M0742,UCHL1,N/D,AB_2237910,N/D,,https://www.agilent.com/en-us/products/immunohistochemistry/antibodies-controls/primary-antibodies/cd45r0
+anti-CD8,CD8,***,Dako,M7103,C8/144B,N/D,AB_2075537 ,N/D,,https://www.agilent.com/en-us/products/immunohistochemistry/antibodies-controls/primary-antibodies/cd8
+anti-CycA2,CycA2,***,Abcam,AB38,E23.1,N/D,AB_304084,N/D,,http://www.abcam.com/cyclin-a2-antibody-e231-ab38.html
+anti-ET1,ET-1,***,Abcam,AB2786,TR.ET.48.5,N/D,AB_303299,N/D,,http://www.abcam.com/endothelin-1-antibody-tret485-ab2786.html
+anti-FAP,FAP,***,eBioscience,BMS168,F11-24,N/D,AB_10597443,N/D,,https://www.thermofisher.com/antibody/product/FAP-Antibody-clone-F11-24-Monoclonal/BMS168
+anti-FOXP3,FOXP3,***,BioLegend,320102,206D,N/D,AB_430881,N/D,,https://www.biolegend.com/en-us/products/purified-anti-human-foxp3-antibody-2897
+anti-LAMP2,LAMP2,***,Abcam,AB25631,H4B4,N/D,AB_470709,N/D,,http://www.abcam.com/lamp2-antibody-h4b4-ab25631.html
+anti-MCM6,MCM6,***,Santa Cruz,SC-9843,Polyclonal,N/D,AB_2142543,N/D,,https://www.scbt.com/scbt/product/mcm6-antibody-c-20?requestFrom=search
+anti-PAX8,PAX8,***,Abcam,AB191870,EPR18715,N/D,,N/D,,http://www.abcam.com/pax8-antibody-epr18715-ab191870.html
+anti-PD1,PD1,***,CST,86163,D4W2J,N/D,,N/D,,https://www.cellsignal.com/products/primary-antibodies/pd-1-d4w2j-xp-rabbit-mab/86163
+anti-pEGFR,pEGFR(Y1068),***,CST,3777,D7A5,N/D,AB_2096270,N/D,,https://www.cellsignal.com/products/primary-antibodies/phospho-egf-receptor-tyr1068-d7a5-xp-rabbit-mab/3777
+anti-pERK,pERK(T202/Y204),***,CST,4370,D13.14.4E,N/D,AB_2315112,N/D,,https://www.cellsignal.com/products/primary-antibodies/phospho-p44-42-mapk-erk1-2-thr202-tyr204-d13-14-4e-xp-rabbit-mab/4370
+anti-pRB,pRB(S807/811),***,Santa Cruz,SC-16670,Polyclonal,N/D,AB_655250 ,N/D,Discontinued,https://datasheets.scbt.com/sc-16670.pdf
+anti-pRPA32,pRPA32 (S4/S8),***,Bethyl,IHC-00422,Polyclonal,N/D,AB_1659840,N/D,,https://www.bethyl.com/product/IHC-00422/Phospho+RPA32+(S4+S8)+IHC+Antibody
+anti-pSTAT3,pSTAT3,***,CST,9145,D3A7,N/D,AB_2491009,N/D,,https://www.cellsignal.com/products/primary-antibodies/phospho-stat3-tyr705-d3a7-xp-rabbit-mab/9145
+anti-pTyr,pTyr,***,CST,9411,p-Tyr-100,N/D,AB_331228 ,N/D,,https://www.cellsignal.com/products/primary-antibodies/phospho-tyrosine-mouse-mab-p-tyr-100/9411
+anti-RPA32,RPA32,***,Bethyl,IHC-00417,Polyclonal,N/D,AB_1659838,N/D,,https://www.bethyl.com/product/IHC-00417/RPA32+IHC+Antibody
+anti-TPCN2,TPCN2,***,NOVUSBIO,NBP1-86923,Polyclonal,N/D,AB_11021735,N/D,,https://www.novusbio.com/products/two-pore-calcium-channel-protein-2-antibody_nbp1-86923
+anti-VEGFR1,VEGFR1/FLT1,***,Santa Cruz,SC-31173,Polyclonal,N/D,AB_2106885,N/D,,https://www.scbt.com/scbt/product/flt-1-antibody-n-16?requestFrom=search
+Abeta-488,Beta-Amyloid (1-16),**,BioLegend,803013,6E10,Alexa Fluor 488,AB_2564765,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-beta-amyloid--1-16-antibody-10833
+BRAF-FITC,B-RAF,**,Abcam,ab175637,K21-F,FITC,,488/FITC,,http://www.abcam.com/b-raf-mutated-v600-e-antibody-k21-f-fitc-ab175637.html
+BrdU-488,BrdU,**,BioLegend,364105,3D4,Alexa Fluor 488,AB_2564499,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-brdu-antibody-10621
+cCasp3-488,cCasp3,**,R&D Systems,IC835G-025,269518,Alexa Fluor 488,,488/FITC,,https://www.rndsystems.com/products/human-mouse-cleaved-caspase-3-alexa-fluor-488-conjugated-antibody-269518_ic835g
+CD11b-488,CD11b,**,BioLegend,101219,M1/70,Alexa Fluor 488,AB_493545 ,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-mouse-human-cd11b-antibody-2700
+CD123-488,CD123,**,BioLegend,306035,6H6,Alexa Fluor 488,AB_2629569,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-cd123-antibody-13465
+CD49b-FITC,CD49b,**,BioLegend,359305,P1E6-C5,FITC,AB_2562530,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd49b-antibody-8880
+CD69-FITC,CD69,**,BioLegend,310904,FN50,FITC,AB_314839,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd69-antibody-1671
+CD71-FITC,CD71,**,BioLegend,334103,CY1G4,FITC,AB_1236432,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd71-antibody-4907
+CD80-FITC,CD80,**,R&D Systems,FAB140F,37711,FITC,AB_357027,488/FITC,,https://www.rndsystems.com/products/human-b7-1-cd80-fluorescein-conjugated-antibody-37711_fab140f
+CD8a-488,CD8a,**,eBioscience,53-0086-41,OKT8,Alexa Fluor 488,AB_10547060,488/FITC,,https://www.thermofisher.com/antibody/product/CD8a-Antibody-clone-OKT8-OKT-8-Monoclonal/53-0086-41
+CDC2-FITC,CDC2/p34,**,Santa Cruz ,SC-54 FITC,17,FITC,AB_627224 ,488/FITC,,https://www.scbt.com/scbt/product/cdc2-p34-antibody-17
+CycB1-FITC,CycB1,**,Santa Cruz ,SC-752 FITC,Polyclonal,FITC,AB_2072134 ,488/FITC,,https://www.scbt.com/scbt/product/cyclin-b1-antibody-h-433?requestFrom=search
+FN-488,Fibronection,**,Abcam,AB198933,F1,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/fibronectin-antibody-f1-alexa-fluor-488-ab198933.html
+IFNG-488,Interferron-Gamma,**,BioLegend,502517,4S.B3,Alexa Fluor 488,AB_493030,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-ifn-gamma-antibody-2748
+IL1-FITC,IL1,**,BioLegend,511705,H1b-98,FITC,AB_1236434,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-il-1beta-antibody-4417
+IL6-FITC,IL6,**,BioLegend,501103,MQ2-13A5,FITC,AB_315151,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-il-6-antibody-980
+mCD31-FITC,ms_CD31,**,eBioscience,11-0311-82,390,FITC,AB_465012,488/FITC,,https://www.thermofisher.com/antibody/product/CD31-PECAM-1-Antibody-clone-390-Monoclonal/11-0311-82
+mCD8a-488,ms_CD8a,**,BioLegend,100726,53-6.7,Alexa Fluor 488,AB_493423 ,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-mouse-cd8a-antibody-2698
+Nestin-488,Nestin,**,eBioscience,53-9843-80,10C2,Alexa Fluor 488,AB_1834347,488/FITC,,https://www.thermofisher.com/antibody/product/Nestin-Antibody-clone-10C2-Monoclonal/53-9843-80
+NeuN-488,NeuN,**,Millipore,MAB377X,A60,Alexa Fluor 488,AB_2149209 ,488/FITC,,"http://www.emdmillipore.com/US/en/product/Anti-NeuN-Antibody-clone-A60-Alexa-Fluor488-conjugated,MM_NF-MAB377X"
+PR-488,PR/PGR,**,Abcam,AB199224,YR85,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/progesterone-receptor-antibody-yr85-alexa-fluor-488-ab199224.html
+Snail1-488,Snail1,**,eBioscience,53-9859-80,20C8,Alexa Fluor 488,AB_2574482,488/FITC,,https://www.thermofisher.com/antibody/product/Snail1-Antibody-clone-20C8-Monoclonal/53-9859-80
+TGFB-FITC,TGFB1,**,BioLegend,349605,TW4-2F8,FITC,AB_10679043,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-lap-tgf-beta1-antibody-7009
+TNFa-488,TNFa,**,BioLegend,502917,MAb11,Alexa Fluor 488,AB_493122,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-tnf-alpha-antibody-2750
+AR-555,AR,**,CST,8956,D6F11,Alexa Fluor 555,AB_11129223,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/androgen-receptor-d6f11-xp-rabbit-mab-alexa-fluor-555-conjugate/8956
+CD11a-PE,CD11a,**,BioLegend,301207,HI111,PE,AB_314145,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd11a-antibody-697
+CD11b-555,CD11b,**,Abcam,AB206616,EPR1344,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/cd11b-antibody-epr1344-alexa-fluor-555-ab206616.html
+CD131-PE,CD131,**,BD,559920,JORO50,PE,AB_397374,555/Cy3,,http://www.bdbiosciences.com/us/applications/research/b-cell-research/surface-markers/mouse/pe-rat-anti-mouse-cd131-joro50-also-known-as-joro-50/p/559920
+CD14-PE,CD14,**,eBioscience,12-0149,61D3,PE,AB_10597598,555/Cy3,,https://www.thermofisher.com/antibody/product/CD14-Antibody-clone-61D3-Monoclonal/12-0149-42
+CD1a-PE,CD1a,**,BioLegend,300105,HI149,PE,AB_314019 ,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd1a-antibody-701
+CD1c-PE,CD1c,**,BioLegend,331505,L161,PE,AB_1089000,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd1c-antibody-4847
+CD20-PE,CD20,**,BioLegend,302305,2H7,PE,AB_314253,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd20-antibody-559
+CD23-PE,CD23,**,eBioscience,12-0232-81,B3B4,PE,AB_465592,555/Cy3,,https://www.thermofisher.com/antibody/product/CD23-Antibody-clone-B3B4-Monoclonal/12-0232-82
+CD31-PE,CD31,**,eBioscience,12-0319-41,WM-59,PE,AB_10670623,555/Cy3,,https://www.thermofisher.com/antibody/product/CD31-PECAM-1-Antibody-clone-WM-59-WM59-Monoclonal/12-0319-41
+CD31-PE,CD31,**,R&D Systems,FAB3567P-025,9G11,PE,AB_2279388,555/Cy3,,https://www.rndsystems.com/products/human-cd31-pecam-1-pe-conjugated-antibody-9g11_fab3567p
+CD34-PE,CD34,**,Abcam,AB30377,QBEND/10,PE,AB_726407 ,555/Cy3,,http://www.abcam.com/cd34-antibody-qbend-10-phycoerythrin-ab30377.html
+CD45R-e570,CD45R/B220,**,eBioscience,41-0452-80,RA3-6B2,eFluor 570,AB_2573598 ,555/Cy3,,https://www.thermofisher.com/antibody/product/CD45R-B220-Antibody-clone-RA3-6B2-Monoclonal/41-0452-80
+CD71-PE,CD71,**,eBioscience,12-0711-81,R17217,PE,AB_465739,555/Cy3,,https://www.thermofisher.com/antibody/product/CD71-Transferrin-Receptor-Antibody-clone-R17217-RI7-217-1-4-Monoclonal/12-0711-82
+CD86-PE,CD86,**,BioLegend,305405,IT2.2,PE,AB_314525,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd86-antibody-778
+CK19-570,Cytokeratin 19,**,eBioscience,41-9898-80,BA17,eFluor 570,AB_11218678,555/Cy3,,https://www.thermofisher.com/antibody/product/Cytokeratin-19-Antibody-clone-BA17-Monoclonal/41-9898-80
+HER2-570,HER2,**,eBioscience,41-9757-80,MJD2,eFluor 570,AB_2573628,555/Cy3,,https://www.thermofisher.com/antibody/product/ErbB2-HER-2-Antibody-clone-MJD2-Monoclonal/41-9757-80
+IL3-PE,IL3,**,BD,554383,MP2-8F8,PE,AB_395358 ,555/Cy3,,http://www.bdbiosciences.com/us/applications/research/intracellular-flow/intracellular-antibodies-and-isotype-controls/anti-mouse-antibodies/pe-rat-anti-mouse-il-3-mp2-8f8/p/554383
+NFATc1-PE,NFATc1,**,BioLegend,649605,7A6,PE,AB_2562546,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-nfatc1-antibody-8899
+PDL1-PE,PD-L1/CD274,**,BioLegend,329705,29E.2A3,PE,AB_940366,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd274-b7-h1--pd-l1-antibody-4375
+pMAPK (T202/Y204),pERK1/2(T202/Y204),**,CST,14095,197G2,PE,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-p44-42-mapk-erk1-2-thr202-tyr204-197g2-rabbit-mab-pe-conjugate/14095
+pMAPK (Y204/Y187),pERK1/2(Y204/Y187),**,CST,75165,D1H6G,PE,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-p44-42-mapk-erk1-tyr204-erk2-tyr187-d1h6g-mouse-mab-pe-conjugate/75165
+pSTAT1-PE,pSTAT1(Y705),**,BioLegend,686403,A15158B,PE,AB_2616938,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-stat1-phospho-ser727-antibody-13375
+ABCC1-647,ABCC1,**,BioLegend,370203,QCRL-2,Alexa Fluor 647,AB_2566664,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-mouse-mrp1-abcc1-antibody-12758
+AnnexinV-674,N/D,**,BioLegend,640911,NA,Alexa Fluor 647,AB_2561293 ,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-annexin-v-5276
+CD103-647,CD103,**,BioLegend,350209,Ber-ACT8,Alexa Fluor 647,AB_10640870,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-cd103-integrin-alphae-antibody-6920
+CD25-647,CD25,**,BioLegend,302617,BC96,Alexa Fluor 647,AB_493046,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-cd25-antibody-3254
+CD31-APC,CD31,**,eBioscience,17-0319-41,WM-59,APC,AB_10853188 ,647/Cy5,,https://www.thermofisher.com/antibody/product/CD31-PECAM-1-Antibody-clone-WM-59-WM59-Monoclonal/17-0319-41
+CD68-APC,CD68,**,BioLegend,333809,Y1/82A,APC,AB_10567107,647/Cy5,,https://www.biolegend.com/en-us/products/apc-anti-human-cd68-antibody-6542
+CD8a-647,CD8a,**,BioLegend,344725,SK1,Alexa Fluor 647,AB_2563451,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-cd8-antibody-9764
+CD8a-647,CD8a,**,R&D Systems,FAB1509R-025,37006,Alexa Fluor 647,,647/Cy5,,https://www.rndsystems.com/products/human-cd8alpha-alexa-fluor-647-conjugated-antibody-37006_fab1509r
+CycE-660,CycE,**,eBioscience,50-9714-80,HE12,eFluor 660,AB_2574350,647/Cy5,,https://www.thermofisher.com/antibody/product/Cyclin-E-Antibody-clone-HE12-Monoclonal/50-9714-80
+HIF1-647,HIF1,**,BioLegend,359705,546-16,Alexa Fluor 647,AB_2563331,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-hif1alpha-antibody-9570
+HP1-647,HP1,**,Abcam,AB198391,EPR5777,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/hp1-alpha-antibody-epr5777-heterochromatin-marker-alexa-fluor-647-ab198391.html
+mCD123-APC,ms_CD123,**,eBioscience,17-1231-81,5B11,APC,AB_891363,647/Cy5,,https://www.thermofisher.com/antibody/product/CD123-Antibody-clone-5B11-Monoclonal/17-1231-81
+NGFR-647,NGFR/CD271,**,BD,560326,C40-1457,Alexa Fluor 647,AB_1645403,647/Cy5,,http://www.bdbiosciences.com/us/reagents/research/antibodies-buffers/immunology-reagents/anti-human-antibodies/cell-surface-antigens/alexa-fluor-647-mouse-anti-human-cd271-c40-1457/p/560326
+pBTK-660,pBTK(Y551/Y511),**,eBioscience,50-9015-80,M4G3LN,eFluor 660,AB_2574306,647/Cy5,,https://www.thermofisher.com/antibody/product/Phospho-BTK-ITK-Tyr551-Tyr511-Antibody-clone-M4G3LN-Monoclonal/50-9015-80
+PD1-647,PD1,**,Abcam,AB201825,EPR4877 (2),Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/pd1-antibody-epr48772-alexa-fluor-647-ab201825.html
+PR-660,PR/PGR,**,eBioscience,50-9764-80,KMC912,eFluor 660,AB_2574363,647/Cy5,,https://www.thermofisher.com/antibody/product/Progesterone-Receptor-Antibody-clone-KMC912-Monoclonal/50-9764-80
+RUNX3-660,RUNX3,**,eBioscience,50-9817-80,R3-5G4,eFluor 660,AB_2574383,647/Cy5,,https://www.thermofisher.com/antibody/product/RUNX3-Antibody-clone-R3-5G4-Monoclonal/50-9817-80
+SOX2-647,SOX2,**,Abcam,AB192075,Polyclonal,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/sox2-antibody-alexa-fluor-647-ab192075.html
+anti-53BP1,53BP1,**,Millipore,MAB3802 ,BP13,N/D,AB_2206767,N/D,,"http://www.emdmillipore.com/US/en/product/Anti-53BP1-Antibody-clone-BP13,MM_NF-MAB3802"
+anti-Axl,Axl,**,R&D,AF154,Polyclonal,N/D,AB_354852,N/D,,https://www.rndsystems.com/products/human-axl-antibody_af154
+anti-CD11b,CD11b,**,Abcam,AB52478,EP1345Y,N/D,AB_868788,N/D,,http://www.abcam.com/cd11b-antibody-ep1345y-ab52478.html
+anti-CD8a,CD8,**,eBioscience,14-0085-80,C8/144B,N/D,AB_11151339 ,N/D,,https://www.thermofisher.com/antibody/product/CD8a-Antibody-clone-C8-144B-Monoclonal/14-0085-82
+anti-CEP170,CEP170,**,Abcam,AB72505,Polyclonal,N/D,AB_1268101,N/D,,http://www.abcam.com/cep170-antibody-ab72505.html
+anti-cMYC,cMYC,**,BioLegend,626801,9E10,N/D,AB_2235686,N/D,,https://www.biolegend.com/en-us/products/purified-anti-c-myc-antibody-2873
+anti-CPS1,CPS1,**,Abcam,AB129076,EPR7493-3,N/D,AB_11156290,N/D,,http://www.abcam.com/cps1-antibody-epr7493-3-ab129076.html
+anti-E2F1,E2F1,**,ThermoFisher,MS-879-P1,KH95,N/D,AB_143934 ,N/D,,https://www.thermofisher.com/order/catalog/product/MS-879-B
+anti-eEF2K,eEF2K,**,Santa Cruz,SC-21642,K-19,N/D,AB_640043,N/D,,http://datasheets.scbt.com/sc-21642.pdf
+anti-Emil1,Emil1,**,Abcam,AB212397,EMIL/1176,N/D,,N/D,,http://www.abcam.com/emi1-antibody-emi11176-bsa-and-azide-free-ab212397.html
+anti-FKHRL1,FKHRL1,**,Santa Cruz,SC-9812,Polyclonal,N/D,AB_640608,N/D,Discontinued,
+anti-FLAG,FLAG,**,Sigma,F1804,M2,N/D,AB_262044,N/D,,https://www.sigmaaldrich.com/catalog/product/sigma/f1804?lang=en&region=US
+anti-GranB,Granzyme_B,**,Dako,M7235,M7235,N/D,AB_2114697,N/D,,https://www.agilent.com/en-us/products/immunohistochemistry/antibodies-controls/primary-antibodies/granzyme-b
+anti-HMB45,HMB45,**,Abcam,AB732,HMB45+M2-7C10+M2-9E3,N/D,AB_305844,N/D,,http://www.abcam.com/melanoma-antibody-hmb45--m2-7c10--m2-9e3-ab732.html
+anti-HSP90b,HSP90b,**,Santa Cruz,SC-1057,D-19,N/D,AB_2121392,N/D,,https://www.scbt.com/scbt/product/hsp-90beta-antibody-d-19
+anti-IL2Ra,IL2Ra,**,Abcam,AB128955,EPR6452,N/D,AB_11141054,N/D,,http://www.abcam.com/il2-receptor-alpha-antibody-epr6452-ab128955.html
+anti-LAMP2,LAMP2,**,R&D,AF6228,Polyclonal,N/D,AB_10971818,N/D,,https://www.rndsystems.com/products/human-lamp-2-cd107b-antibody_af6228
+anti-MITF,MITF,**,Abcam,AB12039,C5,N/D,AB_298801 ,N/D,,http://www.abcam.com/mitf-antibody-c5-chip-grade-ab12039.html
+anti-Ncad,N-Cadherin,**,Abcam,AB18203,Polyclonal,N/D,AB_444317,N/D,,http://www.abcam.com/n-cadherin-antibody-ab18203.html
+anti-NCAM,NCAM,**,Abcam,AB6123,ERIC-1,N/D,AB_2149537,N/D,,http://www.abcam.com/ncam1-antibody-eric-1-ab6123.html
+anti-NF1,NF1,**,Abcam,AB178323,McNFn27b,N/D,,N/D,,http://www.abcam.com/neurofibromin-antibody-mcnfn27b-n-terminal-ab178323.html
+anti-pCTD,Pol II CTD(S2),**,Active Motif,61083,3E10,N/D,AB_2687450,N/D,,http://www.activemotif.com/catalog/details/61083/rna-pol-ii-ctd-phospho-ser2-antibody-mab
+anti-PD1,PD1,**,CST,43248,EH33,N/D,,N/D,,https://www.cellsignal.com/products/primary-antibodies/pd-1-eh33-mouse-mab-ihc-specific/43248
+anti-pTuberin,pTuberin(S664),**,Abcam,AB133465,EPR8202,N/D,AB_11157389,N/D,,http://www.abcam.com/tuberin-phospho-s664-antibody-epr8202-ab133465.html
+anti-S100,S100,**,Dako,Z0311,Polyclonal,N/D,AB_10013383,N/D,,https://www.agilent.com/en-us/products/immunohistochemistry/antibodies-controls/primary-antibodies/s100-(autostainer-autostainer-plus)
+anti-SIRT3,SIRT3,**,CST,2627,C73E3,N/D,AB_2188622,N/D,,https://www.cellsignal.com/products/primary-antibodies/sirt3-c73e3-rabbit-mab/2627
+anti-TIA1,TIA1,**,Santa Cruz,SC-1751,Polyclonal,N/D,AB_2201433 ,N/D,,https://www.scbt.com/scbt/product/tia-1-antibody-c-20
+anti-TLR3,TLR3,**,Santa Cruz,SC-8691,Polyclonal,N/D,AB_2240700 ,N/D,,https://www.scbt.com/scbt/product/tlr3-antibody-n-14
+anti-TNFa,TNFa,**,Abcam,AB11564,MP6-XT3,N/D,AB_298170,N/D,,http://www.abcam.com/tnf-alpha-antibody-mp6-xt3-ab11564.html
+anti-TPCN2,TPCN2,**,Abcam,AB119915,Polyclonal,N/D,AB_10903692,N/D,,http://www.abcam.com/two-pore-calcium-channel-protein-2-antibody-ab119915.html
+CD11a-FITC,CD11a,*,eBioscience,11-0119-41,HI111,FITC,AB_10597888,488/FITC,,https://www.thermofisher.com/antibody/product/CD11a-LFA-1alpha-Antibody-clone-HI111-Monoclonal/11-0119-41
+CD20-FITC,CD20,*,BioLegend,302303,2H7,FITC,AB_314251,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd20-antibody-558
+CD2-FITC,CD2,*,BioLegend,300206,RPA-2.10,FITC,AB_314030,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd2-antibody-818
+CD45RO-488,CD45RO,*,BioLegend,304212,UCHL1,Alexa Fluor 488,AB_528823,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-cd45ro-antibody-3340
+CD8a-488,CD8,*,BioLegend,301024,RPA-T8,Alexa Fluor 488,AB_2561282,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-cd8a-antibody-2730
+cJUN-FITC,cJUN,*,Santa Cruz ,SC-1694 FITC,Polyclonal,FITC,AB_631263,488/FITC,Discontinued,https://www.scbt.com/scbt/product/c-jun-antibody-h-79
+CXCR5-FITC,CXCR5,*,BioLegend,356913,J252D4,FITC,AB_2561895,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd185-cxcr5-antibody-8422
+Ecad-FITC,Ecad,*,BioLegend,324103,67A4,FITC,AB_756065,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd324-e-cadherin-antibody-3750
+FOXP3-488,FOXP3,*,BioLegend,320011,150D,Alexa Fluor 488,AB_439747,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-mouse-rat-human-foxp3-antibody-2891
+MITF-488,MITF,*,Novus Biologicals,NB100-56561AF488,21D1418,Alexa Fluor 488,AB_838580,488/FITC,,https://www.novusbio.com/products/mitf-antibody-21d1418_nb100-56561af488
+NCAM-488,NCAM/CD56,*,Abcam,AB200333,EPR2566,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/ncam1-antibody-epr2566-alexa-fluor-488-ab200333.html
+NCAM-FITC,NCAM/CD56,*,ThermoFisher,11-0566-41,TULY56,FITC,AB_2572458,488/FITC,,https://www.thermofisher.com/antibody/product/CD56-NCAM-Antibody-clone-TULY56-Monoclonal/11-0566-41
+NGFR-FITC,NGFR/CD271,*,BioLegend,345103,ME20.4,FITC,AB_1937226,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-cd271-ngfr-antibody-6209
+PD1-488,PD-1,*,BioLegend,367407,NAT105,Alexa Fluor 488,AB_2566677,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-cd279-pd-1-antibody-12735
+PD1-488,PD-1,*,BioLegend,329935,EH12.2H7,Alexa Fluor 488,AB_2563593,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-cd279-pd-1-antibody-9863
+pERK-488,pERK(T202/Y204),*,CST,4374,E10,Alexa Fluor 488,AB_10705598,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/phospho-p44-42-mapk-erk1-2-thr202-tyr204-e10-mouse-mab-alexa-fluor-488-conjugate/4374
+pERK-488,pERK(T202/Y204),*,CST,4780,137F5,Alexa Fluor 488,AB_10705598,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/p44-42-mapk-erk1-2-137f5-rabbit-mab-alexa-fluor-488-conjugate/4780
+S100A4-FITC,S100A4,*,BioLegend,370007,NJ-4F3-D1,FITC,AB_2572073,488/FITC,,https://www.biolegend.com/en-us/products/fitc-anti-human-s100a4-antibody-13068
+SOX2-488,SOX2,*,BioLegend,656109,14A6A34,Alexa Fluor 488,AB_2563956,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-sox2-antibody-10178
+CD133-PE,CD133,*,eBioscience,12-1338-41,TMP4,PE,AB_1582258 ,555/Cy3,,https://www.thermofisher.com/antibody/product/CD133-Prominin-1-Antibody-clone-TMP4-Monoclonal/12-1338-41
+cMyc-TRITC,cMYC,*,Santa Cruz,SC-40 TRITC,9E10,TRITC,AB_627268,555/Cy3,,https://www.scbt.com/scbt/product/c-myc-antibody-9e10
+cPARP-555,cPARP,*,CST,6894,D64E10,Alexa Fluor 555,AB_10830735,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/cleaved-parp-asp214-d64e10-xp-rabbit-mab-alexa-fluor-555-conjugate/6894
+CTLA4-PE,CTLA4,*,BioLegend,369603,BNI3,PE,AB_2566796,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd152-ctla-4-antibody-12897
+GATA3-594,GATA3,*,BioLegend,653816,16E10A23,Alexa Fluor 594,AB_2563353,555/Cy3,,https://www.biolegend.com/en-us/products/alexa-fluor-594-anti-gata3-antibody-9727
+GFAP-Cy3,GFAP,*,Millipore,MAB3402C3,NA,Cy3,AB_11213580,555/Cy3,,"http://www.emdmillipore.com/US/en/product/Anti-GFAP-Antibody-Cy3-Conjugate,MM_NF-MAB3402C3"
+Oct4-555,OCT_4,*,CST,4439,C30A3,Alexa Fluor 555,AB_10922586,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/oct-4a-c30a3-rabbit-mab-alexa-fluor-555-conjugate/4439
+p21-555,p21,*,CST,8493,12D1,Alexa Fluor 555,AB_10860074,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/p21-waf1-cip1-12d1-rabbit-mab-alexa-fluor-555-conjugate/8493
+PD1-PE,PD1,*,BioLegend,329905,EH12.2H7,PE,AB_940481 ,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd279-pd-1-antibody-4412
+PDGFRb-555,PDGFRb,*,Abcam,AB206874,Y92,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/pdgf-receptor-beta-antibody-y92-alexa-fluor-555-ab206874.html
+pSTAT1-555,pSTAT1,*,CST,8183,58D6,Alexa Fluor 555,AB_10860600,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-stat1-tyr701-58d6-rabbit-mab-alexa-fluor-555-conjugate/8183
+TIM1-PE,TIM1,*,BioLegend,353903,1D12,PE,AB_11125165,555/Cy3,,https://www.biolegend.com/en-us/products/pe-anti-human-cd365-tim-1-antibody-7603
+cCasp3-647,cCasp3,*,CST,9602,D3E9,Alexa Fluor 647,AB_2687881,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/cleaved-caspase-3-asp175-d3e9-rabbit-mab-alexa-fluor-647-conjugate/9602
+CD103-APC,CD103,*,eBioscience,17-1038-41,B-Ly7,APC,AB_10669816,647/Cy5,,https://www.thermofisher.com/antibody/product/CD103-Integrin-alpha-E-Antibody-clone-B-Ly7-Monoclonal/17-1038-41
+CD3-647,CD3,*,BioLegend,300422,UCHT1,Alexa Fluor 647,AB_493092,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-cd3-antibody-2725
+CD3-660,CD3,*,eBioscience,50-0037-41,OKT3,eFluor 660,AB_2574150,647/Cy5,,https://www.thermofisher.com/antibody/product/CD3-Antibody-clone-OKT3-Monoclonal/50-0037-41
+CD3-APC,CD3,*,eBioscience,17-0038-41,UCHT1,APC,AB_10804761,647/Cy5,,https://www.thermofisher.com/antibody/product/CD3-Antibody-clone-UCHT1-Monoclonal/17-0038-41
+CD45RO-APC,CD45RO,*,BioLegend,304210,UCHL1,APC,AB_314426,647/Cy5,,https://www.biolegend.com/en-us/products/apc-anti-human-cd45ro-antibody-856
+ER-647,ER,*,Abcam,AB205851,EPR4097,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/estrogen-receptor-alpha-antibody-epr4097-alexa-fluor-647-ab205851.html
+FOXO3a-647,FOXO3a,*,Abcam,AB196539,EP1949Y,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/foxo3a-antibody-ep1949y-alexa-fluor-647-ab196539.html
+GZMA-e660,granzyme A,*,ThermoFisher,50-9177-41,CB9,eFluor 660,AB_2574330,647/Cy5,,https://www.thermofisher.com/antibody/product/Granzyme-A-Antibody-clone-CB9-Monoclonal/50-9177-41
+GZMB-647,Granzyme_B,*,BioLegend,515405,GB11,Alexa Fluor 647,AB_2294995,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-mouse-granzyme-b-antibody-6067
+GZMB-APC,Granzyme_B,*,R&D Systems,IC29051A,356412,APC,AB_894691,647/Cy5,Discontinued,https://www.rndsystems.com/products/human-granzyme-a-apc-conjugated-antibody-356412_ic29051a
+HER2-647,HER2,*,BioLegend,324412,24D2,Alexa Fluor 647,AB_2262300,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-cd340-erbb2-her-2-antibody-3769
+mCD49b-647,ms_CD49b,*,BioLegend,103511,HMα2,Alexa Fluor 647,AB_528830,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-mouse-cd49b-antibody-3318
+NCAM-647,NCAM/CD56,*,BioLegend,362513,5.1H11,Alexa Fluor 647,AB_2564086,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-human-cd56-ncam-antibody-10244
+NCAM-e660,NCAM/CD56,*,ThermoFisher,50-0565-80,5tukon56,eFluor 660,AB_2574160,647/Cy5,,https://www.thermofisher.com/antibody/product/CD56-NCAM-Antibody-clone-5tukon56-Monoclonal/50-0565-80
+pAKT-647,pAKT,*,CST,4075,D9E,Alexa Fluor 647,AB_10691856,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/phospho-akt-ser473-d9e-xp-rabbit-mab-alexa-fluor-647-conjugate/4075
+pERK-647,pERK (T202/Y204),*,CST,4375,E10,Alexa Fluor 647,AB_10706777,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/phospho-p44-42-mapk-erk1-2-thr202-tyr204-e10-mouse-mab-alexa-fluor-647-conjugate/4375
+pERK-647,pERK (T202/Y204),*,BioLegend,369503,6B8B69,Alexa Fluor 647,AB_2571895,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-erk1-2-phospho-thr202-tyr204-antibody-12924
+pIKBa-660,pIKBa,*,eBioscience,50-9035-41,RILYB3R,eFluor 660,AB_2574310,647/Cy5,,https://www.thermofisher.com/antibody/product/Phospho-IkB-alpha-Ser32-Ser36-Antibody-clone-RILYB3R-Monoclonal/50-9035-41
+YAP-647,YAP,*,CST,38707S,D8H1X,Alexa Fluor 647,,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/yap-d8h1x-xp-rabbit-mab-alexa-fluor-647-conjugate/38707
+anit-FANCD2,FANCD2,*,Bethyl,IHC-00624,Polyclonal,N/D,AB_10752755,N/D,,https://www.bethyl.com/product/IHC-00624/FANCD2+IHC+Antibody
+anit-pcJUN,p-cJUN,*,Santa Cruz,SC-822,KM-1,N/D,AB_627262 ,N/D,,https://www.scbt.com/scbt/product/p-c-jun-antibody-km-1
+anti-AXL,AXL,*,CST,8661,C89E7,N/D,AB_11217435,N/D,,https://www.cellsignal.com/products/primary-antibodies/axl-c89e7-rabbit-mab/8661
+anti-CXCR5,CXCR5,*,GeneTex,GTX100351,Polyclonal,N/D,AB_1240668,N/D,,http://www.genetex.com/CXCR5-antibody-C1C2-Internal-GTX100351.html
+anti-CXCR5,CXCR5,*,R&D,MAB-190-SP,51505,N/D,AB_2292654,N/D,,https://www.rndsystems.com/products/human-cxcr5-antibody-51505_mab190
+anti-FOXO3a,FOXO3a,*,CST,2497,75D8,N/D,AB_836876,N/D,,https://www.cellsignal.com/products/primary-antibodies/foxo3a-75d8-rabbit-mab/2497
+anti-GZMB,Granzyme B,*,Abcam,AB4059,Polyclonal,N/D,AB_304251,N/D,,http://www.abcam.com/granzyme-b-antibody-ab4059.html
+anti-PD1,PD-1,*,Abcam,AB63477,Polyclonal,N/D,AB_2159165,N/D,,http://www.abcam.com/pd1-antibody-ab92484.html
+anti-PD1,PD-1,*,ThermoFisher,14-9985-81,J43,N/D,AB_468663,N/D,,https://www.thermofisher.com/antibody/product/CD279-PD-1-Antibody-clone-J43-Monoclonal/14-9985-81
+anti-PD1,PD-1,*,R&D,AF1021,Polyclonal,N/D,AB_354541,N/D,,https://www.rndsystems.com/products/mouse-pd-1-antibody_af1021
+anti-RFP,RFP,*,ThermoFisher,R10367,Polyclonal,N/D,AB_2315269,N/D,,https://www.thermofisher.com/antibody/product/RFP-Tag-Antibody-Polyclonal/R10367
+CD11C-BV570,CD11C,*,BioLegend,117331,N418,BV570,AB_10900261 ,N/D,,https://www.biolegend.com/en-us/products/brilliant-violet-570-anti-mouse-cd11c-antibody-7396
+CD45-BV785,CD45,*,BioLegend,304047,HI30,BV785,AB_2563128,N/D,,https://www.biolegend.com/en-us/products/brilliant-violet-785-anti-human-cd45-antibody-9325
+LY6G-BV570,LY6G,*,BioLegend,127629,1A8,BV570,AB_10899738,N/D,,https://www.biolegend.com/en-us/products/brilliant-violet-570-anti-mouse-ly-6g-antibody-7393

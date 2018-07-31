@@ -1,3 +1,7 @@
+---
+active: training
+---
+
 ## Training
 
 NCI-funded Cancer System Biology Centers (CSBC centers) at Harvard Medical

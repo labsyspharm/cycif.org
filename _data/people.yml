@@ -1,0 +1,144 @@
+- name: Peter Sorger
+  affiliations:
+    - Head of the Harvard Program in Therapeutic Science
+    - Harvard Medical school
+  image: https://static.projects.iq.harvard.edu/files/styles/os_files_large/public/sysbiohms/files/sorger_peter_-_new.jpg?m=1479923587&itok=4nZfn5yQ
+  role: Principle Investigator
+  email: peter_sorger@hms.harvard.edu
+  links:
+    - lab: https://sorger.med.harvard.edu/
+    - google schloar: https://scholar.google.com/citations?user=wS6Ii_cAAAAJ
+
+- name: Sandro Santagata
+  affiliations:
+    - Associate Pathologist in Neuropathology
+    - Brigham and Women’s Hospital, Department of Pathology
+  image: http://santagata.bwh.harvard.edu/wp-content/uploads/2014/05/S-Santagata-200x200.jpg
+  role: 
+  email: ssantagata@partners.org
+  links:
+    - lab: http://santagata.bwh.harvard.edu/
+    - google schloar: https://scholar.google.com/citations?user=9dUOqJ0AAAAJ
+
+- name: Benjamin Izar
+  affiliations:
+    - Dana-Farber Cancer Institute
+    - Broad Institute of Harvard and MIT
+  image: http://www.dana-farber.org/uploadedImages/Pages/Find_a_Doctor/benjamin-izar.jpg
+  role: 
+  email: bizar@bidmc.harvard.edu
+  links:
+    - google schloar: https://scholar.google.com/citations?hl=en&user=_m4wVXYAAAAJ
+
+- name: Jia-Ren Lin
+  affiliations:
+    - Research Associate
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/Jia-Ren-Lin.jpg
+  role: Research Scientist
+  email: jia-ren_lin@hms.harvard.edu
+  links:
+    - bio: https://scholar.harvard.edu/jiarenlin
+    - google schloar: https://scholar.google.com/citations?user=5IqUMGMAAAAJ
+
+- name: Zoltan Maliga
+  affiliations:
+    - Research Associate
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/Zoltan-Maliga.jpg
+  role: Research Scientist
+  email: zoltan_maliga@hms.harvard.edu
+  links:
+    - google scholar: https://scholar.google.com/citations?user=fynsrTcAAAAJ&hl=en
+    - linkedIn: https://www.linkedin.com/in/zoltan-maliga-2563ba7/
+
+- name: Jeremy Muhlich
+  affiliations: 
+    - Deputy Director of Modeling and Informatics
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/Jeremy-Muhlich.jpg
+  role: Research Scientist
+  email: jeremy_muhlich@hms.harvard.edu
+  links:
+    - bio: https://scholar.harvard.edu/jmuhlich
+    - GitHub: https://github.com/jmuhlich
+
+- name: Douglas Russell
+  affiliations: 
+    - Research Associate and Senior Staff Programmer
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/Douglas-Russell.jpg
+  role: Research Scientist
+  email: douglas_russell@hms.harvard.edu
+  links:
+    - bio: https://scholar.harvard.edu/dpwrussell
+    - GitHub: https://github.com/dpwrussell
+
+- name: Clarence Yapp
+  affiliations:
+    - Research Associate for Microscopy & Image Analysis
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/Clarence-Yapp.jpg
+  role: 
+  email: clarence@hms.harvard.edu
+  links:
+    - bio: https://scholar.harvard.edu/clarence
+
+- name: Shaolin Mei
+  affiliations: 
+    - Research Associate
+    - Laboratory of Systems Pharmacology
+  image: shaolin_mei.jpg
+  role: 
+  email: shaolin_mei@hms.harvard.edu
+  links: 
+
+- name: Connor Jacobson
+  affiliations: 
+    - Research Assistant I
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2017/03/Connor-Jacobson-214x300.jpg
+  role: 
+  email: connor_jacobson@hms.harvard.edu
+  links: 
+    - bio: https://scholar.harvard.edu/connorjacobson/home
+
+- name: Artem Sokolov
+  affiliations:
+    - Director of Modeling Informatics
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/Artem-Sokolov-300x300.jpg
+  email: artem_sokolov@hms.harvard.edu
+  links:
+    - bio: https://scholar.harvard.edu/artem-sokolov
+    - github: https://github.com/ArtemSokolov
+
+- name: John Hoffer
+  affiliations:
+    - Software Engineer
+    - Laboratory of Systems Pharmacology
+  image: john_hoffer.jpg
+  email: john_hoffer@hms.harvard.edu
+  links:
+    - github: https://github.com/thejohnhoffer
+
+- name: Yu-An Chen
+  affiliations:
+    - Research Associate
+    - Laboratory of Systems Pharmacology
+  image: yu-an_chen.jpg
+  email: yu-an_chen@hms.harvard.edu
+  links:
+    - github: https://github.com/yu-anchen
+
+- name: Shu Wang
+  affiliations:
+    - Graduate Research Assistant
+    - Laboratory of Systems Pharmacology
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/Shu-Wang.jpg
+  role: 
+  email: shuwang01@g.harvard.edu
+  links:
+
+
+    

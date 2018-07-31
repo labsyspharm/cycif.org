@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US " }}" class="h-100">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
+</head>
+
+<body class="d-flex flex-column h-100">
+
+  <header class="mb-5">
+
+    {% include nav.html %}
+
+    <div id="cycif-banner" class="border-bottom">
+    <!-- style="background-image: url({{ '/assets/img/cycif-banner.jpg' | absolute_url }});"> -->
+      <div class="d-flex align-items-center banner-text-container" >
+        <!-- {% if page.url == '/'%} banner-tall {% endif %}"> -->
+        {% unless page.url contains 'osd' %}
+        <div class="container my-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <h1 class="display-4 my-4">{{ page.title | default: site.github.repository_name }}</h1>
+              {% if page.url == '/'%}
+              <p class="lead">{{ site.description | default: site.github.project_tagline }}</p>
+              {% endif %}
+            </div>
+            <div class="">
+              <!-- <div class="rounded-circle" style="background: url(assets/img/explore_button.jpg) center; background-size: cover; width: 100px;height: 100px; border: solid 2px; box-sizing: content-box;">
+                <a href="{{site.baseurl}}/osd-exhibit" class="btn text-light align-items-center d-flex rounded-circle" style="width: 100px; height: 100px; background-color: rgba(0, 0, 0, 0.2)">
+                  <span class="h4 m-0">
+                      Explore<br/>
+                      CyCIF
+                  </span>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        {% endunless %}
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- section id="downloads">
+        {% if site.show_downloads %}
+        <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+        <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+        {% endif %}
+        <a href="{{ site.github.repository_url }}" class="btn btn-github">
+          <span class="icon"></span>View on GitHub</a>
+      </section -->
+    </div>
+  </header>
+
+  {{ content }} 
+
+  <div class="flex-grow-1"></div>
+
+  <footer class="mt-5">
+    {% include footer.html %}
+  </footer>
+
+  {% include scripts.html %}
+
+</body>
+
+</html>

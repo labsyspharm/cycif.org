@@ -1,0 +1,37 @@
+<nav class="main-nav navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-md-4">
+  <div class="container">
+    <a class="navbar-brand" href="{{ site.baseurl }}/">
+      <strong>CyCIF</strong>
+    </a>
+    <button class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="text-white">MENU</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        {% for item in site.data.nav-links %}
+        <li class="nav-item">
+          <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %} active {% endif %}" style="font-size: 1rem">
+            {{ item.label }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+          <div class="flex-row ml-md-auto">
+  
+            <a href="{{site.baseurl}}/osd-exhibit" class="btn btn-outline-light font-weight-bold" style="font-size: 1rem; background: url(assets/img/explore_button.jpg) center; background-size: cover;">
+              <span class="text-white">
+                  Explore CyCIF
+              </span> 
+            </a>
+          </div> 
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <strong>CyCIF</strong>
+    </a>
+  </div>
+</nav>
