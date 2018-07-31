@@ -1072,23 +1072,23 @@ HashState.prototype = {
     $('.edit_w').text(show5(o[2]));
     $('.edit_h').text(show5(o[3]));
 
-    // Based on search keys
-    displayOrNot('#draw-switch a', !this.edit);
-    displayOrNot('#edit-switches a', this.edit);
-
     // Based on control keys
     const editing = this.editing;
     const drawing = this.drawing;
 
+    // Based on search keys
+    displayOrNot('#edit-switches a', this.edit);
+    displayOrNot('#draw-switch a', !editing);
+    displayOrNot('#story-nav', !editing);
+    displayOrNot('.edit-item', editing);
+
     classOrNot('#story-nav', !editing, 'round-nav');
     classOrNot('#edit-menu', editing, 'round-nav');
 
-    displayOrNot('#story-nav', !editing);
-    displayOrNot('#edit-nav', editing);
     toggleCursor('crosshair', drawing);
 
-    greenOrWhite('.draw-switch span', drawing);
-    greenOrWhite('#edit-switch span', editing);
+    greenOrWhite('.draw-switch svg', drawing);
+    greenOrWhite('#edit-switch svg', editing);
   },
 
   makeUrl: function(hashKeys, searchKeys) {

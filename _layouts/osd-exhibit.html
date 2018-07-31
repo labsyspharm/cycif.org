@@ -92,43 +92,35 @@
 
                     <div class="exhibit-content">
                         <ul id="edit-menu" class="nav justify-content-end position-relative">
-                            <li id="edit-switches" class="nav-item d-none d-inline">
-                                <ul class="nav">
-                                    <li id="edit-switch" class="nav-item">
-                                        <a class="btn btn-sm btn-default">
-                                            <span class="white glyphicon glyphicon-edit"></span>
-                                        </a>
+                            <li id="edit-switch" class="nav-item">
+                                <a class="btn btn-default">
+                                    <i class="green fas fa-edit"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item edit-item draw-switch">
+                                <a class="btn btn-default">
+                                    <i class="white fas fa-crosshairs"></i>
+                                </a>
+                            </li>
+                            <li class="edit-item">
+                                <ul class="nav" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link list-group-item-action active" role="tab" data-toggle="list" id="edit-mode-1" href="#">Edit</a>
                                     </li>
-                                    <li class="nav-item draw-switch">
-                                        <a id="edit-overlay" class="btn btn-sm btn-default">
-                                            <span class="white glyphicon glyphicon-screenshot"></span>
-                                        </a>
+                                    <li class="nav-item">
+                                        <a class="nav-link list-group-item-action" role="tab" data-toggle="list" id="edit-mode-2" href="#">Source</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <ul id="edit-nav" class="d-none nav nav-tabs small">
-                                    <li>
-                                        <ul class="nav" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link list-group-item-action active" role="tab" data-toggle="list" id="edit-mode-1" href="#">Edit</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link list-group-item-action" role="tab" data-toggle="list" id="edit-mode-2" href="#">Source</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="copy_yaml_input">
-                                        <button class="btn btn-default edit_copy_button" data-placement="bottom">
-                                            Copy
-                                        </button>
-                                    </li>
-                                    <li id="edit-import" class="copy_yaml_input nav-item d-none d-inline">
-                                        <button class="btn btn-sm btn-default">
-                                            Import
-                                        </button>
-                                    </li>
-                                </ul>
+                            <li class="copy_yaml_input edit-item">
+                                <button class="btn btn-default edit_copy_button" data-placement="bottom">
+                                    Copy
+                                </button>
+                            </li>
+                            <li id="edit-import" class="copy_yaml_input nav-item d-none d-inline">
+                                <button class="btn btn-default">
+                                    Import
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -191,11 +183,11 @@
                                                 <span class="edit_code edit_y">3.14</span>
                                             </span>
                                             <span class="d-inline-block">
-                                                <span class="white glyphicon glyphicon-resize-horizontal"></span>
+                                                <i class="white fas fa-arrows-alt-h"></i>
                                                 <span class="edit_code edit_w">3.14</span>
                                             </span>
                                             <span class="d-inline-block">
-                                                <span class="white glyphicon glyphicon-resize-vertical"></span>
+                                                <i class="white fas fa-arrows-alt-v"></i>
                                                 <span class="edit_code edit_h">3.14</span>
                                             </span>
                                         </h6>
@@ -209,7 +201,7 @@
                                                 <span class="edit_code edit_pany">3.14</span>
                                             </span>
                                             <span class="d-inline-block">
-                                                <span class="white glyphicon glyphicon-resize-full"></span>
+                                                <i class="white fas fa-expand-arrows-alt"></i>
                                                 <span class="edit_code edit_zoom">3.14</span>
                                             </span>
                                         </h6>
@@ -315,7 +307,6 @@
     <div id="current-overlay-0" class="white overlay"></div>
 
 
-    <!-- <link href="bootstrap-glyphicons.min.css" type="text/css" rel="stylesheet"> -->
     {% include scripts.html %}
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
@@ -327,6 +318,9 @@
     </script>
     <script>
         {% include clipboard.js %}
+    </script>
+    <script>
+        {% include js-yaml.min.js %}
     </script>
     <script>
         {% include exhibits.js %}
