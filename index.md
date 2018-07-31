@@ -83,10 +83,9 @@ title: CyCIF
             <h3 class="h2 bd-highlight">Explore t-CyCIF</h3>
         <div class="d-flex flex-column flex-wrap justify-content-center">
             <a href="{{ site.baseurl }}/method" class="btn btn-outline-primary m-2">Method</a>
-            <a href="http://lincs.hms.harvard.edu/lin-elife-2018/" class="btn btn-outline-primary m-2">Data &amp; code</a>
+            <a href="http://lincs.hms.harvard.edu/lin-elife-2018/" target="_blank" class="btn btn-outline-primary m-2">Data &amp; code</a>
             <a href="{{ site.baseurl }}/publications" class="btn btn-outline-primary m-2">Publications</a>
-            <a href="{{ site.baseurl }}/training" class="btn btn-outline-primary m-2">Training</a>
-            <a href="{{ site.baseurl }}/osd1" class="btn btn-primary m-2">CyCIF Viewer</a>
+            <a href="{{ site.baseurl }}/cycifviewer" class="btn btn-primary m-2">CyCIF Viewer</a>
         </div>
     </div>
 </div>

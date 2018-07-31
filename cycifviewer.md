@@ -40,7 +40,7 @@ title: CyCIF Viewer
         <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/cycifviewer/02_square_elife_paper.jpg" alt="Generic placeholder image">
     </div>
     <div class="col">
-      <a href="{{ site.baseurl }}/featured-paper/lin-elife-2018/">
+      <a href="{{ site.baseurl }}/publications#lin-elife-2018-paper">
         <h5 class="mt-0">Figures in the 2018 eLife Publication</h5>
       </a>
       <p>

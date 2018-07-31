@@ -27,7 +27,10 @@ title: People
                         {% if person.links %}links:{% endif %}
                         {% for linkHash in person.links %}
                             {% for link in linkHash %}
-                            <a href="{{ link[1] }}" class="mx-1">{{ link[0] | capitalize }}</a> 
+                            <a href="{{ link[1] }}" class="mx-1"
+                                {% if link[1] contains 'http' %} target="_blank" {% endif %}>
+                                {{ link[0] | capitalize }}
+                            </a> 
                             {% endfor %}
                         {% endfor %}
                     </p>

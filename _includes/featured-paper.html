@@ -1,5 +1,5 @@
-
 {% assign pubData=site.data.lin-elife-2018 %}
+<section id="lin-elife-2018-paper">
 
 <h2 class="h4">
     {{ pubData.publication.title }}
@@ -8,7 +8,7 @@
     {{ pubData.publication.authors }}
     <br> {{ pubData.publication.journal }}
 </p>
-<a href="{{ pubData.publication.link.url }}" class="lead">{{ pubData.publication.link.name }}</a>
+<a href="{{ pubData.publication.link.url }}" target="_blank" class="lead">{{ pubData.publication.link.name }}</a>
 
 
 <h3>Available images</h3>
@@ -24,7 +24,7 @@
         </p>
         {% for link_hash in img.links %}
             {% for link in link_hash %}
-            <a class="btn btn-outline-primary m-1" href="{{ link[1] }}">{{ link[0] }}</a>
+            <a class="btn btn-outline-primary m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a>
             {% endfor %}
         {% endfor %}
     </div>
@@ -32,5 +32,4 @@
 {% endfor %}
 </div>
 
-
-<!-- <h3>Tools and source code</h3> -->
+</section>
