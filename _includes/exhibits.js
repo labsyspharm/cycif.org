@@ -1765,7 +1765,7 @@ const arrange_images = function(viewer, tileSources, state, init) {
   }
 };
 
-const build_page = function(exhibit, embedded) {
+const build_page = function(exhibit, options) {
 
   // Initialize openseadragon
   const viewer = OpenSeadragon({
@@ -1777,9 +1777,6 @@ const build_page = function(exhibit, embedded) {
     homeButton: 'zoom-home',
   });
   const tileSources = {};
-  const options = {
-    embedded: embedded
-  };
   const state = new HashState(viewer, tileSources, exhibit, options);
   const init = state.init.bind(state);
   arrange_images(viewer, tileSources, state, init);

@@ -310,7 +310,9 @@
     </script>
     <script>
         const exhibit = {{ exhibit | jsonify }};
-        build_page(exhibit, true);
+        build_page(exhibit, {
+          embedded: true
+        });
     </script>
 
 <script>
