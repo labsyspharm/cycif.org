@@ -140,7 +140,7 @@ Exhibit:
         y: -100
         width: 200
         height: 200
-  - Name: ROIs
+  - Name: About
     Description:
     Waypoints:
     - Name: Normal Kidney

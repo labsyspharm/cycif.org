@@ -59,20 +59,30 @@
                             <a id="story-title" href="#story-board" class="py-3 text-white d-block bg-black clearfix" data-toggle="collapse" style="text-decoration: none;">
                                 <span id="exhibit-name" class="h5">
                                 </span>
-                                <span id="js-story-collapse-indicator" class="d-block my-2 text-primary">
-                                    LESS
-                                    <i class="fas fa-chevron-up"></i>
-                                </span>
                             </a>
                         </div>
-                        <div class="collapse show" id="story-board">
-                            <ul class="nav nav-tabs nav-justified w-100" role="tablist" id="story-indices"></ul>
-                            <div class="tab-content collapse show" id="story-content"></div>
-                        </div>
+                        
                     </div>
                     <div class="shadow px-3 my-2 py-3   bg-black">
                         <p class="mb-1 font-weight-bold">Select a marker group:</p>
                         <div id="channel-groups" class="nav flex nav-pills"></div>
+                    </div>
+                    <div class="shadow px-3 mb-2   bg-black">
+                        <a id="story-title" href="#story-board" class="py-3 text-white d-block bg-black clearfix" data-toggle="collapse" style="text-decoration: none;">
+                            <span id="js-story-collapse-indicator" class="d-block my-1 text-primary text-center">
+                                SHOW LESS
+                                <i class="fas fa-chevron-up"></i>
+                            </span>
+                        </a>
+                        <div class="collapse show" id="story-board">
+                            <p class="mb-3 font-weight-bold">
+                                {% if exhibit.Stories.size > 1 %}
+                                Select a story:
+                                {% endif %}
+                            </p>
+                            <ul class="nav nav-tabs nav-justified w-100 rounded-top" role="tablist" id="story-indices" style="background-color: #999"></ul>
+                            <div class="tab-content collapse show" id="story-content"></div>
+                        </div>
                     </div>
                     <div class="shadow px-3 py-1   bg-black d-block d-sm-none">
                         <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav"><i class="fas fa-chevron-down"></i> HIDE STORY</a>
@@ -142,10 +152,10 @@
                 </div>
                 <div class="col-*">
                     <ul class="list-unstyled">
-                        <li class="btn d-block text-light step-back">
+                        <li class="btn btn-link d-block step-back">
                             <i class="fas fa-arrow-up"></i>
                         </li>
-                        <li class="btn d-block text-light step-next">
+                        <li class="btn btn-link d-block step-next">
                             <i class="fas fa-arrow-down"></i>
                         </li>
                     </ul>
@@ -315,35 +325,35 @@
 
 <script>
         $('#story-board').on('hidden.bs.collapse', function() { 
-            $('#js-story-collapse-indicator')[0].innerHTML = 'MORE <i class="fas fa-chevron-down"></i>'
+            $('#js-story-collapse-indicator')[0].innerHTML = 'SHOW MORE <i class="fas fa-chevron-down"></i>'
         });
         $('#story-board').on('shown.bs.collapse', function() { 
-            $('#js-story-collapse-indicator')[0].innerHTML = 'LESS <i class="fas fa-chevron-up"></i>'
+            $('#js-story-collapse-indicator')[0].innerHTML = 'SHOW LESS <i class="fas fa-chevron-up"></i>'
         });
         
 
-        $(document).ready(function() {
-            $('#osd-side-nav').scrollTop(0);
-            topAnchor = $('#story-title').position().top;
+        // $(document).ready(function() {
+        //     $('#osd-side-nav').scrollTop(0);
+        //     topAnchor = $('#story-title').position().top;
 
-            var storyTitleAdded = false;
-            $('#osd-side-nav').scroll(function() {
-                if ($('#story-title').position().top == topAnchor && $('#story-title-sticky')[0]) {
-                    $('#story-title-sticky')[0].parentNode.removeChild($('#story-title-sticky')[0]);
-                    storyTitleAdded = false;
-                }
-                if ($('#story-title').position().top < topAnchor && !storyTitleAdded) {
-                    var clNode = $('#story-title')[0].cloneNode(true);
-                    clNode.setAttribute('id', 'story-title-sticky');
-                    $('#story-title')[0].parentNode.insertBefore(clNode, $('#story-title')[0].nextSibling);
-                    $('#story-title-sticky')
-                        .css('top', topAnchor)
-                        .css('width', $('#story-title').width())
-                        .addClass('border-bottom border-secondary')
-                    storyTitleAdded = true;
-                }
-            });
-        })
+        //     var storyTitleAdded = false;
+        //     $('#osd-side-nav').scroll(function() {
+        //         if ($('#story-title').position().top == topAnchor && $('#story-title-sticky')[0]) {
+        //             $('#story-title-sticky')[0].parentNode.removeChild($('#story-title-sticky')[0]);
+        //             storyTitleAdded = false;
+        //         }
+        //         if ($('#story-title').position().top < topAnchor && !storyTitleAdded) {
+        //             var clNode = $('#story-title')[0].cloneNode(true);
+        //             clNode.setAttribute('id', 'story-title-sticky');
+        //             $('#story-title')[0].parentNode.insertBefore(clNode, $('#story-title')[0].nextSibling);
+        //             $('#story-title-sticky')
+        //                 .css('top', topAnchor)
+        //                 .css('width', $('#story-title').width())
+        //                 .addClass('border-bottom border-secondary')
+        //             storyTitleAdded = true;
+        //         }
+        //     });
+        // })
 
         $('.js-toggle-osd-side-nav').click(function() {
             $('#osd-side-nav').position().top == 0 
