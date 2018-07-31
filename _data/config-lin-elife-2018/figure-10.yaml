@@ -55,7 +55,7 @@ Exhibit:
         - FF0000
         - 0000FF
       Channels:
-        - pERK
+        - p-ERK
         - CD45
         - pS6_235
         - DNA
@@ -79,7 +79,7 @@ Exhibit:
         - FF0000
         - 0000FF
       Channels:
-        - E-Caderin
+        - E-Cadherin
         - Keratin
         - Vimentin
         - DNA
@@ -136,4 +136,59 @@ Exhibit:
         y: -100
         width: 200
         height: 200
+  - Name: ROIs
+    Description:
+    Waypoints:
+    - Name: Normal Kidney
+      Description: |
+        TMA snapshot 1: human kidney. The well organized structures displayed here: the Glomerulus enriched with Vimentin (Red) and distal & proximal tubule with `E-Cadherin`. The `Keratin` expression in tubular cells can indicate the injury statues. A sample image could be in Figure 10A.
+      Group: Cycle 6
+      Overlay:
+        x: 0.5263
+        y: 0.6595
+        width: 0.141
+        height: 0.1357
+      Zoom: 3.4827
+      Pan:
+        - 0.6351
+        - 0.7241
+    - Name: Normal Kidney (Cont.)
+      Description: |
+        Kidney (cont.): The Glomerular parietal epithelial cells has high level of `p-ERK`, suggested the activation of MAPK signaling possibly from PDGFR signaling:
+      Group: Cycle 4
+      Overlay:
+        x: 0.5776
+        y: 0.7142
+        width: 0.0308
+        height: 0.0255
+      Zoom: 7.8469
+      Pan:
+        - 0.6096
+        - 0.7268
+    - Name: Lung Tumors (I)
+      Description: |
+        TMA snapshot 2 (Lung tumors): Squamous cell carcinoma on the right, with `EGFR` amplification, while the Adenocarcinoma on the left.
+      Group: Cycle 5
+      Overlay:
+        x: 0.5307
+        y: 0.4674
+        width: 0.2858
+        height: 0.1316
+      Zoom: 2.628
+      Pan:
+        - 0.7168
+        - 0.5156
+    - Name: Lung Tumors (II)
+      Description: |
+        TMA snapshot 2 (Lung tumors, Cont.): Squamous cell carcinoma (right) expressed high level of `Keratin`, while the Adenocarcinoma on the left only show `E-Cadherin` & `Vimentin` stains.
+      Group: Cycle 6
+      Overlay:
+        x: 0.5283
+        y: 0.4702
+        width: 0.2857
+        height: 0.1256
+      Zoom: 2.628
+      Pan:
+        - 0.7168
+        - 0.5156
       
