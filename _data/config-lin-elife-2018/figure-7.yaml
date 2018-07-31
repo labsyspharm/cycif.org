@@ -80,3 +80,46 @@ Exhibit:
         y: -100
         width: 200
         height: 200
+
+  - Name: ROIs
+    Description: 
+    Waypoints:
+    - Name: Small Intestine
+      Description: |
+        Small intestine which resected with PDAC, `PCNA` shows nice crypts and cilia are labeled strongly with `beta-catenin` (Red). Some representative images from the same region could be found in Figure 7C.
+      Group: Proliferation
+      Overlay:
+        x: 1.0661
+        y: 0.1873
+        width: 0.1306
+        height: 0.1271
+      Zoom: 2.5735
+      Pan:
+        - 1.2101
+        - 0.2492
+    - Name: PDAC Region
+      Description: |
+        PDAC are inflated with immune cells, labeled with `CD45` and `CD4`. Notably, this region also expressed highest `PD-L1`, eliciting a possible immune evasion mechanism. Corresponsive figures and data for Figure 8B-D.
+      Group: Immune Markers
+      Overlay:
+        x: 1.0967
+        y: 0.773
+        width: 0.082
+        height: 0.0638
+      Zoom: 6.4037
+      Pan:
+        - 1.1421
+        - 0.8019
+    - Name: Normal Pancreas
+      Description: |
+        A co-resected normal pancreas show nice organization with EMT markers, `E-Cadherin` and `Vimentin` (red). Some representative images and data collected are in Figure 8B-D.
+      Group: EMT Markers
+      Overlay:
+        x: 0.3242
+        y: 0.7612
+        width: 0.0642
+        height: 0.0435
+      Zoom: 7.6842
+      Pan:
+        - 0.3743
+        - 0.7828
