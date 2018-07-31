@@ -138,8 +138,10 @@ const sort_keys = function(a, b){
 };
 
 const ctrlC = function(str) {
-  function listener(e) { e.clipboardData.setData('text/plain', str);
-                         e.preventDefault(); }
+  const listener = function(e) {
+    e.clipboardData.setData('text/plain', str);
+    e.preventDefault();
+  };
   document.addEventListener('copy', listener);
   document.execCommand('copy');
   document.removeEventListener('copy', listener);
@@ -165,7 +167,7 @@ const newMarkers = function(tileSources, group) {
   }
 };
 
-const unpackGrid = function(layout, images, key='Grid') {
+const unpackGrid = function(layout, images, key) {
   const image_map = images.reduce(function(o, i) {
 
     i.TileSize = i.TileSize || [1024, 1024];
@@ -312,7 +314,7 @@ const HashState = function(viewer, tileSources, exhibit) {
 
 HashState.prototype = {
 
-  init() {
+  init: function() {
     // Read hash
     window.onpopstate = this.popState.bind(this);
     window.onpopstate();
@@ -531,7 +533,7 @@ HashState.prototype = {
 
   get searchKeys() {
     const search = this.search;
-    for (const k in this.searchable) {
+    for (var k in this.searchable) {
       const keys = this.searchable[k];
       if (this.matchQuery(search, keys)) {
         return keys;
@@ -542,7 +544,7 @@ HashState.prototype = {
 
   get hashKeys() {
     const hash = this.hash;
-    for (const k in this.hashable) {
+    for (var k in this.hashable) {
       const keys = this.hashable[k];
       if (this.matchQuery(hash, keys)) {
         return keys;
@@ -885,7 +887,7 @@ HashState.prototype = {
    * State manaagement
    */
 
-  matchQuery(hash, hashKeys) {
+  matchQuery: function(hash, hashKeys) {
     const keys = Object.keys(hash);
     if (keys.length != hashKeys.length) {
       return false;
@@ -895,7 +897,7 @@ HashState.prototype = {
     }, true);
   },
 
-  newExhibit() {
+  newExhibit: function() {
     const exhibit = this.exhibit;
     const cgs = deepCopy(exhibit.Groups || []);
     const stories = deepCopy(exhibit.Stories || []);
@@ -907,7 +909,7 @@ HashState.prototype = {
       cgs: cgs
     };
   },
-  newTag() {
+  newTag: function() {
     const exhibit = this.exhibit;
     const stories = deepCopy(exhibit.Stories);
     const group = this.group;
@@ -932,7 +934,7 @@ HashState.prototype = {
       }]
     }].concat(stories);
   },
-  pushState() {
+  pushState: function() {
     const hashKeys = this.hashable.edits;
     const searchKeys = this.searchKeys;
     const url = this.makeUrl(hashKeys, searchKeys);
@@ -953,7 +955,7 @@ HashState.prototype = {
     window.onpopstate();
     this.changed = false;
   },
-  popState(e) {
+  popState: function(e) {
     if (e && e.state) {
       this.changed = false;
       this.design = e.state;
@@ -994,7 +996,7 @@ HashState.prototype = {
     // Always update
     this.newView(true);
   },
-  newView(redraw) {
+  newView: function(redraw) {
 
     // Temp overlay if drawing or editing
     if (this.drawing || this.editing) {
@@ -1065,14 +1067,14 @@ HashState.prototype = {
     greenOrWhite('#edit-switch span', editing);
   },
 
-  makeUrl(hashKeys, searchKeys) {
+  makeUrl: function(hashKeys, searchKeys) {
     const root = location.pathname;
     const hash = this.makeHash(hashKeys);
     const search = this.makeSearch(searchKeys);
     return  root + search + hash;
   },
 
-  makeHash(hashKeys, state) {
+  makeHash: function(hashKeys, state) {
     if (state  == undefined) {
       state = this;
     }
@@ -1083,7 +1085,7 @@ HashState.prototype = {
     return hash? '#' + hash : '';
   },
 
-  makeSearch(searchKeys, state) {
+  makeSearch: function(searchKeys, state) {
     if (state  == undefined) {
       state = this;
     }
@@ -1097,12 +1099,12 @@ HashState.prototype = {
   /*
    * User intercation
    */
-  normalize(pixels) {
+  normalize: function(pixels) {
     const vp = this.viewer.viewport;
     const norm = vp.viewerElementToViewportCoordinates;
     return norm.call(vp, pixels);
   },
-  drawLowerBounds(position) {
+  drawLowerBounds: function(position) {
     const wh = [0, 0];
     const new_xy = [
       position.x, position.y
@@ -1110,7 +1112,7 @@ HashState.prototype = {
     this.o = new_xy.concat(wh);
     this.newView(false);
   },
-  computeBounds(value, start, len) {
+  computeBounds: function(value, start, len) {
     const center = start + (len / 2);
     const end = start + len;
     // Below center
@@ -1126,7 +1128,7 @@ HashState.prototype = {
       range: value - start,
     };
   },
-  drawUpperBounds(position) {
+  drawUpperBounds: function(position) {
     const xy = this.o.slice(0, 2);
     const wh = this.o.slice(2);
 
@@ -1139,7 +1141,7 @@ HashState.prototype = {
     this.newView(false);
   },
 
-  startEditing() {
+  startEditing: function() {
     const waypoint = this.waypoint;
     this.o = oFromWaypoint(waypoint);
     this.d = dFromWaypoint(waypoint);
@@ -1150,11 +1152,11 @@ HashState.prototype = {
     activeOrNot('#edit-mode-2', false);
   },
 
-  cancelEditing() {
+  cancelEditing: function() {
     this.editing = 0;
   },
 
-  finishEditing() {
+  finishEditing: function() {
     var changed = false;
     const cgs = this.cgs;
     const viewport = this.viewport;
@@ -1190,20 +1192,20 @@ HashState.prototype = {
     this.editing = 0;
   },
 
-  startDrawing() {
+  startDrawing: function() {
     this.drawing = 1;
     const waypoint = this.waypoint;
 
     this.o = oFromWaypoint(waypoint);
   },
-  cancelDrawing() {
+  cancelDrawing: function() {
     this.drawing = 0;
 
     const waypoint = this.waypoint;
     this.o = oFromWaypoint(waypoint);
   },
 
-  finishDrawing(position) {
+  finishDrawing: function(position) {
 
     this.drawUpperBounds(position);
 
@@ -1223,7 +1225,7 @@ HashState.prototype = {
     return 'current-overlay-' + this.resetCount;
   },
 
-  newOverlay() {
+  newOverlay: function() {
     const oldOverlay = this.currentOverlay;
     this.resetCount += 1;
     const newOverlay = this.currentOverlay;
@@ -1236,7 +1238,7 @@ HashState.prototype = {
    * Display manaagement
    */
 
-  addOverlay(overlay) {
+  addOverlay: function(overlay) {
 
     const el = this.currentOverlay;
     greenOrWhite('#' + el, this.drawing);
@@ -1260,11 +1262,11 @@ HashState.prototype = {
     }
   },
 
-  addGroups() {
+  addGroups: function() {
     $('#channel-groups').empty();
     this.cgs.forEach(this.addGroup, this);
   },
-  addGroup(group, g) {
+  addGroup: function(group, g) {
     var aEl = document.createElement('a');
     aEl = Object.assign(aEl, {
       className: this.g === g ? 'nav-link active' : 'nav-link',
@@ -1288,13 +1290,13 @@ HashState.prototype = {
     });
   },
 
-  addChannelLegends() {
+  addChannelLegends: function() {
     $('#channel-legend').empty();
     this.channels.forEach(this.addChannelLegend, this);
   },
 
   // Add channel legend label
-  addChannelLegend(channel, c) {
+  addChannelLegend: function(channel, c) {
     const color = this.indexColor(c, '#FFF');
 
     var label = document.createElement('span');
@@ -1314,7 +1316,7 @@ HashState.prototype = {
     ul.appendChild(li);
   },
 
-  channelSettings(channels) {
+  channelSettings: function(channels) {
     const chans = this.chans;
     return channels.reduce(function(map, c){
       const i = index_name(chans, c);
@@ -1325,14 +1327,14 @@ HashState.prototype = {
     }, {});
   },
 
-  channelOrders(channels) {
+  channelOrders: function(channels) {
     return channels.reduce(function(map, c, i){
       map[c] = i;
       return map;
     }, {});
   },
 
-  indexColor(i, empty) {
+  indexColor: function(i, empty) {
     const colors = this.colors;
     if (i === undefined) {
       return empty;
@@ -1340,7 +1342,7 @@ HashState.prototype = {
     return '#' + colors[i % colors.length];
   },
 
-  newStories() {
+  newStories: function() {
 
     const story_indices = document.getElementById('story-indices');
     const story_elems = document.getElementById('story-content');
@@ -1364,7 +1366,7 @@ HashState.prototype = {
     }, this);
   },
 
-  addStory(story, sid, container) {
+  addStory: function(story, sid, container) {
 
     var sid_label = 's-' + sid;
 
@@ -1437,7 +1439,7 @@ HashState.prototype = {
     container.story_elems.appendChild(sid_story);
   },
 
-  addWaypoint(waypoint, wid, container) {
+  addWaypoint: function(waypoint, wid, container) {
     const wid_label = container.label + '-w-' + wid;
 
     // Copy the index
@@ -1509,7 +1511,7 @@ HashState.prototype = {
     container.waypoint_elems.appendChild(wid_waypoint);
   },
 
-  fillWaypointView(waypoint, wid_waypoint) {
+  fillWaypointView: function(waypoint, wid_waypoint) {
     const md = waypoint.Description;
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
 
@@ -1529,7 +1531,7 @@ HashState.prototype = {
       $(wid_waypoint).css(wid_style);
     }
   },
-  fillWaypointEdit(wid_waypoint) {
+  fillWaypointEdit: function(wid_waypoint) {
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
     const wid_describe = decode(this.d);
     $(wid_txt).on('input', this, function(e) {
@@ -1553,12 +1555,12 @@ HashState.prototype = {
     });
     return wid_yaml.replace('- ', '  ');
   },
-  fillWaypointSource(wid_waypoint) {
+  fillWaypointSource: function(wid_waypoint) {
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
     wid_txt.value = this.bufferYaml;
   },
 
-  arrange(grid) {
+  arrange: function(grid) {
     const out = grid.map(function(row) {
       return row.map(function(col) {
         return {};
@@ -1598,7 +1600,7 @@ HashState.prototype = {
     return out;
   },
 
-  rearrange() {
+  rearrange: function() {
 
     const now = this.arrange(this.grid);
     const next = this.arrange(this.target);
@@ -1725,7 +1727,7 @@ const arrange_images = function(viewer, tileSources, state, init) {
             width: displayWidth,
             opacity: group === cgs[cg] ? 1 : 0,
             //preload: true,
-            success(data) {
+            success: function(data) {
               const item = data.item;
               if (!tileSources.hasOwnProperty(group.Path)) {
                 tileSources[group.Path] = [];
@@ -1787,27 +1789,4 @@ const index_name = function(list, name) {
   })[0];
   return list.indexOf(item);
 };
-
-// const load_json = function(url) {
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       try {
-//         config = jsyaml.safeLoad(this.responseText);
-//       } catch (e) {
-//         console.error(e);
-//       }
-//       if (config) {
-//         // Handle Yaml Configuration file
-//         build_page(config.Exhibit);
-//       }
-//     }
-//   };
-//   xhttp.open('GET', url, true);
-//   xhttp.send();
-// };
-
-// load_json(`
-  
-// `);
 

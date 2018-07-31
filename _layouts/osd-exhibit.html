@@ -296,6 +296,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+    <script>
+        {% include polyfills.js %}
+    </script>
     <script>
         {% include exhibits.js %}
     </script>
@@ -313,12 +318,12 @@
         });
         
 
-        $(document).ready(() => {
+        $(document).ready(function() {
             $('#osd-side-nav').scrollTop(0);
             topAnchor = $('#story-title').position().top;
 
             var storyTitleAdded = false;
-            $('#osd-side-nav').scroll(() => {
+            $('#osd-side-nav').scroll(function() {
                 if ($('#story-title').position().top == topAnchor && $('#story-title-sticky')[0]) {
                     $('#story-title-sticky')[0].parentNode.removeChild($('#story-title-sticky')[0]);
                     storyTitleAdded = false;
@@ -336,14 +341,14 @@
             });
         })
 
-        $('.js-toggle-osd-side-nav').click(()=> {
+        $('.js-toggle-osd-side-nav').click(function() {
             $('#osd-side-nav').position().top == 0 
                 ? $('#osd-side-nav').css('bottom', '-90vh').css('top', '')
                 : $('#osd-side-nav').css('top', 0);
             $('#osd-side-nav').scrollTop(0);
         })
 
-        $(document).ready(() => {
+        $(document).ready(function() {
             if ($( window ).width() < 576) {
                 $('#viewer-tool').css('right', 0);
                 $('#legend').css('right', 0);
