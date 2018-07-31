@@ -426,7 +426,7 @@ HashState.prototype = {
       THIS.d = encode(formData.d);
       $('#copy_link_modal').modal('show');
 
-      const root = location.host + location.pathname;
+      const root = this.location('host') + this.location('pathname');
       const hash = THIS.makeHash(THIS.hashable.tag);
       const link = document.getElementById('copy_link');
       link.value = root + hash;
@@ -511,23 +511,26 @@ HashState.prototype = {
   /*
    * URL History
    */
+  location: function(key) {
+    return decodeURIComponent(location[key]);
+  },
 
   get search() {
-    const search = location.search.slice(1);
+    const search = this.location('search').slice(1);
     const entries = search.split('&');
     return deserialize(entries);
   },
 
   get hash() {
-    const hash = location.hash.slice(1);
+    const hash = this.location('hash').slice(1);
     const entries = hash.split('#');
     return deserialize(entries);
   },
 
   get url() {
-    const root = location.pathname;
-    const search = location.search;
-    const hash = location.hash;
+    const root = this.location('pathname');
+    const search = this.location('search');
+    const hash = this.location('hash');
     return root + search + hash;
   },
 
@@ -1068,7 +1071,7 @@ HashState.prototype = {
   },
 
   makeUrl: function(hashKeys, searchKeys) {
-    const root = location.pathname;
+    const root = this.location('pathname');
     const hash = this.makeHash(hashKeys);
     const search = this.makeSearch(searchKeys);
     return  root + search + hash;
