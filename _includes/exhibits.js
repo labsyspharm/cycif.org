@@ -268,6 +268,18 @@ const newCopyButton = function() {
   });
 };
 
+const changeSprings = function(viewer, seconds, stiffness) {
+  const springs = [
+    'centerSpringX', 'centerSpringY', 'zoomSpring'
+  ];
+  springs.forEach(function(spring) {
+    const s = viewer.viewport[spring];
+    s.animationTime = seconds;
+    s.springStiffness = stiffness;
+    s.springTo(s.target.value);
+  });
+};
+
 const HashState = function(viewer, tileSources, exhibit) {
 
   this.resetCount = 0;
@@ -434,6 +446,12 @@ HashState.prototype = {
       return false;
     });
 
+    this.viewer.addHandler('canvas-enter', function(e) {
+      const THIS = e.userData;
+      THIS.faster();
+      console.log('yo')
+    }, this);
+
     this.viewer.addHandler('canvas-drag', function(e) {
       const THIS = e.userData;
       const overlay = $('#' + THIS.currentOverlay);
@@ -505,6 +523,7 @@ HashState.prototype = {
         round4(pan.y)
       ];
       THIS.pushState();
+      THIS.faster();
     }, this);
   },
 
@@ -669,6 +688,7 @@ HashState.prototype = {
     // Set group, viewport from waypoint
     const waypoint = this.waypoint;
 
+    this.slower();
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
     this.o = oFromWaypoint(waypoint);
@@ -1219,6 +1239,13 @@ HashState.prototype = {
         this.drawing = 0;
       }).bind(this), 300);
     }
+  },
+
+  faster: function() {
+    changeSprings(this.viewer, 1.2, 6.4);
+  },
+  slower: function() {
+    changeSprings(this.viewer, 3.2, 6.4);
   },
 
   get currentOverlay() {
