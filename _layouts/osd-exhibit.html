@@ -49,9 +49,11 @@
                     </div>
                 </div>
                 <div class="col-sm-3 d-none d-sm-block">.</div>
-                <div id="osd-side-nav" class="col-sm-3 pt-5 mt-2 bg-dark px-2" style="height: 100vh; overflow-y: auto; position: absolute; right: 0">
+                <div id="osd-side-nav" class="col-sm-3 pt-5 mt-2 bg-dark px-2 collapse show" style="height: 100vh; overflow-y: auto; position: absolute; right: 0; top: 0; transition-property: top; transition-duration: 0.5s ">
                     <div class="position-absolute px-2 py-1 w-100 bg-l" style="top: 0; left: 0;">
-                        <a href="javascript:;" class="rounded-0 js-toggle-osd-side-nav btn btn-link btn-block py-2 bg-black" ><i class="fas fa-chevron-up"></i> SHOW STORY</a>
+                        <span class="bg-black d-block">
+                            <a href="javascript:;" class="rounded-0 js-toggle-osd-side-nav btn btn-link btn-block py-2 bg-black" ><span class="px-2">SHOW STORY</span><i class="fas fa-chevron-circle-up"></i></a>
+                        </span>
                     </div>
                     
                     <div class="shadow px-3 mb-2   bg-black">
@@ -70,7 +72,7 @@
                     <div class="shadow px-3 mb-2   bg-black">
                         <a id="story-title" href="#story-board" class="py-3 text-white d-block bg-black clearfix" data-toggle="collapse" style="text-decoration: none;">
                             <span id="js-story-collapse-indicator" class="d-block my-1 text-primary text-center">
-                                SHOW LESS
+                                <span class="px-2">SHOW LESS</span>
                                 <i class="fas fa-chevron-up"></i>
                             </span>
                         </a>
@@ -85,7 +87,7 @@
                         </div>
                     </div>
                     <div class="shadow px-3 py-1   bg-black d-block d-sm-none">
-                        <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav"><i class="fas fa-chevron-down"></i> HIDE STORY</a>
+                        <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav"><span class="px-2">HIDE STORY</span><i class="fas fa-chevron-circle-down"></i></a>
                     </div>
 
                     <div class="exhibit-content">
@@ -325,10 +327,10 @@
 
 <script>
         $('#story-board').on('hidden.bs.collapse', function() { 
-            $('#js-story-collapse-indicator')[0].innerHTML = 'SHOW MORE <i class="fas fa-chevron-down"></i>'
+            $('#js-story-collapse-indicator')[0].innerHTML = '<span class="px-2">SHOW MORE</span> <i class="fas fa-chevron-down"></i>'
         });
         $('#story-board').on('shown.bs.collapse', function() { 
-            $('#js-story-collapse-indicator')[0].innerHTML = 'SHOW LESS <i class="fas fa-chevron-up"></i>'
+            $('#js-story-collapse-indicator')[0].innerHTML = '<span class="px-2">SHOW LESS</span> <i class="fas fa-chevron-up"></i>'
         });
         
 
@@ -357,7 +359,7 @@
 
         $('.js-toggle-osd-side-nav').click(function() {
             $('#osd-side-nav').position().top == 0 
-                ? $('#osd-side-nav').css('bottom', '-90vh').css('top', '')
+                ? $('#osd-side-nav').css('top', '75vh')
                 : $('#osd-side-nav').css('top', 0);
             $('#osd-side-nav').scrollTop(0);
         })

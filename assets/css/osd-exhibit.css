@@ -70,8 +70,8 @@ body {
       color: red;
   }
   .collapsing {
-      transition: none;
-      display: none;
+      /* transition: none;
+      display: none; */
   }
   
   .slide-border {
