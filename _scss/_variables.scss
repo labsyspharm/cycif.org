@@ -9,6 +9,7 @@ $theme-colors: (
   // "primary": #72c7f5,
 );
 $link-color:                theme-color("primary");
+$nav-pills-link-active-bg:  theme-color("primary");
 $hr-border-color:           #555;
 
 // stylelint-disable value-keyword-case
