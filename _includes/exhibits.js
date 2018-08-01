@@ -287,6 +287,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
   this.tileSources = tileSources;
   this.exhibit = exhibit;
   this.viewer = viewer;
+  viewer.setVisible(false);
 
   this.hashable = {
     exhibit: [
@@ -525,7 +526,8 @@ HashState.prototype = {
     }, this);
 
     // Display viewer
-    displayOrNot(this.viewer.element, true);
+    this.finishAnimation();
+    this.viewer.setVisible(true);
   },
 
   /*
@@ -1243,6 +1245,10 @@ HashState.prototype = {
     }
   },
 
+  finishAnimation: function() {
+    const target = this.viewer.viewport.getBounds();
+    this.viewer.viewport.fitBounds(target, true);
+  },
   faster: function() {
     changeSprings(this.viewer, 1.2, 6.4);
   },
@@ -1771,7 +1777,6 @@ const arrange_images = function(viewer, tileSources, state, init) {
 
               // Initialize hash state
               nLoaded += 1;
-              state.activateViewport();
               if (nLoaded == nTotal) {
                 init();
               }
