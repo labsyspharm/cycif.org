@@ -21,7 +21,12 @@ const encode = function(txt) {
 };
 
 const decode = function(txt) {
-  return decodeURIComponent(atob(txt));
+  try {
+    return decodeURIComponent(atob(txt));
+  }
+  catch (e) {
+    return '';
+  }
 };
 
 const arrayEqual = function(a, b) {
@@ -138,13 +143,7 @@ const sort_keys = function(a, b){
 };
 
 const ctrlC = function(str) {
-  const listener = function(e) {
-    e.clipboardData.setData('text/plain', str);
-    e.preventDefault();
-  };
-  document.addEventListener('copy', listener);
-  document.execCommand('copy');
-  document.removeEventListener('copy', listener);
+  Clipboard.copy(str);
 };
 
 const newMarkers = function(tileSources, group) {
@@ -268,9 +267,22 @@ const newCopyButton = function() {
   });
 };
 
-const HashState = function(viewer, tileSources, exhibit) {
+const changeSprings = function(viewer, seconds, stiffness) {
+  const springs = [
+    'centerSpringX', 'centerSpringY', 'zoomSpring'
+  ];
+  springs.forEach(function(spring) {
+    const s = viewer.viewport[spring];
+    s.animationTime = seconds;
+    s.springStiffness = stiffness;
+    s.springTo(s.target.value);
+  });
+};
+
+const HashState = function(viewer, tileSources, exhibit, options) {
 
   this.resetCount = 0;
+  this.embedded = options.embedded || false;
   this.showdown = new showdown.Converter();
   this.tileSources = tileSources;
   this.exhibit = exhibit;
@@ -338,7 +350,6 @@ HashState.prototype = {
     $('#draw-switch').tooltip({
       title: 'Share Link'
     });
-
 
     $('#help').click(this, function(e) {
       const THIS = e.data;
@@ -426,13 +437,18 @@ HashState.prototype = {
       THIS.d = encode(formData.d);
       $('#copy_link_modal').modal('show');
 
-      const root = location.host + location.pathname;
+      const root = THIS.location('host') + THIS.location('pathname');
       const hash = THIS.makeHash(THIS.hashable.tag);
       const link = document.getElementById('copy_link');
       link.value = root + hash;
 
       return false;
     });
+
+    this.viewer.addHandler('canvas-enter', function(e) {
+      const THIS = e.userData;
+      THIS.faster();
+    }, this);
 
     this.viewer.addHandler('canvas-drag', function(e) {
       const THIS = e.userData;
@@ -505,29 +521,36 @@ HashState.prototype = {
         round4(pan.y)
       ];
       THIS.pushState();
+      THIS.faster();
     }, this);
+
+    // Display viewer
+    displayOrNot(this.viewer.element, true);
   },
 
   /*
    * URL History
    */
+  location: function(key) {
+    return decodeURIComponent(location[key]);
+  },
 
   get search() {
-    const search = location.search.slice(1);
+    const search = this.location('search').slice(1);
     const entries = search.split('&');
     return deserialize(entries);
   },
 
   get hash() {
-    const hash = location.hash.slice(1);
+    const hash = this.location('hash').slice(1);
     const entries = hash.split('#');
     return deserialize(entries);
   },
 
   get url() {
-    const root = location.pathname;
-    const search = location.search;
-    const hash = location.hash;
+    const root = this.location('pathname');
+    const search = this.location('search');
+    const hash = this.location('hash');
     return root + search + hash;
   },
 
@@ -669,6 +692,7 @@ HashState.prototype = {
     // Set group, viewport from waypoint
     const waypoint = this.waypoint;
 
+    this.slower();
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
     this.o = oFromWaypoint(waypoint);
@@ -945,7 +969,7 @@ HashState.prototype = {
       return;
     }
 
-    if (this.hashKeys === hashKeys) {
+    if (!this.embedded && this.hashKeys === hashKeys) {
       history.pushState(design, title, url);
     }
     else {
@@ -1009,9 +1033,7 @@ HashState.prototype = {
     // Redraw design
     if(redraw) {
       // Update OpenSeadragon
-      const viewport = this.viewer.viewport;
-      viewport.panTo(this.viewport.pan);
-      viewport.zoomTo(this.viewport.scale);
+      this.activateViewport();
       newMarkers(this.tileSources, this.group);
       // Redraw HTML Menus
       this.addChannelLegends();
@@ -1068,7 +1090,7 @@ HashState.prototype = {
   },
 
   makeUrl: function(hashKeys, searchKeys) {
-    const root = location.pathname;
+    const root = this.location('pathname');
     const hash = this.makeHash(hashKeys);
     const search = this.makeSearch(searchKeys);
     return  root + search + hash;
@@ -1221,6 +1243,13 @@ HashState.prototype = {
     }
   },
 
+  faster: function() {
+    changeSprings(this.viewer, 1.2, 6.4);
+  },
+  slower: function() {
+    changeSprings(this.viewer, 3.2, 6.4);
+  },
+
   get currentOverlay() {
     return 'current-overlay-' + this.resetCount;
   },
@@ -1288,6 +1317,12 @@ HashState.prototype = {
       THIS.g = g;
       THIS.pushState();
     });
+  },
+
+  activateViewport: function() {
+    const viewport = this.viewer.viewport;
+    viewport.panTo(this.viewport.pan);
+    viewport.zoomTo(this.viewport.scale);
   },
 
   addChannelLegends: function() {
@@ -1736,6 +1771,7 @@ const arrange_images = function(viewer, tileSources, state, init) {
 
               // Initialize hash state
               nLoaded += 1;
+              state.activateViewport();
               if (nLoaded == nTotal) {
                 init();
               }
@@ -1764,7 +1800,7 @@ const arrange_images = function(viewer, tileSources, state, init) {
   }
 };
 
-const build_page = function(exhibit) {
+const build_page = function(exhibit, options) {
 
   // Initialize openseadragon
   const viewer = OpenSeadragon({
@@ -1776,7 +1812,7 @@ const build_page = function(exhibit) {
     homeButton: 'zoom-home',
   });
   const tileSources = {};
-  const state = new HashState(viewer, tileSources, exhibit);
+  const state = new HashState(viewer, tileSources, exhibit, options);
   const init = state.init.bind(state);
   arrange_images(viewer, tileSources, state, init);
 };
