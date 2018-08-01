@@ -1269,7 +1269,7 @@ HashState.prototype = {
   addGroup: function(group, g) {
     var aEl = document.createElement('a');
     aEl = Object.assign(aEl, {
-      className: this.g === g ? 'nav-link active' : 'nav-link',
+      className: this.g === g ? 'nav-link btn-primary active' : 'nav-link btn-primary',
       href: 'javascript:;',
       innerText: group.Name,
       title: group.Path,

@@ -49,10 +49,10 @@
                     </div>
                 </div>
                 <div class="col-sm-3 d-none d-sm-block">.</div>
-                <div id="osd-side-nav" class="col-sm-3 pt-5 mt-2 bg-dark px-2 collapse show" style="height: 100vh; overflow-y: auto; position: absolute; right: 0; top: 0; transition-property: top; transition-duration: 0.5s ">
+                <aside id="osd-side-nav" class="col-sm-3 py-5 px-2 mt-2 bg-dark collapse show" style="height: 100vh; overflow-y: auto; position: absolute; right: 0; top: 0; transition-property: top; transition-duration: 0.5s ">
                     <div class="position-absolute px-2 py-1 w-100 bg-l" style="top: 0; left: 0;">
-                        <span class="bg-black d-block">
-                            <a href="javascript:;" class="rounded-0 js-toggle-osd-side-nav btn btn-link btn-block py-2 bg-black" ><span class="px-2">SHOW STORY</span><i class="fas fa-chevron-circle-up"></i></a>
+                        <span class="bg-primary d-block">
+                            <a href="javascript:;" class="rounded-0 js-toggle-osd-side-nav btn btn-primary btn-block py-2" ><span class="px-2">SHOW STORY</span><i class="fas fa-chevron-circle-up"></i></a>
                         </span>
                     </div>
                     
@@ -86,8 +86,8 @@
                             <div class="tab-content collapse show" id="story-content"></div>
                         </div>
                     </div>
-                    <div class="shadow px-3 py-1   bg-black d-block d-sm-none">
-                        <a href="javascript:;" class="btn btn-link btn-block js-toggle-osd-side-nav"><span class="px-2">HIDE STORY</span><i class="fas fa-chevron-circle-down"></i></a>
+                    <div class="shadow px-3 py-1   bg-primary d-block d-sm-none">
+                        <a href="javascript:;" class="btn btn-primary btn-block js-toggle-osd-side-nav"><span class="px-2">HIDE STORY</span><i class="fas fa-chevron-circle-down"></i></a>
                     </div>
 
                     <div class="exhibit-content">
@@ -132,7 +132,15 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                    <div class="text-center">
+                        <img src="{{ site.baseurl }}/assets/img/logos/lsp_logo.png" class="img-fluid my-3 my-md-0" alt="" style="max-height: 50px;">
+                        <p class="small">
+                            Images hosted on <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a> <br /> 
+                            Viewer powered by and <a class="text-primary">Minerva</a> and <a href="https://openseadragon.github.io/" target="_blank">OpenSeaDragon</a>
+                        </p>
+
+                    </div>
+                </aside>
             </div>
         </div>
     </div>
