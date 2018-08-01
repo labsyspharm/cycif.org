@@ -1,7 +1,7 @@
 ---
 redirect_from: /pca2018/
 active: home
-title: CyCIF
+title: CyCIF - Cyclic Immunofluorescence
 ---
 
 <!-- <p class="sidebar-cta">

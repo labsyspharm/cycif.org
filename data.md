@@ -1,5 +1,5 @@
 --- 
-title: CyCIF Viewer 
+title: Data
 ---
 <h2 class="h2">
   Visualizing and sharing CyCIF images
