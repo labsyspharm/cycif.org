@@ -1087,8 +1087,8 @@ HashState.prototype = {
 
     toggleCursor('crosshair', drawing);
 
-    greenOrWhite('.draw-switch svg', drawing);
-    greenOrWhite('#edit-switch svg', editing);
+    greenOrWhite('.draw-switch *', drawing);
+    greenOrWhite('#edit-switch *', editing);
   },
 
   makeUrl: function(hashKeys, searchKeys) {
