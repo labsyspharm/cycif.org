@@ -307,6 +307,9 @@ const HashState = function(viewer, tileSources, exhibit, options) {
   };
 
   this.state = {
+    buffer: {
+      waypoint: undefined
+    },
     changed: false,
     design: {},
     w: [0],
@@ -399,11 +402,20 @@ HashState.prototype = {
     $('#edit-switch').click(this, function(e) {
       const THIS = e.data;
       if (THIS.editing) {
-        THIS.cancelEditing();
+        THIS.finishEditing();
       }
       else {
         THIS.startEditing();
       }
+      THIS.pushState();
+    });
+
+    $('.clear-switch').click(this, function(e) {
+      const THIS = e.data;
+      THIS.n = '';
+      THIS.d = '';
+      THIS.finishEditing();
+      THIS.startEditing();
       THIS.pushState();
     });
 
@@ -517,6 +529,38 @@ HashState.prototype = {
     // Display viewer
     this.finishAnimation();
     this.viewer.setVisible(true);
+  },
+
+  /*
+   * Editor buffers
+   */ 
+
+  get bufferWaypoint() {
+    if (this.state.buffer.waypoint === undefined) {
+      const viewport = this.viewport;
+      const group = this.group;
+      return {
+        Zoom: viewport.scale,
+        Pan: [
+          viewport.pan.x,
+          viewport.pan.y
+        ],
+        Group: group.Name,
+        Description: '',
+        Name: 'Untitled',
+        Overlay: {
+          x: -100,
+          y: -100,
+          width: 200,
+          height: 200,
+        },
+      };
+    }
+    return deepCopy(this.state.buffer.waypoint);
+  },
+
+  set bufferWaypoint(bw) {
+    this.state.buffer.waypoint = bw; 
   },
 
   /*
@@ -872,12 +916,20 @@ HashState.prototype = {
   },
 
   get waypoint() {
+    if (this.editing) {
+      return this.bufferWaypoint;
+    }
     return this.waypoints[this.w];
   },
   set waypoint(waypoint) {
-    const waypoints = this.waypoints;
-    waypoints[this.w] = waypoint;
-    this.waypoints = waypoints;
+    if (this.editing) {
+      this.bufferWaypoint = waypoint;
+    }
+    else {
+      const waypoints = this.waypoints;
+      waypoints[this.w] = waypoint;
+      this.waypoints = waypoints;
+    }
   },
 
   get viewport() {
@@ -1154,12 +1206,15 @@ HashState.prototype = {
     this.newView(false);
   },
 
-  startEditing: function() {
-    const waypoint = this.waypoint;
-    this.o = oFromWaypoint(waypoint);
-    this.d = dFromWaypoint(waypoint);
-    this.n = nFromWaypoint(waypoint);
-    this.g = gFromWaypoint(waypoint, this.cgs);
+  startEditing: function(_waypoint) {
+    const bw = _waypoint || this.bufferWaypoint;
+    this.bufferWaypoint = bw;
+
+    this.v = vFromWaypoint(bw);
+    this.o = oFromWaypoint(bw);
+    this.d = dFromWaypoint(bw);
+    this.n = nFromWaypoint(bw);
+    this.g = gFromWaypoint(bw, this.cgs);
     this.editing = 1;
   },
 
@@ -1170,34 +1225,35 @@ HashState.prototype = {
   finishEditing: function() {
     var changed = false;
     const cgs = this.cgs;
+    const overlay = this.overlay;
     const viewport = this.viewport;
-    const waypoint = this.waypoint;
-    if (gFromWaypoint(waypoint, cgs) != this.g) {
-      waypoint.Group = cgs[this.g].Name;
+    const bw = this.bufferWaypoint;
+    if (gFromWaypoint(bw, cgs) != this.g) {
+      bw.Group = this.group.Name;
       changed = true;
     }
-    if (nFromWaypoint(waypoint) != this.n) {
-      waypoint.Name = decode(this.n);
+    if (nFromWaypoint(bw) != this.n) {
+      bw.Name = decode(this.n);
       changed = true;
     }
-    if (dFromWaypoint(waypoint) != this.d) {
-      waypoint.Description = decode(this.d);
+    if (dFromWaypoint(bw) != this.d) {
+      bw.Description = decode(this.d);
       changed = true;
     }
-    if (!arrayEqual(oFromWaypoint(waypoint), this.o)) {
-      waypoint.Overlay = this.overlay;
+    if (!arrayEqual(oFromWaypoint(bw), this.o)) {
+      bw.Overlay = this.overlay;
       changed = true;
     }
-    if (!arrayEqual(vFromWaypoint(waypoint), this.v)) {
-      waypoint.Zoom = viewport.scale;
-      waypoint.Pan = [
+    if (!arrayEqual(vFromWaypoint(bw), this.v)) {
+      bw.Zoom = viewport.scale;
+      bw.Pan = [
         viewport.pan.x,
         viewport.pan.y
       ];
       changed = true;
     }
     if (changed) {
-      this.waypoint = waypoint;
+      this.bufferWaypoint = bw;
       this.pushState();
     }
     this.editing = 0;
@@ -1222,6 +1278,9 @@ HashState.prototype = {
 
     if (this.editing) {
       this.drawing = 0;
+      this.finishEditing();
+      this.startEditing();
+      this.pushState();
     }
     else {
       const selector = '#edit_description_modal';
