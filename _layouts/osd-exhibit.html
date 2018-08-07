@@ -69,69 +69,126 @@
                         <p class="mb-1 font-weight-bold">Select a marker group:</p>
                         <div id="channel-groups" class="nav flex nav-pills"></div>
                     </div>
-                    <div class="shadow px-3 mb-2   bg-black">
-                        <a id="story-title" href="#story-board" class="py-3 text-white d-block bg-black clearfix" data-toggle="collapse" style="text-decoration: none;">
+                    <div class="shadow px-3 my-2 py-3   bg-black">
+                        
+                        <div class="collapse show" id="story-board">
+                            <div class="d-flex justify-content-between">
+
+                                <p class="mb-3 font-weight-bold">
+                                    {% if exhibit.Stories.size > 1 %}
+                                    Select a story:
+                                    {% endif %}
+                                </p>
+                                <div id="edit-switch" class="mb-3">
+                                    <a class="btn btn-default border">
+                                        <i class="green fas fa-edit"></i>
+                                        <span class="green pl-2">
+                                            EDIT
+                                        </span>  
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="exhibit-content">
+                                    <ul id="edit-menu" class="nav nav-pills position-relative nav-fill">
+                                        <!-- <li id="edit-switch" class="nav-item">
+                                            <a class="btn btn-default">
+                                                <i class="green fas fa-edit"></i>
+                                            </a>
+                                        </li> -->
+                                        <li class="nav-item edit-item draw-switch">
+                                            <a class="btn btn-default px-1  ">
+                                                <i class="white fas fa-crosshairs fa-lg"></i><br>
+                                                <span class="mt-2 d-block" style="font-size: 0.7rem">
+                                                    DRAW
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="edit-item">
+                                            <ul class="nav" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link list-group-item-action active text-center px-1  " role="tab" data-toggle="list" id="edit-mode-1" href="#">
+                                                        <i class="fas fa-pen fa-lg"></i><br>
+                                                        <span class="mt-2 d-block" style="font-size: 0.7rem">
+                                                            EDIT
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link list-group-item-action text-center px-1  " role="tab" data-toggle="list" id="edit-mode-2" href="#">
+                                                        <i class="fas fa-code fa-lg"></i><br>
+                                                        <span class="mt-2 d-block" style="font-size: 0.7rem">
+                                                            SOURCE
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="copy_yaml_input edit-item nav-item">
+                                            <button class="btn btn-default edit_copy_button px-1  " data-placement="bottom">
+                                                <i class="fas fa-copy fa-lg"></i><br>
+                                                <span class="mt-2 d-block" style="font-size: 0.7rem">
+                                                    COPY
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li id="edit-import" class="copy_yaml_input nav-item d-none d-inline">
+                                            <button class="btn btn-default px-1  ">
+                                                <i class="fas fa-file-upload fa-lg"></i><br>
+                                                <span class="mt-2 d-block" style="font-size: 0.7rem">
+                                                    IMPORT
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <ul class="nav nav-tabs nav-justified w-100 rounded-top" role="tablist" id="story-indices" style="background-color: #999"></ul>
+                            <div class="tab-content collapse show" id="story-content"></div>
+                        </div>
+                        <a id="story-title" href="#story-board" class="py-1 text-white d-block bg-black clearfix" data-toggle="collapse" style="text-decoration: none;">
                             <span id="js-story-collapse-indicator" class="d-block my-1 text-primary text-center">
                                 <span class="px-2">SHOW LESS</span>
                                 <i class="fas fa-chevron-up"></i>
                             </span>
                         </a>
-                        <div class="collapse show" id="story-board">
-                            <p class="mb-3 font-weight-bold">
-                                {% if exhibit.Stories.size > 1 %}
-                                Select a story:
-                                {% endif %}
-                            </p>
-                            <ul class="nav nav-tabs nav-justified w-100 rounded-top" role="tablist" id="story-indices" style="background-color: #999"></ul>
-                            <div class="tab-content collapse show" id="story-content"></div>
-                        </div>
                     </div>
                     <div class="shadow px-3 py-1   bg-primary d-block d-sm-none">
                         <a href="javascript:;" class="btn btn-primary btn-block js-toggle-osd-side-nav"><span class="px-2">HIDE STORY</span><i class="fas fa-chevron-circle-down"></i></a>
                     </div>
 
-                    <div class="exhibit-content">
+                    <!-- <div class="exhibit-content">
                         <ul id="edit-menu" class="nav justify-content-end position-relative">
-                            <li id="edit-switches" class="nav-item d-none d-inline">
-                                <ul class="nav">
-                                    <li id="edit-switch" class="nav-item">
-                                        <a class="btn btn-sm btn-default">
-                                            <span class="white glyphicon glyphicon-edit"></span>
-                                        </a>
+                            <li id="edit-switch" class="nav-item">
+                                <a class="btn btn-default">
+                                    <i class="green fas fa-edit"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item edit-item draw-switch">
+                                <a class="btn btn-default">
+                                    <i class="white fas fa-crosshairs"></i>
+                                </a>
+                            </li>
+                            <li class="edit-item">
+                                <ul class="nav" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link list-group-item-action active" role="tab" data-toggle="list" id="edit-mode-1" href="#">Edit</a>
                                     </li>
-                                    <li class="nav-item draw-switch">
-                                        <a id="edit-overlay" class="btn btn-sm btn-default">
-                                            <span class="white glyphicon glyphicon-screenshot"></span>
-                                        </a>
+                                    <li class="nav-item">
+                                        <a class="nav-link list-group-item-action" role="tab" data-toggle="list" id="edit-mode-2" href="#">Source</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <ul id="edit-nav" class="d-none nav nav-tabs small">
-                                    <li>
-                                        <ul class="nav" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link list-group-item-action active" role="tab" data-toggle="list" id="edit-mode-1" href="#">Edit</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link list-group-item-action" role="tab" data-toggle="list" id="edit-mode-2" href="#">Source</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="copy_yaml_input">
-                                        <button class="btn btn-default edit_copy_button" data-placement="bottom">
-                                            Copy
-                                        </button>
-                                    </li>
-                                    <li id="edit-import" class="copy_yaml_input nav-item d-none d-inline">
-                                        <button class="btn btn-sm btn-default">
-                                            Import
-                                        </button>
-                                    </li>
-                                </ul>
+                            <li class="copy_yaml_input edit-item">
+                                <button class="btn btn-default edit_copy_button" data-placement="bottom">
+                                    Copy
+                                </button>
+                            </li>
+                            <li id="edit-import" class="copy_yaml_input nav-item d-none d-inline">
+                                <button class="btn btn-default">
+                                    Import
+                                </button>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div class="text-center">
                         <img src="{{ site.baseurl }}/assets/img/logos/lsp_logo.png" class="img-fluid my-3 my-md-0" alt="" style="max-height: 50px;">
                         <p class="small">
@@ -179,48 +236,58 @@
                             <form class="form save_edits_form">
                                 <div class="input-group">
                                     <div style="width: 100%; margin-bottom: 5px">
-                                        <textarea class="form-control edit_text editable" rows="10">
+                                        <textarea class="form-control edit_text editable bg-dark text-white rounded-0 border-0" rows="10">
                                         </textarea>
                                     </div>
-                                    <span class="mr-auto">
-                                        <h6>
-                                            <span class="d-inline-block">X
-                                                <span class="edit_code edit_x">3.14</span>
-                                            </span>
-                                            <span class="d-inline-block">Y
-                                                <span class="edit_code edit_y">3.14</span>
-                                            </span>
-                                            <span class="d-inline-block">
-                                                <span class="white glyphicon glyphicon-resize-horizontal"></span>
-                                                <span class="edit_code edit_w">3.14</span>
-                                            </span>
-                                            <span class="d-inline-block">
-                                                <span class="white glyphicon glyphicon-resize-vertical"></span>
-                                                <span class="edit_code edit_h">3.14</span>
-                                            </span>
-                                        </h6>
-                                    </span>
-                                    <span class="ml-auto">
-                                        <h6>
-                                            <span class="d-inline-block">X
+                                    <div class="row w-100 mt-3">
+                                        <div class="col-6">
+                                            <p class="mb-1 font-weight-bold">Camera</p>
+                                            <span class="d-block">
+                                                <sapn class="w-25 d-inline-block text-center">X</sapn>
                                                 <span class="edit_code edit_panx">3.14</span>
                                             </span>
-                                            <span class="d-inline-block">Y
+                                            <span class="d-block">
+                                                <sapn class="w-25 d-inline-block text-center">Y</sapn>
                                                 <span class="edit_code edit_pany">3.14</span>
                                             </span>
-                                            <span class="d-inline-block">
-                                                <span class="white glyphicon glyphicon-resize-full"></span>
+                                            <span class="d-block">
+                                                <sapn class="w-25 d-inline-block text-center">
+                                                    <i class="white fas fa-expand-arrows-alt"></i>
+                                                </sapn>
                                                 <span class="edit_code edit_zoom">3.14</span>
                                             </span>
-                                        </h6>
-                                    </span>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="mb-1 font-weight-bold">Rectangle</p>
+                                            <span class="d-block">
+                                                <sapn class="w-25 d-inline-block text-center">X</sapn>
+                                                <span class="edit_code edit_x">3.14</span>
+                                            </span>
+                                            <span class="d-block">
+                                                <sapn class="w-25 d-inline-block text-center">Y</sapn>
+                                                <span class="edit_code edit_y">3.14</span>
+                                            </span>
+                                            <span class="d-block">
+                                                <sapn class="w-25 d-inline-block text-center">
+                                                    <i class="white fas fa-arrows-alt-h"></i>
+                                                </sapn>
+                                                <span class="edit_code edit_w">3.14</span>
+                                            </span>
+                                            <span class="d-block">
+                                                <sapn class="w-25 d-inline-block text-center">
+                                                    <i class="white fas fa-arrows-alt-v"></i>
+                                                </sapn>
+                                                <span class="edit_code edit_h">3.14</span>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                         <div class="tab-pane fade" role="tabpanel">
                             <form class="form copy_yaml_form">
                                 <div class="input-group">
-                                    <textarea readonly class="form-control edit_text edit_code" name="copy_content" rows="12">
+                                    <textarea readonly class="form-control edit_text edit_code bg-dark rounded-0 border-0 text-white" style="font-size: 0.7rem" name="copy_content" rows="12">
                                     </textarea>
                                     <span class="input-group-btn copy_yaml_input">
                                         <button class="btn btn-default edit_copy_button" type="submit" data-placement="bottom">
@@ -315,7 +382,6 @@
     <div id="current-overlay-0" class="white overlay"></div>
 
 
-    <!-- <link href="bootstrap-glyphicons.min.css" type="text/css" rel="stylesheet"> -->
     {% include scripts.html %}
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.3.1/openseadragon.min.js"></script>
@@ -326,11 +392,19 @@
         {% include polyfills.js %}
     </script>
     <script>
+        {% include clipboard.js %}
+    </script>
+    <script>
+        {% include js-yaml.min.js %}
+    </script>
+    <script>
         {% include exhibits.js %}
     </script>
     <script>
         const exhibit = {{ exhibit | jsonify }};
-        build_page(exhibit);
+        build_page(exhibit, {
+          embedded: true
+        });
     </script>
 
 <script>
