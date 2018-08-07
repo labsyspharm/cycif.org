@@ -396,17 +396,6 @@ HashState.prototype = {
       reader.readAsText(f);
     });
 
-    $('#edit-mode-1').click(this, function(e) {
-      const THIS = e.data;
-      THIS.editing = 1;
-      THIS.newView(true);
-    });
-    $('#edit-mode-2').click(this, function(e) {
-      const THIS = e.data;
-      THIS.editing = 2;
-      THIS.newView(true);
-    });
-
     $('#edit-switch').click(this, function(e) {
       const THIS = e.data;
       if (THIS.editing) {
@@ -1077,8 +1066,8 @@ HashState.prototype = {
     const drawing = this.drawing;
 
     // Based on search keys
-    displayOrNot('#edit-switches a', this.edit);
     displayOrNot('#draw-switch a', !editing);
+    displayOrNot('#edit-switch', this.edit);
     displayOrNot('#story-nav', !editing);
     displayOrNot('.edit-item', editing);
 
@@ -1172,8 +1161,6 @@ HashState.prototype = {
     this.n = nFromWaypoint(waypoint);
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.editing = 1;
-    activeOrNot('#edit-mode-1', true);
-    activeOrNot('#edit-mode-2', false);
   },
 
   cancelEditing: function() {
@@ -1525,12 +1512,6 @@ HashState.prototype = {
       }
       this.fillWaypointEdit(wid_waypoint);
     }
-    else if (editing == 2) {
-      if (wid == this.w) {
-        wid_index.innerText = decode(this.n);
-      }
-      this.fillWaypointSource(wid_waypoint);
-    }
 
     // Update Waypoint
     $(wid_index).click(this, function(e) {
@@ -1595,10 +1576,6 @@ HashState.prototype = {
       sortKeys: sort_keys 
     });
     return wid_yaml.replace('- ', '  ');
-  },
-  fillWaypointSource: function(wid_waypoint) {
-    const wid_txt = $(wid_waypoint).find('.edit_text')[0];
-    wid_txt.value = this.bufferYaml;
   },
 
   arrange: function(grid) {
