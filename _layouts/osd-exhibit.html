@@ -50,6 +50,11 @@
                 </div>
                 <div class="col-sm-3 d-none d-sm-block">.</div>
                 <aside id="osd-side-nav" class="col-sm-3 py-5 px-2 mt-2 bg-dark collapse show" style="height: 100vh; overflow-y: auto; position: absolute; right: 0; top: 0; transition-property: top; transition-duration: 0.5s ">
+                    <!-- <div class="position-fixed" style="bottom: 5em; right: 2em; opacity: 0.9; z-index: 1020;">
+                        <a id="scroll-bottom" href="#anchor-bottom" class="text-light">
+                            <i class="fas fa-arrow-circle-down fa-5x"></i>
+                        </a>
+                    </div> -->
                     <div class="position-absolute px-2 py-1 w-100 bg-l" style="top: 0; left: 0;">
                         <span class="bg-primary d-block">
                             <a href="javascript:;" class="rounded-0 js-toggle-osd-side-nav btn btn-primary btn-block py-2" ><span class="px-2">SHOW STORY</span><i class="fas fa-chevron-circle-up"></i></a>
@@ -132,7 +137,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" id="anchor-bottom">
                         <img src="{{ site.baseurl }}/assets/img/logos/lsp_logo.png" class="img-fluid my-3 my-md-0" alt="" style="max-height: 50px;">
                         <p class="small">
                             Images hosted on <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a> <br /> 
@@ -341,6 +346,26 @@
             $('#js-story-collapse-indicator')[0].innerHTML = '<span class="px-2">SHOW LESS</span> <i class="fas fa-chevron-up"></i>'
         });
         
+        
+            // $('#scroll-bottom')
+            //     .click(function(event) {
+            //         event.preventDefault();
+            //         $('aside').animate({
+            //             scrollTop: $(window).height() * 0.65
+            //         }, 500, "swing", function() {
+            //             $('#scroll-bottom').addClass('d-none')
+            //             Callback after animation
+            //             Must change focus!
+            //             var $target = $(target);
+            //             $target.focus();
+            //             if ($target.is(":focus")) { // Checking if the target was focused
+            //                 return false;
+            //             } else {
+            //                 $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            //                 $target.focus(); // Set focus again
+            //             };
+            //         });
+            //     });
 
         // $(document).ready(function() {
         //     $('#osd-side-nav').scrollTop(0);
