@@ -1531,16 +1531,16 @@ HashState.prototype = {
 
     // Copy the index
     const wid_index = container.w0_index.cloneNode(true);
+    const wid_span = $(wid_index).find('.index-span')[0];
+    const wid_icon = $(wid_index).find('.inset-icon')[0];
+    wid_span.innerText = waypoint.Name;
 
-    wid_index.setAttribute('aria-controls', wid_label);
-    wid_index.innerText = waypoint.Name;
     wid_index.href = '#' + wid_label;
     wid_index.id = '-' + wid_label;
 
     // Copy the waypoint
     const wid_waypoint = container.w0_waypoint.cloneNode(true);
-    wid_waypoint.setAttribute('aria-labeledby', wid_index.id);
-    wid_waypoint.id = wid_index.getAttribute('aria-controls');
+    wid_waypoint.id = wid_label;
 
     // Fill waypoint based on edit mode
     const editing = container.editing;
@@ -1550,38 +1550,32 @@ HashState.prototype = {
       wid_index.className += ' active';
       wid_waypoint.className += ' active show';
     }
+    displayOrNot(wid_icon, this.edit);
 
     // Interactive
     if (editing == 0) {
       this.fillWaypointView(waypoint, wid_waypoint);
     }
     else if (editing == 1) {
-      if (wid == this.w) {
-        wid_index.innerText = decode(this.n);
-        $(wid_index).addClass('editable', true);
-        $(wid_index).css('-moz-user-modify', 'read-write');
-        $(wid_index).attr('contentEditable', true);
-        $(wid_index).on('input', this, function(e) {
-          const THIS = e.data;
-          const value = this.innerText;
-          if (value.length > 0) {
-            THIS.n = encode(value.replace(/\n|\r/g, ''));
-          }
-        });
-      }
       this.fillWaypointEdit(wid_waypoint);
     }
 
     // Update Waypoint
     $(wid_index).click(this, function(e) {
       const THIS = e.data;
-      if (editing != 1 || wid != THIS.w) {
-        THIS.w = wid;
-        const waypoint = THIS.waypoint;
-        THIS.d = dFromWaypoint(waypoint);
-        THIS.n = nFromWaypoint(waypoint);
-        THIS.pushState();
-      }
+      THIS.w = wid;
+      const waypoint = THIS.waypoint;
+      THIS.d = dFromWaypoint(waypoint);
+      THIS.n = nFromWaypoint(waypoint);
+      THIS.pushState();
+    });
+
+    // Edit Waypoint
+    $(wid_icon).click(this, function(e) {
+      const THIS = e.data;
+      THIS.w = wid;
+      const waypoint = THIS.waypoint;
+      THIS.startEditing(waypoint);
     });
 
     // Add index, Add waypoint
@@ -1614,7 +1608,16 @@ HashState.prototype = {
   },
   fillWaypointEdit: function(wid_waypoint) {
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
+    const wid_txt_name = $(wid_waypoint).find('.edit_name')[0];
     const wid_describe = decode(this.d);
+    const wid_name = decode(this.n);
+
+    $(wid_txt_name).on('input', this, function(e) {
+      const THIS = e.data;
+      THIS.n = encode(this.value);
+    });
+    wid_txt_name.value = wid_name;
+
     $(wid_txt).on('input', this, function(e) {
       const THIS = e.data;
       THIS.d = encode(this.value);

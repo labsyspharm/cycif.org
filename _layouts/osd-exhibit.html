@@ -168,7 +168,12 @@
                 <div class="col">
                     <div class="vertical-bar"></div>
                     <div class="waypoint-indices list-group nav nav-pills" role="tablist">
-                        <a class="nav-link" role="tab" data-toggle="list"></a>
+                        <a role="tab" data-toggle="list" class="nav-link">
+                            <span class="index-span"></span>
+                            <span class="inset-icon float-right">
+                                <i class="white fas fa-share fa-lg"></i><br>
+                            </span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-*">
@@ -190,7 +195,10 @@
                             <form class="form save_edits_form">
                                 <div class="input-group">
                                     <div style="width: 100%; margin-bottom: 5px">
-                                        <textarea class="form-control edit_text editable bg-dark text-white rounded-0 border-0" rows="10">
+                                        <input class="form-control edit_name editable bg-dark text-white rounded-0 border-0" type="text">
+                                        </input>
+                                        <br>
+                                        <textarea class="form-control edit_text editable bg-dark text-white rounded-0 border-0" rows="9">
                                         </textarea>
                                     </div>
                                     <div class="row w-100 mt-3">
