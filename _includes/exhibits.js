@@ -417,9 +417,7 @@ HashState.prototype = {
 
     $('.clear-switch').click(this, function(e) {
       const THIS = e.data;
-      THIS.n = '';
-      THIS.d = '';
-      THIS.finishEditing();
+      THIS.bufferWaypoint = undefined;
       THIS.startEditing();
       THIS.pushState();
     });
