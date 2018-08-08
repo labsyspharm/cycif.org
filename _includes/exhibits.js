@@ -361,12 +361,6 @@ HashState.prototype = {
       title: 'Share Link'
     });
 
-    $('#help').click(this, function(e) {
-      const THIS = e.data;
-      THIS.s = 0;
-      THIS.pushState();
-    });
-
     $('#edit-import').click(this, function(e) {
       $('#file-upload').click();
     });
@@ -394,7 +388,8 @@ HashState.prototype = {
           THIS.viewer.clearOverlays();
           THIS.viewer.world.removeAll();
           const init = function() {
-            $('#help').click();
+            THIS.s = 0;
+            THIS.pushState();
           };
           arrange_images(THIS.viewer, THIS.tileSources, THIS, init);
           $('#file-upload').replaceWith($('#file-upload').val('').clone(true));
