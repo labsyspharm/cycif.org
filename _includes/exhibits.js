@@ -1647,12 +1647,12 @@ HashState.prototype = {
     waypoint.Pan = [viewport.pan.x, viewport.pan.y];
     waypoint.Zoom = viewport.scale;
 
-    const wid_yaml = jsyaml.safeDump([[waypoint]], {
+    const wid_yaml = jsyaml.safeDump([[[[[waypoint]]]]], {
       lineWidth: 40,
       sortKeys: sort_keys,
       noCompatMode: true,
     });
-    return wid_yaml.replace('- ', '  ');
+    return wid_yaml.replace('- - - - - ', '        - ');
   },
 
   arrange: function(grid) {
