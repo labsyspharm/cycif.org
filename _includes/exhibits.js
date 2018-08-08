@@ -401,13 +401,18 @@ HashState.prototype = {
 
     $('#edit-switch').click(this, function(e) {
       const THIS = e.data;
+      if (!THIS.editing) {
+        THIS.startEditing();
+        THIS.pushState();
+      }
+    });
+
+    $('#view-switch').click(this, function(e) {
+      const THIS = e.data;
       if (THIS.editing) {
         THIS.finishEditing();
+        THIS.pushState();
       }
-      else {
-        THIS.startEditing();
-      }
-      THIS.pushState();
     });
 
     $('.clear-switch').click(this, function(e) {
@@ -1119,7 +1124,10 @@ HashState.prototype = {
 
     // Based on search keys
     displayOrNot('#draw-switch a', !editing);
-    displayOrNot('#edit-switch', this.edit);
+    displayOrNot('.show-if-viewing', !editing);
+    displayOrNot('.show-if-edit', this.edit);
+    activeOrNot('#view-switch', !editing);
+    activeOrNot('#edit-switch', editing);
     displayOrNot('#story-nav', !editing);
     displayOrNot('.edit-item', editing);
 
@@ -1129,7 +1137,7 @@ HashState.prototype = {
     toggleCursor('crosshair', drawing);
 
     greenOrWhite('.draw-switch *', drawing);
-    greenOrWhite('#edit-switch *', editing);
+    //greenOrWhite('#edit-switch *', editing);
   },
 
   makeUrl: function(hashKeys, searchKeys) {

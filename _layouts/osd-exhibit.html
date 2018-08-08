@@ -79,22 +79,28 @@
                         <div class="collapse show" id="story-board">
                             <div class="d-flex justify-content-between">
 
-                                <p class="mb-3 font-weight-bold">
-                                    {% if exhibit.Stories.size > 1 %}
-                                    Select a story:
-                                    {% endif %}
-                                </p>
-                                <div id="edit-switch" class="mb-3">
-                                    <a class="btn btn-default border">
-                                        <i class="green fas fa-edit"></i>
-                                        <span class="green pl-2">
-                                            EDIT
-                                        </span>  
-                                    </a>
-                                </div>
+                                <ul class="nav nav-tabs w-100 show-if-edit nav-justified rounded-top" style="background-color: #999">
+                                    <li class="nav-item rounded-0">
+                                        <a class="nav-link list-group-item-action font-weight-bold nav-color-dark" id="view-switch">
+                                            <i class="fas fa-image"></i>
+                                            <span>
+                                                VIEW
+                                            </span>  
+                                        </a>
+                                    </li>
+                                    <li class="nav-item rounded-0">
+                                        <a class="nav-link list-group-item-action font-weight-bold nav-color-dark" id="edit-switch">
+                                            <i class="fas fa-edit"></i>
+                                            <span>
+                                                EDIT
+                                            </span>  
+                                        </a>
+                                    </li>
+                                </ul>
+
                             </div>
                             <div class="exhibit-content">
-                                    <ul id="edit-menu" class="nav nav-pills position-relative nav-fill">
+                                    <ul id="edit-menu" class="show-if-edit nav nav-pills position-relative nav-fill">
                                         <li class="nav-item edit-item draw-switch">
                                             <a class="btn btn-default px-1  ">
                                                 <i class="white fas fa-crosshairs fa-lg"></i><br>
@@ -119,7 +125,7 @@
                                                 </span>
                                             </button>
                                         </li>
-                                        <li id="edit-import" class="copy_yaml_input nav-item d-none d-inline">
+                                        <li id="edit-import" class="copy_yaml_input edit-item nav-item">
                                             <button class="btn btn-default px-1  ">
                                                 <i class="fas fa-file-upload fa-lg"></i><br>
                                                 <span class="mt-2 d-block" style="font-size: 0.7rem">
@@ -129,6 +135,11 @@
                                         </li>
                                     </ul>
                                 </div>
+                            <p class="mb-3 show-if-viewing font-weight-bold">
+                                {% if exhibit.Stories.size > 1 %}
+                                Select a story:
+                                {% endif %}
+                            </p>
                             <ul class="nav nav-tabs nav-justified w-100 rounded-top" role="tablist" id="story-indices" style="background-color: #999"></ul>
                             <div class="tab-content collapse show" id="story-content"></div>
                         </div>

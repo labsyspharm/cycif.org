@@ -56,6 +56,10 @@ body {
       color: white;
       text-align: center;
   }
+
+  .nav-color-dark {
+      color:  #495057 !important;
+  }
   
   .green {
       color: palegreen;
