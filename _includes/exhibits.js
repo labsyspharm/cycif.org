@@ -130,7 +130,13 @@ const download = function(filename, text) {
 const sort_keys = function(a, b){
   const getIndex = function(v){
     return [
+      'Exhibit',
       'Name',
+      'Images',
+      'Layout',
+      'Groups',
+      'Stories',
+      'Waypoints',
       'Group',
       'Description',
       'Overlay',
@@ -801,8 +807,9 @@ HashState.prototype = {
       }
     };
     return jsyaml.safeDump(config, {
-      lineWidth: 60,
-      sortKeys: sort_keys 
+      lineWidth: 40,
+      sortKeys: sort_keys,
+      noCompatMode: true,
     });
   },
 
@@ -1641,7 +1648,8 @@ HashState.prototype = {
 
     const wid_yaml = jsyaml.safeDump([[waypoint]], {
       lineWidth: 40,
-      sortKeys: sort_keys 
+      sortKeys: sort_keys,
+      noCompatMode: true,
     });
     return wid_yaml.replace('- ', '  ');
   },
