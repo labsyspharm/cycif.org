@@ -1129,7 +1129,6 @@ HashState.prototype = {
 
     // Based on search keys
     displayOrNot('#draw-switch a', !editing);
-    displayOrNot('.show-if-viewing', !editing);
     displayOrNot('.show-if-edit', this.edit);
     activeOrNot('#view-switch', !editing);
     activeOrNot('#edit-switch', editing);
@@ -1535,8 +1534,10 @@ HashState.prototype = {
     // Add index, Add story
     if (container.count > 1 && !this.editing) {
       container.story_indices.appendChild(sid_item);
+      displayOrNot('.select-story', true);
     }
     container.story_elems.appendChild(sid_story);
+    displayOrNot('.select-story', false);
   },
 
   addWaypoint: function(waypoint, wid, container) {
