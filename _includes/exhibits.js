@@ -1637,6 +1637,7 @@ HashState.prototype = {
     const viewport = this.viewport;
     const waypoint = this.waypoint;
     waypoint.Overlay = this.overlay; 
+    waypoint.Name = decode(this.n);
     waypoint.Description = decode(this.d);
     waypoint.Group = this.cgs[this.g].Name;
     waypoint.Pan = [viewport.pan.x, viewport.pan.y];
