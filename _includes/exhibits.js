@@ -130,7 +130,13 @@ const download = function(filename, text) {
 const sort_keys = function(a, b){
   const getIndex = function(v){
     return [
+      'Exhibit',
       'Name',
+      'Images',
+      'Layout',
+      'Groups',
+      'Stories',
+      'Waypoints',
       'Group',
       'Description',
       'Overlay',
@@ -307,6 +313,9 @@ const HashState = function(viewer, tileSources, exhibit, options) {
   };
 
   this.state = {
+    buffer: {
+      waypoint: undefined
+    },
     changed: false,
     design: {},
     w: [0],
@@ -352,12 +361,6 @@ HashState.prototype = {
       title: 'Share Link'
     });
 
-    $('#help').click(this, function(e) {
-      const THIS = e.data;
-      THIS.s = 0;
-      THIS.pushState();
-    });
-
     $('#edit-import').click(this, function(e) {
       $('#file-upload').click();
     });
@@ -385,7 +388,8 @@ HashState.prototype = {
           THIS.viewer.clearOverlays();
           THIS.viewer.world.removeAll();
           const init = function() {
-            $('#help').click();
+            THIS.s = 0;
+            THIS.pushState();
           };
           arrange_images(THIS.viewer, THIS.tileSources, THIS, init);
           $('#file-upload').replaceWith($('#file-upload').val('').clone(true));
@@ -396,25 +400,26 @@ HashState.prototype = {
       reader.readAsText(f);
     });
 
-    $('#edit-mode-1').click(this, function(e) {
-      const THIS = e.data;
-      THIS.editing = 1;
-      THIS.newView(true);
-    });
-    $('#edit-mode-2').click(this, function(e) {
-      const THIS = e.data;
-      THIS.editing = 2;
-      THIS.newView(true);
-    });
-
     $('#edit-switch').click(this, function(e) {
       const THIS = e.data;
-      if (THIS.editing) {
-        THIS.cancelEditing();
-      }
-      else {
+      if (!THIS.editing) {
         THIS.startEditing();
+        THIS.pushState();
       }
+    });
+
+    $('#view-switch').click(this, function(e) {
+      const THIS = e.data;
+      if (THIS.editing) {
+        THIS.finishEditing();
+        THIS.pushState();
+      }
+    });
+
+    $('.clear-switch').click(this, function(e) {
+      const THIS = e.data;
+      THIS.bufferWaypoint = undefined;
+      THIS.startEditing();
       THIS.pushState();
     });
 
@@ -528,6 +533,38 @@ HashState.prototype = {
     // Display viewer
     this.finishAnimation();
     this.viewer.setVisible(true);
+  },
+
+  /*
+   * Editor buffers
+   */ 
+
+  get bufferWaypoint() {
+    if (this.state.buffer.waypoint === undefined) {
+      const viewport = this.viewport;
+      const group = this.group;
+      return {
+        Zoom: viewport.scale,
+        Pan: [
+          viewport.pan.x,
+          viewport.pan.y
+        ],
+        Group: group.Name,
+        Description: '',
+        Name: 'Untitled',
+        Overlay: {
+          x: -100,
+          y: -100,
+          width: 200,
+          height: 200,
+        },
+      };
+    }
+    return deepCopy(this.state.buffer.waypoint);
+  },
+
+  set bufferWaypoint(bw) {
+    this.state.buffer.waypoint = bw; 
   },
 
   /*
@@ -765,8 +802,9 @@ HashState.prototype = {
       }
     };
     return jsyaml.safeDump(config, {
-      lineWidth: 60,
-      sortKeys: sort_keys 
+      lineWidth: 40,
+      sortKeys: sort_keys,
+      noCompatMode: true,
     });
   },
 
@@ -883,12 +921,20 @@ HashState.prototype = {
   },
 
   get waypoint() {
+    if (this.editing) {
+      return this.bufferWaypoint;
+    }
     return this.waypoints[this.w];
   },
   set waypoint(waypoint) {
-    const waypoints = this.waypoints;
-    waypoints[this.w] = waypoint;
-    this.waypoints = waypoints;
+    if (this.editing) {
+      this.bufferWaypoint = waypoint;
+    }
+    else {
+      const waypoints = this.waypoints;
+      waypoints[this.w] = waypoint;
+      this.waypoints = waypoints;
+    }
   },
 
   get viewport() {
@@ -1077,8 +1123,10 @@ HashState.prototype = {
     const drawing = this.drawing;
 
     // Based on search keys
-    displayOrNot('#edit-switches a', this.edit);
     displayOrNot('#draw-switch a', !editing);
+    displayOrNot('.show-if-edit', this.edit);
+    activeOrNot('#view-switch', !editing);
+    activeOrNot('#edit-switch', editing);
     displayOrNot('#story-nav', !editing);
     displayOrNot('.edit-item', editing);
 
@@ -1088,7 +1136,7 @@ HashState.prototype = {
     toggleCursor('crosshair', drawing);
 
     greenOrWhite('.draw-switch *', drawing);
-    greenOrWhite('#edit-switch *', editing);
+    //greenOrWhite('#edit-switch *', editing);
   },
 
   makeUrl: function(hashKeys, searchKeys) {
@@ -1165,15 +1213,16 @@ HashState.prototype = {
     this.newView(false);
   },
 
-  startEditing: function() {
-    const waypoint = this.waypoint;
-    this.o = oFromWaypoint(waypoint);
-    this.d = dFromWaypoint(waypoint);
-    this.n = nFromWaypoint(waypoint);
-    this.g = gFromWaypoint(waypoint, this.cgs);
+  startEditing: function(_waypoint) {
+    const bw = _waypoint || this.bufferWaypoint;
+    this.bufferWaypoint = bw;
+
+    this.v = vFromWaypoint(bw);
+    this.o = oFromWaypoint(bw);
+    this.d = dFromWaypoint(bw);
+    this.n = nFromWaypoint(bw);
+    this.g = gFromWaypoint(bw, this.cgs);
     this.editing = 1;
-    activeOrNot('#edit-mode-1', true);
-    activeOrNot('#edit-mode-2', false);
   },
 
   cancelEditing: function() {
@@ -1183,34 +1232,35 @@ HashState.prototype = {
   finishEditing: function() {
     var changed = false;
     const cgs = this.cgs;
+    const overlay = this.overlay;
     const viewport = this.viewport;
-    const waypoint = this.waypoint;
-    if (gFromWaypoint(waypoint, cgs) != this.g) {
-      waypoint.Group = cgs[this.g].Name;
+    const bw = this.bufferWaypoint;
+    if (gFromWaypoint(bw, cgs) != this.g) {
+      bw.Group = this.group.Name;
       changed = true;
     }
-    if (nFromWaypoint(waypoint) != this.n) {
-      waypoint.Name = decode(this.n);
+    if (nFromWaypoint(bw) != this.n) {
+      bw.Name = decode(this.n);
       changed = true;
     }
-    if (dFromWaypoint(waypoint) != this.d) {
-      waypoint.Description = decode(this.d);
+    if (dFromWaypoint(bw) != this.d) {
+      bw.Description = decode(this.d);
       changed = true;
     }
-    if (!arrayEqual(oFromWaypoint(waypoint), this.o)) {
-      waypoint.Overlay = this.overlay;
+    if (!arrayEqual(oFromWaypoint(bw), this.o)) {
+      bw.Overlay = this.overlay;
       changed = true;
     }
-    if (!arrayEqual(vFromWaypoint(waypoint), this.v)) {
-      waypoint.Zoom = viewport.scale;
-      waypoint.Pan = [
+    if (!arrayEqual(vFromWaypoint(bw), this.v)) {
+      bw.Zoom = viewport.scale;
+      bw.Pan = [
         viewport.pan.x,
         viewport.pan.y
       ];
       changed = true;
     }
     if (changed) {
-      this.waypoint = waypoint;
+      this.bufferWaypoint = bw;
       this.pushState();
     }
     this.editing = 0;
@@ -1235,6 +1285,9 @@ HashState.prototype = {
 
     if (this.editing) {
       this.drawing = 0;
+      this.finishEditing();
+      this.startEditing();
+      this.pushState();
     }
     else {
       const selector = '#edit_description_modal';
@@ -1476,8 +1529,10 @@ HashState.prototype = {
     // Add index, Add story
     if (container.count > 1 && !this.editing) {
       container.story_indices.appendChild(sid_item);
+      displayOrNot('.select-story', true);
     }
     container.story_elems.appendChild(sid_story);
+    displayOrNot('.select-story', false);
   },
 
   addWaypoint: function(waypoint, wid, container) {
@@ -1485,16 +1540,16 @@ HashState.prototype = {
 
     // Copy the index
     const wid_index = container.w0_index.cloneNode(true);
+    const wid_span = $(wid_index).find('.index-span')[0];
+    const wid_icon = $(wid_index).find('.inset-icon')[0];
+    wid_span.innerText = waypoint.Name;
 
-    wid_index.setAttribute('aria-controls', wid_label);
-    wid_index.innerText = waypoint.Name;
     wid_index.href = '#' + wid_label;
     wid_index.id = '-' + wid_label;
 
     // Copy the waypoint
     const wid_waypoint = container.w0_waypoint.cloneNode(true);
-    wid_waypoint.setAttribute('aria-labeledby', wid_index.id);
-    wid_waypoint.id = wid_index.getAttribute('aria-controls');
+    wid_waypoint.id = wid_label;
 
     // Fill waypoint based on edit mode
     const editing = container.editing;
@@ -1504,44 +1559,32 @@ HashState.prototype = {
       wid_index.className += ' active';
       wid_waypoint.className += ' active show';
     }
+    displayOrNot(wid_icon, this.edit);
 
     // Interactive
     if (editing == 0) {
       this.fillWaypointView(waypoint, wid_waypoint);
     }
     else if (editing == 1) {
-      if (wid == this.w) {
-        wid_index.innerText = decode(this.n);
-        $(wid_index).addClass('editable', true);
-        $(wid_index).css('-moz-user-modify', 'read-write');
-        $(wid_index).attr('contentEditable', true);
-        $(wid_index).on('input', this, function(e) {
-          const THIS = e.data;
-          const value = this.innerText;
-          if (value.length > 0) {
-            THIS.n = encode(value.replace(/\n|\r/g, ''));
-          }
-        });
-      }
       this.fillWaypointEdit(wid_waypoint);
-    }
-    else if (editing == 2) {
-      if (wid == this.w) {
-        wid_index.innerText = decode(this.n);
-      }
-      this.fillWaypointSource(wid_waypoint);
     }
 
     // Update Waypoint
     $(wid_index).click(this, function(e) {
       const THIS = e.data;
-      if (editing != 1 || wid != THIS.w) {
-        THIS.w = wid;
-        const waypoint = THIS.waypoint;
-        THIS.d = dFromWaypoint(waypoint);
-        THIS.n = nFromWaypoint(waypoint);
-        THIS.pushState();
-      }
+      THIS.w = wid;
+      const waypoint = THIS.waypoint;
+      THIS.d = dFromWaypoint(waypoint);
+      THIS.n = nFromWaypoint(waypoint);
+      THIS.pushState();
+    });
+
+    // Edit Waypoint
+    $(wid_icon).click(this, function(e) {
+      const THIS = e.data;
+      THIS.w = wid;
+      const waypoint = THIS.waypoint;
+      THIS.startEditing(waypoint);
     });
 
     // Add index, Add waypoint
@@ -1574,7 +1617,16 @@ HashState.prototype = {
   },
   fillWaypointEdit: function(wid_waypoint) {
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
+    const wid_txt_name = $(wid_waypoint).find('.edit_name')[0];
     const wid_describe = decode(this.d);
+    const wid_name = decode(this.n);
+
+    $(wid_txt_name).on('input', this, function(e) {
+      const THIS = e.data;
+      THIS.n = encode(this.value);
+    });
+    wid_txt_name.value = wid_name;
+
     $(wid_txt).on('input', this, function(e) {
       const THIS = e.data;
       THIS.d = encode(this.value);
@@ -1585,20 +1637,18 @@ HashState.prototype = {
     const viewport = this.viewport;
     const waypoint = this.waypoint;
     waypoint.Overlay = this.overlay; 
+    waypoint.Name = decode(this.n);
     waypoint.Description = decode(this.d);
     waypoint.Group = this.cgs[this.g].Name;
     waypoint.Pan = [viewport.pan.x, viewport.pan.y];
     waypoint.Zoom = viewport.scale;
 
-    const wid_yaml = jsyaml.safeDump([[waypoint]], {
+    const wid_yaml = jsyaml.safeDump([[[[[waypoint]]]]], {
       lineWidth: 40,
-      sortKeys: sort_keys 
+      sortKeys: sort_keys,
+      noCompatMode: true,
     });
-    return wid_yaml.replace('- ', '  ');
-  },
-  fillWaypointSource: function(wid_waypoint) {
-    const wid_txt = $(wid_waypoint).find('.edit_text')[0];
-    wid_txt.value = this.bufferYaml;
+    return wid_yaml.replace('- - - - - ', '        - ');
   },
 
   arrange: function(grid) {
