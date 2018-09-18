@@ -1,6 +1,6 @@
 theme: jekyll-theme-hacker
 title: CyCIF
-description: A Public Domain Approach to Highly Multiplexed Cell and Tissue Imaging
+description: A Simple Approach to Highly Multiplexed Cell and Tissue Imaging
 sass:
     load_paths:
         - _scss
