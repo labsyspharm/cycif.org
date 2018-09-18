@@ -16,9 +16,7 @@ title: CyCIF - Cyclic Immunofluorescence
 <div class="row py-3">
     <div class="col-md-6 d-flex-colume    my-4 pb-md-5">
         <h2 class="h1">Simple, flexible and robust</h2>
-        CyCIF is a novel, robust and inexpensive method for highly multiplexed immunofluorescence imaging using standard instrumentation and reagents. 
-        The rich data collected using CycIF are amenable to state-of-the-art, high-dimensionality analysis tools developed for CyTOF, 
-        including ViSNE and Wanderlust, that allow investigation of complex associations and interdependencies between observed features and phenotypes.
+        CyCIF is a robust and inexpensive method for highly multiplexed immunofluorescence imaging using standard instruments and reagents. The concept of repeatedly staining and imaging slides has been around for many years and most commonly involves antibody stripping using denaturants. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3718135/" target="_blank">Gerdes et al (2013)</a> described an approach in which fluorophores are chemically activated after each of several rounds of immunofluorescence. The t-CyCIF method by <a href="{{ site.baseurl }}/method">Lin et al (2018)</a> builds on this and related approaches. The rich data collected using CyCIF are also amenable to state-of-the-art, high-dimensionality analysis tools developed for CyTOF, including <a href="http://www.jmlr.org/papers/v9/vandermaaten08a.html" target="_blank">tSNE</a> , <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4076922/" target="_blank">viSNE</a> and <a href="https://www.ncbi.nlm.nih.gov/pubmed/24766814" target="_blank">Wanderlust</a>. These allow investigation of complex associations and interdependencies between observed features and phenotypes.
     </div>
     <div class="col-md-6  d-flex align-items-center my-4 pb-md-5">
         <div class="embed-responsive embed-responsive-16by9">
@@ -49,15 +47,8 @@ title: CyCIF - Cyclic Immunofluorescence
 <div class="row py-3">
     <div class="col-md-6 d-flex flex-column justify-content-start   my-4">
         <h2 class="h1 bd-highlight">t-CyCIF</h2>
-        <label for="">Tissue-based cyclic immunofluorescence</label>
         <p>
-            <a href="https://en.wikipedia.org/wiki/Histology">Formalin-fixed, paraffin-embedded</a>
-            (FFPE) specimens mounted on glass slides are the most widely used specimens for
-            histopathological diagnosis of cancer and other diseases.
-            t-CyCIF generates multiplexed
-            images of FFPE samples using an iterative process (a cycle) in which conventional
-            low-plex fluorescence images are repeatedly collected from the same sample and
-            then assembled into a high dimensional representation. 
+            In t-CyCIF (Tissue-based cyclic immunofluorescence) uses <a href="https://en.wikipedia.org/wiki/Histology">formalin-fixed, paraffin-embedded (FFPE)</a> tumor and tissue specimens mounted on glass slides. These are the most widely used specimens for histopathological diagnosis of cancer and other diseases. t-CyCIF generates multiplexed images of FFPE samples using an iterative process (a cycle) in which conventional low-plex fluorescence images are repeatedly collected from the same sample and then assembled into a high dimensional representation. Several variants are possible using direct and indirect immunofluorescence.
         </p>
         
     </div>
