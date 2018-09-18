@@ -4,7 +4,23 @@ title: Methods and Materials
 
 ### The t-CyCIF Process
 
-In t-CyCIF, a form of <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3718135/" target="_blank">multi-round multiplex tissue immunofluorescence</a>, ~5 µm thick are cut from FFPE blocks, the standard in most histopathology services, followed by dewaxing and antigen retrieval in the usual manner; to reduce auto-fluorescence a cycle of “pre-staining” is performed. Subsequent t-CyCIF cycles each involve four steps (Figure 1): (i) immuno-staining with antibodies against protein antigens (three antigens per cycle in the implementation described here) (ii) staining with a DNA dye (commonly Hoechst 33342) to mark nuclei and facilitate image registration across cycles (iii) four-channel imaging at low and high magnifications (iv) fluorophore bleaching followed by a wash step and then another round of immuno-staining. The signal-to-noise ratio often increases with cycle number. When no more t-CyCIF cycles are to be performed, the specimen is stained with H&E to enable conventional histopathology review. Individual image panels are stitched together and registered across cycles followed by image processing and segmentation to identify cells and other structures.
+In t-CyCIF, a form of 
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3718135/" target="_blank">
+multi-round multiplex tissue immunofluorescence</a>, 
+~5 µm thick sections are cut from FFPE blocks, the standard in most
+histopathology services, followed by dewaxing and antigen retrieval in the usual	
+manner; to reduce auto-fluorescence a cycle of “pre-staining” is performed.	
+Subsequent t-CyCIF cycles each involve four steps (Figure 1): (i)	
+immuno-staining with antibodies against protein antigens (three antigens per	
+cycle in the implementation described here) (ii) staining with a DNA dye	
+(commonly Hoechst 33342) to mark nuclei and facilitate image registration across	
+cycles (iii) four-channel imaging at low and high magnifications (iv)	
+fluorophore bleaching followed by a wash step and then another round of	
+immuno-staining. The signal-to-noise ratio often increases with cycle number.	
+When no more t-CyCIF cycles are to be performed, the specimen is stained with	
+H&E to enable conventional histopathology review. Individual image panels are	
+stitched together and registered across cycles followed by image processing and	
+segmentation to identify cells and other structures.
 
 <figure class="image text-center mx-1 my-4 m-md-5">
     <div style="max-width:800px" class="d-inline-block">
