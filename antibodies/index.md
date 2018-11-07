@@ -11,10 +11,10 @@ signaling proteins and kinases, transcription factors, markers of cell state
 including quiescence, senescence, apoptosis, stress, etc.
 
 
-##### [Antibodies Tested for Tissue-based CyCIF (Master table, May 2018)]({{ "antibodies/tcycif-master/" | relative_url }})
+##### [Antibodies Tested for Tissue-based CyCIF (Master table, May 2018)]({{ "antibodies/tcycif-master" | relative_url }})
 
 300 antibodies listed in this table as of May, 2018.
 
-##### [Core Antibodies for tCyCIF (Image available, November 2018)]({{ 'antibodies/tcycif-core/' | relative_url}})
+##### [Core Antibodies for tCyCIF (Image available, November 2018)]({{ 'antibodies/tcycif-core' | relative_url}})
 
 A subset of 41 antibodies from the master table. Tissue IF images are available for antibodies in the list. 
