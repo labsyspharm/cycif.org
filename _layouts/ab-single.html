@@ -1,0 +1,46 @@
+---
+layout: base
+title: ljlijkjlijk
+---
+
+<div class="container">
+    <section class="container">
+        {% assign idx = page.index | minus: 1 %}
+        {% assign abData=site.data.CyCIF-Tested-Antibodies-May2018[idx] %}
+        <div class="row">
+            {% for cell in abData %}
+                {% if forloop.first %}
+                <div class="col-12">
+                    <h3>
+                        {{ cell[1] }}
+                    </h3>
+                    <figure class="figure w-100">
+                        <img src="{{ 'img.png' | relative_rul }}" class="figure-img img-fluid mx-auto d-block" alt="">
+                        <figcaption class="text-center">{{ content }}</figcaption>
+                    </figure>
+                </div>
+
+                {% else %}
+
+                <div class="col-6 col-sm-4">
+                    <h5 class="mt-4 mb-2">
+                        {{ cell[0] }}
+                    </h5>
+                    <p>
+                        {% if cell[0] contains 'Link'%}
+                        <a href="{{ cell[1] }}" target="_blank">Vender page</a>
+                        {% else %}
+                        {{ cell[1] }}
+                        {% endif %}
+                    </p>
+                </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </section>
+    <section id="main_content">
+
+    </section>
+</div>

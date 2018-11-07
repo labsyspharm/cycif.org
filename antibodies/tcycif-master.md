@@ -1,21 +1,13 @@
 ---
-title: Antibodies
+title: Antibodies - Master
 ---
 
-## Antibodies for tissue-based CyCIF
-
-To date, we have tested commercial antibodies against ~200 proteins for their
-compatibility with t-CyCIF. These antibodies include lineage makers,
-cytoskeletal proteins, cell cycle regulators, the phosphorylated forms of
-signaling proteins and kinases, transcription factors, markers of cell state
-including quiescence, senescence, apoptosis, stress, etc.
+#### Antibodies Tested for Tissue-based CyCIF (Master table, May 2018)
 
 You can navigate through, search, and sort (by clicking the table column heading) 
 the following table as well as [download a spreadsheet copy]({{ "/assets/data/CyCIF-Tested-Antibodies-May2018.xlsx" | absolute_url }}).
 
 <hr class="my-5">
-
-__Antibodies Tested for Tissue-based CyCIF (May, 2018)__
 
 This work is made available under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License
 
@@ -55,6 +47,8 @@ Antibodies have been tested for a mimum level of perfomance as descrbed in footn
             {% for cell in row %}
                 {% if cell[0] contains 'Link' %}
                     <td><a href="{{ cell[1] }}" target="_blank">link</a></td>
+                {% elsif cell[0] contains 'Image' %}
+                    <td><a href="antibody-lists/core-validation-set-Nov2018/{{ cell[1] }}/" >View</a></td>
                 {% else %}
                     <td>{{ cell[1] }}</td>
                 {% endif %}
