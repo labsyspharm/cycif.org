@@ -52,3 +52,17 @@ title: Data
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-2">
+        <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/cycifviewer/03_gaglia.jpg" alt="HFS1">
+    </div>
+    <div class="col">
+      <a href="{{ site.baseurl }}/featured-paper/gaglia-2018/figures/osd-COLON_1">
+        <h5 class="mt-0">Gaglia et al., 2018 (submitted)</h5>
+      </a>
+      <p>
+
+      </p>
+    </div>
+  </div>
+
