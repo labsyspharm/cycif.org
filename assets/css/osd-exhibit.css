@@ -56,6 +56,10 @@ body {
       color: white;
       text-align: center;
   }
+
+  .nav-color-dark {
+      color:  #495057 !important;
+  }
   
   .green {
       color: palegreen;
@@ -92,7 +96,7 @@ body {
   }
   
   .exhibit-content {
-      padding: .5rem 1rem;
+      /* padding: .5rem 1rem; */
   }
   .exhibit-content > .nav {
       background-color: hsla(0, 0%, 0%, 0.5);
@@ -127,11 +131,11 @@ body {
   .exhibit-content .nav-tabs .nav-link.active {
       border: 1px solid white;
   }
-  .editable {
+  /* .editable {
       background-color: white !important;
       border-radius: 0 !important;
       color: black !important;
-  }
+  } */
   
   #story-content {
       /* width: 400px;
@@ -217,7 +221,7 @@ body {
       margin: 0 0 1rem 0;
   }
   
-  .waypoint-content .edit_text {
+  /* .waypoint-content .edit_text {
       background-color: black;
       margin: -5px -5px 0 -5px;
       padding: 0 5px 0 5px;
@@ -229,10 +233,10 @@ body {
       color: white;
       width: 100%;
       resize: none;
-  }
+  } */
   .waypoint-content .edit_code {
       font-family: monospace;
-      display: block;
+      /* display: block; */
   }
   
   .waypoint-content .copy_yaml_input {
@@ -244,10 +248,10 @@ body {
   
   .copy_yaml_input button {
       background-color: black; 
-      border: 1px solid white;
-      padding: 0 5px 0 5px;
+      /* border: 1px solid white; */
+      /* padding: 0 5px 0 5px; */
       pointer-events: all;
-      margin-left: 5px;
+      /* margin-left: 5px; */
       height: 100%;
       color: white; 
   }
