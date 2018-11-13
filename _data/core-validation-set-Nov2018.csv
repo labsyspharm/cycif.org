@@ -1,0 +1,41 @@
+Antibody Name,Target Protein,Performance  ,Image,Vendor,Catalog no. ,Clone,Fluorophore,Research Resource Identifier,FILTER SET,Note,Link
+CD4-488,CD4,***,3,R&D Systems,FAB8165G,Polyclonal,Alexa Fluor 488,,488/FITC,,https://www.rndsystems.com/products/human-cd4-alexa-fluor-488-conjugated-antibody_fab8165g
+CD8a-488,CD8,***,4,eBioscience,53-0008-80,AMC908,Alexa Fluor 488,AB_2574412,488/FITC,,https://www.thermofisher.com/antibody/product/CD8a-Antibody-clone-AMC908-Monoclonal/53-0008-80
+cJUN-488,cJUN,***,5,Abcam,AB193780,E254,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/c-jun-antibody-e254-alexa-fluor-488-ab193780.html
+Ecad-488,E-Cadherin,***,9,CST,3199,2.40E+11,Alexa Fluor 488,AB_10691457,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/e-cadherin-24e10-rabbit-mab-alexa-fluor-488-conjugate/3199?N=4294956287&Ntt=3199&fromPage=plp&_requestid=2089116
+EGFR-488,EGFR,***,10,CST,5616,D38B1,Alexa Fluor 488,AB_10691853,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/egf-receptor-d38b1-xp-rabbit-mab-alexa-fluor-488-conjugate/5616
+Ki67-488,Ki67,***,13,CST,11882,D3B5,Alexa Fluor 488,AB_2687824,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/ki-67-d3b5-rabbit-mab-alexa-fluor-488-conjugate/11882
+LaminA/C-488,Lamin A/C,***,14,CST,8617,4C11,Alexa Fluor 488,AB_10997529,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/lamin-a-c-4c11-mouse-mab-alexa-fluor-488-conjugate/8617?_=1521135220314&Ntt=8617&tahead=true
+MITF-488,MITF,***,20,Abcam,AB201675,D5,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/mitf-antibody-d5-alexa-fluor-488-ab201675.html
+PCNA-488,PCNA,***,23,CST,8580,PC10,Alexa Fluor 488,AB_11178664,488/FITC,,https://www.cellsignal.com/products/antibody-conjugates/pcna-pc10-mouse-mab-alexa-fluor-488-conjugate/8580
+pERK-488,pERK(T202/Y204),***,26,CST,4344,D13.14.4E,Alexa Fluor 488,AB_10695876,488/FITC,Discontinued,https://www.cellsignal.com/product/productDetail.jsp?productId=4344
+S100a-488,S100alpha,***,30,Abcam,AB207367,EPR5251,Alexa Fluor 488,,488/FITC,,http://www.abcam.com/s100-alpha-antibody-epr5251-alexa-fluor-488-ab207367.html
+CD3D-555,CD3D,***,37,Abcam,AB208514,EP4426,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/cd3d-antibody-ep4426-alexa-fluor-555-ab208514.html
+CD45-PE,CD45,***,39,R&D Systems,FAB1430P-100,2D1,PE,AB_2237898,555/Cy3,,https://www.rndsystems.com/products/human-cd45-pe-conjugated-antibody-2d1_fab1430p
+cMYC-555,cMYC,***,41,Abcam,AB201780,Y69,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/c-myc-antibody-y69-alexa-fluor-555-ab201780.html
+E2F1-555,E2F1,***,42,Abcam,AB208078,EPR3818(3),Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/e2f1-antibody-epr38183-alexa-fluor-555-ab208078.html
+FOXP3-570,FOXP3,***,46,eBioscience,41-4777-80,236A/E7,eFluor 570,AB_2573608,555/Cy3,,https://www.thermofisher.com/antibody/product/FOXP3-Antibody-clone-236A-E7-Monoclonal/41-4777-80
+Keratin-570,pan-Keratin,***,51,eBioscience,41-9003-80,AE1/AE3,eFluor 570,AB_11217482,555/Cy3,,https://www.thermofisher.com/antibody/product/Pan-Cytokeratin-Antibody-clone-AE1-AE3-Monoclonal/41-9003-80
+Ki67-570,Ki67,***,52,eBioscience,41-5699-80,20Raj1,eFluor 570,AB_11220088,555/Cy3,,https://www.thermofisher.com/antibody/product/Ki-67-Antibody-clone-20Raj1-Monoclonal/41-5699-80
+PDL1-555,PD-L1/CD274,***,57,Abcam,AB213358,28-8,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/pd-l1-antibody-28-8-alexa-fluor-555-ab213358.html
+pH3-555,pH3(S10),***,58,CST,3475,D2C8,Alexa Fluor 555,AB_10694639,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/phospho-histone-h3-ser10-d2c8-xp-rabbit-mab-alexa-fluor-555-conjugate/3475
+VEGFR2-PE,VEGFR2,***,65,CST,12634,D5B1,PE,,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/vegf-receptor-2-d5b1-rabbit-mab-pe-conjugate/12634
+Vimentin-555,Vimentin,***,66,CST,9855,D21H3,Alexa Fluor 555,AB_10859896,555/Cy3,,https://www.cellsignal.com/products/antibody-conjugates/vimentin-d21h3-xp-rabbit-mab-alexa-fluor-555-conjugate/9855
+aSMA-660,aSMA,***,70,eBioscience,50-9760-80,1A4,eFluor 660,AB_2574361,647/Cy5,,https://www.thermofisher.com/antibody/product/Alpha-Smooth-Muscle-Actin-Antibody-clone-1A4-Monoclonal/50-9760-80
+Catenin-647,Beta-Catenin,***,73,CST,4627,L54E2,Alexa Fluor 647,AB_10691326,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/b-catenin-l54e2-mouse-mab-alexa-fluor-647-conjugate/4627
+CD8a-660,CD8,***,76,eBioscience,50-0008-80,AMC908,eFluor 660,AB_2574148,647/Cy5,,https://www.thermofisher.com/antibody/product/CD8a-Antibody-clone-AMC908-Monoclonal/50-0008-80
+gH2ax-647,H2ax(S139),***,84,BioLegend,613407,2F3,Alexa Fluor 647,AB_2114994,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-h2a-x-phospho-ser139-antibody-3503
+HES1-647,HES1,***,85,Abcam,AB196577,EPR4226,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/hes1-antibody-epr4226-alexa-fluor-647-ab196577.html
+MHCI-647,MHCI/HLAA,***,91,Abcam,AB199837,EP1395Y,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/hla-a-antibody-ep1395y-alexa-fluor-647-ab199837.html
+NFkB-647,NFkB (p65),***,95,Abcam,AB190589,E379,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/nf-kb-p65-antibody-e379-alexa-fluor-647-ab190589.html
+NGFR-647,NGFR/CD271,***,96,Abcam,AB195180,EP1039Y,Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/p75-ngf-receptor-antibody-ep1039y-alexa-fluor-647-ab195180.html
+PDL1-647,PD-L1/CD274,***,102,CST,15005,E1L3N,Alexa Fluor 647,,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/pd-l1-e1l3n-xp-rabbit-mab-alexa-fluor-647-conjugate/15005
+pSTAT3-647,pSTAT3(Y705),***,106,CST,4324,D3A7,Alexa Fluor 647,AB_10694637,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/phospho-stat3-tyr705-d3a7-xp-rabbit-mab-alexa-fluor-647-conjugate/4324?_=1521141742788&Ntt=4324&tahead=true
+Tubulin-647,beta-Tubulin,***,111,CST,3624,9F3,Alexa Fluor 647,AB_10694204,647/Cy5,,https://www.cellsignal.com/products/antibody-conjugates/b-tubulin-9f3-rabbit-mab-alexa-fluor-647-conjugate/3624
+Vimentin-647,Vimentin,***,112,BioLegend,677807,O91D3,Alexa Fluor 647,AB_2616801 ,647/Cy5,,https://www.biolegend.com/en-us/products/alexa-fluor-647-anti-vimentin-antibody-13224
+anti-pERK,pERK(T202/Y204),***,132,CST,4370,D13.14.4E,N/D,AB_2315112,N/D,,https://www.cellsignal.com/products/primary-antibodies/phospho-p44-42-mapk-erk1-2-thr202-tyr204-d13-14-4e-xp-rabbit-mab/4370
+anti-pRB,pRB(S807/811),***,133,Santa Cruz,SC-16670,Polyclonal,N/D,AB_655250 ,N/D,Discontinued,https://datasheets.scbt.com/sc-16670.pdf
+CD11b-555,CD11b,**,167,Abcam,AB206616,EPR1344,Alexa Fluor 555,,555/Cy3,,http://www.abcam.com/cd11b-antibody-epr1344-alexa-fluor-555-ab206616.html
+PD1-647,PD1,**,202,Abcam,AB201825,EPR4877 (2),Alexa Fluor 647,,647/Cy5,,http://www.abcam.com/pd1-antibody-epr48772-alexa-fluor-647-ab201825.html
+CD45RO-488,CD45RO,*,239,BioLegend,304212,UCHL1,Alexa Fluor 488,AB_528823,488/FITC,,https://www.biolegend.com/en-us/products/alexa-fluor-488-anti-human-cd45ro-antibody-3340
+CD3-660,CD3,*,270,eBioscience,50-0037-41,OKT3,eFluor 660,AB_2574150,647/Cy5,,https://www.thermofisher.com/antibody/product/CD3-Antibody-clone-OKT3-Monoclonal/50-0037-41
