@@ -3,18 +3,12 @@ title: Antibodies
 ---
 
 <nav>
-    <ol class="breadcrumb px-0 bg-transparent" style="margin-bottom: -2rem">
+    <ol class="breadcrumb px-0 bg-transparent">
         <li class="breadcrumb-item">
-            <a href="">HOME</a>
+            <a href="{{ site.baseurl }}/">HOME</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="">ANTIBODIES</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="">CORE</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="">MASTER</a>
+            ANTIBODIES
         </li>
     </ol>
 </nav>
