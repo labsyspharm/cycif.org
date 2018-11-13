@@ -20,18 +20,6 @@
     - lab: http://santagata.bwh.harvard.edu/
     - google schloar: https://scholar.google.com/citations?user=9dUOqJ0AAAAJ
 
-- name: Hanspeter Pfister
-  affiliations:
-    - An Wang Professor of Computer Science
-    - School of Engineering and Applied Sciences at Harvard University
-  image: https://www.seas.harvard.edu/sites/default/files/styles/directory_large/public/images/Directory/Pfister_200x300_0.jpg?itok=HyBnE-2g
-  role: 
-  email: pfister@seas.harvard.edu
-  links:
-    - lab: https://vcg.seas.harvard.edu/
-    - github: https://github.com/vcg
-    - google schloar: https://scholar.google.com/citations?user=tvBEoaMAAAAJ&hl=en
-
 - name: Benjamin Izar
   affiliations:
     - Dana-Farber Cancer Institute
@@ -95,6 +83,17 @@
   email: clarence@hms.harvard.edu
   links:
     - bio: https://scholar.harvard.edu/clarence
+
+- name: Denis Schapiro
+  affiliations:
+    - Independent Research Fellow
+    - Laboratory of Systems Pharmacology
+    - Broad Institute of Harvard and MIT
+  image: http://hits.harvard.edu/wp-content/uploads/2013/10/denis_schapiro.jpg
+  role: 
+  email: denis_schapiro@hms.harvard.edu
+  links:
+    - GitHub: https://github.com/DenisSch
 
 - name: Shaolin Mei
   affiliations: 
