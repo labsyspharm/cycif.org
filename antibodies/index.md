@@ -23,9 +23,8 @@ including quiescence, senescence, apoptosis, stress, etc.
 
 
 ##### [Antibodies Tested for Tissue-based CyCIF (Master table, May 2018)]({{ "antibodies/tcycif-master" | relative_url }})
+The qualified list of 300 antibodies used in our foundational tissue CyCIF paper ([Lin, et al. eLife 2018]({{ site.baseurl }}/publications#lin-elife-2018-paper)).
 
-300 antibodies listed in this table as of May, 2018.
+##### [Recommended antibodies for tCyCIF (Core, Nov 2018)]({{ 'antibodies/tcycif-core' | relative_url}})
 
-##### [Core Antibodies for tCyCIF (Image available, November 2018)]({{ 'antibodies/tcycif-core' | relative_url}})
-
-A subset of 41 antibodies from the master table. Tissue IF images are available for antibodies in the list. 
+Representative images of antibody staining patterns for a subset of 41 (and growing) antibodies ([Lin, et al. eLife 2018]({{ site.baseurl }}/publications#lin-elife-2018-paper)).
