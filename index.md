@@ -16,7 +16,7 @@ title: CyCIF - Cyclic Immunofluorescence
 <div class="row py-3">
     <div class="col-md-6 d-flex-colume    my-4 pb-md-5">
         <h2 class="h1">Simple, flexible and robust</h2>
-        CyCIF is a robust and inexpensive method for highly multiplexed immunofluorescence imaging using standard instruments and reagents. The concept of repeatedly staining and imaging slides has been around for many years and most commonly involves antibody stripping using denaturants. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3718135/" target="_blank">Gerdes et al (2013)</a> described an approach in which fluorophores are chemically activated after each of several rounds of immunofluorescence. The t-CyCIF method by <a href="{{ site.baseurl }}/method">Lin et al (2018)</a> builds on this and related approaches. The rich data collected using CyCIF are also amenable to state-of-the-art, high-dimensionality analysis tools developed for CyTOF, including <a href="http://www.jmlr.org/papers/v9/vandermaaten08a.html" target="_blank">tSNE</a> , <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4076922/" target="_blank">viSNE</a> and <a href="https://www.ncbi.nlm.nih.gov/pubmed/24766814" target="_blank">Wanderlust</a>. These allow investigation of complex associations and interdependencies between observed features and phenotypes.
+        CyCIF is a robust and inexpensive method for highly multiplexed immunofluorescence imaging using standard instruments and reagents. The concept of repeatedly staining and imaging slides has been around for many years and most commonly involves antibody stripping using denaturants. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3718135/" target="_blank">Gerdes et al (2013)</a> described an approach in which fluorophores are chemically inactivated after each of several rounds of immunofluorescence. The t-CyCIF method by <a href="{{ site.baseurl }}/method">Lin et al (2018)</a> builds on this and related approaches. The rich data collected using CyCIF are also amenable to state-of-the-art, high-dimensionality analysis tools developed for CyTOF, including <a href="http://www.jmlr.org/papers/v9/vandermaaten08a.html" target="_blank">tSNE</a> , <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4076922/" target="_blank">viSNE</a> and <a href="https://www.ncbi.nlm.nih.gov/pubmed/24766814" target="_blank">Wanderlust</a>. These allow investigation of complex associations and interdependencies between observed features and phenotypes.
     </div>
     <div class="col-md-6  d-flex align-items-center my-4 pb-md-5">
         <div class="embed-responsive embed-responsive-16by9">
@@ -76,7 +76,7 @@ title: CyCIF - Cyclic Immunofluorescence
             <a href="{{ site.baseurl }}/method" class="btn btn-outline-primary m-2">Method</a>
             <a href="http://lincs.hms.harvard.edu/lin-elife-2018/" target="_blank" class="btn btn-outline-primary m-2">Data &amp; code</a>
             <a href="{{ site.baseurl }}/publications" class="btn btn-outline-primary m-2">Publications</a>
-            <a href="{{ site.baseurl }}/cycifviewer" class="btn btn-primary m-2">CyCIF Viewer</a>
+            <a href="{{ site.baseurl }}/data" class="btn btn-primary m-2">CyCIF Viewer</a>
         </div>
     </div>
 </div>
