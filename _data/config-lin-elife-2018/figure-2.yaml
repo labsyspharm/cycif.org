@@ -3,7 +3,7 @@ Exhibit:
   Images:
     - Name: i0
       Description: '# 26531, pre-treatment'
-      Path: https://s3.amazonaws.com/pca2018/26531PRE
+      Path: https://s3.amazonaws.com/www.cycif.org/lin-elife-2018/26531PRE-prerendered
       Width: 13888
       Height: 15936
       MaxLevel: 4
@@ -59,6 +59,16 @@ Exhibit:
         - pRB
         - HES1
         - DNA
+    - Path: H_and_E-CyteFinder
+      Name: H&E
+      Colors:
+        - FF0000
+        - 00FF00 
+        - 0000FF
+      Channels:
+        - R (QD625 625/30)
+        - G (Sytox 590/33)
+        - B (BV421 431/28)
   Stories:
   - Name: Overview
     Description: 
