@@ -1,0 +1,34 @@
+publication:
+  title: Qualifying antibodies for image-based immune profiling and multiplexed tissue imaging
+  authors: Du Z, Lin JR, Rashid R, Maliga Z, Wang S, Aster J, Izar B, Sorger PK, Santagata S
+  journal: 
+  link: 
+    # name: Publication summary
+    # url: http://lincs.hms.harvard.edu/lin-elife-2018/
+
+stitched mosaic images:
+  - title: Tonsil 1
+    description: Representative t-CyCIF image acquired from a formalin-fixed, paraffin-embedded (FFPE) human tonsil tissue section stitched together using ASHLAR software from 224 fields acquired using a 40X/0.6NA objective.
+    thumbnail file name: tonsil_1.jpg
+    links:
+      - CyCIF tonsil 1: osd-TONSIL_1
+  - title: IHC Tonsil Sections
+    description: 
+    thumbnail file name: tonsil_ihc.jpg
+    links:
+      - IHC tonsil sections: osd-TONSIL_IHC
+  - title: Squamous cell carcinoma of the lung
+    description: Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
+    thumbnail file name: lung_3.jpg
+    links:
+      - CyCIF image: osd-LUNG_3
+  - title: Lung adenocarcinoma metastasis to a lymph node
+    description: Representative t-CyCIF image of a lung adenocarcinoma metastasis to a lymph node stitched together using ASHLAR software from 80 fields using a 40X/0.6NA objective.
+    thumbnail file name: lung_1.jpg
+    links: 
+      - CyCIF image: osd-LUNG_1
+  - title: Lung squamous cell carcinoma metastasis to the brain
+    description: Representative t-CyCIF image of a lung squamous cell carcinoma metastasis to the brain stitched together using ASHLAR software from 187 fields using a 40X/0.6NA objective.
+    thumbnail file name: lung_2.jpg
+    links: 
+      - CyCIF image: osd-LUNG_2

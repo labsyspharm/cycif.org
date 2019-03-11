@@ -1,0 +1,149 @@
+Exhibit:
+  Name: TONSIL_1
+  Images:
+    - Name: i0
+      Description: 'Tonsil 1 - Du and Lin et al, 2019 (submitted)'
+      Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/TONSIL_1/IHC_TONSIL_1
+      Width: 16843
+      Height: 16125
+      MaxLevel: 6
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: HE
+      Name: H&E
+      Colors:
+        - 29143b
+        - c7526b
+      Channels:
+        - Hematoxylin
+        - Eosin
+    - Path: CD3
+      Name: CD3
+      Colors:
+        - 4b2517
+      Channels:
+        - CD3
+    - Path: CD4
+      Name: CD4
+      Colors:
+        - 4b2517
+      Channels:
+        - CD4
+    - Path: CD8
+      Name: CD8
+      Colors:
+        - 4b2517
+      Channels:
+        - CD8
+    - Path: CD20
+      Name: CD20
+      Colors:
+        - 4b2517
+      Channels:
+        - CD20
+    - Path: CD68
+      Name: CD68
+      Colors:
+        - 4b2517
+      Channels:
+        - CD68
+    - Path: FOXP3
+      Name: FOXP3
+      Colors:
+        - 4b2517
+      Channels:
+        - FOXP3
+    - Path: PD1
+      Name: PD1
+      Colors:
+        - 4b2517
+      Channels:
+        - PD1
+    - Path: PDL1
+      Name: PD-L1
+      Colors:
+        - 4b2517
+      Channels:
+        - PD-L1
+    
+    - Path: 0___DAPI 1---14___KERATIN---34___ASMA---22___CD45---33___IBA1
+      Name: Structural Components
+      Colors:
+        - 00FF00
+        - 00FFFF
+        - FFFFFF
+        - FF0000 
+        - 0000FF
+      Channels:
+        - CD45
+        - IBA1
+        - Keratin
+        - α-SMA
+        - DNA
+    - Path: 0___DAPI 1---18___CD3D---35___CD20
+      Name: IF - CD20, CD3D
+      Colors:
+        - FFFFFF
+        - FF0000 
+        - 0000FF
+      Channels:
+        - CD20
+        - CD3D
+        - DNA
+    - Path: 0___DAPI 1---21___CD4---18___CD3D---23___CD8A
+      Name: IF - CD4, CD3D, CD8A
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000 
+        - 0000FF
+      Channels:
+        - CD4
+        - CD3D
+        - CD8A
+        - DNA
+    - Path: 0___DAPI 1---26___CD68---29___CD11B---25___CD163
+      Name: IF - CD68
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000 
+        - 0000FF
+      Channels:
+        - CD163
+        - CD11B
+        - CD68
+        - DNA
+  Stories:
+  - Name: Overview
+    Description: 
+    Waypoints:
+    - Zoom: 0.4803
+      Pan:
+        - 0.4357
+        - 0.4513
+      Group: H&E
+      Name:
+      Description: |
+        H&E and IHC images of an FFPE human tonsil section.
+
+        #### Figure from:
+
+        Du and Lin et al., 2019 (submitted)
+
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+
+
+
+
+
+
+
+
+

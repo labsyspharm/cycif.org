@@ -1,0 +1,147 @@
+Exhibit:
+  Name: LUNG_1
+  Images:
+    - Name: i0
+      Description: 'Lung 1 - Du and Lin et al, 2019 (submitted)'
+      Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_1
+      Width: 9666
+      Height: 10101
+      MaxLevel: 5
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: 0___DAPI 1---22___CD45---33___IBA1---14___KERATIN---34___ASMA
+      Name: Structural Components
+      Colors:
+        - 00FF00
+        - 00FFFF
+        - FFFFFF
+        - FF0000 
+        - 0000FF
+      Channels:
+        - CD45
+        - IBA1
+        - Keratin
+        - α-SMA
+        - DNA
+    - Path: 0___DAPI 1---23___CD8A---35___CD20---21___CD4
+      Name: Lymphocytes
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000 
+        - 0000FF
+      Channels:
+        - CD8A
+        - CD20
+        - CD4
+        - DNA
+    - Path: 0___DAPI 1---33___IBA1---25___CD163
+      Name: Macrophages
+      Colors:
+        - 00FF00
+        - FF0000 
+        - 0000FF
+      Channels:
+        - IBA1
+        - CD163
+        - DNA
+    - Path: 0___DAPI 1---26___CD68---29___CD11B---27___CD14
+      Name: Macrophages (cont.)
+      Colors:
+        - 00FF00
+        - FFFFFF
+        - FF0000 
+        - 0000FF
+      Channels:
+        - CD68
+        - CD11B
+        - CD14
+        - DNA
+  
+  Stories:
+  - Name: Overview
+    Description: 
+    Waypoints:
+    - Zoom: 0.4803
+      Pan:
+        - 0.4357
+        - 0.4513
+      Group: Cell Type
+      Name: The Waypoint
+      Description: |
+        Representative t-CyCIF image of a lung adenocarcinoma metastasis to a lymph node stitched together using ASHLAR software from 80 fields using a 40X/0.6NA objective.
+
+        #### Figure from:
+
+        Du and Lin et al, 2019 (submitted)  
+
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: 
+    Waypoints:
+    - Name: Tumor Region
+      Group: Cell Type
+      Description: |
+        The tumor cells express `cytokeratin`; clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
+      Zoom: 2.9417
+      Pan:
+        - 0.6108
+        - 0.7992
+      Overlay:
+        x: 0.442
+        y: 0.6882
+        width: 0.339
+        height: 0.24
+
+
+    - Name: T-Cells
+      Group: Lymphocytes
+      Description: ''
+      Zoom: 4.2362
+      Pan:
+        - 0.4113
+        - 0.533
+      Overlay:
+        x: 0.2938
+        y: 0.4559
+        width: 0.2355
+        height: 0.1668
+
+
+    - Name: Macrophages
+      Group: Macrophages
+      Description: Subtypes of macrophages.
+      Zoom: 7.1444
+      Pan:
+        - 0.5453
+        - 0.2675
+      Overlay:
+        x: 0.4758
+        y: 0.2216
+        width: 0.1393
+        height: 0.0991
+
+
+    - Name: Macrophages (cont.)
+      Group: Macrophages (cont.)
+      Description: Subtypes of macrophages.
+      Zoom: 5.9538
+      Pan:
+        - 0.3174
+        - 0.2432
+      Overlay:
+        x: 0.234
+        y: 0.1883
+        width: 0.1672
+        height: 0.1186
+
+
+
+
+
