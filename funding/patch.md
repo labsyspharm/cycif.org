@@ -1,5 +1,5 @@
 ---
-title: Fundings - PATCH
+title: Funding - PATCH
 ---
 ## Center for Pre-cancer Atlases of Cutaneous and Hematologic Origin (PATCH)
 
