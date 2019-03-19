@@ -35,7 +35,7 @@ grants:
 <div class="row mb-5">
   <div class="d-none col-2 d-md-flex align-items-center justify-content-center">
     {% if grant['project-image'] %}
-    <img src="{{ baseurl }}/assets/img/{{ grant['project-image'] }}" alt="" class="img-fluid">
+    <img src="{{ site.baseurl }}/assets/img/{{ grant['project-image'] }}" alt="" class="img-fluid">
     {% else %}
     <h3 class="m-0 text-center">{{ grant['short-name'] }}</h3>
     {% endif %}
@@ -53,7 +53,7 @@ grants:
           Funded By:
         </h5>
         <p>{{ grant['funding'] }}</p>
-        <img src="{{ baseurl }}/assets/img/{{ grant['funding-image'] }}" alt="" class="img-fluid">
+        <img src="{{ site.baseurl }}/assets/img/{{ grant['funding-image'] }}" alt="" class="img-fluid">
     </div>
 </div>
 {% endfor %}
