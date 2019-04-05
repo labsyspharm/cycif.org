@@ -1,0 +1,14 @@
+publication:
+  title: Convergent Evolution of Immunotherapy Resistance in a Melanoma Responder
+  authors: David Liu, Gyulnara G Kasumova, Alex Heyde, Alvin Shi, Adam Kraya, Gao Zhang, Tabea Moll, Dennie T Frederick, Avinash Sahu, Shaolin Mei, Jia-Ren Lin,Benchun Miao, Tatyana Sharova, Riley Fadden, Donald Lawrence, Mai P Hoang, DanielP Cahill, Eytan Ruppin, Meenhard Herlyn, Martin A Nowak, Peter K Sorger, Eliezer MVan Allen, Katherine Nathanson, Keith T Flaherty, Ryan J Sullivan, Benjamin Izar,Manolis Kellis, Genevieve M Boland
+  journal: 
+  link: 
+    # name: Publication summary
+    # url: http://lincs.hms.harvard.edu/lin-elife-2018/
+
+stitched mosaic images:
+  - title: D14_00257_A2
+    description: 
+    thumbnail file name: D14_00257_A2.jpg
+    links:
+      - CyCIF tonsil 1: osd-D14_00257_A2
