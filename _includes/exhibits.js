@@ -1060,7 +1060,7 @@ HashState.prototype = {
     if (hashKeys === hashable.tag) {
       this.newTag();
       this.s = 0;
-      this.g = 0;
+      // this.g = 0;
       this.pushState();
       $('.modal').modal('hide');
     }
@@ -1075,6 +1075,7 @@ HashState.prototype = {
       this.addOverlay(this.overlay);
     }
     else {
+      // We should think about which box to display here
       this.addOverlay(this.waypoint.Overlay);
     }
 
