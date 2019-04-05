@@ -1,0 +1,175 @@
+Exhibit:
+  Name: D14_00257_A2
+  Images:
+    - Name: i0
+      Description: 'D14_00257_A2'
+      Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D14_00257_A2
+      Width: 	10121
+      Height: 15965
+      MaxLevel: 4
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: 0___Hoechst1---9___S100---11___aSMA---14___CD45
+      Name: Architecture Panel
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - S100
+        - aSMA
+        - CD45
+        - DNA
+    - Path: 0___Hoechst1---22___Ki67---27___Catenin---30___pRB
+      Name: Cell Cycle
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - Ki67
+        - Catenin
+        - pRB
+        - DNA
+    - Path: 6___AXL---14___CD45---17___MITF---31___NGFR
+      Name: Differentiation State
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - CD45
+        - MITF
+        - NGFR
+        - AXL
+    - Path: 7___LAMP2---27___Catenin---39___gH2ax---43___Survivin
+      Name: Survival
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - Catenin
+        - gH2ax
+        - Survivin
+        - LAMP2
+    - Path: 11___aSMA---25___CD11b---42___LC3
+      Name: Other immune
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - 0000FF
+      Channels:
+        - CD11b
+        - LC3
+        - aSMA
+    - Path: 13___CD4---15___CD8a---19___HLAA---29___GranB---34___FOXP3
+      Name: T cell infiltrate
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - FFFF00
+        - 0000FF
+      Channels:
+        - CD8a
+        - HLAA
+        - GranB
+        - FOXP3
+        - CD4
+    - Path: 18___CD3---22___Ki67---33___PD1---35___PDL1
+      Name: Exhaustion
+      Colors:
+        - 00FF00 
+        - FFFFFF
+        - FF0000
+        - 0000FF
+      Channels:
+        - Ki67
+        - PD1
+        - PDL1
+        - CD3
+    - Path: 21___pERK---41___cMet
+      Name: Other signaling
+      Colors:
+        - 00FF00 
+        - 0000FF
+      Channels:
+        - cMet
+        - pERK
+  Stories:
+  - Name: Overview
+    Description: 
+    Waypoints:
+    - Zoom: 0.4803
+      Pan:
+        - 0.4357
+        - 0.4513
+      Group: Architecture Panel
+      Name: The Waypoint
+      Description: |
+        Representative t-CyCIF staining.
+
+        #### Figure from:
+
+        Liu et al, 2019 submitted 
+
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: 
+    Waypoints:
+    - Name: Waypoint 1
+      Group: Survival
+      Description: The specimen is stained with a panel of markers comprising of cell type markers (keratin, CDX2, CD45 and aSMA) and protein stress markers (HSF1, Hsp27, Hsp70 and Hsp90).
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+      Pan:
+        - 0.4823
+        - 0.4893
+      Zoom: 0.6313
+
+    - Name: Waypoint 2
+      Group: T cell infiltrate
+      Description: |
+        The normal epithelium is recognizable by
+        the distinct tissue morphology with
+        organized structures staining positive
+        for keratin and alpha smooth muscle
+        actin (SMA).
+        
+        The cells in the intestinal villi
+        express both keratin (blue) and CDX2 (red). The villi
+        are surrounded by stromal cells (green) and
+        immune cells (white) that at times
+        infiltrate the inner villus structure.
+      Overlay:
+        x: 0.418
+        y: 0.5246
+        width: 0.4089
+        height: 0.4657
+      Pan:
+        - 0.6337
+        - 0.7403
+      Zoom: 1.2625
+
+
+
+
+
+
+
+
+
