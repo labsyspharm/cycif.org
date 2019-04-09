@@ -45,6 +45,9 @@
                                 <span class=""><i class="fas fa-crosshairs"></i></span>
                             </a>
                             </span>
+                            <a class="btn" id='duplicate-view'>
+                                <span class=""><i class="fas fa-clone"></i></span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -360,9 +363,51 @@
     </script>
     <script>
         const exhibit = {{ exhibit | jsonify }};
-        build_page(exhibit, {
+        window.viewer = build_page(exhibit, {
           embedded: true
         });
+    </script>
+    <script>
+        const makeTwinViewer = function(e) {
+            var youngerWindow = window.open(window.location.href);
+            var viewer1 = window.viewer;
+            var viewer2;
+            youngerWindow.addEventListener('DOMContentLoaded', (e) => {
+                viewer2 = youngerWindow.viewer;
+                console.log(youngerWindow.viewer);
+                var viewer1Leading = false;
+                var viewer2Leading = false;
+
+                var viewer1Handler = function() {
+                if (viewer2Leading) {
+                    return;
+                }
+
+                viewer1Leading = true;
+                viewer2.viewport.zoomTo(viewer1.viewport.getZoom());
+                viewer2.viewport.panTo(viewer1.viewport.getCenter());
+                viewer1Leading = false;
+                };
+
+                var viewer2Handler = function() {
+                if (viewer1Leading) {
+                    return;
+                }
+
+                viewer2Leading = true;
+                viewer1.viewport.zoomTo(viewer2.viewport.getZoom());
+                viewer1.viewport.panTo(viewer2.viewport.getCenter());
+                viewer2Leading = false;
+                };
+
+                viewer1.addHandler('zoom', viewer1Handler);
+                viewer2.addHandler('zoom', viewer2Handler);
+                viewer1.addHandler('pan', viewer1Handler);
+                viewer2.addHandler('pan', viewer2Handler);
+            });
+        };
+        const duplicateViewButton = document.querySelector('#duplicate-view');
+        duplicateViewButton.onclick = makeTwinViewer;
     </script>
 
 <script>

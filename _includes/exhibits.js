@@ -360,6 +360,9 @@ HashState.prototype = {
     $('#draw-switch').tooltip({
       title: 'Share Link'
     });
+    $('#duplicate-view').tooltip({
+      title: 'Clone linked view'
+    });
 
     $('#edit-import').click(this, function(e) {
       $('#file-upload').click();
@@ -1871,6 +1874,7 @@ const build_page = function(exhibit, options) {
   const state = new HashState(viewer, tileSources, exhibit, options);
   const init = state.init.bind(state);
   arrange_images(viewer, tileSources, state, init);
+  return viewer;
 };
 const index_name = function(list, name) {
   if (!Array.isArray(list)) {
