@@ -8,3 +8,4 @@ sass:
 plugins:
     - jekyll-redirect-from
 exclude: []
+repository: yu-anchen/cycif.org
