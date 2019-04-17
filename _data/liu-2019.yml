@@ -11,4 +11,14 @@ stitched mosaic images:
     description: 
     thumbnail file name: D14_00257_A2.jpg
     links:
-      - CyCIF tonsil 1: osd-D14_00257_A2
+      - CyCIF image: osd-D14_00257_A2
+  - title: D13_07880_B2
+    description: 
+    thumbnail file name: D13_07880_B2.jpg
+    links:
+      - CyCIF image: osd-D13_07880_B2
+  - title: D13_08200_A2
+    description: 
+    thumbnail file name: D13_08200_A2.jpg
+    links:
+      - CyCIF image: osd-D13_08200_A2
