@@ -1,8 +1,8 @@
 Exhibit:
-  Name: TONSIL_1
+  Name: 'TONSIL: IHC, H&E, and CyCIF images' 
   Images:
     - Name: i0
-      Description: 'Tonsil 1 - Du and Lin et al, 2019 (submitted)'
+      Description: 'TONSIL - Du and Lin et al, 2019 (accepted)'
       Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/TONSIL_1/IHC_TONSIL_1
       Width: 16843
       Height: 16125
@@ -131,7 +131,7 @@ Exhibit:
 
         #### Figure from:
 
-        Du and Lin et al., 2019 (submitted)
+        Du and Lin et al., 2019 (accepted)
 
       Overlay:
         x: -100
