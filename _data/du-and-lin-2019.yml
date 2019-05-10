@@ -7,28 +7,28 @@ publication:
     # url: http://lincs.hms.harvard.edu/lin-elife-2018/
 
 stitched mosaic images:
-  - title: Tonsil 1
+  - title: TONSIL
     description: Representative t-CyCIF image acquired from a formalin-fixed, paraffin-embedded (FFPE) human tonsil tissue section stitched together using ASHLAR software from 224 fields acquired using a 40X/0.6NA objective.
     thumbnail file name: tonsil_1.jpg
     links:
-      - CyCIF tonsil 1: osd-TONSIL_1
+      - CyCIF tonsil image : osd-TONSIL_1
   - title: IHC Tonsil Sections
     description: 
     thumbnail file name: tonsil_ihc.jpg
     links:
       - IHC tonsil sections: osd-TONSIL_IHC
-  - title: Squamous cell carcinoma of the lung
+  - title: 'LUNG-3-PR: Primary lung squamous cell carcinoma  '
     description: Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
     thumbnail file name: lung_3.jpg
     links:
-      - CyCIF image: osd-LUNG_3
-  - title: Lung adenocarcinoma metastasis to a lymph node
+      - CyCIF lung-3 image: osd-LUNG_3
+  - title: 'LUNG-1-LN: Lung adenocarcinoma metastasis to lymph node'
     description: Representative t-CyCIF image of a lung adenocarcinoma metastasis to a lymph node stitched together using ASHLAR software from 80 fields using a 40X/0.6NA objective.
     thumbnail file name: lung_1.jpg
     links: 
-      - CyCIF image: osd-LUNG_1
-  - title: Lung squamous cell carcinoma metastasis to the brain
+      - CyCIF lung-1 image: osd-LUNG_1
+  - title: 'LUNG-2-BR: Lung squamous cell carcinoma metastasis to brain'
     description: Representative t-CyCIF image of a lung squamous cell carcinoma metastasis to the brain stitched together using ASHLAR software from 187 fields using a 40X/0.6NA objective.
     thumbnail file name: lung_2.jpg
     links: 
-      - CyCIF image: osd-LUNG_2
+      - CyCIF lung-2 image: osd-LUNG_2
