@@ -1,0 +1,100 @@
+publication:
+  title: An Update on the CNS Manifestations of Neurofibromatosis Type 2
+  authors: Coy S, Rashid R, Stemmer-Rachamimov A, and Santagata S
+  journal: 
+  link: 
+    # name: Publication summary
+    # url: http://lincs.hms.harvard.edu/lin-elife-2018/
+
+images:
+  Vestibular Schwannoma:
+    - title: Vestibular Schwannoma
+      description: Image of Hematoxylin and Esoin (H&E) staining in a vestibular schwannoma tissue biopsy.
+      thumbnail file name: 2_1_VestibularSchwannoma.jpg
+      links:
+        - Image: osd-2_1_VestibularSchwannoma
+    - title: Vestibular Schwannoma
+      description: Image of immunohistochemistry (IHC) staining in a vestibular schwannoma tissue biopsy.
+      thumbnail file name: 2_2_VestibularSchwannoma.jpg
+      links:
+        - Image: osd-2_2_VestibularSchwannoma
+    - title: Vestibular Schwannoma
+      description: Image of Hematoxylin and Esoin (H&E) staining in a vestibular schwannoma tissue biopsy.
+      thumbnail file name: 4_VestibularSchwannoma.jpg
+      links:
+        - Image: osd-4_VestibularSchwannoma
+
+
+  Non-Vestibular Schwannoma:
+
+    - title: Schwannoma (spinal nerve root)
+      description: Image of Hematoxylin and Esoin (H&E) staining in a schwannoma tissue biopsy from spinal nerve root.
+      thumbnail file name: 5_1_SchwannomaSpinalNerveRoot.jpg
+      links:
+        - Image: osd-5_1_SchwannomaSpinalNerveRoot
+    - title: Schwannoma (spinal nerve root)
+      description: Image of immunohistochemistry (IHC) staining in a schwannoma tissue biopsy from the spinal nerve root.
+      thumbnail file name: 5_2_SchwannomaSpinalNerveRoot.jpg
+      links:
+        - Image: osd-5_2_SchwannomaSpinalNerveRoot
+    - title: Schwannoma (spinal nerve root)
+      description: Image of immunohistochemistry (IHC) staining in a schwannoma tissue biopsy from the spinal nerve root.
+      thumbnail file name: 5_3_SchwannomaSpinalNerveRoot.jpg
+      links:
+        - Image: osd-5_3_SchwannomaSpinalNerveRoot
+    - title: break
+
+    - title: Plexiform schwannoma (larynx)
+      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from the larynx.
+      thumbnail file name: 6_1_PlexiformSchwannomaLarynx.jpg
+      links:
+        - Image: osd-6_1_PlexiformSchwannomaLarynx
+    - title: Plexiform schwannoma (larynx)
+      description: Image of immunohistochemistry (IHC) staining in a plexiform schwannoma tissue biopsy from the larynx.
+      thumbnail file name: 6_2_PlexiformSchwannomaLarynx.jpg
+      links:
+        - Image: osd-6_2_PlexiformSchwannomaLarynx
+    - title: break
+
+    - title: Plexiform schwannoma (finger)
+      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from the finger.
+      thumbnail file name: 7_1_PlexiformSchwannomaFinger.jpg
+      links:
+        - Image: osd-7_1_PlexiformSchwannomaFinger
+    - title: Intraneural schwannoma (finger)
+      description: Image of Hematoxylin and Esoin (H&E) staining in a intraneural schwannoma tissue biopsy from the finger.
+      thumbnail file name: 7_2_IntraneuralSchwannomaFinger.jpg
+      links:
+        - Image: osd-7_2_IntraneuralSchwannomaFinger
+    - title: Plexiform schwannoma (soft tissue)
+      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
+      thumbnail file name: 7_3_PlexiformSchwannomaSoftTissue.jpg
+      links:
+        - Image: osd-7_3_PlexiformSchwannomaSoftTissue
+    - title: Plexiform schwannoma (soft tissue)
+      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
+      thumbnail file name: 7_4_PlexiformSchwannomaFSoftTissue.jpg
+      links:
+        - Image: osd-7_4_PlexiformSchwannomaFSoftTissue
+    - title: break
+    
+    - title: Plexiform schwannoma (spinal nerve root)
+      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from the spinal nerve root.
+      thumbnail file name: 8_PlexiformSchwannomaSpinalNerveRoot.jpg
+      links:
+        - Image: osd-8_PlexiformSchwannomaSpinalNerveRoot
+
+
+  Ependymoma:
+    - title: Ependymoma (4th Ventricle)
+      description: Image of Hematoxylin and Esoin (H&E) staining in an ependymoma tissue biopsy.
+      thumbnail file name: 1_Ependymoma.jpg
+      links:
+        - Image: osd-1_Ependymoma
+        
+  Meningioma:
+    - title: Meningioma
+      description: Image of Hematoxylin and Esoin (H&E) staining in a meningioma tissue biopsy.
+      thumbnail file name: 3_Meningioma.jpg
+      links:
+        - Image: osd-3_Meningioma
