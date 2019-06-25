@@ -24,7 +24,7 @@ title: Data
 
 <div class="row mb-4">
   <div class="col-md-2">
-    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/cycifviewer/pca-2019.png" alt="Generic placeholder image">
+    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/cycifviewer/pca-2019.jpg" alt="Generic placeholder image">
   </div>
   <div class="col">
     <a href="{{ site.baseurl }}/data/pca-2019/">
