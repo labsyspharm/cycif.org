@@ -9,14 +9,17 @@ title: Data
 <h2 class="h4">
     {{ pubData.publication.title }}
 </h2>
-<p class="">
+<!-- <p class="">
     {{ pubData.publication.authors }}
     <br> {{ pubData.publication.journal }}
-</p>
+</p> -->
 <a href="{{ pubData.publication.link.url }}" target="_blank" class="lead">{{ pubData.publication.link.name }}</a>
 
 
-<h3 class="h4">Available images</h3>
+<h3 class="h4">Dataset</h3>
+<p class="">
+    {{ pubData.publication.authors }}
+</p>
 
 <div class="row">
 {% for img in pubData['stitched mosaic images'] %}

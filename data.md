@@ -31,7 +31,7 @@ title: Data
       <h5 class="mt-0">Melanoma Pre-Cancer Atlas (HTAN)</h5>
     </a>
     <p>
-      Unpublished t-CyCIF of melanoma and precursor fields from two patients. The biopsy from patient 1 illustrates regions of melanocytic dysplasia, normal immune resolution of early melanoma and immune evasion by invasive melanoma. Three separate biopsies from patient 2 illustrate a variety of histologic presentations from precursor fields and melanoma in situ to invasive and polypoid melanoma.
+      Unpublished t-CyCIF images of melanoma and precursor fields from two patients. The specimen from patient 1 illustrates different regions of melanoma progression from relatively normal melanocytes to precursor melanocytic dysplasia to invasive melanoma. In addition, the specimen shows different regions representing immune responses to early melanoma (inflammatory regression) as well as to invasive melanoma in the form of a brisk immune infiltrative immune response (tumor infiltrating lymphocytes “TILs”). The excision specimen from patient 2 illustrates the histologic evolution of melanoma from a precursor field to melanoma in situ, and ultimately to polypoidal invasive melanoma.
     </p>
   </div>
 </div>
