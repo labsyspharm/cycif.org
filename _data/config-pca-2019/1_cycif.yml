@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Patient 2, melanoma in situ, invasive and exophytic melanoma
+  Name: Patient 2, melanoma in situ, invasive and polypoid melanoma
   Images:
   - Name: i0
-    Description: Patient 2, melanoma in situ, invasive and exophytic melanoma
+    Description: Patient 2, melanoma in situ, invasive and polypoid melanoma
     Path: https://s3.amazonaws.com/www.cycif.org/pca2019/pickseq_1_cycif
     Width: 36626
     Height: 31741
@@ -97,7 +97,7 @@ Exhibit:
       - 0.4513
       Group: Architecure panel
       Name: The Waypoint
-      Description: Biopsy from Patient 2 containing regions of melanoma in situ, invasive melanoma with PDL1+ border and exophytic melanoma.
+      Description: Biopsy from Patient 2 containing regions of melanoma in situ, invasive melanoma with PDL1+ border and polypoid melanoma.
       Overlay:
         x: -100
         y: -100
@@ -134,7 +134,7 @@ Exhibit:
       Zoom: 3.8752
 
 
-    - Name: Exophytic Melanoma
+    - Name: Polypoid Melanoma
       Group: Architecure panel
       Description: ''
       Overlay:

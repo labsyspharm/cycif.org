@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Patient 1, melanoma precursors
+  Name: Patient 1, melanoma with precursor fields
   Images:
   - Name: i0
-    Description: Patient 1, melanoma precursors
+    Description: Patient 1, melanoma with precursor fields
     Path: https://s3.amazonaws.com/www.cycif.org/pca2019/PC1_40a_153
     Width: 20850
     Height: 9270
@@ -87,7 +87,7 @@ Exhibit:
     Description: null
     Waypoints:
 
-    - Name: Dysplasia 1
+    - Name: Precursor field 1
       Group: Architecure panel
       Description: ''
       Overlay:
@@ -100,7 +100,7 @@ Exhibit:
         - 0.7355
       Zoom: 3.4132
 
-    - Name: Dysplasia 2
+    - Name: Precursor field 2
       Group: Architecure panel
       Description: ''
       Overlay:
@@ -113,7 +113,7 @@ Exhibit:
         - 0.8056
       Zoom: 2.8444
 
-    - Name: Immune Evasion
+    - Name: Brisk TILs
       Group: Progression
       Description: ''
       Overlay:
@@ -126,7 +126,7 @@ Exhibit:
         - 0.1121
       Zoom: 2.3313
 
-    - Name: Immune Regression
+    - Name: Inflammatory regression
       Group: Immune
       Description: ''
       Overlay:
