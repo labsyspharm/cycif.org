@@ -1,0 +1,29 @@
+publication:
+  title: Melanoma Pre-Cancer Atlas (HTAN)
+  authors: Unpublished t-CyCIF of melanoma and precursor fields from two patients. The biopsy from patient 1 illustrates regions of melanocytic dysplasia, normal immune resolution of early melanoma and immune evasion by invasive melanoma. Three separate biopsies from patient 2 illustrate a variety of histologic presentations from precursor fields and melanoma in situ to invasive and exophytic melanoma.
+  journal: 
+  link: 
+    # name: Publication summary
+    # url: http://lincs.hms.harvard.edu/lin-elife-2018/
+
+stitched mosaic images:
+  - title: Patient 1
+    description: t-CyCIF analysis of biopsy from Patient 1 that contains examplars of early melanoma progression.
+    thumbnail file name: PC1_40a_153.png
+    links: 
+      - CyCIF image: osd-PC1_40a_153
+  - title: Patient 2, immune regression and invasive melanoma with brisk TIL response
+    description: 
+    thumbnail file name: pickseq_1_cycif.png
+    links:
+      - CyCIF image : osd-1_cycif
+  - title: Patient 2, melanoma in situ, invasive and exophytic melanoma
+    description: 
+    thumbnail file name: pickseq_2_cycif.png
+    links:
+      - CyCIF image: osd-2_cycif
+  - title: Patient 2, melanoma in situ, invasive melanoma, precursor field and inflammatory regression
+    description: 
+    thumbnail file name: pickseq_3_cycif.png
+    links:
+      - CyCIF imagee: osd-3_cycif

@@ -1,0 +1,140 @@
+Exhibit:
+  Name: Patient 1, melanoma precursors
+  Images:
+  - Name: i0
+    Description: Patient 1, melanoma precursors
+    Path: https://s3.amazonaws.com/www.cycif.org/pca2019/PC1_40a_153
+    Width: 20850
+    Height: 9270
+    MaxLevel: 5
+  Layout:
+    Grid:
+    - - i0
+  Groups:
+  - Channels:
+    - MART1
+    - pan-Cytokeratin
+    - CD163
+    - CD3D
+    - DNA
+    Colors:
+    - ff0000
+    - 00ffff
+    - 00ff00
+    - ffffff
+    - 0000ff
+    Name: Architecure panel
+    Path: Architecure-panel_11__MART1--30__pan-Cytokeratin--21__CD163--14__CD3D--0__DNA
+  - Channels:
+    - DNA
+    - CD4
+    - FOXP3
+    - CD8A
+    - MART1
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ffffff
+    - ff0000
+    - 00ffff
+    Name: T Cells
+    Path: T-Cells_0__DNA--17__CD4--18__FOXP3--19__CD8A--11__MART1
+  - Channels:
+    - DNA
+    - MART1
+    - PDL1
+    - pan-Cytokeratin
+    Colors:
+    - 0000ff
+    - ff0000
+    - 00ff00
+    - ffffff
+    Name: Progression
+    Path: Progression_0__DNA--11__MART1--27__PDL1--30__pan-Cytokeratin
+  - Channels:
+    - DNA
+    - CD163
+    - Langerin
+    - CD3D
+    - CD20
+    - MART1
+    Colors:
+    - 0000ff
+    - 00ff00
+    - 00ffff
+    - ffffff
+    - ffa500
+    - ff0000
+    Name: Immune
+    Path: Immune_0__DNA--21__CD163--10__Langerin--14__CD3D--15__CD20--11__MART1
+  Stories:
+  - Name: Overview
+    Description: null
+    Waypoints:
+    - Zoom: 0.4001
+      Pan:
+      - 1.116
+      - 0.4555
+      Group: Architecure panel
+      Name: The Waypoint
+      Description: 't-CyCIF analysis of biopsy from Patient 1 that contains examplars of early melanoma progression.'
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: null
+    Waypoints:
+
+    - Name: Dysplasia 1
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        height: 0.09
+        width: 0.1356
+        y: 0.699
+        x: 0.271
+      Pan:
+        - 0.3196
+        - 0.7355
+      Zoom: 3.4132
+
+    - Name: Dysplasia 2
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        x: 0.1021
+        y: 0.7599
+        width: 0.1629
+        height: 0.1031
+      Pan:
+        - 0.2006
+        - 0.8056
+      Zoom: 2.8444
+
+    - Name: Immune Evasion
+      Group: Progression
+      Description: ''
+      Overlay:
+        x: 1.6558
+        y: 0.031
+        width: 0.175
+        height: 0.1595
+      Pan:
+        - 1.7338
+        - 0.1121
+      Zoom: 2.3313
+
+    - Name: Immune Regression
+      Group: Immune
+      Description: ''
+      Overlay:
+        x: 0.8257
+        y: 0.2356
+        width: 0.2418
+        height: 0.1893
+      Pan:
+        - 0.9646
+        - 0.3242
+      Zoom: 2.3313
