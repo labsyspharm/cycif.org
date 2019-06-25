@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Patient 1, melanoma with precursor fields
+  Name: Patient 1 - Melanoma with precursor fields
   Images:
   - Name: i0
-    Description: Patient 1, melanoma with precursor fields
+    Description: Patient 1 - Melanoma with precursor fields
     Path: https://s3.amazonaws.com/www.cycif.org/pca2019/PC1_40a_153
     Width: 20850
     Height: 9270
