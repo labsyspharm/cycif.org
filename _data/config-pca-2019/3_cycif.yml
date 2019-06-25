@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Patient 2, melanoma in situ, invasive melanoma, precursor field and inflammatory regression
+  Name: Patient 2 - Melanoma in situ, invasive melanoma, precursor field and inflammatory regression
   Images:
   - Name: i0
-    Description: Patient 2, melanoma in situ, invasive melanoma, precursor field and inflammatory regression
+    Description: Patient 2 - Melanoma in situ, invasive melanoma, precursor field and inflammatory regression
     Path: https://s3.amazonaws.com/www.cycif.org/pca2019/pickseq_3_cycif
     Width: 45154
     Height: 27658

@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Patient 2, immune regression and invasive melanoma with brisk TIL response
+  Name: Patient 2 - Inflammatory regression and brisk TILs
   Images:
   - Name: i0
-    Description: Patient 2, immune regression and invasive melanoma with brisk TIL response
+    Description: Patient 2 - Inflammatory regression and brisk TILs
     Path: https://s3.amazonaws.com/www.cycif.org/pca2019/pickseq_2_cycif
     Width: 35406
     Height: 24591

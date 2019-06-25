@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Patient 2, melanoma in situ, invasive and polypoid melanoma
+  Name: Patient 2 - Melanoma in situ, invasive and polypoid melanoma
   Images:
   - Name: i0
-    Description: Patient 2, melanoma in situ, invasive and polypoid melanoma
+    Description: Patient 2 - Melanoma in situ, invasive and polypoid melanoma
     Path: https://s3.amazonaws.com/www.cycif.org/pca2019/pickseq_1_cycif
     Width: 36626
     Height: 31741
