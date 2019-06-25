@@ -24,6 +24,20 @@ title: Data
 
 <div class="row mb-4">
   <div class="col-md-2">
+    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/cycifviewer/pca-2019.png" alt="Generic placeholder image">
+  </div>
+  <div class="col">
+    <a href="{{ site.baseurl }}/data/pca-2019/">
+      <h5 class="mt-0">Melanoma Pre-Cancer Atlas (HTAN)</h5>
+    </a>
+    <p>
+      Unpublished t-CyCIF of melanoma and precursor fields from two patients. The biopsy from patient 1 illustrates regions of melanocytic dysplasia, normal immune resolution of early melanoma and immune evasion by invasive melanoma. Three separate biopsies from patient 2 illustrate a variety of histologic presentations from precursor fields and melanoma in situ to invasive and exophytic melanoma.
+    </p>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-2">
     <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/cycifviewer/01_melanoma_story.jpg" alt="Generic placeholder image">
   </div>
   <div class="col">

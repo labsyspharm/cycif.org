@@ -1,0 +1,149 @@
+Exhibit:
+  Name: Patient 2, melanoma in situ, invasive and exophytic melanoma
+  Images:
+  - Name: i0
+    Description: Patient 2, melanoma in situ, invasive and exophytic melanoma
+    Path: https://s3.amazonaws.com/www.cycif.org/pca2019/pickseq_1_cycif
+    Width: 36626
+    Height: 31741
+    MaxLevel: 6
+  Layout:
+    Grid:
+    - - i0
+  Groups:
+  - Channels:
+    - MART1
+    - pan-Cytokeratin
+    - CD163
+    - CD3D
+    - DNA
+    Colors:
+    - ff0000
+    - 00ffff
+    - 00ff00
+    - ffffff
+    - 0000ff
+    Name: Architecure panel
+    Path: Architecure-panel_3__MART1--14__pan-Cytokeratin--5__CD163--6__CD3D--0__DNA
+  - Channels:
+    - DNA
+    - CD4
+    - FOXP3
+    - CD8A
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ffffff
+    - ff0000
+    Name: T Cells
+    Path: T-Cells_0__DNA--9__CD4--10__FOXP3--11__CD8A
+  - Channels:
+    - DNA
+    - MART1
+    - PDL1
+    - Nestin
+    - pan-Cytokeratin
+    Colors:
+    - 0000ff
+    - ff0000
+    - ffffff
+    - 00ff00
+    - 00ffff
+    Name: Progression
+    Path: Progression_0__DNA--3__MART1--15__PDL1--13__Nestin--14__pan-Cytokeratin
+  - Channels:
+    - DNA
+    - CD163
+    - Langerin
+    - CD3D
+    - CD20
+    - MART1
+    Colors:
+    - 0000ff
+    - 00ff00
+    - 00ffff
+    - ffffff
+    - ffa500
+    - ff0000
+    Name: Immune
+    Path: Immune_0__DNA--5__CD163--2__Langerin--6__CD3D--7__CD20--3__MART1
+  - Channels:
+    - DNA
+    - CD3D
+    - PDL1
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+    Name: PDL1-T cells
+    Path: PDL1-T-cells_0__DNA--6__CD3D--15__PDL1
+  - Channels:
+    - DNA
+    - CD163
+    - PDL1
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+    Name: PDL1-Macrophage
+    Path: PDL1-Macrophage_0__DNA--5__CD163--15__PDL1
+  Stories:
+  - Name: Overview
+    Description: null
+    Waypoints:
+    - Zoom: 0.4803
+      Pan:
+      - 0.4357
+      - 0.4513
+      Group: Architecure panel
+      Name: The Waypoint
+      Description: Biopsy from Patient 2 containing regions of melanoma in situ, invasive melanoma with PDL1+ border and exophytic melanoma.
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: null
+    Waypoints:
+
+    - Name: Melanoma in situ
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        height: 0.0406
+        width: 0.0971
+        y: 0.5942
+        x: 0.2709
+      Pan:
+        - 0.3155
+        - 0.6155
+      Zoom: 5.5803
+
+    - Name: Invasive Melanoma
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        x: 0.8494
+        y: 0.3328
+        width: 0.0816
+        height: 0.0824
+      Pan:
+        - 0.871
+        - 0.3658
+      Zoom: 3.8752
+
+
+    - Name: Exophytic Melanoma
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        x: 0.5402
+        y: 0.3288
+        width: 0.0839
+        height: 0.0723
+      Pan:
+        - 0.5816
+        - 0.3643
+      Zoom: 4.6499
+

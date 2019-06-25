@@ -1,0 +1,139 @@
+Exhibit:
+  Name: Patient 2, melanoma in situ, invasive melanoma, precursor field and inflammatory regression
+  Images:
+  - Name: i0
+    Description: Patient 2, melanoma in situ, invasive melanoma, precursor field and inflammatory regression
+    Path: https://s3.amazonaws.com/www.cycif.org/pca2019/pickseq_3_cycif
+    Width: 45154
+    Height: 27658
+    MaxLevel: 6
+  Layout:
+    Grid:
+    - - i0
+  Groups:
+  - Channels:
+    - MART1
+    - pan-Cytokeratin
+    - CD163
+    - CD3D
+    - DNA1
+    Colors:
+    - ff0000
+    - 00ffff
+    - 00ff00
+    - ffffff
+    - 0000ff
+    Name: Architecure panel
+    Path: architecure-panel_3__MART1--14__pan-Cytokeratin--5__CD163--6__CD3D--0__DNA1
+  - Channels:
+    - DNA1
+    - CD4
+    - FOXP3
+    - CD8A
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ffffff
+    - ff0000
+    Name: T Cells
+    Path: T-Cells_0__DNA1--9__CD4--10__FOXP3--11__CD8A
+  - Channels:
+    - MART1
+    - PDL1
+    - Nestin
+    - pan-Cytokeratin
+    Colors:
+    - ff0000
+    - ffffff
+    - 00ff00
+    - 00ffff
+    Name: Progression
+    Path: Progression_3__MART1--15__PDL1--13__Nestin--14__pan-Cytokeratin
+  - Channels:
+    - DNA1
+    - CD163
+    - Langerin
+    - CD3D
+    - CD20
+    - MART1
+    Colors:
+    - 0000ff
+    - 00ff00
+    - 00ffff
+    - ffffff
+    - ffa500
+    - ff0000
+    Name: Immune
+    Path: Immune_0__DNA1--5__CD163--2__Langerin--6__CD3D--7__CD20--3__MART1
+  Stories:
+  - Name: Overview
+    Description: null
+    Waypoints:
+    - Zoom: 0.5513
+      Pan:
+      - 0.8187
+      - 0.3854
+      Group: Architecure panel
+      Name: The Waypoint
+      Description: Biopsy from Patient 2 containing a variety of melanoma precursor states and invasive melanoma.
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: null
+    Waypoints:
+
+    - Name: Melanoma in situ
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        x: 0.3454
+        y: 0.4285
+        width: 0.1282
+        height: 0.0379
+      Pan:
+        - 0.4114
+        - 0.4484
+      Zoom: 4.8343
+
+    - Name: Invasive melanoma
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        x: 1.0154
+        y: 0.2368
+        width: 0.1649
+        height: 0.1229
+      Pan:
+        - 1.0032
+        - 0.3542
+      Zoom: 1.619
+
+    - Name: Precursor field
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        height: 0.0915
+        width: 0.0921
+        y: 0.4762
+        x: 0.0804
+      Pan:
+        - 0.1109
+        - 0.5234
+      Zoom: 3.4133
+
+    - Name: Inflammatory regression
+      Group: Architecure panel
+      Description: ''
+      Overlay:
+        x: 0.1924
+        y: 0.4517
+        width: 0.0754
+        height: 0.0635
+      Pan:
+        - 0.1784
+        - 0.4933
+      Zoom: 3.4133
+
