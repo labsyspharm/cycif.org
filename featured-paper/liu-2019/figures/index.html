@@ -3,6 +3,134 @@ layout: default
 title: Data
 ---
 
+<canvas id="myChart" width="400" height="100"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var colors = [
+    'rgba(255, 99, 132, 0.2)',
+    'rgba(54, 162, 235, 0.2)',
+    'rgba(255, 206, 86, 0.2)',
+    'rgba(75, 192, 192, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(255, 159, 64, 0.2)'
+];
+var myChart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [
+            {
+                label: 'Lineage 1',
+                data: [{
+                    x: 27,
+                    y: 10
+                }, {
+                    x: 39,
+                    y: 10
+                }, {
+                    x: 62,
+                    y: 10
+                }, {
+                    x: 62,
+                    y: 10
+                }, {
+                    x: 76,
+                    y: 10
+                }, {
+                    x: 83,
+                    y: 10
+                }, {
+                    x: 92,
+                    y: 10
+                }, {
+                    x: 92,
+                    y: 10
+                }, {
+                    x: 109,
+                    y: 10
+                }],
+                backgroundColor: colors[0],
+                borderColor: colors[0].replace('0.2', '1'),
+                borderWidth: 1
+            },
+            {
+                label: 'Lineage 2',
+                data: [{
+                    x: -22,
+                    y: 20
+                }, {
+                    x: 39,
+                    y: 20
+                }, {
+                    x: 39,
+                    y: 20
+                }],
+                backgroundColor: colors[1],
+                borderColor: colors[1].replace('0.2', '1'),
+                borderWidth: 1
+            },
+            {
+                label: 'Lineage 3',
+                data: [{
+                    x: 39,
+                    y: 30
+                }, {
+                    x: 92,
+                    y: 30
+                }, {
+                    x: 1028,
+                    y: 30
+                }, {
+                    x: 1169,
+                    y: 30
+                }],
+                backgroundColor: colors[2],
+                borderColor: colors[2].replace('0.2', '1'),
+                borderWidth: 1
+            },
+            {
+                label: 'Lineage 4',
+                data: [{
+                    x: 27,
+                    y: 40
+                }, {
+                    x: 76,
+                    y: 40
+                }, {
+                    x: 76,
+                    y: 40
+                }],
+                backgroundColor: colors[3],
+                borderColor: colors[3].replace('0.2', '1'),
+                borderWidth: 1
+            },
+            {
+                label: 'Lineage 5',
+                data: [{
+                    x: 27,
+                    y: 50
+                }, {
+                    x: 27,
+                    y: 50
+                }],
+                backgroundColor: colors[4],
+                borderColor: colors[4].replace('0.2', '1'),
+                borderWidth: 1
+            },
+        ]
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: 'logarithmic'
+            }]
+        }
+    }
+});
+
+</script>
+<div id="myChart"></div>
+
 {% assign pubData=site.data.liu-2019 %}
 <section id="lin-elife-2018-paper">
 
