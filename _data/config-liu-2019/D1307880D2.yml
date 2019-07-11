@@ -2,7 +2,7 @@ Exhibit:
   Name: D1307880D2
   Images:
   - Name: i0
-    Description: Day 27 - Skin Of Right Ear Lesion Biopsy
+    Description: Day 27 - Skin Right Ear
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D1307880D2
     Width: 23972
     Height: 14871
@@ -71,8 +71,8 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 5 - 27 days after treatment.<br />Skin Of Right Ear Lesion\
-        \ Biopsy\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Description: "Lineage 5 - 27 days after treatment.<br />Skin Right Ear\n\n####\
+        \ tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100

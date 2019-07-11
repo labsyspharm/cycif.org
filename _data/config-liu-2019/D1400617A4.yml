@@ -2,7 +2,7 @@ Exhibit:
   Name: D1400617A4
   Images:
   - Name: i0
-    Description: Day 76 - Skin Lesion, Right Neck, Resection
+    Description: Day 76 - Skin Right Neck
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D1400617A4
     Width: 11380
     Height: 12767
@@ -71,8 +71,8 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 4 - 76 days after treatment.<br />Skin Lesion, Right Neck,\
-        \ Resection\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Description: "Lineage 4 - 76 days after treatment.<br />Skin Right Neck\n\n\
+        #### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100

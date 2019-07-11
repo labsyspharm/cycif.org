@@ -2,7 +2,7 @@ Exhibit:
   Name: 98DTF1697
   Images:
   - Name: i0
-    Description: Day 1028 - Jejunal Resection
+    Description: Day 1028 - Jejunum
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/98DTF1697
     Width: 8849
     Height: 7455
@@ -71,8 +71,8 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 3 - 1028 days after treatment.<br />Jejunal Resection\n\
-        \n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Description: "Lineage 3 - 1028 days after treatment.<br />Jejunum\n\n#### tCyCIF\
+        \ image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100

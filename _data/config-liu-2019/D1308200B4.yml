@@ -2,7 +2,7 @@ Exhibit:
   Name: D1308200B4
   Images:
   - Name: i0
-    Description: Day 39 - Left Posterior Scalp Excision
+    Description: Day 39 - Skin Left Posterior Scalp
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D1308200B4
     Width: 16395
     Height: 9561
@@ -71,8 +71,8 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 3 - 39 days after treatment.<br />Left Posterior Scalp\
-        \ Excision\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Description: "Lineage 3 - 39 days after treatment.<br />Skin Left Posterior\
+        \ Scalp\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100
