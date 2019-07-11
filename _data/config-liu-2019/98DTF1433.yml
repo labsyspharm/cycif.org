@@ -2,7 +2,7 @@ Exhibit:
   Name: 98DTF1433
   Images:
   - Name: i0
-    Description: Day 109 - Left Ring Finger Debulking
+    Description: Day 109 - Skin Left Ring Finger
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/98DTF1433
     Width: 7588
     Height: 6386
@@ -71,7 +71,7 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 1 - 109 days after treatment.<br />Left Ring Finger Debulking\n\
+      Description: "Lineage 1 - 109 days after treatment.<br />Skin Left Ring Finger\n\
         \n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100

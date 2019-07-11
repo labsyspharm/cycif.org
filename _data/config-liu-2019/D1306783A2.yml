@@ -2,7 +2,7 @@ Exhibit:
   Name: D1306783A2
   Images:
   - Name: i0
-    Description: Day -22 - Skin Right Nasal Labial Fold, Incisional Biopsy
+    Description: Day -22 - Skin Right Nasolabial Fold
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D1306783A2
     Width: 12622
     Height: 12740
@@ -71,8 +71,8 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 2 - -22 days after treatment.<br />Skin Right Nasal Labial\
-        \ Fold, Incisional Biopsy\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted\
+      Description: "Lineage 2 - -22 days after treatment.<br />Skin Right Nasolabial Fold\
+        \ \n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted\
         \ \n"
       Overlay:
         x: -100

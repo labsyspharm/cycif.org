@@ -2,7 +2,7 @@ Exhibit:
   Name: D1401032B2
   Images:
   - Name: i0
-    Description: Day 92 - Skin Of Left Neck Excision
+    Description: Day 92 - Skin Left Neck
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D1401032B2
     Width: 21494
     Height: 8514
@@ -71,8 +71,8 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 1 - 92 days after treatment.<br />Skin Of Left Neck Excision\n\
-        \n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Description: "Lineage 1 - 92 days after treatment.<br />Skin Left Neck\n\n####\
+        \ tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100

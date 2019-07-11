@@ -2,7 +2,7 @@ Exhibit:
   Name: D1308200D5
   Images:
   - Name: i0
-    Description: Day 39 - Skin Left Arm Excision
+    Description: Day 39 - Skin Left Arm
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D1308200D5
     Width: 16393
     Height: 14866
@@ -71,8 +71,8 @@ Exhibit:
       - 0.4513
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 1 - 39 days after treatment.<br />Skin Left Arm Excision\n\
-        \n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Description: "Lineage 1 - 39 days after treatment.<br />Skin Left Arm\n\n####\
+        \ tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100
