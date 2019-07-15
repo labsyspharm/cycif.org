@@ -1,0 +1,130 @@
+Exhibit:
+  Name: D1400617B2
+  Images:
+  - Name: i0
+    Description: Day 76 - Skin Right Nasolabial Fold
+    Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/D1400617B2
+    Width: 15172
+    Height: 10649
+    MaxLevel: 4
+  Layout:
+    Grid:
+    - - i0
+  Groups:
+  - Channels:
+    - S100
+    - CD45
+    - aSMA
+    - DNA
+    Colors:
+    - ff0000
+    - 00ff00
+    - ffffff
+    - 0000ff
+    Name: Architecure
+    Path: Architecure_9__S100--14__CD45--11__aSMA--8__DNA
+  - Channels:
+    - FOXP3
+    - CD4
+    - CD8
+    - HLA-A
+    Colors:
+    - ffffff
+    - 00ff00
+    - ff0000
+    - 0000ff
+    Name: T Cell Infiltrate
+    Path: T-Cell-Infiltrate_34__FOXP3--13__CD4--15__CD8--19__HLA-A
+  - Channels:
+    - pRB
+    - Ki-67
+    - p-ERK
+    - DNA
+    Colors:
+    - ff0000
+    - 00ff00
+    - 00ffff
+    - 0000ff
+    Name: Proliferation
+    Path: Proliferation_30__pRB--22__Ki-67--21__p-ERK--8__DNA
+  - Channels:
+    - MITF
+    - NGFR
+    - CD45
+    - aSMA
+    - DNA
+    Colors:
+    - 00ff00
+    - ff0000
+    - 00ffff
+    - ffffff
+    - 0000ff
+    Name: Differentiation State
+    Path: Differentiation-State_17__MITF--31__NGFR--14__CD45--11__aSMA--8__DNA
+  Stories:
+  - Name: Overview
+    Description: null
+    Waypoints:
+    - Zoom: 0.4803
+      Pan:
+      - 0.4357
+      - 0.4513
+      Group: Architecure
+      Name: The Waypoint
+      Description: "Lineage 4 - 76 days after treatment.<br />Skin Right Nasolabial\
+        \ Fold\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: null
+    Waypoints:
+    - Name: Waypoint 1
+      Group: Architecure
+      Description: The specimen is stained with a panel of markers comprising of cell
+        type markers (keratin, CDX2, CD45 and aSMA) and protein stress markers (HSF1,
+        Hsp27, Hsp70 and Hsp90).
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+      Pan:
+      - 0.4823
+      - 0.4893
+      Zoom: 0.6313
+    - Name: Waypoint 2
+      Group: Architecure
+      Description: 'The normal epithelium is recognizable by
+
+        the distinct tissue morphology with
+
+        organized structures staining positive
+
+        for keratin and alpha smooth muscle
+
+        actin (SMA).
+
+
+        The cells in the intestinal villi
+
+        express both keratin (blue) and CDX2 (red). The villi
+
+        are surrounded by stromal cells (green) and
+
+        immune cells (white) that at times
+
+        infiltrate the inner villus structure.
+
+        '
+      Overlay:
+        x: 0.418
+        y: 0.5246
+        width: 0.4089
+        height: 0.4657
+      Pan:
+      - 0.6337
+      - 0.7403
+      Zoom: 1.2625

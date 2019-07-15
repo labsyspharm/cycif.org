@@ -1,0 +1,129 @@
+publication:
+  title: Convergent Evolution of Immunotherapy Resistance in a Melanoma Responder
+  authors: David Liu, Gyulnara G Kasumova, Alex Heyde, Alvin Shi, Adam Kraya, Gao Zhang, Tabea Moll, Dennie T Frederick, Avinash Sahu, Shaolin Mei, Jia-Ren Lin,Benchun Miao, Tatyana Sharova, Riley Fadden, Donald Lawrence, Mai P Hoang, DanielP Cahill, Eytan Ruppin, Meenhard Herlyn, Martin A Nowak, Peter K Sorger, Eliezer MVan Allen, Katherine Nathanson, Keith T Flaherty, Ryan J Sullivan, Benjamin Izar, Manolis Kellis, Genevieve M Boland
+  journal: 
+  link: 
+    # name: Publication summary
+    # url: http://lincs.hms.harvard.edu/lin-elife-2018/
+
+stitched mosaic images:
+- thumbnail file name: D1306783A2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1306783A2
+  title: Day -22, L2 - Skin Right Nasolabial Fold
+- thumbnail file name: D1307880B2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1307880B2
+  title: Day 27, L1 - Skin Chin
+- thumbnail file name: D1307880A2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1307880A2
+  title: Day 27, L4 - Skin Upper Lip
+- thumbnail file name: D1307880C2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1307880C2
+  title: Day 27, L5 - Skin Left Brow
+- thumbnail file name: D1307880D2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1307880D2
+  title: Day 27, L5 - Skin Right Ear
+- thumbnail file name: D1308200A2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1308200A2
+  title: Day 39, L2 - Skin Right Posterior Scalp
+- thumbnail file name: D1308200C2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1308200C2
+  title: Day 39, L2 - Skin Posterior Neck
+- thumbnail file name: D1308200B4.jpg
+  description: ''
+  links:
+  - CyCIF image: D1308200B4
+  title: Day 39, L3 - Skin Left Posterior Scalp
+- thumbnail file name: D1308200D5.jpg
+  description: ''
+  links:
+  - CyCIF image: D1308200D5
+  title: Day 39, L1 - Skin Left Arm
+- thumbnail file name: D1400257A2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1400257A2
+  title: Day 62, L1 - Skin Right Neck
+- thumbnail file name: D1400257B7.jpg
+  description: ''
+  links:
+  - CyCIF image: D1400257B7
+  title: Day 62, L1 - Skin Left Wrist
+- thumbnail file name: D1400617C4.jpg
+  description: ''
+  links:
+  - CyCIF image: D1400617C4
+  title: Day 76, L1 - Skin Left Leg
+- thumbnail file name: D1400617A4.jpg
+  description: ''
+  links:
+  - CyCIF image: D1400617A4
+  title: Day 76, L4 - Skin Right Neck
+- thumbnail file name: D1400617B2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1400617B2
+  title: Day 76, L4 - Skin Right Nasolabial Fold
+- thumbnail file name: 98DTF1425.jpg
+  description: ''
+  links:
+  - CyCIF image: 98DTF1425
+  title: Day 83, L1 - Skin Left Posterior Shoulder
+- thumbnail file name: D1401032A7.jpg
+  description: ''
+  links:
+  - CyCIF image: D1401032A7
+  title: Day 92, L1 - Skin Left Groin
+- thumbnail file name: D1401032B2.jpg
+  description: ''
+  links:
+  - CyCIF image: D1401032B2
+  title: Day 92, L1 - Skin Left Neck
+- thumbnail file name: D1401032C1.jpg
+  description: ''
+  links:
+  - CyCIF image: D1401032C1
+  title: Day 92, L3 -  Skin Right Upper Lip
+- thumbnail file name: 98DTF1433.jpg
+  description: ''
+  links:
+  - CyCIF image: 98DTF1433
+  title: Day 109, L1 - Skin Left Ring Finger
+- thumbnail file name: 98DTF1697.jpg
+  description: ''
+  links:
+  - CyCIF image: 98DTF1697
+  title: Day 1028, L3 - Jejunum
+# - thumbnail file name: 98DTF14515.jpg
+#   description: ''
+#   links:
+#   - CyCIF image: 98DTF14515
+#   title: Day 1169, L3 - Brain, Right Occipital Lesion (image id mapping might be incorrect)
+- thumbnail file name: MEL92413.jpg
+  description: ''
+  links:
+  - CyCIF image: MEL92413
+  title: Day -51, N/A - Skin Left Forearm
+- thumbnail file name: MEL12718.jpg
+  description: ''
+  links:
+  - CyCIF image: MEL12718
+  title: Day 1849, unknown - Skin Left Neck
+- thumbnail file name: MEL122018.jpg
+  description: ''
+  links:
+  - CyCIF image: MEL122018
+  title: Day 1862, unknown - Skin Left Neck
