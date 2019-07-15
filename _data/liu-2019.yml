@@ -107,3 +107,23 @@ stitched mosaic images:
   links:
   - CyCIF image: 98DTF1697
   title: Day 1028, L3 - Jejunum
+# - thumbnail file name: 98DTF14515.jpg
+#   description: ''
+#   links:
+#   - CyCIF image: 98DTF14515
+#   title: Day 1169, L3 - Brain, Right Occipital Lesion (image id mapping might be incorrect)
+- thumbnail file name: MEL92413.jpg
+  description: ''
+  links:
+  - CyCIF image: MEL92413
+  title: Day -51, N/A - Skin Left Forearm
+- thumbnail file name: MEL12718.jpg
+  description: ''
+  links:
+  - CyCIF image: MEL12718
+  title: Day 1849, unknown - Skin Left Neck
+- thumbnail file name: MEL122018.jpg
+  description: ''
+  links:
+  - CyCIF image: MEL122018
+  title: Day 1862, unknown - Skin Left Neck
