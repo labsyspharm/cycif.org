@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Meningioma
+  Name: Ependymoma
   Images:
     - Name: i0
-      Description: 'Ependymoma - Coy S et al, 2019'
+      Description: 'Ependymoma [Case #1] - Coy S, et al. Acta Neuropathologica. 2019'
       Path: https://s3.amazonaws.com/www.cycif.org/coy-acta-neuropathologica-2019
       Width: 39969
       Height: 41702
@@ -12,13 +12,13 @@ Exhibit:
       - [i0]
   Groups:
     - Path: '467168'
-      Name: HnE
+      Name: H&E
       Colors:
         - 8233CC
         - FF8080
       Channels:
         - Hematoxylin
-        - Esoin
+        - Eosin
   Stories:
   - Name: Overview
     Description:
@@ -27,14 +27,20 @@ Exhibit:
       Pan:
         - 0.4357
         - 0.4513
-      Group: HnE
+      Group: H&E
       Name: The Waypoint
       Description: |
-        Image of Hematoxylin and Esoin (H&E) staining in an ependymoma tissue biopsy.
+        Hematoxylin and Eosin (H&E) stained section of an ependymoma from an NF2 patient.
 
         #### Figure from:
 
-        Coy S et al, 2019 under review
+        Coy S et al. An update on the CNS manifestations of neurofibromatosis type 2. Acta Neuropathologica. 2019 Jun 4.
+        [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/31161239)
+
+        ##### References
+        1. Louis DN, Ohgaki H, Wiestler OD, Cavenee WK. W.H.O. Classification of Tumors of the Central Nervous System. Lyon:IARC/W.H.O; 2016.
+        1. Plotkin SR, O'Donnell CC, Curry WT, Bove CM, MacCollin M, Nunes FP. Spinal ependymomas in neurofibromatosis Type 2:a retrospective analysis of 55 patients. J Neurosurg Spine. 2011 Apr;14(4):543-7.
+        1. Ellison DW, Kocak M, Figarella-Branger D, Felice G, Catherine G, Pietsch T, et al. Histopathological grading of pediatric ependymoma:reproducibility and clinical relevance in European trial cohorts. J Negat Results Biomed. 2011. 10:7
 
       Overlay:
         x: -100
@@ -45,67 +51,55 @@ Exhibit:
   - Name: About
     Description:
     Waypoints:
-    - Name: Ependymomas
-      Group: HnE
-      Description: Ependymomas are proliferations of neoplastic cells with histologic, molecular, and ultrastructural similarities to the ependymal cells of the ventricles and spinal canal. Ependymomas are identified in approximately 33-53% of individuals with NF2, most commonly involving the posterior fossa and cervicomedullary region of the spine.
-      Overlay:
-        x:  -100
-        y:  -100
-        width: 200
-        height: 200
+
+    - Name: Ependymoma
+      Group: H&E
+      Description: Ependymomas are proliferations of neoplastic glial cells with histologic, molecular, and ultrastructural similarities to the ependymal cells of the ventricles and spinal canal (1). Ependymomas may be found in the intracranial compartment, typically within the ventricular system, or in the spinal canal. Ependymomas are identified in approximately 33-53% of individuals with NF2, most commonly involving the posterior fossa and cervicomedullary region of the spine (2). Ependymomas are often heterogeneous tumors, and may be classified into different subtypes including the classic, papillary, tanycytic, myxopapillary, clear cell, and anaplastic variants. Myxopapillary ependymomas are classified as W.H.O. grade I, while classic, papillary, clear cell, and tanycytic tumors are classified as W.H.O. grade II, and anaplastic ependymomas as W.H.O. grade III (1). However, clinicopathologic studies have failed to show a clear correlation between grade and clinical outcome in grade II and III ependymomas, and this classification may need further refinement (3). NF2-associated ependymomas may be of any histologic subtype, but the classic variant is the most commonly encountered.
+      Zoom: 0.4803
       Pan:
         - 0.4357
         - 0.4513
-      Zoom: 0.4803
-
-    - Name: Rosettes
-      Group: HnE
-      Description: The majority of NF2-associated ependymomas are W.H.O. grade II lesions with classic histology including peri-vascular pseudo-rosettes and true ependymal rosettes.
       Overlay:
-        x:  0.655
-        y:  0.526
-        width: 0.032
-        height: 0.024
-      Pan:
-        - 0.664
-        - 0.538
-      Zoom: 6.256
+        x: -100
+        y: -100
+        width: 200
+        height: 200
 
     - Name: Peri-Vascular Pseudo-Rosettes
-      Group: HnE
-      Description: This is a peri-vascular pseudo-rosette; it has a halo of cells surrounding a blood vessel.
-      Overlay:
-        x:  0.384
-        y:  0.427
-        width: 0.020
-        height: 0.016
+      Group: H&E
+      Description: Peri-vascular pseudo-rosettes are a characteristic histologic feature of ependymomas which may be observed in all histologic subtypes. Peri-vascular pseudo-rosettes are characterized by a radial collection of neoplastic cells surrounding a central blood vessel, with each cell extending fibrillary processes toward the vessel basement membrane resulting in a distinctive peri-vascular zone with few nuclei. Pseudo-rosettes are named in relation to "true" ependymal rosettes which contain a central lumen, rather than a blood vessel.
+      Zoom: 15.36
       Pan:
-        - 0.389
-        - 0.436
-      Zoom: 7.241
+        - 0.684
+        - 0.539
+      Overlay:
+        x: 0.662
+        y: 0.523
+        width: 0.044
+        height: 0.035
 
-    - Name: True Rosette
-      Group: HnE
-      Description: This is a true rosette; it has a halo of cells surrounding an empty lumen.
-      Zoom: 8.586
+    - Name: Ependymal (True) Rosettes
+      Group: H&E
+      Description: Ependymal (true) rosettes are characterized by a collection of neoplastic cells radially arranged around a central tubular lumen. The neoplastic cells forming true ependymal rosettes may exhibit apical multi-ciliation. While peri-vascular pseudo-rosettes are found in nearly all ependymomas, true rosettes are seen only in a subset of cases.  
+      Zoom: 31.85
       Pan:
-        - 0.420
-        - 0.317
+        - 0.472
+        - 0.312
       Overlay:
-        x: 0.417
-        y: 0.319
+        x: 0.471
+        y: 0.309
         width: 0.007
         height: 0.007
 
     - Name: Papillary Architecture
-      Group: HnE
-      Description: Papillary architecture is occasionally observed in NF2-associated ependymomas.
-      Zoom: 1.793
+      Group: H&E
+      Description: Papillary architecture, with neoplastic cells arranged around central vascular cores, may be seen in a subset of ependymomas as with this specimen from a patient with NF2. The neoplastic cells of ependymal papillae project processes to the central blood vessel in the same architectural arrangement as other peri-vascular pseudo-rosettes. The surface of papillary fronds often exhibit multi-ciliation and a smooth surface similar to the normal ependymal lining. There is no known difference in biological behavior and clinical outcome between ependymomas with papillary architecture and those without. 
+      Zoom: 8.270
       Pan:
-        - 0.608
-        - 0.270
+        - 0.624
+        - 0.335
       Overlay:
-        x: 0.686
-        y: 0.234
-        width: 0.098
-        height: 0.057
+        x: 0.58
+        y: 0.309
+        width: 0.089
+        height: 0.056

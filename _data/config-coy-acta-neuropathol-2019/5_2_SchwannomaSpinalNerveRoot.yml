@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Schwannoma (Spinal Nerve Root)
+  Name: Intraneural Schwannoma (Spinal Nerve Root)
   Images:
     - Name: i0
-      Description: 'Schwannoma (Spinal Nerve Root) - Coy S et al, 2019'
+      Description: 'Intraneural Schwannoma (Spinal Nerve Root) [Case #5] - Coy S, et al. Acta Neuropathologica. 2019'
       Path: https://s3.amazonaws.com/www.cycif.org/coy-acta-neuropathologica-2019
       Width: 70422
       Height: 58228
@@ -12,32 +12,66 @@ Exhibit:
       - [i0]
   Groups:
     - Path: '467161'
-      Name: HnE
+      Name: H&E
       Colors:
         - 8233CC 
         - 905000
       Channels:
         - Hematoxylin
-        - Esoin
+        - S100
   Stories:
   - Name: Overview
     Description: 
     Waypoints:
-    - Zoom: 0.605
+    - Zoom: 0.55
       Pan:
         - 0.592
         - 0.468
-      Group: HnE
+      Group: H&E
       Name: The Waypoint
       Description: |
-        Image of immunohistochemistry (IHC) staining in a schwannoma tissue biopsy from the spinal nerve root.
+        S100 immunohistochemistry (IHC) stained section of an intraneural schwannoma involving the spinal nerve root of an NF2 patient. 
 
         #### Figure from:
 
-        Coy S et al, 2019 under review 
+        Coy S et al. An update on the CNS manifestations of neurofibromatosis type 2. Acta Neuropathologica. 2019 Jun 4.
+        [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/31161239)
 
+        ##### References
+        1. Stivaros SM, Stemmer-Rachamimov AO, Alston R, Plotkin SR, Nadol JB, Quesnel A, O'Malley J, Whitfield GA, McCabe MG, Freeman SR, Lloyd SK, Wright NB, Kilday JP, Kamaly-Asl ID, Mills SJ, Rutherford SA, King AT, Evans DG. Multiple synchronous sites of origin of vestibular schwannomas in neurofibromatosis Type 2. J Med Genet. 2015 Aug;52(8):557-62.
+          
       Overlay:
         x: -100
         y: -100
         width: 200
         height: 200
+
+  - Name: About
+    Description: 
+    Waypoints:
+  
+    - Name: S100
+      Group: S100
+      Description: Neoplastic cells in both sporadic and NF2-associated schwannomas invariably exhibit strong and diffuse nuclear and cytoplasmic expression of the S100 protein, and this is a critical diagnostic feature of these tumors. S100 is a calcium binding protein with a helix-loop-helix conformation which is characteristically expressed in neural crest derived lineages such as Schwann cells, melanocytes, and cartilage as well as adipocytes, histiocytic cells, and breast epithelium. While S100 expression may be present in neurofibromas and malignant peripheral nerve sheath tumors (MPNST), it is typically more weak and focal than seen in schwannomas. This tumor shows strong and diffuse S100 staining in both the extraneural and intraneural portions of the tumor. 
+      Zoom: 0.58
+      Pan:
+        - 0.598
+        - 0.466
+      Overlay:
+        x: 0.000
+        y: 0.000
+        width: 1.208
+        height: 0.997
+
+    - Name: Intraneural Schwannoma
+      Group: S100
+      Description: S100 immunohistochemistry (IHC) is positive in both the non-neoplastic Schwann cells which myelinate peripheral nerve fibers, as well as the neoplastic cells of the schwannoma. S100 staining highlights whorls of neoplastic schwannoma cells interdigitated between nerve fibers in the intraneural portion of the tumor. Such whorls may reflect the polyclonal multinodular origin of NF2-associated schwannomas (1).
+      Zoom: 8.984
+      Pan:
+        - 0.703
+        - 0.335
+      Overlay:
+        x: 0.652
+        y: 0.310
+        width: 0.096
+        height: 0.058

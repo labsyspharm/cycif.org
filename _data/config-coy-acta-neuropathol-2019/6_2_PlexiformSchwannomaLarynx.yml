@@ -2,7 +2,7 @@ Exhibit:
   Name: Plexiform Schwannoma (Larynx)
   Images:
     - Name: i0
-      Description: 'Plexiform Schwannoma Case 1 (Larynx) - Coy S et al, 2019'
+      Description: 'Plexiform Schwannoma (Larynx) [Case #6] - Coy S et al. Acta Neuropathologica. 2019'
       Path: https://s3.amazonaws.com/www.cycif.org/coy-acta-neuropathologica-2019
       Width: 106585
       Height: 68111
@@ -12,7 +12,7 @@ Exhibit:
       - [i0]
   Groups:
     - Path: '467158'
-      Name: HnE
+      Name: H&E
       Colors:
         - 8233CC
         - 905000
@@ -27,17 +27,35 @@ Exhibit:
       Pan:
         - 0.845
         - 0.468
-      Group: HnE
+      Group: H&E
       Name: The Waypoint
       Description: |
-        Image of immunohistochemistry (IHC) staining in a plexiform schwannoma tissue biopsy from the larynx.
+        S100 immunohistochemistry (IHC) of a laryngeal plexiform schwannoma from an NF2 patient.  
 
         #### Figure from:
 
-        Coy S et al, 2019 under review 
+        Coy S et al. An update on the CNS manifestations of neurofibromatosis type 2. Acta Neuropathologica. 2019 Jun 4.
+        [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/31161239)
 
       Overlay:
         x: -100
         y: -100
         width: 200
         height: 200
+
+  - Name: About
+    Description: 
+    Waypoints:
+  
+    - Name: S100
+      Group: S100
+      Description: Neoplastic cells in both sporadic and NF2-associated schwannomas invariably exhibit strong and diffuse nuclear and cytoplasmic expression of the S100 protein, and this is a critical diagnostic feature of these tumors. S100 is a calcium binding protein with a helix-loop-helix conformation which is characteristically expressed in neural crest derived lineages such as Schwann cells, melanocytes, and cartilage as well as adipocytes, histiocytic cells, and breast epithelium. While S100 expression may be present in neurofibromas and malignant peripheral nerve sheath tumors (MPNST), it is typically more weak and focal than seen in schwannomas. This tumor shows strong and diffuse S100 staining throughout the tumor, and staining highlights the multi-nodular nature of the mass.
+      Zoom: 0.575
+      Pan:
+        - 0.795
+        - 0.431
+      Overlay:
+        x: 0.025
+        y: 0.018
+        width: 1.513
+        height: 0.940

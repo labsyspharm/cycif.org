@@ -2,7 +2,7 @@
 title: Plexiform Schwannoma (Soft Tissue)
 layout: osd-exhibit
 paper: config-coy-acta-neuropathol-2019
-figure: 7_3_PlexiformSchwannomaSoftTissue
+figure: 7_4_CutaneousSchwannomaSoftTissue
 ---
 Exhibit:
   Name: Plexiform Schwannoma (Soft Tissue)
@@ -10,14 +10,14 @@ Exhibit:
     - Name: i0
       Description: 'Plexiform Schwannoma Case 3 (Soft Tissue) - Coy S et al, 2019'
       Path: https://s3.amazonaws.com/www.cycif.org/coy-acta-neuropathologica-2019
-      Width: 130376
-      Height: 83828
-      MaxLevel: 7
+      Width: 132279
+      Height: 83018
+      MaxLevel: 8
   Layout:
     Grid:
       - [i0]
   Groups:
-    - Path: '467162'
+    - Path: '467163'
       Name: HnE
       Colors:
         - 8233CC 
