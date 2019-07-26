@@ -1,7 +1,7 @@
 publication:
   title: An Update on the CNS Manifestations of Neurofibromatosis Type 2
-  authors: Coy S, Rashid R, Stemmer-Rachamimov A, and Santagata S
-  journal: 
+  authors: Coy S, Rashid R, Stemmer-Rachamimov A, and Santagata S.
+  journal: 'Acta Neuropathol. 2019 Jun 4:1-23. PMID: 31161239'
   link: 
     # name: Publication summary
     # url: http://lincs.hms.harvard.edu/lin-elife-2018/
@@ -68,14 +68,14 @@ images:
         - Image: osd-7_2_IntraneuralSchwannomaFinger
     - title: Plexiform schwannoma (soft tissue)
       description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
-      thumbnail file name: 7_3_PlexiformSchwannomaSoftTissue.jpg
+      thumbnail file name: 7_3_CutaneousSchwannomaSoftTissue.jpg
       links:
-        - Image: osd-7_3_PlexiformSchwannomaSoftTissue
+        - Image: osd-7_3_CutaneousSchwannomaSoftTissue
     - title: Plexiform schwannoma (soft tissue)
       description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
-      thumbnail file name: 7_4_PlexiformSchwannomaFSoftTissue.jpg
+      thumbnail file name: 7_4_CutaneousSchwannomaSoftTissue.jpg
       links:
-        - Image: osd-7_4_PlexiformSchwannomaFSoftTissue
+        - Image: osd-7_4_CutaneousSchwannomaSoftTissue
     - title: break
     
     - title: Plexiform schwannoma (spinal nerve root)

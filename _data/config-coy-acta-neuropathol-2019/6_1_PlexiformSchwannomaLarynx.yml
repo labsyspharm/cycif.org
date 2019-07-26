@@ -2,7 +2,7 @@ Exhibit:
   Name: Plexiform Schwannoma (Larynx)
   Images:
     - Name: i0
-      Description: 'Plexiform Schwannoma Case 1 (Larynx) - Coy S et al, 2019'
+      Description: 'Plexiform Schwannoma Case (Larynx) [Case #6] - Coy S et al. Acta Neuropathologica. 2019'
       Path: https://s3.amazonaws.com/www.cycif.org/coy-acta-neuropathologica-2019
       Width: 112295
       Height: 64871
@@ -12,13 +12,13 @@ Exhibit:
       - [i0]
   Groups:
     - Path: '467164'
-      Name: HnE
+      Name: H&E
       Colors:
         - 8233CC 
         - FF8080
       Channels:
         - Hematoxylin
-        - Esoin
+        - Eosin
   Stories:
   - Name: Overview
     Description: 
@@ -27,17 +27,130 @@ Exhibit:
       Pan:
         - 0.845
         - 0.468
-      Group: HnE
+      Group: H&E
       Name: The Waypoint
       Description: |
-        Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from the larynx.
+        Hematoxylin and Eosin (H&E) staining of a laryngeal plexiform schwannoma from an NF2 patient. 
 
         #### Figure from:
 
-        Coy S et al, 2019 under review 
+        Coy S et al. An update on the CNS manifestations of neurofibromatosis type 2. Acta Neuropathologica. 2019 Jun 4.
+        [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/31161239)
+
+        ##### References
+        1. Louis DN, Ohgaki H, Wiestler OD, Cavenee WK. W.H.O. Classification of Tumors of the Central Nervous System. Lyon:IARC/W.H.O; 2016.
+        1. Stivaros SM, Stemmer-Rachamimov AO, Alston R, Plotkin SR, Nadol JB, Quesnel A, O'Malley J, Whitfield GA, McCabe MG, Freeman SR, Lloyd SK, Wright NB, Kilday JP, Kamaly-Asl ID, Mills SJ, Rutherford SA, King AT, Evans DG. Multiple synchronous sites of origin of vestibular schwannomas in neurofibromatosis Type 2. J Med Genet. 2015 Aug;52(8):557-62.
 
       Overlay:
         x: -100
         y: -100
         width: 200
         height: 200
+
+  - Name: About
+    Description: 
+    Waypoints:
+    
+    - Name: Schwannoma
+      Group: H&E
+      Description: Schwannomas are proliferations of neoplastic cells which exhibit histologic, ultrastructural, and molecular similarities to the Schwann cells of the peripheral nervous system (1). Schwannomas are typically benign slow-growing tumors characterized by a well-circumscribed population of spindled cells with clear or amphophilic cytoplasm, though NF2-associated schwannomas may exhibit a variety of unusual features. This laryngeal schwannoma from an NF2 patient shows a multi-nodular "plexiform" growth pattern. NF2-associated schwannomas are often polyclonal masses, arising from multiple distinct tumorlets along the course of a peripheral nerve which coalesce into a larger mass, with each nodule of the plexiform tumor potentially representing a distinct neoplastic clone (2).   
+      Zoom: 0.519
+      Pan:
+        - 0.873
+        - 0.419
+      Overlay:
+        x: 0.019
+        y: 0.041
+        width: 1.689
+        height: 0.937
+
+    - Name: Antoni A Histology
+      Group: H&E
+      Description: Schwannomas typically exhibit varying proportion of two basic histologic patterns. Antoni A regions are more cellular regions consisting of densely packed spindle cells with plump elongate nuclei with tapering ends (a characteristic feature of nerve sheath tumors). Focal nuclear pallisading is a characteristic feature of schwannomas, and eosinophilic process-rich anuclear regions interposed with palisading nuclei may produce pathognomonic Verocay bodies.
+      Zoom: 7.725
+      Pan:
+        - 0.910
+        - 0.645
+      Overlay:
+        x: 0.867
+        y: 0.621
+        width: 0.088
+        height: 0.057
+
+    - Name: Antoni B Histology
+      Group: H&E
+      Description: Schwannomas typically exhibit varying proportion of two basic histologic patterns. Antoni B regions are less cellular and often exhibit smaller rounder nuclei with indistinct processes, a more collagenized or myxoid extracellular matrix, and variable lipidization. Verocay bodies are typically not present in Antoni B regions. There is often a sharp delineation between Antoni A and B regions within the tumor. Antoni B histology likely corresponds with more hyperintense regions on T2-weighted MRI sequences, due to the lower cellularity of these regions. 
+      Zoom: 11.55
+      Pan:
+        - 0.249
+        - 0.451
+      Overlay:
+        x: 0.222
+        y: 0.429
+        width: 0.056
+        height: 0.046
+
+    - Name: Multinodular Architecture
+      Group: H&E
+      Description: NF2-associated schwannomas may exhibit unusual growth patterns, including a multinodular architecture as is observed in this tumor. Such architecture likely represents the polyclonal nature of the mass, with each nodule potentially representing a distinct neoplastic clone (2).  
+      Zoom: 1.677
+      Pan:
+        - 0.865
+        - 0.258
+      Overlay:
+        x: 0.667
+        y: 0.130
+        width: 0.408
+        height: 0.286
+
+    - Name: Whorled Architecture
+      Group: H&E
+      Description: NF2-associated schwannomas may exhibit unusual growth patterns, including a multinodular whorled architecture as is observed in this tumor. Such architecture likely represents the multi-nodular polyclonal nature of the mass, with each whorl or nodule potentially representing a distinct neoplastic clone (2).  
+      Zoom: 9.998
+      Pan:
+        - 0.913
+        - 0.385
+      Overlay:
+        x: 0.883
+        y: 0.367
+        width: 0.059
+        height: 0.045
+
+    - Name: Verocay Bodies
+      Group: H&E
+      Description:  Focal nuclear pallisading is a characteristic feature of schwannomas, typically in Antoni A regions, and eosinophilic process-rich anuclear regions interposed with palisading nuclei may produce pathognomonic structures known as Verocay bodies. Verocay bodies are named after the Uruguayan pathologist José Juan Verocay, who was among the first to describe the phenomenon.
+      Zoom: 23.89
+      Pan:
+        - 0.957
+        - 0.455
+      Overlay:
+        x: 0.948
+        y: 0.448
+        width: 0.018
+        height: 0.015
+
+    - Name: Degenerative Changes (Vacuolization/Microcystic Changes)
+      Group: H&E
+      Description: Schwannomas frequently exhibit a variety of degenerative changes including focal microcystic changes and vacuolization of tumor cells. These changes may be related to vascular abnormalities and hyalinization resulting in focal ischemia and/or hemorrhage. 
+      Zoom: 5.999
+      Pan:
+        - 1.411
+        - 0.275
+      Overlay:
+        x: 1.392
+        y: 0.241
+        width: 0.049
+        height: 0.081
+
+    - Name: Capsule
+      Group: H&E
+      Description: Schwannomas are often enclosed by a capsule consisting of delicate elongate cells which expresses markers of epineurial differentiation such as epithelial membrane antigen (EMA).
+      Zoom: 9.301
+      Pan:
+        - 0.417
+        - 0.587
+      Overlay:
+        x: 0.396
+        y: 0.568
+        width: 0.048
+        height: 0.046

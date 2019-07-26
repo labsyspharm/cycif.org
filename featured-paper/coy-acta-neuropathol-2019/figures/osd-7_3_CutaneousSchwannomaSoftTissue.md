@@ -1,3 +1,9 @@
+---
+title: Plexiform Schwannoma (Soft Tissue)
+layout: osd-exhibit
+paper: config-coy-acta-neuropathol-2019
+figure: 7_3_CutaneousSchwannomaSoftTissue
+---
 Exhibit:
   Name: Plexiform Schwannoma (Soft Tissue)
   Images:

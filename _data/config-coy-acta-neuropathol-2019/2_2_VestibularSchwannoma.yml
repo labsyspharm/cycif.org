@@ -1,8 +1,8 @@
 Exhibit:
-  Name: Vestibular Schwannoma 1
+  Name: Vestibular Schwannoma
   Images:
     - Name: i0
-      Description: 'Vestibular Schwannoma (Case 1) - Coy S et al, 2019'
+      Description: 'Vestibular Schwannoma [Case #2] - Coy S, et al. Acta Neuropathologica. 2019'
       Path: https://s3.amazonaws.com/www.cycif.org/coy-acta-neuropathologica-2019
       Width: 129424
       Height: 79453
@@ -12,7 +12,7 @@ Exhibit:
       - [i0]
   Groups:
     - Path: '467166'
-      Name: HnE
+      Name: S100
       Colors:
         - 8233CC
         - 905000
@@ -27,14 +27,15 @@ Exhibit:
       Pan:
         - 0.845
         - 0.468
-      Group: HnE
+      Group: H&E
       Name: The Waypoint
       Description: |
-        Image of immunohistochemistry (IHC) staining in a vestibular schwannoma tissue biopsy.
+        S100 immunohistochemistry (IHC) stained section of a vestibular schwannoma from an NF2 patient. 
 
         #### Figure from:
 
-        Coy S et al, 2019 under review 
+        Coy S et al. An update on the CNS manifestations of neurofibromatosis type 2. Acta Neuropathologica. 2019 Jun 4.
+        [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/31161239)
 
       Overlay:
         x: -100
@@ -46,8 +47,8 @@ Exhibit:
     Description: 
     Waypoints:
     - Name: S100
-      Group: HnE
-      Description: Tumor cells in NF2 related schwannomas exhibit intense and diffuse cytoplasmic and nuclear staining with the S100 antigen. S100 is a calcium binding protein with a helix-loop-helix conformation.
+      Group: H&E
+      Description: Neoplastic cells in both sporadic and NF2-associated schwannomas invariably exhibit strong and diffuse nuclear and cytoplasmic expression of the S100 protein, and this is a critical diagnostic feature of these tumors. S100 is a calcium binding protein with a helix-loop-helix conformation which is characteristically expressed in neural crest derived lineages such as Schwann cells, melanocytes, and cartilage as well as adipocytes, histiocytic cells, and breast epithelium. While S100 expression may be present in neurofibromas and malignant peripheral nerve sheath tumors (MPNST), it is typically more weak and focal than seen in schwannomas. S100 expression is typically weak and focal or absent in fibrous meningiomas and solitary fibrous tumors, which may distinguish these tumors in difficult cases. 
       Zoom: 0.4803
       Pan:
         - 0.845
@@ -57,29 +58,3 @@ Exhibit:
         y: -100
         width: 200
         height: 200
-
-    - Name: Intense S100 Staining
-      Group: HnE
-      Description: An area of intense S100 staining.
-      Zoom: 0.552
-      Pan:
-        - 0.804
-        - 0.442
-      Overlay:
-        x: 0.003
-        y: 0.064
-        width: 0.563
-        height: 0.483
-
-    - Name: Diffuse S100 Staining
-      Group: HnE
-      Description: An area of diffuse S100 staining.
-      Zoom: 0.552
-      Pan:
-        - 0.804
-        - 0.442
-      Overlay:
-        x: 0.515
-        y: 0.323
-        width: 0.799
-        height: 0.465
