@@ -153,23 +153,17 @@ const ctrlC = function(str) {
 };
 
 const newMarkers = function(tileSources, group) {
-  for (var property in tileSources) {
-    if (tileSources.hasOwnProperty(property)) {
-      if (property === group.Path) {
-        for (var i=0; i<tileSources[property].length; i++) {
-          const tileSource = tileSources[property][i];
-          tileSource.setOpacity(1);
-        }
-        $('#' + property).parent().addClass('active');
-      } else {
-        for (var i=0; i<tileSources[property].length; i++) {
-          const tileSource = tileSources[property][i];
-          tileSource.setOpacity(0);
-        }
-        $('#' + property).parent().removeClass('active');
-      }
-    }
-  }
+  Object.keys(tileSources)
+    .filter(el => !el.toLowerCase().includes('datalayer'))
+    .forEach(el => {
+      el === group.Path 
+        ? tileSources[el].forEach(t => t.setOpacity(1))
+        : tileSources[el].forEach(t => t.setOpacity(0));
+      
+      el === group.Path
+        ? $('#' + el).parent().addClass('active')
+        : $('#' + el).parent().removeClass('active');
+    })
 };
 
 const unpackGrid = function(layout, images, key) {
@@ -1356,6 +1350,7 @@ HashState.prototype = {
 
   addGroups: function() {
     $('#channel-groups').empty();
+    // $('#data-layers').empty();
     this.cgs.forEach(this.addGroup, this);
   },
   addGroup: function(group, g) {
@@ -1373,13 +1368,24 @@ HashState.prototype = {
 
     // Append everything
     document.getElementById('channel-groups').appendChild(aEl);
-
+    
     // Update Channel Group
     $(aEl).click(this, function(e) {
       THIS = e.data;
       THIS.g = g;
       THIS.pushState();
     });
+    // FIXME - element should be initiated here
+    // if (group.Path.includes('datalayer')) {
+    //   var labelEl = document.createElement('label');
+    //   labelEl = Object.assign(labelEl, {
+    //     innerText: group.Name,
+    //   });
+    //   labelEl.setAttribute('for', 'test');
+
+    //   document.getElementById('data-layers').appendChild(labelEl)
+
+    // }
   },
 
   activateViewport: function() {
@@ -1729,7 +1735,11 @@ const getAjaxHeaders = function(state, image){
 const getGetTileUrl = function(image, group, channelSettings) {
 
   const getJpegTile = function(level, x, y) {
-    return image.Path + '/' + group.Path + '/' + (image.MaxLevel - level) + '_' + x + '_' + y + '.jpg';
+    // FIXME - workaround to load png images
+    const fileExt = group.Path.toLowerCase().includes('datalayer')
+      ? '.png' : '.jpg';
+    if (group.Path)
+    return image.Path + '/' + group.Path + '/' + (image.MaxLevel - level) + '_' + x + '_' + y + fileExt;
   };
 
   if (image.Provider != 'minerva') {
