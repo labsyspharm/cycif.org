@@ -81,6 +81,17 @@
                     <div class="shadow px-3 my-2 py-3   bg-black">
                         <p class="mb-1 font-weight-bold">Select a marker group:</p>
                         <div id="channel-groups" class="nav flex nav-pills"></div>
+                        {% if exhibit.Groups.last['Path'] contains 'datalayer' %}
+                        <p class="mb-1 font-weight-bold pt-4">Add data layer:</p>
+                        <div id="data-layers">
+                            {% for g in exhibit.Groups %}
+                                {% if g.Path contains 'datalayer' %}
+                                    <label class="pt-3" for="data-{{ g.Name | replace: ' ', '-' }}">{{ g.Name }}</label>
+                                    <input type="range" class="custom-range" min="0" max="10" value="0" id="data-{{ g.Name | replace: ' ', '-' }}">
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="shadow px-3 my-2 py-3   bg-black">
                         
@@ -422,6 +433,17 @@
         };
         const duplicateViewButton = document.querySelector('#duplicate-view');
         duplicateViewButton.onclick = makeTwinViewer;
+    </script>
+    <script>
+        exhibit.Groups.forEach((el, idx) => {
+            if (el.Path.includes('datalayer')) {
+                $(`#data-${el.Name.replace(' ', '-')}`).on("input change",
+                    function() {
+                        console.log(this.value)
+                        viewer.world.getItemAt(idx).setOpacity(this.value * 0.1);
+                    });
+            }
+        });
     </script>
 
 <script>
