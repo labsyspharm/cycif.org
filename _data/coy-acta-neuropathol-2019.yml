@@ -9,7 +9,7 @@ publication:
 images:
   Vestibular Schwannoma:
     - title: Vestibular Schwannoma
-      description: Image of Hematoxylin and Esoin (H&E) staining in a vestibular schwannoma tissue biopsy.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a vestibular schwannoma tissue biopsy.
       thumbnail file name: 2_1_VestibularSchwannoma.jpg
       links:
         - Image: osd-2_1_VestibularSchwannoma
@@ -19,7 +19,7 @@ images:
       links:
         - Image: osd-2_2_VestibularSchwannoma
     - title: Vestibular Schwannoma
-      description: Image of Hematoxylin and Esoin (H&E) staining in a vestibular schwannoma tissue biopsy.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a vestibular schwannoma tissue biopsy.
       thumbnail file name: 4_VestibularSchwannoma.jpg
       links:
         - Image: osd-4_VestibularSchwannoma
@@ -28,7 +28,7 @@ images:
   Non-Vestibular Schwannoma:
 
     - title: Schwannoma (spinal nerve root)
-      description: Image of Hematoxylin and Esoin (H&E) staining in a schwannoma tissue biopsy from spinal nerve root.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a schwannoma tissue biopsy from spinal nerve root.
       thumbnail file name: 5_1_SchwannomaSpinalNerveRoot.jpg
       links:
         - Image: osd-5_1_SchwannomaSpinalNerveRoot
@@ -45,7 +45,7 @@ images:
     - title: break
 
     - title: Plexiform schwannoma (larynx)
-      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from the larynx.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a plexiform schwannoma tissue biopsy from the larynx.
       thumbnail file name: 6_1_PlexiformSchwannomaLarynx.jpg
       links:
         - Image: osd-6_1_PlexiformSchwannomaLarynx
@@ -57,29 +57,29 @@ images:
     - title: break
 
     - title: Plexiform schwannoma (finger)
-      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from the finger.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a plexiform schwannoma tissue biopsy from the finger.
       thumbnail file name: 7_1_PlexiformSchwannomaFinger.jpg
       links:
         - Image: osd-7_1_PlexiformSchwannomaFinger
     - title: Intraneural schwannoma (finger)
-      description: Image of Hematoxylin and Esoin (H&E) staining in a intraneural schwannoma tissue biopsy from the finger.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a intraneural schwannoma tissue biopsy from the finger.
       thumbnail file name: 7_2_IntraneuralSchwannomaFinger.jpg
       links:
         - Image: osd-7_2_IntraneuralSchwannomaFinger
     - title: Plexiform schwannoma (soft tissue)
-      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
       thumbnail file name: 7_3_CutaneousSchwannomaSoftTissue.jpg
       links:
         - Image: osd-7_3_CutaneousSchwannomaSoftTissue
     - title: Plexiform schwannoma (soft tissue)
-      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a plexiform schwannoma tissue biopsy from soft tissue.
       thumbnail file name: 7_4_CutaneousSchwannomaSoftTissue.jpg
       links:
         - Image: osd-7_4_CutaneousSchwannomaSoftTissue
     - title: break
     
     - title: Plexiform schwannoma (spinal nerve root)
-      description: Image of Hematoxylin and Esoin (H&E) staining in a plexiform schwannoma tissue biopsy from the spinal nerve root.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a plexiform schwannoma tissue biopsy from the spinal nerve root.
       thumbnail file name: 8_PlexiformSchwannomaSpinalNerveRoot.jpg
       links:
         - Image: osd-8_PlexiformSchwannomaSpinalNerveRoot
@@ -87,14 +87,14 @@ images:
 
   Ependymoma:
     - title: Ependymoma (4th Ventricle)
-      description: Image of Hematoxylin and Esoin (H&E) staining in an ependymoma tissue biopsy.
+      description: Image of Hematoxylin and Eosin (H&E) staining in an ependymoma tissue biopsy.
       thumbnail file name: 1_Ependymoma.jpg
       links:
         - Image: osd-1_Ependymoma
         
   Meningioma:
     - title: Meningioma
-      description: Image of Hematoxylin and Esoin (H&E) staining in a meningioma tissue biopsy.
+      description: Image of Hematoxylin and Eosin (H&E) staining in a meningioma tissue biopsy.
       thumbnail file name: 3_Meningioma.jpg
       links:
         - Image: osd-3_Meningioma
