@@ -360,6 +360,9 @@ HashState.prototype = {
     $('#draw-switch').tooltip({
       title: 'Share Link'
     });
+    $('#duplicate-view').tooltip({
+      title: 'Clone linked view'
+    });
 
     $('#edit-import').click(this, function(e) {
       $('#file-upload').click();
@@ -1060,7 +1063,7 @@ HashState.prototype = {
     if (hashKeys === hashable.tag) {
       this.newTag();
       this.s = 0;
-      this.g = 0;
+      // this.g = 0;
       this.pushState();
       $('.modal').modal('hide');
     }
@@ -1075,6 +1078,7 @@ HashState.prototype = {
       this.addOverlay(this.overlay);
     }
     else {
+      // We should think about which box to display here
       this.addOverlay(this.waypoint.Overlay);
     }
 
@@ -1870,6 +1874,7 @@ const build_page = function(exhibit, options) {
   const state = new HashState(viewer, tileSources, exhibit, options);
   const init = state.init.bind(state);
   arrange_images(viewer, tileSources, state, init);
+  return viewer;
 };
 const index_name = function(list, name) {
   if (!Array.isArray(list)) {
