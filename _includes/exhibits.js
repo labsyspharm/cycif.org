@@ -1653,61 +1653,6 @@ HashState.prototype = {
       noCompatMode: true,
     });
     return wid_yaml.replace('- - - - - ', '        - ');
-  },
-
-  arrange: function(grid) {
-    const out = grid.map(function(row) {
-      return row.map(function(col) {
-        return {};
-      });
-    });
-    const numRows = grid.length;
-    const numColumns = grid[0].length;
-    const nTotal = numRows * numColumns;
-
-    const spacingFraction = 0.05;
-    const maxImageWidth = flatten(grid).reduce(function(max, img) {
-      return Math.max(max, img.Width);
-    }, 0);
-    const maxImageHeight = flatten(grid).reduce(function(max, img) {
-      return Math.max(max, img.Height);
-    }, 0);
-
-    const cellHeight = (1 + spacingFraction) / numRows - spacingFraction;
-    const cellWidth = cellHeight * maxImageWidth / maxImageHeight;
-
-    for (var yi = 0; yi < numRows; yi++) {
-      const y = yi * (cellHeight + spacingFraction);
- 
-      for (var xi = 0; xi < numColumns; xi++) {
-        const image = grid[yi][xi];
-        const displayHeight = (1 - (numRows-1) * spacingFraction) / numRows * image.Height / maxImageHeight;
-        const displayWidth = displayHeight * image.Width / image.Height;
-        const x = xi * (cellWidth + spacingFraction) + (cellWidth - displayWidth) / 2;
-        out[yi][xi] = {
-          x0: x,
-          y0: y,
-          x1: x + displayWidth,
-          y1: y + displayHeight,
-        };
-      }
-    }
-    return out;
-  },
-
-  rearrange: function() {
-
-    const now = this.arrange(this.grid);
-    const next = this.arrange(this.target);
-
-    const now_end = now.slice(-1)[0].slice(-1)[0];
-    const next_end = next.slice(-1)[0].slice(-1)[0];
-
-    const now_ratio = now_end.y1 / now_end.x1;
-    const next_ratio = next_end.y1 / next_end.x1;
-
-    console.log(now_ratio);
-    console.log(next_ratio);
   }
 };
 
