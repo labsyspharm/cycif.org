@@ -122,7 +122,7 @@ const toggleCursor = function(cursor, condition) {
 lasso_draw = function(event){
   
     viewer = this.viewer;
-    d3_overlay = this.d3_overlay;
+    svg_overlay = this.svg_overlay;
 
     //add points to polygon and (re)draw
     if (renew){
@@ -135,7 +135,7 @@ lasso_draw = function(event){
     polygonSelecton.push({"x":viewportPoint.x,"y":viewportPoint.y});
 
     d3.select('#selectionPolygon').remove();
-    var selPoly = d3_overlay.selectAll("selectionPolygon").data([polygonSelecton]);
+    var selPoly = svg_overlay.selectAll("selectionPolygon").data([polygonSelecton]);
     selPoly.enter().append("polygon")
         .attr('id', 'selectionPolygon')
         .attr("points",function(d) {
@@ -145,7 +145,7 @@ lasso_draw = function(event){
 lasso_end = function(event){
 
     viewer = this.viewer;
-    d3_overlay = this.d3_overlay;
+    svg_overlay = this.svg_overlay;
 
     //set the last point and make the selection stale.
 
@@ -387,8 +387,7 @@ HashState.prototype = {
     this.pushState();
 
 
-    svg_overlay = this.viewer.svgOverlay()
-    this.d3_overlay = d3.select(svg_overlay.node())
+    this.svg_overlay = d3.select(this.viewer.svgOverlay().node());
 
 
     // Edit name
