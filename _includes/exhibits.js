@@ -243,9 +243,9 @@ const newCopyYamlButton = function(THIS) {
   $(this).click(function() {
     $(this).trigger('relabel', [copy_post]);
     ctrlC(THIS.bufferYaml);
-    setTimeout(function() {
+    setTimeout((function() {
       $(this).trigger('relabel', [copy_pre]);
-    }, 1000);
+    }).bind(this), 1000);
     return false;
   });
 };
