@@ -364,6 +364,8 @@ HashState.prototype = {
       title: 'Clone linked view'
     });
 
+    $('#copy_link_modal').on('hidden.bs.modal', this.cancelDrawing.bind(this));
+
     $('#edit-import').click(this, function(e) {
       $('#file-upload').click();
     });
@@ -1294,11 +1296,7 @@ HashState.prototype = {
       this.pushState();
     }
     else {
-      const selector = '#edit_description_modal';
-      window.setTimeout((function() {
-        $(selector).modal('show');
-        this.drawing = 0;
-      }).bind(this), 300);
+      $('#edit_description_modal').modal('show');
     }
   },
 
