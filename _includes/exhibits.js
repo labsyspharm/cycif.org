@@ -1,7 +1,5 @@
 //SELECTION POLYGON (LASSO)
-var polygonSelecton = [];
-var renew = false;
-
+var polygonSelection = [];
 
 const flatten = function(items) {
   return items.reduce(function(flat, item) {
@@ -125,25 +123,23 @@ lasso_draw = function(event){
     svg_overlay = this.svg_overlay;
 
     //add points to polygon and (re)draw
-    if (renew){
-        polygonSelecton = [];
-        renew = false;
-    }
     var webPoint = event.position;
     var viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-    //console.log(webPoint.toString(), viewportPoint.toString());
-    polygonSelecton.push({"x":viewportPoint.x,"y":viewportPoint.y});
+    polygonSelection.push({"x":viewportPoint.x,"y":viewportPoint.y});
 
     d3.select('#selectionPolygon').remove();
-    var selPoly = svg_overlay.selectAll("selectionPolygon").data([polygonSelecton]);
+    var selPoly = svg_overlay.selectAll("selectionPolygon").data([polygonSelection]);
     selPoly.enter().append("polygon")
         .attr('id', 'selectionPolygon')
         .attr("points",function(d) {
             return d.map(function(d) { return [d.x,d.y].join(","); }).join(" ");})
+
 }
 
 lasso_end = function(event){
 
+    console.log('length', (polygonSelection).length);
+    polygonSelection = [];
     viewer = this.viewer;
     svg_overlay = this.svg_overlay;
 
@@ -152,7 +148,6 @@ lasso_end = function(event){
     var webPoint = event.position;
     var viewportPoint = viewer.viewport.pointFromPixel(webPoint);
     console.log(webPoint.toString(), viewportPoint.toString());
-    renew = true;
     //switchSelectionMode();
 }
 
@@ -412,6 +407,7 @@ HashState.prototype = {
     });
 
     $('#copy_link_modal').on('hidden.bs.modal', this.cancelDrawing.bind(this));
+    $('#edit_description_modal').on('hidden.bs.modal', this.cancelDrawing.bind(this));
 
     $('#edit-import').click(this, function(e) {
       $('#file-upload').click();
@@ -519,16 +515,38 @@ HashState.prototype = {
       THIS.faster();
     }, this);
 
+    const STATE = this;
+
+    var mouse_drag = new OpenSeadragon.MouseTracker({
+        element: viewer.canvas,
+        dragHandler: function(event) {
+            if (STATE.lasso) {
+                STATE.viewer.setMouseNavEnabled(false);
+                lasso_draw.bind(STATE)(event);
+            }
+        }
+    })
+
+    var mouse_up = new OpenSeadragon.MouseTracker({
+        element: viewer.canvas,
+        dragEndHandler: function(event) {
+            if (STATE.lasso) {
+                STATE.lasso = false;
+                lasso_end.bind(STATE)(event);
+                STATE.viewer.setMouseNavEnabled(true);
+                $('#edit_description_modal').modal('show'); 
+            }
+        }
+    })
+
     this.viewer.addHandler('canvas-drag', function(e) {
       const THIS = e.userData;
-      const overlay = $('#' + THIS.currentOverlay);
-      const position = THIS.normalize(e.position);
-      THIS.viewer.setMouseNavEnabled(!THIS.drawing);
-
       if (THIS.lasso) {
-        lasso_draw.bind(THIS)(e);
         return;
       }
+
+      const overlay = $('#' + THIS.currentOverlay);
+      const position = THIS.normalize(e.position);
 
       if (THIS.drawing == 1) {
         THIS.drawing = 2;
@@ -543,56 +561,50 @@ HashState.prototype = {
 
     this.viewer.addHandler('canvas-drag-end', function(e) {
       const THIS = e.userData;
+      if (THIS.lasso) {
+        return;
+      }
+
       const position = THIS.normalize(e.position);
+      THIS.viewer.setMouseNavEnabled(!THIS.drawing);
+
       if (THIS.drawing == 2) {
         e.preventDefaultAction = true;
-        if (THIS.lasso) {
-          lasso_end.bind(THIS)(e);
-        }
-        else {
-          THIS.finishDrawing(position);
-        }
+        THIS.finishDrawing(position);
         THIS.pushState();
       }
     }, this);
 
     this.viewer.addHandler('canvas-click', function(e) {
       const THIS = e.userData;
+      if (THIS.lasso) {
+        return;
+      }
+
       const overlay = $('#' + THIS.currentOverlay);
       const position = THIS.normalize(e.position);
 
       if (THIS.drawing == 1) {
         THIS.drawing = 2;
         e.preventDefaultAction = true;
-        if (THIS.lasso) {
-          lasso_draw.bind(THIS)(e);
-        }
-        else {
-          THIS.drawLowerBounds(position);
-        }
+        THIS.drawLowerBounds(position);
       }
       else if (THIS.drawing == 2) {
         e.preventDefaultAction = true;
-        if (THIS.lasso) {
-          lasso_end.bind(THIS)(e);
-        }
-        else {
-          THIS.finishDrawing(position);
-        }
+        THIS.finishDrawing(position);
         THIS.pushState();
       }
     }, this);
 
     $(this.viewer.element).mousemove(this, function(e) {
       const THIS = e.data;
+      if (THIS.lasso) {
+        return;
+      }
+
       THIS.mouseXY = e;
       if (THIS.drawing == 2) {
-        if (THIS.lasso) {
-        //  lasso_draw.bind(THIS)(e);
-        }
-        else {
-          THIS.drawUpperBounds(THIS.mouseXY);
-        }
+        THIS.drawUpperBounds(THIS.mouseXY);
       }
     });
 

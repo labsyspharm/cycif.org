@@ -274,3 +274,17 @@ body {
     position: fixed;
     z-index: 999;
 }
+
+polygon {
+    fill: rgba(70, 130, 180, 0.5);
+    stroke: gray;
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+}
+
+polygon:hover{
+    fill: rgba(70, 130, 180, 0.1);
+    stroke: red;
+    stroke-width: 2px;
+    vector-effect: non-scaling-stroke;
+}
