@@ -1,3 +1,8 @@
+//SELECTION POLYGON (LASSO)
+var polygonSelecton = [];
+var renew = false;
+
+
 const flatten = function(items) {
   return items.reduce(function(flat, item) {
     return flat.concat(item);
@@ -113,6 +118,43 @@ const toggleCursor = function(cursor, condition) {
     $('#openseadragon1 *').css('cursor', 'default');
   }
 };
+
+lasso_draw = function(event){
+  
+    viewer = this.viewer;
+    d3_overlay = this.d3_overlay;
+
+    //add points to polygon and (re)draw
+    if (renew){
+        polygonSelecton = [];
+        renew = false;
+    }
+    var webPoint = event.position;
+    var viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+    //console.log(webPoint.toString(), viewportPoint.toString());
+    polygonSelecton.push({"x":viewportPoint.x,"y":viewportPoint.y});
+
+    d3.select('#selectionPolygon').remove();
+    var selPoly = d3_overlay.selectAll("selectionPolygon").data([polygonSelecton]);
+    selPoly.enter().append("polygon")
+        .attr('id', 'selectionPolygon')
+        .attr("points",function(d) {
+            return d.map(function(d) { return [d.x,d.y].join(","); }).join(" ");})
+}
+
+lasso_end = function(event){
+
+    viewer = this.viewer;
+    d3_overlay = this.d3_overlay;
+
+    //set the last point and make the selection stale.
+
+    var webPoint = event.position;
+    var viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+    console.log(webPoint.toString(), viewportPoint.toString());
+    renew = true;
+    //switchSelectionMode();
+}
 
 const download = function(filename, text) {
   var element = document.createElement('a');
@@ -316,6 +358,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     buffer: {
       waypoint: undefined
     },
+    lasso: true,
     changed: false,
     design: {},
     w: [0],
@@ -342,6 +385,11 @@ HashState.prototype = {
     window.onpopstate();
     this.startEditing();
     this.pushState();
+
+
+    svg_overlay = this.viewer.svgOverlay()
+    this.d3_overlay = d3.select(svg_overlay.node())
+
 
     // Edit name
     $('#exhibit-name').text(this.exhibit.Name);
@@ -428,6 +476,17 @@ HashState.prototype = {
       THIS.pushState();
     });
 
+    $('.lasso-switch').click(this, function(e) {
+      const THIS = e.data;
+      if (THIS.lasso) {
+        THIS.lasso = false;
+      }
+      else {
+        THIS.lasso = true;
+      }
+      THIS.pushState();
+    });
+
     $('.draw-switch').click(this, function(e) {
       const THIS = e.data;
       if (THIS.drawing) {
@@ -465,6 +524,13 @@ HashState.prototype = {
       const THIS = e.userData;
       const overlay = $('#' + THIS.currentOverlay);
       const position = THIS.normalize(e.position);
+      THIS.viewer.setMouseNavEnabled(!THIS.drawing);
+
+      if (THIS.lasso) {
+        lasso_draw.bind(THIS)(e);
+        return;
+      }
+
       if (THIS.drawing == 1) {
         THIS.drawing = 2;
         e.preventDefaultAction = true;
@@ -481,7 +547,12 @@ HashState.prototype = {
       const position = THIS.normalize(e.position);
       if (THIS.drawing == 2) {
         e.preventDefaultAction = true;
-        THIS.finishDrawing(position);
+        if (THIS.lasso) {
+          lasso_end.bind(THIS)(e);
+        }
+        else {
+          THIS.finishDrawing(position);
+        }
         THIS.pushState();
       }
     }, this);
@@ -490,14 +561,25 @@ HashState.prototype = {
       const THIS = e.userData;
       const overlay = $('#' + THIS.currentOverlay);
       const position = THIS.normalize(e.position);
+
       if (THIS.drawing == 1) {
         THIS.drawing = 2;
         e.preventDefaultAction = true;
-        THIS.drawLowerBounds(position);
+        if (THIS.lasso) {
+          lasso_draw.bind(THIS)(e);
+        }
+        else {
+          THIS.drawLowerBounds(position);
+        }
       }
       else if (THIS.drawing == 2) {
         e.preventDefaultAction = true;
-        THIS.finishDrawing(position);
+        if (THIS.lasso) {
+          lasso_end.bind(THIS)(e);
+        }
+        else {
+          THIS.finishDrawing(position);
+        }
         THIS.pushState();
       }
     }, this);
@@ -506,7 +588,12 @@ HashState.prototype = {
       const THIS = e.data;
       THIS.mouseXY = e;
       if (THIS.drawing == 2) {
-        THIS.drawUpperBounds(THIS.mouseXY);
+        if (THIS.lasso) {
+        //  lasso_draw.bind(THIS)(e);
+        }
+        else {
+          THIS.drawUpperBounds(THIS.mouseXY);
+        }
       }
     });
 
@@ -674,6 +761,14 @@ HashState.prototype = {
   set editing(_e) {
     const e = parseInt(_e, 10);
     this.state.editing = modulo(e, 3);
+    this.newView(true);
+  },
+
+  get lasso() {
+    return this.state.lasso;
+  },
+  set lasso(_l) {
+    this.state.lasso = _l;
     this.newView(true);
   },
 
@@ -1127,6 +1222,7 @@ HashState.prototype = {
     // Based on control keys
     const editing = this.editing;
     const drawing = this.drawing;
+    const lasso = this.lasso;
 
     // Based on search keys
     displayOrNot('#draw-switch a', !editing);
@@ -1142,6 +1238,7 @@ HashState.prototype = {
     toggleCursor('crosshair', drawing);
 
     greenOrWhite('.draw-switch *', drawing);
+    greenOrWhite('.lasso-switch *', lasso);
     //greenOrWhite('#edit-switch *', editing);
   },
 

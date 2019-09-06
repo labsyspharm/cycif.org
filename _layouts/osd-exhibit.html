@@ -40,6 +40,11 @@
                             <a class="btn text-light" id="zoom-in" href="#zoom-in">
                                 <i class="fas fa-search-plus"></i>
                             </a>
+                            <span id="lasso-switch" class="nav-item lasso-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-circle"></i></span>
+                            </a>
+                            </span>
                             <span id="draw-switch" class="nav-item draw-switch">
                             <a class="btn" href="javascript:;">
                                 <span class=""><i class="fas fa-crosshairs"></i></span>
@@ -357,6 +362,12 @@
     </script>
     <script>
         {% include js-yaml.min.js %}
+    </script>
+    <script>
+        {% include d3.min.js %}
+    </script>
+    <script>
+        {% include openseadragon-svg-overlay.js %}
     </script>
     <script>
         {% include exhibits.js %}
