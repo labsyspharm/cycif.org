@@ -157,19 +157,31 @@ Exhibit:
     Waypoints:
     - Zoom: 3.5143
       Pan:
-      - 0.1923
-      - 0.0584
+        - 0.1923
+        - 0.0589
       Group: Tumor Architecture
-      Description: | 
-        A low magnification view of the architecture of this __melanoma metastasis__ reveals _distinct compartments_-
+      Description: >
+        A low magnification view of the
+        architecture of this __melanoma
+        metastasis__ reveals _distinct
+        compartments_-
 
-        There is a compact nodule of melanoma tumor cells (`S100`+) which is surrounded by a dense collection of inflammatory cells (`CD45`+). A thin rim of `SMA` expressing fibroblasts surrounds the tumor nodule and the inflammatory cells.
+
+        There is a compact nodule of melanoma
+        tumor cells (`S100`+) which is
+        surrounded by a dense collection of
+        inflammatory cells (`CD45`+). A thin rim
+        of `SMA` expressing fibroblasts
+        surrounds the tumor nodule and the
+        inflammatory cells.
       Name: Compartments
       Overlay:
         x: 0.1327
         y: 0.0355
         width: 0.1093
         height: 0.0914
+      Polygon: >-
+        AwOgTMAsCskDSmAdgBzSQ8VaeUywmEM8iSSYAjEdqSMgGyUajE5nQCcnNJuS0MCl7t6+JAxF1kkMHTbSkAZipT+YBj1a11zNWUqdh2vgaH6xlYFqymx1widHJk1J4uCCLLpfJ1lgSmhvTU5JE2VcUPDbTjd6aJpoKyjuGIhoBjBUsJoGBmDERO0kPSK0mlQWBIrtFCUbYGKsTmsc9Oswaqbalvr2oitgbPLc1isG-mAlJUHGKaRHcCsJKZQbKmtCy2BjZcpKRUoNQcoVfkPtqiD41wZZ8ZuLlBH9xfVA05Q95CoN4+Q6iUeyoYGS-CUu0GXSWyBU1VB7zIviux2+EIY8jOgOR-XGkO6+E++JxYlkSyoKhiMgggyp-Egk3xkEUMARZ3uDM4WIIsIE53GvP40GgFMOJzIDGGgxgr0YoiokCRYgYFBlYzEFCxgjl5AEgx1-CQ3INSv4KEg6SCZrIKExBsiZDiVvQDzEnCUqK4us40DdVG9-E4avGTD53DFYdwKGAbVDKUQMfM8dhMctgyyjRjBQzYCzuyxmejVleVCLieO8TLkB+KDO-0xtaCIMojeL5AzNeLvs7tbk7Py1Je+QzI8TSjKy0H0aUmlHQ+BA84cotcQzy+jsFLrY3icyVZ3K6Y-uYlFrDDxy1KteUqOv0fWYvviaMLef9FaBEG74ca-G+DdaxDhPADcDiHt-0ZMC5CtUDEGXIxvyg+DfH+OCPwIA90OsGAQOQj9RSxbDfUyJDALCKFIPIgo0Pw6xlCfLIwO4IimNAIYzm-NiQCGAUr24oZRS414hjnf8BNjdFxJEwImmEzArGOO8JOA+T2MCOs1J44Yzy0ktZz04YRUMlRlJk2cQIkyBDkMy1YKstBDNFSyZMDKiFKaA4yI88sr3wqw23c9T8nZLUfMc-85A8xYiLk9SKG3RYYhWayMxQaoVilNKMrwFt8j2FZg07GwrDrVF7iWUrfAND0PPSg9YHiUqivGZyPI9HkLXav0ZRtbSIzpCCeMUq1PQyqwevxYEFJWbcNAKg5W2hSASoOT1oS89iDkm5Zrhm5hS2sVUZqUDttG5BaGiuTpVusvx1hE4D-V2XdhpgKtdkdN7lQgNA6AOJUKV2datprDZge2bbSV+pattFBFkBa4bBA6chVtgPwJEqoJORKVK4dxrAEpm6AXkqaYSbJ7QL0h1tYzyMdhqYcHMXG5m8mTJnpupuMuZBJpeYOAoOi4JrW1I7R0Ee1Vrr9f6d2e5JadKQ6VuS09Va4GblA+llsZ13hVC2-BwYIR6TZoYF5Yt7RZ2Vi9LfTY2HdtrptZdrBIQW1AOjzfW7RoLoxZ9wOvGNgPtGYcaQ8j0ntYjrB63jjoAWTmhFLT7RgczrAmmthOIGwHPC4lYaY9z0kDnLwxXxzmvlSrhOa-BcPku4PjG7buI3U7hSjBNVu+7QaOm6Mbmy9HutVurox6cH9jgypie24kHvmFH-B85XsE6+DOLl77i8R7b-Jp9Hgp-ZPid3YKsJr+NlbD+ObXIT7rg14Yt-auNzaeN9fUtqaBEv-Wmqp-okXVgUSGECZr3DbiKSBk5DAIJJohBeKC4YxjfhLZGTBsHqy3PgmaK1KowNBqUIhoNDCUOGrOW+GDaGP3QTgg4eYMpkOGl0ehLClIlQ4aw-Gf8GGLQbvw7aTV-7yzOMA9AUjOLoO-sNLYT9VpQB7mEahW1hjgPuONbRh8WHWHPgA-qHtDAy3akwv+mge7WFfgvFW7V7F-0-upOIEibb9V-oYTxzVgESAKp9dR1cglD08HVYyC8Xj-V2JEv+FoZL1DbnaJqwNkl4PUnWdh6USq7CQf3QJxpb5xBymjPuvoYkSAkdwVJ+BDrDEKWAZ6UBSlNJoEBHyYdE4Jm0vcZ6hwcpcBTozCaGoIBnhiegBGEBbFTMDhTdSIp+ZgBWR5JZgdVmLKZFgOQlVPDbIgGCXJggPpHLWdKbQXCPI1menmZKUB7S2yCNcmAlsZjXLdrbLpVhZAI1Oqkgg-NgS5OBbwSi2lPS60+RCvixBXnqRmKreFEKbImEedpPM10awyS6CLYkGLx4ZFpOpFZQM-SBNJUkceJZ8UZHQB5cZSR6XqTPIdEUOVWyK1WCy0uGQB7aRWHkeR2ldj82PB5HoeR74iqEtTaVvEPoXwlcKiASr4IsTyNyj8j5ya3DHvzRYery4QGUNIMIUkiZZXgnAyoCcthdRKHa30sLdhQDAske6br4JKg6GmMCbIaB+u9YS11ZrgS+q9R+OhgbI2dDElgINH4qAI0TUBHMdRY2tGOhms1gRrqpvWLDBNsbvjot+iW40nrpDpVkDG6tFBnoFpinW6MNMW2JhCu2+gdouw5s3GM5Adrh4I3LrEneJRs3dtFKjQRBY4kmtnRaBZRNnnjhbiu7YwMXWaAXNujUwMVU9CHHmPwqpugvC1aqs63amlirjomP4eR73dtZU+pshNVXPrySyPIX4Kw-upn+7tnRf2pigEDTE4YLWqqA4OiKWBINGgLnnPkprQP8AvIdRDkoy0oYw8imDfIsgdGwyqZAQA
     - Zoom: 39.264
       Pan:
       - 0.1973

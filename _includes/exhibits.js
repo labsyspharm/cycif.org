@@ -62,6 +62,10 @@ const vFromWaypoint = function(waypoint) {
   ];
 };
 
+const pFromWaypoint = function(waypoint) {
+  return waypoint.Polygon;
+};
+
 const oFromWaypoint = function(waypoint) {
   return [
     waypoint.Overlay.x,
@@ -114,8 +118,48 @@ const toggleCursor = function(cursor, condition) {
   }
 };
 
-lasso_draw = function(event){
-  
+var toPolygonURL = function(polygon){
+    pointString='';
+    polygon.forEach(function(d){
+        pointString += d.x.toFixed(5) + "," + d.y.toFixed(5) + ",";
+    })
+    pointString = pointString.slice(0, -1); //removes "," at the end
+    var result =  LZString.compressToEncodedURIComponent(pointString);
+    return result;
+}
+
+var fromPolygonURL = function(polygonString){
+    var decompressed = LZString.decompressFromEncodedURIComponent(polygonString);
+    if (!decompressed){
+      return [];
+    }
+
+    var xArray = [], yArray = [];
+
+    //get all values out of the string
+    decompressed.split(',').forEach(function(d,i){
+        if (i % 2 == 0){ xArray.push(parseFloat(d)); }
+        else{ yArray.push(parseFloat(d)); }
+    });
+
+    //recreate polygon data structure
+    var newPolygon = [];
+    if (xArray.length == yArray.length) {
+      xArray.forEach(function(d, i){
+          newPolygon.push({x: d, y: yArray[i]});
+      });
+    }
+    return newPolygon;
+}
+
+var lasso_draw_counter = 0;
+var lasso_draw = function(event){
+
+    lasso_draw_counter ++;
+    if (lasso_draw_counter % 5 != 1) {
+      return  
+    }
+
     viewer = this.viewer;
 
     //add points to polygon and (re)draw
@@ -508,7 +552,6 @@ HashState.prototype = {
         element: viewer.canvas,
         dragEndHandler: function(event) {
             if (STATE.lasso && STATE.drawing) {
-                STATE.lasso = false;
                 STATE.finishDrawing();
             }
             STATE.viewer.setMouseNavEnabled(true);
@@ -630,6 +673,7 @@ HashState.prototype = {
           viewport.pan.x,
           viewport.pan.y
         ],
+        Polygon: toPolygonURL([]),
         Group: group.Name,
         Description: '',
         Name: 'Untitled',
@@ -824,6 +868,7 @@ HashState.prototype = {
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
     this.o = oFromWaypoint(waypoint);
+    this.p = pFromWaypoint(waypoint);
   },
 
   get s() {
@@ -857,25 +902,10 @@ HashState.prototype = {
   },
 
   get p() {
-    const p = this.state.p;
-    const string_p = p.map(function(point){
-      const string_x = point.x
-      const string_y = point.y
-      return  string_x + ',' + string_y;
-    });
-    return string_p;
+    return toPolygonURL(this.state.p);
   },
   set p(_p) {
-    const p = Array.isArray(_p)? _p : [_p];
-    this.state.p = p.filter(function(string_point){
-      return string_point.includes(',');
-    }).map(function(string_point){
-      const [x, y] = string_point.split(',');
-      return {
-        x: x,
-        y: y
-      }
-    });
+    this.state.p = fromPolygonURL(_p);
   },
 
   get d() {
@@ -1097,6 +1127,7 @@ HashState.prototype = {
     const stories = deepCopy(exhibit.Stories);
     const group = this.group;
     const o = this.o;
+    const p = this.p;
     const v = this.v;
     const d = this.d;
     this.stories = [{
@@ -1104,6 +1135,7 @@ HashState.prototype = {
       Name: 'Tag',
       Waypoints: [{
         Zoom: v[0],
+        Polygon: p,
         Pan: v.slice(1),
         Group: group.Name,
         Description: decode(d),
@@ -1188,7 +1220,7 @@ HashState.prototype = {
     }
     else {
       // We should think about which box to display here
-      this.addOverlay(this.waypoint.Overlay);
+      this.addOverlay(this.overlay);
       this.addPolygon(this.state.p);
     }
 
@@ -1335,6 +1367,7 @@ HashState.prototype = {
 
     this.v = vFromWaypoint(bw);
     this.o = oFromWaypoint(bw);
+    this.p = pFromWaypoint(bw);
     this.d = dFromWaypoint(bw);
     this.n = nFromWaypoint(bw);
     this.g = gFromWaypoint(bw, this.cgs);
@@ -1355,6 +1388,7 @@ HashState.prototype = {
     bw.Description = decode(this.d);
     bw.Overlay = this.overlay;
     bw.Zoom = viewport.scale;
+    bw.Polygon = this.p;
     bw.Pan = [
       viewport.pan.x,
       viewport.pan.y
@@ -1377,13 +1411,6 @@ HashState.prototype = {
   },
   cancelDrawing: function() {
     this.drawing = 0;
-
-    // reset polygon
-    this.state.p = [];
-
-    // reset overlay
-    const waypoint = this.waypoint;
-    this.o = oFromWaypoint(waypoint);
   },
 
   finishDrawing: function() {
