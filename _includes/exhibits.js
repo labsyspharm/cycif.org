@@ -1,6 +1,3 @@
-//SELECTION POLYGON (LASSO)
-var polygonSelection = [];
-
 const flatten = function(items) {
   return items.reduce(function(flat, item) {
     return flat.concat(item);
@@ -120,35 +117,13 @@ const toggleCursor = function(cursor, condition) {
 lasso_draw = function(event){
   
     viewer = this.viewer;
-    svg_overlay = this.svg_overlay;
 
     //add points to polygon and (re)draw
     var webPoint = event.position;
     var viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-    polygonSelection.push({"x":viewportPoint.x,"y":viewportPoint.y});
+    this.state.p.push({"x":viewportPoint.x,"y":viewportPoint.y});
 
-    d3.select('#selectionPolygon').remove();
-    var selPoly = svg_overlay.selectAll("selectionPolygon").data([polygonSelection]);
-    selPoly.enter().append("polygon")
-        .attr('id', 'selectionPolygon')
-        .attr("points",function(d) {
-            return d.map(function(d) { return [d.x,d.y].join(","); }).join(" ");})
-
-}
-
-lasso_end = function(event){
-
-    console.log('length', (polygonSelection).length);
-    polygonSelection = [];
-    viewer = this.viewer;
-    svg_overlay = this.svg_overlay;
-
-    //set the last point and make the selection stale.
-
-    var webPoint = event.position;
-    var viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-    console.log(webPoint.toString(), viewportPoint.toString());
-    //switchSelectionMode();
+    this.newView(false);
 }
 
 const download = function(filename, text) {
@@ -330,6 +305,8 @@ const HashState = function(viewer, tileSources, exhibit, options) {
   this.tileSources = tileSources;
   this.exhibit = exhibit;
   this.viewer = viewer;
+  this.svg_overlay = d3.select(viewer.svgOverlay().node());
+
   viewer.setVisible(false);
 
   this.hashable = {
@@ -337,10 +314,10 @@ const HashState = function(viewer, tileSources, exhibit, options) {
       's', 'w', 'g', 'v'
     ],
     edits: [
-      's', 'w', 'g', 'v', 'o'
+      's', 'w', 'g', 'v', 'o', 'p'
     ],
     tag: [
-      'd', 'o', 'g', 'v'
+      'd', 'o', 'g', 'v', 'p'
     ]
   };
   this.searchable = {
@@ -361,6 +338,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     s: 0,
     v: [1, 0.5, 0.5],
     o: [0, 0, 1, 1],
+    p: [],
     name: '',
     description: '',
     mouseEvent: {},
@@ -382,7 +360,6 @@ HashState.prototype = {
     this.pushState();
 
 
-    this.svg_overlay = d3.select(this.viewer.svgOverlay().node());
 
 
     // Edit name
@@ -520,7 +497,7 @@ HashState.prototype = {
     var mouse_drag = new OpenSeadragon.MouseTracker({
         element: viewer.canvas,
         dragHandler: function(event) {
-            if (STATE.lasso) {
+            if (STATE.lasso && STATE.drawing) {
                 STATE.viewer.setMouseNavEnabled(false);
                 lasso_draw.bind(STATE)(event);
             }
@@ -530,12 +507,11 @@ HashState.prototype = {
     var mouse_up = new OpenSeadragon.MouseTracker({
         element: viewer.canvas,
         dragEndHandler: function(event) {
-            if (STATE.lasso) {
+            if (STATE.lasso && STATE.drawing) {
                 STATE.lasso = false;
-                lasso_end.bind(STATE)(event);
-                STATE.viewer.setMouseNavEnabled(true);
-                $('#edit_description_modal').modal('show'); 
+                STATE.finishDrawing();
             }
+            STATE.viewer.setMouseNavEnabled(true);
         }
     })
 
@@ -566,11 +542,11 @@ HashState.prototype = {
       }
 
       const position = THIS.normalize(e.position);
-      THIS.viewer.setMouseNavEnabled(!THIS.drawing);
 
       if (THIS.drawing == 2) {
         e.preventDefaultAction = true;
-        THIS.finishDrawing(position);
+        THIS.drawUpperBounds(position);
+        THIS.finishDrawing();
         THIS.pushState();
       }
     }, this);
@@ -591,7 +567,9 @@ HashState.prototype = {
       }
       else if (THIS.drawing == 2) {
         e.preventDefaultAction = true;
-        THIS.finishDrawing(position);
+        THIS.drawUpperBounds(position);
+        THIS.finishDrawing();
+        THIS.viewer.setMouseNavEnabled(true);
         THIS.pushState();
       }
     }, this);
@@ -876,6 +854,28 @@ HashState.prototype = {
   },
   set o(_o) {
     this.state.o = _o.map(parseFloat);
+  },
+
+  get p() {
+    const p = this.state.p;
+    const string_p = p.map(function(point){
+      const string_x = point.x
+      const string_y = point.y
+      return  string_x + ',' + string_y;
+    });
+    return string_p;
+  },
+  set p(_p) {
+    const p = Array.isArray(_p)? _p : [_p];
+    this.state.p = p.filter(function(string_point){
+      return string_point.includes(',');
+    }).map(function(string_point){
+      const [x, y] = string_point.split(',');
+      return {
+        x: x,
+        y: y
+      }
+    });
   },
 
   get d() {
@@ -1184,10 +1184,12 @@ HashState.prototype = {
     // Temp overlay if drawing or editing
     if (this.drawing || this.editing) {
       this.addOverlay(this.overlay);
+      this.addPolygon(this.state.p);
     }
     else {
       // We should think about which box to display here
       this.addOverlay(this.waypoint.Overlay);
+      this.addPolygon(this.state.p);
     }
 
     // Redraw design
@@ -1344,44 +1346,31 @@ HashState.prototype = {
   },
 
   finishEditing: function() {
-    var changed = false;
     const cgs = this.cgs;
     const overlay = this.overlay;
     const viewport = this.viewport;
     const bw = this.bufferWaypoint;
-    if (gFromWaypoint(bw, cgs) != this.g) {
-      bw.Group = this.group.Name;
-      changed = true;
-    }
-    if (nFromWaypoint(bw) != this.n) {
-      bw.Name = decode(this.n);
-      changed = true;
-    }
-    if (dFromWaypoint(bw) != this.d) {
-      bw.Description = decode(this.d);
-      changed = true;
-    }
-    if (!arrayEqual(oFromWaypoint(bw), this.o)) {
-      bw.Overlay = this.overlay;
-      changed = true;
-    }
-    if (!arrayEqual(vFromWaypoint(bw), this.v)) {
-      bw.Zoom = viewport.scale;
-      bw.Pan = [
-        viewport.pan.x,
-        viewport.pan.y
-      ];
-      changed = true;
-    }
-    if (changed) {
-      this.bufferWaypoint = bw;
-      this.pushState();
-    }
+    bw.Group = this.group.Name;
+    bw.Name = decode(this.n);
+    bw.Description = decode(this.d);
+    bw.Overlay = this.overlay;
+    bw.Zoom = viewport.scale;
+    bw.Pan = [
+      viewport.pan.x,
+      viewport.pan.y
+    ];
+    this.bufferWaypoint = bw;
+    this.pushState();
     this.editing = 0;
   },
 
   startDrawing: function() {
     this.drawing = 1;
+
+    if (this.lasso) {
+      this.state.p = [];
+    }
+
     const waypoint = this.waypoint;
 
     this.o = oFromWaypoint(waypoint);
@@ -1389,13 +1378,15 @@ HashState.prototype = {
   cancelDrawing: function() {
     this.drawing = 0;
 
+    // reset polygon
+    this.state.p = [];
+
+    // reset overlay
     const waypoint = this.waypoint;
     this.o = oFromWaypoint(waypoint);
   },
 
-  finishDrawing: function(position) {
-
-    this.drawUpperBounds(position);
+  finishDrawing: function() {
 
     if (this.editing) {
       this.drawing = 0;
@@ -1435,6 +1426,17 @@ HashState.prototype = {
   /*
    * Display manaagement
    */
+
+  addPolygon: function(polygon) {
+    svg_overlay = this.svg_overlay;
+
+    d3.select('#selectionPolygon').remove();
+    var selPoly = svg_overlay.selectAll("selectionPolygon").data([polygon]);
+    selPoly.enter().append("polygon")
+        .attr('id', 'selectionPolygon')
+        .attr("points",function(d) {
+            return d.map(function(d) { return [d.x,d.y].join(","); }).join(" ");})
+  },
 
   addOverlay: function(overlay) {
 
