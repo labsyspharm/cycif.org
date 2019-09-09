@@ -63,7 +63,8 @@ const vFromWaypoint = function(waypoint) {
 };
 
 const pFromWaypoint = function(waypoint) {
-  return waypoint.Polygon;
+  const p = waypoint.Polygon;
+  return p? p: toPolygonURL([]);
 };
 
 const oFromWaypoint = function(waypoint) {
@@ -676,16 +677,11 @@ HashState.prototype = {
           viewport.pan.x,
           viewport.pan.y
         ],
-        Polygon: toPolygonURL([]),
+        Polygon: this.p,
         Group: group.Name,
         Description: '',
         Name: 'Untitled',
-        Overlay: {
-          x: -100,
-          y: -100,
-          width: 200,
-          height: 200,
-        },
+        Overlay: this.overlay
       };
     }
     return deepCopy(this.state.buffer.waypoint);
@@ -1404,13 +1400,14 @@ HashState.prototype = {
   startDrawing: function() {
     this.drawing = 1;
 
-    if (this.lasso) {
-      this.state.p = [];
-    }
-
     const waypoint = this.waypoint;
-
-    this.o = oFromWaypoint(waypoint);
+ 
+    if (this.lasso) {
+      this.p = toPolygonURL([]);
+    }
+    else {
+      this.o = oFromWaypoint(waypoint);
+    }
   },
   cancelDrawing: function() {
     this.drawing = 0;
