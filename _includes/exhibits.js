@@ -420,6 +420,9 @@ HashState.prototype = {
     $('#zoom-home').tooltip({
       title: 'Reset Zoom'
     });
+    $('#lasso-switch').tooltip({
+      title: 'Lasso Selection'
+    });
     $('#draw-switch').tooltip({
       title: 'Share Link'
     });
