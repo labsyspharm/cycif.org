@@ -433,17 +433,6 @@
         const duplicateViewButton = document.querySelector('#duplicate-view');
         duplicateViewButton.onclick = makeTwinViewer;
     </script>
-    <script>
-        exhibit.Groups.forEach((el, idx) => {
-            if (el.Path.includes('datalayer')) {
-                $(`#data-${el.Name.replace(' ', '-')}`).on("input change",
-                    function() {
-                        console.log(this.value)
-                        viewer.world.getItemAt(idx).setOpacity(this.value * 0.1);
-                    });
-            }
-        });
-    </script>
 
 <script>
         $('#story-board').on('hidden.bs.collapse', function() { 
