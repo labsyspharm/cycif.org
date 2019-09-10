@@ -868,6 +868,8 @@ HashState.prototype = {
     this.v = vFromWaypoint(waypoint);
     this.o = oFromWaypoint(waypoint);
     this.p = pFromWaypoint(waypoint);
+    this.d = dFromWaypoint(waypoint);
+    this.n = nFromWaypoint(waypoint);
   },
 
   get s() {
@@ -882,11 +884,6 @@ HashState.prototype = {
 
     // Update waypoint
     this.w = this.w;
-    if (this.s != s || !this.editing) {
-      const waypoint = this.waypoint;
-      this.d = dFromWaypoint(waypoint);
-      this.n = nFromWaypoint(waypoint);
-    }
   },
 
   /*
@@ -1213,15 +1210,8 @@ HashState.prototype = {
   newView: function(redraw) {
 
     // Temp overlay if drawing or editing
-    if (this.drawing || this.editing) {
-      this.addOverlay(this.overlay);
-      this.addPolygon(this.state.p);
-    }
-    else {
-      // We should think about which box to display here
-      this.addOverlay(this.overlay);
-      this.addPolygon(this.state.p);
-    }
+    this.addOverlay(this.overlay);
+    this.addPolygon(this.state.p);
 
     // Redraw design
     if(redraw) {
@@ -1468,7 +1458,7 @@ HashState.prototype = {
   addOverlay: function(overlay) {
 
     const el = this.currentOverlay;
-    greenOrWhite('#' + el, this.drawing);
+    greenOrWhite('#' + el, this.drawing && !this.lasso);
     const current = this.viewer.getOverlayById(el);
     const xy = new OpenSeadragon.Point(overlay.x, overlay.y);
     if (current) {
