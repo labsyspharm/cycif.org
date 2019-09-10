@@ -10,7 +10,7 @@ Exhibit:
   Layout:
     Grid:
     - - i0
-  Groups:
+   Groups:
   - Channels:
     - S100
     - CD45
@@ -61,25 +61,10 @@ Exhibit:
     - 0000ff
     Name: Differentiation State
     Path: Differentiation-State_7__MITF--31__NGFR--19__CD45--11__aSMA--8__DNA
-  - Channels:
-    - Small masks
-    - Medium masks
-    - Large masks
-    Colors:
-    - 0000ff
-    - 00ff00
-    - ff0000
-    Name: Segmentation Mask
+  Masks:
+    - Name: Segmentation Mask
     Path: datalayer-segmentation_mask
-  - Channels:
-    - High
-    - Medium
-    - Low
-    Colors:
-    - ff0000
-    - 00ff00
-    - 460074
-    Name: Heatmap NGFR
+  - Name: Heatmap NGFR
     Path: datalayer-heatmap_ch_31_png
   Stories:
   - Name: Overview

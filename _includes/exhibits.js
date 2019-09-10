@@ -211,7 +211,6 @@ const ctrlC = function(str) {
 
 const newMarkers = function(tileSources, group) {
   Object.keys(tileSources)
-    .filter(el => !el.toLowerCase().includes('datalayer'))
     .forEach(el => {
       el === group.Path 
         ? tileSources[el].forEach(t => t.setOpacity(1))
@@ -1475,7 +1474,6 @@ HashState.prototype = {
 
   addGroups: function() {
     $('#channel-groups').empty();
-    // $('#data-layers').empty();
     this.cgs.forEach(this.addGroup, this);
   },
   addGroup: function(group, g) {
