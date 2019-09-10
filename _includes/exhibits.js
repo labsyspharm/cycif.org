@@ -16,6 +16,13 @@ const modulo = function(i, n) {
   return ((i % n) + n) % n;
 };
 
+const remove_undefined = function(o) {
+  Object.keys(o).forEach(k => {
+    o[k] == undefined && delete o[k]
+  });
+  return o;
+};
+
 const encode = function(txt) {
   return btoa(encodeURIComponent(txt));
 };
@@ -50,10 +57,16 @@ const nFromWaypoint = function(waypoint) {
   return encode(waypoint.Name);
 };
 
+const mFromWaypoint = function(waypoint, masks) {
+  const mask_name = waypoint.Mask;
+  return index_name(masks, mask_name);
+};
+
 const gFromWaypoint = function(waypoint, cgs) {
   const cg_name = waypoint.Group;
   return index_name(cgs, cg_name);
 };
+
 const vFromWaypoint = function(waypoint) {
   return [
     waypoint.Zoom,
@@ -184,41 +197,16 @@ const download = function(filename, text) {
   document.body.removeChild(element);
 };
 
-const sort_keys = function(a, b){
-  const getIndex = function(v){
-    return [
-      'Exhibit',
-      'Name',
-      'Images',
-      'Layout',
-      'Groups',
-      'Stories',
-      'Waypoints',
-      'Group',
-      'Description',
-      'Overlay',
-      'Pan',
-      'Zoom',
-      'Style',
-    ].indexOf(v);
-  };
-  return getIndex(a) > getIndex(b);
-};
-
 const ctrlC = function(str) {
   Clipboard.copy(str);
 };
 
-const newMarkers = function(tileSources, group) {
+const newMarkers = function(tileSources, group, mask) {
   Object.keys(tileSources)
     .forEach(el => {
-      el === group.Path 
+      el === group.Path || el === mask.Path
         ? tileSources[el].forEach(t => t.setOpacity(1))
         : tileSources[el].forEach(t => t.setOpacity(0));
-      
-      el === group.Path
-        ? $('#' + el).parent().addClass('active')
-        : $('#' + el).parent().removeClass('active');
     })
 };
 
@@ -349,13 +337,13 @@ const HashState = function(viewer, tileSources, exhibit, options) {
 
   this.hashable = {
     exhibit: [
-      's', 'w', 'g', 'v'
+      's', 'w', 'g', 'm', 'v'
     ],
     edits: [
-      's', 'w', 'g', 'v', 'o', 'p'
+      's', 'w', 'g', 'm', 'v', 'o', 'p'
     ],
     tag: [
-      'd', 'o', 'g', 'v', 'p'
+      'd', 'o', 'g', 'm', 'v', 'p'
     ]
   };
   this.searchable = {
@@ -372,6 +360,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     changed: false,
     design: {},
     w: [0],
+    m: 0,
     g: 0,
     s: 0,
     v: [1, 0.5, 0.5],
@@ -663,19 +652,21 @@ HashState.prototype = {
   get bufferWaypoint() {
     if (this.state.buffer.waypoint === undefined) {
       const viewport = this.viewport;
+      const mask = this.mask;
       const group = this.group;
-      return {
+      return remove_undefined({
         Zoom: viewport.scale,
         Pan: [
           viewport.pan.x,
           viewport.pan.y
         ],
+        Mask: mask.Name,
         Polygon: this.p,
         Group: group.Name,
         Description: '',
         Name: 'Untitled',
         Overlay: this.overlay
-      };
+      });
     }
     return deepCopy(this.state.buffer.waypoint);
   },
@@ -827,6 +818,19 @@ HashState.prototype = {
     this.state.v = _v.map(parseFloat);
   },
 
+  get m() {
+    const m = this.state.m;
+    const count = this.masks.length;
+    if (count == 0) {
+      return -1
+    }
+    return m < count ? m : 0;
+  },
+  set m(_m) {
+    const m = parseInt(_m, 10);
+    this.state.m = m;
+  },
+
   get g() {
     const g = this.state.g;
     const count = this.cgs.length;
@@ -857,6 +861,7 @@ HashState.prototype = {
     const waypoint = this.waypoint;
 
     this.slower();
+    this.m = mFromWaypoint(waypoint, this.masks);
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
     this.o = oFromWaypoint(waypoint);
@@ -921,23 +926,6 @@ HashState.prototype = {
     this.state.changed = !!_c;
   },
 
-  get yaml() {
-    const config = {
-      'Exhibit': {
-         'Stories': this.stories,
-         'Channels': this.chans,
-         'Layout': this.layout,
-         'Images': this.images,
-         'Groups': this.cgs,
-      }
-    };
-    return jsyaml.safeDump(config, {
-      lineWidth: 40,
-      sortKeys: sort_keys,
-      noCompatMode: true,
-    });
-  },
-
   get design() {
     return deepCopy(this.state.design);
   },
@@ -954,6 +942,16 @@ HashState.prototype = {
 
     // Update the design
     this.state.design = deepCopy(design);
+  },
+
+  get masks() {
+    return this.design.masks || [];
+  },
+  set masks(_masks) {
+    var design = this.design;
+    design.masks = _masks;
+    this.design = design;
+    this.changed = true;
   },
 
   get cgs() {
@@ -1029,6 +1027,11 @@ HashState.prototype = {
     this.stories = stories;
   },
 
+  get mask() {
+    const mask = this.masks[this.m];
+    return mask? mask : {};
+  },
+
   get group() {
     return this.cgs[this.g];
   },
@@ -1102,12 +1105,14 @@ HashState.prototype = {
   newExhibit: function() {
     const exhibit = this.exhibit;
     const cgs = deepCopy(exhibit.Groups || []);
+    const masks = deepCopy(exhibit.Masks || []);
     const stories = deepCopy(exhibit.Stories || []);
     this.design = {
       chans: deepCopy(exhibit.Channels || []),
       layout: deepCopy(exhibit.Layout || {}),
       images: deepCopy(exhibit.Images || []),
       stories: stories,
+      masks: masks,
       cgs: cgs
     };
   },
@@ -1115,6 +1120,7 @@ HashState.prototype = {
     const exhibit = this.exhibit;
     const stories = deepCopy(exhibit.Stories);
     const group = this.group;
+    const mask = this.mask;
     const o = this.o;
     const p = this.p;
     const v = this.v;
@@ -1122,10 +1128,11 @@ HashState.prototype = {
     this.stories = [{
       Description: '',
       Name: 'Tag',
-      Waypoints: [{
+      Waypoints: [remove_undefined({
         Zoom: v[0],
         Polygon: p,
         Pan: v.slice(1),
+        Mask: mask.Name,
         Group: group.Name,
         Description: decode(d),
         Name: 'Tag',
@@ -1135,7 +1142,7 @@ HashState.prototype = {
           width: o[2],
           height: o[3],
         },
-      }]
+      })]
     }].concat(stories);
   },
   pushState: function() {
@@ -1210,9 +1217,10 @@ HashState.prototype = {
     if(redraw) {
       // Update OpenSeadragon
       this.activateViewport();
-      newMarkers(this.tileSources, this.group);
+      newMarkers(this.tileSources, this.group, this.mask);
       // Redraw HTML Menus
       this.addChannelLegends();
+      this.addMasks();
       this.addGroups();
       this.newStories();
 
@@ -1352,6 +1360,7 @@ HashState.prototype = {
     this.p = pFromWaypoint(bw);
     this.d = dFromWaypoint(bw);
     this.n = nFromWaypoint(bw);
+    this.m = mFromWaypoint(bw, this.masks);
     this.g = gFromWaypoint(bw, this.cgs);
     this.editing = 1;
   },
@@ -1361,19 +1370,16 @@ HashState.prototype = {
   },
 
   finishEditing: function() {
-    const cgs = this.cgs;
-    const overlay = this.overlay;
-    const viewport = this.viewport;
     const bw = this.bufferWaypoint;
     bw.Group = this.group.Name;
     bw.Name = decode(this.n);
     bw.Description = decode(this.d);
+    bw.Zoom = this.viewport.scale;
     bw.Overlay = this.overlay;
-    bw.Zoom = viewport.scale;
     bw.Polygon = this.p;
     bw.Pan = [
-      viewport.pan.x,
-      viewport.pan.y
+      this.viewport.pan.x,
+      this.viewport.pan.y
     ];
     this.bufferWaypoint = bw;
     this.pushState();
@@ -1472,6 +1478,28 @@ HashState.prototype = {
     }
   },
 
+  addMasks: function(group, g) {
+    const THIS = this
+    $('#mask-layers').children('a').each(function(m, el) {
+      if (THIS.m === m) {
+        $(el).addClass('active');
+      }
+      else {
+        $(el).removeClass('active');
+      }
+      // Update mask layer
+      $(el).unbind('click').click(function(e) {
+        if (m === THIS.m){
+          THIS.m = -1;
+        }
+        else {
+          THIS.m = m;
+        }
+        THIS.pushState();
+      });
+    });
+  },
+
   addGroups: function() {
     $('#channel-groups').empty();
     this.cgs.forEach(this.addGroup, this);
@@ -1498,17 +1526,6 @@ HashState.prototype = {
       THIS.g = g;
       THIS.pushState();
     });
-    // FIXME - element should be initiated here
-    // if (group.Path.includes('datalayer')) {
-    //   var labelEl = document.createElement('label');
-    //   labelEl = Object.assign(labelEl, {
-    //     innerText: group.Name,
-    //   });
-    //   labelEl.setAttribute('for', 'test');
-
-    //   document.getElementById('data-layers').appendChild(labelEl)
-
-    // }
   },
 
   activateViewport: function() {
@@ -1545,6 +1562,9 @@ HashState.prototype = {
 
   channelSettings: function(channels) {
     const chans = this.chans;
+    if (channels == undefined) {
+      return {}
+    }
     return channels.reduce(function(map, c){
       const i = index_name(chans, c);
       if (i >= 0) {
@@ -1778,7 +1798,6 @@ HashState.prototype = {
 
     const wid_yaml = jsyaml.safeDump([[[[[waypoint]]]]], {
       lineWidth: 40,
-      sortKeys: sort_keys,
       noCompatMode: true,
     });
     return wid_yaml.replace('- - - - - ', '        - ');
@@ -1800,22 +1819,21 @@ const getAjaxHeaders = function(state, image){
 };
 
 
-const getGetTileUrl = function(image, group, channelSettings) {
+const getGetTileUrl = function(image, layer, channelSettings) {
+
+  const colors = layer.Colors;
+  const channels = layer.Channels;
+  const isMask = colors == undefined || channels == undefined;
 
   const getJpegTile = function(level, x, y) {
-    // FIXME - workaround to load png images
-    const fileExt = group.Path.toLowerCase().includes('datalayer')
-      ? '.png' : '.jpg';
-    if (group.Path)
-    return image.Path + '/' + group.Path + '/' + (image.MaxLevel - level) + '_' + x + '_' + y + fileExt;
+    const fileExt = isMask ? '.png' : '.jpg';
+    return image.Path + '/' + layer.Path + '/' + (image.MaxLevel - level) + '_' + x + '_' + y + fileExt;
   };
 
-  if (image.Provider != 'minerva') {
+  if (isMask || image.Provider != 'minerva') {
     return getJpegTile; 
   }
 
-  const colors = group.Colors;
-  const channels = group.Channels;
 
   const channelList = channels.reduce(function(list, c, i) {
     const settings = channelSettings[c];
@@ -1848,14 +1866,16 @@ const getGetTileUrl = function(image, group, channelSettings) {
 
 const arrange_images = function(viewer, tileSources, state, init) {
 
-  const cg = state.g;
   const cgs = state.cgs;
+  const masks = state.masks;
+  const layers = cgs.concat(masks);
+
   const grid = state.grid;
 
   const numRows = grid.length;
   const numColumns = grid[0].length;
 
-  const nTotal = numRows * numColumns * cgs.length;
+  const nTotal = numRows * numColumns * layers.length;
   var nLoaded = 0;
 
   const spacingFraction = 0.05;
@@ -1878,9 +1898,9 @@ const arrange_images = function(viewer, tileSources, state, init) {
       const displayWidth = displayHeight * image.Width / image.Height;
       const x = xi * (cellWidth + spacingFraction) + (cellWidth - displayWidth) / 2;
 
-      for (var j=0; j < cgs.length; j++) {
-        const group = cgs[j];
-        const channelSettings = state.channelSettings(group.Channels);
+      for (var j=0; j < layers.length; j++) {
+        const layer = layers[j];
+        const channelSettings = state.channelSettings(layer.Channels);
         getAjaxHeaders(state, image).then(function(ajaxHeaders){
           const useAjax = (image.Provider == 'minerva');
           viewer.addTiledImage({
@@ -1893,19 +1913,19 @@ const arrange_images = function(viewer, tileSources, state, init) {
               maxLevel: image.MaxLevel,
               tileWidth: image.TileSize.slice(0,1).pop(),
               tileHeight: image.TileSize.slice(0,2).pop(),
-              getTileUrl: getGetTileUrl(image, group, channelSettings)
+              getTileUrl: getGetTileUrl(image, layer, channelSettings)
             },
             x: x,
             y: y,
+            opacity: 0,
             width: displayWidth,
-            opacity: group === cgs[cg] ? 1 : 0,
             //preload: true,
             success: function(data) {
               const item = data.item;
-              if (!tileSources.hasOwnProperty(group.Path)) {
-                tileSources[group.Path] = [];
+              if (!tileSources.hasOwnProperty(layer.Path)) {
+                tileSources[layer.Path] = [];
               }
-              tileSources[group.Path].push(item);
+              tileSources[layer.Path].push(item);
 
               // Initialize hash state
               nLoaded += 1;
@@ -1916,6 +1936,7 @@ const arrange_images = function(viewer, tileSources, state, init) {
           });
         });
       }
+
       const titleElt = $('<p>');
       const title = image.Description;
       titleElt.addClass('overlay-title').text(title);
