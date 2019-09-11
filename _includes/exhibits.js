@@ -335,23 +335,6 @@ const HashState = function(viewer, tileSources, exhibit, options) {
 
   viewer.setVisible(false);
 
-  this.hashable = {
-    exhibit: [
-      's', 'w', 'g', 'm', 'v'
-    ],
-    edits: [
-      's', 'w', 'g', 'm', 'v', 'o', 'p'
-    ],
-    tag: [
-      'd', 'o', 'g', 'm', 'v', 'p'
-    ]
-  };
-  this.searchable = {
-    ui: [
-      'edit'
-    ],
-  };
-
   this.state = {
     buffer: {
       waypoint: undefined
@@ -364,7 +347,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     g: 0,
     s: 0,
     v: [1, 0.5, 0.5],
-    o: [0, 0, 1, 1],
+    o: [-100, -100, 200, 200],
     p: [],
     name: '',
     description: '',
@@ -385,9 +368,6 @@ HashState.prototype = {
     window.onpopstate();
     this.startEditing();
     this.pushState();
-
-
-
 
     // Edit name
     $('#exhibit-name').text(this.exhibit.Name);
@@ -510,7 +490,7 @@ HashState.prototype = {
       $('#copy_link_modal').modal('show');
 
       const root = THIS.location('host') + THIS.location('pathname');
-      const hash = THIS.makeHash(THIS.hashable.tag);
+      const hash = THIS.makeHash(['d', 'g', 'm', 'v', 'o', 'p']);
       const link = document.getElementById('copy_link');
       link.value = root + hash;
 
@@ -702,29 +682,18 @@ HashState.prototype = {
   },
 
   get searchKeys() {
-    const search = this.search;
-    for (var k in this.searchable) {
-      const keys = this.searchable[k];
-      if (this.matchQuery(search, keys)) {
-        return keys;
-      }
-    }
-    return [];
+    const search_keys = Object.keys(this.search);
+    return ['edit'].filter(x => search_keys.includes(x));
   },
 
   get hashKeys() {
-    const hash = this.hash;
-    for (var k in this.hashable) {
-      const keys = this.hashable[k];
-      if (this.matchQuery(hash, keys)) {
-        return keys;
-      }
+    const oldTag = this.waypoint.hasOwnProperty('SharedLink');
+    if (oldTag || this.isSharedLink) {
+      return ['d', 's', 'w', 'g', 'm', 'v', 'o', 'p'];
     }
-    return [];
-  },
-
-  get isHash() {
-    return !!this.hashKeys.length;
+    else {
+      return ['s', 'w', 'g', 'm', 'v', 'o', 'p'];
+    }
   },
 
   /*
@@ -1018,6 +987,18 @@ HashState.prototype = {
    * Derived State
    */
 
+  get isSharedLink() {
+    const yes_d = this.hash.hasOwnProperty('d')
+    const no_s = !this.hash.hasOwnProperty('s')
+    return yes_d && no_s;
+  },
+
+  get isMissingHash() {
+    const no_d = !this.hash.hasOwnProperty('d')
+    const no_s = !this.hash.hasOwnProperty('s')
+    return no_d && no_s;
+  },
+
   get story() {
     return this.stories[this.s];
   },
@@ -1092,16 +1073,6 @@ HashState.prototype = {
    * State manaagement
    */
 
-  matchQuery: function(hash, hashKeys) {
-    const keys = Object.keys(hash);
-    if (keys.length != hashKeys.length) {
-      return false;
-    }
-    return hashKeys.reduce(function(accept, key) {
-      return accept && hash[key] !== undefined;
-    }, true);
-  },
-
   newExhibit: function() {
     const exhibit = this.exhibit;
     const cgs = deepCopy(exhibit.Groups || []);
@@ -1125,7 +1096,7 @@ HashState.prototype = {
     const p = this.p;
     const v = this.v;
     const d = this.d;
-    this.stories = [{
+    this.stories = stories.concat([{
       Description: '',
       Name: 'Tag',
       Waypoints: [remove_undefined({
@@ -1135,6 +1106,7 @@ HashState.prototype = {
         Mask: mask.Name,
         Group: group.Name,
         Description: decode(d),
+        SharedLink: true,
         Name: 'Tag',
         Overlay: {
           x: o[0],
@@ -1143,26 +1115,23 @@ HashState.prototype = {
           height: o[3],
         },
       })]
-    }].concat(stories);
+    }]);
   },
   pushState: function() {
-    const hashKeys = this.hashable.edits;
-    const searchKeys = this.searchKeys;
-    const url = this.makeUrl(hashKeys, searchKeys);
-    const title = document.title;
-    const design = this.design;
+
+    const url = this.makeUrl(this.hashKeys, this.searchKeys);
 
     if (this.url == url && !this.changed) {
       return;
     }
 
-    if (!this.embedded && this.hashKeys === hashKeys) {
-      history.pushState(design, title, url);
+    if (this.embedded) {
+      history.replaceState(this.design, document.title, url);
     }
     else {
-      // Replace any invalid state
-      history.replaceState(design, title, url);
+      history.pushState(this.design, document.title, url);
     }
+
     window.onpopstate();
     this.changed = false;
   },
@@ -1173,35 +1142,28 @@ HashState.prototype = {
     }
     const hash = this.hash;
     const search = this.search;
-    const hashable = this.hashable;
-    const hashKeys = this.hashKeys;
     const searchKeys = this.searchKeys;
 
     // Take search parameters
-    searchKeys.forEach(function(key) {
+    this.searchKeys.forEach(function(key) {
       this[key] = search[key];
     }, this);
 
     // Accept valid hash
-    hashKeys.forEach(function(key) {
-      this[key] = hash[key];
+    this.hashKeys.forEach(function(key) {
+      if (hash.hasOwnProperty(key)) {
+        this[key] = hash[key];
+      }
     }, this);
 
-    // Setup if invalid hash
-    if (!this.isHash) {
-      this.newExhibit();
-      this.s = 0;
-      this.g = 0;
+    if (this.isSharedLink) {
+      this.newTag(); 
+      this.s = this.stories.length - 1;
       this.pushState();
     }
-
-    // Do not persist tag in URL
-    if (hashKeys === hashable.tag) {
-      this.newTag();
-      this.s = 0;
-      // this.g = 0;
+    else if (this.isMissingHash) {
+      this.s = 0; 
       this.pushState();
-      $('.modal').modal('hide');
     }
 
     // Always update
@@ -1284,25 +1246,13 @@ HashState.prototype = {
     return  root + search + hash;
   },
 
-  makeHash: function(hashKeys, state) {
-    if (state  == undefined) {
-      state = this;
-    }
-    if (hashKeys == undefined) {
-      hashKeys = this.hashKeys;
-    }
-    const hash = serialize(hashKeys, state, '#');
+  makeHash: function(hashKeys) {
+    const hash = serialize(hashKeys, this, '#');
     return hash? '#' + hash : '';
   },
 
-  makeSearch: function(searchKeys, state) {
-    if (state  == undefined) {
-      state = this;
-    }
-    if (searchKeys == undefined) {
-      searchKeys = this.searchKeys;
-    }
-    const search = serialize(searchKeys, state, '&');
+  makeSearch: function(searchKeys) {
+    const search = serialize(searchKeys, this, '&');
     return search? '?' + search : '';
   },
 
