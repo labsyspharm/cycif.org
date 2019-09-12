@@ -1348,7 +1348,7 @@ HashState.prototype = {
       this.p = toPolygonURL([]);
     }
     else {
-      this.o = oFromWaypoint(waypoint);
+      this.o = [-100, -100, 200, 200];
     }
   },
   cancelDrawing: function() {
