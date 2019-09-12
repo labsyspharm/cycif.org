@@ -277,8 +277,8 @@ body {
 
 polygon {
     fill: rgba(70, 130, 180, 0.5);
-    stroke: gray;
-    stroke-width: 1px;
+    stroke: black;
+    stroke-width: 2px;
     vector-effect: non-scaling-stroke;
 }
 
