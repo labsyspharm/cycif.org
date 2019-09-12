@@ -990,15 +990,15 @@ HashState.prototype = {
    */
 
   get isSharedLink() {
-    const yes_d = this.hash.hasOwnProperty('d')
-    const no_s = !this.hash.hasOwnProperty('s')
-    return yes_d && no_s;
+    const yes_d = this.hash.hasOwnProperty('d');
+    const no_s = !this.hash.hasOwnProperty('s');
+    const link_s = this.hash.s == String(this.stories.length);
+    return yes_d && (no_s || link_s);
   },
 
   get isMissingHash() {
-    const no_d = !this.hash.hasOwnProperty('d')
-    const no_s = !this.hash.hasOwnProperty('s')
-    return no_d && no_s;
+    const no_s = !this.hash.hasOwnProperty('s');
+    return !this.isSharedLink && no_s;
   },
 
   get story() {
@@ -1159,6 +1159,7 @@ HashState.prototype = {
     }, this);
 
     if (this.isSharedLink) {
+      this.d = hash.d;
       this.newTag(); 
       this.s = this.stories.length - 1;
       this.pushState();
