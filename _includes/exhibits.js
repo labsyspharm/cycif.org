@@ -384,10 +384,10 @@ HashState.prototype = {
       title: 'Reset Zoom'
     });
     $('#lasso-switch').tooltip({
-      title: 'Lasso Selection'
+      title: 'Share Region'
     });
     $('#draw-switch').tooltip({
-      title: 'Share Link'
+      title: 'Share Box'
     });
     $('#duplicate-view').tooltip({
       title: 'Clone linked view'
@@ -460,17 +460,19 @@ HashState.prototype = {
 
     $('.lasso-switch').click(this, function(e) {
       const THIS = e.data;
-      if (THIS.lasso) {
-        THIS.lasso = false;
+      THIS.lasso = true;
+      if (THIS.drawing) {
+        THIS.cancelDrawing(THIS);
       }
       else {
-        THIS.lasso = true;
+        THIS.startDrawing(THIS);
       }
       THIS.pushState();
     });
 
     $('.draw-switch').click(this, function(e) {
       const THIS = e.data;
+      THIS.lasso = false;
       if (THIS.drawing) {
         THIS.cancelDrawing(THIS);
       }
@@ -1234,8 +1236,8 @@ HashState.prototype = {
 
     toggleCursor('crosshair', drawing);
 
-    greenOrWhite('.draw-switch *', drawing);
-    greenOrWhite('.lasso-switch *', lasso);
+    greenOrWhite('.draw-switch *', drawing && !lasso);
+    greenOrWhite('.lasso-switch *', drawing && lasso);
     //greenOrWhite('#edit-switch *', editing);
   },
 
