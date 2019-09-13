@@ -26,6 +26,9 @@
             <div class="row">
                 <div class="col px-0">
                     <div id="openseadragon1" class="openseadragon"></div>
+                    <div id="viewer-waypoint" class="position-absolute bg-trans" style="left:1.5%; top: 4rem;">
+                    hello
+                    </div>
                     <div id="legend" class="position-absolute text-white p-2 bg-trans" style="top: 4rem; right:1.5%">
                         <ul id="channel-legend" class="list-unstyled m-0"></ul>
                     </div>
@@ -40,6 +43,11 @@
                             <a class="btn text-light" id="zoom-in" href="#zoom-in">
                                 <i class="fas fa-search-plus"></i>
                             </a>
+                            <span id="arrow-switch" class="nav-item arrow-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-location-arrow"></i></span>
+                            </a>
+                            </span>
                             <span id="lasso-switch" class="nav-item lasso-switch">
                             <a class="btn" href="javascript:;">
                                 <span class=""><i class="fas fa-bullseye"></i></span>
@@ -192,6 +200,10 @@
         </ul>
 
         <div class="waypoint-content" id="description-overlay">
+        </div>
+
+        <div id="arrow-overlay" class="arrow-overlay">
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
         </div>
 
         <div class="tab-pane fade" id="proto-story" role="tabpanel">

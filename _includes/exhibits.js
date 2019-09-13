@@ -62,6 +62,14 @@ const mFromWaypoint = function(waypoint, masks) {
   return index_name(masks, mask_name);
 };
 
+const aFromWaypoint = function(waypoint, masks) {
+  const arrow = waypoint.Arrow;
+  if (arrow) {
+    return arrow
+  }
+  return [-100, -100];
+};
+
 const gFromWaypoint = function(waypoint, cgs) {
   const cg_name = waypoint.Group;
   return index_name(cgs, cg_name);
@@ -339,13 +347,14 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     buffer: {
       waypoint: undefined
     },
-    lasso: true,
+    drawType: "lasso",
     changed: false,
     design: {},
     w: [0],
     m: 0,
     g: 0,
     s: 0,
+    a: [-100, -100],
     v: [1, 0.5, 0.5],
     o: [-100, -100, 200, 200],
     p: [],
@@ -382,6 +391,9 @@ HashState.prototype = {
     });
     $('#zoom-home').tooltip({
       title: 'Reset Zoom'
+    });
+    $('#arrow-switch').tooltip({
+      title: 'Share Arrow'
     });
     $('#lasso-switch').tooltip({
       title: 'Share Region'
@@ -458,9 +470,21 @@ HashState.prototype = {
       THIS.pushState();
     });
 
+    $('.arrow-switch').click(this, function(e) {
+      const THIS = e.data;
+      THIS.drawType = "arrow";
+      if (THIS.drawing) {
+        THIS.cancelDrawing(THIS);
+      }
+      else {
+        THIS.startDrawing(THIS);
+      }
+      THIS.pushState();
+    });
+
     $('.lasso-switch').click(this, function(e) {
       const THIS = e.data;
-      THIS.lasso = true;
+      THIS.drawType = "lasso";
       if (THIS.drawing) {
         THIS.cancelDrawing(THIS);
       }
@@ -472,7 +496,7 @@ HashState.prototype = {
 
     $('.draw-switch').click(this, function(e) {
       const THIS = e.data;
-      THIS.lasso = false;
+      THIS.drawType = "box";
       if (THIS.drawing) {
         THIS.cancelDrawing(THIS);
       }
@@ -492,7 +516,7 @@ HashState.prototype = {
       $('#copy_link_modal').modal('show');
 
       const root = THIS.location('host') + THIS.location('pathname');
-      const hash = THIS.makeHash(['d', 'g', 'm', 'v', 'o', 'p']);
+      const hash = THIS.makeHash(['d', 'g', 'm', 'a', 'v', 'o', 'p']);
       const link = document.getElementById('copy_link');
       link.value = root + hash;
 
@@ -509,7 +533,7 @@ HashState.prototype = {
     var mouse_drag = new OpenSeadragon.MouseTracker({
         element: viewer.canvas,
         dragHandler: function(event) {
-            if (STATE.lasso && STATE.drawing) {
+            if (STATE.drawType == "lasso" && STATE.drawing) {
                 STATE.viewer.setMouseNavEnabled(false);
                 lasso_draw.bind(STATE)(event);
             }
@@ -519,7 +543,7 @@ HashState.prototype = {
     var mouse_up = new OpenSeadragon.MouseTracker({
         element: viewer.canvas,
         dragEndHandler: function(event) {
-            if (STATE.lasso && STATE.drawing) {
+            if (STATE.drawType == "lasso" && STATE.drawing) {
                 STATE.finishDrawing();
             }
             STATE.viewer.setMouseNavEnabled(true);
@@ -528,7 +552,7 @@ HashState.prototype = {
 
     this.viewer.addHandler('canvas-drag', function(e) {
       const THIS = e.userData;
-      if (THIS.lasso) {
+      if (THIS.drawType != "box") {
         return;
       }
 
@@ -548,7 +572,7 @@ HashState.prototype = {
 
     this.viewer.addHandler('canvas-drag-end', function(e) {
       const THIS = e.userData;
-      if (THIS.lasso) {
+      if (THIS.drawType != "box") {
         return;
       }
 
@@ -564,7 +588,17 @@ HashState.prototype = {
 
     this.viewer.addHandler('canvas-click', function(e) {
       const THIS = e.userData;
-      if (THIS.lasso) {
+      if (THIS.drawType == "lasso") {
+        return;
+      }
+      if (THIS.drawType == "arrow") {
+        const position = THIS.normalize(e.position);
+        if (THIS.drawing == 1) {
+          THIS.a = [position.x, position.y];
+          THIS.finishDrawing();
+          THIS.viewer.setMouseNavEnabled(true);
+          THIS.pushState();
+        }
         return;
       }
 
@@ -587,7 +621,7 @@ HashState.prototype = {
 
     $(this.viewer.element).mousemove(this, function(e) {
       const THIS = e.data;
-      if (THIS.lasso) {
+      if (THIS.drawType == "lasso") {
         return;
       }
 
@@ -642,6 +676,7 @@ HashState.prototype = {
           viewport.pan.x,
           viewport.pan.y
         ],
+        Arrow: this.a,
         Mask: mask.Name,
         Polygon: this.p,
         Group: group.Name,
@@ -691,10 +726,10 @@ HashState.prototype = {
   get hashKeys() {
     const oldTag = this.waypoint.hasOwnProperty('SharedLink');
     if (oldTag || this.isSharedLink) {
-      return ['d', 's', 'w', 'g', 'm', 'v', 'o', 'p'];
+      return ['d', 's', 'w', 'g', 'm', 'a', 'v', 'o', 'p'];
     }
     else {
-      return ['s', 'w', 'g', 'm', 'v', 'o', 'p'];
+      return ['s', 'w', 'g', 'm', 'a', 'v', 'o', 'p'];
     }
   },
 
@@ -751,11 +786,11 @@ HashState.prototype = {
     this.newView(true);
   },
 
-  get lasso() {
-    return this.state.lasso;
+  get drawType() {
+    return this.state.drawType;
   },
-  set lasso(_l) {
-    this.state.lasso = _l;
+  set drawType(_l) {
+    this.state.drawType = _l;
     this.newView(true);
   },
 
@@ -787,6 +822,13 @@ HashState.prototype = {
   set v(_v) {
     const viewer = this.viewer;
     this.state.v = _v.map(parseFloat);
+  },
+
+  get a() {
+    return this.state.a;
+  },
+  set a(_a) {
+    this.state.a = _a.map(parseFloat);
   },
 
   get m() {
@@ -836,6 +878,7 @@ HashState.prototype = {
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
     this.o = oFromWaypoint(waypoint);
+    this.a = aFromWaypoint(waypoint);
     this.p = pFromWaypoint(waypoint);
     this.d = dFromWaypoint(waypoint);
     this.n = nFromWaypoint(waypoint);
@@ -1094,6 +1137,7 @@ HashState.prototype = {
     const stories = deepCopy(exhibit.Stories);
     const group = this.group;
     const mask = this.mask;
+    const a = this.a;
     const o = this.o;
     const p = this.p;
     const v = this.v;
@@ -1103,6 +1147,7 @@ HashState.prototype = {
       Name: 'Tag',
       Waypoints: [remove_undefined({
         Zoom: v[0],
+        Arrow: a,
         Polygon: p,
         Pan: v.slice(1),
         Mask: mask.Name,
@@ -1176,35 +1221,10 @@ HashState.prototype = {
 
     // Temp overlay if drawing or editing
     this.addText();
+    this.addArrow(this.a);
     this.addOverlay(this.overlay);
     this.addPolygon("selection", this.state.p);
-    this.addPolygon("leftArrow", this.leftArrow());
-    this.addPolygon("rightArrow", this.rightArrow());
     
-    const leftArrow = document.getElementById("leftArrow");
-    this.viewer.svgOverlay().onClick(leftArrow, (function(){
-      if (this.w == 0) {
-        this.s = this.s - 1;
-      }
-      else {
-        this.w = this.w - 1;
-      }
-      this.newView(true);
-    }).bind(this));
-
-    const rightArrow = document.getElementById("rightArrow");
-    this.viewer.svgOverlay().onClick(rightArrow, (function(){
-      if (this.w == (this.waypoints.length - 1)) {
-        this.s = this.s + 1;
-      }
-      else {
-        this.w = this.w + 1;
-      }
-      this.newView(true);
-    }).bind(this));
-
-
-
    // Redraw design
     if(redraw) {
       // Update OpenSeadragon
@@ -1249,7 +1269,7 @@ HashState.prototype = {
     // Based on control keys
     const editing = this.editing;
     const drawing = this.drawing;
-    const lasso = this.lasso;
+    const drawType = this.drawType;
 
     // Based on search keys
     displayOrNot('#draw-switch a', !editing);
@@ -1264,8 +1284,9 @@ HashState.prototype = {
 
     toggleCursor('crosshair', drawing);
 
-    greenOrWhite('.draw-switch *', drawing && !lasso);
-    greenOrWhite('.lasso-switch *', drawing && lasso);
+    greenOrWhite('.draw-switch *', drawing && (drawType == "box"));
+    greenOrWhite('.lasso-switch *', drawing && (drawType == "lasso"));
+    greenOrWhite('.arrow-switch *', drawing && (drawType == "arrow"));
     //greenOrWhite('#edit-switch *', editing);
   },
 
@@ -1340,6 +1361,7 @@ HashState.prototype = {
     this.p = pFromWaypoint(bw);
     this.d = dFromWaypoint(bw);
     this.n = nFromWaypoint(bw);
+    this.a = aFromWaypoint(bw);
     this.m = mFromWaypoint(bw, this.masks);
     this.g = gFromWaypoint(bw, this.cgs);
     this.editing = 1;
@@ -1371,7 +1393,7 @@ HashState.prototype = {
 
     const waypoint = this.waypoint;
  
-    if (this.lasso) {
+    if (this.drawType == "lasso") {
       this.p = toPolygonURL([]);
     }
     else {
@@ -1445,52 +1467,6 @@ HashState.prototype = {
   /*
    * Display manaagement
    */
-  rightArrow: function() {
-    const origin = this.textPosition;
-    const points = [
-      [0.0, 0.0],
-      [0.03, 0.03],
-      [0.035, 0.025],
-      [0.02, 0.005],
-      [0.06, 0.005],
-      [0.06, -0.005],
-      [0.02, -0.005],
-      [0.035, -0.025],
-      [0.03, -0.03],
-      [0.0, 0.0]
-    ]
-    const zoom = this.viewer.viewport.getZoom();
-    return points.map(function(p){
-      return {
-        x: origin.x - p[0] / zoom,
-        y: origin.y - p[1] / zoom,
-      }
-    });
-  },
-
-  leftArrow: function() {
-    const origin = this.textPosition;
-    const points = [
-      [0.0, 0.0],
-      [0.03, 0.03],
-      [0.035, 0.025],
-      [0.02, 0.005],
-      [0.06, 0.005],
-      [0.06, -0.005],
-      [0.02, -0.005],
-      [0.035, -0.025],
-      [0.03, -0.03],
-      [0.0, 0.0]
-    ]
-    const zoom = this.viewer.viewport.getZoom();
-    return points.map(function(p){
-      return {
-        x: origin.x + (p[0] - 0.1) / zoom,
-        y: origin.y - (p[1] - 0.04) / zoom,
-      }
-    });
-  },
-
   addPolygon: function(id, polygon) {
     svg_overlay = this.svg_overlay;
 
@@ -1503,10 +1479,29 @@ HashState.prototype = {
         });
   },
 
+  addArrow: function(arrow) {
+
+    const el = "arrow-overlay";
+    const current = this.viewer.getOverlayById(el);
+    const xy = new OpenSeadragon.Point(arrow[0], arrow[1]);
+    if (current) {
+      current.update({
+        location: xy,
+      });
+    }
+    else {
+      this.viewer.addOverlay({
+        x: arrow[0],
+        y: arrow[1],
+        element: el
+      });
+    }
+  },
+
   addOverlay: function(overlay) {
 
     const el = this.currentOverlay;
-    greenOrWhite('#' + el, this.drawing && !this.lasso);
+    greenOrWhite('#' + el, this.drawing && this.drawType == "box");
     const current = this.viewer.getOverlayById(el);
     const xy = new OpenSeadragon.Point(overlay.x, overlay.y);
     if (current) {
