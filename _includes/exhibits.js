@@ -1175,10 +1175,37 @@ HashState.prototype = {
   newView: function(redraw) {
 
     // Temp overlay if drawing or editing
+    this.addText();
     this.addOverlay(this.overlay);
-    this.addPolygon(this.state.p);
+    this.addPolygon("selection", this.state.p);
+    this.addPolygon("leftArrow", this.leftArrow());
+    this.addPolygon("rightArrow", this.rightArrow());
+    
+    const leftArrow = document.getElementById("leftArrow");
+    this.viewer.svgOverlay().onClick(leftArrow, (function(){
+      if (this.w == 0) {
+        this.s = this.s - 1;
+      }
+      else {
+        this.w = this.w - 1;
+      }
+      this.newView(true);
+    }).bind(this));
 
-    // Redraw design
+    const rightArrow = document.getElementById("rightArrow");
+    this.viewer.svgOverlay().onClick(rightArrow, (function(){
+      if (this.w == (this.waypoints.length - 1)) {
+        this.s = this.s + 1;
+      }
+      else {
+        this.w = this.w + 1;
+      }
+      this.newView(true);
+    }).bind(this));
+
+
+
+   // Redraw design
     if(redraw) {
       // Update OpenSeadragon
       this.activateViewport();
@@ -1383,6 +1410,29 @@ HashState.prototype = {
     return 'current-overlay-' + this.resetCount;
   },
 
+  get textPosition() {
+    const polygon = fromPolygonURL(this.p);
+    const p_corner = polygon.reduce(function(corner, point){
+      return {
+        x: Math.min(corner.x, point.x), 
+        y: Math.max(corner.y, point.y) 
+      }
+    }, {x:1, y:0})
+    if (polygon.length != 0) {
+      return p_corner;
+    }
+    if (this.o[0] > 0) {
+      return {
+        x: this.o[0],
+        y: this.o[1] + this.o[3],
+      }
+    }
+    return {
+      x: vFromWaypoint(this.waypoint)[1],
+      y: vFromWaypoint(this.waypoint)[2],
+    }
+  },
+
   newOverlay: function() {
     const oldOverlay = this.currentOverlay;
     this.resetCount += 1;
@@ -1395,16 +1445,62 @@ HashState.prototype = {
   /*
    * Display manaagement
    */
+  rightArrow: function() {
+    const origin = this.textPosition;
+    const points = [
+      [0.0, 0.0],
+      [0.03, 0.03],
+      [0.035, 0.025],
+      [0.02, 0.005],
+      [0.06, 0.005],
+      [0.06, -0.005],
+      [0.02, -0.005],
+      [0.035, -0.025],
+      [0.03, -0.03],
+      [0.0, 0.0]
+    ]
+    const zoom = this.viewer.viewport.getZoom();
+    return points.map(function(p){
+      return {
+        x: origin.x - p[0] / zoom,
+        y: origin.y - p[1] / zoom,
+      }
+    });
+  },
 
-  addPolygon: function(polygon) {
+  leftArrow: function() {
+    const origin = this.textPosition;
+    const points = [
+      [0.0, 0.0],
+      [0.03, 0.03],
+      [0.035, 0.025],
+      [0.02, 0.005],
+      [0.06, 0.005],
+      [0.06, -0.005],
+      [0.02, -0.005],
+      [0.035, -0.025],
+      [0.03, -0.03],
+      [0.0, 0.0]
+    ]
+    const zoom = this.viewer.viewport.getZoom();
+    return points.map(function(p){
+      return {
+        x: origin.x + (p[0] - 0.1) / zoom,
+        y: origin.y - (p[1] - 0.04) / zoom,
+      }
+    });
+  },
+
+  addPolygon: function(id, polygon) {
     svg_overlay = this.svg_overlay;
 
-    d3.select('#selectionPolygon').remove();
-    var selPoly = svg_overlay.selectAll("selectionPolygon").data([polygon]);
+    d3.select('#' + id).remove();
+    var selPoly = svg_overlay.selectAll(id).data([polygon]);
     selPoly.enter().append("polygon")
-        .attr('id', 'selectionPolygon')
+        .attr('id', id)
         .attr("points",function(d) {
-            return d.map(function(d) { return [d.x,d.y].join(","); }).join(" ");})
+            return d.map(function(d) { return [d.x,d.y].join(","); }).join(" ");
+        });
   },
 
   addOverlay: function(overlay) {
@@ -1430,6 +1526,26 @@ HashState.prototype = {
       });
     }
   },
+
+  addText: function() {
+
+    const current = this.viewer.getOverlayById("description-overlay");
+    const xy = new OpenSeadragon.Point(this.textPosition.x, this.textPosition.y);
+    if (current) {
+      current.update({
+        location: xy
+      });
+    }
+    else {
+      this.viewer.addOverlay({
+        x: this.textPosition.x,
+        y: this.textPosition.y,
+        element: "description-overlay"
+      });
+    }
+  },
+
+
 
   addMasks: function(group, g) {
     const THIS = this
@@ -1664,14 +1780,12 @@ HashState.prototype = {
     if (wid == this.w) {
       wid_index.className += ' active';
       wid_waypoint.className += ' active show';
+      this.fillWaypointView(waypoint, document.getElementById('description-overlay'));
     }
     displayOrNot(wid_icon, this.edit);
 
     // Interactive
-    if (editing == 0) {
-      this.fillWaypointView(waypoint, wid_waypoint);
-    }
-    else if (editing == 1) {
+    if (editing == 1) {
       this.fillWaypointEdit(wid_waypoint);
     }
 

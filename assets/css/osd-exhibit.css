@@ -161,7 +161,7 @@ body {
       /* height: 100%; */
   }
   
-  #story-content code {
+  .waypoint-content code {
       color: inherit;
       /* font-family: sans-serif; */
   }
@@ -219,6 +219,10 @@ body {
   .waypoint-content h6 {
       font-size: 1rem;
       margin: 0 0 1rem 0;
+  }
+  .waypoint-content {
+      background: rgba(0, 0, 0, 0.8);
+      max-width: 50%;
   }
   
   /* .waypoint-content .edit_text {
