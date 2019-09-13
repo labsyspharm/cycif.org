@@ -412,6 +412,30 @@ HashState.prototype = {
       $('#file-upload').click();
     });
 
+    $('#leftArrow').click(this, function(e) {
+      const THIS = e.data;
+      if (THIS.w == 0) {
+        THIS.s = THIS.s - 1;
+				THIS.w = THIS.waypoints.length - 1;
+      }
+      else {
+        THIS.w = THIS.w - 1;
+      }
+      THIS.newView(true);
+    });
+
+    $('#rightArrow').click(this, function(e) {
+      const THIS = e.data;
+      if (THIS.w == (THIS.waypoints.length - 1)) {
+        THIS.s = THIS.s + 1;
+				THIS.w = 0;
+      }
+      else {
+        THIS.w = THIS.w + 1;
+      }
+      THIS.newView(true);
+    });
+
     $('#file-upload').change(this, function(e) {
       const THIS = e.data;
 
