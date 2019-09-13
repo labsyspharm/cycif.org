@@ -1396,6 +1396,9 @@ HashState.prototype = {
     if (this.drawType == "lasso") {
       this.p = toPolygonURL([]);
     }
+    else if (this.drawType == "arrow") {
+      this.a = [-100, -100];
+    }
     else {
       this.o = [-100, -100, 200, 200];
     }
