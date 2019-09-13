@@ -1,12 +1,12 @@
 Exhibit:
-  Name: 'LUNG-3-PR: Primary lung squamous cell carcinoma'
+  Name: LUNG_3
   Images:
     - Name: i0
-      Description: 'LUNG-3-PR - Du and Lin et al, 2019 (accepted)'
+      Description: 'Lung 3 - Du and Lin et al, 2019 (submitted)'
       Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3
       Width: 14448
       Height: 11101
-      MaxLevel: 5
+      MaxLevel: 4
   Layout:
     Grid:
       - [i0]
@@ -14,9 +14,9 @@ Exhibit:
     - Path: 0___DAPI 1---22___CD45---33___IBA1---14___KERATIN---34___ASMA
       Name: Structural Components
       Colors:
-        - FFFFFF
-        - 00FFFF
         - 00FF00
+        - 00FFFF
+        - FFFFFF
         - FF0000 
         - 0000FF
       Channels:
@@ -105,31 +105,20 @@ Exhibit:
         - CD11B
         - CD14
         - DNA
+  Masks:
+    - Name: Cluster_1 Stroma
+      Path: datalayer/clustering/merged_s40/level_0/cluster_id_1
+    - Name: Cluster_2 Others
+      Path: datalayer/clustering/merged_s40/level_0/cluster_id_2
+    - Name: Cluster_3 Immune
+      Path: datalayer/clustering/merged_s40/level_0/cluster_id_3
+    - Name: Cluster_4 Tumor
+      Path: datalayer/clustering/merged_s40/level_0/cluster_id_4
+    - Name: Cluster All
+      Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
+    - Name: Segmentation Mask
+      Path: datalayer/segmentation
 
-    # - Path: Hsp70-HSF1-Hsp90
-    #   Name: Chaperones
-    #   Colors:
-    #     - 00FF00 
-    #     - FFFFFF
-    #     - FF0000
-    #     - 0000FF
-    #   Channels:
-    #     - Hsp70
-    #     - HSF1
-    #     - Hsp90
-    #     - DNA
-    # - Path: pan-cytokeratin-alphaSMA-CD45-CDX2
-    #   Name: Cell Type
-    #   Colors:
-    #     - 00FF00 
-    #     - FFFFFF
-    #     - FF0000
-    #     - 0000FF
-    #   Channels:
-    #     - α-SMA
-    #     - CD45
-    #     - CDX2
-    #     - Keratin
   Stories:
   - Name: Overview
     Description: 
@@ -144,7 +133,7 @@ Exhibit:
         Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
         #### Figure from:
 
-        Du and Lin et al, 2019 (accepted) 
+        Du and Lin et al, 2019 (submitted) 
 
       Overlay:
         x: -100
@@ -158,48 +147,48 @@ Exhibit:
       Group: Structural Components
       Description: |
         The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
-      Zoom: 0.605
+      Zoom: 2.3661
       Pan:
-        - 0.618
-        - 0.459
+        - 1.0778
+        - 0.6868
       Overlay:
-        x: 0.768
-        y: 0.450
-        width: 0.529
-        height: 0.545
+        x: 0.8681
+        y: 0.5487
+        width: 0.4206
+        height: 0.2981
 
     - Name: Adjacent Non-Tumor Region
       Group: Structural Components
       Description: An adjacent non-tumor region consists on fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
-      Zoom: 0.605
+      Zoom: 1.5838
       Pan:
-        - 0.618
-        - 0.459
+        - 0.3157
+        - 0.232
       Overlay:
-        x: 0.017
-        y: 0.025
-        width: 0.587
-        height: 0.541
+        x: 0.0014
+        y: 0.0254
+        width: 0.6366
+        height: 0.4418
 
-    # - Name: PD-L1 Expression
-    #   Group: PD-L1 Expression
-    #   Description: |
-    #     Programmed Death Ligand 1 (`PD-L1`) also known as cluster of differentiation 274 (CD274), a target of immunotherapeutics, is expressed in tumor cells (`cytokeratin`) as well as in some macrophages (`IBA1`).
-    #   Zoom: 2.6296
-    #   Pan:
-    #     - 0.9075
-    #     - 0.4243
-    #   Overlay:
-    #     x: 0.7184
-    #     y: 0.3131
-    #     width: 0.3788
-    #     height: 0.2423
+    - Name: PD-L1 Expression
+      Group: PD-L1 Expression
+      Description: |
+        Programmed Death Ligand 1 (`PD-L1`) also known as cluster of differentiation 274 (CD274), a target of immunotherapeutics, is expressed in tumor cells (`cytokeratin`) as well as in some macrophages (`IBA1`).
+      Zoom: 2.6296
+      Pan:
+        - 0.9075
+        - 0.4243
+      Overlay:
+        x: 0.7184
+        y: 0.3131
+        width: 0.3788
+        height: 0.2423
 
 
     - Name: PD-L1 Expressing Tumor Cells
       Group: PD-L1 Expression
       Description: Tumor cells (`cytokeratin`) expressing `PD-L1`.
-      Zoom: 2.17
+      Zoom: 11.3066
       Pan:
         - 0.6354
         - 0.4902
@@ -212,7 +201,7 @@ Exhibit:
     - Name: PD-L1 Expressing Macrophages
       Group: PD-L1 Expression
       Description: Macrophages (`IBA1`) expressing `PD-L1`.
-      Zoom: 2.17
+      Zoom: 11.3066
       Pan:
         - 1.0044
         - 0.3374
@@ -225,7 +214,7 @@ Exhibit:
     - Name: B-Cells and T-Cells
       Group: Lymphocytes
       Description: T cells (`CD3`) are often found infiltrating the tumor region whereas B cells (`CD20`) are less common as shown in this sample.
-      Zoom: 2.17
+      Zoom: 10.5411
       Pan:
         - 1.0605
         - 0.3216
@@ -239,7 +228,7 @@ Exhibit:
       Group: Inhibitory T-Cells
       Description: |
         Some subpopulations of T cells (`CD3`) express inhibitory molecules (`PD-1` and `FOXP3`). In this sample, these inhibitory T cells are enriched in the tumor region.
-      Zoom: 2.17
+      Zoom: 11.3065
       Pan:
         - 1.0436
         - 0.227
@@ -254,7 +243,7 @@ Exhibit:
       Group: Rare Immune Population 1
       Description: |
         A rare, or low frequency, population of T cells that expresses both `CD8A` and `FOXP3` can be seen in this sample in addition to traditional recognized T-regulatory cells that express both `CD4` and `FOXP3`. Both types of `FOXP3` expressing cells are enriched in the tumor region.
-      Zoom: 4.499
+      Zoom: 11.3066
       Pan:
         - 0.802
         - 0.6768
@@ -268,7 +257,7 @@ Exhibit:
       Group: Rare Immune Population 2
       Description: |
         Another rare, or low frequency, population present in the tumor region includes T cells that express `CD8A`, `PD-1`, and `LAG3`.
-      Zoom: 4.499
+      Zoom: 11.3066
       Pan:
         - 0.9134
         - 0.5064
@@ -281,7 +270,7 @@ Exhibit:
     - Name: Macrophages
       Group: Macrophages
       Description: Subtypes of macrophages.
-      Zoom: 3.0
+      Zoom: 7.3201
       Pan:
         - 0.6712
         - 0.5667
@@ -294,7 +283,7 @@ Exhibit:
     - Name: Macrophages (cont.)
       Group: Macrophages (cont.)
       Description: Subtypes of macrophages.
-      Zoom: 3.0
+      Zoom: 7.8518
       Pan:
         - 0.4939
         - 0.508
