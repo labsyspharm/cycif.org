@@ -1220,7 +1220,6 @@ HashState.prototype = {
   newView: function(redraw) {
 
     // Temp overlay if drawing or editing
-    this.addText();
     this.addArrow(this.a);
     this.addOverlay(this.overlay);
     this.addPolygon("selection", this.state.p);
@@ -1435,29 +1434,6 @@ HashState.prototype = {
     return 'current-overlay-' + this.resetCount;
   },
 
-  get textPosition() {
-    const polygon = fromPolygonURL(this.p);
-    const p_corner = polygon.reduce(function(corner, point){
-      return {
-        x: Math.min(corner.x, point.x), 
-        y: Math.max(corner.y, point.y) 
-      }
-    }, {x:1, y:0})
-    if (polygon.length != 0) {
-      return p_corner;
-    }
-    if (this.o[0] > 0) {
-      return {
-        x: this.o[0],
-        y: this.o[1] + this.o[3],
-      }
-    }
-    return {
-      x: vFromWaypoint(this.waypoint)[1],
-      y: vFromWaypoint(this.waypoint)[2],
-    }
-  },
-
   newOverlay: function() {
     const oldOverlay = this.currentOverlay;
     this.resetCount += 1;
@@ -1524,26 +1500,6 @@ HashState.prototype = {
       });
     }
   },
-
-  addText: function() {
-
-    const current = this.viewer.getOverlayById("description-overlay");
-    const xy = new OpenSeadragon.Point(this.textPosition.x, this.textPosition.y);
-    if (current) {
-      current.update({
-        location: xy
-      });
-    }
-    else {
-      this.viewer.addOverlay({
-        x: this.textPosition.x,
-        y: this.textPosition.y,
-        element: "description-overlay"
-      });
-    }
-  },
-
-
 
   addMasks: function(group, g) {
     const THIS = this
@@ -1778,7 +1734,7 @@ HashState.prototype = {
     if (wid == this.w) {
       wid_index.className += ' active';
       wid_waypoint.className += ' active show';
-      this.fillWaypointView(waypoint, document.getElementById('description-overlay'));
+      this.fillWaypointView(waypoint, document.getElementById('viewer-waypoint'));
     }
     displayOrNot(wid_icon, this.edit);
 
