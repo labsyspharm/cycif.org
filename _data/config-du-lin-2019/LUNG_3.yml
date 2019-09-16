@@ -128,6 +128,9 @@ Exhibit:
         - 0.4357
         - 0.4513
       Group: Structural Components
+      Groups:
+        - Structural Components
+        - PD-L1 Expression
       Name: The Waypoint
       Description: |
         Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
@@ -145,6 +148,10 @@ Exhibit:
     Waypoints:
     - Name: Tumor Region
       Group: Structural Components
+      Mask:
+      Masks:
+        - Cluster_1 Stroma
+        - Cluster_3 Immune
       Description: |
         The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
       Zoom: 2.3661

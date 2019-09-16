@@ -29,7 +29,7 @@ body {
   }
   
   .bg-trans {
-      background: hsla(0, 0%, 0%, 0.5);
+      background: hsla(0, 0%, 0%, 0.8);
   }
 
   .bg-black {
@@ -228,10 +228,6 @@ body {
   .waypoint-content h6 {
       font-size: 1rem;
       margin: 0 0 1rem 0;
-  }
-  .waypoint-content {
-      background: rgba(0, 0, 0, 0.8);
-      max-width: 50%;
   }
   
   /* .waypoint-content .edit_text {

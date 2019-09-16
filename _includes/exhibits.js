@@ -361,9 +361,9 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     name: '',
     description: '',
     mouseEvent: {},
+    mode: 'exhibit',
     drawing: 0,
-    editing: 0,
-    edit: 0,
+    editing: 0
   };
 
   this.newExhibit();
@@ -414,26 +414,38 @@ HashState.prototype = {
 
     $('#leftArrow').click(this, function(e) {
       const THIS = e.data;
-      if (THIS.w == 0) {
+      if (THIS.w == 0 && THIS.s == 0 && !THIS.outline) {
+        THIS.mode = 'outline';
+      }
+      else if (THIS.w == 0) {
+        THIS.mode = 'exhibit';
         THIS.s = THIS.s - 1;
-				THIS.w = THIS.waypoints.length - 1;
+        THIS.w = THIS.waypoints.length - 1;
       }
       else {
+        THIS.mode = 'exhibit';
         THIS.w = THIS.w - 1;
       }
-      THIS.newView(true);
+      THIS.pushState();
     });
 
     $('#rightArrow').click(this, function(e) {
       const THIS = e.data;
-      if (THIS.w == (THIS.waypoints.length - 1)) {
+      const last_s = THIS.s == (THIS.stories.length - 1);
+      const last_w = THIS.w == (THIS.waypoints.length - 1);
+      if (last_w && last_s && !THIS.outline) {
+        THIS.mode = 'outline';
+      }
+      else if (last_w) {
+        THIS.mode = 'exhibit';
         THIS.s = THIS.s + 1;
 				THIS.w = 0;
       }
       else {
+        THIS.mode = 'exhibit';
         THIS.w = THIS.w + 1;
       }
-      THIS.newView(true);
+      THIS.pushState();
     });
 
     $('#file-upload').change(this, function(e) {
@@ -743,8 +755,7 @@ HashState.prototype = {
   },
 
   get searchKeys() {
-    const search_keys = Object.keys(this.search);
-    return ['edit'].filter(x => search_keys.includes(x));
+    return ['mode'];
   },
 
   get hashKeys() {
@@ -760,15 +771,19 @@ HashState.prototype = {
   /*
    * Search Keys
    */
+  get mode() {
+    return this.state.mode;
+  },
+  set mode(_mode) {
+    this.state.mode = _mode;
+  },
 
   get edit() {
-    return this.state.edit;
+    return this.state.mode == "edit";
   },
-  set edit(_e) {
-    const e = parseInt(_e, 10);
-    this.state.edit = modulo(e, 2);
+  get outline() {
+    return this.state.mode == "outline";
   },
-
 
   /*
    * Control keys
@@ -1255,6 +1270,7 @@ HashState.prototype = {
       newMarkers(this.tileSources, this.group, this.mask);
       // Redraw HTML Menus
       this.addChannelLegends();
+
       this.addMasks();
       this.addGroups();
       this.newStories();
@@ -1525,31 +1541,68 @@ HashState.prototype = {
     }
   },
 
-  addMasks: function(group, g) {
-    const THIS = this
-    $('#mask-layers').children('a').each(function(m, el) {
-      if (THIS.m === m) {
-        $(el).addClass('active');
-      }
-      else {
-        $(el).removeClass('active');
-      }
-      // Update mask layer
-      $(el).unbind('click').click(function(e) {
-        if (m === THIS.m){
-          THIS.m = -1;
-        }
-        else {
-          THIS.m = m;
-        }
-        THIS.pushState();
-      });
+  addMasks: function() {
+    $('#mask-layers').empty();
+		const mask_names = this.waypoint.Masks || [];
+		const masks = this.masks.filter(mask => {
+			return mask_names.includes(mask.Name);
+		});
+		if (masks.length) {
+      $('#mask-label').show()
+		}
+    else {
+      $('#mask-label').hide()
+    }
+		masks.forEach(function(mask) {
+			const m = index_name(this.masks, mask.Name);
+			this.addMask(mask, m);
+		}, this);
+  },
+
+  addMask: function(mask, m) {
+    var aEl = document.createElement('a');
+    aEl = Object.assign(aEl, {
+      className: this.m === m ? 'nav-link active' : 'nav-link',
+      href: 'javascript:;',
+      innerText: mask.Name,
+      title: mask.Path,
+      id: mask.Path,
     });
+    var ariaSelected = this.m === m ? true : false;
+    aEl.setAttribute('aria-selected', ariaSelected);
+
+    // Append everything
+    document.getElementById('mask-layers').appendChild(aEl);
+    
+    // Update Channel Group
+    $(aEl).click(this, function(e) {
+      THIS = e.data;
+			if (m === THIS.m){
+				THIS.m = -1;
+			}
+			else {
+				THIS.m = m;
+			}
+			THIS.pushState();
+		});
   },
 
   addGroups: function() {
     $('#channel-groups').empty();
-    this.cgs.forEach(this.addGroup, this);
+		const cgs_names = this.waypoint.Groups || [];
+		const cgs = this.cgs.filter(group => {
+			return cgs_names.includes(group.Name);
+		});
+		if (cgs.length) {
+      $('#channel-label').show()
+		}
+    else {
+      $('#channel-label').hide()
+    }
+		cgs.forEach(function(group) {
+			const g = index_name(this.cgs, group.Name);
+			this.addGroup(group, g);
+		}, this);
   },
   addGroup: function(group, g) {
     var aEl = document.createElement('a');
