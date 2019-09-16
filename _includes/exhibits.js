@@ -1247,7 +1247,7 @@ HashState.prototype = {
     this.addArrow(this.a);
     this.addOverlay(this.overlay);
     this.addPolygon("selection", this.state.p);
-    
+
    // Redraw design
     if(redraw) {
       // Update OpenSeadragon
@@ -1759,6 +1759,7 @@ HashState.prototype = {
       wid_index.className += ' active';
       wid_waypoint.className += ' active show';
       this.fillWaypointView(waypoint, document.getElementById('viewer-waypoint'));
+			document.getElementById("audioPlayer").src = waypoint.Audio || "";
     }
     displayOrNot(wid_icon, this.edit);
 
