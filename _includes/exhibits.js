@@ -1119,7 +1119,7 @@ HashState.prototype = {
   },
 
   get waypoint() {
-    if (this.editing) {
+    if (this.editing || this.outline) {
       return this.bufferWaypoint;
     }
     return this.waypoints[this.w];
@@ -1274,6 +1274,7 @@ HashState.prototype = {
       this.addMasks();
       this.addGroups();
       this.newStories();
+      this.fillWaypointView();
 
       // back and forward
       $('.step-back').click(this, function(e) {
@@ -1811,8 +1812,6 @@ HashState.prototype = {
     if (wid == this.w) {
       wid_index.className += ' active';
       wid_waypoint.className += ' active show';
-      this.fillWaypointView(waypoint, document.getElementById('viewer-waypoint'));
-			document.getElementById("audioPlayer").src = waypoint.Audio || "";
     }
     displayOrNot(wid_icon, this.edit);
 
@@ -1847,9 +1846,15 @@ HashState.prototype = {
     container.waypoint_elems.appendChild(wid_waypoint);
   },
 
-  fillWaypointView: function(waypoint, wid_waypoint) {
+  fillWaypointView: function() {
+		const waypoint = this.waypoint;
+		const wid_waypoint = document.getElementById('viewer-waypoint');
+		document.getElementById("audioPlayer").src = waypoint.Audio || "";
+
+
     const md = waypoint.Description;
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
+
 
     // Color code elements
     const channelOrders = this.channelOrders(this.channels);
