@@ -439,7 +439,7 @@ HashState.prototype = {
       else if (last_w) {
         THIS.mode = 'exhibit';
         THIS.s = THIS.s + 1;
-				THIS.w = 0;
+        THIS.w = 0;
       }
       else {
         THIS.mode = 'exhibit';
@@ -775,12 +775,12 @@ HashState.prototype = {
     return this.state.mode;
   },
   set mode(_mode) {
-		if (_mode) {
-			this.state.mode = _mode;
-		}
-		else {
-			this.state.mode = 'exhibit'
-		}
+    if (_mode) {
+      this.state.mode = _mode;
+    }
+    else {
+      this.state.mode = 'exhibit'
+    }
   },
 
   get edit() {
@@ -1326,8 +1326,8 @@ HashState.prototype = {
 
   makeUrl: function(hashKeys, searchKeys) {
     const root = this.location('pathname');
-		const hash = this.makeHash(hashKeys);
-		const search = this.makeSearch(searchKeys);
+    const hash = this.makeHash(hashKeys);
+    const search = this.makeSearch(searchKeys);
     return  root + search + hash;
   },
 
@@ -1538,20 +1538,20 @@ HashState.prototype = {
 
   addMasks: function() {
     $('#mask-layers').empty();
-		const mask_names = this.waypoint.Masks || [];
-		const masks = this.masks.filter(mask => {
-			return mask_names.includes(mask.Name);
-		});
-		if (masks.length) {
+    const mask_names = this.waypoint.Masks || [];
+    const masks = this.masks.filter(mask => {
+      return mask_names.includes(mask.Name);
+    });
+    if (masks.length) {
       $('#mask-label').show()
-		}
+    }
     else {
       $('#mask-label').hide()
     }
-		masks.forEach(function(mask) {
-			const m = index_name(this.masks, mask.Name);
-			this.addMask(mask, m);
-		}, this);
+    masks.forEach(function(mask) {
+      const m = index_name(this.masks, mask.Name);
+      this.addMask(mask, m);
+    }, this);
   },
 
   addMask: function(mask, m) {
@@ -1572,32 +1572,32 @@ HashState.prototype = {
     // Update Channel Group
     $(aEl).click(this, function(e) {
       THIS = e.data;
-			if (m === THIS.m){
-				THIS.m = -1;
-			}
-			else {
-				THIS.m = m;
-			}
-			THIS.pushState();
-		});
+      if (m === THIS.m){
+        THIS.m = -1;
+      }
+      else {
+        THIS.m = m;
+      }
+      THIS.pushState();
+    });
   },
 
   addGroups: function() {
     $('#channel-groups').empty();
-		const cgs_names = this.waypoint.Groups || [];
-		const cgs = this.cgs.filter(group => {
-			return cgs_names.includes(group.Name);
-		});
-		if (cgs.length) {
+    const cgs_names = this.waypoint.Groups || [];
+    const cgs = this.cgs.filter(group => {
+      return cgs_names.includes(group.Name);
+    });
+    if (cgs.length) {
       $('#channel-label').show()
-		}
+    }
     else {
       $('#channel-label').hide()
     }
-		cgs.forEach(function(group) {
-			const g = index_name(this.cgs, group.Name);
-			this.addGroup(group, g);
-		}, this);
+    cgs.forEach(function(group) {
+      const g = index_name(this.cgs, group.Name);
+      this.addGroup(group, g);
+    }, this);
   },
   addGroup: function(group, g) {
     var aEl = document.createElement('a');
@@ -1690,9 +1690,9 @@ HashState.prototype = {
     // Remove existing stories
     clearChildren(items);
 
-		if (!this.outline) {
-			return;
-		}
+    if (!this.outline) {
+      return;
+    }
 
     // Add configured stories
     this.stories.forEach(function(story, sid) {
@@ -1730,7 +1730,7 @@ HashState.prototype = {
     // Update Waypoint
     $(wid_link).click(this, function(e) {
       const THIS = e.data;
-			THIS.mode = 'exhibit';
+      THIS.mode = 'exhibit';
       THIS.s = sid;
       THIS.w = wid;
       THIS.pushState();
@@ -1741,9 +1741,9 @@ HashState.prototype = {
   },
 
   fillWaypointView: function() {
-		const waypoint = this.waypoint;
-		const wid_waypoint = document.getElementById('viewer-waypoint');
-		document.getElementById("audioPlayer").src = waypoint.Audio || "";
+    const waypoint = this.waypoint;
+    const wid_waypoint = document.getElementById('viewer-waypoint');
+    document.getElementById("audioPlayer").src = waypoint.Audio || "";
 
 
     const md = waypoint.Description;
