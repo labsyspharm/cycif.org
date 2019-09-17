@@ -412,6 +412,11 @@ HashState.prototype = {
       $('#file-upload').click();
     });
 
+    $('#toggle-sidebar').click(function(e) {
+      e.preventDefault();
+      $("#sidebar-menu").toggleClass("toggled");
+    });
+
     $('#leftArrow').click(this, function(e) {
       const THIS = e.data;
       if (THIS.w == 0) {

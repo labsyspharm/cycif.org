@@ -1,9 +1,38 @@
-body {
+  body {
     background: black;
   }
+
+  #sidebar-menu {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-left: 0px;
+    width: 400px;
+    left: 3px;
+    top: 4rem;
+  }
+  #sidebar-menu.toggled {
+    margin-left: -366px;
+  }
+
+  #sidebar-menu .open-sidebar {
+    display: none;
+    font-size: 50px;
+  }
+  #sidebar-menu .close-sidebar {
+    display: inline;
+    font-size: 50px;
+  }
+  #sidebar-menu.toggled .open-sidebar {
+    display: inline;
+  }
+  #sidebar-menu.toggled .close-sidebar {
+    display: none;
+  }
   
- /* position: absolute; top: 0; bottom: 0; width: 100%; */
-#openseadragon1 {
+  /* position: absolute; top: 0; bottom: 0; width: 100%; */
+  #openseadragon1 {
     /* position: absolute;
     top: 0;
     left: 0;

@@ -29,30 +29,42 @@
                     <div id="legend" class="position-absolute text-white p-2 bg-trans" style="top: 4rem; right:1.5%">
                         <ul id="channel-legend" class="list-unstyled m-0"></ul>
                     </div>
-                    <div class="container position-absolute bg-trans" style="width: 400px; left:1.5%; top: 4rem;">
-                          <div class=row>
-                              <div class="col-2" id="leftArrow">
-                                  <i class="fas fa-arrow-left" style="font-size: 50px"></i>
-                              </div>
-                              <div class="col-8">
-                              <audio class="w-100" id="audioPlayer" src="" controls preload></audio>
-                              </div>
-                              <div class="col-2" id="rightArrow">
-                                  <i class="fas fa-arrow-right" style="font-size: 50px;"></i>
-                              </div>
-                          </div>
-                          <div class="waypoint-content" id="viewer-waypoint">
-                          </div>
-                          <div>
-                              <p id="channel-label" class="mb-1 font-weight-bold pt-2">Select a marker group:</p>
-                              <div id="channel-groups" class="nav flex nav-pills"></div>
-                              <p id="mask-label" class="mb-1 font-weight-bold pt-2">Add data layer:</p>
-                              <div id="mask-layers" class="nav flex nav-pills">
-                              </div>
-                          </div>
-                          <div>
-                              <div id="story-container"></div>
-                          </div>
+                    <div id="sidebar-menu" class="container position-absolute">
+                        <div class="row">
+                            <div class="col-11 bg-trans">
+                                <div class=row>
+                                    <div class="col-3 text-center" id="leftArrow">
+                                        <i class="fas fa-arrow-left" style="font-size: 50px"></i>
+                                    </div>
+                                    <div class="col-6">
+                                    <audio class="w-100" id="audioPlayer" src="" controls preload></audio>
+                                    </div>
+                                    <div class="col-3 text-center" id="rightArrow">
+                                        <i class="fas fa-arrow-right" style="font-size: 50px;"></i>
+                                    </div>
+                                </div>
+                                <div class="waypoint-content" id="viewer-waypoint">
+                                </div>
+                                <div>
+                                    <p id="channel-label" class="mb-1 font-weight-bold pt-2">Select a marker group:</p>
+                                    <div id="channel-groups" class="nav flex nav-pills"></div>
+                                    <p id="mask-label" class="mb-1 font-weight-bold pt-2">Add data layer:</p>
+                                    <div id="mask-layers" class="nav flex nav-pills">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="story-container"></div>
+                                </div>
+                            </div>
+                            <div class="col-1 p-0">
+                                <div class="bg-trans"> 
+                                    <a id="toggle-sidebar" href="javascript;;" style="font-size: 50px;">
+                                        <i class="close-sidebar fas fa-chevron-left"></i>
+                                        <i class="open-sidebar fas fa-chevron-right"></i>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
                     </div>
                     <div id="viewer-tool" class="position-absolute bg-trans" style="right:1.5%; top: 40vh;">
                         <div class="btn-group-vertical">
