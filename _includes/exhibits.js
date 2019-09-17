@@ -414,16 +414,11 @@ HashState.prototype = {
 
     $('#leftArrow').click(this, function(e) {
       const THIS = e.data;
-      if (THIS.w == 0 && THIS.s == 0 && !THIS.outline) {
-        THIS.mode = 'outline';
-      }
-      else if (THIS.w == 0) {
-        THIS.mode = 'exhibit';
+      if (THIS.w == 0) {
         THIS.s = THIS.s - 1;
         THIS.w = THIS.waypoints.length - 1;
       }
       else {
-        THIS.mode = 'exhibit';
         THIS.w = THIS.w - 1;
       }
       THIS.pushState();
@@ -431,18 +426,12 @@ HashState.prototype = {
 
     $('#rightArrow').click(this, function(e) {
       const THIS = e.data;
-      const last_s = THIS.s == (THIS.stories.length - 1);
       const last_w = THIS.w == (THIS.waypoints.length - 1);
-      if (last_w && last_s && !THIS.outline) {
-        THIS.mode = 'outline';
-      }
-      else if (last_w) {
-        THIS.mode = 'exhibit';
+      if (last_w) {
         THIS.s = THIS.s + 1;
         THIS.w = 0;
       }
       else {
-        THIS.mode = 'exhibit';
         THIS.w = THIS.w + 1;
       }
       THIS.pushState();
@@ -499,13 +488,19 @@ HashState.prototype = {
       }
     });
 
+    $('#zoom-home').click(this, function(e) {
+      const THIS = e.data;
+      THIS.s = 0; 
+      THIS.newView(true);
+    });
+
     $('.clear-switch').click(this, function(e) {
       const THIS = e.data;
       THIS.bufferWaypoint = undefined;
       THIS.startEditing();
       THIS.pushState();
     });
-
+    
     $('.arrow-switch').click(this, function(e) {
       const THIS = e.data;
       THIS.drawType = "arrow";
@@ -759,7 +754,7 @@ HashState.prototype = {
   },
 
   get hashKeys() {
-    const oldTag = this.story.SharedLink;
+    const oldTag = this.story.Mode == 'tag';
     if (oldTag || this.isSharedLink) {
       return ['d', 's', 'w', 'g', 'm', 'a', 'v', 'o', 'p'];
     }
@@ -785,9 +780,6 @@ HashState.prototype = {
 
   get edit() {
     return this.state.mode == "edit";
-  },
-  get outline() {
-    return this.state.mode == "outline";
   },
 
   /*
@@ -1078,9 +1070,10 @@ HashState.prototype = {
 
   get isSharedLink() {
     const yes_d = this.hash.hasOwnProperty('d');
-    const no_s = !this.hash.hasOwnProperty('s');
-    const link_s = this.hash.s == String(this.stories.length);
-    return yes_d && (no_s || link_s);
+    const no_shared_link = this.stories.filter(story => {
+      return story.Mode == 'tag';
+    }).length == 0; 
+    return yes_d && no_shared_link;
   },
 
   get isMissingHash() {
@@ -1124,7 +1117,7 @@ HashState.prototype = {
   },
 
   get waypoint() {
-    if (this.editing || this.outline) {
+    if (this.editing) {
       return this.bufferWaypoint;
     }
     return this.waypoints[this.w];
@@ -1167,6 +1160,7 @@ HashState.prototype = {
     const cgs = deepCopy(exhibit.Groups || []);
     const masks = deepCopy(exhibit.Masks || []);
     const stories = deepCopy(exhibit.Stories || []);
+
     this.design = {
       chans: deepCopy(exhibit.Channels || []),
       layout: deepCopy(exhibit.Layout || {}),
@@ -1175,10 +1169,14 @@ HashState.prototype = {
       masks: masks,
       cgs: cgs
     };
+
+    const outline_story = this.newTempStory('outline');
+    this.stories = [outline_story].concat(this.stories);
+    const explore_story = this.newTempStory('explore');
+    this.stories = this.stories.concat([explore_story]);
   },
-  newTag: function() {
+  newTempStory: function(mode) {
     const exhibit = this.exhibit;
-    const stories = deepCopy(exhibit.Stories);
     const group = this.group;
     const mask = this.mask;
     const a = this.a;
@@ -1186,10 +1184,25 @@ HashState.prototype = {
     const p = this.p;
     const v = this.v;
     const d = this.d;
-    this.stories = stories.concat([{
-      SharedLink: true,
+
+    const name = {
+      'explore': 'Free Explore',
+      'tag': 'Shared Link',
+      'outline': 'Outline'
+    }[mode];
+
+    const groups = {
+      'explore': this.cgs.map(group => group.Name),
+    }[mode];
+
+    const masks = {
+      'explore': this.masks.map(mask => mask.Name),
+    }[mode];
+
+    return {
       Description: '',
-      Name: 'Tag',
+      Mode: mode,
+      Name: name || 'Story',
       Waypoints: [remove_undefined({
         Zoom: v[0],
         Arrow: a,
@@ -1197,8 +1210,10 @@ HashState.prototype = {
         Pan: v.slice(1),
         Mask: mask.Name,
         Group: group.Name,
+        Masks: masks,
+        Groups: groups,
         Description: decode(d),
-        Name: 'Tag',
+        Name: name || 'Waypoint',
         Overlay: {
           x: o[0],
           y: o[1],
@@ -1206,7 +1221,7 @@ HashState.prototype = {
           height: o[3],
         },
       })]
-    }]);
+    }
   },
   pushState: function() {
 
@@ -1249,7 +1264,8 @@ HashState.prototype = {
 
     if (this.isSharedLink) {
       this.d = hash.d;
-      this.newTag(); 
+      const tag_story = this.newTempStory('tag'); 
+      this.stories = this.stories.concat([tag_story]);
       this.s = this.stories.length - 1;
       this.pushState();
     }
@@ -1690,13 +1706,15 @@ HashState.prototype = {
     // Remove existing stories
     clearChildren(items);
 
-    if (!this.outline) {
+    if (this.story.Mode != 'outline') {
       return;
     }
 
     // Add configured stories
     this.stories.forEach(function(story, sid) {
-      this.addStory(story, sid, items);
+      if (story.Mode == undefined) {
+        this.addStory(story, sid, items);
+      }
     }, this);
   },
 
