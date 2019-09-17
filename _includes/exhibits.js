@@ -759,7 +759,7 @@ HashState.prototype = {
   },
 
   get hashKeys() {
-    const oldTag = this.waypoint.hasOwnProperty('SharedLink');
+    const oldTag = this.story.SharedLink;
     if (oldTag || this.isSharedLink) {
       return ['d', 's', 'w', 'g', 'm', 'a', 'v', 'o', 'p'];
     }
@@ -775,7 +775,12 @@ HashState.prototype = {
     return this.state.mode;
   },
   set mode(_mode) {
-    this.state.mode = _mode;
+		if (_mode) {
+			this.state.mode = _mode;
+		}
+		else {
+			this.state.mode = 'exhibit'
+		}
   },
 
   get edit() {
@@ -1182,6 +1187,7 @@ HashState.prototype = {
     const v = this.v;
     const d = this.d;
     this.stories = stories.concat([{
+      SharedLink: true,
       Description: '',
       Name: 'Tag',
       Waypoints: [remove_undefined({
@@ -1192,7 +1198,6 @@ HashState.prototype = {
         Mask: mask.Name,
         Group: group.Name,
         Description: decode(d),
-        SharedLink: true,
         Name: 'Tag',
         Overlay: {
           x: o[0],
@@ -1295,17 +1300,6 @@ HashState.prototype = {
       });
     }
 
-    // Update text
-    const v = this.v;
-    const o = this.o;
-    $('.edit_zoom').text(show5(v[0]));
-    $('.edit_panx').text(show5(v[1]));
-    $('.edit_pany').text(show5(v[2]));
-    $('.edit_x').text(show5(o[0]));
-    $('.edit_y').text(show5(o[1]));
-    $('.edit_w').text(show5(o[2]));
-    $('.edit_h').text(show5(o[3]));
-
     // Based on control keys
     const editing = this.editing;
     const drawing = this.drawing;
@@ -1332,8 +1326,8 @@ HashState.prototype = {
 
   makeUrl: function(hashKeys, searchKeys) {
     const root = this.location('pathname');
-    const hash = this.makeHash(hashKeys);
-    const search = this.makeSearch(searchKeys);
+		const hash = this.makeHash(hashKeys);
+		const search = this.makeSearch(searchKeys);
     return  root + search + hash;
   },
 
@@ -1692,158 +1686,58 @@ HashState.prototype = {
 
   newStories: function() {
 
-    const story_indices = document.getElementById('story-indices');
-    const story_elems = document.getElementById('story-content');
-
-    const s0_item = document.getElementById('proto-story-index');
-    const s0_story = document.getElementById('proto-story');
-
+    const items = document.getElementById('story-container');
     // Remove existing stories
-    clearChildren(story_indices);
-    clearChildren(story_elems);
+    clearChildren(items);
+
+		if (!this.outline) {
+			return;
+		}
 
     // Add configured stories
-    this.stories.forEach(function(story, sid, stories) {
-      this.addStory(story, sid, {
-        count: stories.length,
-        story_indices: story_indices,
-        story_elems: story_elems,
-        s0_story: s0_story,
-        s0_item: s0_item,
-      });
+    this.stories.forEach(function(story, sid) {
+      this.addStory(story, sid, items);
     }, this);
   },
 
-  addStory: function(story, sid, container) {
+  addStory: function(story, sid, items) {
 
-    var sid_label = 's-' + sid;
-
-    // Copy the index
-    var sid_item = container.s0_item.cloneNode(true);
-    var sid_index = sid_item.children[0];
-
-    sid_index.setAttribute('aria-controls', sid_label);
-    sid_index.innerText = story.Name;
-    sid_index.href = '#' + sid_label;
-    sid_index.id = '-' + sid_label;
-
-    // Copy the story
-    var sid_story = container.s0_story.cloneNode(true);
-
-    sid_story.setAttribute('aria-labeledby', sid_index.id);
-    sid_story.id = sid_index.getAttribute('aria-controls');
-    $(sid_item).removeAttr('id');
-
-    // Activated
-    if (sid == this.s) {
-      $(sid_index).addClass('active');
-      $(sid_story).addClass('active show');
-    }
-    else {
-      $(sid_index).removeClass('active');
-      $(sid_story).removeClass('active show');
-    }
-    // Update Story
-    $(sid_index).click(this, function(e) {
-      const THIS = e.data;
-      THIS.s = sid;
-      THIS.pushState();
-    });
-    // Editing state drives waypoint rendering
-    const editing = this.editing;
-
-    // Remove default waypoint index
-    const waypoint_indices = sid_story.getElementsByClassName('waypoint-indices')[0];
-    const w0_index = waypoint_indices.children[0];
-    $(waypoint_indices).empty();
-
-    // Remove default waypoint
-    const waypoint_elems = sid_story.getElementsByClassName('waypoint-content')[0];
-    const w0_waypoint = waypoint_elems.children[editing];
-    $(waypoint_elems).empty();
-
-    // Remove vertical bar
-    if (story.Waypoints.length < 2 || this.editing) {
-      $(sid_story).find('.if-many-waypoint').remove();
-    }
+    var sid_item = document.createElement('div');
+    var sid_list = document.createElement('ul');
+    var sid_label = document.createElement('p');
+    sid_label.innerText = story.Name;
 
     // Add configured waypoints
-    story.Waypoints.forEach(function(waypoint, wid, waypoints) {
-      this.addWaypoint(waypoint, wid, {
-        count: waypoints.length,
-        waypoint_indices: waypoint_indices,
-        waypoint_elems: waypoint_elems,
-        w0_waypoint: w0_waypoint,
-        w0_index: w0_index,
-        label: sid_label,
-        editing: editing,
-      });
+    story.Waypoints.forEach(function(waypoint, wid) {
+      this.addWaypoint(waypoint, wid, sid, sid_list);
     }, this);
 
-    // Add index, Add story
-    if (container.count > 1 && !this.editing) {
-      container.story_indices.appendChild(sid_item);
-      displayOrNot('.select-story', true);
-    }
-    container.story_elems.appendChild(sid_story);
-    displayOrNot('.select-story', false);
+    sid_item.appendChild(sid_label);
+    sid_item.appendChild(sid_list);
+    items.appendChild(sid_item);
   },
 
-  addWaypoint: function(waypoint, wid, container) {
-    const wid_label = container.label + '-w-' + wid;
+  addWaypoint: function(waypoint, wid, sid, sid_list) {
 
-    // Copy the index
-    const wid_index = container.w0_index.cloneNode(true);
-    const wid_span = $(wid_index).find('.index-span')[0];
-    const wid_icon = $(wid_index).find('.inset-icon')[0];
-    wid_span.innerText = waypoint.Name;
-
-    wid_index.href = '#' + wid_label;
-    wid_index.id = '-' + wid_label;
-
-    // Copy the waypoint
-    const wid_waypoint = container.w0_waypoint.cloneNode(true);
-    wid_waypoint.id = wid_label;
-
-    // Fill waypoint based on edit mode
-    const editing = container.editing;
-
-    // Activated
-    if (wid == this.w) {
-      wid_index.className += ' active';
-      wid_waypoint.className += ' active show';
-    }
-    displayOrNot(wid_icon, this.edit);
-
-    // Interactive
-    if (editing == 1) {
-      this.fillWaypointEdit(wid_waypoint);
-    }
+    var wid_item = document.createElement('li');
+    var wid_link = document.createElement('a');
+    wid_link = Object.assign(wid_link, {
+      className: '',
+      href: 'javascript:;',
+      innerText: waypoint.Name
+    });
 
     // Update Waypoint
-    $(wid_index).click(this, function(e) {
+    $(wid_link).click(this, function(e) {
       const THIS = e.data;
+			THIS.mode = 'exhibit';
+      THIS.s = sid;
       THIS.w = wid;
-      const waypoint = THIS.waypoint;
-      THIS.d = dFromWaypoint(waypoint);
-      THIS.n = nFromWaypoint(waypoint);
       THIS.pushState();
     });
 
-    // Edit Waypoint
-    $(wid_icon).click(this, function(e) {
-      const THIS = e.data;
-      THIS.w = wid;
-      const waypoint = THIS.waypoint;
-      THIS.startEditing(waypoint);
-    });
-
-    // Add index, Add waypoint
-    const indices = container.waypoint_indices;
-    if (container.count > 1 && !this.editing) {
-      indices.appendChild(wid_index);
-    }
-    container.waypoint_elems.appendChild(wid_waypoint);
+    wid_item.appendChild(wid_link);
+    sid_list.appendChild(wid_item);
   },
 
   fillWaypointView: function() {
