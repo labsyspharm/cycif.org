@@ -1268,8 +1268,12 @@ HashState.prototype = {
       this.addMasks();
       this.addGroups();
       this.newStories();
-      this.fillWaypointView();
-
+      if (this.edit) {
+        this.fillWaypointEdit();
+      }
+      else {
+        this.fillWaypointView();
+      }
       // back and forward
       $('.step-back').click(this, function(e) {
         const THIS = e.data;
@@ -1804,7 +1808,16 @@ HashState.prototype = {
       $(wid_waypoint).css(wid_style);
     }
   },
-  fillWaypointEdit: function(wid_waypoint) {
+  fillWaypointEdit: function() {
+    
+    const wid_waypoint = document.getElementById('viewer-waypoint');
+    $(wid_waypoint).empty();
+    const form_proto = document.getElementsByClassName('save_edits_form')[0]
+    const form = form_proto.cloneNode(true);
+    wid_waypoint.appendChild(form);
+
+
+
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
     const wid_txt_name = $(wid_waypoint).find('.edit_name')[0];
     const wid_describe = decode(this.d);
@@ -1822,6 +1835,7 @@ HashState.prototype = {
     });
     wid_txt.value = wid_describe;
   },
+
   get bufferYaml() {
     const viewport = this.viewport;
     const waypoint = this.waypoint;

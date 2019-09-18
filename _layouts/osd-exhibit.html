@@ -116,40 +116,23 @@
           <i class="fa fa-location-arrow" aria-hidden="true"></i>
         </div>
 
-        <div class="tab-pane fade" id="proto-story" role="tabpanel">
-            <div class="row no-gutters if-many-waypoint">
-                <div class="col">
-                    <div class="waypoint-indices list-group nav nav-pills">
-                        <a role="tab" data-toggle="list" class="nav-link">
-                            <span class="index-span"></span>
-                            <span class="inset-icon float-right">
-                                <i class="white fas fa-share fa-lg"></i><br>
-                            </span>
-                        </a>
-                    </div>
+        <form class="form save_edits_form">
+            <div class="input-group">
+                <div style="width: 100%; margin-bottom: 5px">
+                    <input class="form-control edit_name editable bg-dark text-white rounded-0 border-0" type="text">
+                    </input>
+                    <br>
+                    <textarea class="form-control edit_text editable bg-dark text-white rounded-0 border-0" rows="9">
+                    </textarea>
                 </div>
+                <button class="btn btn-default edit_copy_button px-1  " data-placement="bottom">
+                    <i class="fas fa-copy fa-lg"></i><br>
+                    <span class="mt-2 d-block" style="font-size: 0.7rem">
+                                    COPY
+                    </span>
+                </button>
             </div>
-            <div class="row no-gutters">
-                <div class="col border-top pt-4">
-                    <div class="waypoint-content tab-content">
-                        <div class="tab-pane fade"></div>
-                        <div class="tab-pane fade">
-                            <form class="form save_edits_form">
-                                <div class="input-group">
-                                    <div style="width: 100%; margin-bottom: 5px">
-                                        <input class="form-control edit_name editable bg-dark text-white rounded-0 border-0" type="text">
-                                        </input>
-                                        <br>
-                                        <textarea class="form-control edit_text editable bg-dark text-white rounded-0 border-0" rows="9">
-                                        </textarea>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </form>
 
         <div id="readme">
         </div>
