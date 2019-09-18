@@ -333,7 +333,7 @@ const changeSprings = function(viewer, seconds, stiffness) {
 
 const HashState = function(viewer, tileSources, exhibit, options) {
 
-  this.resetCount = 0;
+  this.trackers = [];
   this.embedded = options.embedded || false;
   this.showdown = new showdown.Converter();
   this.tileSources = tileSources;
@@ -355,7 +355,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     g: 0,
     s: 0,
     a: [-100, -100],
-    v: [1, 0.5, 0.5],
+    v: [0.5, 0.5, 0.5],
     o: [-100, -100, 1, 1],
     p: [],
     name: '',
@@ -1246,6 +1246,9 @@ HashState.prototype = {
   },
   newView: function(redraw) {
 
+    this.trackers.forEach(t => t.destroy());
+    this.trackers = [];
+
     this.addPolygon("selection", this.state.p);
     this.allOverlays.forEach(function(el) {
       const [s, w] = el.split('-').slice(2);
@@ -1253,8 +1256,6 @@ HashState.prototype = {
       this.addOverlay(overlay, el);
     }, this)
     this.addArrow(this.a);
-
-    $('.openseadragon-canvas svg')
 
    // Redraw design
     if(redraw) {
@@ -1534,8 +1535,8 @@ HashState.prototype = {
     if (current) {
       current.update({
         location: xy,
-        width: overlay.width,
-        height: overlay.height,
+        width: Math.min(1, overlay.width),
+        height: Math.min(1, overlay.height)
       });
     }
     else {
@@ -1546,6 +1547,19 @@ HashState.prototype = {
         height: overlay.height,
         element: el
       });
+    }
+
+    if (this.story.Mode == 'outline') {
+      const tracker = new OpenSeadragon.MouseTracker({
+        element: document.getElementById(el),
+        clickHandler: (function(event) {
+          const [s, w] = el.split('-').slice(2);
+          this.s = s;
+          this.w = w;
+          this.pushState();
+        }).bind(this)
+      });
+      this.trackers.push(tracker);
     }
   },
 
@@ -1987,6 +2001,7 @@ const build_page = function(exhibit, options) {
     zoomOutButton: 'zoom-out',
     zoomInButton: 'zoom-in',
     homeButton: 'zoom-home',
+    maxZoomPixelRatio: 10,
   });
   const tileSources = {};
   const state = new HashState(viewer, tileSources, exhibit, options);

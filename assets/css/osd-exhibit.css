@@ -43,6 +43,14 @@
     /* border: 1px solid #444; */
   }
   
+  .openseadragon-canvas canvas {
+    z-index: -2;
+  }
+
+  .openseadragon-canvas svg {
+    z-index: -1;
+  }
+
   .overlap {
     position: relative;
     pointer-events: none;
