@@ -356,7 +356,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     s: 0,
     a: [-100, -100],
     v: [1, 0.5, 0.5],
-    o: [-100, -100, 200, 200],
+    o: [-100, -100, 1, 1],
     p: [],
     name: '',
     description: '',
@@ -408,10 +408,6 @@ HashState.prototype = {
     $('#copy_link_modal').on('hidden.bs.modal', this.cancelDrawing.bind(this));
     $('#edit_description_modal').on('hidden.bs.modal', this.cancelDrawing.bind(this));
 
-    $('#edit-import').click(this, function(e) {
-      $('#file-upload').click();
-    });
-
     $('#toggle-sidebar').click(function(e) {
       e.preventDefault();
       $("#sidebar-menu").toggleClass("toggled");
@@ -440,41 +436,6 @@ HashState.prototype = {
         THIS.w = THIS.w + 1;
       }
       THIS.pushState();
-    });
-
-    $('#file-upload').change(this, function(e) {
-      const THIS = e.data;
-
-      const f = e.target.files.item(0);
-      const reader = new FileReader();
-
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          const response = e.target.result;
-          const config = jsyaml.safeLoad(response);
-          THIS.exhibit = config.Exhibit;
-
-          // Hard reset
-          THIS.newExhibit();
-          THIS.changed = true;
-          THIS.cancelDrawing();
-          THIS.cancelEditing();
-          THIS.newOverlay();
-          THIS.viewer.clearOverlays();
-          THIS.viewer.world.removeAll();
-          const init = function() {
-            THIS.s = 0;
-            THIS.pushState();
-          };
-          arrange_images(THIS.viewer, THIS.tileSources, THIS, init);
-          $('#file-upload').replaceWith($('#file-upload').val('').clone(true));
-        };
-      })(f);
-
-      // Read in the image file as a data URL.
-      reader.readAsText(f);
     });
 
     $('#edit-switch').click(this, function(e) {
@@ -755,7 +716,8 @@ HashState.prototype = {
   },
 
   get searchKeys() {
-    return ['mode'];
+    const search_keys = Object.keys(this.search);
+    return ['mode'].filter(x => search_keys.includes(x))
   },
 
   get hashKeys() {
@@ -1284,10 +1246,15 @@ HashState.prototype = {
   },
   newView: function(redraw) {
 
-    // Temp overlay if drawing or editing
-    this.addArrow(this.a);
-    this.addOverlay(this.overlay);
     this.addPolygon("selection", this.state.p);
+    this.allOverlays.forEach(function(el) {
+      const [s, w] = el.split('-').slice(2);
+      const overlay = this.stories[s].Waypoints[w].Overlay;
+      this.addOverlay(overlay, el);
+    }, this)
+    this.addArrow(this.a);
+
+    $('.openseadragon-canvas svg')
 
    // Redraw design
     if(redraw) {
@@ -1455,7 +1422,7 @@ HashState.prototype = {
       this.a = [-100, -100];
     }
     else {
-      this.o = [-100, -100, 200, 200];
+      this.o = [-100, -100, 1, 1];
     }
   },
   cancelDrawing: function() {
@@ -1486,19 +1453,18 @@ HashState.prototype = {
     changeSprings(this.viewer, 3.2, 6.4);
   },
 
-  get currentOverlay() {
-    return 'current-overlay-' + this.resetCount;
+  get allOverlays() {
+    return this.stories.reduce((overlays, story, s) => {
+      return overlays.concat(story.Waypoints.map((_, w) => {
+        return 'current-overlay-' + s + '-' + w;
+      }));
+    }, []);
   },
 
-  newOverlay: function() {
-    const oldOverlay = this.currentOverlay;
-    this.resetCount += 1;
-    const newOverlay = this.currentOverlay;
-    const el = $("#" + oldOverlay).clone().prop({
-      id: newOverlay
-    });
-    $("body").append(el);
+  get currentOverlay() {
+    return 'current-overlay-' + this.s + '-' + this.w;
   },
+
   /*
    * Display manaagement
    */
@@ -1533,12 +1499,38 @@ HashState.prototype = {
     }
   },
 
-  addOverlay: function(overlay) {
+  addOverlay: function(overlay, el) {
 
-    const el = this.currentOverlay;
-    greenOrWhite('#' + el, this.drawing && this.drawType == "box");
     const current = this.viewer.getOverlayById(el);
+    if (el == this.currentOverlay) {
+      overlay = this.overlay;
+    }
+
+    if (this.story.Mode != 'outline') {
+      if (el != this.currentOverlay) {
+        if (current) {
+          const xy = new OpenSeadragon.Point(-100, -100);
+          current.update({
+            location: xy,
+            width: 1,
+            height: 1,
+          });
+        }
+        return; 
+      }
+    }
+
+    if (!document.getElementById(el)) {
+      var div = document.createElement("div"); 
+      div.className = "white overlay";
+      div.id = el;
+      document.getElementById('all-overlays').appendChild(div); 
+    }
+
     const xy = new OpenSeadragon.Point(overlay.x, overlay.y);
+    const is_green = this.drawing && this.drawType == "box";
+    greenOrWhite('#' + el, is_green);
+
     if (current) {
       current.update({
         location: xy,
@@ -1844,14 +1836,13 @@ const getGetTileUrl = function(image, layer, channelSettings) {
 
   const colors = layer.Colors;
   const channels = layer.Channels;
-  const isMask = colors == undefined || channels == undefined;
 
   const getJpegTile = function(level, x, y) {
-    const fileExt = isMask ? '.png' : '.jpg';
+    const fileExt = '.' + layer.Format;
     return image.Path + '/' + layer.Path + '/' + (image.MaxLevel - level) + '_' + x + '_' + y + fileExt;
   };
 
-  if (isMask || image.Provider != 'minerva') {
+  if (image.Provider != 'minerva') {
     return getJpegTile; 
   }
 
@@ -1889,6 +1880,13 @@ const arrange_images = function(viewer, tileSources, state, init) {
 
   const cgs = state.cgs;
   const masks = state.masks;
+
+  cgs.forEach(g => {
+    g['Format'] = g['Format'] || 'jpg';
+  });
+  masks.forEach(m => {
+    m['Format'] = m['Format'] || 'png';
+  });
   const layers = cgs.concat(masks);
 
   const grid = state.grid;
