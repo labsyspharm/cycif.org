@@ -1772,8 +1772,17 @@ HashState.prototype = {
   fillWaypointView: function() {
     const waypoint = this.waypoint;
     const wid_waypoint = document.getElementById('viewer-waypoint');
-    document.getElementById("audioPlayer").src = waypoint.Audio || "";
+    const audioPlayer = document.getElementById("audioPlayer");
+    const waypointName = document.getElementById("waypointName");
 
+    if (waypoint.Audio) {
+      audioPlayer.src = waypoint.Audio;
+      audioPlayer.style.visibility = 'visible';
+    }
+    else {
+      audioPlayer.style.visibility = 'hidden';
+    }
+    waypointName.innerText = waypoint.Name;
 
     const md = waypoint.Description;
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);

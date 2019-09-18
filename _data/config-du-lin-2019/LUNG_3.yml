@@ -132,6 +132,7 @@ Exhibit:
         - Structural Components
         - PD-L1 Expression
       Name: The Waypoint
+      Audio: /assets/audio/speech_20190918200819525.mp3
       Description: |
         Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
         #### Figure from:
@@ -152,6 +153,7 @@ Exhibit:
       Masks:
         - Cluster_1 Stroma
         - Cluster_3 Immune
+      Audio: /assets/audio/speech_20190918201043160.mp3
       Description: |
         The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
       Zoom: 2.3661
@@ -166,6 +168,7 @@ Exhibit:
 
     - Name: Adjacent Non-Tumor Region
       Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
       Description: An adjacent non-tumor region consists on fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
       Zoom: 1.5838
       Pan:
@@ -179,6 +182,7 @@ Exhibit:
 
     - Name: PD-L1 Expression
       Group: PD-L1 Expression
+      Audio: /assets/audio/speech_20190918201256228.mp3
       Description: |
         Programmed Death Ligand 1 (`PD-L1`) also known as cluster of differentiation 274 (CD274), a target of immunotherapeutics, is expressed in tumor cells (`cytokeratin`) as well as in some macrophages (`IBA1`).
       Zoom: 2.6296
@@ -194,6 +198,7 @@ Exhibit:
 
     - Name: PD-L1 Expressing Tumor Cells
       Group: PD-L1 Expression
+      Audio: /assets/audio/speech_20190918201431372.mp3
       Description: Tumor cells (`cytokeratin`) expressing `PD-L1`.
       Zoom: 11.3066
       Pan:
@@ -207,6 +212,7 @@ Exhibit:
 
     - Name: PD-L1 Expressing Macrophages
       Group: PD-L1 Expression
+      Audio: /assets/audio/speech_20190918201550587.mp3
       Description: Macrophages (`IBA1`) expressing `PD-L1`.
       Zoom: 11.3066
       Pan:
@@ -220,6 +226,7 @@ Exhibit:
 
     - Name: B-Cells and T-Cells
       Group: Lymphocytes
+      Audio: /assets/audio/speech_20190918201656247.mp3
       Description: T cells (`CD3`) are often found infiltrating the tumor region whereas B cells (`CD20`) are less common as shown in this sample.
       Zoom: 10.5411
       Pan:
@@ -233,6 +240,7 @@ Exhibit:
 
     - Name: Inhibitory T-Cells
       Group: Inhibitory T-Cells
+      Audio: /assets/audio/speech_20190918201756267.mp3
       Description: |
         Some subpopulations of T cells (`CD3`) express inhibitory molecules (`PD-1` and `FOXP3`). In this sample, these inhibitory T cells are enriched in the tumor region.
       Zoom: 11.3065
@@ -248,6 +256,7 @@ Exhibit:
 
     - Name: Rare Immune Population 1
       Group: Rare Immune Population 1
+      Audio: /assets/audio/speech_20190918201847222.mp3
       Description: |
         A rare, or low frequency, population of T cells that expresses both `CD8A` and `FOXP3` can be seen in this sample in addition to traditional recognized T-regulatory cells that express both `CD4` and `FOXP3`. Both types of `FOXP3` expressing cells are enriched in the tumor region.
       Zoom: 11.3066
@@ -262,6 +271,7 @@ Exhibit:
 
     - Name: Rare Immune Population 2
       Group: Rare Immune Population 2
+      Audio: /assets/audio/speech_20190918202005841.mp3
       Description: |
         Another rare, or low frequency, population present in the tumor region includes T cells that express `CD8A`, `PD-1`, and `LAG3`.
       Zoom: 11.3066
@@ -290,6 +300,7 @@ Exhibit:
 
     - Name: Macrophages (cont.)
       Group: Macrophages (cont.)
+      Audio: /assets/audio/speech_20190916132915227.mp3
       Description: Subtypes of macrophages.
       Zoom: 7.8518
       Pan:
