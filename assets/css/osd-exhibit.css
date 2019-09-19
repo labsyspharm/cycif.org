@@ -2,6 +2,14 @@
     background: black;
   }
 
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar { 
+    display: none;
+  }
+
   #sidebar-menu {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;

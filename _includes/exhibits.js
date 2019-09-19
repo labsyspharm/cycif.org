@@ -1763,7 +1763,6 @@ HashState.prototype = {
     // Update Waypoint
     $(wid_link).click(this, function(e) {
       const THIS = e.data;
-      THIS.mode = 'exhibit';
       THIS.s = sid;
       THIS.w = wid;
       THIS.pushState();
