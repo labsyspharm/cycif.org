@@ -59,7 +59,7 @@ const nFromWaypoint = function(waypoint) {
 
 const mFromWaypoint = function(waypoint, masks) {
   const mask_name = waypoint.Mask;
-  return index_name(masks, mask_name);
+  return [index_name(masks, mask_name)];
 };
 
 const aFromWaypoint = function(waypoint, masks) {
@@ -209,10 +209,13 @@ const ctrlC = function(str) {
   Clipboard.copy(str);
 };
 
-const newMarkers = function(tileSources, group, mask) {
+const newMarkers = function(tileSources, group, active_masks) {
+
+	const mask_paths = active_masks.map(m => m.Path);
+	
   Object.keys(tileSources)
     .forEach(el => {
-      el === group.Path || el === mask.Path
+      el === group.Path || mask_paths.includes(el)
         ? tileSources[el].forEach(t => t.setOpacity(1))
         : tileSources[el].forEach(t => t.setOpacity(0));
     })
@@ -350,8 +353,8 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     drawType: "lasso",
     changed: false,
     design: {},
+    m: [-1],
     w: [0],
-    m: 0,
     g: 0,
     s: 0,
     a: [-100, -100],
@@ -361,7 +364,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     name: '',
     description: '',
     mouseEvent: {},
-    mode: 'exhibit',
+    edit: false,
     drawing: 0,
     editing: 0
   };
@@ -665,7 +668,7 @@ HashState.prototype = {
   get bufferWaypoint() {
     if (this.state.buffer.waypoint === undefined) {
       const viewport = this.viewport;
-      const mask = this.mask;
+      const mask = this.active_masks[0];
       const group = this.group;
       return remove_undefined({
         Zoom: viewport.scale,
@@ -717,7 +720,7 @@ HashState.prototype = {
 
   get searchKeys() {
     const search_keys = Object.keys(this.search);
-    return ['mode'].filter(x => search_keys.includes(x))
+    return ['edit'].filter(x => search_keys.includes(x))
   },
 
   get hashKeys() {
@@ -733,20 +736,12 @@ HashState.prototype = {
   /*
    * Search Keys
    */
-  get mode() {
-    return this.state.mode;
-  },
-  set mode(_mode) {
-    if (_mode) {
-      this.state.mode = _mode;
-    }
-    else {
-      this.state.mode = 'exhibit'
-    }
+  set edit(_edit) {
+		this.state.edit = !!_edit;
   },
 
   get edit() {
-    return this.state.mode == "edit";
+    return !!this.state.edit;
   },
 
   /*
@@ -838,13 +833,17 @@ HashState.prototype = {
     const m = this.state.m;
     const count = this.masks.length;
     if (count == 0) {
-      return -1
+      return [-1]
     }
-    return m < count ? m : 0;
+		return m;
   },
   set m(_m) {
-    const m = parseInt(_m, 10);
-    this.state.m = m;
+		if (Array.isArray(_m)) {
+    	this.state.m = _m.map(i => parseInt(i, 10));
+		}
+		else {
+			this.state.m = [-1];
+		}
   },
 
   get g() {
@@ -1057,9 +1056,12 @@ HashState.prototype = {
     this.stories = stories;
   },
 
-  get mask() {
-    const mask = this.masks[this.m];
-    return mask? mask : {};
+  get active_masks() {
+		const masks = this.masks;
+		return this.m.map(function(m) {
+			const mask = masks[m];
+			return mask? mask : {};
+		});
   },
 
   get group() {
@@ -1145,7 +1147,7 @@ HashState.prototype = {
   newTempStory: function(mode) {
     const exhibit = this.exhibit;
     const group = this.group;
-    const mask = this.mask;
+		const mask = this.active_masks[0];
     const a = this.a;
     const o = this.o;
     const p = this.p;
@@ -1261,7 +1263,7 @@ HashState.prototype = {
     if(redraw) {
       // Update OpenSeadragon
       this.activateViewport();
-      newMarkers(this.tileSources, this.group, this.mask);
+      newMarkers(this.tileSources, this.group, this.active_masks);
       // Redraw HTML Menus
       this.addChannelLegends();
 
@@ -1588,13 +1590,13 @@ HashState.prototype = {
   addMask: function(mask, m) {
     var aEl = document.createElement('a');
     aEl = Object.assign(aEl, {
-      className: this.m === m ? 'nav-link active' : 'nav-link',
+      className: this.m.includes(m) ? 'nav-link active' : 'nav-link',
       href: 'javascript:;',
       innerText: mask.Name,
       title: mask.Path,
       id: mask.Path,
     });
-    var ariaSelected = this.m === m ? true : false;
+    var ariaSelected = this.m.includes(m) ? true : false;
     aEl.setAttribute('aria-selected', ariaSelected);
 
     // Append everything
@@ -1603,11 +1605,11 @@ HashState.prototype = {
     // Update Channel Group
     $(aEl).click(this, function(e) {
       THIS = e.data;
-      if (m === THIS.m){
-        THIS.m = -1;
+      if (THIS.m.includes(m)){
+        THIS.m = THIS.m.filter(i => i != m);
       }
       else {
-        THIS.m = m;
+        THIS.m.push(m);
       }
       THIS.pushState();
     });
