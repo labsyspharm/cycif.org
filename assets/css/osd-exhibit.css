@@ -321,15 +321,15 @@
 }
 
 polygon {
-    fill: rgba(70, 130, 180, 0.5);
-    stroke: black;
+    fill: rgba(70, 130, 180, 0.0);
+    stroke: white;
     stroke-width: 2px;
     vector-effect: non-scaling-stroke;
 }
 
-polygon:hover{
-    fill: rgba(70, 130, 180, 0.1);
-    stroke: red;
-    stroke-width: 2px;
-    vector-effect: non-scaling-stroke;
-}
+/*polygon:hover{*/
+/*    fill: rgba(70, 130, 180, 0.1);*/
+/*    stroke: red;*/
+/*    stroke-width: 2px;*/
+/*    vector-effect: non-scaling-stroke;*/
+/*}*/
