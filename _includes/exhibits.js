@@ -378,7 +378,9 @@ HashState.prototype = {
     // Read hash
     window.onpopstate = this.popState.bind(this);
     window.onpopstate();
-    this.startEditing();
+		if (this.edit) {
+    	this.startEditing();
+		}
     this.pushState();
 
     // Edit name
@@ -1224,12 +1226,16 @@ HashState.prototype = {
       this[key] = search[key];
     }, this);
 
+		console.log('m prior', this.m);
+
     // Accept valid hash
     this.hashKeys.forEach(function(key) {
       if (hash.hasOwnProperty(key)) {
         this[key] = hash[key];
       }
     }, this);
+
+		console.log('m post', this.m);
 
     if (this.isSharedLink) {
       this.d = hash.d;
@@ -1267,6 +1273,7 @@ HashState.prototype = {
       // Redraw HTML Menus
       this.addChannelLegends();
 
+      console.log(this.m);
       this.addMasks();
       this.addGroups();
       this.newStories();
