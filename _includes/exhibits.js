@@ -1227,16 +1227,12 @@ HashState.prototype = {
       this[key] = search[key];
     }, this);
 
-		console.log('m prior', this.m);
-
     // Accept valid hash
     this.hashKeys.forEach(function(key) {
       if (hash.hasOwnProperty(key)) {
         this[key] = hash[key];
       }
     }, this);
-
-		console.log('m post', this.m);
 
     if (this.isSharedLink) {
       this.d = hash.d;
@@ -1274,7 +1270,6 @@ HashState.prototype = {
       // Redraw HTML Menus
       this.addChannelLegends();
 
-      console.log(this.m);
       this.addMasks();
       this.addGroups();
       this.newStories();
@@ -1309,15 +1304,8 @@ HashState.prototype = {
     const drawType = this.drawType;
 
     // Based on search keys
-    displayOrNot('#draw-switch a', !editing);
-    displayOrNot('.show-if-edit', this.edit);
     activeOrNot('#view-switch', !editing);
     activeOrNot('#edit-switch', editing);
-    displayOrNot('#story-nav', !editing);
-    displayOrNot('.edit-item', editing);
-
-    classOrNot('#story-nav', !editing, 'round-nav');
-    classOrNot('#edit-menu', editing, 'round-nav');
 
     toggleCursor('crosshair', drawing);
 
@@ -1416,6 +1404,7 @@ HashState.prototype = {
     bw.Zoom = this.viewport.scale;
     bw.Overlay = this.overlay;
     bw.Polygon = this.p;
+    bw.Arrow = this.a;
     bw.Pan = [
       this.viewport.pan.x,
       this.viewport.pan.y
