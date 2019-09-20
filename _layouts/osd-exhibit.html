@@ -32,7 +32,18 @@
                     <div class="col-11 bg-trans waypoint-content no-scrollbar" style="max-height: 80vh; overflow-y: scroll">
                         <h3 id="imageName" class="m-1 text-center font-weight-bold">
                         </h3>
-                        <div id="waypointName" class="p-3 text-center font-weight-bold">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="btn" id="waypointCount">
+                                </div>
+                            </div>
+                            <div id="waypointName" class="p-3 col-8 text-center font-weight-bold">
+                            </div>
+                            <div class="col-2">
+                                <a class="btn text-light" id="home-button">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </div>
                         </div>
                         <div id="waypointControls" class="row align-items-center">
                             <div class="col-3 text-center" id="leftArrow">
@@ -113,7 +124,7 @@
         <div id="arrow-overlay" class="arrow-overlay">
           <img src="/assets/img/arrow1.png"></img>
           </br>
-          <p id="arrow-text" class="p-3 bg-trans" style="max-width: 100px; margin-left: 64px;">
+          <p id="arrow-text" class="p-3 bg-trans" style="max-width: 200px; margin-left: 64px;">
           </p>
         </div>
 

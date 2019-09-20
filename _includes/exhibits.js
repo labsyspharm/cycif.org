@@ -463,6 +463,12 @@ HashState.prototype = {
       }
     });
 
+    $('#home-button').click(this, function(e) {
+      const THIS = e.data;
+      THIS.s = 0; 
+      THIS.newView(true);
+    });
+
     $('#zoom-home').click(this, function(e) {
       const THIS = e.data;
       THIS.s = 0; 
@@ -1036,6 +1042,28 @@ HashState.prototype = {
 
   get target() {
     return unpackGrid(this.layout, this.images, 'Target');
+  },
+
+  get currentCount() {
+    const s = this.s;
+    const w = this.w;
+    return this.stories.reduce(function(count, story, idx) {
+      if (s == idx) {
+        return count + w;
+      }
+      else if (s > idx) {
+        return count + story.Waypoints.length;
+      }
+      else {
+        return count;
+      }
+    }, 1);
+  },
+
+  get totalCount() {
+    return this.stories.reduce(function(count, story) {
+      return count + story.Waypoints.length;
+    }, 0);
   },
 
   /*
@@ -1807,6 +1835,8 @@ HashState.prototype = {
     const wid_waypoint = document.getElementById('viewer-waypoint');
     const audioPlayer = document.getElementById("audioPlayer");
     const waypointName = document.getElementById("waypointName");
+    const waypointCount = document.getElementById("waypointCount");
+    waypointCount.innerText = this.currentCount + '/' + this.totalCount;
 
     if (waypoint.Audio) {
       audioPlayer.src = waypoint.Audio;
