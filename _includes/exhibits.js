@@ -2097,6 +2097,7 @@ const build_page = function(exhibit, options) {
     zoomInButton: 'zoom-in',
     homeButton: 'zoom-home',
     maxZoomPixelRatio: 10,
+    visibilityRatio: .9
   });
   const tileSources = {};
   const state = new HashState(viewer, tileSources, exhibit, options);
