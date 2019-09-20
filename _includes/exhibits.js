@@ -211,8 +211,8 @@ const ctrlC = function(str) {
 
 const newMarkers = function(tileSources, group, active_masks) {
 
-	const mask_paths = active_masks.map(m => m.Path);
-	
+  const mask_paths = active_masks.map(m => m.Path);
+  
   Object.keys(tileSources)
     .forEach(el => {
       el === group.Path || mask_paths.includes(el)
@@ -378,9 +378,9 @@ HashState.prototype = {
     // Read hash
     window.onpopstate = this.popState.bind(this);
     window.onpopstate();
-		if (this.edit) {
-    	this.startEditing();
-		}
+    if (this.edit) {
+      this.startEditing();
+    }
     this.pushState();
 
     // Edit name
@@ -741,7 +741,7 @@ HashState.prototype = {
    * Search Keys
    */
   set edit(_edit) {
-		this.state.edit = !!_edit;
+    this.state.edit = !!_edit;
   },
 
   get edit() {
@@ -839,15 +839,15 @@ HashState.prototype = {
     if (count == 0) {
       return [-1]
     }
-		return m;
+    return m;
   },
   set m(_m) {
-		if (Array.isArray(_m)) {
-    	this.state.m = _m.map(i => parseInt(i, 10));
-		}
-		else {
-			this.state.m = [-1];
-		}
+    if (Array.isArray(_m)) {
+      this.state.m = _m.map(i => parseInt(i, 10));
+    }
+    else {
+      this.state.m = [-1];
+    }
   },
 
   get g() {
@@ -1062,11 +1062,11 @@ HashState.prototype = {
   },
 
   get active_masks() {
-		const masks = this.masks;
-		return this.m.map(function(m) {
-			const mask = masks[m];
-			return mask? mask : {};
-		});
+    const masks = this.masks;
+    return this.m.map(function(m) {
+      const mask = masks[m];
+      return mask? mask : {};
+    });
   },
 
   get group() {
@@ -1152,7 +1152,7 @@ HashState.prototype = {
   newTempStory: function(mode) {
     const exhibit = this.exhibit;
     const group = this.group;
-		const mask = this.active_masks.pop();
+    const mask = this.active_masks.pop();
     const a = this.a;
     const o = this.o;
     const p = this.p;
