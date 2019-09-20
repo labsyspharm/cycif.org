@@ -1,5 +1,12 @@
 Exhibit:
   Name: LUNG_3
+  Audio: /assets/audio/speech_20190918200819525.mp3
+  Header: |
+    Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
+  Footer: |
+    #### Figure from:
+
+    Du and Lin et al, 2019 (submitted) 
   Images:
     - Name: i0
       Description: 'Lung 3 - Du and Lin et al, 2019 (submitted)'
@@ -120,39 +127,16 @@ Exhibit:
       Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
 
   Stories:
-  - Name: Overview
-    Description: 
-    Waypoints:
-    - Zoom: 0.4803
-      Pan:
-        - 0.4357
-        - 0.4513
-      Group: Structural Components
-      Groups:
-        - Structural Components
-        - PD-L1 Expression
-      Name: The Waypoint
-      Audio: /assets/audio/speech_20190918200819525.mp3
-      Description: |
-        Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
-        #### Figure from:
-
-        Du and Lin et al, 2019 (submitted) 
-
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-  - Name: About
-    Description: 
+  - Name: ''
     Waypoints:
     - Name: Tumor Region
       Group: Structural Components
-      Mask:
+      ActiveMasks:
+        - Segmentation Mask
       Masks:
         - Cluster_1 Stroma
         - Cluster_3 Immune
+        - Segmentation Mask
       Audio: /assets/audio/speech_20190918201043160.mp3
       Description: |
         The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).

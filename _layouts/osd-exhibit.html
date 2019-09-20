@@ -29,7 +29,9 @@
             </div>
             <div id="sidebar-menu" class="container position-absolute">
                 <div class="row">
-                    <div class="col-11 bg-trans no-scrollbar" style="max-height: 80vh; overflow-y: scroll">
+                    <div class="col-11 bg-trans waypoint-content no-scrollbar" style="max-height: 80vh; overflow-y: scroll">
+                        <h3 id="imageName" class="m-1 text-center font-weight-bold">
+                        </h3>
                         <div id="waypointName" class="p-3 text-center font-weight-bold">
                         </div>
                         <div id="waypointControls" class="row align-items-center">
@@ -43,9 +45,9 @@
                                 <i class="fas fa-arrow-right" style="font-size: 50px;"></i>
                             </div>
                         </div>
-                        <div class="waypoint-content" id="viewer-waypoint">
+                        <div id="viewer-waypoint">
                         </div>
-                        <div>
+                        <div class="mb-3">
                             <p id="channel-label" class="mb-1 font-weight-bold pt-2">Select a marker group:</p>
                             <div id="channel-groups" class="nav flex nav-pills"></div>
                             <p id="mask-label" class="mb-1 font-weight-bold pt-2">Add data layer:</p>
@@ -110,6 +112,8 @@
 
         <div id="arrow-overlay" class="arrow-overlay">
           <img src="/assets/img/arrow1.png"></img>
+          </br>
+          hello
         </div>
 
         <form class="form save_edits_form">

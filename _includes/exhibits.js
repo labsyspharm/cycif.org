@@ -1139,6 +1139,9 @@ HashState.prototype = {
       chans: deepCopy(exhibit.Channels || []),
       layout: deepCopy(exhibit.Layout || {}),
       images: deepCopy(exhibit.Images || []),
+      audio: exhibit.Audio || undefined,
+      header: exhibit.Header || '',
+      footer: exhibit.Footer || '',
       stories: stories,
       masks: masks,
       cgs: cgs
@@ -1157,7 +1160,11 @@ HashState.prototype = {
     const o = this.o;
     const p = this.p;
     const v = this.v;
-    const d = this.d;
+
+    const header = this.design.header;
+    const d_a = this.design.audio;
+    const d = mode == 'outline' ? encode(header) : this.d;
+    const audio = mode == 'outline' ? d_a : undefined;
 
     const name = {
       'explore': 'Free Explore',
@@ -1186,6 +1193,7 @@ HashState.prototype = {
         Group: group.Name,
         Masks: masks,
         Groups: groups,
+        Audio: audio,
         Description: decode(d),
         Name: name || 'Waypoint',
         Overlay: {
@@ -1726,16 +1734,19 @@ HashState.prototype = {
     // Remove existing stories
     clearChildren(items);
 
-    if (this.story.Mode != 'outline') {
-      return;
+    if (this.story.Mode == 'outline') {
+      // Add configured stories
+      this.stories.forEach(function(story, sid) {
+        if (story.Mode == undefined) {
+          this.addStory(story, sid, items);
+        }
+      }, this);
     }
 
-    // Add configured stories
-    this.stories.forEach(function(story, sid) {
-      if (story.Mode == undefined) {
-        this.addStory(story, sid, items);
-      }
-    }, this);
+    const footer = document.createElement('p')
+    const md = this.design.footer;
+    footer.innerHTML = this.showdown.makeHtml(md);
+    items.appendChild(footer);
   },
 
   addStory: function(story, sid, items) {
@@ -1937,6 +1948,13 @@ const arrange_images = function(viewer, tileSources, state, init) {
   const layers = cgs.concat(masks);
 
   const grid = state.grid;
+
+  const images = state.images;
+
+  if (images.length == 1) {
+    const imageName = document.getElementById('imageName');
+    imageName.innerText = images[0].Description;
+  }
 
   const numRows = grid.length;
   const numColumns = grid[0].length;
