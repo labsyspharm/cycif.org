@@ -106,6 +106,8 @@ Exhibit:
         - CD14
         - DNA
   Masks:
+    - Name: Segmentation Mask
+      Path: datalayer/segmentation
     - Name: Cluster_1 Stroma
       Path: datalayer/clustering/merged_s40/level_0/cluster_id_1
     - Name: Cluster_2 Others
@@ -116,8 +118,6 @@ Exhibit:
       Path: datalayer/clustering/merged_s40/level_0/cluster_id_4
     - Name: Cluster All
       Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
-    - Name: Segmentation Mask
-      Path: datalayer/segmentation
 
   Stories:
   - Name: Overview
