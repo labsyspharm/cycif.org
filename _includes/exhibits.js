@@ -1038,10 +1038,11 @@ HashState.prototype = {
 
   get isSharedLink() {
     const yes_d = this.hash.hasOwnProperty('d');
+    const no_s = !this.hash.hasOwnProperty('s');
     const no_shared_link = this.stories.filter(story => {
       return story.Mode == 'tag';
-    }).length == 0; 
-    return yes_d && no_shared_link;
+    }).length == 0;
+    return yes_d && (no_s || no_shared_link);
   },
 
   get isMissingHash() {

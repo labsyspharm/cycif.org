@@ -85,15 +85,6 @@
      /* margin-bottom: 0; */
   }
   
-  .arrow-overlay {
-      font-size: 4.5em;
-      -moz-transform: scale(-1, 1);
-      -webkit-transform: scale(-1, 1);
-      -o-transform: scale(-1, 1);
-      -ms-transform: scale(-1, 1);
-      transform: scale(-1, 1);
-  }
-
   .legend-label {
       display: inline-block;
       min-width: 4.5em;
