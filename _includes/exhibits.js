@@ -670,7 +670,7 @@ HashState.prototype = {
   get bufferWaypoint() {
     if (this.state.buffer.waypoint === undefined) {
       const viewport = this.viewport;
-      const mask = this.active_masks[0];
+      const mask = this.active_masks.pop();
       const group = this.group;
       return remove_undefined({
         Zoom: viewport.scale,
@@ -680,8 +680,10 @@ HashState.prototype = {
         ],
         Arrow: this.a,
         Mask: mask.Name,
+        Masks: this.masks.map(mask => mask.Name),
         Polygon: this.p,
         Group: group.Name,
+        Groups: this.cgs.map(group => group.Name),
         Description: '',
         Name: 'Untitled',
         Overlay: this.overlay
@@ -1150,7 +1152,7 @@ HashState.prototype = {
   newTempStory: function(mode) {
     const exhibit = this.exhibit;
     const group = this.group;
-		const mask = this.active_masks[0];
+		const mask = this.active_masks.pop();
     const a = this.a;
     const o = this.o;
     const p = this.p;
@@ -1306,6 +1308,10 @@ HashState.prototype = {
     // Based on search keys
     activeOrNot('#view-switch', !editing);
     activeOrNot('#edit-switch', editing);
+
+    displayOrNot('#editControls', editing);
+    displayOrNot('#waypointControls', !editing);
+    displayOrNot('#waypointName', !editing);
 
     toggleCursor('crosshair', drawing);
 
