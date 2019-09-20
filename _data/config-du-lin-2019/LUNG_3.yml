@@ -197,6 +197,10 @@ Exhibit:
 
     - Name: PD-L1 Expressing Macrophages
       Group: PD-L1 Expression
+      ArrowText: Macrophage
+      Arrow:
+            - 1.0048769161769038
+            - 0.33366514803671227
       Audio: /assets/audio/speech_20190918201550587.mp3
       Description: Macrophages (`IBA1`) expressing `PD-L1`.
       Zoom: 11.3066

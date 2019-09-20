@@ -1519,6 +1519,16 @@ HashState.prototype = {
         element: el
       });
     }
+
+    const a_text_el = $('#arrow-text');
+    const a_text = this.waypoint.ArrowText;
+    if (a_text) {
+      a_text_el.addClass('p-3');
+      a_text_el.text(a_text);
+    }
+    else {
+      a_text_el.removeClass('p-3');
+    }
   },
 
   addOverlay: function(overlay, el) {
