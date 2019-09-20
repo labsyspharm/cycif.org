@@ -58,8 +58,12 @@ const nFromWaypoint = function(waypoint) {
 };
 
 const mFromWaypoint = function(waypoint, masks) {
-  const mask_name = waypoint.Mask;
-  return [index_name(masks, mask_name)];
+  const names = waypoint.ActiveMasks || [];
+  const m = names.map(name => index_name(masks, name));
+  if (m.length < 2) {
+    return [-1].concat(m);
+  }
+  return m;
 };
 
 const aFromWaypoint = function(waypoint, masks) {
