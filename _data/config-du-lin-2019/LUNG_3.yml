@@ -169,6 +169,7 @@ Exhibit:
     - Name: Adjacent Non-Tumor Region
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
+      Image: /assets/img/stories/plot2.png
       Description: An adjacent non-tumor region consists on fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
       Zoom: 1.5838
       Pan:

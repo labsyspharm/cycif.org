@@ -1789,6 +1789,12 @@ HashState.prototype = {
     const md = waypoint.Description;
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
 
+    if (waypoint.Image) {
+      var img = document.createElement("img");
+      img.src = waypoint.Image;
+      wid_waypoint.appendChild(img);
+    }
+
 
     // Color code elements
     const channelOrders = this.channelOrders(this.channels);
