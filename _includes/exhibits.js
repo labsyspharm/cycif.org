@@ -1624,6 +1624,14 @@ HashState.prototype = {
 
   addMasks: function() {
     $('#mask-layers').empty();
+    if (this.story.Mode == 'explore') {
+        $('#mask-layers').addClass('flex');
+        $('#mask-layers').removeClass('flex-column');
+    }
+    else {
+        $('#mask-layers').addClass('flex-column');
+        $('#mask-layers').removeClass('flex');
+    }
     const mask_names = this.waypoint.Masks || [];
     const masks = this.masks.filter(mask => {
       return mask_names.includes(mask.Name);
