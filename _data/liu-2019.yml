@@ -1,12 +1,17 @@
 publication:
-  title: Convergent Evolution of Immunotherapy Resistance in a Melanoma Responder
-  authors: David Liu, Gyulnara G Kasumova, Alex Heyde, Alvin Shi, Adam Kraya, Gao Zhang, Tabea Moll, Dennie T Frederick, Avinash Sahu, Shaolin Mei, Jia-Ren Lin,Benchun Miao, Tatyana Sharova, Riley Fadden, Donald Lawrence, Mai P Hoang, DanielP Cahill, Eytan Ruppin, Meenhard Herlyn, Martin A Nowak, Peter K Sorger, Eliezer MVan Allen, Katherine Nathanson, Keith T Flaherty, Ryan J Sullivan, Benjamin Izar, Manolis Kellis, Genevieve M Boland
+  title: Genomic, Immunologic, and Functional Evolution of Resistance to Immunotherapy in a Melanoma Exceptional Responder
+  authors: David Liu*, Jia-Ren Lin* (equal contribution), Gyulnara G Kasumova, Alex Heyde, Alvin Shi, Adam Kraya, Gao Zhang, Tabea Moll, Dennie T Frederick, Yu-An Chen, Denis Schapiro, Shu Wang, Kevin Bi, Avinash Sahu, Shaolin Mei, Benchun Miao, Tatyana Sharova, Tommy Kim, Riley Fadden, Donald Lawrence, Mai P Hoang, Daniel P Cahill, Mohsen Malehmir, Christine Lian, Eytan Ruppin, Benjamin Izar, Meenhard Herlyn, Martin A Nowak, Eliezer M Van Allen, Katherine Nathanson, Keith T Flaherty, Ryan J Sullivan, Peter K Sorger, Manolis Kellis, Genevieve M Boland
   journal: 
   link: 
     # name: Publication summary
     # url: http://lincs.hms.harvard.edu/lin-elife-2018/
 
 stitched mosaic images:
+- thumbnail file name: N2.jpg
+  description: ''
+  links:
+  - CyCIF image: N2
+  title: Day -55, L6 - Skin Left Forearm
 - thumbnail file name: P6.jpg
   description: ''
   links:
@@ -112,11 +117,6 @@ stitched mosaic images:
 #   links:
 #   - CyCIF image: P5
 #   title: Day 1169, L3 - Brain, Right Occipital Lesion (image id mapping might be incorrect)
-- thumbnail file name: N2.jpg
-  description: ''
-  links:
-  - CyCIF image: N2
-  title: Day -55, L6 - Skin Left Forearm
 - thumbnail file name: N1.jpg
   description: ''
   links:
