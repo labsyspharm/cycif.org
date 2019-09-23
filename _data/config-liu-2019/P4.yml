@@ -2,7 +2,7 @@ Exhibit:
   Name: Day 1028, L3 - Jejunum
   Images:
   - Name: i0
-    Description: Day 1028 - Jejunum
+    Description: Day 1028, L3 - Jejunum
     Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/P4
     Width: 8849
     Height: 7455
@@ -50,25 +50,25 @@ Exhibit:
   - Channels:
     - MITF
     - NGFR
-    - CD45
+    - AXL
     - aSMA
     - DNA
     Colors:
-    - 00ff00
     - ff0000
-    - 00ffff
+    - ffff00
+    - 00ff00
     - ffffff
     - 0000ff
     Name: Differentiation State
-    Path: Differentiation-State_17__MITF--31__NGFR--14__CD45--11__aSMA--8__DNA
+    Path: Differentiation-State_17__MITF--31__NGFR--6__AXL--11__aSMA--8__DNA
   Stories:
   - Name: Overview
     Description: null
     Waypoints:
-    - Zoom: 0.4803
+    - Zoom: 0.5
       Pan:
-      - 0.4357
-      - 0.4513
+      - 0.593494299128
+      - 0.5
       Group: Architecure
       Name: The Waypoint
       Description: "Lineage 3 - 1028 days after treatment.<br />Jejunum\n\n#### tCyCIF\
@@ -83,48 +83,13 @@ Exhibit:
     Waypoints:
     - Name: Waypoint 1
       Group: Architecure
-      Description: The specimen is stained with a panel of markers comprising of cell
-        type markers (keratin, CDX2, CD45 and aSMA) and protein stress markers (HSF1,
-        Hsp27, Hsp70 and Hsp90).
+      Description: ''
       Overlay:
         x: -100
         y: -100
         width: 200
         height: 200
       Pan:
-      - 0.4823
-      - 0.4893
-      Zoom: 0.6313
-    - Name: Waypoint 2
-      Group: Architecure
-      Description: 'The normal epithelium is recognizable by
-
-        the distinct tissue morphology with
-
-        organized structures staining positive
-
-        for keratin and alpha smooth muscle
-
-        actin (SMA).
-
-
-        The cells in the intestinal villi
-
-        express both keratin (blue) and CDX2 (red). The villi
-
-        are surrounded by stromal cells (green) and
-
-        immune cells (white) that at times
-
-        infiltrate the inner villus structure.
-
-        '
-      Overlay:
-        x: 0.418
-        y: 0.5246
-        width: 0.4089
-        height: 0.4657
-      Pan:
-      - 0.6337
-      - 0.7403
-      Zoom: 1.2625
+      - 0.593494299128
+      - 0.5
+      Zoom: 0.6
