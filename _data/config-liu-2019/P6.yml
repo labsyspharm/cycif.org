@@ -81,15 +81,38 @@ Exhibit:
   - Name: About
     Description: null
     Waypoints:
-    - Name: Waypoint 1
-      Group: Architecure
-      Description: ''
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
+
+    - Zoom: 2.655
       Pan:
-      - 0.495368916797
-      - 0.5
-      Zoom: 0.6
+        - 0.5634
+        - 0.4661
+      Group: Architecure
+      Description: >-
+        Immune cells (`CD45`+) can be clearly
+        delineated from tumor cells (`S100` +)
+        and stroma (`aSMA`).
+      Name: 'Figure 3a, left panel'
+      Overlay:
+        x: 0.5178
+        y: 0.4128
+        width: 0.1492
+        height: 0.1131
+        
+    - Zoom: 3.6875
+      Pan:
+        - 0.5731
+        - 0.466
+      Group: Differentiation State
+      Description: >-
+        In `S100`+ tumor cells, distinct tumor
+        subtypes including `MITF`-High versus
+        `NGFR`-High cell populations are
+        identified. The `MITF` and `NGFR` CyCIF
+        signals are false-colored with red and
+        yellow, respectively. 
+      Name: 'Figure 3a, left panel (cont.)'
+      Overlay:
+        x: 0.5178
+        y: 0.4128
+        width: 0.1492
+        height: 0.1131
