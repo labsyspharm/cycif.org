@@ -1285,6 +1285,11 @@ HashState.prototype = {
     }
     else if (this.isMissingHash) {
       this.s = 0; 
+      const welcome = $('#welcome_modal');
+      const channel_count = welcome.find('.channel_count')[0];
+      channel_count.innerText = this.channels.length;
+      welcome.modal('show');
+
       this.pushState();
     }
 
