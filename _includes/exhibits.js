@@ -1547,12 +1547,19 @@ HashState.prototype = {
 
     const a_text_el = $('#arrow-text');
     const a_text = this.waypoint.ArrowText;
-    if (a_text) {
+    const waypoint_arrow = this.waypoint.Arrow || [-1,-1];
+    
+    const same_x = waypoint_arrow[0] == arrow[0];
+    const same_y = waypoint_arrow[1] == arrow[1];
+    const same_arrow = same_x && same_y;
+
+    if (a_text && same_arrow) {
       a_text_el.addClass('p-3');
       a_text_el.text(a_text);
     }
     else {
       a_text_el.removeClass('p-3');
+      a_text_el.text('');
     }
   },
 
