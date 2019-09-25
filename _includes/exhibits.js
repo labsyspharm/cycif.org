@@ -244,16 +244,6 @@ const unpackGrid = function(layout, images, key) {
   }, {image_map: image_map});
 };
 
-const deepCopy = function(o) {
-  var output, v, key;
-  output = Array.isArray(o) ? [] : {};
-  for (key in o) {
-    v = o[key];
-    output[key] = (typeof v === 'object') ? deepCopy(v) : v;
-  }
-  return output;
-};
-
 const serialize = function(keys, state, delimit) {
   return keys.reduce(function(h, k) {
     var value = state[k] || 0;
@@ -699,7 +689,7 @@ HashState.prototype = {
         Overlay: this.overlay
       });
     }
-    return deepCopy(this.state.buffer.waypoint);
+    return this.state.buffer.waypoint;
   },
 
   set bufferWaypoint(bw) {
@@ -738,7 +728,7 @@ HashState.prototype = {
   },
 
   get hashKeys() {
-    const oldTag = this.story.Mode == 'tag';
+    const oldTag = this.waypoint.Mode == 'tag';
     if (oldTag || this.isSharedLink) {
       return ['d', 's', 'w', 'g', 'm', 'a', 'v', 'o', 'p'];
     }
@@ -957,7 +947,7 @@ HashState.prototype = {
   },
 
   get design() {
-    return deepCopy(this.state.design);
+    return this.state.design;
   },
   set design(design) {
 
@@ -971,7 +961,7 @@ HashState.prototype = {
     }
 
     // Update the design
-    this.state.design = deepCopy(design);
+    this.state.design = design;
   },
 
   get masks() {
@@ -1163,14 +1153,14 @@ HashState.prototype = {
 
   newExhibit: function() {
     const exhibit = this.exhibit;
-    const cgs = deepCopy(exhibit.Groups || []);
-    const masks = deepCopy(exhibit.Masks || []);
-    const stories = deepCopy(exhibit.Stories || []);
+    const cgs = exhibit.Groups || [];
+    const masks = exhibit.Masks || [];
+    const stories = exhibit.Stories || [];
 
     this.design = {
-      chans: deepCopy(exhibit.Channels || []),
-      layout: deepCopy(exhibit.Layout || {}),
-      images: deepCopy(exhibit.Images || []),
+      chans: exhibit.Channels || [],
+      layout: exhibit.Layout || {},
+      images: exhibit.Images || [],
       audio: exhibit.Audio || undefined,
       header: exhibit.Header || '',
       footer: exhibit.Footer || '',
@@ -1213,10 +1203,11 @@ HashState.prototype = {
     }[mode];
 
     return {
-      Description: '',
       Mode: mode,
+      Description: '',
       Name: name || 'Story',
       Waypoints: [remove_undefined({
+        Mode: mode,
         Zoom: v[0],
         Arrow: a,
         Polygon: p,
@@ -1354,6 +1345,7 @@ HashState.prototype = {
     activeOrNot('#view-switch', !editing);
     activeOrNot('#edit-switch', editing);
 
+    displayOrNot('#home-button', !editing);
     displayOrNot('#editControls', editing);
     displayOrNot('#waypointControls', !editing);
     displayOrNot('#waypointName', !editing);
@@ -1571,7 +1563,7 @@ HashState.prototype = {
       overlay = this.overlay;
     }
 
-    if (this.story.Mode != 'outline') {
+    if (this.waypoint.Mode != 'outline') {
       if (el != this.currentOverlay) {
         if (current) {
           const xy = new OpenSeadragon.Point(-100, -100);
@@ -1613,11 +1605,12 @@ HashState.prototype = {
       });
     }
 
-    if (this.story.Mode == 'outline') {
+    if (this.waypoint.Mode == 'outline') {
       const tracker = new OpenSeadragon.MouseTracker({
         element: document.getElementById(el),
         clickHandler: (function(event) {
           const [s, w] = el.split('-').slice(2);
+          event.preventDefaultAction = false;
           this.s = s;
           this.w = w;
           this.pushState();
@@ -1629,7 +1622,7 @@ HashState.prototype = {
 
   addMasks: function() {
     $('#mask-layers').empty();
-    if (this.story.Mode == 'explore') {
+    if (this.waypoint.Mode == 'explore') {
         $('#mask-layers').addClass('flex');
         $('#mask-layers').removeClass('flex-column');
     }
@@ -1789,7 +1782,7 @@ HashState.prototype = {
     // Remove existing stories
     clearChildren(items);
 
-    if (this.story.Mode == 'outline') {
+    if (this.waypoint.Mode == 'outline') {
       // Add configured stories
       this.stories.forEach(function(story, sid) {
         if (story.Mode == undefined) {
