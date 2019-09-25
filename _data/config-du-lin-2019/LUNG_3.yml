@@ -21,9 +21,9 @@ Exhibit:
     - Path: 0___DAPI 1---22___CD45---33___IBA1---14___KERATIN---34___ASMA
       Name: Structural Components
       Colors:
-        - 00FF00
-        - 00FFFF
         - FFFFFF
+        - 00FFFF
+        - 00FF00
         - FF0000 
         - 0000FF
       Channels:
