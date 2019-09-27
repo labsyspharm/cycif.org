@@ -1336,6 +1336,48 @@ HashState.prototype = {
       });
     }
 
+    if (this.editing) {
+      const THIS = this;
+
+      $("#mask-picker").off("changed.bs.select");
+      $("#mask-picker").on("changed.bs.select", function(e, idx, isSelected, oldValues) {
+        const newValue = $(this).find('option').eq(idx).text();
+        THIS.waypoint.Masks = THIS.masks.map(mask => mask.Name).filter(function(name) {
+          if (isSelected) {
+            return oldValues.includes(name) || name == newValue;
+          }
+          return oldValues.includes(name) && name != newValue;
+        });
+        const active_names = THIS.active_masks.map(mask => mask.Name).filter(function(name) {
+          return name == undefined || THIS.waypoint.Masks.includes(name)
+        })
+        THIS.m = active_names.map(name => index_name(THIS.masks, name));
+        THIS.newView(true);
+      });
+
+      $("#group-picker").off("changed.bs.select");
+      $("#group-picker").on("changed.bs.select", function(e, idx, isSelected, oldValues) {
+        const newValue = $(this).find('option').eq(idx).text();
+        THIS.waypoint.Groups = THIS.cgs.map(group => group.Name).filter(function(name) {
+          if (isSelected) {
+            return oldValues.includes(name) || name == newValue;
+          }
+          return oldValues.includes(name) && name != newValue;
+        });
+        const waypoint_names = THIS.waypoint.Groups;
+        const current_name = THIS.cgs[THIS.g].Name;
+        if (!waypoint_names.includes(current_name)) {
+          const indices = waypoint_names.map(name => {
+            return index_name(THIS.cgs, name);
+          })
+          const first_index = indices[0] || 0;
+          THIS.g = first_index;
+        }
+        THIS.newView(true);
+      });
+
+    }
+
     // Based on control keys
     const editing = this.editing;
     const drawing = this.drawing;
@@ -1346,7 +1388,7 @@ HashState.prototype = {
     activeOrNot('#edit-switch', editing);
 
     displayOrNot('#home-button', !editing);
-    displayOrNot('#editControls', editing);
+    displayOrNot('.editControls', editing);
     displayOrNot('#waypointControls', !editing);
     displayOrNot('#waypointName', !editing);
 
@@ -1546,12 +1588,14 @@ HashState.prototype = {
     }
 
     const a_text_el = $('#arrow-text');
+
     const a_text = this.waypoint.ArrowText;
     const waypoint_arrow = this.waypoint.Arrow || [-1,-1];
     
     const same_x = waypoint_arrow[0] == arrow[0];
     const same_y = waypoint_arrow[1] == arrow[1];
     const same_arrow = same_x && same_y;
+
 
     if (a_text && same_arrow) {
       a_text_el.addClass('p-3');
@@ -1629,7 +1673,7 @@ HashState.prototype = {
 
   addMasks: function() {
     $('#mask-layers').empty();
-    if (this.waypoint.Mode == 'explore') {
+    if (this.editing || this.waypoint.Mode == 'explore') {
         $('#mask-layers').addClass('flex');
         $('#mask-layers').removeClass('flex-column');
     }
@@ -1647,6 +1691,7 @@ HashState.prototype = {
     else {
       $('#mask-label').hide()
     }
+
     masks.forEach(function(mask) {
       const m = index_name(this.masks, mask.Name);
       this.addMask(mask, m);
@@ -1898,8 +1943,16 @@ HashState.prototype = {
 
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
     const wid_txt_name = $(wid_waypoint).find('.edit_name')[0];
+    const wid_txt_arrow = $(wid_waypoint).find('.edit_arrow_text')[0];
     const wid_describe = decode(this.d);
     const wid_name = decode(this.n);
+
+    $(wid_txt_arrow).on('input', this, function(e) {
+      const THIS = e.data;
+      THIS.waypoint.ArrowText = this.value;
+      THIS.newView(false);
+    });
+    wid_txt_arrow.value = this.waypoint.ArrowText || '';
 
     $(wid_txt_name).on('input', this, function(e) {
       const THIS = e.data;

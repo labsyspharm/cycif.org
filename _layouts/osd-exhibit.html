@@ -5,6 +5,7 @@
   <meta charset='utf-8'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/osd-exhibit.css' | relative_url }}">
 
@@ -60,8 +61,18 @@
                         </div>
                         <div class="mb-3">
                             <p id="channel-label" class="mb-1 font-weight-bold pt-2">Select a marker group:</p>
+                            <select id="group-picker" class="editControls selectpicker" multiple>
+                                {% for group in exhibit.Groups %}
+                                    <option>{{group.Name}}</option>
+                                {% endfor %}
+                            </select>
                             <div id="channel-groups" class="nav flex nav-pills"></div>
                             <p id="mask-label" class="mb-1 font-weight-bold pt-2">Add data layer:</p>
+                            <select id="mask-picker" class="editControls selectpicker" multiple>
+                                {% for mask in exhibit.Masks %}
+                                    <option>{{mask.Name}}</option>
+                                {% endfor %}
+                            </select>
                             <div id="mask-layers" class="nav flex nav-pills">
                             </div>
                         </div>
@@ -136,6 +147,16 @@
                     <br>
                     <textarea class="form-control edit_text editable bg-dark text-white rounded-0 border-0" rows="9">
                     </textarea>
+                    <br>
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <i class="fas fa-location-arrow"></i>
+                        </div>
+                        <div class="col-10">
+                            <input class="form-control edit_arrow_text editable bg-dark text-white rounded-0 border-0" type="text">
+                            </input>
+                        </div>
+                    </div>
                 </div>
                 <button class="btn btn-default edit_copy_button px-1  " data-placement="bottom">
                     <i class="fas fa-copy fa-lg"></i><br>
@@ -207,7 +228,7 @@
                 <div class="modal-body">
                     You're looking at an image layering
                     <span class="channel_count"></span>
-                    CyCIF markers with one color per cycle.
+                    CyCIF markers.
                     Use the <i class="fas fa-arrow-left"></i>
                     and <i class="fas fa-arrow-right"></i>
                     arrows to move between highlighted image regions.
@@ -273,6 +294,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script>
 
     <script>
