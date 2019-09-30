@@ -670,8 +670,6 @@ HashState.prototype = {
   get bufferWaypoint() {
     if (this.state.buffer.waypoint === undefined) {
       const viewport = this.viewport;
-      const mask = this.active_masks.pop();
-      const group = this.group;
       return remove_undefined({
         Zoom: viewport.scale,
         Pan: [
@@ -679,11 +677,12 @@ HashState.prototype = {
           viewport.pan.y
         ],
         Arrow: this.a,
-        Mask: mask.Name,
-        Masks: this.masks.map(mask => mask.Name),
+        ArrowName: '',
+        ActiveMasks: undefined,
+        Masks: undefined,
         Polygon: this.p,
-        Group: group.Name,
-        Groups: this.cgs.map(group => group.Name),
+        Group: this.group.Name,
+        Groups: undefined,
         Description: '',
         Name: 'Untitled',
         Overlay: this.overlay
@@ -1349,8 +1348,9 @@ HashState.prototype = {
           return oldValues.includes(name) && name != newValue;
         });
         const active_names = THIS.active_masks.map(mask => mask.Name).filter(function(name) {
-          return name == undefined || THIS.waypoint.Masks.includes(name)
+          return THIS.waypoint.Masks.includes(name)
         })
+        THIS.waypoint.ActiveMasks = active_names;
         THIS.m = active_names.map(name => index_name(THIS.masks, name));
         THIS.newView(true);
       });
@@ -1364,14 +1364,10 @@ HashState.prototype = {
           }
           return oldValues.includes(name) && name != newValue;
         });
-        const waypoint_names = THIS.waypoint.Groups;
+        const group_names = THIS.waypoint.Groups;
         const current_name = THIS.cgs[THIS.g].Name;
-        if (!waypoint_names.includes(current_name)) {
-          const indices = waypoint_names.map(name => {
-            return index_name(THIS.cgs, name);
-          })
-          const first_index = indices[0] || 0;
-          THIS.g = first_index;
+        if (group_names.length > 0 && !group_names.includes(current_name)) {
+          THIS.g = index_name(THIS.cgs, group_names[0]);
         }
         THIS.newView(true);
       });
@@ -1685,7 +1681,7 @@ HashState.prototype = {
     const masks = this.masks.filter(mask => {
       return mask_names.includes(mask.Name);
     });
-    if (masks.length) {
+    if (masks.length || this.editing) {
       $('#mask-label').show()
     }
     else {
@@ -1732,7 +1728,7 @@ HashState.prototype = {
     const cgs = this.cgs.filter(group => {
       return cgs_names.includes(group.Name);
     });
-    if (cgs.length) {
+    if (cgs.length || this.editing) {
       $('#channel-label').show()
     }
     else {
@@ -1957,12 +1953,14 @@ HashState.prototype = {
     $(wid_txt_name).on('input', this, function(e) {
       const THIS = e.data;
       THIS.n = encode(this.value);
+      THIS.waypoint.Name = this.value;
     });
     wid_txt_name.value = wid_name;
 
     $(wid_txt).on('input', this, function(e) {
       const THIS = e.data;
       THIS.d = encode(this.value);
+      THIS.waypoint.Description = this.value;
     });
     wid_txt.value = wid_describe;
   },
@@ -1973,6 +1971,13 @@ HashState.prototype = {
     waypoint.Overlay = this.overlay; 
     waypoint.Name = decode(this.n);
     waypoint.Description = decode(this.d);
+
+    const THIS = this;
+    waypoint.ActiveMasks = this.m.filter(function(i){
+      return i >= 0;
+    }).map(function(i) {
+      return THIS.masks[i].Name;
+    })
     waypoint.Group = this.cgs[this.g].Name;
     waypoint.Pan = [viewport.pan.x, viewport.pan.y];
     waypoint.Zoom = viewport.scale;
