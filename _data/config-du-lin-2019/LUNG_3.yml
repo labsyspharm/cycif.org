@@ -138,7 +138,7 @@ Exhibit:
         - Cluster_3 Immune
         - Segmentation Mask
       Audio: /assets/audio/speech_20190918201043160.mp3
-      VisData: /assets/visdata/clust7hpdat_LUNG-3-PR.csv
+      VisMatrix: /assets/visdata/clust7hpdat_LUNG-3-PR.csv
       Description: The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
       Zoom: 2.3661
       Pan:
@@ -153,7 +153,7 @@ Exhibit:
     - Name: Adjacent Non-Tumor Region
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
-      VisData: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
+      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
       Description: An adjacent non-tumor region consists on fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
       Zoom: 1.5838
       Pan:
@@ -168,7 +168,7 @@ Exhibit:
     - Name: PD-L1 Expression
       Group: PD-L1 Expression
       Audio: /assets/audio/speech_20190918201256228.mp3
-      VisData: /assets/visdata/clust14hpdat_LUNG-3-PR.csv
+      VisMatrix: /assets/visdata/clust14hpdat_LUNG-3-PR.csv
       Description: |
         Programmed Death Ligand 1 (`PD-L1`) also known as cluster of differentiation 274 (CD274), a target of immunotherapeutics, is expressed in tumor cells (`cytokeratin`) as well as in some macrophages (`IBA1`).
       Zoom: 2.6296
@@ -185,7 +185,7 @@ Exhibit:
     - Name: PD-L1 Expressing Tumor Cells
       Group: PD-L1 Expression
       Audio: /assets/audio/speech_20190918201431372.mp3
-      Image: /assets/img/stories/plot2.png
+      VisBarChart: /assets/visdata/cellCounts.csv
       Description: Tumor cells (`cytokeratin`) expressing `PD-L1`.
       Zoom: 11.3066
       Pan:

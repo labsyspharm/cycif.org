@@ -1911,8 +1911,13 @@ HashState.prototype = {
     }
 
     //matrix
-    if (waypoint.VisData) {
-      infovis.renderMatrix(wid_waypoint, waypoint.VisData);
+    if (waypoint.VisMatrix) {
+      infovis.renderMatrix(wid_waypoint, waypoint.VisMatrix);
+    }
+
+    //barchart
+    if (waypoint.VisBarChart) {
+      infovis.renderBarChart(wid_waypoint, waypoint.VisBarChart);
     }
 
 

@@ -107,7 +107,7 @@ infovis.renderMatrix = function(wid_waypoint, visdata){
                         tooltip.transition()
                             .duration(500)
                             .style("opacity", 0);
-                    });;
+                    });
 
                 // the x-axis labels (top)
                 var columnLabel = vis.svg.selectAll(".matrix-column-label")
@@ -149,7 +149,109 @@ infovis.renderMatrix = function(wid_waypoint, visdata){
 
 
 infovis.renderBarChart = function(wid_waypoint, visdata){
-   //to be implemented
+
+    //formatter .. to scientific notation
+    var formatter = d3.format(".2n");
+
+    var vis = {};
+
+    //layout
+    vis.margin = {top: 20, right: 20, bottom: 30, left: 40};
+    vis.width = wid_waypoint.clientWidth - vis.margin.left - vis.margin.right;
+    vis.height = vis.width;
+    vis.padding = 15;
+
+    //tooltip
+    vis.tooltip = d3.select("#viewer-waypoint").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    //create svg
+    vis.svg = d3.select("#viewer-waypoint").append("svg")
+        .attr("width", vis.width + vis.margin.left + vis.margin.right)
+        .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
+
+    //axis
+    vis.x = d3.scaleBand().rangeRound([0, vis.width]).padding(0.1);
+    vis.y = d3.scaleLinear().rangeRound([vis.height, 0]);
+
+    var g = vis.svg.append("g")
+        .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
+
+    //read from csv data file
+    d3.csv(visdata)
+    //some mapping..
+        .then((data) => {
+            return data.map((d) => {
+                d.frequency = +d.frequency;
+                return d;
+            });
+        })
+        .then((data) => {
+            //data domains..ranges
+            vis.x.domain(data.map(function(d) { return d.type; }));
+            vis.y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+            //transform  x axis to bottom of chart
+            g.append("g")
+                .attr("class", "axis axis--x")
+                .attr("transform", "translate(" + vis.padding + "," + vis.height + ")")
+                .call(d3.axisBottom(vis.x));
+
+            //set up y axis to left of chart
+            g.append("g")
+                .attr("class", "axis axis--y")
+                .call(d3.axisLeft(vis.y).ticks(10).tickFormat(formatter))
+                .append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", "0.71em")
+                .attr("text-anchor", "end")
+                .text("Number of Cells")
+                .attr('fill', 'white');
+
+            //plot the bars
+            g.selectAll(".bar")
+                .data(data)
+                .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", function(d) { return vis.padding + vis.x(d.type); })
+                .attr("y", function(d) { return vis.y(0); })
+                .attr("width", vis.x.bandwidth())
+                .attr("height", function(d) { return vis.height - vis.y(0); });
+
+            //little animation
+            vis.svg.selectAll("rect")
+                .transition()
+                .duration(800)
+                .attr("y", function(d) { return vis.y(d.frequency); })
+                .attr("height", function(d) { return vis.height - vis.y(d.frequency); })
+                .delay(function(d,i){return(i*100)})
+
+            //interaction
+            vis.svg.selectAll("rect")
+                .on("mouseover", function(d) {
+                    d3.select(this).attr('stroke', 'white')
+                        .attr('stroke-width', '2');
+                    vis.tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .8);
+                    vis.tooltip.html('' + formatter(parseFloat(d.frequency)) )
+                        .style("left", (d3.event.pageX) + "px")
+                        .style("top", (d3.event.pageY - vis.margin.top) + "px");
+                })
+                .on("mouseout", function(d) {
+                    d3.select(this).attr('stroke', 'black')
+                        .attr('stroke-width', '0');
+                    vis.tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                })
+                .on("click", function(d,i) { alert('clicked on bar' + i + ' with value: ' + formatter(d.frequency)); });
+        })
+        .catch((error) => {
+            throw error;
+        });
 }
 
 infovis.renderBoxPlot = function(wid_waypoint, visdata){

@@ -360,6 +360,18 @@ div.tooltip {
     pointer-events: none;
 }
 
+.bar {
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: #a6cee3;
+}
+
+.axis--x path {
+    display: none;
+}
+
 /*polygon:hover{*/
 /*    fill: rgba(70, 130, 180, 0.1);*/
 /*    stroke: red;*/
