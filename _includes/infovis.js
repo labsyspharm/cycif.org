@@ -2,7 +2,7 @@
 infovis = {};
 
 infovis.renderMatrix = function(wid_waypoint, visdata){
-    d3.csv(visdata)
+    return d3.csv(visdata)
         .then(function(data) {
 
             //tooltip
@@ -179,7 +179,7 @@ infovis.renderBarChart = function(wid_waypoint, visdata){
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
     //read from csv data file
-    d3.csv(visdata)
+    return d3.csv(visdata)
     //some mapping..
         .then((data) => {
             return data.map((d) => {

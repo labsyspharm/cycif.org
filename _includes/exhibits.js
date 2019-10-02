@@ -1901,6 +1901,9 @@ HashState.prototype = {
     }
     waypointName.innerText = waypoint.Name;
 
+    const scroll_dist = $('.waypoint-content').scrollTop();
+    $(wid_waypoint).css('height', $(wid_waypoint).height());
+
     const md = waypoint.Description;
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
 
@@ -1910,17 +1913,28 @@ HashState.prototype = {
       wid_waypoint.appendChild(img);
     }
 
+    const finish_waypoint = function() {
+      $('.waypoint-content').scrollTop(scroll_dist);
+      $(wid_waypoint).css('height', '');
+    }
+    var finish_async = false;
+
     //matrix
     if (waypoint.VisMatrix) {
-      infovis.renderMatrix(wid_waypoint, waypoint.VisMatrix);
+      var tmp = infovis.renderMatrix(wid_waypoint, waypoint.VisMatrix);
+      tmp.then(finish_waypoint);
+      finish_async = true;
     }
-
     //barchart
     if (waypoint.VisBarChart) {
-      infovis.renderBarChart(wid_waypoint, waypoint.VisBarChart);
+      var tmp = infovis.renderBarChart(wid_waypoint, waypoint.VisBarChart);
+      tmp.then(finish_waypoint);
+      finish_async = true;
     }
 
-
+    if (finish_async == false) {
+      finish_waypoint();
+    }
 
     // Color code elements
     const channelOrders = this.channelOrders(this.channels);
