@@ -204,6 +204,7 @@ Exhibit:
         - 1.007917516813384
         - 0.3362427017301348
       Audio: /assets/audio/speech_20190918201550587.mp3
+      VisScatterplot: /assets/visdata/clusteredCells.csv
       Description: Macrophages (`IBA1`) expressing `PD-L1`.
       Zoom: 11.3066
       Pan:

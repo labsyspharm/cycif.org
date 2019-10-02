@@ -1932,6 +1932,13 @@ HashState.prototype = {
       finish_async = true;
     }
 
+    //scatterplot
+    if (waypoint.VisScatterplot) {
+        var tmp = infovis.renderScatterplot(wid_waypoint, waypoint.VisScatterplot);
+        tmp.then(finish_waypoint);
+        finish_async = true;
+      }
+
     if (finish_async == false) {
       finish_waypoint();
     }
