@@ -327,6 +327,39 @@ polygon {
     vector-effect: non-scaling-stroke;
 }
 
+.matrix-label {
+    font-size: 10px;
+    color: white;
+    fill : white;
+}
+
+.matrix-row-label {
+    font-size: 10px;
+    color: white;
+    fill : white;
+}
+
+.colorLegend{
+    font-size: 8px;
+    color: white;
+    fill : white;
+}
+
+div.tooltip {
+    position: absolute;
+    margin-top: 3px;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: black;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
 /*polygon:hover{*/
 /*    fill: rgba(70, 130, 180, 0.1);*/
 /*    stroke: red;*/

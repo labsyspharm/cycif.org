@@ -1910,6 +1910,12 @@ HashState.prototype = {
       wid_waypoint.appendChild(img);
     }
 
+    //matrix
+    if (waypoint.VisData) {
+      infovis.renderMatrix(wid_waypoint, waypoint.VisData);
+    }
+
+
 
     // Color code elements
     const channelOrders = this.channelOrders(this.channels);
