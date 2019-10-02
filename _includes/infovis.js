@@ -129,6 +129,8 @@ infovis.renderMatrix = function(wid_waypoint, visdata){
                     .attr("class", "colorLegend")
                     .attr("transform", "translate(" + (vis.width+10) + ",0)");
                 var colorLegend = d3.legendColor()
+                    .ascending(true)
+                    .labelAlign('start')
                     .shapeWidth(5)
                     .shapeHeight(((data.length*(vis.cellWidth+vis.cellPadding))-vis.cellPadding)/ticks - 1)
                     .cells(d3.range(vis.min, vis.max, (vis.max - vis.min) /(ticks)) )
