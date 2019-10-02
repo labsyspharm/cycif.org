@@ -302,8 +302,8 @@ infovis.renderScatterplot = function(wid_waypoint, visdata){
         });
 
         // don't want dots overlapping axis, so add in buffer to data domain
-        xScale.domain([d3.min(data, xValue) - 1, d3.max(data, xValue) + 1]);
-        yScale.domain([d3.min(data, yValue) - 1, d3.max(data, yValue) + 1]);
+        xScale.domain([d3.min(data, xValue) - 50, d3.max(data, xValue) + 50]);
+        yScale.domain([d3.min(data, yValue) - 50, d3.max(data, yValue) + 50]);
 
         // x-axis
         svg.append("g")
