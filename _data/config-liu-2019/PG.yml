@@ -50,17 +50,17 @@ Exhibit:
   - Channels:
     - MITF
     - NGFR
-    - AXL
+    - CD45
     - aSMA
     - DNA
     Colors:
-    - ff0000
-    - ffff00
     - 00ff00
+    - ff0000
+    - 00ffff
     - ffffff
     - 0000ff
     Name: Differentiation State
-    Path: Differentiation-State_17__MITF--31__NGFR--6__AXL--11__aSMA--8__DNA
+    Path: Differentiation-State_17__MITF--31__NGFR--14__CD45--11__aSMA--8__DNA
   Stories:
   - Name: Overview
     Description: null
@@ -72,7 +72,7 @@ Exhibit:
       Group: Architecure
       Name: The Waypoint
       Description: "Lineage 1 - 62 days after treatment.<br />Skin Right Neck\n\n\
-        #### tCyCIF image from:\n\nLiu and Lin et al, 2019 submitted \n"
+        #### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100
@@ -82,38 +82,38 @@ Exhibit:
     Description: null
     Waypoints:
     
-    - Zoom: 4.8
-      Pan:
-        - 0.2891
-        - 0.3793
-      Group: Architecure
-      Description: >-
-        Immune cells (`CD45`+) can be clearly
-        delineated from tumor cells (`S100` +)
-        and stroma (`aSMA`).
-      Name: 'Figure 3a, left panel'
-      Overlay:
-        x: 0.2552
-        y: 0.3458
-        width: 0.0666
-        height: 0.059
-
-    - Zoom: 6.912
-      Pan:
-        - 0.2895
-        - 0.3784
-      Group: Differentiation State
-      Description: >-
-        In `S100`+ tumor cells, distinct tumor
-        subtypes including `MITF`-High versus
-        `NGFR`-High cell populations are
-        identified. The `MITF` and `NGFR` CyCIF
-        signals are false-colored with red and
-        yellow, respectively. 
-      Name: 'Figure 3a, left panel (cont.)'
-      Overlay:
-        x: 0.2552
-        y: 0.3458
-        width: 0.0666
-        height: 0.059
-
+    - Zoom: 4.8 
+      Pan: 
+        - 0.2891 
+        - 0.3793 
+      Group: Architecure 
+      Description: >- 
+        Immune cells (`CD45`+) can be clearly 
+        delineated from tumor cells (`S100` +) 
+        and stroma (`aSMA`). 
+      Name: 'Figure 3a, left panel' 
+      Overlay: 
+        x: 0.2552 
+        y: 0.3458 
+        width: 0.0666 
+        height: 0.059 
+ 
+    - Zoom: 6.912 
+      Pan: 
+        - 0.2895 
+        - 0.3784 
+      Group: Differentiation State 
+      Description: >- 
+        In `S100`+ tumor cells, distinct tumor 
+        subtypes including `MITF`-High versus 
+        `NGFR`-High cell populations are 
+        identified. The `MITF` and `NGFR` CyCIF 
+        signals are false-colored with red and 
+        yellow, respectively.  
+      Name: 'Figure 3a, left panel (cont.)' 
+      Overlay: 
+        x: 0.2552 
+        y: 0.3458 
+        width: 0.0666 
+        height: 0.059 
+ 

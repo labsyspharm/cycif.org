@@ -50,17 +50,17 @@ Exhibit:
   - Channels:
     - MITF
     - NGFR
-    - AXL
+    - CD45
     - aSMA
     - DNA
     Colors:
-    - ff0000
-    - ffff00
     - 00ff00
+    - ff0000
+    - 00ffff
     - ffffff
     - 0000ff
     Name: Differentiation State
-    Path: Differentiation-State_17__MITF--31__NGFR--6__AXL--11__aSMA--8__DNA
+    Path: Differentiation-State_17__MITF--31__NGFR--14__CD45--11__aSMA--8__DNA
   Stories:
   - Name: Overview
     Description: null
@@ -72,7 +72,7 @@ Exhibit:
       Group: Architecure
       Name: The Waypoint
       Description: "Lineage 1 - 92 days after treatment.<br />Skin Left Neck\n\n####\
-        \ tCyCIF image from:\n\nLiu and Lin et al, 2019 submitted \n"
+        \ tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100
