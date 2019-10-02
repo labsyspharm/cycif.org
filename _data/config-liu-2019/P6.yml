@@ -50,17 +50,17 @@ Exhibit:
   - Channels:
     - MITF
     - NGFR
-    - AXL
+    - CD45
     - aSMA
     - DNA
     Colors:
-    - ff0000
-    - ffff00
     - 00ff00
+    - ff0000
+    - 00ffff
     - ffffff
     - 0000ff
     Name: Differentiation State
-    Path: Differentiation-State_13__MITF--47__NGFR--6__AXL--11__aSMA--8__DNA
+    Path: Differentiation-State_13__MITF--47__NGFR--26__CD45--11__aSMA--8__DNA
   Stories:
   - Name: Overview
     Description: null
@@ -71,8 +71,8 @@ Exhibit:
       - 0.5
       Group: Architecure
       Name: The Waypoint
-      Description: "Lineage 2 - 22 days before treatment.<br />Skin Right Nasolabial\
-        \ Fold\n\n#### tCyCIF image from:\n\nLiu and Lin et al, 2019 submitted \n"
+      Description: "Lineage 2 - -22 days after treatment.<br />Skin Right Nasolabial\
+        \ Fold\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
       Overlay:
         x: -100
         y: -100
@@ -82,37 +82,37 @@ Exhibit:
     Description: null
     Waypoints:
 
-    - Zoom: 2.655
-      Pan:
-        - 0.5634
-        - 0.4661
-      Group: Architecure
-      Description: >-
-        Immune cells (`CD45`+) can be clearly
-        delineated from tumor cells (`S100` +)
-        and stroma (`aSMA`).
-      Name: 'Figure 3a, left panel'
-      Overlay:
-        x: 0.5178
-        y: 0.4128
-        width: 0.1492
-        height: 0.1131
-        
-    - Zoom: 3.6875
-      Pan:
-        - 0.5731
-        - 0.466
-      Group: Differentiation State
-      Description: >-
-        In `S100`+ tumor cells, distinct tumor
-        subtypes including `MITF`-High versus
-        `NGFR`-High cell populations are
-        identified. The `MITF` and `NGFR` CyCIF
-        signals are false-colored with red and
-        yellow, respectively. 
-      Name: 'Figure 3a, left panel (cont.)'
-      Overlay:
-        x: 0.5178
-        y: 0.4128
-        width: 0.1492
+    - Zoom: 2.655 
+      Pan: 
+        - 0.5634 
+        - 0.4661 
+      Group: Architecure 
+      Description: >- 
+        Immune cells (`CD45`+) can be clearly 
+        delineated from tumor cells (`S100` +) 
+        and stroma (`aSMA`). 
+      Name: 'Figure 3a, left panel' 
+      Overlay: 
+        x: 0.5178 
+        y: 0.4128 
+        width: 0.1492 
+        height: 0.1131 
+         
+    - Zoom: 3.6875 
+      Pan: 
+        - 0.5731 
+        - 0.466 
+      Group: Differentiation State 
+      Description: >- 
+        In `S100`+ tumor cells, distinct tumor 
+        subtypes including `MITF`-High versus 
+        `NGFR`-High cell populations are 
+        identified. The `MITF` and `NGFR` CyCIF 
+        signals are false-colored with red and 
+        yellow, respectively.  
+      Name: 'Figure 3a, left panel (cont.)' 
+      Overlay: 
+        x: 0.5178 
+        y: 0.4128 
+        width: 0.1492 
         height: 0.1131
