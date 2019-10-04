@@ -692,7 +692,7 @@ HashState.prototype = {
           viewport.pan.y
         ],
         Arrow: this.a,
-        ArrowName: '',
+        ArrowText: '',
         ActiveMasks: undefined,
         Masks: undefined,
         Polygon: this.p,
