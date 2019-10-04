@@ -376,6 +376,7 @@ HashState.prototype = {
       this.startEditing();
     }
     this.pushState();
+    window.onpopstate();
 
     // Edit name
     $('#exhibit-name').text(this.exhibit.Name);
@@ -422,6 +423,7 @@ HashState.prototype = {
         THIS.w = THIS.w - 1;
       }
       THIS.pushState();
+      window.onpopstate();
     });
 
     $('#rightArrow').click(this, function(e) {
@@ -435,6 +437,7 @@ HashState.prototype = {
         THIS.w = THIS.w + 1;
       }
       THIS.pushState();
+      window.onpopstate();
     });
 
     $('#edit-switch').click(this, function(e) {
@@ -442,6 +445,7 @@ HashState.prototype = {
       if (!THIS.editing) {
         THIS.startEditing();
         THIS.pushState();
+        window.onpopstate();
       }
     });
 
@@ -450,19 +454,22 @@ HashState.prototype = {
       if (THIS.editing) {
         THIS.finishEditing();
         THIS.pushState();
+        window.onpopstate();
       }
     });
 
     $('#home-button').click(this, function(e) {
       const THIS = e.data;
       THIS.s = 0; 
-      THIS.newView(true);
+      THIS.pushState();
+      window.onpopstate();
     });
 
     $('#zoom-home').click(this, function(e) {
       const THIS = e.data;
       THIS.s = 0; 
-      THIS.newView(true);
+      THIS.pushState();
+      window.onpopstate();
     });
 
     $('.clear-switch').click(this, function(e) {
@@ -470,6 +477,7 @@ HashState.prototype = {
       THIS.bufferWaypoint = undefined;
       THIS.startEditing();
       THIS.pushState();
+      window.onpopstate();
     });
     
     $('.arrow-switch').click(this, function(e) {
@@ -482,6 +490,7 @@ HashState.prototype = {
         THIS.startDrawing(THIS);
       }
       THIS.pushState();
+      THIS.newView(false);
     });
 
     $('.lasso-switch').click(this, function(e) {
@@ -494,6 +503,7 @@ HashState.prototype = {
         THIS.startDrawing(THIS);
       }
       THIS.pushState();
+      THIS.newView(false);
     });
 
     $('.draw-switch').click(this, function(e) {
@@ -506,6 +516,7 @@ HashState.prototype = {
         THIS.startDrawing(THIS);
       }
       THIS.pushState();
+      THIS.newView(false);
     });
 
     $('#edit_description_modal form').submit(this, function(e){
@@ -585,6 +596,7 @@ HashState.prototype = {
         THIS.drawUpperBounds(position);
         THIS.finishDrawing();
         THIS.pushState();
+        THIS.newView(false);
       }
     }, this);
 
@@ -600,6 +612,7 @@ HashState.prototype = {
           THIS.finishDrawing();
           THIS.viewer.setMouseNavEnabled(true);
           THIS.pushState();
+          THIS.newView(false);
         }
         return;
       }
@@ -618,6 +631,7 @@ HashState.prototype = {
         THIS.finishDrawing();
         THIS.viewer.setMouseNavEnabled(true);
         THIS.pushState();
+        THIS.newView(false);
       }
     }, this);
 
@@ -655,6 +669,7 @@ HashState.prototype = {
         round4(pan.y)
       ];
       THIS.pushState();
+      THIS.newView(false);
       THIS.faster();
     }, this);
 
@@ -792,7 +807,7 @@ HashState.prototype = {
   },
   set drawType(_l) {
     this.state.drawType = _l;
-    this.newView(true);
+    this.newView(false);
   },
 
   get drawing() {
@@ -801,7 +816,7 @@ HashState.prototype = {
   set drawing(_d) {
     const d = parseInt(_d, 10);
     this.state.drawing = modulo(d, 3);
-    this.newView(true);
+    this.newView(false);
   },
 
   get mouseXY() {
@@ -1085,9 +1100,8 @@ HashState.prototype = {
   get active_masks() {
     const masks = this.masks;
     return this.m.map(function(m) {
-      const mask = masks[m];
-      return mask? mask : {};
-    });
+      return masks[m];
+    }).filter(name => name != undefined);
   },
 
   get group() {
@@ -1176,7 +1190,6 @@ HashState.prototype = {
   newTempStory: function(mode) {
     const exhibit = this.exhibit;
     const group = this.group;
-    const mask = this.active_masks.pop();
     const a = this.a;
     const o = this.o;
     const p = this.p;
@@ -1211,7 +1224,7 @@ HashState.prototype = {
         Arrow: a,
         Polygon: p,
         Pan: v.slice(1),
-        Mask: mask.Name,
+        ActiveMasks: [],
         Group: group.Name,
         Masks: masks,
         Groups: groups,
@@ -1242,7 +1255,6 @@ HashState.prototype = {
       history.pushState(this.design, document.title, url);
     }
 
-    window.onpopstate();
     this.changed = false;
   },
   popState: function(e) {
@@ -1272,6 +1284,7 @@ HashState.prototype = {
       this.stories = this.stories.concat([tag_story]);
       this.s = this.stories.length - 1;
       this.pushState();
+      window.onpopstate();
     }
     else if (this.isMissingHash) {
       this.s = 0; 
@@ -1281,6 +1294,7 @@ HashState.prototype = {
       welcome.modal('show');
 
       this.pushState();
+      window.onpopstate();
     }
 
     // Always update
@@ -1321,11 +1335,13 @@ HashState.prototype = {
         const THIS = e.data;
         THIS.w -= 1;
         THIS.pushState();
+        window.onpopstate();
       });
       $('.step-next').click(this, function(e) {
         const THIS = e.data;
         THIS.w += 1;
         THIS.pushState();
+        window.onpopstate();
       });
 
       // Waypoint-specific Copy Buttons
@@ -1484,6 +1500,7 @@ HashState.prototype = {
     bw.Description = decode(this.d);
     bw.Zoom = this.viewport.scale;
     bw.Overlay = this.overlay;
+    bw.ActiveMasks = this.active_masks.map(mask => mask.Name)
     bw.Polygon = this.p;
     bw.Arrow = this.a;
     bw.Pan = [
@@ -1492,6 +1509,7 @@ HashState.prototype = {
     ];
     this.bufferWaypoint = bw;
     this.pushState();
+    window.onpopstate();
     this.editing = 0;
   },
 
@@ -1521,6 +1539,7 @@ HashState.prototype = {
       this.finishEditing();
       this.startEditing();
       this.pushState();
+      this.newView(false);
     }
     else {
       $('#edit_description_modal').modal('show');
@@ -1661,6 +1680,7 @@ HashState.prototype = {
           this.s = s;
           this.w = w;
           this.pushState();
+          window.onpopstate();
         }).bind(this)
       });
       this.trackers.push(tracker);
@@ -1709,7 +1729,7 @@ HashState.prototype = {
     // Append everything
     document.getElementById('mask-layers').appendChild(aEl);
     
-    // Update Channel Group
+    // Update Mask Layer
     $(aEl).click(this, function(e) {
       THIS = e.data;
       if (THIS.m.includes(m)){
@@ -1719,6 +1739,7 @@ HashState.prototype = {
         THIS.m.push(m);
       }
       THIS.pushState();
+      window.onpopstate();
     });
   },
 
@@ -1760,6 +1781,7 @@ HashState.prototype = {
       THIS = e.data;
       THIS.g = g;
       THIS.pushState();
+      window.onpopstate();
     });
   },
 
@@ -1878,6 +1900,7 @@ HashState.prototype = {
       THIS.s = sid;
       THIS.w = wid;
       THIS.pushState();
+      window.onpopstate();
     });
 
     wid_item.appendChild(wid_link);
