@@ -1130,7 +1130,16 @@ HashState.prototype = {
     if (this.editing) {
       return this.bufferWaypoint;
     }
-    return this.waypoints[this.w];
+    var waypoint = this.waypoints[this.w];
+    if (!waypoint.Overlay) {
+      waypoint.Overlay = {
+        x: -100,
+        y: -100,
+        width: 1,
+        height: 1
+      }
+    }
+    return waypoint;
   },
   set waypoint(waypoint) {
     if (this.editing) {
@@ -1310,7 +1319,9 @@ HashState.prototype = {
     this.allOverlays.forEach(function(el) {
       const [s, w] = el.split('-').slice(2);
       const overlay = this.stories[s].Waypoints[w].Overlay;
-      this.addOverlay(overlay, el);
+      if (overlay) {
+        this.addOverlay(overlay, el);
+      }
     }, this)
     this.addArrow(this.a);
 
