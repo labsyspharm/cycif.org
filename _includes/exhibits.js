@@ -693,6 +693,7 @@ HashState.prototype = {
         ],
         Arrow: this.a,
         ArrowText: '',
+        HideArrow: undefined,
         ActiveMasks: undefined,
         Masks: undefined,
         Polygon: this.p,
@@ -1349,6 +1350,18 @@ HashState.prototype = {
       $('.edit_copy_button').each(function() {
         newCopyYamlButton.call(this, STATE);
       });
+      $('#edit_toggle_arrow').click(this, function(e) {
+        const THIS = e.data;
+        const hide_arrow = THIS.waypoint.HideArrow;
+        THIS.waypoint.HideArrow = hide_arrow ? false : true;
+        if (THIS.waypoint.HideArrow == true) {
+          $(this).css('opacity', '0.5');
+        }
+        else {
+          $(this).css('opacity', '1');
+        }
+        THIS.newView(false);
+      });
     }
 
     if (this.editing) {
@@ -1602,7 +1615,18 @@ HashState.prototype = {
       });
     }
 
+    const a_image_el = $('#arrow-image');
     const a_text_el = $('#arrow-text');
+
+    if (this.waypoint.HideArrow == true) {
+      $(a_image_el).css('display', 'none');
+      $(a_text_el).css('margin-left', '0px');
+    }
+    else {
+      $(a_image_el).css('display', 'block');
+      $(a_text_el).css('margin-left', '64px');
+    }
+
 
     const a_text = this.waypoint.ArrowText;
     const waypoint_arrow = this.waypoint.Arrow || [-1,-1];
