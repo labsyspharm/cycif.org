@@ -4,9 +4,7 @@ Exhibit:
   Header: |
     Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
   Footer: |
-    #### Figure from:
 
-    Du and Lin et al, 2019 (submitted) 
   Images:
     - Name: i0
       Description: 'Lung 3 - Du and Lin et al, 2019 (submitted)'
@@ -129,32 +127,38 @@ Exhibit:
   Stories:
   - Name: ''
     Waypoints:
-    - Name: Tumor Region
+    - Name: Tissue Regions
       Group: Structural Components
-      ActiveMasks:
-        - Segmentation Mask
-      Masks:
-        - Cluster_1 Stroma
-        - Cluster_3 Immune
-        - Segmentation Mask
       Audio: /assets/audio/speech_20190918201043160.mp3
-      VisMatrix: /assets/visdata/clust7hpdat_LUNG-3-PR.csv
-      Description: The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
-      Zoom: 2.3661
+      Description: In this tissue specimen, the tumor region can be seen on the right-hand side and an adjacent non-tumor, stromal region can be seen on the left-hand side.
+      Zoom: 0.4542
       Pan:
-        - 1.0778
-        - 0.6868
+        - 0.9595
+        - 0.7033
       Overlay:
         x: 0.8681
         y: 0.5487
         width: 0.4206
         height: 0.2981
+  
+    - Name: Epithelial Tumor Cells
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201043160.mp3
+      Description: The epithelial tumor cells of the lung express `Keratin`. Clusters of tumor cells are associated with stromal areas containing fibroblasts (`α-SMA`) and immune cells (`CD45` and `IBA1`).
+      Zoom: 3.255
+      Pan:
+        - 0.7688
+        - 0.8668
+      Overlay:
+        x: 0.508
+        y: 0.6765
+        width: 0.4845
+        height: 0.322
 
     - Name: Adjacent Non-Tumor Region
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
-      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
-      Description: An adjacent non-tumor region consists on fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
+      Description: In the adjacent non-tumor region, most of the cells are fibroblasts expressing `a-SMA` and immune cells expressing `CD45` or `IBA1`.
       Zoom: 1.5838
       Pan:
         - 0.3157
@@ -164,6 +168,31 @@ Exhibit:
         y: 0.0254
         width: 0.6366
         height: 0.4418
+
+    - Name: K-means Clustering
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
+      Description: When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` using the k-means algorithm, the cells fall into four cardinal groups `:` 1) A cluster of tumor cells with high keratin expression, 2) a cluster of stromal cells with high `a-SMA` expression, 3) a cluster of immune cells with high `CD45` expression, and 4) a fourth cluster of cells with low expression of all three markers.
+      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
+      Description: Click on each of the clusters below to see which cells in the image belong to each cluster.
+      ActiveMasks:
+      - Cluster_1 Tumor
+      Masks:
+      - Cluster_1 Tumor
+      - Cluster_2 Stroma
+      - Cluster_3 Immune
+      - Cluster_4 Other
+      - Segmentation Mask
+      Zoom: 1.5838
+      Pan:
+        - 0.3157
+        - 0.232
+      Overlay:
+        x: 0.0014
+        y: 0.0254
+        width: 0.6366
+        height: 0.4418
+
 
     - Name: PD-L1 Expression
       Group: PD-L1 Expression
@@ -303,3 +332,42 @@ Exhibit:
         y: 0.4663
         width: 0.1271
         height: 0.0901
+
+# saved for reference
+  # - Name: ''
+  #   Waypoints:
+  #   - Name: Tumor Region
+  #     Group: Structural Components
+  #     ActiveMasks:
+  #       - Segmentation Mask
+  #     Masks:
+  #       - Cluster_1 Stroma
+  #       - Cluster_3 Immune
+  #       - Segmentation Mask
+  #     Audio: /assets/audio/speech_20190918201043160.mp3
+  #     VisMatrix: /assets/visdata/clust7hpdat_LUNG-3-PR.csv
+  #     Description: The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
+  #     Zoom: 2.3661
+  #     Pan:
+  #       - 1.0778
+  #       - 0.6868
+  #     Overlay:
+  #       x: 0.8681
+  #       y: 0.5487
+  #       width: 0.4206
+  #       height: 0.2981
+
+      # - Name: Adjacent Non-Tumor Region
+      # Group: Structural Components
+      # Audio: /assets/audio/speech_20190918201156545.mp3
+      # VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
+      # Description: An adjacent non-tumor region consists on fibroblasts (`a-SMA`) and immune cells (`CD45` and `IBA1`).
+      # Zoom: 1.5838
+      # Pan:
+      #   - 0.3157
+      #   - 0.232
+      # Overlay:
+      #   x: 0.0014
+      #   y: 0.0254
+      #   width: 0.6366
+      #   height: 0.4418
