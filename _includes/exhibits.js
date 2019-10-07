@@ -336,6 +336,17 @@ const HashState = function(viewer, tileSources, exhibit, options) {
   this.tileSources = tileSources;
   this.exhibit = exhibit;
   this.viewer = viewer;
+  viewer.scalebar({
+    location: 3,
+    minWidth: '100px',
+    type: 'Microscopy',
+    stayInsideImage: false,
+    pixelsPerMeter: 1000000*exhibit.PixelsPerMicron || 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    fontColor: 'rgb(255, 255, 255)',
+    color: 'rgb(255, 255, 255)'
+  })
+
   this.svg_overlay = d3.select(viewer.svgOverlay().node());
 
   viewer.setVisible(false);
