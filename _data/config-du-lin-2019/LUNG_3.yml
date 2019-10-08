@@ -7,7 +7,7 @@ Exhibit:
 
   Images:
     - Name: i0
-      Description: 'Lung 3 - Du and Lin et al, 2019 (submitted)'
+      Description: 'Lung 3 - Du, Lin, and Rashid et al, 2019 (submitted)'
       Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3
       Width: 14448
       Height: 11101
@@ -130,7 +130,13 @@ Exhibit:
     - Name: Tissue Regions
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201043160.mp3
-      Description: In this tissue specimen, the tumor region can be seen on the right-hand side and an adjacent non-tumor, stromal region can be seen on the left-hand side.
+      Description: |
+        In this tissue specimen of a human lung cancer, the tumor region can be seen on the right-hand side and an 
+        adjacent non-tumor, stromal region can be seen on the left-hand side.
+
+        The tumor-stromal interface runs diagonal along this image. 
+        The tumor-stromal interface undergoes changes in cancer that can provide clues
+        to tumor metastasis and progression.
       Zoom: 0.4542
       Pan:
         - 0.9595
@@ -138,13 +144,28 @@ Exhibit:
       Overlay:
         x: 0.8681
         y: 0.5487
-        width: 0.4206
-        height: 0.2981
+        width: 0
+        height: 0
+      Arrow:
+        - 0.9381917980144533
+        - 0.5809178743961351
+      ArrowText: TUMOR REGION
+      Polygon: Q
+      HideArrow: true
+      Arrow:
+        - 0.3480346062266265
+        - 0.2077906326563334
+      ArrowText: STROMAL REGION
+      Polygon: Q
+      HideArrow: true
   
     - Name: Epithelial Tumor Cells
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201043160.mp3
-      Description: The epithelial tumor cells of the lung express `Keratin`. Clusters of tumor cells are associated with stromal areas containing fibroblasts (`α-SMA`) and immune cells (`CD45` and `IBA1`).
+      Description: |
+        The epithelial tumor cells of the lung are denoted by their cytoplasmic expression of `Keratin`. 
+        Clusters of tumor cells are associated with stromal areas containing fibroblasts (`α-SMA`) 
+        and immune cells (`CD45` and `IBA1`).
       Zoom: 3.255
       Pan:
         - 0.7688
@@ -158,7 +179,11 @@ Exhibit:
     - Name: Adjacent Non-Tumor Region
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
-      Description: In the adjacent non-tumor region, most of the cells are fibroblasts expressing `a-SMA` and immune cells expressing `CD45` or `IBA1`.
+      Description: |
+        In the adjacent non-tumor region, most of the cells are fibroblasts 
+        expressing `a-SMA` and immune cells expressing `CD45` or `IBA1`.
+
+        Fibroblasts are observed surrounding blood vessels. 
       Zoom: 1.5838
       Pan:
         - 0.3157
@@ -172,9 +197,19 @@ Exhibit:
     - Name: K-means Clustering
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
-      Description: When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` using the k-means algorithm, the cells fall into four cardinal groups `:` 1) A cluster of tumor cells with high keratin expression, 2) a cluster of stromal cells with high `a-SMA` expression, 3) a cluster of immune cells with high `CD45` expression, and 4) a fourth cluster of cells with low expression of all three markers.
+      Description: |
+        When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
+        using the k-means algorithm, the cells fall into four cardinal clusters `:` 
+        1) A cluster of tumor cells with high keratin expression, 
+        2) a cluster of stromal cells with high `a-SMA` expression, 
+        3) a cluster of immune cells with high `CD45` expression, and 
+        4) a cluster of cells with low expression of all three markers.
       VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
-      Description: Click on each of the clusters below to see which cells in the image belong to each cluster.
+      Description: |
+        The number of cells belonging to each cluster is shown in the bar chart.
+      VisBarChart: /assets/visdata/cellCounts.csv
+      Description: |
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
       ActiveMasks:
       - Cluster_1 Tumor
       Masks:
@@ -183,10 +218,10 @@ Exhibit:
       - Cluster_3 Immune
       - Cluster_4 Other
       - Segmentation Mask
-      Zoom: 1.5838
+      Zoom: 0.4542
       Pan:
-        - 0.3157
-        - 0.232
+        - 0.9595
+        - 0.7033
       Overlay:
         x: 0.0014
         y: 0.0254
@@ -197,9 +232,12 @@ Exhibit:
     - Name: PD-L1 Expression
       Group: PD-L1 Expression
       Audio: /assets/audio/speech_20190918201256228.mp3
-      VisMatrix: /assets/visdata/clust14hpdat_LUNG-3-PR.csv
       Description: |
-        Programmed Death Ligand 1 (`PD-L1`) also known as cluster of differentiation 274 (CD274), a target of immunotherapeutics, is expressed in tumor cells (`cytokeratin`) as well as in some macrophages (`IBA1`).
+        Programmed Death Ligand 1 (`PD-L1`), also known as cluster of differentiation 274 (CD274), 
+        is a target of immunotherapeutics. It is expressed in tumor cells (`Keratin`) 
+        as well as in some macrophages (`IBA1`). `PD-L1` inactivates T-cells 
+        and prevents immune surveillance of the tumors by binding to the PD-1 receptor on T-cells. 
+        Thus, one approach to immunotherapy is to block `PD-L1` expression.
       Zoom: 2.6296
       Pan:
         - 0.9075
@@ -214,8 +252,8 @@ Exhibit:
     - Name: PD-L1 Expressing Tumor Cells
       Group: PD-L1 Expression
       Audio: /assets/audio/speech_20190918201431372.mp3
-      VisBarChart: /assets/visdata/cellCounts.csv
-      Description: Tumor cells (`cytokeratin`) expressing `PD-L1`.
+      Description: |
+        Here, tumor cells (`Keratin`) can be seen expressing `PD-L1` on the cell membrane.
       Zoom: 11.3066
       Pan:
         - 0.6354
@@ -233,9 +271,9 @@ Exhibit:
         - 1.007917516813384
         - 0.3362427017301348
       Audio: /assets/audio/speech_20190918201550587.mp3
-      VisScatterplot: /assets/visdata/clusteredCells.csv
-      Description: Macrophages (`IBA1`) expressing `PD-L1`.
-      Zoom: 11.3066
+      Description: |
+        Macrophages (`IBA1`) expressing `PD-L1` were also observed in this lung cancer specimen.
+      Zoom: 11.8066
       Pan:
         - 1.0044
         - 0.3374
@@ -245,10 +283,21 @@ Exhibit:
         width: 0.0125
         height: 0.0119
 
-    - Name: B-Cells and T-Cells
+    - Name: Immune Populations
       Group: Lymphocytes
       Audio: /assets/audio/speech_20190918201656247.mp3
-      Description: T cells (`CD3`) are often found infiltrating the tumor region whereas B cells (`CD20`) are less common as shown in this sample.
+      Description: |
+        Many immune populations were present in this lung cancer and were often 
+        enriched in the tumor region.
+        
+        When the subset of CD45 positive cells were clustered based on expression 
+        of CD45, CD3D, CD8A, CD4, CD20, PD1, and FOXP3 using k-means, 
+        seven distinct immune cell populations emerged.
+        
+        The populations are shown in the heat map below, where each row represents 
+        a cluster and each column represents an immune marker. 
+        The color represents the expression level of each marker.
+      VisMatrix: /assets/visdata/clust7hpdat_LUNG-3-PR.csv
       Zoom: 10.5411
       Pan:
         - 1.0605
@@ -259,11 +308,62 @@ Exhibit:
         width: 0.0947
         height: 0.0671
 
+    - Name: B-Cells and T-Cells
+      Group: Lymphocytes
+      Audio: /assets/audio/speech_20190918201656247.mp3
+      Description: |
+        T cells (`CD3D`) are often found infiltrating the tumor region whereas B cells (`CD20`) 
+        are less common as shown in this sample.
+      Zoom: 1.5696
+      Pan:
+        - 0.8681
+        - 0.7277
+      Overlay:
+        x: -100
+        y: -100
+        width: 1
+        height: 1
+
+    - Name: Regulatory T-Cells
+      Group: Inhibitory T-Cells
+      Audio: /assets/audio/speech_20190918201756267.mp3
+      Description: |
+        A subpopulation of T cells (`CD3D`) is regulatory T cells, also known as Tregs. 
+        Tregs are marked by `CD4` and `FOXP3` expression. 
+        These cells act to supress immune response as a homeostatis mechanism. 
+      Zoom: 11.3065
+      Pan:
+        - 1.0436
+        - 0.227
+      Overlay:
+        x: 0.9997
+        y: 0.2012
+        width: 0.0881
+        height: 0.0565
+
+    - Name: Cytotoxic T-Cells
+      Group: Inhibitory T-Cells
+      Audio: /assets/audio/speech_20190918201756267.mp3
+      Description: |
+        Another subpopulation of T cells (`CD3D`) is cytotoxic T cells, 
+        also known as T-killer cells or cytotoxic T lymphocytes (CTLs). 
+        CTLs are marked by expression of `CD8` and and are a key component of tumor surveillance.
+      Zoom: 11.3065
+      Pan:
+        - 1.0436
+        - 0.227
+      Overlay:
+        x: 0.9997
+        y: 0.2012
+        width: 0.0881
+        height: 0.0565
+
     - Name: Inhibitory T-Cells
       Group: Inhibitory T-Cells
       Audio: /assets/audio/speech_20190918201756267.mp3
       Description: |
-        Some subpopulations of T cells (`CD3`) express inhibitory molecules (`PD-1` and `FOXP3`). In this sample, these inhibitory T cells are enriched in the tumor region.
+        Some subpopulations of T cells (`CD3D`) express inhibitory molecules (`PD1` and `FOXP3`). 
+        In this sample, these inhibitory T cells are enriched in the tumor region.
       Zoom: 11.3065
       Pan:
         - 1.0436
@@ -279,22 +379,55 @@ Exhibit:
       Group: Rare Immune Population 1
       Audio: /assets/audio/speech_20190918201847222.mp3
       Description: |
-        A rare, or low frequency, population of T cells that expresses both `CD8A` and `FOXP3` can be seen in this sample in addition to traditional recognized T-regulatory cells that express both `CD4` and `FOXP3`. Both types of `FOXP3` expressing cells are enriched in the tumor region.
-      Zoom: 11.3066
+        In this tumor, we found a rare, or low frequency, immune population`:` CD8+/FOXP3+ T cells. 
+        
+        Traditionally, expression of `FOXP3` has been observed in `CD4` expressing cells,
+        indicating a regulatory T cell phenotype. However, single-cell analysis of multiple markers 
+        revealed a population of `CD8` expressing cells that also expresses `FOXP3`. 
+        
+        The frequency of this population is very low (0.66% of immune cells) in this lung tumor. 
+        
+        This rare population of `CD8` and `FOXP3` expressing cells in addition to the more characterized 
+        population of `CD4` and `FOXP3` expressing cells are both enriched in the tumor region.
+
+      Zoom: 4.5206
       Pan:
-        - 0.802
-        - 0.6768
+        - 0.7928
+        - 0.6827
+      Arrow:
+        - 0.7982181611329084
+        - 0.6783015759728294
+      ArrowText: CD8+/FOXP3+ T cell
+      Polygon: Q
       Overlay:
-        x: 0.7811
-        y: 0.6576
-        width: 0.0377
-        height: 0.0378
+        x: -100
+        y: -100
+        width: 1
+        height: 1
+
 
     - Name: Rare Immune Population 2
       Group: Rare Immune Population 2
       Audio: /assets/audio/speech_20190918202005841.mp3
       Description: |
-        Another rare, or low frequency, population present in the tumor region includes T cells that express `CD8A`, `PD-1`, and `LAG3`.
+        Another rare, or low frequency, population present in the tumor 
+        is `PD-1`+/`LAG3`+ double positive T cells. Both of these markers are
+        immune checkpoint receptors expressed on T cells and are therefore 
+        targets of immunotherapies.
+
+        Some of these `PD-1`+/`LAG3`+ double positive cells express `CD4` 
+        whereas others express `CD8`.
+
+        The frequency of these populations is very low. `CD8`+/`PD-1`+/`LAG3`+ 
+        cells comprise only 1% of immune cells whereas `CD4`+/`PD-1`+/`LAG3`+ 
+        cells comprise an even smaller proportion, ~0.1% of immune cells.
+
+        Both populations are enriched in the tumor region, with `CD8`+/`PD-1`+/`LAG3`++ cells
+        having a 14-fold greater abundance in the tumor region versus the stromal region
+        and `CD4`+/`PD-1`+/`LAG3`+ cells being present exclusively in the tumor region.
+
+
+
       Zoom: 11.3066
       Pan:
         - 0.9134
@@ -308,7 +441,8 @@ Exhibit:
     - Name: Macrophages
       Group: Macrophages
       Audio: /assets/audio/speech_20190916132915227.mp3
-      Description: Subtypes of macrophages.
+      Description: |
+        Subtypes of macrophages.
       Zoom: 7.3201
       Pan:
         - 0.6712
@@ -322,7 +456,8 @@ Exhibit:
     - Name: Macrophages (cont.)
       Group: Macrophages (cont.)
       Audio: /assets/audio/speech_20190916132915227.mp3
-      Description: Subtypes of macrophages.
+      Description: |
+        Subtypes of macrophages.
       Zoom: 7.8518
       Pan:
         - 0.4939
@@ -332,42 +467,3 @@ Exhibit:
         y: 0.4663
         width: 0.1271
         height: 0.0901
-
-# saved for reference
-  # - Name: ''
-  #   Waypoints:
-  #   - Name: Tumor Region
-  #     Group: Structural Components
-  #     ActiveMasks:
-  #       - Segmentation Mask
-  #     Masks:
-  #       - Cluster_1 Stroma
-  #       - Cluster_3 Immune
-  #       - Segmentation Mask
-  #     Audio: /assets/audio/speech_20190918201043160.mp3
-  #     VisMatrix: /assets/visdata/clust7hpdat_LUNG-3-PR.csv
-  #     Description: The tumor cells express cytokeratin (white); clusters of tumor cells are associated with stromal areas containing fibroblasts (`aSMA`) and immune cells (`CD45` and `IBA1`).
-  #     Zoom: 2.3661
-  #     Pan:
-  #       - 1.0778
-  #       - 0.6868
-  #     Overlay:
-  #       x: 0.8681
-  #       y: 0.5487
-  #       width: 0.4206
-  #       height: 0.2981
-
-      # - Name: Adjacent Non-Tumor Region
-      # Group: Structural Components
-      # Audio: /assets/audio/speech_20190918201156545.mp3
-      # VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
-      # Description: An adjacent non-tumor region consists on fibroblasts (`a-SMA`) and immune cells (`CD45` and `IBA1`).
-      # Zoom: 1.5838
-      # Pan:
-      #   - 0.3157
-      #   - 0.232
-      # Overlay:
-      #   x: 0.0014
-      #   y: 0.0254
-      #   width: 0.6366
-      #   height: 0.4418
