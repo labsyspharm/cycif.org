@@ -1983,11 +1983,15 @@ HashState.prototype = {
     });
 
     marker_links_map.forEach(function(link, marker){
-      var re = RegExp('[^0-9A-Za-z\[]'+marker+'[^0-9A-Za-z\]]', 'g');
+      var re = RegExp('[^0-9A-Za-z`]'+marker+'[^0-9A-Za-z`]', 'g');
       md = md.replace(re, function(m) {
         return m.replace(marker, '`'+marker+'`');
       });
-      console.log(md);
+    });
+
+    marker_links_map.forEach(function(link, marker){
+      var re = RegExp('`'+marker+'`', 'g');
+      md = md.replace(re, '[`'+marker+'`]('+link+')');
     });
 
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
@@ -2013,7 +2017,7 @@ HashState.prototype = {
       if ([...waypointVis].every(v => renderedVis.has(v))) {
         $('.waypoint-content').scrollTop(scroll_dist);
         $(wid_waypoint).css('height', '');
-        THIS.alterWaypointHTML(wid_waypoint);
+        THIS.colorMarkerText(wid_waypoint);
       }
     }
 
@@ -2045,13 +2049,22 @@ HashState.prototype = {
     finish_waypoint('');
 
   },
-  alterWaypointHTML: function (wid_waypoint) {
+  colorMarkerText: function (wid_waypoint) {
     // Color code elements
     const channelOrders = this.channelOrders(this.channels);
     const wid_code = wid_waypoint.getElementsByTagName('code');
     for (var i = 0; i < wid_code.length; i ++) {
       var code = wid_code[i];
       var index = channelOrders[code.innerText];
+      if (!index) {
+        Object.keys(channelOrders).forEach(function (marker) {
+          const code_marker = marker_alias_map.get(code.innerText);
+          const key_marker = marker_alias_map.get(marker);
+          if (code_marker == key_marker && key_marker != undefined) {
+            index = channelOrders[marker];
+          }
+        });
+      }
       var color = this.indexColor(index);
       var border = color? 'solid ' + color: 'dashed #AAA';
       $(code).css('border-bottom', '1px ' + border);
