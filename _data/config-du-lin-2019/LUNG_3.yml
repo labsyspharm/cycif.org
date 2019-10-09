@@ -197,6 +197,8 @@ Exhibit:
     - Name: K-means Clustering
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
+      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
+      VisBarChart: /assets/visdata/cellCounts.csv
       Description: |
         When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
         using the k-means algorithm, the cells fall into four cardinal clusters `:` 
@@ -204,13 +206,16 @@ Exhibit:
         2) a cluster of stromal cells with high `a-SMA` expression, 
         3) a cluster of immune cells with high `CD45` expression, and 
         4) a cluster of cells with low expression of all three markers.
-      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
-      Description: |
-        The number of cells belonging to each cluster is shown in the bar chart.
-        `VisBarChart`
-        Click on each of the clusters below to see which cells in the image belong to each cluster.
+        
         `VisMatrix`
-      VisBarChart: /assets/visdata/cellCounts.csv
+
+        The number of cells belonging to each cluster is shown in the bar chart.
+      
+        `VisBarChart`
+      
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
+
+
       ActiveMasks:
       - Cluster_1 Tumor
       Masks:
