@@ -14,6 +14,8 @@
 <body class="d-flex flex-column h-100">
     <!-- style="position:relative" -->
 
+  {% assign cell_type_data = site.data.cell_type_links_database %}
+  {% assign marker_data = site.data.marker_links_database %}
   {% assign config_paper = site.data[page.paper] %}
   {% assign config_figure = config_paper[page.figure] %}
   {% assign exhibit = config_figure.Exhibit %}
@@ -309,10 +311,7 @@
         {% include jquery.csv.min.js %}
     </script>
     <script>
-        {% include cell_type_links.js %}
-    </script>
-    <script>
-        {% include marker_links.js %}
+        {% include links_alias.js %}
     </script>
     <script>
         {% include lz-string.js %}
@@ -340,6 +339,12 @@
     </script>
     <script>
         const exhibit = {{ exhibit | jsonify }};
+        const marker_data = {{ marker_data | jsonify }};
+        const cell_type_data = {{ cell_type_data | jsonify }};
+
+        [marker_links_map, marker_alias_map] = get_links_alias(marker_data);
+        [cell_type_links_map, cell_type_alias_map] = get_links_alias(cell_type_data);
+
         window.viewer = build_page(exhibit, {
           embedded: true
         });
