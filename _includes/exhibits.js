@@ -1973,7 +1973,23 @@ HashState.prototype = {
     const scroll_dist = $('.waypoint-content').scrollTop();
     $(wid_waypoint).css('height', $(wid_waypoint).height());
 
-    const md = waypoint.Description;
+    var md = waypoint.Description;
+
+    cell_type_links_map.forEach(function(link, type){
+      var re = RegExp(type+'s?', 'gi');
+      md = md.replace(re, function(m) {
+        return '['+m+']('+link+')';
+      });
+    });
+
+    marker_links_map.forEach(function(link, marker){
+      var re = RegExp('[^0-9A-Za-z\[]'+marker+'[^0-9A-Za-z\]]', 'g');
+      md = md.replace(re, function(m) {
+        return m.replace(marker, '`'+marker+'`');
+      });
+      console.log(md);
+    });
+
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
     const wid_p = $(wid_waypoint).find('p')[0];
     const wid_div = document.createElement("div");
@@ -1991,11 +2007,13 @@ HashState.prototype = {
     const waypointVis = new Set(allVis.filter(v => waypoint[v]));
     const renderedVis = new Set();
 
+    const THIS = this;
     const finish_waypoint = function(visType) {
       renderedVis.add(visType);
       if ([...waypointVis].every(v => renderedVis.has(v))) {
         $('.waypoint-content').scrollTop(scroll_dist);
         $(wid_waypoint).css('height', '');
+        THIS.alterWaypointHTML(wid_waypoint);
       }
     }
 
@@ -2027,7 +2045,7 @@ HashState.prototype = {
     finish_waypoint('');
 
   },
-  alterWaypointHTML: function () {
+  alterWaypointHTML: function (wid_waypoint) {
     // Color code elements
     const channelOrders = this.channelOrders(this.channels);
     const wid_code = wid_waypoint.getElementsByTagName('code');
