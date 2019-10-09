@@ -207,9 +207,10 @@ Exhibit:
       VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
       Description: |
         The number of cells belonging to each cluster is shown in the bar chart.
-      VisBarChart: /assets/visdata/cellCounts.csv
-      Description: |
+        `VisBarChart`
         Click on each of the clusters below to see which cells in the image belong to each cluster.
+        `VisMatrix`
+      VisBarChart: /assets/visdata/cellCounts.csv
       ActiveMasks:
       - Cluster_1 Tumor
       Masks:

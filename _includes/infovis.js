@@ -1,12 +1,12 @@
 
 infovis = {};
 
-infovis.renderMatrix = function(wid_waypoint, visdata){
+infovis.renderMatrix = function(wid_waypoint, id, visdata){
     return d3.csv(visdata)
         .then(function(data) {
 
             //tooltip
-            var tooltip = d3.select("#viewer-waypoint").append("div")
+            var tooltip = d3.select("#"+id).append("div")
                 .attr("class", "tooltip")
                 .style("opacity", 0);
 
@@ -43,7 +43,7 @@ infovis.renderMatrix = function(wid_waypoint, visdata){
             if (d3.select("#matrix").empty() ) {
 
                 //the svg everything goes into
-                vis.svg = d3.select("#viewer-waypoint").append("svg")
+                vis.svg = d3.select("#"+id).append("svg")
                     .attr('id', 'matrix')
                     .attr("width", vis.width + vis.margin.left + vis.margin.right)
                     .attr("height", vis.height + vis.margin.top + vis.margin.bottom)
@@ -148,7 +148,7 @@ infovis.renderMatrix = function(wid_waypoint, visdata){
 }
 
 
-infovis.renderBarChart = function(wid_waypoint, visdata){
+infovis.renderBarChart = function(wid_waypoint, id, visdata){
 
     //formatter .. to scientific notation
     var formatter = d3.format(".2n");
@@ -162,12 +162,12 @@ infovis.renderBarChart = function(wid_waypoint, visdata){
     vis.padding = 15;
 
     //tooltip
-    vis.tooltip = d3.select("#viewer-waypoint").append("div")
+    vis.tooltip = d3.select("#"+id).append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
 
     //create svg
-    vis.svg = d3.select("#viewer-waypoint").append("svg")
+    vis.svg = d3.select("#"+id).append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
         .attr("height", vis.height + vis.margin.top + vis.margin.bottom);
 
@@ -254,11 +254,11 @@ infovis.renderBarChart = function(wid_waypoint, visdata){
         });
 }
 
-infovis.renderBoxPlot = function(wid_waypoint, visdata){
+infovis.renderBoxPlot = function(wid_waypoint, id, visdata){
     //to be implemented
 }
 
-infovis.renderScatterplot = function(wid_waypoint, visdata){
+infovis.renderScatterplot = function(wid_waypoint, id, visdata){
     var margin = {top: 20, right: 20, bottom: 30, left: 40};
     var width = wid_waypoint.clientWidth - margin.left - margin.right;
     var height = width;
@@ -281,7 +281,7 @@ infovis.renderScatterplot = function(wid_waypoint, visdata){
         color = d3.scaleOrdinal(d3.schemeCategory10);;
 
     // add the graph canvas to the body of the webpage
-    var svg = d3.select("#viewer-waypoint").append("svg")
+    var svg = d3.select("#"+id).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")

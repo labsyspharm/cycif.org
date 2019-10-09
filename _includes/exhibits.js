@@ -1975,6 +1975,10 @@ HashState.prototype = {
 
     const md = waypoint.Description;
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
+    const wid_p = $(wid_waypoint).find('p')[0];
+    const wid_div = document.createElement("div");
+    wid_div.innerHTML = wid_p.innerHTML;
+    wid_p.replaceWith(wid_div);
 
     if (waypoint.Image) {
       var img = document.createElement("img");
@@ -1982,36 +1986,48 @@ HashState.prototype = {
       wid_waypoint.appendChild(img);
     }
 
-    const finish_waypoint = function() {
-      $('.waypoint-content').scrollTop(scroll_dist);
-      $(wid_waypoint).css('height', '');
+    const allVis = ['VisMatrix', 'VisBarChart', 'VisScatterplot'];
+    
+    const waypointVis = new Set(allVis.filter(v => waypoint[v]));
+    const renderedVis = new Set();
+
+    const finish_waypoint = function(visType) {
+      renderedVis.add(visType);
+      if ([...waypointVis].every(v => renderedVis.has(v))) {
+        $('.waypoint-content').scrollTop(scroll_dist);
+        $(wid_waypoint).css('height', '');
+      }
     }
-    var finish_async = false;
 
     //matrix
-    if (waypoint.VisMatrix) {
-      var tmp = infovis.renderMatrix(wid_waypoint, waypoint.VisMatrix);
-      tmp.then(finish_waypoint);
-      finish_async = true;
-    }
-    //barchart
-    if (waypoint.VisBarChart) {
-      var tmp = infovis.renderBarChart(wid_waypoint, waypoint.VisBarChart);
-      tmp.then(finish_waypoint);
-      finish_async = true;
+    const renderVis = function(visType, el, id) {
+      const renderer = {
+        'VisMatrix': infovis.renderMatrix,
+        'VisBarChart': infovis.renderBarChart,
+        'VisScatterplot': infovis.renderScatterplot
+      }[visType]
+      const tmp = renderer(el, id, waypoint[visType]);
+      tmp.then(() => finish_waypoint(visType));
     }
 
-    //scatterplot
-    if (waypoint.VisScatterplot) {
-        var tmp = infovis.renderScatterplot(wid_waypoint, waypoint.VisScatterplot);
-        tmp.then(finish_waypoint);
-        finish_async = true;
+    Array.from(waypointVis).forEach(function(visType) {
+      const wid_code = Array.from(wid_waypoint.getElementsByTagName('code'));
+      const el = wid_code.filter(code => code.innerText == visType)[0];
+      if (el) {
+        const new_div = document.createElement('div');
+        new_div.id = el.innerText;
+        $(el).replaceWith(new_div);
+        renderVis(visType, wid_waypoint, new_div.id);
       }
+      else {
+        renderVis(visType, wid_waypoint, 'viewer-waypoint');
+      }
+    })
 
-    if (finish_async == false) {
-      finish_waypoint();
-    }
+    finish_waypoint('');
 
+  },
+  alterWaypointHTML: function () {
     // Color code elements
     const channelOrders = this.channelOrders(this.channels);
     const wid_code = wid_waypoint.getElementsByTagName('code');
@@ -2021,11 +2037,6 @@ HashState.prototype = {
       var color = this.indexColor(index);
       var border = color? 'solid ' + color: 'dashed #AAA';
       $(code).css('border-bottom', '1px ' + border);
-    }
-    // Style waypoint elements
-    if (waypoint.hasOwnProperty('Style')) {
-      const wid_style = waypoint.Style;
-      $(wid_waypoint).css(wid_style);
     }
   },
   fillWaypointEdit: function() {
