@@ -202,19 +202,22 @@ Exhibit:
       Description: |
         When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
         using the k-means algorithm, the cells fall into four cardinal clusters `:` 
+
         1) A cluster of tumor cells with high keratin expression, 
+        
         2) a cluster of stromal cells with high `a-SMA` expression, 
+
         3) a cluster of immune cells with high `CD45` expression, and 
+
         4) a cluster of cells with low expression of all three markers.
         
-        `VisMatrix`
-
         The number of cells belonging to each cluster is shown in the bar chart.
       
         `VisBarChart`
       
         Click on each of the clusters below to see which cells in the image belong to each cluster.
 
+        `VisMatrix`
 
       ActiveMasks:
       - Cluster_1 Tumor
