@@ -5,44 +5,51 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
     return d3.csv(visdata)
         .then(function(data) {
 
-            //tooltip
-            var tooltip = d3.select("#"+id).append("div")
-                .attr("class", "tooltip")
-                .style("opacity", 0);
-
-            //vis object
-            var vis = {};
-
-            //all framing stuff
-            vis.margin = { top: 40, right: 40, bottom: 0, left: 60 };
-            vis.size = wid_waypoint.clientWidth;
-            vis.width = vis.size - vis.margin.left - vis.margin.right;
-            // vis.cellPadding = vis.width/data.length/3;
-            // vis.cellHeight = vis.cellPadding * 2;
-            // vis.cellWidth = vis.cellHeight;
-            vis.cellPadding = 4;
-            vis.cellWidth = (vis.width / Object.keys(data[0]).length) - vis.cellPadding;
-            vis.cellHeight = vis.cellWidth;
-            //vis.height = vis.size - vis.margin.top - vis.margin.bottom;
-            vis.height = data.length*(vis.cellWidth+vis.cellPadding)+vis.margin.top + vis.margin.bottom;
-
-            //preprocesing
-            vis.max = Number.MIN_VALUE;
-            vis.min = Number.MAX_VALUE;
-            data.forEach(function(d){
-                vis.min = Math.min(vis.min, d3.min(Object.values(d)) );
-                vis.max = Math.max(vis.max, d3.max(Object.values(d)) );
-            });
-
-            //colorscale (YlGnBu is colorblind safe, print friendly, photocopy safe)
-            var ticks = 6;
-            var myColor = d3.scaleQuantize().domain([vis.min,vis.max]).range(colorbrewer.YlGnBu[ticks])
-
-
             // SVG drawing area
             if (d3.select("#matrix").empty() ) {
 
+                //vis object
+                var vis = {};
+
+                //tooltip
+                var tooltip = d3.select("#"+id).append("div")
+                    .attr("id", "tooltip_matrix")
+                    .attr("class", "tooltip")
+                    .style("opacity", 0);
+
+                //PREPROCESSING
+
+                //extract row names (cluster names)
+                var rowNames = d3.map(data, function(d){return(d.ClustName)}).keys();
+
+                //remove row names (we stored them extra) labels from data
+                data.forEach(function(d){ delete d[data.columns[0]]; });
+                data.columns.shift();
+
+                //find min/max for color coding and legend
+                vis.max = Number.MIN_VALUE;
+                vis.min = Number.MAX_VALUE;
+                data.forEach(function(d){
+                    vis.min = Math.min(vis.min, d3.min(Object.values(d)) );
+                    vis.max = Math.max(vis.max, d3.max(Object.values(d)) );
+                });
+                //END PREPROCESSING
+
+                //all framing stuff
+                vis.margin = { top: 40, right: 40, bottom: 0, left: 70 };
+                vis.size = wid_waypoint.clientWidth;
+                vis.width = vis.size - vis.margin.left - vis.margin.right;
+                vis.cellPadding = 4;
+                vis.cellWidth = (vis.width / Object.keys(data[0]).length) - vis.cellPadding;
+                vis.cellHeight = vis.cellWidth;
+                vis.height = data.length*(vis.cellWidth+vis.cellPadding)+vis.margin.top + vis.margin.bottom;
+
+                //colorscale (YlGnBu is colorblind safe, print friendly, photocopy safe)
+                var ticks = 6;
+                var myColor = d3.scaleQuantize().domain([vis.min,vis.max]).range(colorbrewer.YlGnBu[ticks])
+
                 //the svg everything goes into
+                // d3.select("#"+id).style('position', 'relative');
                 vis.svg = d3.select("#"+id).append("svg")
                     .attr('id', 'matrix')
                     .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -58,6 +65,9 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                     .enter()
                     .append("g")
                     .attr("class", "matrix-row")
+                    .attr('id', function(d,i){
+                        return 'matrixrow_' + i;
+                    })
                     .attr("transform", function (d, index) {
                         return "translate(0," + (
                             vis.cellHeight + vis.cellPadding) * index + ")";
@@ -71,7 +81,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                     .attr("dy", ".35em")
                     .attr("text-anchor", "end")
                     .text(function (d,i) {
-                        return 'cluster ' + [i];
+                        return rowNames[i];
                     })
                     .style('opacity', 1)
                     .on("click", function(d,i) { alert('clicked on row' + i); });
@@ -88,18 +98,21 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                     .attr("x", function (d, index) {
                         return (vis.cellWidth + vis.cellPadding) * index;
                     })
+                    // .attr("y", vis.cellHeight / 2)
                     .attr("fill", function (d) {
                         return myColor(d);
                     })
-                    .on("mouseover", function(d) {
+                    .on("mouseover", function(d, i) {
                         d3.select(this).attr('stroke', 'white')
                             .attr('stroke-width', '2');
                         tooltip.transition()
                             .duration(200)
                             .style("opacity", .8);
-                        tooltip.html('' + parseFloat(d).toFixed(2))
-                            .style("left", (d3.event.pageX) + "px")
-                            .style("top", (d3.event.pageY-vis.margin.top) + "px");
+                        tooltip.html('' + parseFloat(d).toFixed(2));
+                        tooltip.style("left", (d3.event.pageX) + "px");
+                        tooltip.style("top", (
+                            parseInt(d3.select(this.parentNode).attr('id').split("_")[1]) + 1)
+                            * (vis.cellHeight + vis.cellPadding) + "px");
                     })
                     .on("mouseout", function(d) {
                         d3.select(this).attr('stroke', 'black')
@@ -164,6 +177,7 @@ infovis.renderBarChart = function(wid_waypoint, id, visdata){
     //tooltip
     vis.tooltip = d3.select("#"+id).append("div")
         .attr("class", "tooltip")
+        .attr("id", "tooltip_barChart")
         .style("opacity", 0);
 
     //create svg
@@ -238,7 +252,7 @@ infovis.renderBarChart = function(wid_waypoint, id, visdata){
                         .style("opacity", .8);
                     vis.tooltip.html('' + formatter(parseFloat(d.frequency)) )
                         .style("left", (d3.event.pageX) + "px")
-                        .style("top", (d3.event.pageY - vis.margin.top) + "px");
+                        .style("top", (d3.select(this).attr('y') - vis.margin.top) + "px");
                 })
                 .on("mouseout", function(d) {
                     d3.select(this).attr('stroke', 'black')

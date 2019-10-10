@@ -2021,7 +2021,7 @@ HashState.prototype = {
       }
     }
 
-    //matrix
+    //VIS
     const renderVis = function(visType, el, id) {
       const renderer = {
         'VisMatrix': infovis.renderMatrix,
@@ -2032,11 +2032,13 @@ HashState.prototype = {
       tmp.then(() => finish_waypoint(visType));
     }
 
+    //some code to add text in between vis
     Array.from(waypointVis).forEach(function(visType) {
       const wid_code = Array.from(wid_waypoint.getElementsByTagName('code'));
       const el = wid_code.filter(code => code.innerText == visType)[0];
       if (el) {
         const new_div = document.createElement('div');
+        new_div.style.cssText = 'position:relative';
         new_div.id = el.innerText;
         $(el).replaceWith(new_div);
         renderVis(visType, wid_waypoint, new_div.id);
