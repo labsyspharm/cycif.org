@@ -1995,10 +1995,11 @@ HashState.prototype = {
     });
 
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
-    const wid_p = $(wid_waypoint).find('p')[0];
-    const wid_div = document.createElement("div");
-    wid_div.innerHTML = wid_p.innerHTML;
-    wid_p.replaceWith(wid_div);
+    $(wid_waypoint).find('p').each(function(i, wid_p){
+      const wid_div = document.createElement("div");
+      wid_div.innerHTML = wid_p.innerHTML;
+      $(wid_p).replaceWith(wid_div);
+    });
 
     if (waypoint.Image) {
       var img = document.createElement("img");
@@ -2036,16 +2037,16 @@ HashState.prototype = {
     Array.from(waypointVis).forEach(function(visType) {
       const wid_code = Array.from(wid_waypoint.getElementsByTagName('code'));
       const el = wid_code.filter(code => code.innerText == visType)[0];
+      const new_div = document.createElement('div');
+      new_div.style.cssText = 'position:relative';
+      new_div.id = visType;
       if (el) {
-        const new_div = document.createElement('div');
-        new_div.style.cssText = 'position:relative';
-        new_div.id = el.innerText;
         $(el).replaceWith(new_div);
-        renderVis(visType, wid_waypoint, new_div.id);
       }
       else {
-        renderVis(visType, wid_waypoint, 'viewer-waypoint');
+        wid_waypoint.appendChild(new_div);
       }
+      renderVis(visType, wid_waypoint, new_div.id);
     })
 
     finish_waypoint('');
