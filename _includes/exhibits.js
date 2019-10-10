@@ -935,6 +935,7 @@ HashState.prototype = {
 
     this.slower();
     speechSynthesis.cancel();
+    $('#play-pause').find('svg').attr('data-icon', 'play');
 
     this.m = mFromWaypoint(waypoint, this.masks);
     this.g = gFromWaypoint(waypoint, this.cgs);
