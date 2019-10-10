@@ -1990,7 +1990,7 @@ HashState.prototype = {
     });
 
     marker_links_map.forEach(function(link, marker){
-      var re = RegExp('`'+marker+'`', 'g');
+      var re = RegExp('`'+marker+'`', 'gi');
       md = md.replace(re, '[`'+marker+'`]('+link+')');
     });
 
