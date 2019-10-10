@@ -424,6 +424,24 @@ HashState.prototype = {
       $("#sidebar-menu").toggleClass("toggled");
     });
 
+		$('#play-pause').click(function(e) {
+			const icon = $(this);
+			const audio = document.getElementById("audioPlayer");
+    	if (audio.paused || audio.ended) {
+				icon.find('svg').attr('data-icon', 'pause');
+        audio.play();
+      }
+      else {
+				icon.find('svg').attr('data-icon', 'play');
+				audio.pause();
+      }
+		});
+
+		document.getElementById("audioPlayer").onended = function() {
+			const icon = $('#play-pause');
+			icon.find('svg').attr('data-icon', 'play');
+    };
+
     $('#leftArrow').click(this, function(e) {
       const THIS = e.data;
       if (THIS.w == 0) {
