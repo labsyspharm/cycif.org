@@ -2001,14 +2001,14 @@ HashState.prototype = {
     });
 
     marker_links_map.forEach(function(link, marker){
-      var re = RegExp('[^0-9A-Za-z`]'+marker+'[^0-9A-Za-z`]', 'g');
+      var re = RegExp('[^0-9A-Za-z`]'+marker+'[^0-9A-Za-z`]', 'gi');
       md = md.replace(re, function(m) {
         return m.replace(marker, '`'+marker+'`');
       });
     });
 
     marker_links_map.forEach(function(link, marker){
-      var re = RegExp('`'+marker+'`', 'gi');
+      var re = RegExp('`'+marker+'`', 'g');
       md = md.replace(re, '[`'+marker+'`]('+link+')');
     });
 
