@@ -84,7 +84,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                         return rowNames[i];
                     })
                     .style('opacity', 1)
-                    .on("click", function(d,i) { alert('clicked on row' + i); });
+                    //.on("click", function(d,i) { alert('clicked on row' + i); });
 
                 // the cells (colored rectangles)
                 var cell = row.selectAll(".matrix-cell-business")
@@ -135,7 +135,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                     .text(function(d,i){
                         return d;
                     })
-                    .on("click", function(d,i) { alert('clicked on column' + i); });;
+                    //.on("click", function(d,i) { alert('clicked on column' + i); });;
 
                 //dynamic legend
                 vis.svg.append("g")
@@ -261,7 +261,7 @@ infovis.renderBarChart = function(wid_waypoint, id, visdata){
                         .duration(500)
                         .style("opacity", 0);
                 })
-                .on("click", function(d,i) { alert('clicked on bar' + i + ' with value: ' + formatter(d.frequency)); });
+                //.on("click", function(d,i) { alert('clicked on bar' + i + ' with value: ' + formatter(d.frequency)); });
         })
         .catch((error) => {
             throw error;
@@ -356,20 +356,20 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
             .style("fill", function (d) {
                 return color(cValue(d));
             })
-            .on("mouseover", function (d) {
-                tooltip.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                tooltip.html(d.Cluster + "<br/> (" + xValue(d)
-                    + ", " + yValue(d) + ")")
-                    .style("left", (d3.event.pageX + 5) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-            })
-            .on("mouseout", function (d) {
-                tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
+            // .on("mouseover", function (d) {
+            //     tooltip.transition()
+            //         .duration(200)
+            //         .style("opacity", .9);
+            //     tooltip.html(d.Cluster + "<br/> (" + xValue(d)
+            //         + ", " + yValue(d) + ")")
+            //         .style("left", (d3.event.pageX + 5) + "px")
+            //         .style("top", (d3.event.pageY - 28) + "px");
+            // })
+            // .on("mouseout", function (d) {
+            //     tooltip.transition()
+            //         .duration(500)
+            //         .style("opacity", 0);
+            // });
 
         // draw legend
         var legend = svg.selectAll(".legend")
