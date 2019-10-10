@@ -49,6 +49,16 @@ const arrayEqual = function(a, b) {
   });
 };
 
+const startSpeaking = function(m) {
+  var msg = new SpeechSynthesisUtterance();
+  var voices = window.speechSynthesis.getVoices();
+  msg.voice = voices[0];
+  msg.voiceURI = "native";
+  msg.lang = 'en-US';
+  msg.text = m;
+  speechSynthesis.speak(msg);
+}
+
 const dFromWaypoint = function(waypoint) {
   return encode(waypoint.Description);
 };
@@ -424,23 +434,23 @@ HashState.prototype = {
       $("#sidebar-menu").toggleClass("toggled");
     });
 
-		$('#play-pause').click(function(e) {
-			const icon = $(this);
-			const audio = document.getElementById("audioPlayer");
-    	if (audio.paused || audio.ended) {
-				icon.find('svg').attr('data-icon', 'pause');
-        audio.play();
+    const THIS = this;
+    $('#play-pause').click(function(e) {
+      const icon = $(this);
+
+      if (speechSynthesis.paused && speechSynthesis.speaking) {
+        icon.find('svg').attr('data-icon', 'pause');
+        speechSynthesis.resume();
+      }
+      else if (speechSynthesis.speaking){
+        icon.find('svg').attr('data-icon', 'play');
+        speechSynthesis.pause();
       }
       else {
-				icon.find('svg').attr('data-icon', 'play');
-				audio.pause();
+        icon.find('svg').attr('data-icon', 'pause');
+        startSpeaking(THIS.waypoint.Description);
       }
-		});
-
-		document.getElementById("audioPlayer").onended = function() {
-			const icon = $('#play-pause');
-			icon.find('svg').attr('data-icon', 'play');
-    };
+    });
 
     $('#leftArrow').click(this, function(e) {
       const THIS = e.data;
@@ -924,6 +934,8 @@ HashState.prototype = {
     const waypoint = this.waypoint;
 
     this.slower();
+    speechSynthesis.cancel();
+
     this.m = mFromWaypoint(waypoint, this.masks);
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
@@ -1213,7 +1225,6 @@ HashState.prototype = {
       chans: exhibit.Channels || [],
       layout: exhibit.Layout || {},
       images: exhibit.Images || [],
-      audio: exhibit.Audio || undefined,
       header: exhibit.Header || '',
       footer: exhibit.Footer || '',
       stories: stories,
@@ -1235,9 +1246,7 @@ HashState.prototype = {
     const v = this.v;
 
     const header = this.design.header;
-    const d_a = this.design.audio;
     const d = mode == 'outline' ? encode(header) : this.d;
-    const audio = mode == 'outline' ? d_a : undefined;
 
     const name = {
       'explore': 'Free Explore',
@@ -1267,7 +1276,6 @@ HashState.prototype = {
         Group: group.Name,
         Masks: masks,
         Groups: groups,
-        Audio: audio,
         Description: decode(d),
         Name: name || 'Waypoint',
         Overlay: {
@@ -1974,18 +1982,10 @@ HashState.prototype = {
   fillWaypointView: function() {
     const waypoint = this.waypoint;
     const wid_waypoint = document.getElementById('viewer-waypoint');
-    const audioPlayer = document.getElementById("audioPlayer");
     const waypointName = document.getElementById("waypointName");
     const waypointCount = document.getElementById("waypointCount");
     waypointCount.innerText = this.currentCount + '/' + this.totalCount;
 
-    if (waypoint.Audio) {
-      audioPlayer.src = waypoint.Audio;
-      audioPlayer.style.visibility = 'visible';
-    }
-    else {
-      audioPlayer.style.visibility = 'hidden';
-    }
     waypointName.innerText = waypoint.Name;
 
     const scroll_dist = $('.waypoint-content').scrollTop();
