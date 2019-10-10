@@ -1,5 +1,6 @@
 Exhibit:
   Name: LUNG_3
+  Audio: /assets/audio/speech_20190918200819525.mp3
   Header: |
     Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
   Footer: |
@@ -128,6 +129,7 @@ Exhibit:
     Waypoints:
     - Name: Tissue Regions
       Group: Structural Components
+      Audio: /assets/audio/speech_20190918201043160.mp3
       Description: |
         In this tissue specimen of a human lung cancer, the tumor region can be seen on the right-hand side and an 
         adjacent non-tumor, stromal region can be seen on the left-hand side.
@@ -157,6 +159,7 @@ Exhibit:
   
     - Name: Epithelial Tumor Cells
       Group: Structural Components
+      Audio: /assets/audio/speech_20190918201043160.mp3
       Description: |
         The epithelial tumor cells of the lung are noted by their larger morphology 
         and cytoplasmic expression of `Keratin`. 
@@ -172,6 +175,7 @@ Exhibit:
 
     - Name: Adjacent Non-Tumor Region
       Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
       Description: |
         In the adjacent non-tumor region, most of the cells are fibroblasts 
         expressing `a-SMA` and immune cells expressing `CD45` or `IBA1`.
@@ -189,6 +193,7 @@ Exhibit:
 
     - Name: Tumor-Stromal Interphase
       Group: Structural Components
+      Audio: /assets/audio/speech_20190918201043160.mp3
       Description: |
         In the tumor-stromal interface where clusters of tumor cells (`Keratin`)
         can be seen associated with stromal areas containing fibroblasts (`α-SMA`) 
@@ -207,6 +212,7 @@ Exhibit:
 
     - Name: K-means Clustering
       Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
       VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
       VisBarChart: /assets/visdata/cellCounts.csv
       Description: |
@@ -243,6 +249,7 @@ Exhibit:
 
     - Name: PD-L1 Expression
       Group: PD-L1 Expression
+      Audio: /assets/audio/speech_20190918201256228.mp3
       Description: |
         Programmed Death Ligand 1 (`PD-L1`), also known as cluster of differentiation 274 (CD274), 
         is a target of immunotherapeutics. It is expressed in tumor cells (`Keratin`) 
@@ -262,6 +269,7 @@ Exhibit:
 
     - Name: PD-L1 Expressing Tumor Cells
       Group: PD-L1 Expression
+      Audio: /assets/audio/speech_20190918201431372.mp3
       Description: |
         Here, tumor cells (`Keratin`) can be seen expressing `PD-L1` on the cell membrane.
       Zoom: 11.3066
@@ -280,6 +288,7 @@ Exhibit:
       Arrow:
         - 1.007917516813384
         - 0.3362427017301348
+      Audio: /assets/audio/speech_20190918201550587.mp3
       Description: |
         Macrophages (`IBA1`) expressing `PD-L1` are also observed in this lung cancer specimen.
       Zoom: 11.8066
@@ -294,6 +303,7 @@ Exhibit:
 
     - Name: Immune Populations
       Group: Lymphocytes
+      Audio: /assets/audio/speech_20190918201656247.mp3
       Description: |
         Many immune populations are present in this lung cancer and are often 
         enriched in the tumor region.
@@ -318,6 +328,7 @@ Exhibit:
 
     - Name: B-Cells and T-Cells
       Group: Lymphocytes
+      Audio: /assets/audio/speech_20190918201656247.mp3
       Description: |
         T cells (`CD3D`) are often found infiltrating the tumor region whereas B cells (`CD20`) 
         are less common as shown in this sample.
@@ -333,6 +344,7 @@ Exhibit:
 
     - Name: Regulatory T-Cells
       Group: Inhibitory T-Cells
+      Audio: /assets/audio/speech_20190918201756267.mp3
       Description: |
         A subpopulation of T cells (`CD3D`) is regulatory T cells, also known as Tregs. 
         Tregs are marked by membraneous expression of `CD4` and nuclear expression of `FOXP3`. 
@@ -349,6 +361,7 @@ Exhibit:
 
     - Name: Cytotoxic T-Cells
       Group: Inhibitory T-Cells
+      Audio: /assets/audio/speech_20190918201756267.mp3
       Description: |
         Another subpopulation of T cells (`CD3D`) is cytotoxic T cells, 
         also known as T-killer cells or cytotoxic T lymphocytes (CTLs). 
@@ -366,6 +379,7 @@ Exhibit:
 
     - Name: Inhibitory T-Cells
       Group: Inhibitory T-Cells
+      Audio: /assets/audio/speech_20190918201756267.mp3
       Description: |
         Some subpopulations of T cells (`CD3D`) express inhibitory molecules such as `PD1` or `FOXP3`. 
         In this sample, these inhibitory T cells are enriched in the tumor region.
@@ -382,6 +396,7 @@ Exhibit:
 
     - Name: Rare Immune Population 1
       Group: Rare Immune Population 1
+      Audio: /assets/audio/speech_20190918201847222.mp3
       Description: |
         In this lung cancer, we found a rare, or low frequency, immune population`:` CD8+/FOXP3+ T cells. 
         
@@ -412,6 +427,7 @@ Exhibit:
 
     - Name: Rare Immune Population 2
       Group: Rare Immune Population 2
+      Audio: /assets/audio/speech_20190918202005841.mp3
       Description: |
         Another rare, or low frequency, population present in the tumor 
         is `PD-1`+/`LAG3`+ double positive T cells. Both of these markers are
@@ -443,6 +459,7 @@ Exhibit:
 
     - Name: Macrophages
       Group: Macrophages
+      Audio: /assets/audio/speech_20190916132915227.mp3
       Description: |
         Subtypes of macrophages.
       Zoom: 7.3201
@@ -457,6 +474,7 @@ Exhibit:
 
     - Name: Macrophages (cont.)
       Group: Macrophages (cont.)
+      Audio: /assets/audio/speech_20190916132915227.mp3
       Description: |
         Subtypes of macrophages.
       Zoom: 7.8518
