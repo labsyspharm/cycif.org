@@ -1,0 +1,57 @@
+Exhibit:
+  Name: Mid-distal Right Coronary Artery
+  Images:
+    - Name: i0
+      Description: 'Mid-distal Right Coronary Artery'
+      Path: https://s3.amazonaws.com/www.cycif.org/rashid-perspective-MI-2019
+      Width: 138941
+      Height: 89985
+      MaxLevel: 8
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: '477616'
+      Name: H&E
+      Colors:
+        - 8233CC 
+        - FF8080
+      Channels:
+        - Hematoxylin
+        - Eosin
+  Stories:
+  - Name: Overview
+    Description: 
+    Waypoints:
+    - Zoom: 0.582
+      Pan:
+        - 0.781
+        - 0.476
+      Group: H&E
+      Name: The Waypoint
+      Description: |
+        Hematoxylin and Eosin (H&E) stained section of the mid-distal right coronary artery.
+
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+
+  - Name: About
+    Description: 
+    Waypoints:
+    
+    - Name: ROI 1
+      Group: H&E
+      Description: Description of ROI 1. 
+      Zoom: 4.834
+      Pan:
+        - 0.584
+        - 0.457
+      Overlay:
+        x: 0.575
+        y: 0.445
+        width: 0.062
+        height: 0.056
+

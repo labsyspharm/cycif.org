@@ -1,0 +1,78 @@
+publication:
+  title: Heart
+  authors:
+  journal: 
+  link: 
+    # name: Publication summary
+    # url: http://lincs.hms.harvard.edu/lin-elife-2018/
+
+stitched mosaic images:
+  - title: Left atrium
+    description: 
+    thumbnail file name: A1_left_atrium.PNG
+    links: 
+      - Image: osd-A1_left_atrium
+  - title: Anterior left ventricle
+    description: 
+    thumbnail file name: A2_anterior_left_ventricle.PNG
+    links:
+      - Image : osd-A2_anterior_left_ventricle
+  - title: Interventricular septum
+    description: 
+    thumbnail file name: A3_interventricular_septum.PNG
+    links:
+      - Image: osd-A3_interventricular_septum
+  - title: Posterior left ventricle
+    description: 
+    thumbnail file name: A4_posterior_left_ventricle.PNG
+    links:
+      - Imagee: osd-A4_posterior_left_ventricle
+  - title: Posterior left ventricle
+    description: 
+    thumbnail file name: A5_posterior_left_ventricle.PNG
+    links:
+      - Imagee: osd-A5_posterior_left_ventricle
+
+  - title: Posterior left ventricle
+    description: 
+    thumbnail file name: A6_posterior_left_ventricle.PNG
+    links:
+      - Imagee: osd-A6_posterior_left_ventricle
+
+  - title: Lateral left ventricle
+    description: 
+    thumbnail file name: A7_lateral_left_ventricle.PNG
+    links:
+      - Imagee: osd-A7_lateral_left_ventricle
+
+  - title: Right ventricle
+    description: 
+    thumbnail file name: A8_right_ventricle.PNG
+    links:
+      - Imagee: osd-A8_right_ventricle
+
+  - title: Mid distal right coronary artery
+    description: 
+    thumbnail file name: A17_mid_distal_right_coronary_artery.PNG
+    links:
+      - Imagee: osd-A17_mid_distal_right_coronary_artery
+
+  - title: Left anterior descending artery
+    description: 
+    thumbnail file name: A18_left_anterior_descending_artery.PNG
+    links:
+      - Imagee: osd-A18_left_anterior_descending_artery
+
+  - title: Left anterior descending artery
+    description: 
+    thumbnail file name: A19_left_anterior_descending_artery.PNG
+    links:
+      - Imagee: osd-A19_left_anterior_descending_artery
+  - title: Left circumflex artery
+    description: 
+    thumbnail file name: A20_left_circumflex_artery.PNG
+    links:
+      - Imagee: osd-A20_left_circumflex_artery
+
+
+
