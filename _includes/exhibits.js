@@ -2014,11 +2014,6 @@ HashState.prototype = {
     });
 
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
-    $(wid_waypoint).find('p').each(function(i, wid_p){
-      const wid_div = document.createElement("div");
-      wid_div.innerHTML = wid_p.innerHTML;
-      $(wid_p).replaceWith(wid_div);
-    });
 
     if (waypoint.Image) {
       var img = document.createElement("img");
