@@ -7,7 +7,7 @@ Exhibit:
   PixelsPerMicron: 3.0679
   Images:
     - Name: i0
-      Description: 'Lung 3 - Du, Lin, and Rashid et al, 2019 (submitted)'
+      Description: 'Lung 3 - Du, Lin, and Rashid et al., Nature Protocols, 2019'
       Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3
       Width: 14448
       Height: 11101
@@ -110,19 +110,34 @@ Exhibit:
         - CD11B
         - CD14
         - DNA
+    - Path: Nuclei_0__Hoechst
+      Name: Nuclei
+      Colors:
+        - FFFFFF
+      Channels:
+        - Hoechst
+
   Masks:
-    - Name: Segmentation Mask
-      Path: datalayer/segmentation
-    - Name: Cluster_1 Stroma
-      Path: datalayer/clustering/merged_s40/level_0/cluster_id_1
-    - Name: Cluster_2 Others
-      Path: datalayer/clustering/merged_s40/level_0/cluster_id_2
-    - Name: Cluster_3 Immune
-      Path: datalayer/clustering/merged_s40/level_0/cluster_id_3
-    - Name: Cluster_4 Tumor
-      Path: datalayer/clustering/merged_s40/level_0/cluster_id_4
-    - Name: Cluster All
-      Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
+    # - Name: Segmentation Mask
+    #   Path: datalayer/segmentation
+    # - Name: Cluster_1 Stroma
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_1
+    # - Name: Cluster_2 Others
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_2
+    # - Name: Cluster_3 Immune
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_3
+    # - Name: Cluster_4 Tumor
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_4
+    - Name: Cluster 1 - Tumor Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_1
+    - Name: Cluster 2 - Misc Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_2
+    - Name: Cluster 3 - Immune Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_3
+    - Name: Cluster 4 - Stromal Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_4
+    # - Name: Cluster All
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
 
   Stories:
   - Name: ''
