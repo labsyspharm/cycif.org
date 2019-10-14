@@ -476,7 +476,19 @@ Exhibit:
       Group: Macrophages
       Audio: /assets/audio/speech_20190916132915227.mp3
       Description: |
-        Subtypes of macrophages.
+        Many macrophages are present in both the tumor and stromal regions of this lung tissue. 
+        
+        A subtype of macrophages or dendritic cells are detected using `IBA1`. 
+        Dendritic cells typically process antigens and present it on their cell surface to T cells, 
+        acting as an intermediary between the innate and adaptive immune systems.
+        
+        Another macrophage marker, `CD163`, can be seen expressed on the surface of
+        macrophages or monocytes. `CD163` expressing cells are typically involved
+        in endocytosis and clearance of hemoglobin complexes.
+
+        Multiplexed imaging reveals the diversity and dynamic states of macrophages, 
+        with some cells showing co-expression of `IBA1` and `CD163`.
+
       Zoom: 7.3201
       Pan:
         - 0.6712
@@ -491,7 +503,13 @@ Exhibit:
       Group: Macrophages (cont.)
       Audio: /assets/audio/speech_20190916132915227.mp3
       Description: |
-        Subtypes of macrophages.
+        Other subtypes of macrophages include CD68 expressing macrophages which are involved in macrophage homing, 
+        CD11B expressing macrophages which are involved in adheisive interactions, 
+        and CD14 expressing macrophages which mediate innate immune responses. 
+
+        Interestingly, CD68 and CD11B expressing macrophages are concentrated in the tumor region, 
+        whereas CD14 expressing macropages are spread throughout the tissue.
+        
       Zoom: 7.8518
       Pan:
         - 0.4939
