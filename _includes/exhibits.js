@@ -2083,8 +2083,8 @@ HashState.prototype = {
         });
       }
       var color = this.indexColor(index);
-      var border = color? 'solid ' + color: 'dashed #AAA';
-      $(code).css('border-bottom', '1px ' + border);
+      var border = color? '2px solid ' + color: 'inherit';
+      $(code).css('border-bottom', border);
     }
   },
   fillWaypointEdit: function() {
@@ -2327,6 +2327,7 @@ const build_page = function(exhibit, options) {
     zoomOutButton: 'zoom-out',
     zoomInButton: 'zoom-in',
     homeButton: 'zoom-home',
+    immediateRender: true,
     maxZoomPixelRatio: 10,
     visibilityRatio: .9
   });
