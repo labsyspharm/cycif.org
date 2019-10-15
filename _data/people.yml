@@ -24,7 +24,7 @@
   affiliations:
     - An Wang Professor of Computer Science
     - School of Engineering and Applied Sciences at Harvard University
-  image: https://www.seas.harvard.edu/sites/default/files/styles/directory_large/public/images/Directory/Pfister_200x300_0.jpg?itok=HyBnE-2g
+  image: hanspeter_pfister.jpg
   role: 
   email: pfister@seas.harvard.edu
   links:
@@ -41,6 +41,24 @@
   email: bizar@bidmc.harvard.edu
   links:
     - google schloar: https://scholar.google.com/citations?hl=en&user=_m4wVXYAAAAJ
+
+- name: Alyce Chen
+  affiliations:
+    - Scientific Program Manager
+    - Laboratory of Systems Pharmacology
+  image: alyce_chen.jpg
+  role: Research Scientist
+  email: alyce_chen@hms.harvard.edu
+  links:
+
+- name: Madison Tyler
+  affiliations:
+    - Research Associate
+    - Laboratory of Systems Pharmacology
+  image: madison_tyler.jpg
+  role: 
+  email: madison_tyler@hms.harvard.edu
+  links:
 
 - name: Jia-Ren Lin
   affiliations:
@@ -80,7 +98,7 @@
     - Research Associate and Senior Staff Programmer
     - Laboratory of Systems Pharmacology
   image: http://hits.harvard.edu/wp-content/uploads/2013/10/Douglas-Russell.jpg
-  role: Research Scientist
+  role: alumni
   email: douglas_russell@hms.harvard.edu
   links:
     - bio: https://scholar.harvard.edu/dpwrussell
@@ -112,7 +130,7 @@
     - Research Associate
     - Laboratory of Systems Pharmacology
   image: shaolin_mei.jpg
-  role: 
+  role: alumni
   email: shaolin_mei@hms.harvard.edu
   links: 
 
@@ -144,6 +162,14 @@
   email: john_hoffer@hms.harvard.edu
   links:
     - github: https://github.com/thejohnhoffer
+
+- name: Rumana Rashid
+  affiliations:
+    - Research Associate
+    - Laboratory of Systems Pharmacology
+  image: rumana_rashid.jpg
+  email: rumana_rashid@hms.harvard.edu
+  links:
 
 - name: Yu-An Chen
   affiliations:
