@@ -1716,8 +1716,10 @@ HashState.prototype = {
       }
     }
 
-    if (!document.getElementById(el)) {
-      var div = document.createElement("div"); 
+    var div = document.getElementById(el);
+
+    if (!div) {
+      div = document.createElement("div"); 
       div.className = "white overlay";
       div.id = el;
       document.getElementById('all-overlays').appendChild(div); 
@@ -1742,6 +1744,19 @@ HashState.prototype = {
         height: overlay.height,
         element: el
       });
+      THIS = this;
+
+      new OpenSeadragon.MouseTracker({
+        element: div,
+        moveHandler: function(event) {
+          if (THIS.waypoint.Mode == 'outline') {
+            $(div).css('cursor', 'pointer');
+          }
+          else {
+            $(div).css('cursor', 'default');
+          }
+        }
+      }).setTracking(true);
     }
 
     if (this.waypoint.Mode == 'outline') {
