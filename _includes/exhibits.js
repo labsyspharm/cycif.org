@@ -2331,6 +2331,22 @@ const build_page = function(exhibit, options) {
     maxZoomPixelRatio: 10,
     visibilityRatio: .9
   });
+  viewer.world.addHandler('add-item', function(addItemEvent) {
+      const tiledImage = addItemEvent.item;
+      tiledImage.addHandler('fully-loaded-change', function(fullyLoadedChangeEvent) {
+          const fullyLoaded = fullyLoadedChangeEvent.fullyLoaded;
+          if (fullyLoaded) {
+            tiledImage.immediateRender = false;
+          }
+      });
+      tiledImage.addHandler('opacity-change', function(opacityChangeEvent) {
+          const opacity = opacityChangeEvent.opacity;
+          if (opacity == 0) {
+            tiledImage.immediateRender = true;
+          }
+      });
+  });
+
   const tileSources = {};
   const state = new HashState(viewer, tileSources, exhibit, options);
   const init = state.init.bind(state);
