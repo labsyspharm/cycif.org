@@ -23,8 +23,8 @@ KI67,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=MKI67&keywords=KI67
 LAG3,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=LAG3&keywords=LAG3
 LAMINAC,,"https://www.genecards.org/cgi-bin/carddisp.pl?gene=LMNA&keywords=LAMIN,AC"
 LAMINB,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=LMNB1&keywords=LAMINB
-PD-1,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=PDCD1&keywords=PD-1
-PD-L1,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD274&keywords=PD-L1
+PD-1,PD1,https://www.genecards.org/cgi-bin/carddisp.pl?gene=PDCD1&keywords=PD-1
+PD-L1,PDL1,https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD274&keywords=PD-L1
 CD19,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD19&keywords=CD19
 CD14,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=CD14&keywords=CD11c
 CD56,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=NCAM1&keywords=CD56
