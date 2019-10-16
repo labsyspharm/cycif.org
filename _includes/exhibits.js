@@ -2017,15 +2017,17 @@ HashState.prototype = {
     });
 
     marker_links_map.forEach(function(link, marker){
-      var re = RegExp('[^0-9A-Za-z`]'+marker+'[^0-9A-Za-z`]', 'gi');
-      md = md.replace(re, function(m) {
-        return m.replace(marker, '`'+marker+'`');
+      var re = RegExp('(^|[^0-9A-Za-z`])\('+marker+'\)([^0-9A-Za-z`]|$)', 'gi');
+      md = md.replace(re, function(m, pre, m1, post) {
+        return m.replace(m1, '`'+m1+'`', 'gi');
       });
     });
 
     marker_links_map.forEach(function(link, marker){
-      var re = RegExp('`'+marker+'`', 'g');
-      md = md.replace(re, '[`'+marker+'`]('+link+')');
+      var re = RegExp('`'+marker+'`', 'gi');
+      md = md.replace(re, function(m) {
+        return '['+m+']('+link+')';
+      });
     });
 
     wid_waypoint.innerHTML = this.showdown.makeHtml(md);
