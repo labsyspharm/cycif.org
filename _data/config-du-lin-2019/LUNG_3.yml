@@ -159,18 +159,18 @@ Exhibit:
         y: 0.5487
         width: 0
         height: 0
-      Arrow:
-        - 0.9381917980144533
-        - 0.5809178743961351
-      ArrowText: TUMOR REGION
+      Arrows:
+        - Arrow:
+            - 0.9381917980144533
+            - 0.5809178743961351
+          ArrowText: TUMOR REGION
+          HideArrow: true
+        - Arrow:
+            - 0.3480346062266265
+            - 0.2077906326563334
+          ArrowText: STROMAL REGION
+          HideArrow: true
       Polygon: Q
-      HideArrow: true
-      Arrow:
-        - 0.3480346062266265
-        - 0.2077906326563334
-      ArrowText: STROMAL REGION
-      Polygon: Q
-      HideArrow: true
   
     - Name: Epithelial Tumor Cells
       Group: Structural Components
@@ -299,10 +299,11 @@ Exhibit:
 
     - Name: PD-L1 Expressing Macrophages
       Group: PD-L1 Expression
-      ArrowText: Macrophage
-      Arrow:
-        - 1.007917516813384
-        - 0.3362427017301348
+      Arrows:
+        - Arrow:
+            - 1.007917516813384
+            - 0.3362427017301348
+          ArrowText: Macrophage
       Audio: /assets/audio/speech_20190918201550587.mp3
       Description: |
         Macrophages (`IBA1`) expressing `PD-L1` are also observed in this lung cancer specimen.
@@ -428,10 +429,11 @@ Exhibit:
       Pan:
         - 0.7928
         - 0.6827
-      Arrow:
-        - 0.7982181611329084
-        - 0.6783015759728294
-      ArrowText: CD8+/FOXP3+ T cell
+      Arrows:
+        - Arrow:
+            - 0.7982181611329084
+            - 0.6783015759728294
+          ArrowText: CD8+/FOXP3+ T cell
       Polygon: Q
       Overlay:
         x: -100

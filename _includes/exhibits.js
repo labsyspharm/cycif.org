@@ -77,7 +77,8 @@ const mFromWaypoint = function(waypoint, masks) {
 };
 
 const aFromWaypoint = function(waypoint, masks) {
-  const arrow = waypoint.Arrow;
+  const arrows = waypoint.Arrows || [{}]
+  const arrow = arrows[0].Arrow;
   if (arrow) {
     return arrow
   }
@@ -730,9 +731,11 @@ HashState.prototype = {
           viewport.pan.x,
           viewport.pan.y
         ],
-        Arrow: this.a,
-        ArrowText: '',
-        HideArrow: undefined,
+        Arrows: [{
+          Arrow: this.a,
+          ArrowText: '',
+          HideArrow: false
+        }],
         ActiveMasks: undefined,
         Masks: undefined,
         Polygon: this.p,
@@ -941,7 +944,8 @@ HashState.prototype = {
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
     this.o = oFromWaypoint(waypoint);
-    this.a = aFromWaypoint(waypoint);
+    // this.a = aFromWaypoint(waypoint);
+    this.a = [-100, -100];
     this.p = pFromWaypoint(waypoint);
     this.d = dFromWaypoint(waypoint);
     this.n = nFromWaypoint(waypoint);
@@ -1270,7 +1274,9 @@ HashState.prototype = {
       Waypoints: [remove_undefined({
         Mode: mode,
         Zoom: v[0],
-        Arrow: a,
+        Arrows: [{
+          Arrow: a
+        }],
         Polygon: p,
         Pan: v.slice(1),
         ActiveMasks: [],
@@ -1361,7 +1367,25 @@ HashState.prototype = {
         this.addOverlay(overlay, el);
       }
     }, this)
-    this.addArrow(this.a);
+
+    const THIS = this;
+    $.each($('.arrow-overlay'), function(id, el) {
+      const current = THIS.viewer.getOverlayById(el.id);
+      const xy = new OpenSeadragon.Point(-100, -100);
+      if (current) {
+        current.update({
+          location: xy,
+        });
+      }
+    });
+    if (Math.max(...this.a) > 0){
+        this.addArrow();
+    }
+    else if (this.waypoint.Arrows) {
+      for (i in this.waypoint.Arrows) {
+        this.addArrow(i);
+      }
+    }
 
    // Redraw design
     if(redraw) {
@@ -1401,9 +1425,10 @@ HashState.prototype = {
       });
       $('#edit_toggle_arrow').click(this, function(e) {
         const THIS = e.data;
-        const hide_arrow = THIS.waypoint.HideArrow;
-        THIS.waypoint.HideArrow = hide_arrow ? false : true;
-        if (THIS.waypoint.HideArrow == true) {
+        const arrow_0 = THIS.waypoint.Arrows[0];
+        const hide_arrow = arrow_0.HideArrow;
+        arrow_0.HideArrow = hide_arrow ? false : true;
+        if (arrow_0.HideArrow == true) {
           $(this).css('opacity', '0.5');
         }
         else {
@@ -1563,8 +1588,8 @@ HashState.prototype = {
     bw.Zoom = this.viewport.scale;
     bw.Overlay = this.overlay;
     bw.ActiveMasks = this.active_masks.map(mask => mask.Name)
+    bw.Arrows[0].Arrow = this.a;
     bw.Polygon = this.p;
-    bw.Arrow = this.a;
     bw.Pan = [
       this.viewport.pan.x,
       this.viewport.pan.y
@@ -1646,28 +1671,44 @@ HashState.prototype = {
         });
   },
 
-  addArrow: function(arrow) {
+  addArrow: function(index) {
 
-    const el = "arrow-overlay";
+    const proto_el = "arrow-overlay";
+    var el = proto_el;
+    var a = {
+      Arrow: this.a,
+      ArrowText: ''
+    }
+    if (index != undefined) {
+      el = "arrow-overlay-" + index;
+      a = this.waypoint.Arrows[index];
+    }
+
     const current = this.viewer.getOverlayById(el);
-    const xy = new OpenSeadragon.Point(arrow[0], arrow[1]);
+    const xy = new OpenSeadragon.Point(a.Arrow[0], a.Arrow[1]);
     if (current) {
       current.update({
         location: xy,
       });
     }
     else {
+      if (el != proto_el) {
+        const proto_element = document.getElementById(proto_el);
+        const element = proto_element.cloneNode(true);
+        element.id = el;
+        document.body.appendChild(element);
+      }
       this.viewer.addOverlay({
-        x: arrow[0],
-        y: arrow[1],
+        x: a.Arrow[0],
+        y: a.Arrow[1],
         element: el
       });
     }
 
-    const a_image_el = $('#arrow-image');
-    const a_text_el = $('#arrow-text');
+    const a_image_el = $('#'+el+' .arrow-image');
+    const a_text_el = $('#'+el+' .arrow-text');
 
-    if (this.waypoint.HideArrow == true) {
+    if (a.HideArrow == true) {
       $(a_image_el).css('display', 'none');
       $(a_text_el).css('margin-left', '0px');
     }
@@ -1676,16 +1717,9 @@ HashState.prototype = {
       $(a_text_el).css('margin-left', '64px');
     }
 
-
-    const a_text = this.waypoint.ArrowText;
-    const waypoint_arrow = this.waypoint.Arrow || [-1,-1];
+    const a_text = a.ArrowText;
     
-    const same_x = waypoint_arrow[0] == arrow[0];
-    const same_y = waypoint_arrow[1] == arrow[1];
-    const same_arrow = same_x && same_y;
-
-
-    if (a_text && same_arrow) {
+    if (a_text) {
       a_text_el.addClass('p-3');
       a_text_el.text(a_text);
     }
@@ -2122,10 +2156,10 @@ HashState.prototype = {
 
     $(wid_txt_arrow).on('input', this, function(e) {
       const THIS = e.data;
-      THIS.waypoint.ArrowText = this.value;
+      THIS.waypoint.Arrows[0].ArrowText = this.value;
       THIS.newView(false);
     });
-    wid_txt_arrow.value = this.waypoint.ArrowText || '';
+    wid_txt_arrow.value = this.waypoint.Arrows[0].ArrowText || '';
 
     $(wid_txt_name).on('input', this, function(e) {
       const THIS = e.data;
