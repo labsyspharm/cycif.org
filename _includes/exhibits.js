@@ -1769,24 +1769,16 @@ HashState.prototype = {
         height: overlay.height,
         element: el
       });
-      THIS = this;
-
-      new OpenSeadragon.MouseTracker({
-        element: div,
-        moveHandler: function(event) {
-          if (THIS.waypoint.Mode == 'outline') {
-            $(div).css('cursor', 'pointer');
-          }
-          else {
-            $(div).css('cursor', 'default');
-          }
-        }
-      }).setTracking(true);
     }
+
+    THIS = this;
 
     if (this.waypoint.Mode == 'outline') {
       const tracker = new OpenSeadragon.MouseTracker({
         element: document.getElementById(el),
+        moveHandler: function(event) {
+          $(div).css('cursor', 'pointer');
+        },
         clickHandler: (function(event) {
           const [s, w] = el.split('-').slice(2);
           event.preventDefaultAction = false;
