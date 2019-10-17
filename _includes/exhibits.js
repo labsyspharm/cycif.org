@@ -2126,9 +2126,11 @@ HashState.prototype = {
       var index = channelOrders[code.innerText];
       if (!index) {
         Object.keys(channelOrders).forEach(function (marker) {
-          const code_marker = marker_alias_map.get(code.innerText);
-          const key_marker = marker_alias_map.get(marker);
-          if (code_marker == key_marker && key_marker != undefined) {
+          const c_text = code.innerText;
+          const code_marker = marker_alias_map.get(c_text) || c_text;
+          const key_marker = marker_alias_map.get(marker) || marker;
+          const re = RegExp('^'+code_marker+'$','gi');
+          if (key_marker != undefined && key_marker.match(re)) {
             index = channelOrders[marker];
           }
         });
