@@ -384,6 +384,7 @@ HashState.prototype = {
   init: function() {
     // Read hash
     window.onpopstate = this.popState.bind(this);
+    window.onpopstate();
     if (this.edit) {
       this.startEditing();
     }
@@ -2070,6 +2071,15 @@ HashState.prototype = {
       }
     }
 
+    const maskHandler = function(name) {
+      const re = RegExp(name ,'gi');
+      const m = index_regex(THIS.masks, re);
+      if (m >= 0) {
+        THIS.m = [m];
+      }
+      THIS.newView(true);
+    }
+
     //VIS
     const renderVis = function(visType, el, id) {
       const renderer = {
@@ -2077,7 +2087,9 @@ HashState.prototype = {
         'VisBarChart': infovis.renderBarChart,
         'VisScatterplot': infovis.renderScatterplot
       }[visType]
-      const tmp = renderer(el, id, waypoint[visType]);
+      const tmp = renderer(el, id, waypoint[visType], {
+        'clickHandler': maskHandler
+      });
       tmp.then(() => finish_waypoint(visType));
     }
 
@@ -2398,4 +2410,15 @@ const index_name = function(list, name) {
   })[0];
   return list.indexOf(item);
 };
+
+const index_regex = function(list, re) {
+  if (!Array.isArray(list)) {
+    return -1;
+  }
+  const item = list.filter(function(i) {
+    return !!i.Name.match(re);
+  })[0];
+  return list.indexOf(item);
+};
+
 

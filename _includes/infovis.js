@@ -161,7 +161,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
 }
 
 
-infovis.renderBarChart = function(wid_waypoint, id, visdata){
+infovis.renderBarChart = function(wid_waypoint, id, visdata, events){
 
     //formatter .. to scientific notation
     var formatter = d3.format(".2n");
@@ -261,7 +261,9 @@ infovis.renderBarChart = function(wid_waypoint, id, visdata){
                         .duration(500)
                         .style("opacity", 0);
                 })
-                //.on("click", function(d,i) { alert('clicked on bar' + i + ' with value: ' + formatter(d.frequency)); });
+                .on("click", function(d,i) {
+                  events.clickHandler(d.type)
+                });
         })
         .catch((error) => {
             throw error;

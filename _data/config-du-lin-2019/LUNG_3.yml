@@ -130,7 +130,7 @@ Exhibit:
     #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_4
     - Name: Cluster 1 - Tumor Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_1
-    - Name: Cluster 2 - Misc Cells # new
+    - Name: Cluster 2 - Other Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_2
     - Name: Cluster 3 - Immune Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_3
@@ -246,15 +246,13 @@ Exhibit:
       
         Click on each of the clusters below to see which cells in the image belong to each cluster.
 
-
       ActiveMasks:
-      - Cluster_1 Tumor
+        - Cluster 1 - Tumor Cells
       Masks:
-      - Cluster_1 Tumor
-      - Cluster_2 Stroma
-      - Cluster_3 Immune
-      - Cluster_4 Other
-      - Segmentation Mask
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
       Zoom: 0.5
       Pan:
         - 0.5
