@@ -16,6 +16,7 @@ get_links_alias = function(data) {
       d.Alias.split(',').forEach(function(a) {
         alias_map.set(strip(a), strip(d.String));
       });
+      alias_map.set(strip(d.String), strip(d.String));
     });
 
     const links_map = new Map();
