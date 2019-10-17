@@ -49,16 +49,6 @@ const arrayEqual = function(a, b) {
   });
 };
 
-const startSpeaking = function(m) {
-  var msg = new SpeechSynthesisUtterance();
-  var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[0];
-  msg.voiceURI = "native";
-  msg.lang = 'en-US';
-  msg.text = m;
-  speechSynthesis.speak(msg);
-}
-
 const dFromWaypoint = function(waypoint) {
   return encode(waypoint.Description);
 };
@@ -342,6 +332,7 @@ const changeSprings = function(viewer, seconds, stiffness) {
 const HashState = function(viewer, tileSources, exhibit, options) {
 
   this.trackers = [];
+  this.pollycache = {};
   this.embedded = options.embedded || false;
   this.showdown = new showdown.Converter();
   this.tileSources = tileSources;
@@ -393,7 +384,6 @@ HashState.prototype = {
   init: function() {
     // Read hash
     window.onpopstate = this.popState.bind(this);
-    window.onpopstate();
     if (this.edit) {
       this.startEditing();
     }
@@ -436,22 +426,6 @@ HashState.prototype = {
     });
 
     const THIS = this;
-    $('#play-pause').click(function(e) {
-      const icon = $(this);
-
-      if (speechSynthesis.paused && speechSynthesis.speaking) {
-        icon.find('svg').attr('data-icon', 'pause');
-        speechSynthesis.resume();
-      }
-      else if (speechSynthesis.speaking){
-        icon.find('svg').attr('data-icon', 'play');
-        speechSynthesis.pause();
-      }
-      else {
-        icon.find('svg').attr('data-icon', 'pause');
-        startSpeaking(THIS.waypoint.Description);
-      }
-    });
 
     $('#leftArrow').click(this, function(e) {
       const THIS = e.data;
@@ -696,7 +670,6 @@ HashState.prototype = {
         round4(pan.x),
         round4(pan.y)
       ];
-      THIS.newView(false); 
     }, this);
 
     this.viewer.addHandler('animation-finish', function(e) {
@@ -1351,10 +1324,12 @@ HashState.prototype = {
       window.onpopstate();
     }
 
+    this.loadPolly(this.waypoint.Description);
     // Always update
     this.newView(true);
   },
   newView: function(redraw) {
+
 
     this.trackers.forEach(t => t.destroy());
     this.trackers = [];
@@ -1497,6 +1472,22 @@ HashState.prototype = {
     greenOrWhite('.lasso-switch *', drawing && (drawType == "lasso"));
     greenOrWhite('.arrow-switch *', drawing && (drawType == "arrow"));
     //greenOrWhite('#edit-switch *', editing);
+  },
+
+  loadPolly: function(txt) {
+    var polly_url = this.pollycache[this.currentCount];
+    if (polly_url) {
+      document.getElementById('audioSource').src = polly_url;
+      document.getElementById('audioPlayback').load();
+    }
+    else {
+      const THIS = this;
+      speakText(txt).then(function(url) {
+        THIS.pollycache[THIS.currentCount] = url;
+        document.getElementById('audioSource').src = url;
+        document.getElementById('audioPlayback').load();
+      });
+    }
   },
 
   makeUrl: function(hashKeys, searchKeys) {

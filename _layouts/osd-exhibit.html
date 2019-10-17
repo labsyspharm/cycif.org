@@ -49,18 +49,16 @@
                             </div>
                         </div>
                         <div id="waypointControls" class="row align-items-center">
-                            <div class="col-3 text-center" id="leftArrow">
-                                <i class="fas fa-arrow-left" style="font-size: 50px"></i>
+                            <div class="col-2 text-center" id="leftArrow">
+                                <i class="fas fa-arrow-left" style="font-size: 25px"></i>
                             </div>
-                            <div class="col-2"> </div>
-														<div class="col-2">
-																<a id="play-pause">
-																		<i class="fas fa-play"></i>
-																</a>
+                            <div class="col-8">
+                              <audio style="height: 25px; width:100%" id="audioPlayback" controls>
+                                <source id="audioSource" type="audio/mp3" src="">
+                              </audio> 
                             </div>
-                            <div class="col-2"> </div>
-                            <div class="col-3 text-center" id="rightArrow">
-                                <i class="fas fa-arrow-right" style="font-size: 50px;"></i>
+                            <div class="col-2 text-center" id="rightArrow">
+                                <i class="fas fa-arrow-right" style="font-size: 25px;"></i>
                             </div>
                         </div>
                         <div id="viewer-waypoint">
@@ -301,6 +299,8 @@
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.551.0.min.js"></script>
+
 
     <script>
         {% include polyfills.js %}
@@ -334,6 +334,9 @@
     </script>
     <script>
         {% include openseadragon-scalebar.js %}
+    </script>
+    <script>
+        {% include polly-speak.js %}
     </script>
     <script>
         {% include exhibits.js %}
