@@ -1354,7 +1354,7 @@ HashState.prototype = {
         });
       }
     });
-    if (Math.max(...this.a) > 0){
+    if (Math.max(...this.a) > 0 && !this.editing){
         this.addArrow();
     }
     else if (this.waypoint.Arrows) {
