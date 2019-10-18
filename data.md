@@ -93,7 +93,7 @@ title: Data
   </div>
   <div class="col">
     <a href="{{ site.baseurl }}/featured-paper/du-lin-rashid-2019/figures/">
-      <h5 class="mt-0">Du and Lin et al., 2019 (accepted)</h5>
+      <h5 class="mt-0">Du, Lin, and Rashid et al., Nature Protocols, 2019</h5>
     </a>
     <p>
 
