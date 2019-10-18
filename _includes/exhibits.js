@@ -68,7 +68,7 @@ const mFromWaypoint = function(waypoint, masks) {
 
 const aFromWaypoint = function(waypoint, masks) {
   const arrows = waypoint.Arrows || [{}]
-  const arrow = arrows[0].Arrow;
+  const arrow = arrows[0].Point;
   if (arrow) {
     return arrow
   }
@@ -372,8 +372,7 @@ const HashState = function(viewer, tileSources, exhibit, options) {
     description: '',
     mouseEvent: {},
     edit: false,
-    drawing: 0,
-    editing: 0
+    drawing: 0
   };
 
   this.newExhibit();
@@ -457,7 +456,7 @@ HashState.prototype = {
 
     $('#edit-switch').click(this, function(e) {
       const THIS = e.data;
-      if (!THIS.editing) {
+      if (!THIS.edit) {
         THIS.startEditing();
         THIS.pushState();
         window.onpopstate();
@@ -466,7 +465,7 @@ HashState.prototype = {
 
     $('#view-switch').click(this, function(e) {
       const THIS = e.data;
-      if (THIS.editing) {
+      if (THIS.edit) {
         THIS.finishEditing();
         THIS.pushState();
         window.onpopstate();
@@ -706,8 +705,8 @@ HashState.prototype = {
           viewport.pan.y
         ],
         Arrows: [{
-          Arrow: this.a,
-          ArrowText: '',
+          Point: this.a,
+          Text: '',
           HideArrow: false
         }],
         ActiveMasks: undefined,
@@ -805,18 +804,6 @@ HashState.prototype = {
       });
     });
     return authenticate(username, pass);
-  },
-
-  get editing() {
-    if (this.edit) {
-      return this.state.editing;
-    }
-    return 0;
-  },
-  set editing(_e) {
-    const e = parseInt(_e, 10);
-    this.state.editing = modulo(e, 3);
-    this.newView(true);
   },
 
   get drawType() {
@@ -1147,7 +1134,7 @@ HashState.prototype = {
   },
 
   get waypoint() {
-    if (this.editing) {
+    if (this.edit) {
       return this.bufferWaypoint;
     }
     var waypoint = this.waypoints[this.w];
@@ -1162,7 +1149,7 @@ HashState.prototype = {
     return waypoint;
   },
   set waypoint(waypoint) {
-    if (this.editing) {
+    if (this.edit) {
       this.bufferWaypoint = waypoint;
     }
     else {
@@ -1249,7 +1236,7 @@ HashState.prototype = {
         Mode: mode,
         Zoom: v[0],
         Arrows: [{
-          Arrow: a
+          Point: a
         }],
         Polygon: p,
         Pan: v.slice(1),
@@ -1354,7 +1341,7 @@ HashState.prototype = {
         });
       }
     });
-    if (Math.max(...this.a) > 0 && !this.editing){
+    if (Math.max(...this.a) > 0 && !this.edit){
         this.addArrow();
     }
     else if (this.waypoint.Arrows) {
@@ -1414,7 +1401,7 @@ HashState.prototype = {
       });
     }
 
-    if (this.editing) {
+    if (this.edit) {
       const THIS = this;
 
       $("#mask-picker").off("changed.bs.select");
@@ -1454,25 +1441,24 @@ HashState.prototype = {
     }
 
     // Based on control keys
-    const editing = this.editing;
+    const edit = this.edit;
     const drawing = this.drawing;
     const drawType = this.drawType;
 
     // Based on search keys
-    activeOrNot('#view-switch', !editing);
-    activeOrNot('#edit-switch', editing);
+    activeOrNot('#view-switch', !edit);
+    activeOrNot('#edit-switch', edit);
 
-    displayOrNot('#home-button', !editing);
-    displayOrNot('.editControls', editing);
-    displayOrNot('#waypointControls', !editing);
-    displayOrNot('#waypointName', !editing);
+    displayOrNot('#home-button', !edit);
+    displayOrNot('.editControls', edit);
+    displayOrNot('#waypointControls', !edit);
+    displayOrNot('#waypointName', !edit);
 
     toggleCursor('crosshair', drawing);
 
     greenOrWhite('.draw-switch *', drawing && (drawType == "box"));
     greenOrWhite('.lasso-switch *', drawing && (drawType == "lasso"));
     greenOrWhite('.arrow-switch *', drawing && (drawType == "arrow"));
-    //greenOrWhite('#edit-switch *', editing);
   },
 
   loadPolly: function(txt) {
@@ -1565,11 +1551,6 @@ HashState.prototype = {
     this.a = aFromWaypoint(bw);
     this.m = mFromWaypoint(bw, this.masks);
     this.g = gFromWaypoint(bw, this.cgs);
-    this.editing = 1;
-  },
-
-  cancelEditing: function() {
-    this.editing = 0;
   },
 
   finishEditing: function() {
@@ -1580,7 +1561,7 @@ HashState.prototype = {
     bw.Zoom = this.viewport.scale;
     bw.Overlay = this.overlay;
     bw.ActiveMasks = this.active_masks.map(mask => mask.Name)
-    bw.Arrows[0].Arrow = this.a;
+    bw.Arrows[0].Point = this.a;
     bw.Polygon = this.p;
     bw.Pan = [
       this.viewport.pan.x,
@@ -1589,7 +1570,6 @@ HashState.prototype = {
     this.bufferWaypoint = bw;
     this.pushState();
     window.onpopstate();
-    this.editing = 0;
   },
 
   startDrawing: function() {
@@ -1613,7 +1593,7 @@ HashState.prototype = {
 
   finishDrawing: function() {
 
-    if (this.editing) {
+    if (this.edit) {
       this.drawing = 0;
       this.finishEditing();
       this.startEditing();
@@ -1668,8 +1648,8 @@ HashState.prototype = {
     const proto_el = "arrow-overlay";
     var el = proto_el;
     var a = {
-      Arrow: this.a,
-      ArrowText: ''
+      Point: this.a,
+      Text: ''
     }
     if (index != undefined) {
       el = "arrow-overlay-" + index;
@@ -1677,7 +1657,7 @@ HashState.prototype = {
     }
 
     const current = this.viewer.getOverlayById(el);
-    const xy = new OpenSeadragon.Point(a.Arrow[0], a.Arrow[1]);
+    const xy = new OpenSeadragon.Point(a.Point[0], a.Point[1]);
     if (current) {
       current.update({
         location: xy,
@@ -1691,8 +1671,8 @@ HashState.prototype = {
         document.body.appendChild(element);
       }
       this.viewer.addOverlay({
-        x: a.Arrow[0],
-        y: a.Arrow[1],
+        x: a.Point[0],
+        y: a.Point[1],
         element: el
       });
     }
@@ -1709,7 +1689,7 @@ HashState.prototype = {
       $(a_text_el).css('margin-left', '64px');
     }
 
-    const a_text = a.ArrowText;
+    const a_text = a.Text;
     
     if (a_text) {
       a_text_el.addClass('p-3');
@@ -1795,7 +1775,7 @@ HashState.prototype = {
 
   addMasks: function() {
     $('#mask-layers').empty();
-    if (this.editing || this.waypoint.Mode == 'explore') {
+    if (this.edit || this.waypoint.Mode == 'explore') {
         $('#mask-layers').addClass('flex');
         $('#mask-layers').removeClass('flex-column');
     }
@@ -1807,7 +1787,7 @@ HashState.prototype = {
     const masks = this.masks.filter(mask => {
       return mask_names.includes(mask.Name);
     });
-    if (masks.length || this.editing) {
+    if (masks.length || this.edit) {
       $('#mask-label').show()
     }
     else {
@@ -1855,7 +1835,7 @@ HashState.prototype = {
     const cgs = this.cgs.filter(group => {
       return cgs_names.includes(group.Name);
     });
-    if (cgs.length || this.editing) {
+    if (cgs.length || this.edit) {
       $('#channel-label').show()
     }
     else {
@@ -2153,10 +2133,10 @@ HashState.prototype = {
 
     $(wid_txt_arrow).on('input', this, function(e) {
       const THIS = e.data;
-      THIS.waypoint.Arrows[0].ArrowText = this.value;
+      THIS.waypoint.Arrows[0].Text = this.value;
       THIS.newView(false);
     });
-    wid_txt_arrow.value = this.waypoint.Arrows[0].ArrowText || '';
+    wid_txt_arrow.value = this.waypoint.Arrows[0].Text || '';
 
     $(wid_txt_name).on('input', this, function(e) {
       const THIS = e.data;
@@ -2420,5 +2400,3 @@ const index_regex = function(list, re) {
   })[0];
   return list.indexOf(item);
 };
-
-
