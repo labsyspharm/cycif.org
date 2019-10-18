@@ -89,10 +89,10 @@ title: Data
 </div>
 <div class="row mb-4">
   <div class="col-md-2">
-    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/du-and-lin-2019/tonsil_1.jpg" alt="nat_prot">
+    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/du-lin-rashid-2019/tonsil_1.jpg" alt="nat_prot">
   </div>
   <div class="col">
-    <a href="{{ site.baseurl }}/featured-paper/du-and-lin-2019/figures/">
+    <a href="{{ site.baseurl }}/featured-paper/du-lin-rashid-2019/figures/">
       <h5 class="mt-0">Du and Lin et al., 2019 (accepted)</h5>
     </a>
     <p>
