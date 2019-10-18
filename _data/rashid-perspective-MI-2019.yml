@@ -26,53 +26,53 @@ stitched mosaic images:
     description: 
     thumbnail file name: A4_posterior_left_ventricle.PNG
     links:
-      - Imagee: osd-A4_posterior_left_ventricle
+      - Image: osd-A4_posterior_left_ventricle
   - title: Posterior left ventricle
     description: 
     thumbnail file name: A5_posterior_left_ventricle.PNG
     links:
-      - Imagee: osd-A5_posterior_left_ventricle
+      - Image: osd-A5_posterior_left_ventricle
 
   - title: Posterior left ventricle
     description: 
     thumbnail file name: A6_posterior_left_ventricle.PNG
     links:
-      - Imagee: osd-A6_posterior_left_ventricle
+      - Image: osd-A6_posterior_left_ventricle
 
   - title: Lateral left ventricle
     description: 
     thumbnail file name: A7_lateral_left_ventricle.PNG
     links:
-      - Imagee: osd-A7_lateral_left_ventricle
+      - Image: osd-A7_lateral_left_ventricle
 
   - title: Right ventricle
     description: 
     thumbnail file name: A8_right_ventricle.PNG
     links:
-      - Imagee: osd-A8_right_ventricle
+      - Image: osd-A8_right_ventricle
 
   - title: Mid distal right coronary artery
     description: 
     thumbnail file name: A17_mid_distal_right_coronary_artery.PNG
     links:
-      - Imagee: osd-A17_mid_distal_right_coronary_artery
+      - Image: osd-A17_mid_distal_right_coronary_artery
 
   - title: Left anterior descending artery
     description: 
     thumbnail file name: A18_left_anterior_descending_artery.PNG
     links:
-      - Imagee: osd-A18_left_anterior_descending_artery
+      - Image: osd-A18_left_anterior_descending_artery
 
   - title: Left anterior descending artery
     description: 
     thumbnail file name: A19_left_anterior_descending_artery.PNG
     links:
-      - Imagee: osd-A19_left_anterior_descending_artery
+      - Image: osd-A19_left_anterior_descending_artery
   - title: Left circumflex artery
     description: 
     thumbnail file name: A20_left_circumflex_artery.PNG
     links:
-      - Imagee: osd-A20_left_circumflex_artery
+      - Image: osd-A20_left_circumflex_artery
 
 
 
