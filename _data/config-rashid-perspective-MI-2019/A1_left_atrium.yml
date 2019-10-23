@@ -73,10 +73,10 @@ Exhibit:
         
         The adjacent nerve is a branch of the vagus nerve that provides parasympathetic innervation of 
         the heart and innervates the sinoatrial node.
-      Zoom: 6.4196
+      Zoom: 6.8578
       Pan:
-        - 0.7263
-        - 0.337
+        - 0.6331
+        - 0.3399
       Arrows:
         - Point:
             - 0.6150123503469498
@@ -98,11 +98,16 @@ Exhibit:
             - 0.3455637834809856
           Text: nerve?
           HideArrow: false
+        - Point:
+            - 0.625106516910185
+            - 0.35532786663036425
+          Text: red blood cells
+          HideArrow: false
       Overlay:
-        x: 0.5721
-        y: 0.203
-        width: 0.0982
-        height: 0.0726
+        x: 0.5934
+        y: 0.3065
+        width: 0.0891
+        height: 0.0712
 
 
 
@@ -127,31 +132,46 @@ Exhibit:
         Adjacent to the nuclei within the myocytes, are yellow brown colored 
         dots which are lysosomes containing lipids damaged by peroxidation and oxidative stress. 
         These structures are referred to as lipofuscin (thought of as a marker of ‘wear and tear’).
-      Zoom: 40.3098
+      Zoom: 24.5728
       Pan:
-        - 0.4175
-        - 0.438
+        - 0.4152
+        - 0.4401
       Overlay:
-        x: 0.4111
-        y: 0.433
-        width: 0.0148
-        height: 0.0107
+        x: 0.408
+        y: 0.432
+        width: 0.0274
+        height: 0.0192
       Arrows:
         - Point:
-            - 0.4193445871105976
-            - 0.4377624452788666
+            - 0.4261005154613935
+            - 0.44470775321623346
           Text: cross striations
           HideArrow: false
         - Point:
-            - 0.42317448549080194
-            - 0.43524357168810524
+            - 0.41673193440732254
+            - 0.44174705080359494
           Text: nucleus with prominent nucleoli
           HideArrow: false
         - Point:
-            - 0.42204714705137325
-            - 0.4397591752157622
+            - 0.4117620476438565
+            - 0.44044128834796176
+          Text: capillaries
+          HideArrow: false
+        - Point:
+            - 0.4220822564989424
+            - 0.43979169165230697
           Text: post-capillary venule
           HideArrow: false
+        - Point:
+            - 0.42281982918158584
+            - 0.4356688462107703
+          Text: lipofuscin
+          HideArrow: false
+
+
+
+
+
 
 
 
