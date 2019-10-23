@@ -17,6 +17,11 @@ body {
   letter-spacing: 0.02em;
 }
 
+svg a:hover text {
+  text-decoration: underline;
+  fill: #0fabff;
+}
+
 .banner-text-container,
 .banner-tall {
   background-color: rgba(0, 0, 0, 0.3);
