@@ -1389,13 +1389,7 @@ HashState.prototype = {
         const arrow_0 = THIS.waypoint.Arrows[0];
         const hide_arrow = arrow_0.HideArrow;
         arrow_0.HideArrow = hide_arrow ? false : true;
-        if (arrow_0.HideArrow == true) {
-          $(this).css('opacity', '0.5');
-        }
-        else {
-          $(this).css('opacity', '1');
-        }
-        THIS.newView(false);
+        THIS.newView(true);
       });
     }
 
@@ -2121,7 +2115,13 @@ HashState.prototype = {
     const form = form_proto.cloneNode(true);
     wid_waypoint.appendChild(form);
 
-
+    const arrow_0 = this.waypoint.Arrows[0];
+    if (arrow_0.HideArrow == true) {
+       $('#edit_toggle_arrow').css('opacity', '0.5');
+    }
+    else {
+       $('#edit_toggle_arrow').css('opacity', '1');
+    }
 
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
     const wid_txt_name = $(wid_waypoint).find('.edit_name')[0];
