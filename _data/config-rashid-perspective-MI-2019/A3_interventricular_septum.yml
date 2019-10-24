@@ -20,38 +20,113 @@ Exhibit:
         - Hematoxylin
         - Eosin
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.605
-      Pan:
-        - 0.605
-        - 0.467
+    - Name: Overview
       Group: H&E
-      Name: The Waypoint
+      # Audio: /assets/audio/speech_20190918201043160.mp3
       Description: |
-        Hematoxylin and Eosin (H&E) stained section of the interventricular septum.
-
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
+        This section of myocardium from the interventricular septum sits between the right and left ventricles. 
+        Generally, the right (at the top) surface is smoother whereas the left surface (at the bottom) is 
+        typically uneven with numerous muscular trabeculations.  
+        
+        Also, the endocardium on the left side is commonly thicker, due to higher relative blood pressure. 
+        
+        At this low magnification, areas of scar from old myocardial infarction are evident.
+      Zoom: 0.4542
       Pan:
-        - 0.584
-        - 0.457
+        - 0.5741
+        - 0.5
+      Arrows:
+        - Point:
+            - 0.5943855750020284
+            - 0.11296400171392643
+          Text: right surface
+          HideArrow: true
+        - Point:
+            - 0.5942955868038072
+            - 0.6718324031550944
+          Text: left surface
+          HideArrow: true
+
+
+    - Name: Old Infarct (>6 weeks to years old) 
+      Group: H&E
+      # Audio: /assets/audio/speech_20190918201043160.mp3
+      Description: |
+        At high magnification, a prominent scar is evident with a loss of myocytes and replacement fibrosis represented 
+        by dense collagen. 
+        
+        Terminally differentiated myocytes are unable to repopulate the area of myocyte loss, which is repaired by resident fibroblasts. 
+        Inflammatory cells are rare. 
+        
+        Such a myocardial infarction is at least 6 weeks old and could be many years old as well.  
+        Estimating the date of remote lesions after 6 weeks is not generally feasible. 
+        
+        Myocytes directly adjacent to the scar demonstrate marked enlargement of nuclei and bizarre shapes. 
+        These myocytes have undergone hypertrophy as they contract against a firm collagenous scar. 
+        Myocyte hypertrophy is a compensatory mechanism that can be beneficial, but also become detrimental past a threshold. 
+      Zoom: 10.5495
+      Pan:
+        - 0.9263
+        - 0.6867
       Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
+        x: 0.8903
+        y: 0.6686
+        width: 0.0757
+        height: 0.0392
+      Arrows:
+        - Point:
+            - 0.9268096244640014
+            - 0.6829069428498213
+          Text: replacement fibrosis
+          HideArrow: false
+        - Point:
+            - 0.9515123534949581
+            - 0.6779033210806105
+          Text: hypertrophic myocytes
+          HideArrow: false
+
+    - Name: Early Infarct (~12 hours) 
+      Group: H&E
+      # Audio: /assets/audio/speech_20190918201043160.mp3
+      Description: |
+        A few millimeters away from the remote scar is a sharply demarcated region with hypereosinophilic myocytes 
+        with coagulative necrosis (red dead fibers). The red color comes from the loss of nucleic acids and the 
+        aggregation of proteins that results following ischemic injury. 
+        
+        The myocytes are shrunken, and their nuclei are absent or pyknotic; 
+        the cross striations seen in adjacent viable myocytes have become less evident.
+        
+        Recruitment of inflammatory cells such as neutrophils, lymphocytes and macrophages is not prominent yet. 
+        
+        Contraction bands are evident suggesting acute infarction followed by reperfusion (called contraction band necrosis). 
+        In this setting, reperfusion leads to an influx of calcium into the myocytes and one last titanic contraction. 
+        
+        This lesion represents an early stage of myocardial infarction.  
+      Zoom: 16.3566
+      Pan:
+        - 0.4512
+        - 0.4347
+      Overlay:
+        x: 0.4283
+        y: 0.4212
+        width: 0.0466
+        height: 0.0277
+      Arrows:
+        - Point:
+            - 0.4451957560937453
+            - 0.43571080228265807
+          Text: hypereosinophilic myocytes
+          HideArrow: false
+
+
+
+
+
+
+
+
+
+
 
