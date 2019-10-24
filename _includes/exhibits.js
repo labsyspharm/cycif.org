@@ -1637,15 +1637,21 @@ HashState.prototype = {
 
   addArrow: function(index) {
 
-    const proto_el = "arrow-overlay";
+    const proto_text_el = "arrow-text";
+    const proto_el = "arrow-image";
+    var text_el = proto_text_el;
     var el = proto_el;
     var a = {
       Point: this.a,
       Text: ''
     }
     if (index != undefined) {
-      el = "arrow-overlay-" + index;
+      el = "arrow-image-" + index;
+      text_el = "arrow-text-" + index;
       a = this.waypoint.Arrows[index];
+    }
+    if (a.Angle == undefined) {
+      a.Angle = 60;
     }
 
     const current = this.viewer.getOverlayById(el);
@@ -1665,31 +1671,70 @@ HashState.prototype = {
       this.viewer.addOverlay({
         x: a.Point[0],
         y: a.Point[1],
-        element: el
+        element: el,
+        placement: OpenSeadragon.Placement.CENTER
       });
     }
 
-    const a_image_el = $('#'+el+' .arrow-image');
-    const a_text_el = $('#'+el+' .arrow-text');
-
-    if (a.HideArrow == true) {
-      $(a_image_el).css('display', 'none');
-      $(a_text_el).css('margin-left', '0px');
+    const current_text = this.viewer.getOverlayById(text_el);
+    const xy_text = new OpenSeadragon.Point(a.Point[0], a.Point[1]);
+    if (current_text) {
+      current_text.update({
+        location: xy_text,
+      });
     }
     else {
-      $(a_image_el).css('display', 'block');
-      $(a_text_el).css('margin-left', '64px');
+      if (text_el != proto_text_el) {
+        const proto_text_element = document.getElementById(proto_text_el);
+        const text_element = proto_text_element.cloneNode(true);
+        text_element.id = text_el;
+        document.body.appendChild(text_element);
+      }
+      this.viewer.addOverlay({
+        x: a.Point[0],
+        y: a.Point[1],
+        element: text_el,
+        placement: OpenSeadragon.Placement.CENTER
+      });
+    }
+
+    const a_image_el = $('#'+el);
+    const a_svg_el = $('#'+el+' svg');
+    const a_text_el = $('#'+text_el);
+    const a_label_el = $('#'+text_el+' .arrow-label');
+    const a_radius = a_svg_el[0].getAttribute('width') / 2;
+    const a_y = a_radius * Math.sin(a.Angle * Math.PI /180);
+    const a_x = a_radius * Math.cos(a.Angle * Math.PI /180);
+
+    if (a.HideArrow == true) {
+      a_image_el.css('display', 'none');
+    }
+    else {
+      a_image_el.css('display', 'block');
+      a_svg_el[0].setAttribute('transform', 
+        'translate('+a_x+','+a_y+')rotate('+a.Angle+')');
+      a_label_el.css('top', '100px');
     }
 
     const a_text = a.Text;
     
     if (a_text) {
-      a_text_el.addClass('p-3');
-      a_text_el.text(a_text);
+      const t_w = a_text_el.width();
+      const t_h = a_text_el.height();
+      var t_x = 2 * a_x + t_w * Math.sign(Math.round(a_x)) / 2;
+      var t_y = 2 * a_y + t_h * Math.sign(Math.round(a_y)) / 2;
+      if (a.HideArrow == true) {
+        t_x = 0;
+        t_y = 0;
+      }
+      a_label_el.css('transform',
+        'translate('+t_x+'px, '+t_y+'px)');
+      a_label_el.addClass('p-3');
+      a_label_el.text(a_text);
     }
     else {
-      a_text_el.removeClass('p-3');
-      a_text_el.text('');
+      a_label_el.removeClass('p-3');
+      a_label_el.text('');
     }
   },
 
