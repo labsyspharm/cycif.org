@@ -1182,7 +1182,7 @@ HashState.prototype = {
   newExhibit: function() {
     const exhibit = this.exhibit;
     const cgs = exhibit.Groups || [];
-    const masks = exhibit.Masks || [];
+    const masks = exhibit.Masks || [{}];
     const stories = exhibit.Stories || [];
 
     this.design = {
@@ -1219,11 +1219,11 @@ HashState.prototype = {
     }[mode];
 
     const groups = {
-      'explore': this.cgs.map(group => group.Name),
+      'explore': this.cgs.filter(group => group.Name).map(group => group.Name),
     }[mode];
 
     const masks = {
-      'explore': this.masks.map(mask => mask.Name),
+      'explore': this.masks.filter(mask => mask.Name).map(mask => mask.Name),
     }[mode];
 
     return {
