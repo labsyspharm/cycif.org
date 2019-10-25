@@ -19,39 +19,79 @@ Exhibit:
       Channels:
         - Hematoxylin
         - Eosin
+ 
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.605
-      Pan:
-        - 0.605
-        - 0.467
+    - Name: Overview
       Group: H&E
-      Name: The Waypoint
       Description: |
-        Hematoxylin and Eosin (H&E) stained section of the posterior left ventricle.
+        In this low magnification view, there is an acute myocardial infarction with 
+        neutrophils in the interstitial space next to a remote infarct with dense 
+        collagen deposition. 
 
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
+      Zoom: 0.4542
       Pan:
-        - 0.584
-        - 0.457
-      Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
+        - 0.5741
+        - 0.5
+      Arrows:
+        - Point:
+            - 0.9583091843239345
+            - 0.6059314891283512
+          Text: acute infarct
+          HideArrow: false
+          Angle: 180
+        - Point:
+            - 1.0180363118038913
+            - 0.5994635833748733
+          Text: remote infarct
+          HideArrow: false
+          Angle: 0
 
+    - Name: Stunned Myocardium
+      Group: H&E
+      Description: |
+        Between areas of acute infarction and remote infarct and the endocardial lining 
+        is a zone of viable myocytes that is approximately five myocytes in thickness. 
+        
+        These cells have the vacuolization that is characteristic of stunned myocardium. 
+        Such features result when the myocytes are unable to maintain ionic homeostasis 
+        and there is water accumulation in the intracellular compartment. 
+        
+        These myocytes can become isolated from the contractile apparatus and can 
+        become the substrate for tachyarrhythmias.
+      Zoom: 6.4406
+      Pan:
+        - 1.0218
+        - 0.562
+      Overlay:
+        x: 1.0151
+        y: 0.539
+        width: 0.0238
+        height: 0.0464
+      Arrows:
+        - Point:
+            - 1.024800230327068
+            - 0.5650598149292549
+          Text: vacuolization
+          HideArrow: false
+          Angle: 60
+ 
+
+
+    - Name: Wavy Fibers
+      Group: H&E
+      Description: |
+        This is high magnification view of a region of acutely ischemic myocytes termed 
+        wavy fibers (approximately 6-12 hours). The force of contracting neighboring 
+        fibers cause the non-contractile fibers to stretch and fold, ultimately forming 
+        the wavy pattern.
+      Zoom: 9.9532
+      Pan:
+        - 0.9172
+        - 0.5175
+      Overlay:
+        x: 0.883
+        y: 0.4952
+        width: 0.074
+        height: 0.0474

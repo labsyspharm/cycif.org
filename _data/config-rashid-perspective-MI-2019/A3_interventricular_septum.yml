@@ -24,7 +24,6 @@ Exhibit:
     Waypoints:
     - Name: Overview
       Group: H&E
-      # Audio: /assets/audio/speech_20190918201043160.mp3
       Description: |
         This section of myocardium from the interventricular septum sits between the right and left ventricles. 
         Generally, the right (at the top) surface is smoother whereas the left surface (at the bottom) is 
@@ -44,11 +43,16 @@ Exhibit:
           Text: right surface
           HideArrow: true
         - Point:
-            - 0.5942955868038072
-            - 0.6718324031550944
+            - 0.5943855750020284
+            - 0.7408324031550944
           Text: left surface
           HideArrow: true
-
+        - Point:
+            - 0.8873550102725235
+            - 0.6391145833333332
+          Text: scar
+          HideArrow: false
+          Angle: 60
 
     - Name: Old Infarct (>6 weeks to years old) 
       Group: H&E
@@ -66,24 +70,24 @@ Exhibit:
         Myocytes directly adjacent to the scar demonstrate marked enlargement of nuclei and bizarre shapes. 
         These myocytes have undergone hypertrophy as they contract against a firm collagenous scar. 
         Myocyte hypertrophy is a compensatory mechanism that can be beneficial, but also become detrimental past a threshold. 
-      Zoom: 10.5495
+      Zoom: 12.0931
       Pan:
-        - 0.9263
-        - 0.6867
+        - 0.9322
+        - 0.6835
       Overlay:
-        x: 0.8903
-        y: 0.6686
-        width: 0.0757
-        height: 0.0392
+        x: 0.9099
+        y: 0.6675
+        width: 0.0531
+        height: 0.0323
       Arrows:
         - Point:
-            - 0.9268096244640014
-            - 0.6829069428498213
+            - 0.9248096244640014
+            - 0.6809069428498213
           Text: replacement fibrosis
           HideArrow: false
         - Point:
-            - 0.9515123534949581
-            - 0.6779033210806105
+            - 0.9412434424921551
+            - 0.6813930124293985
           Text: hypertrophic myocytes
           HideArrow: false
 
