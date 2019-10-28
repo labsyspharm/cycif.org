@@ -20,38 +20,151 @@ Exhibit:
         - Hematoxylin
         - Eosin
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.605
-      Pan:
-        - 0.523
-        - 0.439
+    - Name: Overview
       Group: H&E
-      Name: The Waypoint
       Description: |
-        Hematoxylin and Eosin (H&E) stained section of the posterior left ventricle.
+        At low magnification, the epicardial fat is seen on one side of the section 
+        and papillary muscles are present on the opposite side which is the left ventricle lumen. 
+        One of the papillary muscles has peripheral pallor and central hypereosinophilia. 
 
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
+      Zoom: 0.4542
       Pan:
-        - 0.584
-        - 0.457
+        - 0.5741
+        - 0.5
+      Arrows:
+        - Point:
+            - 0.40090154194409267
+            - 0.8728949744219456
+          Text: epicardial fat
+          HideArrow: true
+          Angle: 60
+        - Point:
+            - 0.3976783551319907
+            - 0.2504419984310855
+          Text: papillary muscle
+          HideArrow: true
+          Angle: 60
       Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
+        x: 0.0578
+        y: 0.8481
+        width: 0.6567
+        height: 0.0798
+      Overlay:
+        x: 0.2674
+        y: 0.1525
+        width: 0.2852
+        height: 0.2001
+
+    - Name: Papillary Muscle with Multiple Infarcts
+      Group: H&E
+      Description: |
+        There are three notable features in this muscle. 
+        
+        One is a region of scarring that is characterized by collagen deposition resulting 
+        in a more remote infarct. 
+        
+        A second region has numerous neutrophils within the interstitial space between 
+        the slightly hypereosinophilic myocytes. Acute inflammation is a feature that is 
+        characteristic of an acute myocardial infarction (approximately 1-2 days).
+        
+        Third, peripherally, there is a layer of 5-8 myocytes that are viable but vacuolated. 
+        These myocytes are alive because of their proximity to the ventricular lumen where 
+        the blood pumping through the heart provides sufficiently for the metabolic needs so 
+        as to prevent infarction and death of those peripherally located cells. 
+        
+        Often, when there is infarction of the papillary muscles of the left ventricle which 
+        anchor the mitral valve leaflets via the chordae tendineae, there is mitral valve 
+        dysfunction and prominent regurgitation that can result in rapid back flow of blood 
+        down the low hemodynamic pressure of the left atrium, and the left veins into the lung. 
+        The result is flash pulmonary edema with a rapid accumulation of fluid in the pulmonary 
+        interstitium and emergent respiratory distress.
+      Zoom: 2.8869
+      Pan:
+        - 0.3878
+        - 0.2528
+      Overlay:
+        x: 0.2674
+        y: 0.1525
+        width: 0.2852
+        height: 0.2001
+      Arrows:
+        - Point:
+            - 0.44968402230108656
+            - 0.2090947571635121
+          Text: remote infarct
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.41073795877929975
+            - 0.28037082510975514
+          Text: acute infarct
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.32097291591186883
+            - 0.25942625096886235
+          Text: vacuolation
+          HideArrow: false
+          Angle: 60
+
+
+
+
+
+    - Name: Late Acute Myocardial Infarction (~ 5 days)
+      Group: H&E
+      Description: |
+        High magnification view of a region of late acute myocardial infarction 
+        (approximately 5 days) showing mononuclear cells in the interstitial space. 
+        
+        There is a myocyte with two nuclei (binucleated). Binucleation is a normal 
+        feature of myocytes when present in up to 10% of myocytes. The number of 
+        myocytes with binucleation increases as part of a reparative response to 
+        stressors such as volume overload or hypertension. Some species have frequent 
+        multi-nucleation with 5-10 nuclei per myocyte. 
+        
+        Adjacent to the nuclei within the myocytes, are yellow brown colored dots 
+        which are lysosomes containing lipids damaged by peroxidation and oxidative 
+        stress. These structures are referred to as lipofuscin (thought of as a 
+        marker of ‘wear and tear’). 
+        
+        An intercalated disc is present, a normal structure that permits myocardium 
+        to function as a single syncytial unit.  
+
+      Zoom: 18.4885
+      Pan:
+        - 0.7802
+        - 0.4808
+      Overlay:
+        x: 0.7668
+        y: 0.469
+        width: 0.0316
+        height: 0.0247
+      Arrows:
+        - Point:
+            - 0.780410983485735
+            - 0.4824716377717791
+          Text: binucleated myocyte
+          HideArrow: false
+          Angle: 90
+        - Point:
+            - 0.7823065754137829
+            - 0.47888485884282
+          Text: lipofuscin
+          HideArrow: false
+          Angle: 240
+        - Point:
+            - 0.7838593515710146
+            - 0.4790982764225609
+          Text: intercalated disc
+          HideArrow: false
+          Angle: 60
+
+
+
+
+
+
 

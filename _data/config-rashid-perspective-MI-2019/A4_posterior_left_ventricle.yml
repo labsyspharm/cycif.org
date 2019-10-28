@@ -20,38 +20,99 @@ Exhibit:
         - Hematoxylin
         - Eosin
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.605
-      Pan:
-        - 0.564
-        - 0.440
+    - Name: Overview
       Group: H&E
-      Name: The Waypoint
       Description: |
-        Hematoxylin and Eosin (H&E) stained section of the posterior left ventricle.
-
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
+        This region of the left posterior left ventricular wall has examples of 
+        both acute (1-2 days) and subacute (1-2 weeks) myocardial infarction.
+        
+        At low magnification, a region of pallor is seen in one of the trabeculations 
+        of the posterior left ventricular wall. 
+      Zoom: 0.4542
       Pan:
-        - 0.584
-        - 0.457
+        - 0.5741
+        - 0.5
       Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
+        x: 0.1339
+        y: 0.2587
+        width: 0.1095
+        height: 0.076
+
+
+    - Name: Granulation Tissue
+      Group: H&E
+      Description: |
+        At high magnification, loosely arranged collagen and abundant capillaries can be 
+        seen in a region that is characterized as granulation tissue. This is a pattern 
+        of healing that occurs one to two weeks after a myocardial infarction. 
+        
+        Within this highly vascularized tissue are scattered viable myocytes with 
+        vacuolization of the cytoplasm suggestive of stunned myocardium with aberrant 
+        ionic regulation and water accumulation. 
+        
+        Also interspersed are scattered macrophages with hemosiderin pigment 
+        suggestive of prior hemorrhage. 
+        
+        Ultimately the granulation will undergo replacement fibrosis to produce a 
+        long-term scar (after six weeks).
+      Zoom: 5.0016
+      Pan:
+        - 0.1812
+        - 0.2900
+      Overlay:
+        x: 0.1339
+        y: 0.2587
+        width: 0.1095
+        height: 0.076
+      Arrows:
+        - Point:
+            - 0.16867047710672525
+            - 0.29967037982167394
+          Text: myocyte with cytoplasmic vacuolization
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.19195271301959557
+            - 0.28618511612565667
+          Text: macrophage with hemosiderin
+          HideArrow: false
+          Angle: 60
+
+    - Name: Coagulative Necrosis
+      Group: H&E
+      Description: |
+        A high magnification view of the myocardial wall shows a region with hypereosinophilic 
+        and thinned myocytes starting to undergo coagulative necrosis. 
+        
+        Numerous neutrophils fill the interstitial space between the myocytes. 
+        
+        Acute inflammation is a feature that is characteristic of an acute myocardial 
+        infarction (approximately 1-2 days).
+      Zoom: 2.0946
+      Pan:
+        - 0.5005
+        - 0.4880
+      Overlay:
+        x: 0.3776
+        y: 0.4012
+        width: 0.3174
+        height: 0.1994
+      Arrows:
+        - Point:
+            - 0.5215865151900161
+            - 0.49676335261092014
+          Text: neutrophils
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.46159010547151785
+            - 0.5180526557916976
+          Text: thinned myocytes
+          HideArrow: false
+          Angle: 60
+
+
+
 

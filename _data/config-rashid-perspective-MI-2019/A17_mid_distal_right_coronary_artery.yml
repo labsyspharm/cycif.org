@@ -20,38 +20,100 @@ Exhibit:
         - Hematoxylin
         - Eosin
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.582
-      Pan:
-        - 0.781
-        - 0.476
+    - Name: Overview
       Group: H&E
-      Name: The Waypoint
       Description: |
-        Hematoxylin and Eosin (H&E) stained section of the mid-distal right coronary artery.
-
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
+        The mid-distal right coronary artery shows severe atherosclerosis with 90% occlusion.
+      Zoom: 0.493
       Pan:
-        - 0.584
-        - 0.457
+        - 0.772
+        - 0.4496
+
+
+
+    - Name: Plaque Rupture
+      Group: H&E
+      Description: |
+        This vessel demonstrates an area that has undergone plaque rupture with 
+        thrombosis followed by recanalization. 
+        
+        There are scattered macrophages laden with hemosiderin.  
+      Zoom: 2.1198
+      Pan:
+        - 0.6777
+        - 0.5593
       Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
+        x: 0.5556
+        y: 0.4499
+        width: 0.2853
+        height: 0.2246
+      Arrows:
+        - Point:
+            - 0.7062222415053794
+            - 0.5783603276125244
+          Text: recanalization
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.6828520270123831
+            - 0.6096011894184986
+          Text: macrophage with hemosiderin
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.6869321405390434
+            - 0.5396389505766023
+          Text: plaque
+          HideArrow: false
+          Angle: 240
+        - Point:
+            - 0.7622599284491921
+            - 0.4993794570393635
+          Text: calcium buildup
+          HideArrow: false
+          Angle: 60
+
+    - Name: Stable Plaque
+      Group: H&E
+      Description: |
+        Overall, these sections show substantial occlusion but the dense fibrosis 
+        with limited atheromatous change is consistent with stable plaques.   
+      Zoom: 1.8651
+      Pan:
+        - 0.6027
+        - 0.3526
+      Overlay:
+        x: 0.4593
+        y: 0.2345
+        width: 0.3184
+        height: 0.2442
+      Arrows:
+        - Point:
+            - 0.7062222415053794
+            - 0.5783603276125244
+          Text: recanalization
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.6828520270123831
+            - 0.6096011894184986
+          Text: macrophage with hemosiderin
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.6869321405390434
+            - 0.5396389505766023
+          Text: plaque
+          HideArrow: false
+          Angle: 240
+        - Point:
+            - 0.7622599284491921
+            - 0.4993794570393635
+          Text: calcium buildup
+          HideArrow: false
+          Angle: 60
+
+
 

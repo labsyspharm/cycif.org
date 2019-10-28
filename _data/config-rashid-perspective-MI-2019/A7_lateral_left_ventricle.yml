@@ -20,38 +20,64 @@ Exhibit:
         - Hematoxylin
         - Eosin
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.563
-      Pan:
-        - 0.795
-        - 0.474
+    - Name: Overview
       Group: H&E
-      Name: The Waypoint
       Description: |
-        Hematoxylin and Eosin (H&E) stained section of the lateral left ventricle.
-
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
+        In this view of the lateral left ventricle wall, epicardial fat is seen on one 
+        side of the section and papillary muscles present on the opposite side which 
+        is the left ventricle lumen. 
+      Zoom: 0.4542
       Pan:
-        - 0.584
-        - 0.457
+        - 0.5741
+        - 0.5
+      Arrows:
+        - Point:
+            - 0.712096229750155
+            - 0.09901344341616002
+          Text: epicardial fat
+          HideArrow: true
+          Angle: 60
+        - Point:
+            - 0.7209676503508752
+            - 0.9156410662442569
+          Text: papillary muscles
+          HideArrow: true
+          Angle: 60
+
+
+
+    - Name: Papillary Muscle
+      Group: H&E
+      Description: |
+        In the center of one of the papillary muscles is a region of acute ischemia 
+        with mildly increased eosinophilia (approximately 12-24 hours). 
+        
+        Peripherally, there is a layer of 5-8 myocytes that are viable but vacuolated. 
+        These myocytes are alive because of their proximity to the ventricular lumen 
+        where the blood pumping through the heart provides for the metabolic needs so 
+        as to prevent infarction and death of those peripherally located cells. 
+        
+        Often, when there is infarction of the papillary muscles of the left ventricle 
+        which anchor the mitral valve leaflets via the chordae tendineae, there is 
+        mitral valve dysfunction and prominent regurgitation that can result in rapid 
+        back flow of blood down the low hemodynamic pressure of the left atrium, and 
+        the left veins into the lung. The result is flash pulmonary edema with a rapid 
+        accumulation of fluid in the pulmonary interstitium and emergent respiratory distress.
+
+      Zoom: 6.1051
+      Pan:
+        - 0.7183
+        - 0.8761
       Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
+        x: 0.6737
+        y: 0.8377
+        width: 0.1076
+        height: 0.0815
+
+
+
+
+
 
