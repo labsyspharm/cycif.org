@@ -95,10 +95,10 @@ const pFromWaypoint = function(waypoint) {
 
 const oFromWaypoint = function(waypoint) {
   return [
-    waypoint.Overlay.x,
-    waypoint.Overlay.y,
-    waypoint.Overlay.width,
-    waypoint.Overlay.height,
+    waypoint.Overlays[0].x,
+    waypoint.Overlays[0].y,
+    waypoint.Overlays[0].width,
+    waypoint.Overlays[0].height,
   ];
 };
 
@@ -583,7 +583,6 @@ HashState.prototype = {
         return;
       }
 
-      const overlay = $('#' + THIS.currentOverlay);
       const position = THIS.normalize(e.position);
 
       if (THIS.drawing == 1) {
@@ -631,7 +630,6 @@ HashState.prototype = {
         return;
       }
 
-      const overlay = $('#' + THIS.currentOverlay);
       const position = THIS.normalize(e.position);
 
       if (THIS.drawing == 1) {
@@ -716,7 +714,7 @@ HashState.prototype = {
         Groups: undefined,
         Description: '',
         Name: 'Untitled',
-        Overlay: this.overlay
+        Overlays: [this.overlay]
       });
     }
     return this.state.buffer.waypoint;
@@ -898,12 +896,12 @@ HashState.prototype = {
     const waypoint = this.waypoint;
 
     this.slower();
-
     this.m = mFromWaypoint(waypoint, this.masks);
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
-    this.o = oFromWaypoint(waypoint);
+    // this.o = oFromWaypoint(waypoint);
     // this.a = aFromWaypoint(waypoint);
+    this.o = [-100, -100, 1, 1];
     this.a = [-100, -100];
     this.p = pFromWaypoint(waypoint);
     this.d = dFromWaypoint(waypoint);
@@ -1136,13 +1134,13 @@ HashState.prototype = {
       return this.bufferWaypoint;
     }
     var waypoint = this.waypoints[this.w];
-    if (!waypoint.Overlay) {
-      waypoint.Overlay = {
+    if (!waypoint.Overlays) {
+      waypoint.Overlays = [{
         x: -100,
         y: -100,
         width: 1,
         height: 1
-      }
+      }];
     }
     return waypoint;
   },
@@ -1183,7 +1181,16 @@ HashState.prototype = {
     const exhibit = this.exhibit;
     const cgs = exhibit.Groups || [];
     const masks = exhibit.Masks || [{}];
-    const stories = exhibit.Stories || [];
+    var stories = exhibit.Stories || [];
+    stories = stories.map(story => {
+      story.Waypoints = story.Waypoints.map(waypoint => {
+        if (waypoint.Overlay != undefined) {
+          waypoint.Overlays = [waypoint.Overlay];
+        }
+        return waypoint;
+      })
+      return story;
+    }) 
 
     this.design = {
       chans: exhibit.Channels || [],
@@ -1244,12 +1251,12 @@ HashState.prototype = {
         Groups: groups,
         Description: decode(d),
         Name: name || 'Waypoint',
-        Overlay: {
+        Overlays: [{
           x: o[0],
           y: o[1],
           width: o[2],
           height: o[3],
-        },
+        }],
       })]
     }
   },
@@ -1321,12 +1328,14 @@ HashState.prototype = {
     this.trackers = [];
 
     this.addPolygon("selection", this.state.p);
-    this.allOverlays.forEach(function(el) {
-      const [s, w] = el.split('-').slice(2);
-      const overlay = this.stories[s].Waypoints[w].Overlay;
-      if (overlay) {
-        this.addOverlay(overlay, el);
+    this.allOverlays.forEach(function(indices) {
+      const [prefix, s, w, o] = indices;
+      var overlay = this.overlay;
+      if (prefix == 'waypoint-overlay') {
+        overlay = this.stories[s].Waypoints[w].Overlays[o];
       }
+      el = indices.join('-');
+      this.addOverlay(overlay, el);
     }, this)
 
     const THIS = this;
@@ -1339,14 +1348,10 @@ HashState.prototype = {
         });
       }
     });
-    if (Math.max(...this.a) > 0 && !this.edit){
-        this.addArrow();
-    }
-    else if (this.waypoint.Arrows) {
-      for (i in this.waypoint.Arrows) {
-        this.addArrow(i);
-      }
-    }
+
+    this.allArrows.forEach(function(indices) {
+      this.addArrow(indices);
+    }, this);
 
    // Redraw design
     if(redraw) {
@@ -1551,7 +1556,7 @@ HashState.prototype = {
     bw.Name = decode(this.n);
     bw.Description = decode(this.d);
     bw.Zoom = this.viewport.scale;
-    bw.Overlay = this.overlay;
+    bw.Overlays = [this.overlay];
     bw.ActiveMasks = this.active_masks.map(mask => mask.Name)
     bw.Arrows[0].Point = this.a;
     bw.Polygon = this.p;
@@ -1608,16 +1613,33 @@ HashState.prototype = {
     changeSprings(this.viewer, 3.2, 6.4);
   },
 
-  get allOverlays() {
-    return this.stories.reduce((overlays, story, s) => {
-      return overlays.concat(story.Waypoints.map((_, w) => {
-        return 'current-overlay-' + s + '-' + w;
-      }));
+  get allArrows() {
+    return this.stories.reduce((all, story, s) => {
+      return all.concat(story.Waypoints.reduce((idx, _, w) => {
+        const w_arrows = this.stories[s].Waypoints[w].Arrows || [];
+        const w_idx = w_arrows.map((_, a) => { 
+          return ['waypoint-arrow', s, w, a];
+        }).concat([['user-arrow', s, w, 0]]);
+        return idx.concat(w_idx);
+      }, []));
     }, []);
   },
 
-  get currentOverlay() {
-    return 'current-overlay-' + this.s + '-' + this.w;
+  get allOverlays() {
+    return this.stories.reduce((all, story, s) => {
+      return all.concat(story.Waypoints.reduce((idx, _, w) => {
+        const w_overlays = this.stories[s].Waypoints[w].Overlays || [];
+        const w_idx = w_overlays.map((_, o) => { 
+          return ['waypoint-overlay', s, w, o];
+        }).concat([['user-overlay', s, w, 0]]);
+        return idx.concat(w_idx);
+      }, []));
+    }, []);
+  },
+
+  isCurrentOverlay: function(el) {
+    const substr = '-overlay-' + this.s + '-' + this.w;
+    return el.includes(substr);
   },
 
   /*
@@ -1635,23 +1657,27 @@ HashState.prototype = {
         });
   },
 
-  addArrow: function(index) {
+  addArrow: function(indices) {
 
+    const [prefix, s_i, w_i, a_i] = indices;
     const proto_text_el = "arrow-text";
     const proto_el = "arrow-image";
-    var text_el = proto_text_el;
-    var el = proto_el;
+    const text_el = "arrow-text-" + indices.join('-');
+    const el = "arrow-image-" + indices.join('-');
+
     var a = {
       Point: this.a,
       Text: ''
     }
-    if (index != undefined) {
-      el = "arrow-image-" + index;
-      text_el = "arrow-text-" + index;
-      a = this.waypoint.Arrows[index];
+    if (prefix == 'waypoint-arrow') {
+      a = Object.assign({}, this.stories[s_i].Waypoints[w_i].Arrows[a_i])
     }
     if (a.Angle == undefined) {
       a.Angle = 60;
+    }
+
+    if (s_i != this.s || w_i != this.w) {
+      a.Point = [-100, -100];
     }
 
     const current = this.viewer.getOverlayById(el);
@@ -1741,12 +1767,9 @@ HashState.prototype = {
   addOverlay: function(overlay, el) {
 
     const current = this.viewer.getOverlayById(el);
-    if (el == this.currentOverlay) {
-      overlay = this.overlay;
-    }
 
     if (this.waypoint.Mode != 'outline') {
-      if (el != this.currentOverlay) {
+      if (!this.isCurrentOverlay(el)) {
         if (current) {
           const xy = new OpenSeadragon.Point(-100, -100);
           current.update({
@@ -2199,7 +2222,7 @@ HashState.prototype = {
   get bufferYaml() {
     const viewport = this.viewport;
     const waypoint = this.waypoint;
-    waypoint.Overlay = this.overlay; 
+    waypoint.Overlays = [this.overlay]; 
     waypoint.Name = decode(this.n);
     waypoint.Description = decode(this.d);
 
