@@ -8,7 +8,7 @@ publication:
 
 stitched mosaic images:
   - title: Patient 1
-    description: Severely atypical lentiginous junctional dysplastic nevus with halo-like immune response # t-CyCIF analysis of biopsy from Patient 1 that contains examplars of early melanoma progression.
+    description: Severely atypical lentiginous junctional dysplastic nevus with halo-like immune response.
     thumbnail file name: PC1_40a_153.jpg
     links: 
       - CyCIF image: osd-PC1_40a_153
