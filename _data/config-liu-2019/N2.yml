@@ -1,0 +1,95 @@
+Exhibit:
+  Name: Day -55, L6 - Skin Left Forearm
+  Images:
+  - Name: i0
+    Description: Day -55, L6 - Skin Left Forearm
+    Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/N2
+    Width: 41325
+    Height: 26287
+    MaxLevel: 6
+  Layout:
+    Grid:
+    - - i0
+  Groups:
+  - Channels:
+    - S100
+    - CD45
+    - aSMA
+    - DNA
+    Colors:
+    - ff0000
+    - 00ff00
+    - ffffff
+    - 0000ff
+    Name: Architecure
+    Path: Architecure_9__S100--19__CD45--11__aSMA--8__DNA
+  - Channels:
+    - FOXP3
+    - CD4
+    - CD8
+    - HLA-A
+    Colors:
+    - ffffff
+    - 00ff00
+    - ff0000
+    - 0000ff
+    Name: T Cell Infiltrate
+    Path: T-Cell-Infiltrate_18__FOXP3--17__CD4--21__CD8--15__HLA-A
+  - Channels:
+    - pRB
+    - Ki-67
+    - p-ERK
+    - DNA
+    Colors:
+    - ff0000
+    - 00ff00
+    - 00ffff
+    - 0000ff
+    Name: Proliferation
+    Path: Proliferation_26__pRB--22__Ki-67--5__p-ERK--8__DNA
+  - Channels:
+    - MITF
+    - NGFR
+    - CD45
+    - aSMA
+    - DNA
+    Colors:
+    - 00ff00
+    - ff0000
+    - 00ffff
+    - ffffff
+    - 0000ff
+    Name: Differentiation State
+    Path: Differentiation-State_7__MITF--31__NGFR--19__CD45--11__aSMA--8__DNA
+  Stories:
+  - Name: Overview
+    Description: null
+    Waypoints:
+    - Zoom: 0.5
+      Pan:
+      - 0.786034922205
+      - 0.5
+      Group: Architecure
+      Name: The Waypoint
+      Description: "Lineage 6 - -55 days after treatment.<br />Skin Left Forearm\n\
+        \n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: null
+    Waypoints:
+    - Name: Waypoint 1
+      Group: Architecure
+      Description: ''
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+      Pan:
+      - 0.786034922205
+      - 0.5
+      Zoom: 0.6

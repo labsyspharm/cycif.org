@@ -1,0 +1,95 @@
+Exhibit:
+  Name: Day 39, L2 - Skin Right Posterior Scalp
+  Images:
+  - Name: i0
+    Description: Day 39, L2 - Skin Right Posterior Scalp
+    Path: https://s3.amazonaws.com/www.cycif.org/liu-2019/PB
+    Width: 13870
+    Height: 10629
+    MaxLevel: 4
+  Layout:
+    Grid:
+    - - i0
+  Groups:
+  - Channels:
+    - S100
+    - CD45
+    - aSMA
+    - DNA
+    Colors:
+    - ff0000
+    - 00ff00
+    - ffffff
+    - 0000ff
+    Name: Architecure
+    Path: Architecure_9__S100--26__CD45--11__aSMA--8__DNA
+  - Channels:
+    - FOXP3
+    - CD4
+    - CD8
+    - HLA-A
+    Colors:
+    - ffffff
+    - 00ff00
+    - ff0000
+    - 0000ff
+    Name: T Cell Infiltrate
+    Path: T-Cell-Infiltrate_18__FOXP3--17__CD4--19__CD8--15__HLA-A
+  - Channels:
+    - pRB
+    - Ki-67
+    - p-ERK
+    - DNA
+    Colors:
+    - ff0000
+    - 00ff00
+    - 00ffff
+    - 0000ff
+    Name: Proliferation
+    Path: Proliferation_34__pRB--22__Ki-67--21__p-ERK--8__DNA
+  - Channels:
+    - MITF
+    - NGFR
+    - CD45
+    - aSMA
+    - DNA
+    Colors:
+    - 00ff00
+    - ff0000
+    - 00ffff
+    - ffffff
+    - 0000ff
+    Name: Differentiation State
+    Path: Differentiation-State_13__MITF--47__NGFR--26__CD45--11__aSMA--8__DNA
+  Stories:
+  - Name: Overview
+    Description: null
+    Waypoints:
+    - Zoom: 0.5
+      Pan:
+      - 0.652460250259
+      - 0.5
+      Group: Architecure
+      Name: The Waypoint
+      Description: "Lineage 2 - 39 days after treatment.<br />Skin Right Posterior\
+        \ Scalp\n\n#### tCyCIF image from:\n\nLiu et al, 2019 submitted \n"
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+  - Name: About
+    Description: null
+    Waypoints:
+    - Name: Waypoint 1
+      Group: Architecure
+      Description: ''
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+      Pan:
+      - 0.652460250259
+      - 0.5
+      Zoom: 0.6

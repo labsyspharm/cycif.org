@@ -100,3 +100,16 @@ title: Data
     </p>
   </div>
 </div>
+<div class="row mb-4">
+  <div class="col-md-2">
+    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/liu-2019/cover.jpg" alt="nat_medicine">
+  </div>
+  <div class="col">
+    <a href="{{ site.baseurl }}/data/liu-lin-2019/">
+      <h5 class="mt-0">Liu and Lin et al., 2019 (submitted)</h5>
+    </a>
+    <p>
+
+    </p>
+  </div>
+</div>
