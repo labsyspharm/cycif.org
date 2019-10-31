@@ -27,8 +27,21 @@
     <div id="content" class="position-fixed w-100" style="top: 0;left: 0;">
         <div>
             <div id="openseadragon1" class="openseadragon"></div>
-            <div id="legend" class="position-absolute text-white p-2 bg-trans" style="top: 4rem; right:1.5%">
-                <ul id="channel-legend" class="list-unstyled m-0"></ul>
+            <div id="legend" class="position-absolute"
+                 style="pointer-events: none; top: 4rem; right:1.5%">
+                <div>
+                    <div class="btn-group-vertical bg-trans p-2"
+                         style="display:inline-block; vertical-align:top;">
+                        <a id="toggle-legend" href="javascript;;">
+                            <i class="open-legend fas fa-chevron-left" style="font-size: 25px;"></i>
+                            <i class="close-legend fas fa-chevron-right" style="font-size: 25px;"></i>
+                        </a>
+                        <ul id="channel-legend" class="list-unstyled m-0"></ul>
+                    </div> 
+                    <div id="channel-groups-legend" class="nav flex-column nav-pills p-2 bg-trans"
+                         style="display:inline-block; vertical-align:top;">
+                    </div>
+                </div>
             </div>
             <div id="sidebar-menu" class="container position-absolute">
                 <div class="row">
@@ -85,45 +98,45 @@
                         </div>
                     </div>
                     <div class="col-1 p-0">
-                        <div class="bg-trans"> 
-                            <a id="toggle-sidebar" href="javascript;;">
+                        <div class="btn-group-vertical bg-trans"> 
+                            <a id="toggle-sidebar" class="btn" href="javascript;;">
                                 <i class="close-sidebar fas fa-chevron-left" style="font-size: 25px;"></i>
                                 <i class="open-sidebar fas fa-chevron-right" style="font-size: 25px;"></i>
                             </a>
                         </div> 
+                        <div class="btn-group-vertical bg-trans">
+                            <a class="btn text-light" id="zoom-home" href="#zoom-home">
+                                <i class="fas fa-home"></i>
+                            </a>
+                            <a class="btn text-light" id="zoom-out" href="#zoom-out">
+                                <i class="fas fa-search-minus"></i>
+                            </a>
+                            <a class="btn text-light" id="zoom-in" href="#zoom-in">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <span id="arrow-switch" class="nav-item arrow-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-location-arrow"></i></span>
+                            </a>
+                            </span>
+                            <span id="lasso-switch" class="nav-item lasso-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-bullseye"></i></span>
+                            </a>
+                            </span>
+                            <span id="draw-switch" class="nav-item draw-switch">
+                            <a class="btn" href="javascript:;">
+                                <span class=""><i class="fas fa-crosshairs"></i></span>
+                            </a>
+                            </span>
+                            <a class="btn" id='duplicate-view'>
+                                <span class=""><i class="fas fa-clone"></i></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="viewer-tool" class="position-absolute bg-trans" style="right:1.5%; top: 40vh;">
-                <div class="btn-group-vertical">
-                    <a class="btn text-light" id="zoom-home" href="#zoom-home">
-                        <i class="fas fa-home"></i>
-                    </a>
-                    <a class="btn text-light" id="zoom-out" href="#zoom-out">
-                        <i class="fas fa-search-minus"></i>
-                    </a>
-                    <a class="btn text-light" id="zoom-in" href="#zoom-in">
-                        <i class="fas fa-search-plus"></i>
-                    </a>
-                    <span id="arrow-switch" class="nav-item arrow-switch">
-                    <a class="btn" href="javascript:;">
-                        <span class=""><i class="fas fa-location-arrow"></i></span>
-                    </a>
-                    </span>
-                    <span id="lasso-switch" class="nav-item lasso-switch">
-                    <a class="btn" href="javascript:;">
-                        <span class=""><i class="fas fa-bullseye"></i></span>
-                    </a>
-                    </span>
-                    <span id="draw-switch" class="nav-item draw-switch">
-                    <a class="btn" href="javascript:;">
-                        <span class=""><i class="fas fa-crosshairs"></i></span>
-                    </a>
-                    </span>
-                    <a class="btn" id='duplicate-view'>
-                        <span class=""><i class="fas fa-clone"></i></span>
-                    </a>
-                </div>
             </div>
         </div>
     </div>

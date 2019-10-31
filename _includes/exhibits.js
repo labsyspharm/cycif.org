@@ -425,6 +425,11 @@ HashState.prototype = {
       $("#sidebar-menu").toggleClass("toggled");
     });
 
+    $('#toggle-legend').click(function(e) {
+      e.preventDefault();
+      $("#legend").toggleClass("toggled");
+    });
+
     const THIS = this;
 
     $('#leftArrow').click(this, function(e) {
@@ -1891,6 +1896,7 @@ HashState.prototype = {
 
   addGroups: function() {
     $('#channel-groups').empty();
+    $('#channel-groups-legend').empty();
     const cgs_names = this.waypoint.Groups || [];
     const cgs = this.cgs.filter(group => {
       return cgs_names.includes(group.Name);
@@ -1901,26 +1907,32 @@ HashState.prototype = {
     else {
       $('#channel-label').hide()
     }
+    // Add some channel groups to waypoint
     cgs.forEach(function(group) {
       const g = index_name(this.cgs, group.Name);
-      this.addGroup(group, g);
+      this.addGroup(group, g, 'channel-groups');
+    }, this);
+    // Add all channel groups to legend
+    this.cgs.forEach(function(group) {
+      const g = index_name(this.cgs, group.Name);
+      this.addGroup(group, g, 'channel-groups-legend');
     }, this);
   },
-  addGroup: function(group, g) {
+  addGroup: function(group, g, el_id) {
     var aEl = document.createElement('a');
     aEl = Object.assign(aEl, {
       className: this.g === g ? 'nav-link active' : 'nav-link',
       href: 'javascript:;',
       innerText: group.Name,
       title: group.Path,
-      id: group.Path,
+      id: group.Path + '_' + el_id,
     });
     var ariaSelected = this.g === g ? true : false;
     aEl.setAttribute('aria-selected', ariaSelected);
     aEl.setAttribute('data-toggle', 'pill');
 
     // Append everything
-    document.getElementById('channel-groups').appendChild(aEl);
+    document.getElementById(el_id).appendChild(aEl);
     
     // Update Channel Group
     $(aEl).click(this, function(e) {

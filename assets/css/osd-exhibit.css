@@ -51,13 +51,26 @@
     margin-left: -366px;
   }
 
+  #legend {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  #channel-groups-legend {
+    width: 200px;
+  }
+
+  #legend.toggled {
+    margin-right: -200px;
+  }
+
   #sidebar-menu .open-sidebar {
     display: none;
-    font-size: 50px;
   }
   #sidebar-menu .close-sidebar {
     display: inline;
-    font-size: 50px;
   }
   #sidebar-menu.toggled .open-sidebar {
     display: inline;
@@ -65,7 +78,19 @@
   #sidebar-menu.toggled .close-sidebar {
     display: none;
   }
-  
+
+  #legend .open-legend {
+    display: none;
+  }
+  #legend .close-legend {
+    display: inline;
+  }
+  #legend.toggled .open-legend {
+    display: inline;
+  }
+  #legend.toggled .close-legend {
+    display: none;
+  } 
   /* position: absolute; top: 0; bottom: 0; width: 100%; */
   #openseadragon1 {
     /* position: absolute;
