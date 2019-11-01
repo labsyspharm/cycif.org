@@ -2047,6 +2047,9 @@ HashState.prototype = {
     clearChildren(items);
 
     if (this.waypoint.Mode == 'outline') {
+      var toc_label = document.createElement('p');
+      toc_label.innerText = 'Table of Contents';
+      items.appendChild(toc_label);
       // Add configured stories
       this.stories.forEach(function(story, sid) {
         if (story.Mode == undefined) {
