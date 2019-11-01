@@ -474,11 +474,13 @@ HashState.prototype = {
       }
     });
 
-    $('#home-button').click(this, function(e) {
+    $('#toc-button').click(this, function(e) {
       const THIS = e.data;
-      THIS.s = 0; 
-      THIS.pushState();
-      window.onpopstate();
+      if (THIS.waypoint.Mode != 'outline') {
+        THIS.s = 0; 
+        THIS.pushState();
+        window.onpopstate();
+      }
     });
 
     $('.clear-switch').click(this, function(e) {
@@ -1360,6 +1362,7 @@ HashState.prototype = {
       this.addMasks();
       this.addGroups();
       this.newStories();
+
       if (this.edit) {
         this.fillWaypointEdit();
       }
@@ -1442,7 +1445,8 @@ HashState.prototype = {
     activeOrNot('#view-switch', !edit);
     activeOrNot('#edit-switch', edit);
 
-    displayOrNot('#home-button', !edit);
+    displayOrNot('#home-button', !edit && this.waypoint.Mode == 'outline');
+    displayOrNot('#toc-button', !edit && this.waypoint.Mode != 'outline');
     displayOrNot('.editControls', edit);
     displayOrNot('#waypointControls', !edit);
     displayOrNot('#waypointName', !edit);
