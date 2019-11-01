@@ -401,9 +401,6 @@ HashState.prototype = {
     $('#zoom-out').tooltip({
       title: 'Zoom out'
     });
-    $('#zoom-home').tooltip({
-      title: 'Reset Zoom'
-    });
     $('#arrow-switch').tooltip({
       title: 'Share Arrow'
     });
@@ -478,13 +475,6 @@ HashState.prototype = {
     });
 
     $('#home-button').click(this, function(e) {
-      const THIS = e.data;
-      THIS.s = 0; 
-      THIS.pushState();
-      window.onpopstate();
-    });
-
-    $('#zoom-home').click(this, function(e) {
       const THIS = e.data;
       THIS.s = 0; 
       THIS.pushState();
@@ -1203,6 +1193,7 @@ HashState.prototype = {
       images: exhibit.Images || [],
       header: exhibit.Header || '',
       footer: exhibit.Footer || '',
+      default_group: exhibit.DefaultGroup || '',
       stories: stories,
       masks: masks,
       cgs: cgs
@@ -1882,7 +1873,12 @@ HashState.prototype = {
     
     // Update Mask Layer
     $(aEl).click(this, function(e) {
-      THIS = e.data;
+      const THIS = e.data;
+      const group = THIS.design.default_group;
+      const g = index_name(THIS.cgs, group);
+      if ( g != -1 ) {
+        THIS.g = g;
+      }
       if (THIS.m.includes(m)){
         THIS.m = THIS.m.filter(i => i != m);
       }
@@ -1910,26 +1906,61 @@ HashState.prototype = {
     // Add some channel groups to waypoint
     cgs.forEach(function(group) {
       const g = index_name(this.cgs, group.Name);
-      this.addGroup(group, g, 'channel-groups');
+      this.addGroup(group, g, 'channel-groups', false);
     }, this);
     // Add all channel groups to legend
     this.cgs.forEach(function(group) {
       const g = index_name(this.cgs, group.Name);
-      this.addGroup(group, g, 'channel-groups-legend');
+      this.addGroup(group, g, 'channel-groups-legend', true);
     }, this);
   },
-  addGroup: function(group, g, el_id) {
+  addGroup: function(group, g, el_id, show_more) {
     var aEl = document.createElement('a');
+    var selected = this.g === g ? true : false;
     aEl = Object.assign(aEl, {
-      className: this.g === g ? 'nav-link active' : 'nav-link',
+      className: selected ? 'nav-link active' : 'nav-link',
+      style: 'padding-right: 40px;',
       href: 'javascript:;',
       innerText: group.Name,
       title: group.Path,
       id: group.Path + '_' + el_id,
     });
-    var ariaSelected = this.g === g ? true : false;
-    aEl.setAttribute('aria-selected', ariaSelected);
     aEl.setAttribute('data-toggle', 'pill');
+
+    // Set story and waypoint for this marker
+    var s_w = undefined;
+    for (var s in THIS.stories) {
+      for (var w in THIS.stories[s].Waypoints) {
+        var waypoint = THIS.stories[s].Waypoints[w];  
+        if (waypoint.Group == group.Name) {
+          // Select the first waypoint or the definitive
+          if (s_w == undefined || waypoint.DefineGroup) {
+            s_w = [s, w];
+          }
+        }
+      }
+    }
+    
+    var moreEl = document.createElement('a');
+    if (selected && show_more && s_w) {
+      const opacity = 'opacity: ' +  + ';';
+      moreEl = Object.assign(moreEl, {
+        className : 'text-white',
+        style: 'position: absolute; right: 10px;',
+        href: 'javascript:;',
+        innerText: 'MORE',
+      });
+      aEl.appendChild(moreEl);
+
+      // Update Waypoint
+      $(moreEl).click(this, function(e) {
+        THIS = e.data;
+        THIS.s = s_w[0];
+        THIS.w = s_w[1];
+        THIS.pushState();
+        window.onpopstate();
+      });
+    }
 
     // Append everything
     document.getElementById(el_id).appendChild(aEl);
@@ -1941,6 +1972,7 @@ HashState.prototype = {
       THIS.pushState();
       window.onpopstate();
     });
+
   },
 
   activateViewport: function() {
@@ -2070,7 +2102,13 @@ HashState.prototype = {
     const wid_waypoint = document.getElementById('viewer-waypoint');
     const waypointName = document.getElementById("waypointName");
     const waypointCount = document.getElementById("waypointCount");
-    waypointCount.innerText = this.currentCount + '/' + this.totalCount;
+
+    if (this.currentCount != 1) {
+      waypointCount.innerText = (this.currentCount - 1) + '/' + (this.totalCount - 1);
+    }
+    else {
+      waypointCount.innerText = '';
+    }
 
     waypointName.innerText = waypoint.Name;
 
@@ -2432,7 +2470,6 @@ const build_page = function(exhibit, options) {
     navigatorPosition: 'BOTTOM_RIGHT',
     zoomOutButton: 'zoom-out',
     zoomInButton: 'zoom-in',
-    homeButton: 'zoom-home',
     immediateRender: true,
     maxZoomPixelRatio: 10,
     visibilityRatio: .9

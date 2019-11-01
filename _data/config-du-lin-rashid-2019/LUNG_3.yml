@@ -15,6 +15,7 @@ Exhibit:
   Layout:
     Grid:
       - [i0]
+  DefaultGroup: Nuclei
   Groups:
     - Path: 0___DAPI 1---22___CD45---33___IBA1---14___KERATIN---34___ASMA
       Name: Structural Components
@@ -209,6 +210,7 @@ Exhibit:
     - Name: Tumor-Stromal Interphase
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201043160.mp3
+      DefineGroup: true
       Description: |
         In the tumor-stromal interface where clusters of tumor cells (`Keratin`)
         can be seen associated with stromal areas containing fibroblasts (`α-SMA`) 
