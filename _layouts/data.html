@@ -1,0 +1,100 @@
+---
+layout: base
+---
+
+<div class="container">
+
+  <script src="{{'/node_modules/jquery/dist/jquery.min.js' | prepend: site.baseurl}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+
+  <script>
+    {% include lunr.js %}
+  </script>
+
+  <script>
+  
+  const config_to_web = new Map([
+    {% for page in site.pages %}
+      {% if page.paper and page.figure %}
+        {% assign figure_name = page.figure | prepend: "/" %}
+        {% assign config_path = page.paper | append: figure_name %}
+        {% assign web_path = page.path | replace: ".md", "" %}
+        ["{{ config_path }}", "{{ web_path }}"],
+      {% endif %}
+    {% endfor %}
+  ]);
+
+  const documents = [
+  {
+    id: 0,
+    text: "Search Image Data",
+    channels: "", 
+    url: "" 
+  },
+  {% assign id = 1 %}
+  {% for data in site.data %}
+    {% assign path_name = data[0] %}
+    {% if path_name contains "config" %}
+      {% for config in data[1] %}
+        {% assign figure_name = config[0] | prepend: "/" %}
+        {% assign config_path = path_name | append: figure_name %}
+        {% assign channels = config[1].Exhibit.Groups | map: "Channels" %}
+        {% if config[1].Exhibit.Name %} 
+          {
+            id: {{ id }},
+            text: "{{ config[1].Exhibit.Name }}",
+            channels: "{{ channels | join: " " }}",
+            url: config_to_web.get("{{config_path}}")
+          },
+        {% endif %}
+      {% assign id = id | plus: 1 %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  ];
+
+  const idx = lunr(function () {
+    this.ref('id');
+    this.field('text');
+    this.field('channels');
+
+    documents.forEach(function (doc) {
+      this.add(doc);
+    }, this)
+  });
+
+  const matchStart = function(params, data) {
+    // If there are no search terms, return all of the data
+    if ($.trim(params.term) === '') {
+      return data.id == 0? null: data;
+    }
+
+    const ids = idx.search(params.term).map(r => r.ref);
+
+    return ids.includes(data.id) ? data : null;
+  }
+
+  $( document ).ready(function() {
+
+    $(".select2-search").select2({
+      matcher: matchStart,
+      data: documents
+    }); 
+
+    $(".select2-container").css("width", "100%");
+
+    $(".select2-search").on("select2:select", function (e) {
+      if (e.params.data.url) {
+        open(e.params.data.url, "_self");
+      }
+    });
+
+  });
+
+  </script>
+  <section id="main_content">
+    <select class="select2-search" name="figures">
+    </select>
+    {{ content }}
+  </section>
+</div>

@@ -1,5 +1,6 @@
 ---
 title: Data
+layout: data
 ---
 <h2 class="h2">
   Visualizing and sharing CyCIF images
