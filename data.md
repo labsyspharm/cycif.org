@@ -84,7 +84,9 @@ layout: data
       <h5 class="mt-0">Gaglia et al., 2018 (submitted)</h5>
     </a>
     <p>
-
+			<a href="https://www.synapse.org/#!Synapse:syn20505972/wiki/594014">
+			Access Raw Data
+			</a>
     </p>
   </div>
 </div>
