@@ -36,7 +36,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                 //END PREPROCESSING
 
                 //all framing stuff
-                vis.margin = { top: 40, right: 40, bottom: 0, left: 70 };
+                vis.margin = { top: 40, right: 80, bottom: 0, left: 70 };
                 vis.size = wid_waypoint.clientWidth;
                 vis.width = vis.size - vis.margin.left - vis.margin.right;
                 vis.cellPadding = 4;
@@ -140,7 +140,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                 //dynamic legend
                 vis.svg.append("g")
                     .attr("class", "colorLegend")
-                    .attr("transform", "translate(" + (vis.width+10) + ",0)");
+                    .attr("transform", "translate(" + (vis.width+5) + ",0)");
                 var colorLegend = d3.legendColor()
                     .ascending(true)
                     .labelAlign('start')
