@@ -30,8 +30,12 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                 vis.max = Number.MIN_VALUE;
                 vis.min = Number.MAX_VALUE;
                 data.forEach(function(d){
-                    vis.min = Math.min(vis.min, d3.min(Object.values(d)) );
-                    vis.max = Math.max(vis.max, d3.max(Object.values(d)) );
+                    var numberArray = Object.values(d).map(function(i){
+                        return parseFloat(i);
+                    });
+
+                    vis.min = Math.min(vis.min, d3.min(numberArray) );
+                    vis.max = Math.max(vis.max, d3.max(numberArray) );
                 });
                 //END PREPROCESSING
 
