@@ -1660,10 +1660,6 @@ HashState.prototype = {
   addArrow: function(indices) {
 
     const [prefix, s_i, w_i, a_i] = indices;
-    const proto_text_el = "arrow-text";
-    const proto_el = "arrow-image";
-    const text_el = "arrow-text-" + indices.join('-');
-    const el = "arrow-image-" + indices.join('-');
 
     var a = {
       Point: this.a,
@@ -1675,9 +1671,16 @@ HashState.prototype = {
     if (a.Angle == undefined) {
       a.Angle = 60;
     }
+    const proto_text_el = "arrow-text";
+    const proto_el = a.Arrowhead? "arrowhead-image" : "arrow-image";
+    const text_el = "arrow-text-" + indices.join('-');
+    const el = "arrow-image-" + indices.join('-');
 
     if (s_i != this.s || w_i != this.w) {
       a.Point = [-100, -100];
+    }
+    if (a.Arrowhead) {
+      console.log(a);
     }
 
     const current = this.viewer.getOverlayById(el);
