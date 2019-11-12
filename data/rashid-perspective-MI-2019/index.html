@@ -7,19 +7,19 @@ title: Data
 <section id="lin-elife-2018-paper">
 
 <h2 class="h4">
-    {{ pubData.publication.title }}
+    {{ pubData.publication.title | markdownify }}
 </h2>
-<!-- <p class="">
-    {{ pubData.publication.authors }}
-    <br> {{ pubData.publication.journal }}
-</p> -->
+<p class="">
+    {{ pubData.publication.authors | markdownify }}
+    <br> {{ pubData.publication.journal | markdownify }}
+</p>
 <a href="{{ pubData.publication.link.url }}" target="_blank" class="lead">{{ pubData.publication.link.name }}</a>
 
 {% include heart.svg %}
 
-<h3 class="h4">Dataset</h3>
+<!-- <h3 class="h4">Dataset</h3>
 <p class="">
-    {{ pubData.publication.authors }}
+    {{ pubData.publication.authors | markdownify }}
 </p>
 
 <div class="row">
@@ -39,6 +39,6 @@ title: Data
     </div>
 </div>
 {% endfor %}
-</div>
+</div> -->
 
 </section>
