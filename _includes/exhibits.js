@@ -530,6 +530,17 @@ HashState.prototype = {
       THIS.newView(false);
     });
 
+    z_slider = document.getElementById('z-slider');
+    z_slider.max = this.cgs.length - 1;
+    z_slider.value = this.g;
+    z_slider.min = 0;
+
+    z_slider.addEventListener('input', function() {
+      THIS.g = z_slider.value;
+      THIS.pushState();
+      window.onpopstate();
+    }, false);
+
     $('#edit_description_modal form').submit(this, function(e){
       const THIS = e.data;
       const formData = parseForm(e.target);
@@ -1201,6 +1212,7 @@ HashState.prototype = {
       images: exhibit.Images || [],
       header: exhibit.Header || '',
       footer: exhibit.Footer || '',
+      is3d: exhibit['3D'] || false,
       default_group: exhibit.DefaultGroup || '',
       stories: stories,
       masks: masks,
@@ -1365,8 +1377,13 @@ HashState.prototype = {
       // Redraw HTML Menus
       this.addChannelLegends();
 
+      if (this.design.is3d) {
+        $('#channel-label').hide()
+      }
+      else {
+        this.addGroups();
+      }
       this.addMasks();
-      this.addGroups();
       this.newStories();
 
       if (this.edit) {
@@ -1453,6 +1470,9 @@ HashState.prototype = {
 
     displayOrNot('#home-button', !edit && this.waypoint.Mode == 'outline');
     displayOrNot('#toc-button', !edit && this.waypoint.Mode != 'outline');
+    displayOrNot('#channel-groups-legend', !this.design.is3d);
+    displayOrNot('#z-slider-legend', this.design.is3d);
+    displayOrNot('#toggle-legend', !this.design.is3d);
     displayOrNot('.editControls', edit);
     displayOrNot('#waypointControls', !edit);
     displayOrNot('#waypointName', !edit);

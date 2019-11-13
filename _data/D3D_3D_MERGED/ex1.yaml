@@ -1,0 +1,297 @@
+Exhibit:
+  3D: True
+  Images:
+    - Name: i0
+      Description: Test 3D Dataset
+      Path: https://s3.amazonaws.com/www.cycif.org/901R3DD3D3DMERGED
+      Width: 1024
+      Height: 1024
+      MaxLevel: 0
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: Z0_0__DAPI--3__SOX10--9__CD4
+      Name: Z0
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z1_28__DAPI--31__SOX10--37__CD4
+      Name: Z1
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z2_56__DAPI--59__SOX10--65__CD4
+      Name: Z2
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z3_84__DAPI--87__SOX10--93__CD4
+      Name: Z3
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z4_112__DAPI--115__SOX10--121__CD4
+      Name: Z4
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z5_140__DAPI--143__SOX10--149__CD4
+      Name: Z5
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z6_168__DAPI--171__SOX10--177__CD4
+      Name: Z6
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z7_196__DAPI--199__SOX10--205__CD4
+      Name: Z7
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z8_224__DAPI--227__SOX10--233__CD4
+      Name: Z8
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z9_252__DAPI--255__SOX10--261__CD4
+      Name: Z9
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z10_280__DAPI--283__SOX10--289__CD4
+      Name: Z10
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z11_308__DAPI--311__SOX10--317__CD4
+      Name: Z11
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z12_336__DAPI--339__SOX10--345__CD4
+      Name: Z12
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z13_364__DAPI--367__SOX10--373__CD4
+      Name: Z13
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z14_392__DAPI--395__SOX10--401__CD4
+      Name: Z14
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z15_420__DAPI--423__SOX10--429__CD4
+      Name: Z15
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z16_448__DAPI--451__SOX10--457__CD4
+      Name: Z16
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z17_476__DAPI--479__SOX10--485__CD4
+      Name: Z17
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z18_504__DAPI--507__SOX10--513__CD4
+      Name: Z18
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z19_532__DAPI--535__SOX10--541__CD4
+      Name: Z19
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z20_560__DAPI--563__SOX10--569__CD4
+      Name: Z20
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z21_588__DAPI--591__SOX10--597__CD4
+      Name: Z21
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z22_616__DAPI--619__SOX10--625__CD4
+      Name: Z22
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z23_644__DAPI--647__SOX10--653__CD4
+      Name: Z23
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z24_672__DAPI--675__SOX10--681__CD4
+      Name: Z24
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z25_700__DAPI--703__SOX10--709__CD4
+      Name: Z25
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z26_728__DAPI--731__SOX10--737__CD4
+      Name: Z26
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z27_756__DAPI--759__SOX10--765__CD4
+      Name: Z27
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z28_784__DAPI--787__SOX10--793__CD4
+      Name: Z28
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z29_812__DAPI--815__SOX10--821__CD4
+      Name: Z29
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z30_840__DAPI--843__SOX10--849__CD4
+      Name: Z30
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z31_868__DAPI--871__SOX10--877__CD4
+      Name: Z31
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z32_896__DAPI--899__SOX10--905__CD4
+      Name: Z32
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z33_924__DAPI--927__SOX10--933__CD4
+      Name: Z33
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z34_952__DAPI--955__SOX10--961__CD4
+      Name: Z34
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z35_980__DAPI--983__SOX10--989__CD4
+      Name: Z35
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z36_1008__DAPI--1011__SOX10--1017__CD4
+      Name: Z36
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z37_1036__DAPI--1039__SOX10--1045__CD4
+      Name: Z37
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z38_1064__DAPI--1067__SOX10--1073__CD4
+      Name: Z38
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z39_1092__DAPI--1095__SOX10--1101__CD4
+      Name: Z39
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z40_1120__DAPI--1123__SOX10--1129__CD4
+      Name: Z40
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z41_1148__DAPI--1151__SOX10--1157__CD4
+      Name: Z41
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z42_1176__DAPI--1179__SOX10--1185__CD4
+      Name: Z42
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z43_1204__DAPI--1207__SOX10--1213__CD4
+      Name: Z43
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z44_1232__DAPI--1235__SOX10--1241__CD4
+      Name: Z44
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z45_1260__DAPI--1263__SOX10--1269__CD4
+      Name: Z45
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z46_1288__DAPI--1291__SOX10--1297__CD4
+      Name: Z46
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z47_1316__DAPI--1319__SOX10--1325__CD4
+      Name: Z47
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z48_1344__DAPI--1347__SOX10--1353__CD4
+      Name: Z48
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z49_1372__DAPI--1375__SOX10--1381__CD4
+      Name: Z49
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z50_1400__DAPI--1403__SOX10--1409__CD4
+      Name: Z50
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z51_1428__DAPI--1431__SOX10--1437__CD4
+      Name: Z51
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z52_1456__DAPI--1459__SOX10--1465__CD4
+      Name: Z52
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z53_1484__DAPI--1487__SOX10--1493__CD4
+      Name: Z53
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z54_1512__DAPI--1515__SOX10--1521__CD4
+      Name: Z54
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z55_1540__DAPI--1543__SOX10--1549__CD4
+      Name: Z55
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z56_1568__DAPI--1571__SOX10--1577__CD4
+      Name: Z56
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z57_1596__DAPI--1599__SOX10--1605__CD4
+      Name: Z57
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z58_1624__DAPI--1627__SOX10--1633__CD4
+      Name: Z58
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z59_1652__DAPI--1655__SOX10--1661__CD4
+      Name: Z59
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z60_1680__DAPI--1683__SOX10--1689__CD4
+      Name: Z60
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z61_1708__DAPI--1711__SOX10--1717__CD4
+      Name: Z61
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z62_1736__DAPI--1739__SOX10--1745__CD4
+      Name: Z62
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z63_1764__DAPI--1767__SOX10--1773__CD4
+      Name: Z63
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z64_1792__DAPI--1795__SOX10--1801__CD4
+      Name: Z64
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z65_1820__DAPI--1823__SOX10--1829__CD4
+      Name: Z65
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z66_1848__DAPI--1851__SOX10--1857__CD4
+      Name: Z66
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z67_1876__DAPI--1879__SOX10--1885__CD4
+      Name: Z67
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z68_1904__DAPI--1907__SOX10--1913__CD4
+      Name: Z68
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z69_1932__DAPI--1935__SOX10--1941__CD4
+      Name: Z69
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
+    - Path: Z70_1960__DAPI--1963__SOX10--1969__CD4
+      Name: Z70
+      Colors: [0000FF, FF0000, 00FF00]
+      Channels: [DAPI, SOX10, CD4]
