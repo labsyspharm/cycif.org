@@ -20,38 +20,21 @@ Exhibit:
         - Hematoxylin
         - Eosin
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.605
+    - Name: Overview
+      Group: H&E
+      Description: |
+        The right ventricle of the heart pumps blood to the pulmonary system 
+        and contains similar layers of tissue as the left ventricle. Compared 
+        to the left ventricles, the myocardium of the right ventricle is 
+        not as thick. 
+      Zoom: 0.605
       Pan:
         - 0.523
         - 0.439
-      Group: H&E
-      Name: The Waypoint
-      Description: |
-        Hematoxylin and Eosin (H&E) stained section of the right ventricle.
-
       Overlay:
         x: -100
         y: -100
         width: 200
         height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
-      Pan:
-        - 0.584
-        - 0.457
-      Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
-
