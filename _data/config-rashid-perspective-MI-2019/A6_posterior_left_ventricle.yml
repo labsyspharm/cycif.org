@@ -76,8 +76,6 @@ Exhibit:
           Text: vacuolization
           HideArrow: false
           Angle: 60
- 
-
 
     - Name: Wavy Fibers
       Group: H&E
@@ -86,12 +84,23 @@ Exhibit:
         wavy fibers (approximately 6-12 hours). The force of contracting neighboring 
         fibers cause the non-contractile fibers to stretch and fold, ultimately forming 
         the wavy pattern.
-      Zoom: 9.9532
+      Zoom: 5.3497
       Pan:
-        - 0.9172
-        - 0.5175
+        - 0.9268
+        - 0.5164
       Overlay:
-        x: 0.883
-        y: 0.4952
-        width: 0.074
-        height: 0.0474
+        x: 0.8825
+        y: 0.4809
+        width: 0.099
+        height: 0.0786
+      Arrows:
+        - Point:
+            - 0.8984633887793854
+            - 0.5351554630772729
+          Text: wavy fibers
+          HideArrow: false
+        - Point:
+            - 0.9415339888678205
+            - 0.5161113750930135
+          Text: wavy fibers
+          HideArrow: false
