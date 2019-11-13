@@ -22,35 +22,100 @@ Exhibit:
   Stories:
   - Name: ''
     Waypoints:
-    - Name: Overview
+    - Name: Layers of the Heart Wall
       Group: H&E
       Description: |
+        The first organ to form during fetal development, the heart 
+        is responsible for pumping blood through the circulatory system
+        to supply oxygen to all cells of the body. In humans, the heart is 
+        located in the chest cavity between the lungs and sits in a fuild-filled sac
+        called the pericardium which serves to protect this vital organ.
+
+        The heart wall is comprised of three layers`:` the 
+        1) epicardium, 2) myocardium, and the 3) endocardium.
+
+        The epicardium is the outer most layer and is contiguous with the visceral
+        layer of the pericardium. It is composed primarily of adipose tissue, connective 
+        tissue including elastic fibers, and mesothelium, which secrete pericardial fluid 
+        to help lubricate the heart and reduce friction as it expands in volume.
+        The epicardium also contains coronary blood vessels that supply blood to the heart wall.
+
+        The middle layer, or the myocardium, is composed of cardiac muscle 
+        fibers (cardiomyocytes) that generate the contractile force 
+        needed to pump blood. These contractions are signaled by the peripheral 
+        nervous system and synchronized by Purkinje fibers. The myocardium 
+        is the thickest layer of the heart wall, with its thickness varying
+        in different parts of the heart. The myocardium of the left ventricle
+        is the thickest as this ventricle is responsible for generating 
+        enough power to pump blood through the aorta to the rest of the body. 
+        On average, an adult heart pumps ~6000-75000 liters of blood daily.
+
+        The endocardium is the innermost layer of the heart wall. It lines the 
+        inside of chambers and the valves with a simple squamous epithelium, 
+        or a single layer of flat cells. This type of epithelium enables rapid 
+        diffusion of small molecules.
+
         In this view of the lateral left ventricle wall, epicardial fat is seen on one 
         side of the section and papillary muscles present on the opposite side which 
-        is the left ventricle lumen. 
+        is the left ventricle lumen.
+
       Zoom: 0.4542
       Pan:
         - 0.5741
         - 0.5
       Arrows:
         - Point:
-            - 0.712096229750155
-            - 0.09901344341616002
-          Text: epicardial fat
+            - 0.7965404496094648
+            - 0.17584738837480915
+          Text: epicardium
           HideArrow: true
           Angle: 60
         - Point:
-            - 0.7209676503508752
-            - 0.9156410662442569
-          Text: papillary muscles
+            - 0.8029856804779639
+            - 0.5740902043980588
+          Text: myocardium
           HideArrow: true
           Angle: 60
-
+        - Point:
+            - 0.7859504153523912
+            - 0.8483114525139663
+          Text: endocardium
+          HideArrow: true
+          Angle: 60
+        # - Point:
+        #     - 0.712096229750155
+        #     - 0.09901344341616002
+        #   Text: epicardial fat
+        #   HideArrow: true
+        #   Angle: 60
+        # - Point:
+        #     - 0.7209676503508752
+        #     - 0.9156410662442569
+        #   Text: papillary muscles
+        #   HideArrow: true
+        #   Angle: 60
+      Overlays:
+        - x: 0.3638
+          y: 0.0293
+          width: 1.1911
+          height: 0.3079
+        - x: 0.3483
+          y: 0.3227
+          width: 1.0566
+          height: 0.4527
+        - x: 0.3416
+          y: 0.7871
+          width: 1.0436
+          height: 0.1672
 
 
     - Name: Papillary Muscle
       Group: H&E
       Description: |
+        The ventricles of the heart contain papillary muscles that attach to 
+        atrioventricular valves and contract to prevent inversion of the valves 
+        and backflow of blood during systole.
+
         In the center of one of the papillary muscles is a region of acute ischemia 
         with mildly increased eosinophilia (approximately 12-24 hours). 
         
