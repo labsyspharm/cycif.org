@@ -1679,9 +1679,6 @@ HashState.prototype = {
     if (s_i != this.s || w_i != this.w) {
       a.Point = [-100, -100];
     }
-    if (a.Arrowhead) {
-      console.log(a);
-    }
 
     const current = this.viewer.getOverlayById(el);
     const xy = new OpenSeadragon.Point(a.Point[0], a.Point[1]);
@@ -1801,8 +1798,8 @@ HashState.prototype = {
     if (current) {
       current.update({
         location: xy,
-        width: Math.min(1, overlay.width),
-        height: Math.min(1, overlay.height)
+        width: overlay.width,
+        height: overlay.height
       });
     }
     else {
