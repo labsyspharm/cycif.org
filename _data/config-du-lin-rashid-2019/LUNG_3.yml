@@ -131,12 +131,28 @@ Exhibit:
     #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_4
     - Name: Cluster 1 - Tumor Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_1
+      Colors:
+        - F44336
+      Channels:
+        - Tumor
     - Name: Cluster 2 - Other Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_2
+      Colors:
+        - 673AB7
+      Channels:
+        - Other
     - Name: Cluster 3 - Immune Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_3
+      Colors:
+        - 4CAF50
+      Channels:
+        - Immune
     - Name: Cluster 4 - Stromal Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_4
+      Colors:
+        - 03A9F4
+      Channels:
+        - Stromal
     # - Name: Cluster All
     #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
 

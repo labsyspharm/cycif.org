@@ -1110,11 +1110,17 @@ HashState.prototype = {
   },
 
   get colors() {
-    return this.group.Colors;
+    const g_colors = this.group.Colors;
+    return g_colors.concat(this.active_masks.reduce((c, m) => {
+      return c.concat(m.Colors || []);
+    }, []));
   },
 
   get channels() {
-    return this.group.Channels;
+    const g_chans = this.group.Channels;
+    return g_chans.concat(this.active_masks.reduce((c, m) => {
+      return c.concat(m.Channels || []);
+    }, []));
   },
 
   get waypoints() {
