@@ -20,38 +20,27 @@ Exhibit:
         - Hematoxylin
         - Eosin
   Stories:
-  - Name: Overview
-    Description: 
+  - Name: ''
     Waypoints:
-    - Zoom: 0.605
+    - Name: Overview
+      Group: H&E
+      Description: |
+        Description here
+      Zoom: 0.605
       Pan:
         - 0.605
         - 0.467
-      Group: H&E
-      Name: The Waypoint
-      Description: |
-        Hematoxylin and Eosin (H&E) stained section of the left circumflex artery.
-
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-
-  - Name: About
-    Description: 
-    Waypoints:
-    
-    - Name: ROI 1
-      Group: H&E
-      Description: Description of ROI 1. 
-      Zoom: 4.834
-      Pan:
-        - 0.584
-        - 0.457
-      Overlay:
-        x: 0.575
-        y: 0.445
-        width: 0.062
-        height: 0.056
-
+      Arrows:
+        - Point:
+            - 0.6401000684001412
+            - 0.39503996568620575
+          Text: >-
+            gruel-like atheroma (cholesterol rich)
+            with foamy macrophages
+          HideArrow: false
+        - Point:
+            - 0.6045196041559577
+            - 0.350768378679699
+          Text: nerve
+          HideArrow: false
+          Angle: 240

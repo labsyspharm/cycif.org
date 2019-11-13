@@ -1,6 +1,42 @@
 publication:
-  title: Heart
-  authors:
+  title: |
+    Heart
+
+  authors: |
+    
+    
+    Explore images of heart tissue from a patient who experienced 
+    multiple myocardial infarcts that occurred at different times. 
+    
+    The deceased patient is a 61-year-old 
+    female with a medical history of coronary artery disease, heart failure, 
+    type II diabetes mellitus, and chronic obstructive pulmonary disease. 
+    
+    The patient arrived at the ED with respiratory distress 
+    from influenza A and experienced a cardiac arrest with pulseless 
+    electrical activity (PEA arrest) from which she was succesfully resuscitated. 
+    However, following PEA arrest, she did not recover consciousness and began displaying 
+    upper and lower bilateral extremity twitching; during a 
+    neurologic exam, she displayed trace corneal responses and 
+    reactive pupils. An electroencephalogram confirmed status epilepticus. 
+    She was administered multiple anti-epileptic medications but continued 
+    to have breakthrough seizures. CT scans and x-rays were also 
+    concerning for pneumonia, and sputum culture was positive 
+    Pseudomonas aeruginosa. The patient was placed on broad 
+    spectrum antibiotics.
+    
+    In addition to infection and seizures, the patient developed 
+    sinus tachycardia with significant ST depression, indicating acute ischemia. 
+    Given the multiple severe ongoing clinical issues and poor prognosis, a collective
+    decision by the family was made to transition the goals of care to 
+    "comfort measures". She passed away the same day.
+    
+    Below are multiple tissue sections from the patient’s heart extracted 
+    at autopsy. Present are multiple myocardial infarctions, occurring days (acute), 
+    weeks (subacute), and years (remote) prior to death, in both 
+    the left and right ventricles along with severe atherosclerosis in the arteries.
+
+
   journal: 
   link: 
     # name: Publication summary

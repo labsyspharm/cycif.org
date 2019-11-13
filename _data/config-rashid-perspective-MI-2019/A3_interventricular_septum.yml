@@ -26,7 +26,7 @@ Exhibit:
       Group: H&E
       Description: |
         This section of myocardium from the interventricular septum sits between the right and left ventricles. 
-        Generally, the right (at the top) surface is smoother whereas the left surface (at the bottom) is 
+        Generally, the left (at the top) surface is smoother whereas the right surface (at the bottom) is 
         typically uneven with numerous muscular trabeculations.  
         
         Also, the endocardium on the left side is commonly thicker, due to higher relative blood pressure. 
@@ -40,12 +40,12 @@ Exhibit:
         - Point:
             - 0.5943855750020284
             - 0.11296400171392643
-          Text: right surface
+          Text: left surface
           HideArrow: true
         - Point:
             - 0.5943855750020284
             - 0.7408324031550944
-          Text: left surface
+          Text: right surface
           HideArrow: true
         - Point:
             - 0.8873550102725235
