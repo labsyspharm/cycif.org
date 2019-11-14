@@ -4,6 +4,9 @@ const flatten = function(items) {
   });
 };
 
+const round1 = function(n) {
+  return Math.round(n * 10) / 10;
+};
 const round4 = function(n) {
   const N = Math.pow(10, 4);
   return Math.round(n * N) / N;
@@ -530,13 +533,21 @@ HashState.prototype = {
       THIS.newView(false);
     });
 
+    z_legend = document.getElementById('depth-legend');
     z_slider = document.getElementById('z-slider');
     z_slider.max = this.cgs.length - 1;
     z_slider.value = this.g;
     z_slider.min = 0;
 
+    if (this.design.is3d && this.design.z_scale) {
+      z_legend.innerText = round1(this.g / this.design.z_scale) + ' μm';
+    }
+
     z_slider.addEventListener('input', function() {
       THIS.g = z_slider.value;
+      if (THIS.design.z_scale) {
+        z_legend.innerText = round1(THIS.g / THIS.design.z_scale) + ' μm';
+      }
       THIS.pushState();
       window.onpopstate();
     }, false);
@@ -1213,6 +1224,7 @@ HashState.prototype = {
       header: exhibit.Header || '',
       footer: exhibit.Footer || '',
       is3d: exhibit['3D'] || false,
+      z_scale: exhibit['ZPerMicron'] || 0,
       default_group: exhibit.DefaultGroup || '',
       stories: stories,
       masks: masks,
@@ -1473,6 +1485,7 @@ HashState.prototype = {
     displayOrNot('#channel-groups-legend', !this.design.is3d);
     displayOrNot('#z-slider-legend', this.design.is3d);
     displayOrNot('#toggle-legend', !this.design.is3d);
+    displayOrNot('.only-3d', this.design.is3d);
     displayOrNot('.editControls', edit);
     displayOrNot('#waypointControls', !edit);
     displayOrNot('#waypointName', !edit);

@@ -1,6 +1,8 @@
 Exhibit:
   3D: True
   Name: Melanoma Optical 3D
+  PixelsPerMicron: 9.26
+  ZPerMicron: 5
   Images:
     - Name: i0
       Description: Melanoma Optical 3D
