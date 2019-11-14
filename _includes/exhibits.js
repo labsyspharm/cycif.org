@@ -2463,6 +2463,19 @@ const arrange_images = function(viewer, tileSources, state, init) {
               }
               tileSources[layer.Path].push(item);
 
+              if (state.design.is3d) {
+                const item_idx = viewer.world.getIndexOfItem(item);
+                item.addHandler('fully-loaded-change', function(e){
+                  const next_item = viewer.world.getItemAt(item_idx + 1);
+                  const last_item = viewer.world.getItemAt(item_idx - 1);
+                  if (next_item) {
+                    next_item.setPreload(e.fullyLoaded);
+                  }
+                  if (last_item) {
+                    last_item.setPreload(e.fullyLoaded);
+                  }
+                })
+              }
               // Initialize hash state
               nLoaded += 1;
               if (nLoaded == nTotal) {
