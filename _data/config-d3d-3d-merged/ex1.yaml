@@ -1,8 +1,9 @@
 Exhibit:
   3D: True
+  Name: Melanoma Optical 3D
   Images:
     - Name: i0
-      Description: Test 3D Dataset
+      Description: Melanoma Optical 3D
       Path: https://s3.amazonaws.com/www.cycif.org/901R3DD3D3DMERGED
       Width: 1024
       Height: 1024

@@ -1,5 +1,5 @@
 ---
 layout: osd-exhibit
-paper: D3D_3D_MERGED
+paper: config-d3d-3d-merged
 figure: ex1
 ---

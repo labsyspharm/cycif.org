@@ -85,7 +85,7 @@ layout: base
 
     $(".select2-search").on("select2:select", function (e) {
       if (e.params.data.url) {
-        open(e.params.data.url, "_self");
+        open("/" + e.params.data.url, "_self");
       }
     });
 
