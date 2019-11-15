@@ -548,8 +548,7 @@ HashState.prototype = {
       if (THIS.design.z_scale) {
         z_legend.innerText = round1(THIS.g / THIS.design.z_scale) + ' μm';
       }
-      THIS.pushState();
-      window.onpopstate();
+      THIS.newView(true)
     }, false);
 
     $('#edit_description_modal form').submit(this, function(e){
