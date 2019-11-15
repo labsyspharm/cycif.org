@@ -1254,7 +1254,6 @@ HashState.prototype = {
     }[mode];
 
     const groups = {
-      'explore': this.cgs.filter(group => group.Name).map(group => group.Name),
     }[mode];
 
     const masks = {
