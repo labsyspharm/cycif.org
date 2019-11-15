@@ -9,4 +9,4 @@ plugins:
     - jekyll-redirect-from
 exclude: []
 google_analytics: UA-41775478-2
-repository: yu-anchen/cycif.org
+repository: labsyspharm/cycif.org
