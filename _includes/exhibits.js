@@ -918,10 +918,14 @@ HashState.prototype = {
     this.m = mFromWaypoint(waypoint, this.masks);
     this.g = gFromWaypoint(waypoint, this.cgs);
     this.v = vFromWaypoint(waypoint);
-    // this.o = oFromWaypoint(waypoint);
-    // this.a = aFromWaypoint(waypoint);
-    this.o = [-100, -100, 1, 1];
-    this.a = [-100, -100];
+    if (this.waypoint.Mode == 'tag') {
+      this.o = oFromWaypoint(waypoint);
+      this.a = aFromWaypoint(waypoint);
+    }
+    else {
+      this.o = [-100, -100, 1, 1];
+      this.a = [-100, -100];
+    }
     this.p = pFromWaypoint(waypoint);
     this.d = dFromWaypoint(waypoint);
     this.n = nFromWaypoint(waypoint);
@@ -1124,7 +1128,7 @@ HashState.prototype = {
     const masks = this.masks;
     return this.m.map(function(m) {
       return masks[m];
-    }).filter(name => name != undefined);
+    }).filter(mask => mask != undefined);
   },
 
   get group() {
@@ -1260,6 +1264,13 @@ HashState.prototype = {
       'explore': this.masks.filter(mask => mask.Name).map(mask => mask.Name),
     }[mode];
 
+    const active_masks = {
+      'tag': this.active_masks.filter(mask => mask.Name).map(mask => mask.Name),
+    }[mode];
+
+    console.log(this.m)
+    console.log(this.active_masks)
+
     return {
       Mode: mode,
       Description: '',
@@ -1272,7 +1283,7 @@ HashState.prototype = {
         }],
         Polygon: p,
         Pan: v.slice(1),
-        ActiveMasks: [],
+        ActiveMasks: active_masks,
         Group: group.Name,
         Masks: masks,
         Groups: groups,
@@ -1355,6 +1366,7 @@ HashState.prototype = {
     this.trackers = [];
 
     this.addPolygon("selection", this.state.p);
+
     this.allOverlays.forEach(function(indices) {
       const [prefix, s, w, o] = indices;
       var overlay = this.overlay;
@@ -1806,18 +1818,19 @@ HashState.prototype = {
 
     const current = this.viewer.getOverlayById(el);
 
-    if (this.waypoint.Mode != 'outline') {
-      if (!this.isCurrentOverlay(el)) {
-        if (current) {
-          const xy = new OpenSeadragon.Point(-100, -100);
-          current.update({
-            location: xy,
-            width: 1,
-            height: 1,
-          });
-        }
-        return; 
+    const not_outline = (this.waypoint.Mode != 'outline');
+    const not_current = !this.isCurrentOverlay(el);
+
+    if (not_outline && not_current) {
+      if (current) {
+        const xy = new OpenSeadragon.Point(-100, -100);
+        current.update({
+          location: xy,
+          width: 1,
+          height: 1,
+        });
       }
+      return; 
     }
 
     var div = document.getElementById(el);
