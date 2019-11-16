@@ -1,5 +1,6 @@
 ---
 title: Data
+layout: data
 ---
 <h2 class="h2">
   Visualizing and sharing CyCIF images
@@ -83,17 +84,19 @@ title: Data
       <h5 class="mt-0">Gaglia et al., 2018 (submitted)</h5>
     </a>
     <p>
-
+			<a href="https://www.synapse.org/#!Synapse:syn20505972/wiki/594014">
+			Access Raw Data
+			</a>
     </p>
   </div>
 </div>
 <div class="row mb-4">
   <div class="col-md-2">
-    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/du-and-lin-2019/tonsil_1.jpg" alt="nat_prot">
+    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/du-lin-rashid-2019/tonsil_1.jpg" alt="nat_prot">
   </div>
   <div class="col">
-    <a href="{{ site.baseurl }}/featured-paper/du-and-lin-2019/figures/">
-      <h5 class="mt-0">Du and Lin et al., 2019 (accepted)</h5>
+    <a href="{{ site.baseurl }}/featured-paper/du-lin-rashid-2019/figures/">
+      <h5 class="mt-0">Du, Lin, and Rashid et al., Nature Protocols, 2019</h5>
     </a>
     <p>
 

@@ -1,0 +1,67 @@
+Exhibit:
+  Name: Anterior Left Ventricle
+  Images:
+    - Name: i0
+      Description: 'Anterior Left Ventricle'
+      Path: https://s3.amazonaws.com/www.cycif.org/rashid-perspective-MI-2019
+      Width: 136086
+      Height: 83666
+      MaxLevel: 8
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: '477609'
+      Name: H&E
+      Colors:
+        - 8233CC 
+        - FF8080
+      Channels:
+        - Hematoxylin
+        - Eosin
+  Stories:
+  - Name: ''
+    Waypoints:
+    - Name: Overview
+      Group: H&E
+      Description: |
+        Description here
+      Zoom: 0.553
+      Pan:
+        - 0.820
+        - 0.498
+      Arrows:
+        - Point:
+            - 0.4033718744913736
+            - 0.3842366695404052
+          Text: coronary artery
+          HideArrow: false
+          Angle: 120
+        - Point:
+            - 1.0323103730989287
+            - 0.6331769664301579
+          Text: trabeculations
+          HideArrow: true
+        - Point:
+            - 1.4117123391963995
+            - 0.37772660784025636
+          Text: trabeculations
+          HideArrow: true
+        - Point:
+            - 1.1361370807610771
+            - 0.4640097706781988
+          Text: scar
+          HideArrow: true
+      Overlays:
+        - x: 0.8549
+          y: 0.5381
+          width: 0.3802
+          height: 0.204
+        - x: 1.2529
+          y: 0.2758
+          width: 0.3222
+          height: 0.2294
+        - x: 0.9675
+          y: 0.3842
+          width: 0.3471
+          height: 0.1783

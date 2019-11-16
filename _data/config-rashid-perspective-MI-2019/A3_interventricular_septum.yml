@@ -1,0 +1,136 @@
+Exhibit:
+  Name: Interventricular Septum
+  Images:
+    - Name: i0
+      Description: 'Interventricular Septum'
+      Path: https://s3.amazonaws.com/www.cycif.org/rashid-perspective-MI-2019
+      Width: 99923
+      Height: 78481
+      MaxLevel: 7
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: '477610'
+      Name: H&E
+      Colors:
+        - 8233CC 
+        - FF8080
+      Channels:
+        - Hematoxylin
+        - Eosin
+  Stories:
+  - Name: ''
+    Waypoints:
+    - Name: Overview
+      Group: H&E
+      Description: |
+        This section of myocardium from the interventricular septum sits between the right and left ventricles. 
+        Generally, the left (at the top) surface is smoother whereas the right surface (at the bottom) is 
+        typically uneven with numerous muscular trabeculations.  
+        
+        Also, the endocardium on the left side is commonly thicker, due to higher relative blood pressure. 
+        
+        At this low magnification, areas of scar from old myocardial infarction are evident.
+      Zoom: 0.4542
+      Pan:
+        - 0.5741
+        - 0.5
+      Arrows:
+        - Point:
+            - 0.5943855750020284
+            - 0.11296400171392643
+          Text: left surface
+          HideArrow: true
+        - Point:
+            - 0.5943855750020284
+            - 0.7408324031550944
+          Text: right surface
+          HideArrow: true
+        - Point:
+            - 0.8873550102725235
+            - 0.6391145833333332
+          Text: scar
+          HideArrow: false
+          Angle: 60
+
+    - Name: Old Infarct (>6 weeks to years old) 
+      Group: H&E
+      # Audio: /assets/audio/speech_20190918201043160.mp3
+      Description: |
+        At high magnification, a prominent scar is evident with a loss of myocytes and replacement fibrosis represented 
+        by dense collagen. 
+        
+        Terminally differentiated myocytes are unable to repopulate the area of myocyte loss, which is repaired by resident fibroblasts. 
+        Inflammatory cells are rare. 
+        
+        Such a myocardial infarction is at least 6 weeks old and could be many years old as well.  
+        Estimating the date of remote lesions after 6 weeks is not generally feasible. 
+        
+        Myocytes directly adjacent to the scar demonstrate marked enlargement of nuclei and bizarre shapes. 
+        These myocytes have undergone hypertrophy as they contract against a firm collagenous scar. 
+        Myocyte hypertrophy is a compensatory mechanism that can be beneficial, but also become detrimental past a threshold. 
+      Zoom: 12.0931
+      Pan:
+        - 0.9322
+        - 0.6835
+      Overlay:
+        x: 0.9099
+        y: 0.6675
+        width: 0.0531
+        height: 0.0323
+      Arrows:
+        - Point:
+            - 0.9248096244640014
+            - 0.6809069428498213
+          Text: replacement fibrosis
+          HideArrow: false
+        - Point:
+            - 0.9412434424921551
+            - 0.6813930124293985
+          Text: hypertrophic myocytes
+          HideArrow: false
+
+    - Name: Early Infarct (~12 hours) 
+      Group: H&E
+      # Audio: /assets/audio/speech_20190918201043160.mp3
+      Description: |
+        A few millimeters away from the remote scar is a sharply demarcated region with hypereosinophilic myocytes 
+        with coagulative necrosis (red dead fibers). The red color comes from the loss of nucleic acids and the 
+        aggregation of proteins that results following ischemic injury. 
+        
+        The myocytes are shrunken, and their nuclei are absent or pyknotic; 
+        the cross striations seen in adjacent viable myocytes have become less evident.
+        
+        Recruitment of inflammatory cells such as neutrophils, lymphocytes and macrophages is not prominent yet. 
+        
+        Contraction bands are evident suggesting acute infarction followed by reperfusion (called contraction band necrosis). 
+        In this setting, reperfusion leads to an influx of calcium into the myocytes and one last titanic contraction. 
+        
+        This lesion represents an early stage of myocardial infarction.  
+      Zoom: 11.3566
+      Pan:
+        - 0.4512
+        - 0.4347
+      Overlay:
+        x: 0.4283
+        y: 0.4212
+        width: 0.0466
+        height: 0.0277
+      Arrows:
+        - Point:
+            - 0.4451957560937453
+            - 0.43571080228265807
+          Text: hypereosinophilic myocytes
+          HideArrow: false
+
+
+
+
+
+
+
+
+
+
+

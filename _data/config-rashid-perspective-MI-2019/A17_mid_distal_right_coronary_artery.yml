@@ -1,0 +1,186 @@
+Exhibit:
+  Name: Mid-distal Right Coronary Artery
+  Images:
+    - Name: i0
+      Description: 'Mid-distal Right Coronary Artery'
+      Path: https://s3.amazonaws.com/www.cycif.org/rashid-perspective-MI-2019
+      Width: 138941
+      Height: 89985
+      MaxLevel: 8
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: '477616'
+      Name: H&E
+      Colors:
+        - 8233CC 
+        - FF8080
+      Channels:
+        - Hematoxylin
+        - Eosin
+  Stories:
+  - Name: ''
+    Waypoints:
+    - Name: Overview
+      Group: H&E
+      Description: |
+        The mid-distal right coronary artery shows severe atherosclerosis with 90% occlusion.
+
+        Coronary arteries must undergo special treatment that permits them 
+        to be sectioned and mounted on a slide. This treatment (decalcification) 
+        removes much of the calcium that builds up in the vessel walls which 
+        would prevent the microtome blades from cutting. The remaining calcium 
+        can be seen as a bluish material. 
+        
+        The adventitia of the coronary arteries contain small clusters of 
+        inflammatory cells as well as capillaries and adipose tissue.
+        
+        The tunica media is of variable thickness with some areas showing 
+        marked thinning and atrophy due to pressure. There is extensive fibrosis 
+        and calcification which suggests a stable lesion that is not prone 
+        to undergoing erosion and rupture and ultimately thrombosis. 
+        
+        Unstable plaques tend to have a more significant atheromatous component. 
+        
+        In tissue sections, atheromatous areas are seen as cleared out spaced. 
+        This clearing results from tissue processing methods that gradually 
+        dehydrate tissues through ascending strengths of alcohol, followed 
+        by immersion in the organic solvent xylene which removes fats, 
+        leaving empty spaces. The tissue is then impregnated in paraffin wax 
+        which is allowed to solidify. Sections are taken from the paraffin 
+        block using a microtome. These sections are very thin, approximately 
+        3 to 5 microns in thickness (~ 1/250 of a millimeter in thickness). 
+        The tissue section is mounted onto a glass slide and stained with 
+        hematoxylin and eosin. 
+        
+        Plaques with atheromatous changes are termed vulnerable plaques. 
+        These are unstable and prone to undergoing plaque erosion, 
+        thrombosis and massive myocardial infarction. The term 
+        atherosclerosis originates from the Greek word "athero" which means 
+        gruel and sclerosis which means hard.
+      Zoom: 0.493
+      Pan:
+        - 0.772
+        - 0.4496
+
+
+    - Name: Plaque Rupture
+      Group: H&E
+      Description: |
+        This vessel demonstrates an area that has undergone plaque rupture with 
+        thrombosis followed by recanalization. 
+        
+        There are scattered macrophages laden with hemosiderin.  
+      Zoom: 2.1198
+      Pan:
+        - 0.6777
+        - 0.5593
+      Overlay:
+        x: 0.5556
+        y: 0.4499
+        width: 0.2853
+        height: 0.2246
+      Arrows:
+        - Point:
+            - 0.703546346677245
+            - 0.5726055982880182
+          Text: recanalization
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.681190887221734
+            - 0.5610298410916863
+          Text: recanalization
+          HideArrow: false
+          Angle: 240
+        - Point:
+            - 0.6845777161865886
+            - 0.5770789767955489
+          Text: recanalization
+          HideArrow: false
+        - Point:
+            - 0.6828745597274372
+            - 0.6092520344057655
+          Text: macrophages with hemosiderin
+          HideArrow: false
+          Angle: 240
+        - Point:
+            - 0.6860976078346334
+            - 0.6106044112592685
+          Text: macrophages with hemosiderin
+          HideArrow: false
+        - Point:
+            - 0.683865319029438
+            - 0.6220674765714554
+          Text: macrophages with hemosiderin
+          HideArrow: false
+        - Point:
+            - 0.6869321405390434
+            - 0.5396389505766023
+          Text: plaque
+          HideArrow: false
+          Angle: 240
+        - Point:
+            - 0.7622599284491921
+            - 0.4993794570393635
+          Text: calcification
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.6475810504504055
+            - 0.6170507938110269
+          Text: calcification
+          HideArrow: false
+        - Point:
+            - 0.755883548591806
+            - 0.6171084268313639
+          Text: nerve
+          HideArrow: false
+        - Point:
+            - 0.7799158552496649
+            - 0.6110426996252611
+          Text: nerve
+          HideArrow: false
+    - Name: Stable Plaque
+      Group: H&E
+      Description: |
+        Overall, these sections show substantial occlusion but the dense fibrosis 
+        with limited atheromatous change is consistent with stable plaques.   
+      Zoom: 1.8651
+      Pan:
+        - 0.6027
+        - 0.3526
+      Overlay:
+        x: 0.4593
+        y: 0.2345
+        width: 0.3184
+        height: 0.2442
+      Arrows:
+        - Point:
+            - 0.7062222415053794
+            - 0.5783603276125244
+          Text: recanalization
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.6828520270123831
+            - 0.6096011894184986
+          Text: macrophage with hemosiderin
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.6869321405390434
+            - 0.5396389505766023
+          Text: plaque
+          HideArrow: false
+          Angle: 240
+        - Point:
+            - 0.7622599284491921
+            - 0.4993794570393635
+          Text: calcium buildup
+          HideArrow: false
+          Angle: 60
+
+
+

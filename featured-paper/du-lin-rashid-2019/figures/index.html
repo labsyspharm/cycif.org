@@ -3,7 +3,7 @@ layout: default
 title: Data
 ---
 
-{% assign pubData=site.data.du-and-lin-2019 %}
+{% assign pubData=site.data.du-lin-rashid-2019 %}
 <section id="lin-elife-2018-paper">
 
 <h2 class="h4">
@@ -15,13 +15,18 @@ title: Data
 </p>
 <a href="{{ pubData.publication.link.url }}" target="_blank" class="lead">{{ pubData.publication.link.name }}</a>
 
+<p>
+  <a href="https://www.synapse.org/#!Synapse:syn17865732/wiki/592782">
+  Access Raw Data
+  </a>
+</p>
 
 <h3>Available images</h3>
 
 <div class="row">
 {% for img in pubData['stitched mosaic images'] %}
 <div class="media col-md-6 my-4">
-    <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}{{ "/assets/img/du-and-lin-2019/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
+    <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}{{ "/assets/img/du-lin-rashid-2019/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
     <div class="media-body">
         <h5 class="mt-0 mb-2">{{ img.title }}</h5>
         <p>

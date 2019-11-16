@@ -1,0 +1,222 @@
+Exhibit:
+  Name: Posterior Left Ventricle
+  Images:
+    - Name: i0
+      Description: 'Posterior Left Ventricle'
+      Path: https://s3.amazonaws.com/www.cycif.org/rashid-perspective-MI-2019
+      Width: 107536
+      Height: 91119
+      MaxLevel: 7
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: '477611'
+      Name: H&E
+      Colors:
+        - 8233CC 
+        - FF8080
+      Channels:
+        - Hematoxylin
+        - Eosin
+  Stories:
+  - Name: ''
+    Waypoints:
+    - Name: Overview
+      Group: H&E
+      Description: |
+        This region of the left posterior left ventricular wall has examples of 
+        both acute (1-2 days) and subacute (1-2 weeks) myocardial infarction.
+        
+        At low magnification, a region of pallor is seen in one of the trabeculations 
+        of the posterior left ventricular wall. 
+      Zoom: 0.4542
+      Pan:
+        - 0.5741
+        - 0.5
+      Overlays:
+        - x: 0.1339
+          y: 0.2587
+          width: 0.1095
+          height: 0.076
+        - x: 0.3776
+          y: 0.4012
+          width: 0.3174
+          height: 0.1994
+      Arrows:
+        - Point:
+            - 0.5154296875
+            - 0.5021809895833333
+          Text: acute myocardial infarction
+          HideArrow: true
+        - Point:
+            - 0.19062966145983146
+            - 0.29104136824782123
+          Text: subacute myocardial infarction
+          HideArrow: true
+
+
+    - Name: Coagulative Necrosis
+      Group: H&E
+      Description: |
+        A high magnification view of the myocardial wall shows a region with hypereosinophilic 
+        and thinned myocytes starting to undergo coagulative necrosis. 
+        
+        Numerous neutrophils fill the interstitial space between the myocytes. 
+        
+        Acute inflammation is a feature that is characteristic of an acute myocardial 
+        infarction (approximately 7-10 days).
+      Zoom: 2.0946
+      Pan:
+        - 0.5005
+        - 0.4880
+      Overlay:
+        x: 0.3776
+        y: 0.4012
+        width: 0.3174
+        height: 0.1994
+      Arrows:
+        - Point:
+            - 0.5215865151900161
+            - 0.49676335261092014
+          Text: neutrophils
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.5364913488537837
+            - 0.4726751991956371
+          Text: early coagulative necrosis
+          HideArrow: true
+        - Point:
+            - 0.5108117424594032
+            - 0.49381298350758024
+          Text: relatively viable myocytes
+          HideArrow: true
+        - Point:
+            - 0.5260184791892127
+            - 0.49284987151808884
+          Text: neutrophils
+          HideArrow: true
+        - Point:
+            - 0.5327227677875132
+            - 0.4712468681629986
+          Text: karyolysis
+          HideArrow: false
+      Polygon: >-
+          AwOgrAzAbAnAHAGlAFismAmJ5pkSqMARmG0igywMnxymCpFTDEcjAHYJtmOiyILZD0JwoA1o1T1a7YBxFQI-UJGQdhBKPQHJkKptphhdRKVC4nVECDFIEOO64IUO7AiBm4E4yNjYYRODBNHAxCIK4BDGArQ0wDSCI4GBEYPQEiDld42EyKHg5gYETldULgDOsiWwqI6oxQ9WA4WQhgGG8mPk8BeVp1IlY+5DjBmBzIYF6UDgwsvsbCr1CpkuW4LtZ4VNnlSYwJrvVBOO28vbEyQ-ruvy2bpo1y1RupDmJ7cDfC1i-zr7qELiV4wJzdPCJG6Aj5g65gmFKM43MaOKBQiYg7oWB7wHLqKDBPqBWZ8VbtDqFOa7HDTLHqDhXazTfGMyqLAaM+CLekcTo0qYQTnGM7tYg8OAMUrAbQSjr+eRSOBmBXZCVEPx9SXqzhaprKxx9YzqiZGmnIODzf7KGoSrxYpKHO0hTIQfGWwmZVB2vmZPgS9r+GIDTZEB2ecUoUOTTz+qM2jzzAPrZx4O1E5yWn3k+7Otp6emW2rWVDuyjhsAkpiWoilEIGC3JAUuJVh0VgY1RjVtCghszNtDm5VEAdzdXyASwd0dLZu5RyiwCRyAyUWpfpOXhASbQvFWdiBt81rb9yzCalGAawrGWfpVmXtrnwopSbIYqssSrN8YVG+RJv0ZnwWVQ3zTWZJS2N9NipXwyH0GUqSUOCzFRSxkKFKl2RAjVWUJV8smORxdWwlJCiUAU-FrMjYjg+ZzVhf57lRMBFxA8JOUgNg-GVQp0C4w53lGWQ-A3WY9EY9peX0B1kGUVFbAomxWWgCTI26QQuMEJ4bE0ljCmUCS426DAM3AWTYNmcJILfVl5hk-RURiRjZJhLJhPEwo2zgk5PJM7y4FZWthMrXlKhkyt8VgGAKOIMZYGgkDtjSMCzMgSLOn-SBzVgSlEogJpCU9PLjkJDs4MgEq-3KvyfEocrgMMPlMqrUtWLM9BIo+M49ACkQ0JAoS+q8bzNQcKiBrqrQ4RAhTFCzGa9K0dBaO5LQljYw0tGSWj9EUcazJHeltGKdCBkIS84JaOKWK4ypAUIYszJKEq-gECZzGIfdTWoMxt21H7-F8SL0FFS0zotUGwxECGlyZQwIaAA
+      Polygon: >-
+          AwOgrATAzAnAHAGlAFgOzIGxSeaqM5rJhg6RTISHpipkQQzDWbL0QktzaiQOkpUYAIw9cwmAJBowyGPWGoxMjHV4RgcAoIzDE64MmY7d9YMGX4tZCemro2vCRmPTU7teAmZqcYVJEYCH03OFQqJxhFXxhPQItqGCgAvTh5QRgMEJEwiOk4cxS4WkIC4hs-T2Q-BKclKWq9YRsMVtLoPJEsBrgILBbhV2rg5qcSR3yKbS8RUcnJG2IezFcRSjzquXSvWCri5JsKIeK0w+EJ6t044T6Qy4wUjTuw5DnZkVLUKJtBve5OwZgZRwEEBYCxPYwapkcFyUqxCZgcESQhMPQwsJDJi9DEMVGiVbAITTOTOGGofyoiDlXjALBVJJ42lgJKoqAPGGBVGUOKGNooKFKGFQU4CsAuYVGVEs7ZI6B3TJ+GESDaxanKsAK-CEwaqvxvczIC7wISomBQs1QBkIs34M3QGF0rEgxHAUQKrQ6uDG7hg6ANeDCA2MEmxArCpUC-CywwaVHamGXeMlZmoLUS2lYVVWGGtUN+bJEqB6uy09zKc1Ssvmx1EjHCaZIoOu33C4sYg60iiF7iEq09lFd2L1g2vHvmRNV8BE4e0tAxr68uSFtON4CQMHuMG0A1CMGtQlKQtZXkUsRIinHr7k5DnulTi9hTlP2l+V20QkgwuyNdJNeQA1YjXOQAU0QlKDeINBmFC0nEUA0oE7LwIEpWlGERG4KRhalGwJV0NHPURKA1AFXjvINSKFWkiQBJFC0MDCgTvN1cPFCt4FlBsoDmLYHwbWdpA4lIj1RLRIPwfNEIqddRInJx9njdkKm4eM6RsKJtjkVpOMkAMMBQsxakEoEAg0DhuXgMwg2lQwzAEuQjVlFDgm5TQFHcNlxXYOMBW488GEsgUOnobiGQ0RFoA5AV-AioxVUGRtqQoVEiVWaksIFddEtoVVCnoGV4QWdQs3hKjcFUSEoDSs9SjSRL6lqjz1DTP4jMgfVPhTXBuB43InLE0pVGyYImvyDAjXoEESTE-ymGmzVOkYJl8iBRKkj2JFZq8lBvRU9RYmWbbcDDUpKGGk1SlgN5GFFSZwjIKq5MmJCgUNdpMge8xpogUtwEezTenRXh-tKPQnPNPZzlM81epuaG7R28FFqhC4CgzY7wVKN1zuW6pzEWkEeK+RhJqkwRQXoNMLjTD5mom8m+kp8zyaB8rArcL5EtUIZ3CyegHiqdwfGK4WOZ+-n2x0EF+Z8txxtM3QNnwVDypuagWUWxX1f5cq3XVl6OCYdXWY3MqiFZdQSE09AMCc1aWFefLrMEI1rpAh3ErQEkaDd4iXdkehKEsYhkCAA    
+      Polygon: >-
+        AwOgrALMDM0DSggdgBxLA80CcbPOwEZ5QwcwAmfJbMbTM7YANmu3YehRQ0RWEKtSXLvn4QSWJMxRjgKSWSQV6fQoQidmzTWrDAt0XSAgpCSJJzApjpisGNlIQkygoVeWfbbcQXZCDBPO2ZFWDw+FUdYUT5oQlUsCm4xIzCKP1SyTkFZOPQc6Es+KCphQmBE0wkyrHkXaqDOBwabbGK6wmCeCFqyYGBa0zBmRMpcQjFmCoYVZgM+HTGVeKnaWaYO0yRoBfBk5TFpPP2FE9Mzf2TgLe4R2dQ9i6YHiEm+bA8H+TFaDsptA0mDNSBRQlUmEZZvNbExRrMRkMiIQTpQwIJ8EQkO99oFgp9CH0MvZMRQcLMuEiKNiKUVMfEiQd6RJZhlYdAZLMUfioMt1EC-J5KDdJBBaO5Zg5RbRsqCBDixXQcejcE9sKE9irKJjmNIGAlYiZ2jB9UxYeghSjOYh2u19fwtrhevqLECUKEXdB8ShPvrmPcbdgxX7gPinfqgmMBmSIxLSANmH0NBFwAIfqQNPMGAJTPrApqBDo8w5s-YkxzlYMYxn4gWPMrCbLU8kxoSKJX4o51EHs7B-OoWfGOaiKrhe+sMyw+lKuw5HA4A+AKtTs8h+wnV+7s+qo5R50HUaG3tmfbvDvG0IfrNP3dO6Dfktm6FH+IoWOnU+go4np9j-ixYGzXVvyzeN-UrGR-w1bNsUPaYCyQXN42vGCFCfQdUzcIVQwxC9tXjZA33df8IGPC8eF7Cxt0NfRoBXeN2mwlRsPYN8wX+CpiFLDl9Rgf97E1Coi3jQRW3kbDiAbdRsMqJMujfFgOISadQw49xD1DQTkn8AYdn1XZ5wqEcDOzcwR2SecPEURt+P4fUMjfDkk3sRyUgzFEC16ayNGwvxBPUf99EtSodJGayAKAlFeK+MCmgYnswLQhi9PjJATQYpt9EQw8iEPVAXzsi8vRPUiTwo1K7Qy-8dmndhqtDXjzCAtyl0UoDAl4l4wPbfUunnEZLTJAsyAbalsP0QS6OnZBLRwN8JEtCR5ygBtkA7MAOLIHT4msjbLKSpdE346w-RS5sEk9CS9QzGg3zbe1H3jG4Rx4FSNtNBqnvUU1kExHdJRYP7ALlYGjSYIV7Hwo1uCJCpYRsf521A6GotBDJ8XQVF3DHG1lERjlYVGZUMiam1-SxvxCYu0ELkxOgIZVOng1BSBHRGhFUDpjRoXem0xWJ7E1T8AWobFCRFGpH1MSgCXfHpGhZh9JEjER7BdnpdXQVoBVPgS-ZcCpOK6kqUlVmEFh8W5ZoOBtLpUU7NVKmVeJpkxQZohRWFdM4exbnYaIyW6dp0iN0w1ftiyxB9aJ4luBQxlgejXDcPo+yqNAuqwN5bldTg7COTJhH0dOdjCAaphTLa6KmassH9dPrE1DkiDEAFODS842iFIozdcGp29KkoS2EMwngURDOHddOvVT7hp+K4RPlFBQBE4bWxA8BPcG6dxlSgQYxASRxSmXnyGCgDq+Eqf4L87wYxlvtg9cgI82EH8AL9sfLgCAA
+
+    - Name: Granulation Tissue
+      Group: H&E
+      Description: |
+        At high magnification, loosely arranged collagen and abundant capillaries can be 
+        seen in a region that is characterized as granulation tissue. This is a pattern 
+        of healing that occurs one to two weeks after a myocardial infarction. 
+        
+        Within this highly vascularized tissue are scattered viable myocytes with 
+        vacuolization of the cytoplasm suggestive of stunned myocardium with aberrant 
+        ionic regulation and water accumulation. 
+        
+        Also interspersed are scattered macrophages with hemosiderin pigment 
+        suggestive of prior hemorrhage. 
+        
+        Ultimately the granulation will undergo replacement fibrosis to produce a 
+        long-term scar (after six weeks).
+      Zoom: 5.0016
+      Pan:
+        - 0.1812
+        - 0.2900
+      Overlay:
+        x: 0.1339
+        y: 0.2587
+        width: 0.1095
+        height: 0.076
+      Arrows:
+        - Point:
+            - 0.16867047710672525
+            - 0.29967037982167394
+          Text: myocyte with cytoplasmic vacuolization
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.19195271301959557
+            - 0.28618511612565667
+          Text: macrophages with hemosiderin
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.19061650918322512
+            - 0.29107162015319304
+          Text: macrophages with hemosiderin
+          HideArrow: false
+        - Point:
+            - 0.18410880911826427
+            - 0.2942079823068317
+          Text: macrophages with hemosiderin
+          HideArrow: false
+        - Point:
+            - 0.16874667920941364
+            - 0.28193244154737407
+          Text: myocytes with vacuolation
+          HideArrow: true
+        - Point:
+            - 0.18220630764007295
+            - 0.28769506574035597
+          Text: capillaries
+          HideArrow: false
+        - Point:
+            - 0.1765377880868241
+            - 0.2870827271407265
+          Text: capillaries
+          HideArrow: false
+        - Point:
+            - 0.1683175186666037
+            - 0.2935771681823759
+          Text: capillaries
+          HideArrow: false
+        - Point:
+            - 0.17354309164244466
+            - 0.2928250600908681
+          Text: fibroblasts
+          HideArrow: false
+        - Point:
+            - 0.1674406580287373
+            - 0.2960049663814187
+          Text: fibroblasts
+          HideArrow: false
+        - Point:
+            - 0.1742767981711832
+            - 0.28849164590637855
+          Text: fibroblasts
+          HideArrow: false
+        - Point:
+            - 0.18157127010322924
+            - 0.2933512081959808
+          Text: residual viable myocytes
+          HideArrow: false
+        - Point:
+            - 0.17291759654531313
+            - 0.2968946983973222
+          Text: residual viable myocytes
+          HideArrow: false
+        - Point:
+            - 0.19348255852078933
+            - 0.2868395929619313
+          Text: granulation tissue
+          HideArrow: true
+        - Point:
+            - 0.12948205236788332
+            - 0.31175289013676705
+          Text: granulation tissue (2-3 weeks old)
+          HideArrow: true
+      Polygon: >-
+        AwOgTGDsBsCcA0ox1sR4wFYxqZYwALOhAMxgCMJ+RJFqk1BxSF0kYTBdmmL4NfpSgI8zOsAqcx2EsAAckKmPmk5vUQIrBNOQpWoVCy8MDDHDsTHOCQ1eZPPT15sewNKZNL6Cail2Z1hITEY8QiUg6GhcAV4Tel5oal9rUHpCfRTYBLdyahhY+jB8vHladNRoNIF5aHcKVyNqJudFTD9IWDAndPlMUoFgsJBG411ynTbSWxJy2T6KTF7weW0axvW5qX5G4GghNay+4EGepY2Q3zmsBMhCTFieqBWKDm650hnnJQrViNe+AMSH6D2c0EUKx6B287EIyRBISK0WqczWyIGUPkrlhmSerg44OhJFQoXBbyEOXozi85RJ9ARo2WihJ5g2yzBSDc+xp8mB4DckFey0kJIijKWQukAviNJgUNgBwaoQGJN+csI7jAw2lkuiJLW7OxWtgdQ2MX52tcr18XxJbgS0GQulgVgl9Ry6BmRFxmS9kjt6WqxxAMygIzY0RqMy+jpy0dObh+FP9pEgEfuIZmhFm6RgUlTcB+QNTmp+fJMMdI3kmIzD2La2ncYcIr0NCcoGz5wX9Ri7pDpoG9Pb6j2bBEio8HoYIATa7Fi3ogbS6JuCbdQlNgfr6wWl2pyEtQ04PjyCUn3rvT58CQ4Iy8qGX9tle3WQvZwQRzlck9y-EN7P9KmqOtJE5UZgjnO8KG+SpynHbRclcRlvUJSor2feE5AoRp7RHUxGkZU8tTMFkuVQEjNRqK0QxwR4FS6EY6PqNUoNMGITRoOR8BdJ0hFsVEuV4JiFB6MVXDkbEnm3AskB0akuQCEjXUpbUmO0J1WR3cAcO0VkljoIxL0aLUcIbLkcKeC8FWADo6GQajrV0GCvDmHIrJzfFFFMh4vLE1hsCxe4rIOQ56n3Ng1jmUI-DeBRotIIQ3hiOYHliw1PjPVh5AiT5uGy-DniynS922XKkBwZoQVEkg6MOU5qMoAC8G6RqSiYoUsIq7UiPTfUKrTToDj8cxcLwLwnnMA5qA6XRzCFahW33LBzEW2zapi6gviEZAqoEKARoOfcOBg2q4CEJR3wqpQOtspj-Go-AcKAA
+      Polygon: >-
+        AwOgjA7AbMCsA0oBMAOYBmFjwVgTim1WDCW0ljSIjwgnNyi2RtmAdlnpb3QBYOfdjzADQFJGJBIawKRWB5qKPMxx8aylAnEQ+MZdAZ8+YZU2NJ0567qFkW2nTkzOZKDQ3QHHfWy-1lIS85ZXRhHFQpdxkGSQdpCBR+OMUwwl0wWGik4MyssIjIYE1HJATi1GVyhmBgNRiKqDxs6qa8JCUyppRtavkmPWrucCYwf3dvcigaEfc+JugzRx9RvQj3CGW1pDckqnEoJhyVfzAjrmo8UMP8DMS8UWmuCZpJab5eK9gzqD4Dh6UD5Ani4D7vZBoEgfUhENDjabeOZoWDbc7oVFw4BQZzopAbFBgEqI4mQ8YDToJVDne7ndxw-FFKAyaIoSS05lDSGdX6oZHodBNTpuZKtQ7hBrJXqImqQhZNfgEvgg0beEVsX5CAmcDkLSX4NF-f5wqAFQ4abaoP6-WBIe5W6W3fBwiCk0Ywe0oCAQ90QCZewKHJhdaRezGHP3I6BM3Ahvmrc5oVl6X4ef3ejkBl1uxMqE14AaPSVHEPnXginEjMvNE0C6aqT2m2mum6hmC412wT2UCqurZwrjyLZm0NdqtbY2QzhDxMDhapKnaJBo70pOVfXS7ZH6UvegFRZUhOMec5eKxwoTN-iL9AdLwoT2YIrrY-eZsmS2ilfKx8mYx5yFBTOXAiThcJd1tSVOiHbJWVQYCuygmtdC4Y9dl3GBPysccYDQn1ICbBk4AYZlP0gDDZVDLIKJFcYO2ZWj6hIn1qTqEjICxNkgA
+      Polygon: >-
+        AwOgjArAHAbAzAGlAJgJzRk8EDsxVZoRgAsWk8yhqJs5EEyZKNUiokJcmLJOE9OKmDU+7bMiaia9fDxBEwBDiVRRmC9HCjlatahBhUVOVQZgCV8ZZuiXwJYjmowwxhyWDu08e6TQiLDD6KmA48j44OirAcGDUOELk2qg2aDio4mDcUGlqEIHgcCQkEalg8tnFGmjo8RxwyPxYcMDAbsnIwNEgrcAwPdlgwBqtpIXZXj1jbOS17q1dlWhhLV5JHMhszqCLqXPh9q3Vc8E7vSPdc4xHI1D14JIwNq1Gg8ik4q04FXP9D99XOQwFAfmsoMRgeEFvh2sDggC5DYwJAoAthtlgRAuC1hnxgbRCnF+hMUTjdijUOdhuhznE0INuuhcXBtORulsWThqcBTNNSIZ2RY6ZA4H5gIYvhUuuyxLjnho8ZBcVFkbEYCKoOp2elceh3Bjni0unAeW15I1hvJ8OgLR9uFgbf1jZIHvh1C9kGL3O6msaSKtQPgotNkMQfVSIF9kPA3VTisacF7HfHRk0tSnEgCVnHTNG1IV3XDdq1ySB3SQFsSeu6qS04gMU6x6yb2V5Ro0zBx2mgWyidWCSyCsrECvXUbKrkPk93StNWtru4wXq0IGq7PXYoreSNjfH2Um6T5Kt1WnvSuyqaHUEpgSNPcJKjSj7lFW54MbQYMqnbYG-HNG6jUpAIKfviHCQIOvRbBs4BhCUiaoAaw5HE04TAje0bhKSqQLDG+ybHcxowCRcxuKGCJzFsoYYNcHz+gRjwbrsTBdo8JF2p4ExNJCLHcA85GssaDZzLkqExtxdQuvgyRtJ6FQCaWqHZNScTYsa3QTKya56hmDQBkcSjNPpmR6sEyRrgCShGMkwT8jQiraMqFLCIpmRWaCWRCPcuKwFkni-BSEKKgGUS+QmKhoSqdYqGpKphbFpkUqYIWqCKeATI4jjyhCuj8Pyby6BCUrQAaqi9hSUbIqoMiVYF2BhCKJQTIwF4UtogxRh07WwaKiQsjJHDYmiuJMNSDCChSkgtQM6JhAauCzBS5H0BCRI0lklkirEyJrrxFxUpUa5QESTLIjAbR0t0zngBdgYXCl5AXWW3xshwF2NrsO5+BdPlfRYP3umsx1PSiXwSme71uODtAGq4M4XEIcPQ2srKDK4-ZfauT02msYbUh9twguj7RE4N2CoBqayjvQSGFLUIQU+TtRTkz9NqP1Q3CD06RLUzPPxp13MuHpFPDC42hAA
+
+

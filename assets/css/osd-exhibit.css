@@ -1,9 +1,110 @@
-body {
+  body {
     background: black;
   }
-  
- /* position: absolute; top: 0; bottom: 0; width: 100%; */
-#openseadragon1 {
+
+  html {
+    scrollbar-face-color: #646464;
+    scrollbar-base-color: #646464;
+    scrollbar-3dlight-color: #646464;
+    scrollbar-highlight-color: #646464;
+    scrollbar-track-color: #000;
+    scrollbar-arrow-color: #000;
+    scrollbar-shadow-color: #646464;
+    scrollbar-dark-shadow-color: #646464;
+  }
+  ::-webkit-scrollbar { 
+    width: 8px;
+    height: 3px;
+  }
+  ::-webkit-scrollbar-button {
+    background-color: #666;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #646464;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background-color: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: #666;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-corner {
+    background-color: #646464;
+  }
+  ::-webkit-resizer {
+    background-color: #666;
+  }
+
+  #sidebar-menu {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-left: 0px;
+    width: 400px;
+    left: 3px;
+    top: 4rem;
+  }
+  #sidebar-menu.toggled {
+    margin-left: -366px;
+  }
+
+  #legend {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  input[type="range"] {
+    transform-origin: left;
+    transform: rotate(270deg);
+  }
+
+  #z-slider-legend {
+    padding-top: 127px;
+    padding-left: 7px;
+    height: 140px;
+    width: 15px;
+  }
+
+  #channel-groups-legend {
+    width: 200px;
+  }
+
+  #legend.toggled {
+    margin-right: -200px;
+  }
+
+  #sidebar-menu .open-sidebar {
+    display: none;
+  }
+  #sidebar-menu .close-sidebar {
+    display: inline;
+  }
+  #sidebar-menu.toggled .open-sidebar {
+    display: inline;
+  }
+  #sidebar-menu.toggled .close-sidebar {
+    display: none;
+  }
+
+  #legend .open-legend {
+    display: none;
+  }
+  #legend .close-legend {
+    display: inline;
+  }
+  #legend.toggled .open-legend {
+    display: inline;
+  }
+  #legend.toggled .close-legend {
+    display: none;
+  } 
+  /* position: absolute; top: 0; bottom: 0; width: 100%; */
+  #openseadragon1 {
     /* position: absolute;
     top: 0;
     left: 0;
@@ -14,6 +115,14 @@ body {
     /* border: 1px solid #444; */
   }
   
+  .openseadragon-canvas canvas {
+    z-index: -2;
+  }
+
+  .openseadragon-canvas svg {
+    z-index: -1;
+  }
+
   .overlap {
     position: relative;
     pointer-events: none;
@@ -29,7 +138,7 @@ body {
   }
   
   .bg-trans {
-      background: hsla(0, 0%, 0%, 0.5);
+      background: hsla(0, 0%, 0%, 0.8);
   }
 
   .bg-black {
@@ -60,7 +169,6 @@ body {
   .nav-color-dark {
       color:  #495057 !important;
   }
-  
   .green {
       color: palegreen;
   }
@@ -161,7 +269,7 @@ body {
       /* height: 100%; */
   }
   
-  #story-content code {
+  .waypoint-content code {
       color: inherit;
       /* font-family: sans-serif; */
   }
@@ -274,3 +382,62 @@ body {
     position: fixed;
     z-index: 999;
 }
+
+polygon {
+    fill: rgba(70, 130, 180, 0.0);
+    stroke: white;
+    stroke-width: 2px;
+    vector-effect: non-scaling-stroke;
+}
+
+.matrix-label {
+    font-size: 10px;
+    color: white;
+    fill : white;
+}
+
+.matrix-row-label {
+    font-size: 10px;
+    color: white;
+    fill : white;
+}
+
+.colorLegend{
+    font-size: 8px;
+    color: white;
+    fill : white;
+}
+
+.tooltip {
+    position: absolute;
+    margin-top: 3px;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: black;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.bar {
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: #a6cee3;
+}
+
+.axis--x path {
+    display: none;
+}
+
+/*polygon:hover{*/
+/*    fill: rgba(70, 130, 180, 0.1);*/
+/*    stroke: red;*/
+/*    stroke-width: 2px;*/
+/*    vector-effect: non-scaling-stroke;*/
+/*}*/

@@ -1,0 +1,46 @@
+Exhibit:
+  Name: Left Circumflex Artery
+  Images:
+    - Name: i0
+      Description: 'Left Circumflex Artery'
+      Path: https://s3.amazonaws.com/www.cycif.org/rashid-perspective-MI-2019
+      Width: 92310
+      Height: 74916
+      MaxLevel: 7
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+    - Path: '477618'
+      Name: H&E
+      Colors:
+        - 8233CC 
+        - FF8080
+      Channels:
+        - Hematoxylin
+        - Eosin
+  Stories:
+  - Name: ''
+    Waypoints:
+    - Name: Overview
+      Group: H&E
+      Description: |
+        Description here
+      Zoom: 0.605
+      Pan:
+        - 0.605
+        - 0.467
+      Arrows:
+        - Point:
+            - 0.6401000684001412
+            - 0.39503996568620575
+          Text: >-
+            gruel-like atheroma (cholesterol rich)
+            with foamy macrophages
+          HideArrow: false
+        - Point:
+            - 0.6045196041559577
+            - 0.350768378679699
+          Text: nerve
+          HideArrow: false
+          Angle: 240
