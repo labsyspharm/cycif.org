@@ -1373,7 +1373,7 @@ HashState.prototype = {
         overlay = this.stories[s].Waypoints[w].Overlays[o];
       }
       el = indices.join('-');
-      this.addOverlay(overlay, el);
+      this.addOverlay(overlay, el, s, w);
     }, this)
 
     const THIS = this;
@@ -1686,11 +1686,6 @@ HashState.prototype = {
     }, []);
   },
 
-  isCurrentOverlay: function(el) {
-    const substr = '-overlay-' + this.s + '-' + this.w;
-    return el.includes(substr);
-  },
-
   /*
    * Display manaagement
    */
@@ -1813,12 +1808,12 @@ HashState.prototype = {
     }
   },
 
-  addOverlay: function(overlay, el) {
+  addOverlay: function(overlay, el, s, w) {
 
     const current = this.viewer.getOverlayById(el);
 
     const not_outline = (this.waypoint.Mode != 'outline');
-    const not_current = !this.isCurrentOverlay(el);
+    const not_current = (this.s != s || this.w != w);
 
     if (not_outline && not_current) {
       if (current) {
