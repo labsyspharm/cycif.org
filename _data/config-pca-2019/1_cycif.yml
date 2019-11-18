@@ -1,5 +1,7 @@
 Exhibit:
   Name: Patient 2 - Melanoma in situ, invasive and polypoid melanoma
+  Header: Biopsy from Patient 2 containing regions of melanoma in situ, invasive melanoma with PDL1+ border and polypoid melanoma.
+  PixelsPerMicron: 1.5385
   Images:
   - Name: i0
     Description: Patient 2 - Melanoma in situ, invasive and polypoid melanoma
@@ -88,23 +90,7 @@ Exhibit:
     Name: PDL1-Macrophage
     Path: PDL1-Macrophage_0__DNA--5__CD163--15__PDL1
   Stories:
-  - Name: Overview
-    Description: null
-    Waypoints:
-    - Zoom: 0.4803
-      Pan:
-      - 0.4357
-      - 0.4513
-      Group: Architecure panel
-      Name: The Waypoint
-      Description: Biopsy from Patient 2 containing regions of melanoma in situ, invasive melanoma with PDL1+ border and polypoid melanoma.
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-  - Name: About
-    Description: null
+  - Name: ''
     Waypoints:
 
     - Name: Melanoma in situ

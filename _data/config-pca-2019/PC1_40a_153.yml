@@ -1,5 +1,7 @@
 Exhibit:
   Name: Patient 1 - Melanoma with precursor fields
+  PixelsPerMicron: 3.0769
+  Header: t-CyCIF analysis of biopsy from Patient 1 that contains examplars of early melanoma progression.
   Images:
   - Name: i0
     Description: Patient 1 - Melanoma with precursor fields
@@ -68,22 +70,7 @@ Exhibit:
     Name: Immune
     Path: Immune_0__DNA--21__CD163--10__Langerin--14__CD3D--15__CD20--11__MART1
   Stories:
-  - Name: Overview
-    Description: null
-    Waypoints:
-    - Zoom: 0.4001
-      Pan:
-      - 1.116
-      - 0.4555
-      Group: Architecure panel
-      Name: The Waypoint
-      Description: 't-CyCIF analysis of biopsy from Patient 1 that contains examplars of early melanoma progression.'
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-  - Name: About
+  - Name: ''
     Description: null
     Waypoints:
 

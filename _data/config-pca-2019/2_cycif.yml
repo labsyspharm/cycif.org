@@ -1,5 +1,7 @@
 Exhibit:
   Name: Patient 2 - Inflammatory regression and brisk TILs
+  Header: Biopsy from Patient 2 containing a region of invasive melanoma surrounded by a brisk TIL response near a site of immune regression.
+  PixelsPerMicron: 1.5385
   Images:
   - Name: i0
     Description: Patient 2 - Inflammatory regression and brisk TILs
@@ -72,22 +74,7 @@ Exhibit:
     Name: PDL1-Macrophages
     Path: PDL1-Macrophages_0__DNA--15__PDL1--5__CD163
   Stories:
-  - Name: Overview
-    Description: null
-    Waypoints:
-    - Zoom: 0.6017
-      Pan:
-      - 0.693
-      - 0.3975
-      Group: Architecure panel
-      Name: The Waypoint
-      Description: Biopsy from Patient 2 containing a region of invasive melanoma surrounded by a brisk TIL response near a site of immune regression.
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-  - Name: About
+  - Name: ''
     Description: null
     Waypoints:
     - Name: Invasive melanoma with brisk TILs
@@ -123,7 +110,7 @@ Exhibit:
       Group: Architecure panel
       Description: >-
         Here we see melanoma in situ with a
-        brisk response of CD3-positive T cells
+        brisk response of `CD3D`-positive T cells
         within the underlying papillary dermis
         but without prominent condensation at
         the dermo-epidermal junction and with
@@ -132,7 +119,7 @@ Exhibit:
         abundant within the lesion. The CD4:CD8
         ratio is approximately 1:1 with even
         dispersion of both populations within
-        the dermis; FOX3P-positive T regulatory
+        the dermis; FOXP3-positive T regulatory
         cells are also present and scattered.
         Here, PD-L1 expression is again most
         prominent on dermal histiocytes and
