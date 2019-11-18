@@ -3,7 +3,7 @@ Exhibit:
   Header: |
     Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
   Footer: |
-  PixelsPerMicron: 3.0679
+  PixelsPerMicron: 3.0769
   Images:
     - Name: i0
       Description: 'Lung 3 - Du, Lin, and Rashid et al., Nature Protocols, 2019'
