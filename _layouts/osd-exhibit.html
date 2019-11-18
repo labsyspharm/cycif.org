@@ -55,19 +55,14 @@
             </div>
             <div id="sidebar-menu" class="container position-absolute">
                 <div class="row">
-                    <div class="col-11 bg-trans waypoint-content" style="max-height: 80vh; overflow-y: scroll">
-                        <h3 id="imageName" class="m-1 text-center font-weight-bold">
-                        </h3>
+                    <div class="col-11 bg-trans waypoint-content p-3" style="max-height: 80vh; overflow-y: scroll">
                         <div class="row">
-                            <div class="col-2">
-                                <div class="btn" id="waypointCount">
-                                </div>
-                            </div>
-                            <div id="waypointName" class="p-3 col-8 text-center font-weight-bold">
+                            <div class="col-10">
+                                <h3 id="imageName" class="m-0"></h3>
                             </div>
                             <div class="col-2">
                                 <a class="btn text-light d-none" id="home-button"
-                                   href="/data">
+                                    href="/data">
                                     <i class="fas fa-home"></i>
                                 </a>
                                 <a class="btn text-light d-none" id="toc-button">
@@ -75,7 +70,8 @@
                                 </a>
                             </div>
                         </div>
-                        <div id="waypointControls" class="row align-items-center">
+                        <hr>
+                        <div id="waypointControls" class="row align-items-center my-4">
                             <div class="col-2 text-center" id="leftArrow">
                                 <i class="fas fa-arrow-left" style="font-size: 25px"></i>
                             </div>
@@ -88,9 +84,15 @@
                                 <i class="fas fa-arrow-right" style="font-size: 25px;"></i>
                             </div>
                         </div>
+                        <!-- <hr> -->
+                        <div class="row">
+                            <div id="waypointName" class="col-10 h6 mt-0 mb-3">
+                            </div>
+                            <div id="waypointCount" class="col-2"></div>
+                        </div>
                         <div id="viewer-waypoint">
                         </div>
-                        <div class="mb-3">
+                        <div>
                             <p id="channel-label" class="mb-1 font-weight-bold pt-2">Select a marker group:</p>
                             <select id="group-picker" class="editControls selectpicker" multiple>
                                 {% for group in exhibit.Groups %}
