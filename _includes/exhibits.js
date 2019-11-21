@@ -1267,9 +1267,6 @@ HashState.prototype = {
       'tag': this.active_masks.filter(mask => mask.Name).map(mask => mask.Name),
     }[mode];
 
-    console.log(this.m)
-    console.log(this.active_masks)
-
     return {
       Mode: mode,
       Description: '',
