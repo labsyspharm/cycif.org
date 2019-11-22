@@ -15,10 +15,6 @@ const show5 = function(n) {
   return ('' + n).slice(0, 5);
 };
 
-const modulo = function(i, n) {
-  return ((i % n) + n) % n;
-};
-
 const remove_undefined = function(o) {
   Object.keys(o).forEach(k => {
     o[k] == undefined && delete o[k]
@@ -835,7 +831,7 @@ HashState.prototype = {
   },
   set drawing(_d) {
     const d = parseInt(_d, 10);
-    this.state.drawing = modulo(d, 3);
+    this.state.drawing = d % 3;
     this.newView(false);
   },
 
@@ -892,7 +888,7 @@ HashState.prototype = {
   set g(_g) {
     const g = parseInt(_g, 10);
     const count = this.cgs.length;
-    this.state.g = modulo(g, count);
+    this.state.g = g % count;
   },
 
   /*
@@ -908,7 +904,7 @@ HashState.prototype = {
   set w(_w) {
     const w = parseInt(_w, 10);
     const count = this.waypoints.length;
-    this.state.w[this.s] = modulo(w, count);
+    this.state.w[this.s] = w % count;
 
     // Set group, viewport from waypoint
     const waypoint = this.waypoint;
@@ -938,7 +934,7 @@ HashState.prototype = {
   set s(_s) {
     const s = parseInt(_s, 10);
     const count = this.stories.length;
-    this.state.s = modulo(s, count);
+    this.state.s = s % count;
 
     // Update waypoint
     this.w = this.w;
