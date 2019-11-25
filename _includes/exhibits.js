@@ -7,12 +7,10 @@ const flatten = function(items) {
 const round1 = function(n) {
   return Math.round(n * 10) / 10;
 };
+
 const round4 = function(n) {
   const N = Math.pow(10, 4);
   return Math.round(n * N) / N;
-};
-const show5 = function(n) {
-  return ('' + n).slice(0, 5);
 };
 
 const remove_undefined = function(o) {
@@ -33,19 +31,6 @@ const decode = function(txt) {
   catch (e) {
     return '';
   }
-};
-
-const arrayEqual = function(a, b) {
-  if (a.length != b.length) {
-    return false;
-  }
-  var pairs = [];
-  for (var i = 0; i < a.length; i++) {
-    pairs.push([a[i], b[i]]);
-  }
-  return pairs.every(function(p) {
-    return p[0] == p[1];
-  });
 };
 
 const dFromWaypoint = function(waypoint) {
