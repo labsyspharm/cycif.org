@@ -1,12 +1,18 @@
 Exhibit:
   Name: LUNG_3
   Header: |
-    Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
+    An interactive tour of squamous cell lung cancer.
+    
+    The tissue consists of a primary lung tumor and adjacent normal lung epithelium surgically resected from a 44 year old female patient.
+    
+    Multiplexed images of immune markers were generated using tissue-based cyclic immunofluorescence (t-CyCIF) with a 40X/0.6NA objective.
+    
+    Note that the immunofluorescence signal for some markers (Keratin, IBA1, etc.) in this dataset are overexposured.
   Footer: |
   PixelsPerMicron: 3.0679
   Images:
     - Name: i0
-      Description: 'Lung 3 - Du, Lin, and Rashid et al., Nature Protocols, 2019'
+      Description: 'Primary Lung Cancer [Minerva 003]'
       Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3
       Width: 14448
       Height: 11101
