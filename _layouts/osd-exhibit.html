@@ -373,7 +373,16 @@
         {% include polly-speak.js %}
     </script>
     <script>
-        {% include exhibits.js %}
+        {% include exhibits/state.js %}
+    </script>
+    <script>
+        {% include exhibits/render.js %}
+    </script>
+    <script>
+        {% include exhibits/osd.js %}
+    </script>
+    <script>
+        {% include exhibits/main.js %}
     </script>
     <script>
         const exhibit = {{ exhibit | jsonify }};
