@@ -1549,7 +1549,7 @@ HashState.prototype = {
     var selected = this.g === g ? true : false;
     aEl = Object.assign(aEl, {
       className: selected ? 'nav-link active' : 'nav-link',
-      style: 'padding-right: 40px; position: relative;',
+      style: 'padding-right: 40px;',
       href: 'javascript:;',
       innerText: group.Name,
       title: group.Path,
