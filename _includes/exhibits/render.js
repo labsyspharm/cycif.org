@@ -1,9 +1,3 @@
-const flatten = function(items) {
-  return items.reduce(function(flat, item) {
-    return flat.concat(item);
-  });
-};
-
 const round1 = function(n) {
   return Math.round(n * 10) / 10;
 };
@@ -31,59 +25,6 @@ const decode = function(txt) {
   catch (e) {
     return '';
   }
-};
-
-const dFromWaypoint = function(waypoint) {
-  return encode(waypoint.Description);
-};
-
-const nFromWaypoint = function(waypoint) {
-  return encode(waypoint.Name);
-};
-
-const mFromWaypoint = function(waypoint, masks) {
-  const names = waypoint.ActiveMasks || [];
-  const m = names.map(name => index_name(masks, name));
-  if (m.length < 2) {
-    return [-1].concat(m);
-  }
-  return m;
-};
-
-const aFromWaypoint = function(waypoint, masks) {
-  const arrows = waypoint.Arrows || [{}]
-  const arrow = arrows[0].Point;
-  if (arrow) {
-    return arrow
-  }
-  return [-100, -100];
-};
-
-const gFromWaypoint = function(waypoint, cgs) {
-  const cg_name = waypoint.Group;
-  return index_name(cgs, cg_name);
-};
-
-const vFromWaypoint = function(waypoint) {
-  return [
-    waypoint.Zoom,
-    waypoint.Pan[0],
-    waypoint.Pan[1],
-  ];
-};
-
-const pFromWaypoint = function(waypoint) {
-  const p = waypoint.Polygon;
-  return p? p: toPolygonURL([]);
-};
-
-const oFromWaypoint = function(waypoint) {
-  return [
-    waypoint.Overlays[0].x,
-    waypoint.Overlays[0].y,
-    waypoint.Overlays[0].width,
-    waypoint.Overlays[0].height,
-  ];
 };
 
 const clearChildren = function(node) {
@@ -199,34 +140,6 @@ const unpackGrid = function(layout, images, key) {
   }, {image_map: image_map});
 };
 
-const serialize = function(keys, state, delimit) {
-  return keys.reduce(function(h, k) {
-    var value = state[k] || 0;
-    // Array separated by underscore
-    if (value.constructor === Array) {
-      value = value.join('_');
-    }
-    return h + delimit + k + '=' + value;
-  }, '').slice(1);
-
-};
-
-const deserialize = function(entries) {
-  const query = entries.reduce(function(o, entry) {
-    if (entry) {
-      const kv = entry.split('=');
-      const val = kv.slice(1).join('=') || '1';
-      const vals = val.split('_');
-      const key = kv[0];
-      // Handle arrays or scalars
-      o[key] = vals.length > 1? vals: val;
-    }
-    return o;
-  }, {});
-
-  return query;
-};
-
 const newCopyYamlButton = function(THIS) {
   const copy_pre = 'Copy to Clipboard';
   const copy_post = 'Copied';
@@ -240,7 +153,7 @@ const newCopyYamlButton = function(THIS) {
 
   $(this).click(function() {
     $(this).trigger('relabel', [copy_post]);
-    ctrlC(THIS.bufferYaml);
+    ctrlC(THIS.hashstate.bufferYaml);
     setTimeout((function() {
       $(this).trigger('relabel', [copy_pre]);
     }).bind(this), 1000);
@@ -271,53 +184,36 @@ const newCopyButton = function() {
   });
 };
 
-const HashState = function(exhibit, options) {
+const Render = function(hashstate, osd) {
 
-  this.trackers = [];
-  this.pollycache = {};
-  this.embedded = options.embedded || false;
+  this.trackers = hashstate.trackers;
+  this.pollycache = hashstate.pollycache;
   this.showdown = new showdown.Converter();
-  this.exhibit = exhibit;
 
-  this.state = {
-    buffer: {
-      waypoint: undefined
-    },
-    drawType: "lasso",
-    changed: false,
-    design: {},
-    m: [-1],
-    w: [0],
-    g: 0,
-    s: 0,
-    a: [-100, -100],
-    v: [0.5, 0.5, 0.5],
-    o: [-100, -100, 1, 1],
-    p: [],
-    name: '',
-    description: '',
-    mouseEvent: {},
-    edit: false,
-    drawing: 0
-  };
-
-  this.newExhibit();
+  this.osd = osd;
+  this.hashstate = hashstate;
 };
 
-HashState.prototype = {
+Render.prototype = {
 
   init: function() {
+
     // Read hash
-    window.onpopstate = this.popState.bind(this);
+    window.onpopstate = (function(e) {
+      this.hashstate.popState(e);
+      this.loadPolly(this.hashstate.waypoint.Description);
+      this.newView(true);
+    }).bind(this);
+
     window.onpopstate();
     if (this.edit) {
-      this.startEditing();
+      this.hashstate.startEditing();
     }
-    this.pushState();
+    this.hashstate.pushState();
     window.onpopstate();
 
     // Edit name
-    $('#exhibit-name').text(this.exhibit.Name);
+    $('#exhibit-name').text(this.hashstate.exhibit.Name);
 
     $('.modal_copy_button').each(newCopyButton);
 
@@ -340,8 +236,9 @@ HashState.prototype = {
       title: 'Clone linked view'
     });
 
-    $('#copy_link_modal').on('hidden.bs.modal', this.cancelDrawing.bind(this));
-    $('#edit_description_modal').on('hidden.bs.modal', this.cancelDrawing.bind(this));
+    const HS = this.hashstate;
+    $('#copy_link_modal').on('hidden.bs.modal', HS.cancelDrawing.bind(HS));
+    $('#edit_description_modal').on('hidden.bs.modal', HS.cancelDrawing.bind(HS));
 
     $('#toggle-sidebar').click(function(e) {
       e.preventDefault();
@@ -353,803 +250,155 @@ HashState.prototype = {
       $("#legend").toggleClass("toggled");
     });
 
-    const THIS = this;
-
     $('#leftArrow').click(this, function(e) {
-      const THIS = e.data;
-      if (THIS.w == 0) {
-        THIS.s = THIS.s - 1;
-        THIS.w = THIS.waypoints.length - 1;
+      const HS = e.data.hashstate;
+      if (HS.w == 0) {
+        HS.s = HS.s - 1;
+        HS.w = HS.waypoints.length - 1;
       }
       else {
-        THIS.w = THIS.w - 1;
+        HS.w = HS.w - 1;
       }
-      THIS.pushState();
+      HS.pushState();
       window.onpopstate();
     });
 
     $('#rightArrow').click(this, function(e) {
-      const THIS = e.data;
-      const last_w = THIS.w == (THIS.waypoints.length - 1);
+      const HS = e.data.hashstate;
+      const last_w = HS.w == (HS.waypoints.length - 1);
       if (last_w) {
-        THIS.s = THIS.s + 1;
-        THIS.w = 0;
+        HS.s = HS.s + 1;
+        HS.w = 0;
       }
       else {
-        THIS.w = THIS.w + 1;
+        HS.w = HS.w + 1;
       }
-      THIS.pushState();
+      HS.pushState();
       window.onpopstate();
     });
 
     $('#edit-switch').click(this, function(e) {
-      const THIS = e.data;
-      if (!THIS.edit) {
-        THIS.startEditing();
-        THIS.pushState();
+      const HS = e.data.hashstate;
+      if (!HS.edit) {
+        HS.startEditing();
+        HS.pushState();
         window.onpopstate();
       }
     });
 
     $('#view-switch').click(this, function(e) {
-      const THIS = e.data;
-      if (THIS.edit) {
-        THIS.finishEditing();
-        THIS.pushState();
+      const HS = e.data.hashstate;
+      if (HS.edit) {
+        HS.finishEditing();
+        HS.pushState();
         window.onpopstate();
       }
     });
 
     $('#toc-button').click(this, function(e) {
-      const THIS = e.data;
-      if (THIS.waypoint.Mode != 'outline') {
-        THIS.s = 0; 
-        THIS.pushState();
+      const HS = e.data.hashstate;
+      if (HS.waypoint.Mode != 'outline') {
+        HS.s = 0; 
+        HS.pushState();
         window.onpopstate();
       }
     });
 
     $('.clear-switch').click(this, function(e) {
-      const THIS = e.data;
-      THIS.bufferWaypoint = undefined;
-      THIS.startEditing();
-      THIS.pushState();
+      const HS = e.data.hashstate;
+      HS.bufferWaypoint = undefined;
+      HS.startEditing();
+      HS.pushState();
       window.onpopstate();
     });
     
     $('.arrow-switch').click(this, function(e) {
+      const HS = e.data.hashstate;
       const THIS = e.data;
-      THIS.drawType = "arrow";
-      if (THIS.drawing) {
-        THIS.cancelDrawing(THIS);
+      HS.drawType = "arrow";
+      if (HS.drawing) {
+        HS.cancelDrawing(HS);
       }
       else {
-        THIS.startDrawing(THIS);
+        HS.startDrawing(HS);
       }
-      THIS.pushState();
+      HS.pushState();
       THIS.newView(false);
     });
 
     $('.lasso-switch').click(this, function(e) {
+      const HS = e.data.hashstate;
       const THIS = e.data;
-      THIS.drawType = "lasso";
-      if (THIS.drawing) {
-        THIS.cancelDrawing(THIS);
+      HS.drawType = "lasso";
+      if (HS.drawing) {
+        HS.cancelDrawing(HS);
       }
       else {
-        THIS.startDrawing(THIS);
+        HS.startDrawing(HS);
       }
-      THIS.pushState();
+      HS.pushState();
       THIS.newView(false);
     });
 
     $('.draw-switch').click(this, function(e) {
+      const HS = e.data.hashstate;
       const THIS = e.data;
-      THIS.drawType = "box";
-      if (THIS.drawing) {
-        THIS.cancelDrawing(THIS);
+      HS.drawType = "box";
+      if (HS.drawing) {
+        HS.cancelDrawing(HS);
       }
       else {
-        THIS.startDrawing(THIS);
+        HS.startDrawing(HS);
       }
-      THIS.pushState();
+      HS.pushState();
       THIS.newView(false);
     });
 
     z_legend = document.getElementById('depth-legend');
     z_slider = document.getElementById('z-slider');
-    z_slider.max = this.cgs.length - 1;
-    z_slider.value = this.g;
+    z_slider.max = this.hashstate.cgs.length - 1;
+    z_slider.value = this.hashstate.g;
     z_slider.min = 0;
 
-    if (this.design.is3d && this.design.z_scale) {
-      z_legend.innerText = round1(this.g / this.design.z_scale) + ' μm';
+    if (this.hashstate.design.is3d && this.hashstate.design.z_scale) {
+      z_legend.innerText = round1(this.hashstate.g / this.hashstate.design.z_scale) + ' μm';
     }
 
+    const THIS = this;
     z_slider.addEventListener('input', function() {
-      THIS.g = z_slider.value;
-      if (THIS.design.z_scale) {
-        z_legend.innerText = round1(THIS.g / THIS.design.z_scale) + ' μm';
+      HS.g = z_slider.value;
+      if (HS.design.z_scale) {
+        z_legend.innerText = round1(HS.g / HS.design.z_scale) + ' μm';
       }
       THIS.newView(true)
     }, false);
 
     $('#edit_description_modal form').submit(this, function(e){
-      const THIS = e.data;
+      const HS = e.data.hashstate;
       const formData = parseForm(e.target);
       $(this).closest('.modal').modal('hide');
 
       // Get description from form
-      THIS.d = encode(formData.d);
+      HS.d = encode(formData.d);
       $('#copy_link_modal').modal('show');
 
-      const root = THIS.location('host') + THIS.location('pathname');
-      const hash = THIS.makeHash(['d', 'g', 'm', 'a', 'v', 'o', 'p']);
+      const root = HS.location('host') + HS.location('pathname');
+      const hash = HS.makeHash(['d', 'g', 'm', 'a', 'v', 'o', 'p']);
       const link = document.getElementById('copy_link');
       link.value = root + hash;
 
       return false;
     });
   },
-
-  /*
-   * Editor buffers
-   */ 
-
-  get bufferWaypoint() {
-    if (this.state.buffer.waypoint === undefined) {
-      const viewport = this.viewport;
-      return remove_undefined({
-        Zoom: viewport.scale,
-        Pan: [
-          viewport.pan.x,
-          viewport.pan.y
-        ],
-        Arrows: [{
-          Point: this.a,
-          Text: '',
-          HideArrow: false
-        }],
-        ActiveMasks: undefined,
-        Masks: undefined,
-        Polygon: this.p,
-        Group: this.group.Name,
-        Groups: undefined,
-        Description: '',
-        Name: 'Untitled',
-        Overlays: [this.overlay]
-      });
-    }
-    return this.state.buffer.waypoint;
-  },
-
-  set bufferWaypoint(bw) {
-    this.state.buffer.waypoint = bw; 
-  },
-
-  /*
-   * URL History
-   */
-  location: function(key) {
-    return decodeURIComponent(location[key]);
-  },
-
-  get search() {
-    const search = this.location('search').slice(1);
-    const entries = search.split('&');
-    return deserialize(entries);
-  },
-
-  get hash() {
-    const hash = this.location('hash').slice(1);
-    const entries = hash.split('#');
-    return deserialize(entries);
-  },
-
-  get url() {
-    const root = this.location('pathname');
-    const search = this.location('search');
-    const hash = this.location('hash');
-    return root + search + hash;
-  },
-
-  get searchKeys() {
-    const search_keys = Object.keys(this.search);
-    return ['edit'].filter(x => search_keys.includes(x))
-  },
-
-  get hashKeys() {
-    const oldTag = this.waypoint.Mode == 'tag';
-    if (oldTag || this.isSharedLink) {
-      return ['d', 's', 'w', 'g', 'm', 'a', 'v', 'o', 'p'];
-    }
-    else {
-      return ['s', 'w', 'g', 'm', 'a', 'v', 'o', 'p'];
-    }
-  },
-
-  /*
-   * Search Keys
-   */
-  set edit(_edit) {
-    this.state.edit = !!_edit;
-  },
-
-  get edit() {
-    return !!this.state.edit;
-  },
-
-  /*
-   * Control keys
-   */
-
-  get token() {
-    const username = 'john_hoffer@hms.harvard.edu';
-    const password = document.minerva_password;
-    const pass = new Promise(function(resolve, reject) {
-      if (password != undefined) {
-        resolve(password);
-      }
-      const selector = '#password_modal';
-      $(selector).modal('show');
-      $(selector).find('form').submit(function(e){
-        $(selector).find('form').off();
-        $(this).closest('.modal').modal('hide');
-        const formData = parseForm(e.target);
-       
-        // Get password from form
-        const p = formData.p;
-        document.minerva_password = p;
-        resolve(p);
-        return false;
-      });
-    });
-    return authenticate(username, pass);
-  },
-
-  get drawType() {
-    return this.state.drawType;
-  },
-  set drawType(_l) {
-    this.state.drawType = _l;
-    this.newView(false);
-  },
-
-  get drawing() {
-    return this.state.drawing;
-  },
-  set drawing(_d) {
-    const d = parseInt(_d, 10);
-    this.state.drawing = d % 3;
-    this.newView(false);
-  },
-
-  get mouseXY() {
-    const e = this.state.mouseEvent;
-    const pos = OpenSeadragon.getMousePosition(e);
-    return this.normalize(pos);
-  },
-  set mouseXY(e) {
-    this.state.mouseEvent = e;
-  },
-
-  /*
-   * Hash Keys
-   */
-
-  get v() {
-    return this.state.v;
-  },
-  set v(_v) {
-    this.state.v = _v.map(parseFloat);
-  },
-
-  get a() {
-    return this.state.a;
-  },
-  set a(_a) {
-    this.state.a = _a.map(parseFloat);
-  },
-
-  get m() {
-    const m = this.state.m;
-    const count = this.masks.length;
-    if (count == 0) {
-      return [-1]
-    }
-    return m;
-  },
-  set m(_m) {
-    if (Array.isArray(_m)) {
-      this.state.m = _m.map(i => parseInt(i, 10));
-    }
-    else {
-      this.state.m = [-1];
-    }
-  },
-
-  get g() {
-    const g = this.state.g;
-    const count = this.cgs.length;
-    return g < count ? g : 0;
-  },
-  set g(_g) {
-    const g = parseInt(_g, 10);
-    const count = this.cgs.length;
-    this.state.g = g % count;
-  },
-
-  /*
-   * Exhibit Hash Keys
-   */
-
-  get w() {
-    const w = this.state.w[this.s] || 0;
-    const count = this.waypoints.length;
-    return w < count ? w : 0;
-  },
-
-  set w(_w) {
-    const w = parseInt(_w, 10);
-    const count = this.waypoints.length;
-    this.state.w[this.s] = w % count;
-
-    // Set group, viewport from waypoint
-    const waypoint = this.waypoint;
-
-    // this.slower();
-    this.m = mFromWaypoint(waypoint, this.masks);
-    this.g = gFromWaypoint(waypoint, this.cgs);
-    this.v = vFromWaypoint(waypoint);
-    if (this.waypoint.Mode == 'tag') {
-      this.o = oFromWaypoint(waypoint);
-      this.a = aFromWaypoint(waypoint);
-    }
-    else {
-      this.o = [-100, -100, 1, 1];
-      this.a = [-100, -100];
-    }
-    this.p = pFromWaypoint(waypoint);
-    this.d = dFromWaypoint(waypoint);
-    this.n = nFromWaypoint(waypoint);
-  },
-
-  get s() {
-    const s = this.state.s;
-    const count = this.stories.length;
-    return s < count ? s : 0;
-  },
-  set s(_s) {
-    const s = parseInt(_s, 10);
-    const count = this.stories.length;
-    this.state.s = s % count;
-
-    // Update waypoint
-    this.w = this.w;
-  },
-
-  /*
-   * Tag Hash Keys
-   */
-
-  get o() {
-    return this.state.o;
-  },
-  set o(_o) {
-    this.state.o = _o.map(parseFloat);
-  },
-
-  get p() {
-    return toPolygonURL(this.state.p);
-  },
-  set p(_p) {
-    this.state.p = fromPolygonURL(_p);
-  },
-
-  get d() {
-    return this.state.description;
-  },
-  set d(_d) {
-    this.state.description = '' + _d;
-  },
-
-  get n() {
-    return this.state.name;
-  },
-  set n(_n) {
-    this.state.name = '' + _n;
-  },
-
-  /*
-   * Configuration State
-   */
-  get changed() {
-    return this.state.changed;
-  },
-  set changed(_c) {
-    this.state.changed = !!_c;
-  },
-
-  get design() {
-    return this.state.design;
-  },
-  set design(design) {
-
-    const stories = design.stories;
-
-    // Store waypoint indices for each story
-    if (this.stories.length != stories.length) {
-      this.state.w = stories.map(function(story, s) {
-        return this.state.w[s] || 0;
-      }, this);
-    }
-
-    // Update the design
-    this.state.design = design;
-  },
-
-  get masks() {
-    return this.design.masks || [];
-  },
-  set masks(_masks) {
-    var design = this.design;
-    design.masks = _masks;
-    this.design = design;
-    this.changed = true;
-  },
-
-  get cgs() {
-    return this.design.cgs || [];
-  },
-  set cgs(_cgs) {
-    var design = this.design;
-    design.cgs = _cgs;
-    this.design = design;
-    this.changed = true;
-  },
-
-  get chans() {
-    return this.design.chans || [];
-  },
-  set chans(_chans) {
-    var design = this.design;
-    design.chans = _chans;
-    this.design = design;
-    this.changed = true;
-  },
-
-  get stories() {
-    return this.design.stories || [];
-  },
-  set stories(_stories) {
-    var design = this.design;
-    design.stories = _stories;
-    this.design = design;
-    this.changed = true;
-  },
-
-  get layout() {
-    return this.design.layout || {
-      Grid: []
-    };
-  },
-  set layout(_layout) {
-    var design = this.design;
-    design.layout = _layout;
-    this.design = design;
-    this.changed = true;
-  },
-
-  get images() {
-    return this.design.images || [];
-  },
-  set images(_images) {
-    var design = this.design;
-    design.images = _images;
-    this.design = design;
-    this.changed = true;
-  },
-
-  get grid() {
-    return unpackGrid(this.layout, this.images, 'Grid');
-  },
-
-  get target() {
-    return unpackGrid(this.layout, this.images, 'Target');
-  },
-
-  get currentCount() {
-    const s = this.s;
-    const w = this.w;
-    return this.stories.reduce(function(count, story, idx) {
-      if (s == idx) {
-        return count + w;
-      }
-      else if (s > idx) {
-        return count + story.Waypoints.length;
-      }
-      else {
-        return count;
-      }
-    }, 1);
-  },
-
-  get totalCount() {
-    return this.stories.reduce(function(count, story) {
-      return count + story.Waypoints.length;
-    }, 0);
-  },
-
-  /*
-   * Derived State
-   */
-
-  get isSharedLink() {
-    const yes_d = this.hash.hasOwnProperty('d');
-    const no_s = !this.hash.hasOwnProperty('s');
-    const no_shared_link = this.stories.filter(story => {
-      return story.Mode == 'tag';
-    }).length == 0;
-    return yes_d && (no_s || no_shared_link);
-  },
-
-  get isMissingHash() {
-    const no_s = !this.hash.hasOwnProperty('s');
-    return !this.isSharedLink && no_s;
-  },
-
-  get story() {
-    return this.stories[this.s];
-  },
-  set story(story) {
-    const stories = this.stories;
-    stories[this.s] = story;
-    this.stories = stories;
-  },
-
-  get active_masks() {
-    const masks = this.masks;
-    return this.m.map(function(m) {
-      return masks[m];
-    }).filter(mask => mask != undefined);
-  },
-
-  get group() {
-    return this.cgs[this.g];
-  },
-
-  get colors() {
-    const g_colors = this.group.Colors;
-    return g_colors.concat(this.active_masks.reduce((c, m) => {
-      return c.concat(m.Colors || []);
-    }, []));
-  },
-
-  get channels() {
-    const g_chans = this.group.Channels;
-    return g_chans.concat(this.active_masks.reduce((c, m) => {
-      return c.concat(m.Channels || []);
-    }, []));
-  },
-
-  get waypoints() {
-    return this.story.Waypoints;
-  },
-  set waypoints(waypoints) {
-    const story = this.story;
-    story.Waypoints = waypoints;
-    this.story = story;
-  },
-
-  get waypoint() {
-    if (this.edit) {
-      return this.bufferWaypoint;
-    }
-    var waypoint = this.waypoints[this.w];
-    if (!waypoint.Overlays) {
-      waypoint.Overlays = [{
-        x: -100,
-        y: -100,
-        width: 1,
-        height: 1
-      }];
-    }
-    return waypoint;
-  },
-  set waypoint(waypoint) {
-    if (this.edit) {
-      this.bufferWaypoint = waypoint;
-    }
-    else {
-      const waypoints = this.waypoints;
-      waypoints[this.w] = waypoint;
-      this.waypoints = waypoints;
-    }
-  },
-
-  get viewport() {
-    const v = this.v;
-    return {
-      scale: v[0],
-      pan: new OpenSeadragon.Point(v[1], v[2])
-    };
-  },
-
-  get overlay() {
-    const o = this.o;
-    return {
-      x: o[0],
-      y: o[1],
-      width: o[2],
-      height: o[3]
-    };
-  },
-
-  /*
-   * State manaagement
-   */
-
-  newExhibit: function() {
-    const exhibit = this.exhibit;
-    const cgs = exhibit.Groups || [];
-    const masks = exhibit.Masks || [{}];
-    var stories = exhibit.Stories || [];
-    stories = stories.map(story => {
-      story.Waypoints = story.Waypoints.map(waypoint => {
-        if (waypoint.Overlay != undefined) {
-          waypoint.Overlays = [waypoint.Overlay];
-        }
-        return waypoint;
-      })
-      return story;
-    }) 
-
-    this.design = {
-      chans: exhibit.Channels || [],
-      layout: exhibit.Layout || {},
-      images: exhibit.Images || [],
-      header: exhibit.Header || '',
-      footer: exhibit.Footer || '',
-      is3d: exhibit['3D'] || false,
-      z_scale: exhibit['ZPerMicron'] || 0,
-      default_group: exhibit.DefaultGroup || '',
-      stories: stories,
-      masks: masks,
-      cgs: cgs
-    };
-
-    const outline_story = this.newTempStory('outline');
-    this.stories = [outline_story].concat(this.stories);
-    const explore_story = this.newTempStory('explore');
-    this.stories = this.stories.concat([explore_story]);
-  },
-  newTempStory: function(mode) {
-    const exhibit = this.exhibit;
-    const group = this.group;
-    const a = this.a;
-    const o = this.o;
-    const p = this.p;
-    const v = this.v;
-
-    const header = this.design.header;
-    const d = mode == 'outline' ? encode(header) : this.d;
-
-    const name = {
-      'explore': 'Free Explore',
-      'tag': 'Shared Link',
-      'outline': ' '
-    }[mode];
-
-    const groups = {
-    }[mode];
-
-    const masks = {
-      'explore': this.masks.filter(mask => mask.Name).map(mask => mask.Name),
-    }[mode];
-
-    const active_masks = {
-      'tag': this.active_masks.filter(mask => mask.Name).map(mask => mask.Name),
-    }[mode];
-
-    return {
-      Mode: mode,
-      Description: '',
-      Name: name || 'Story',
-      Waypoints: [remove_undefined({
-        Mode: mode,
-        Zoom: v[0],
-        Arrows: [{
-          Point: a
-        }],
-        Polygon: p,
-        Pan: v.slice(1),
-        ActiveMasks: active_masks,
-        Group: group.Name,
-        Masks: masks,
-        Groups: groups,
-        Description: decode(d),
-        Name: name || 'Waypoint',
-        Overlays: [{
-          x: o[0],
-          y: o[1],
-          width: o[2],
-          height: o[3],
-        }],
-      })]
-    }
-  },
-  pushState: function() {
-
-    const url = this.makeUrl(this.hashKeys, this.searchKeys);
-
-    if (this.url == url && !this.changed) {
-      return;
-    }
-
-    if (this.embedded) {
-      history.replaceState(this.design, document.title, url);
-    }
-    else {
-      history.pushState(this.design, document.title, url);
-    }
-
-    this.changed = false;
-  },
-  popState: function(e) {
-    if (e && e.state) {
-      this.changed = false;
-      this.design = e.state;
-    }
-    const hash = this.hash;
-    const search = this.search;
-    const searchKeys = this.searchKeys;
-
-    // Take search parameters
-    this.searchKeys.forEach(function(key) {
-      this[key] = search[key];
-    }, this);
-
-    // Accept valid hash
-    this.hashKeys.forEach(function(key) {
-      if (hash.hasOwnProperty(key)) {
-        this[key] = hash[key];
-      }
-    }, this);
-
-    if (this.isSharedLink) {
-      this.d = hash.d;
-      const tag_story = this.newTempStory('tag'); 
-      this.stories = this.stories.concat([tag_story]);
-      this.s = this.stories.length - 1;
-      this.pushState();
-      window.onpopstate();
-    }
-    else if (this.isMissingHash) {
-      this.s = 0; 
-      const welcome = $('#welcome_modal');
-      const channel_count = welcome.find('.channel_count')[0];
-      channel_count.innerText = this.channels.length;
-      welcome.modal('show');
-
-      this.pushState();
-      window.onpopstate();
-    }
-
-    this.loadPolly(this.waypoint.Description);
-    // Always update
-    this.newView(true);
-  },
   newView: function(redraw) {
 
-   // Redraw design
+    this.osd.newView(redraw);
+    // Redraw design
     if(redraw) {
-      // Update OpenSeadragon
-      // this.activateViewport();
-      // newMarkers(this.tileSources, this.group, this.active_masks);
       // Redraw HTML Menus
       this.addChannelLegends();
 
-      if (this.design.is3d) {
+      if (this.hashstate.design.is3d) {
         $('#channel-label').hide()
       }
       else {
@@ -1158,7 +407,7 @@ HashState.prototype = {
       this.addMasks();
       this.newStories();
 
-      if (this.edit) {
+      if (this.hashstate.edit) {
         this.fillWaypointEdit();
       }
       else {
@@ -1166,65 +415,67 @@ HashState.prototype = {
       }
       // back and forward
       $('.step-back').click(this, function(e) {
-        const THIS = e.data;
-        THIS.w -= 1;
-        THIS.pushState();
+        const HS = e.data.hashstate;
+        HS.w -= 1;
+        HS.pushState();
         window.onpopstate();
       });
       $('.step-next').click(this, function(e) {
-        const THIS = e.data;
-        THIS.w += 1;
-        THIS.pushState();
+        const HS = e.data.hashstate;
+        HS.w += 1;
+        HS.pushState();
         window.onpopstate();
       });
 
       // Waypoint-specific Copy Buttons
-      const STATE = this;
+      const THIS = this;
       $('.edit_copy_button').each(function() {
-        newCopyYamlButton.call(this, STATE);
+        newCopyYamlButton.call(this, THIS);
       });
       $('#edit_toggle_arrow').click(this, function(e) {
+        const HS = e.data.hashstate;
         const THIS = e.data;
-        const arrow_0 = THIS.waypoint.Arrows[0];
+        const arrow_0 = HS.waypoint.Arrows[0];
         const hide_arrow = arrow_0.HideArrow;
         arrow_0.HideArrow = hide_arrow ? false : true;
         THIS.newView(true);
       });
     }
 
-    if (this.edit) {
+    if (this.hashstate.edit) {
+      const HS = this.hashstate;
       const THIS = this;
 
       $("#mask-picker").off("changed.bs.select");
       $("#mask-picker").on("changed.bs.select", function(e, idx, isSelected, oldValues) {
         const newValue = $(this).find('option').eq(idx).text();
-        THIS.waypoint.Masks = THIS.masks.map(mask => mask.Name).filter(function(name) {
+        HS.waypoint.Masks = HS.masks.map(mask => mask.Name).filter(function(name) {
           if (isSelected) {
             return oldValues.includes(name) || name == newValue;
           }
           return oldValues.includes(name) && name != newValue;
         });
-        const active_names = THIS.active_masks.map(mask => mask.Name).filter(function(name) {
-          return THIS.waypoint.Masks.includes(name)
+        const active_names = HS.active_masks.map(mask => mask.Name).filter(function(name) {
+          return HS.waypoint.Masks.includes(name)
         })
-        THIS.waypoint.ActiveMasks = active_names;
-        THIS.m = active_names.map(name => index_name(THIS.masks, name));
+        HS.waypoint.ActiveMasks = active_names;
+        HS.m = active_names.map(name => index_name(HS.masks, name));
         THIS.newView(true);
       });
 
       $("#group-picker").off("changed.bs.select");
       $("#group-picker").on("changed.bs.select", function(e, idx, isSelected, oldValues) {
         const newValue = $(this).find('option').eq(idx).text();
-        THIS.waypoint.Groups = THIS.cgs.map(group => group.Name).filter(function(name) {
+        HS.waypoint.Groups = HS.cgs.map(group => group.Name).filter(function(name) {
           if (isSelected) {
             return oldValues.includes(name) || name == newValue;
           }
           return oldValues.includes(name) && name != newValue;
         });
-        const group_names = THIS.waypoint.Groups;
-        const current_name = THIS.cgs[THIS.g].Name;
+        const group_names = HS.waypoint.Groups;
+        const current_name = HS.cgs[HS.g].Name;
         if (group_names.length > 0 && !group_names.includes(current_name)) {
-          THIS.g = index_name(THIS.cgs, group_names[0]);
+          HS.g = index_name(HS.cgs, group_names[0]);
         }
         THIS.newView(true);
       });
@@ -1232,20 +483,20 @@ HashState.prototype = {
     }
 
     // Based on control keys
-    const edit = this.edit;
-    const drawing = this.drawing;
-    const drawType = this.drawType;
+    const edit = this.hashstate.edit;
+    const drawing = this.hashstate.drawing;
+    const drawType = this.hashstate.drawType;
 
     // Based on search keys
     activeOrNot('#view-switch', !edit);
     activeOrNot('#edit-switch', edit);
 
-    displayOrNot('#home-button', !edit && this.waypoint.Mode == 'outline');
-    displayOrNot('#toc-button', !edit && this.waypoint.Mode != 'outline');
-    displayOrNot('#channel-groups-legend', !this.design.is3d);
-    displayOrNot('#z-slider-legend', this.design.is3d);
-    displayOrNot('#toggle-legend', !this.design.is3d);
-    displayOrNot('.only-3d', this.design.is3d);
+    displayOrNot('#home-button', !edit && this.hashstate.waypoint.Mode == 'outline');
+    displayOrNot('#toc-button', !edit && this.hashstate.waypoint.Mode != 'outline');
+    displayOrNot('#channel-groups-legend', !this.hashstate.design.is3d);
+    displayOrNot('#z-slider-legend', this.hashstate.design.is3d);
+    displayOrNot('#toggle-legend', !this.hashstate.design.is3d);
+    displayOrNot('.only-3d', this.hashstate.design.is3d);
     displayOrNot('.editControls', edit);
     displayOrNot('#waypointControls', !edit);
     displayOrNot('#waypointName', !edit);
@@ -1258,36 +509,19 @@ HashState.prototype = {
   },
 
   loadPolly: function(txt) {
-    var polly_url = this.pollycache[this.currentCount];
+    var polly_url = this.pollycache[this.hashstate.currentCount];
     if (polly_url) {
       document.getElementById('audioSource').src = polly_url;
       document.getElementById('audioPlayback').load();
     }
     else {
-      const THIS = this;
+      const HS = this.hashstate;
       speakText(txt).then(function(url) {
-        THIS.pollycache[THIS.currentCount] = url;
+        HS.pollycache[HS.currentCount] = url;
         document.getElementById('audioSource').src = url;
         document.getElementById('audioPlayback').load();
       });
     }
-  },
-
-  makeUrl: function(hashKeys, searchKeys) {
-    const root = this.location('pathname');
-    const hash = this.makeHash(hashKeys);
-    const search = this.makeSearch(searchKeys);
-    return  root + search + hash;
-  },
-
-  makeHash: function(hashKeys) {
-    const hash = serialize(hashKeys, this, '#');
-    return hash? '#' + hash : '';
-  },
-
-  makeSearch: function(searchKeys) {
-    const search = serialize(searchKeys, this, '&');
-    return search? '?' + search : '';
   },
 
   /*
@@ -1298,7 +532,7 @@ HashState.prototype = {
     const new_xy = [
       position.x, position.y
     ];
-    this.o = new_xy.concat(wh);
+    this.hashstate.o = new_xy.concat(wh);
     this.newView(false);
   },
   computeBounds: function(value, start, len) {
@@ -1318,126 +552,25 @@ HashState.prototype = {
     };
   },
   drawUpperBounds: function(position) {
-    const xy = this.o.slice(0, 2);
-    const wh = this.o.slice(2);
+    const xy = this.hashstate.o.slice(0, 2);
+    const wh = this.hashstate.o.slice(2);
 
     // Set actual bounds
     const x = this.computeBounds(position.x, xy[0], wh[0]);
     const y = this.computeBounds(position.y, xy[1], wh[1]);
 
     const o = [x.start, y.start, x.range, y.range];
-    this.o = o.map(round4);
+    this.hashstate.o = o.map(round4);
     this.newView(false);
-  },
-
-  startEditing: function(_waypoint) {
-    const bw = _waypoint || this.bufferWaypoint;
-    this.bufferWaypoint = bw;
-
-    this.v = vFromWaypoint(bw);
-    this.o = oFromWaypoint(bw);
-    this.p = pFromWaypoint(bw);
-    this.d = dFromWaypoint(bw);
-    this.n = nFromWaypoint(bw);
-    this.a = aFromWaypoint(bw);
-    this.m = mFromWaypoint(bw, this.masks);
-    this.g = gFromWaypoint(bw, this.cgs);
-  },
-
-  finishEditing: function() {
-    const bw = this.bufferWaypoint;
-    bw.Group = this.group.Name;
-    bw.Name = decode(this.n);
-    bw.Description = decode(this.d);
-    bw.Zoom = this.viewport.scale;
-    bw.Overlays = [this.overlay];
-    bw.ActiveMasks = this.active_masks.map(mask => mask.Name)
-    bw.Arrows[0].Point = this.a;
-    bw.Polygon = this.p;
-    bw.Pan = [
-      this.viewport.pan.x,
-      this.viewport.pan.y
-    ];
-    this.bufferWaypoint = bw;
-    this.pushState();
-    window.onpopstate();
-  },
-
-  startDrawing: function() {
-    this.drawing = 1;
-
-    const waypoint = this.waypoint;
- 
-    if (this.drawType == "lasso") {
-      this.p = toPolygonURL([]);
-    }
-    else if (this.drawType == "arrow") {
-      this.a = [-100, -100];
-    }
-    else {
-      this.o = [-100, -100, 1, 1];
-    }
-  },
-  cancelDrawing: function() {
-    this.drawing = 0;
-  },
-
-  finishDrawing: function() {
-
-    if (this.edit) {
-      this.drawing = 0;
-      this.finishEditing();
-      this.startEditing();
-      this.pushState();
-      this.newView(false);
-    }
-    else {
-      $('#edit_description_modal').modal('show');
-    }
-  },
-
-  get allArrows() {
-    return this.stories.reduce((all, story, s) => {
-      return all.concat(story.Waypoints.reduce((idx, _, w) => {
-        const w_arrows = this.stories[s].Waypoints[w].Arrows || [];
-        const w_idx = w_arrows.map((_, a) => { 
-          return ['waypoint-arrow', s, w, a];
-        }).concat([['user-arrow', s, w, 0]]);
-        return idx.concat(w_idx);
-      }, []));
-    }, []);
-  },
-
-  get allOverlays() {
-    return this.stories.reduce((all, story, s) => {
-      return all.concat(story.Waypoints.reduce((idx, _, w) => {
-        const w_overlays = this.stories[s].Waypoints[w].Overlays || [];
-        const w_idx = w_overlays.map((_, o) => { 
-          return ['waypoint-overlay', s, w, o];
-        }).concat([['user-overlay', s, w, 0]]);
-        return idx.concat(w_idx);
-      }, []));
-    }, []);
   },
 
   /*
    * Display manaagement
    */
-  addPolygon: function(id, polygon) {
-    svg_overlay = this.svg_overlay;
-
-    d3.select('#' + id).remove();
-    var selPoly = svg_overlay.selectAll(id).data([polygon]);
-    selPoly.enter().append("polygon")
-        .attr('id', id)
-        .attr("points",function(d) {
-            return d.map(function(d) { return [d.x,d.y].join(","); }).join(" ");
-        });
-  },
 
   addMasks: function() {
     $('#mask-layers').empty();
-    if (this.edit || this.waypoint.Mode == 'explore') {
+    if (this.hashstate.edit || this.hashstate.waypoint.Mode == 'explore') {
         $('#mask-layers').addClass('flex');
         $('#mask-layers').removeClass('flex-column');
     }
@@ -1445,11 +578,11 @@ HashState.prototype = {
         $('#mask-layers').addClass('flex-column');
         $('#mask-layers').removeClass('flex');
     }
-    const mask_names = this.waypoint.Masks || [];
-    const masks = this.masks.filter(mask => {
+    const mask_names = this.hashstate.waypoint.Masks || [];
+    const masks = this.hashstate.masks.filter(mask => {
       return mask_names.includes(mask.Name);
     });
-    if (masks.length || this.edit) {
+    if (masks.length || this.hashstate.edit) {
       $('#mask-label').show()
     }
     else {
@@ -1457,7 +590,7 @@ HashState.prototype = {
     }
 
     masks.forEach(function(mask) {
-      const m = index_name(this.masks, mask.Name);
+      const m = index_name(this.hashstate.masks, mask.Name);
       this.addMask(mask, m);
     }, this);
   },
@@ -1465,13 +598,13 @@ HashState.prototype = {
   addMask: function(mask, m) {
     var aEl = document.createElement('a');
     aEl = Object.assign(aEl, {
-      className: this.m.includes(m) ? 'nav-link active' : 'nav-link',
+      className: this.hashstate.m.includes(m) ? 'nav-link active' : 'nav-link',
       href: 'javascript:;',
       innerText: mask.Name,
       title: mask.Path,
       id: mask.Path,
     });
-    var ariaSelected = this.m.includes(m) ? true : false;
+    var ariaSelected = this.hashstate.m.includes(m) ? true : false;
     aEl.setAttribute('aria-selected', ariaSelected);
 
     // Append everything
@@ -1479,19 +612,19 @@ HashState.prototype = {
     
     // Update Mask Layer
     $(aEl).click(this, function(e) {
-      const THIS = e.data;
-      const group = THIS.design.default_group;
-      const g = index_name(THIS.cgs, group);
+      const HS = e.data.hashstate;
+      const group = HS.design.default_group;
+      const g = index_name(HS.cgs, group);
       if ( g != -1 ) {
-        THIS.g = g;
+        HS.g = g;
       }
-      if (THIS.m.includes(m)){
-        THIS.m = THIS.m.filter(i => i != m);
+      if (HS.m.includes(m)){
+        HS.m = HS.m.filter(i => i != m);
       }
       else {
-        THIS.m.push(m);
+        HS.m.push(m);
       }
-      THIS.pushState();
+      HS.pushState();
       window.onpopstate();
     });
   },
@@ -1499,11 +632,11 @@ HashState.prototype = {
   addGroups: function() {
     $('#channel-groups').empty();
     $('#channel-groups-legend').empty();
-    const cgs_names = this.waypoint.Groups || [];
-    const cgs = this.cgs.filter(group => {
+    const cgs_names = this.hashstate.waypoint.Groups || [];
+    const cgs = this.hashstate.cgs.filter(group => {
       return cgs_names.includes(group.Name);
     });
-    if (cgs.length || this.edit) {
+    if (cgs.length || this.hashstate.edit) {
       $('#channel-label').show()
     }
     else {
@@ -1511,14 +644,14 @@ HashState.prototype = {
     }
     // Add some channel groups to waypoint
     cgs.forEach(function(group) {
-      const g = index_name(this.cgs, group.Name);
+      const g = index_name(this.hashstate.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups', false);
     }, this);
 
-    const cgs_multi = this.cgs.filter(group => {
+    const cgs_multi = this.hashstate.cgs.filter(group => {
       return group.Channels.length > 1;
     });
-    const cgs_single = this.cgs.filter(group => {
+    const cgs_single = this.hashstate.cgs.filter(group => {
       return group.Channels.length == 1;
     });
     const cg_legend = document.getElementById('channel-groups-legend');
@@ -1530,7 +663,7 @@ HashState.prototype = {
     }
     // Add all channel groups to legend
     cgs_multi.forEach(function(group) {
-      const g = index_name(this.cgs, group.Name);
+      const g = index_name(this.hashstate.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups-legend', true);
     }, this);
     if (cgs_single.length > 0) {
@@ -1540,13 +673,13 @@ HashState.prototype = {
       cg_legend.appendChild(h);
     }
     cgs_single.forEach(function(group) {
-      const g = index_name(this.cgs, group.Name);
+      const g = index_name(this.hashstate.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups-legend', true);
     }, this);
   },
   addGroup: function(group, g, el_id, show_more) {
     var aEl = document.createElement('a');
-    var selected = this.g === g ? true : false;
+    var selected = this.hashstate.g === g ? true : false;
     aEl = Object.assign(aEl, {
       className: selected ? 'nav-link active' : 'nav-link',
       style: 'padding-right: 40px; position: relative;',
@@ -1559,9 +692,9 @@ HashState.prototype = {
 
     // Set story and waypoint for this marker
     var s_w = undefined;
-    for (var s in this.stories) {
-      for (var w in this.stories[s].Waypoints) {
-        var waypoint = this.stories[s].Waypoints[w];  
+    for (var s in this.hashstate.stories) {
+      for (var w in this.hashstate.stories[s].Waypoints) {
+        var waypoint = this.hashstate.stories[s].Waypoints[w];  
         if (waypoint.Group == group.Name) {
           // Select the first waypoint or the definitive
           if (s_w == undefined || waypoint.DefineGroup) {
@@ -1576,7 +709,7 @@ HashState.prototype = {
       const opacity = 'opacity: ' +  + ';';
       moreEl = Object.assign(moreEl, {
         className : 'text-white',
-        style: 'position: absolute; right: 10px;',
+        style: 'position: absolute; right: 5px;',
         href: 'javascript:;',
         innerText: 'MORE',
       });
@@ -1584,10 +717,10 @@ HashState.prototype = {
 
       // Update Waypoint
       $(moreEl).click(this, function(e) {
-        THIS = e.data;
-        THIS.s = s_w[0];
-        THIS.w = s_w[1];
-        THIS.pushState();
+        HS = e.data.hashstate;
+        HS.s = s_w[0];
+        HS.w = s_w[1];
+        HS.pushState();
         window.onpopstate();
       });
     }
@@ -1597,9 +730,9 @@ HashState.prototype = {
     
     // Update Channel Group
     $(aEl).click(this, function(e) {
-      THIS = e.data;
-      THIS.g = g;
-      THIS.pushState();
+      HS = e.data.hashstate;
+      HS.g = g;
+      HS.pushState();
       window.onpopstate();
     });
 
@@ -1607,7 +740,7 @@ HashState.prototype = {
 
   addChannelLegends: function() {
     $('#channel-legend').empty();
-    this.channels.forEach(this.addChannelLegend, this);
+    this.hashstate.channels.forEach(this.addChannelLegend, this);
   },
 
   // Add channel legend label
@@ -1631,20 +764,6 @@ HashState.prototype = {
     ul.appendChild(li);
   },
 
-  channelSettings: function(channels) {
-    const chans = this.chans;
-    if (channels == undefined) {
-      return {}
-    }
-    return channels.reduce(function(map, c){
-      const i = index_name(chans, c);
-      if (i >= 0) {
-        map[c] = chans[i];
-      }
-      return map;
-    }, {});
-  },
-
   channelOrders: function(channels) {
     return channels.reduce(function(map, c, i){
       map[c] = i;
@@ -1653,7 +772,7 @@ HashState.prototype = {
   },
 
   indexColor: function(i, empty) {
-    const colors = this.colors;
+    const colors = this.hashstate.colors;
     if (i === undefined) {
       return empty;
     }
@@ -1666,12 +785,12 @@ HashState.prototype = {
     // Remove existing stories
     clearChildren(items);
 
-    if (this.waypoint.Mode == 'outline') {
+    if (this.hashstate.waypoint.Mode == 'outline') {
       var toc_label = document.createElement('p');
       toc_label.innerText = 'Table of Contents';
       items.appendChild(toc_label);
       // Add configured stories
-      this.stories.forEach(function(story, sid) {
+      this.hashstate.stories.forEach(function(story, sid) {
         if (story.Mode == undefined) {
           this.addStory(story, sid, items);
         }
@@ -1679,7 +798,7 @@ HashState.prototype = {
     }
 
     const footer = document.createElement('p')
-    const md = this.design.footer;
+    const md = this.hashstate.design.footer;
     footer.innerHTML = this.showdown.makeHtml(md);
     items.appendChild(footer);
   },
@@ -1713,10 +832,10 @@ HashState.prototype = {
 
     // Update Waypoint
     $(wid_link).click(this, function(e) {
-      const THIS = e.data;
-      THIS.s = sid;
-      THIS.w = wid;
-      THIS.pushState();
+      const HS = e.data.hashstate;
+      HS.s = sid;
+      HS.w = wid;
+      HS.pushState();
       window.onpopstate();
     });
 
@@ -1725,13 +844,13 @@ HashState.prototype = {
   },
 
   fillWaypointView: function() {
-    const waypoint = this.waypoint;
+    const waypoint = this.hashstate.waypoint;
     const wid_waypoint = document.getElementById('viewer-waypoint');
     const waypointName = document.getElementById("waypointName");
     const waypointCount = document.getElementById("waypointCount");
 
-    if (this.currentCount != 1) {
-      waypointCount.innerText = (this.currentCount - 1) + '/' + (this.totalCount - 1);
+    if (this.hashstate.currentCount != 1) {
+      waypointCount.innerText = (this.hashstate.currentCount - 1) + '/' + (this.hashstate.totalCount - 1);
     }
     else {
       waypointCount.innerText = '';
@@ -1779,6 +898,7 @@ HashState.prototype = {
     const renderedVis = new Set();
 
     const THIS = this;
+    const HS = this.hashstate;
     const finish_waypoint = function(visType) {
       renderedVis.add(visType);
       if ([...waypointVis].every(v => renderedVis.has(v))) {
@@ -1790,9 +910,9 @@ HashState.prototype = {
 
     const maskHandler = function(name) {
       const re = RegExp(name ,'gi');
-      const m = index_regex(THIS.masks, re);
+      const m = index_regex(HS.masks, re);
       if (m >= 0) {
-        THIS.m = [m];
+        HS.m = [m];
       }
       THIS.newView(true);
     }
@@ -1831,7 +951,7 @@ HashState.prototype = {
   },
   colorMarkerText: function (wid_waypoint) {
     // Color code elements
-    const channelOrders = this.channelOrders(this.channels);
+    const channelOrders = this.channelOrders(this.hashstate.channels);
     const wid_code = wid_waypoint.getElementsByTagName('code');
     for (var i = 0; i < wid_code.length; i ++) {
       var code = wid_code[i];
@@ -1860,7 +980,7 @@ HashState.prototype = {
     const form = form_proto.cloneNode(true);
     wid_waypoint.appendChild(form);
 
-    const arrow_0 = this.waypoint.Arrows[0];
+    const arrow_0 = this.hashstate.waypoint.Arrows[0];
     if (arrow_0.HideArrow == true) {
        $('#edit_toggle_arrow').css('opacity', '0.5');
     }
@@ -1871,136 +991,29 @@ HashState.prototype = {
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
     const wid_txt_name = $(wid_waypoint).find('.edit_name')[0];
     const wid_txt_arrow = $(wid_waypoint).find('.edit_arrow_text')[0];
-    const wid_describe = decode(this.d);
-    const wid_name = decode(this.n);
+    const wid_describe = decode(this.hashstate.d);
+    const wid_name = decode(this.hashstate.n);
 
     $(wid_txt_arrow).on('input', this, function(e) {
+      const HS = e.data.hashstate;
       const THIS = e.data;
-      THIS.waypoint.Arrows[0].Text = this.value;
+      HS.waypoint.Arrows[0].Text = this.value;
       THIS.newView(false);
     });
-    wid_txt_arrow.value = this.waypoint.Arrows[0].Text || '';
+    wid_txt_arrow.value = this.hashstate.waypoint.Arrows[0].Text || '';
 
     $(wid_txt_name).on('input', this, function(e) {
-      const THIS = e.data;
-      THIS.n = encode(this.value);
-      THIS.waypoint.Name = this.value;
+      const HS = e.data.hashstate;
+      HS.n = encode(this.value);
+      HS.waypoint.Name = this.value;
     });
     wid_txt_name.value = wid_name;
 
     $(wid_txt).on('input', this, function(e) {
-      const THIS = e.data;
-      THIS.d = encode(this.value);
-      THIS.waypoint.Description = this.value;
+      const HS = e.data.hashstate;
+      HS.d = encode(this.value);
+      HS.waypoint.Description = this.value;
     });
     wid_txt.value = wid_describe;
-  },
-
-  get bufferYaml() {
-    const viewport = this.viewport;
-    const waypoint = this.waypoint;
-    waypoint.Overlays = [this.overlay]; 
-    waypoint.Name = decode(this.n);
-    waypoint.Description = decode(this.d);
-
-    const THIS = this;
-    waypoint.ActiveMasks = this.m.filter(function(i){
-      return i >= 0;
-    }).map(function(i) {
-      return THIS.masks[i].Name;
-    })
-    waypoint.Group = this.cgs[this.g].Name;
-    waypoint.Pan = [viewport.pan.x, viewport.pan.y];
-    waypoint.Zoom = viewport.scale;
-
-    const wid_yaml = jsyaml.safeDump([[[waypoint]]], {
-      lineWidth: 40,
-      noCompatMode: true,
-    });
-    return wid_yaml.replace('- - - ', '    - ');
   }
-};
-
-
-const getAjaxHeaders = function(state, image){
-  if (image.Provider == 'minerva') {
-    return state.token.then(function(token){
-      return {
-        'Content-Type': 'application/json',
-        'Authorization': token,
-        'Accept': 'image/png'
-      };
-    });  
-  }
-  return Promise.resolve({});
-};
-
-
-const getGetTileUrl = function(image, layer, channelSettings) {
-
-  const colors = layer.Colors;
-  const channels = layer.Channels;
-
-  const getJpegTile = function(level, x, y) {
-    const fileExt = '.' + layer.Format;
-    return image.Path + '/' + layer.Path + '/' + (image.MaxLevel - level) + '_' + x + '_' + y + fileExt;
-  };
-
-  if (image.Provider != 'minerva') {
-    return getJpegTile; 
-  }
-
-
-  const channelList = channels.reduce(function(list, c, i) {
-    const settings = channelSettings[c];
-    if (settings == undefined) {
-      return list;
-    }
-    const allowed = settings.Images;
-    if (allowed.indexOf(image.Name) >= 0) {
-      const index = settings.Index;
-      const color = colors[i];
-      const min = settings.Range[0];
-      const max = settings.Range[1];
-      const specs = [index, color, min, max];
-      list.push(specs.join(','));
-    }
-    return list;
-  }, []);
-  const channelPath = channelList.join('/');
-
-  const getMinervaTile = function(level, x, y) {
-    const api = image.Path + '/render-tile/';
-    const lod = (image.MaxLevel - level) + '/';
-    const pos = x + '/' + y + '/0/0/';
-    const url = api + pos + lod + channelPath;
-    return url; 
-  };
-
-  return getMinervaTile;
-};
-
-const build_page = function(exhibit, options) {
-  const state = new HashState(exhibit, options);
-  const init = state.init();
-}
-
-const index_name = function(list, name) {
-  if (!Array.isArray(list)) {
-    return -1;
-  }
-  const item = list.filter(function(i) {
-    return (i.Name == name);
-  })[0];
-  return list.indexOf(item);
-};
-
-const index_regex = function(list, re) {
-  if (!Array.isArray(list)) {
-    return -1;
-  }
-  const item = list.filter(function(i) {
-    return !!i.Name.match(re);
-  })[0];
-  return list.indexOf(item);
 };
