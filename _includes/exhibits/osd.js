@@ -66,14 +66,14 @@ RenderOSD.prototype = {
 
   init: function () {
   
-    const STATE = this.hashstate;
     const viewer = this.viewer;
+    const HS = this.hashstate;
     const THIS = this;
 
     var mouse_drag = new OpenSeadragon.MouseTracker({
         element: viewer.canvas,
         dragHandler: function(event) {
-            if (STATE.drawType == "lasso" && STATE.drawing) {
+            if (HS.drawType == "lasso" && HS.drawing) {
                 viewer.setMouseNavEnabled(false);
                 lasso_draw.bind(THIS)(event);
             }
@@ -83,8 +83,8 @@ RenderOSD.prototype = {
     var mouse_up = new OpenSeadragon.MouseTracker({
         element: viewer.canvas,
         dragEndHandler: function(event) {
-            if (STATE.drawType == "lasso" && STATE.drawing) {
-                STATE.finishDrawing();
+            if (HS.drawType == "lasso" && HS.drawing) {
+                HS.finishDrawing();
             }
             viewer.setMouseNavEnabled(true);
         }
@@ -268,14 +268,14 @@ RenderOSD.prototype = {
 
   newView: function(redraw) {
 
+    const HS = this.hashstate;
     this.trackers.forEach(t => t.destroy());
     this.trackers = [];
 
-    this.addPolygon("selection", this.hashstate.state.p);
+    this.addPolygon("selection", HS.state.p);
 
-    this.hashstate.allOverlays.forEach(function(indices) {
+    HS.allOverlays.forEach(function(indices) {
       const [prefix, s, w, o] = indices;
-      const HS = this.hashstate;
       var overlay = HS.overlay;
       if (prefix == 'waypoint-overlay') {
         overlay = HS.stories[s].Waypoints[w].Overlays[o];
@@ -295,7 +295,7 @@ RenderOSD.prototype = {
       }
     });
 
-    this.hashstate.allArrows.forEach(function(indices) {
+    HS.allArrows.forEach(function(indices) {
       this.addArrow(indices);
     }, this);
     
@@ -303,7 +303,7 @@ RenderOSD.prototype = {
     if(redraw) {
       // Update OpenSeadragon
       this.activateViewport();
-      newMarkers(this.tileSources, this.hashstate.group, this.hashstate.active_masks);
+      newMarkers(this.tileSources, HS.group, HS.active_masks);
     }
   },
 
@@ -488,9 +488,9 @@ RenderOSD.prototype = {
         clickHandler: (function(event) {
           const [s, w] = el.split('-').slice(2);
           event.preventDefaultAction = false;
-          this.hashstate.s = s;
-          this.hashstate.w = w;
-          this.hashstate.pushState();
+          HS.s = s;
+          HS.w = w;
+          HS.pushState();
           window.onpopstate();
         }).bind(this)
       });
@@ -499,8 +499,9 @@ RenderOSD.prototype = {
   },
 
   activateViewport: function() {
+    const HS = this.hashstate;
     const viewport = this.viewer.viewport;
-    viewport.panTo(this.hashstate.viewport.pan);
-    viewport.zoomTo(this.hashstate.viewport.scale);
+    viewport.panTo(HS.viewport.pan);
+    viewport.zoomTo(HS.viewport.scale);
   }
 }

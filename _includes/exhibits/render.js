@@ -198,22 +198,24 @@ Render.prototype = {
 
   init: function() {
 
+    const HS = this.hashstate;
+
     // Read hash
     window.onpopstate = (function(e) {
-      this.hashstate.popState(e);
-      this.loadPolly(this.hashstate.waypoint.Description);
+      HS.popState(e);
+      this.loadPolly(HS.waypoint.Description);
       this.newView(true);
     }).bind(this);
 
     window.onpopstate();
     if (this.edit) {
-      this.hashstate.startEditing();
+      HS.startEditing();
     }
-    this.hashstate.pushState();
+    HS.pushState();
     window.onpopstate();
 
     // Edit name
-    $('#exhibit-name').text(this.hashstate.exhibit.Name);
+    $('#exhibit-name').text(HS.exhibit.Name);
 
     $('.modal_copy_button').each(newCopyButton);
 
@@ -236,7 +238,6 @@ Render.prototype = {
       title: 'Clone linked view'
     });
 
-    const HS = this.hashstate;
     $('#copy_link_modal').on('hidden.bs.modal', HS.cancelDrawing.bind(HS));
     $('#edit_description_modal').on('hidden.bs.modal', HS.cancelDrawing.bind(HS));
 
@@ -356,12 +357,12 @@ Render.prototype = {
 
     z_legend = document.getElementById('depth-legend');
     z_slider = document.getElementById('z-slider');
-    z_slider.max = this.hashstate.cgs.length - 1;
-    z_slider.value = this.hashstate.g;
+    z_slider.max = HS.cgs.length - 1;
+    z_slider.value = HS.g;
     z_slider.min = 0;
 
-    if (this.hashstate.design.is3d && this.hashstate.design.z_scale) {
-      z_legend.innerText = round1(this.hashstate.g / this.hashstate.design.z_scale) + ' μm';
+    if (HS.design.is3d && HS.design.z_scale) {
+      z_legend.innerText = round1(HS.g / HS.design.z_scale) + ' μm';
     }
 
     const THIS = this;
@@ -392,13 +393,14 @@ Render.prototype = {
   },
   newView: function(redraw) {
 
+    const HS = this.hashstate;
     this.osd.newView(redraw);
     // Redraw design
     if(redraw) {
       // Redraw HTML Menus
       this.addChannelLegends();
 
-      if (this.hashstate.design.is3d) {
+      if (HS.design.is3d) {
         $('#channel-label').hide()
       }
       else {
@@ -407,7 +409,7 @@ Render.prototype = {
       this.addMasks();
       this.newStories();
 
-      if (this.hashstate.edit) {
+      if (HS.edit) {
         this.fillWaypointEdit();
       }
       else {
@@ -442,8 +444,7 @@ Render.prototype = {
       });
     }
 
-    if (this.hashstate.edit) {
-      const HS = this.hashstate;
+    if (HS.edit) {
       const THIS = this;
 
       $("#mask-picker").off("changed.bs.select");
@@ -483,20 +484,20 @@ Render.prototype = {
     }
 
     // Based on control keys
-    const edit = this.hashstate.edit;
-    const drawing = this.hashstate.drawing;
-    const drawType = this.hashstate.drawType;
+    const edit = HS.edit;
+    const drawing = HS.drawing;
+    const drawType = HS.drawType;
 
     // Based on search keys
     activeOrNot('#view-switch', !edit);
     activeOrNot('#edit-switch', edit);
 
-    displayOrNot('#home-button', !edit && this.hashstate.waypoint.Mode == 'outline');
-    displayOrNot('#toc-button', !edit && this.hashstate.waypoint.Mode != 'outline');
-    displayOrNot('#channel-groups-legend', !this.hashstate.design.is3d);
-    displayOrNot('#z-slider-legend', this.hashstate.design.is3d);
-    displayOrNot('#toggle-legend', !this.hashstate.design.is3d);
-    displayOrNot('.only-3d', this.hashstate.design.is3d);
+    displayOrNot('#home-button', !edit && HS.waypoint.Mode == 'outline');
+    displayOrNot('#toc-button', !edit && HS.waypoint.Mode != 'outline');
+    displayOrNot('#channel-groups-legend', !HS.design.is3d);
+    displayOrNot('#z-slider-legend', HS.design.is3d);
+    displayOrNot('#toggle-legend', !HS.design.is3d);
+    displayOrNot('.only-3d', HS.design.is3d);
     displayOrNot('.editControls', edit);
     displayOrNot('#waypointControls', !edit);
     displayOrNot('#waypointName', !edit);
@@ -509,13 +510,13 @@ Render.prototype = {
   },
 
   loadPolly: function(txt) {
-    var polly_url = this.pollycache[this.hashstate.currentCount];
+    const HS = this.hashstate;
+    var polly_url = this.pollycache[HS.currentCount];
     if (polly_url) {
       document.getElementById('audioSource').src = polly_url;
       document.getElementById('audioPlayback').load();
     }
     else {
-      const HS = this.hashstate;
       speakText(txt).then(function(url) {
         HS.pollycache[HS.currentCount] = url;
         document.getElementById('audioSource').src = url;
@@ -528,11 +529,12 @@ Render.prototype = {
    * User intercation
    */
   drawLowerBounds: function(position) {
+    const HS = this.hashstate;
     const wh = [0, 0];
     const new_xy = [
       position.x, position.y
     ];
-    this.hashstate.o = new_xy.concat(wh);
+    HS.o = new_xy.concat(wh);
     this.newView(false);
   },
   computeBounds: function(value, start, len) {
@@ -552,15 +554,16 @@ Render.prototype = {
     };
   },
   drawUpperBounds: function(position) {
-    const xy = this.hashstate.o.slice(0, 2);
-    const wh = this.hashstate.o.slice(2);
+    const HS = this.hashstate;
+    const xy = HS.o.slice(0, 2);
+    const wh = HS.o.slice(2);
 
     // Set actual bounds
     const x = this.computeBounds(position.x, xy[0], wh[0]);
     const y = this.computeBounds(position.y, xy[1], wh[1]);
 
     const o = [x.start, y.start, x.range, y.range];
-    this.hashstate.o = o.map(round4);
+    HS.o = o.map(round4);
     this.newView(false);
   },
 
@@ -569,8 +572,9 @@ Render.prototype = {
    */
 
   addMasks: function() {
+    const HS = this.hashstate;
     $('#mask-layers').empty();
-    if (this.hashstate.edit || this.hashstate.waypoint.Mode == 'explore') {
+    if (HS.edit || HS.waypoint.Mode == 'explore') {
         $('#mask-layers').addClass('flex');
         $('#mask-layers').removeClass('flex-column');
     }
@@ -578,11 +582,11 @@ Render.prototype = {
         $('#mask-layers').addClass('flex-column');
         $('#mask-layers').removeClass('flex');
     }
-    const mask_names = this.hashstate.waypoint.Masks || [];
-    const masks = this.hashstate.masks.filter(mask => {
+    const mask_names = HS.waypoint.Masks || [];
+    const masks = HS.masks.filter(mask => {
       return mask_names.includes(mask.Name);
     });
-    if (masks.length || this.hashstate.edit) {
+    if (masks.length || HS.edit) {
       $('#mask-label').show()
     }
     else {
@@ -590,21 +594,22 @@ Render.prototype = {
     }
 
     masks.forEach(function(mask) {
-      const m = index_name(this.hashstate.masks, mask.Name);
+      const m = index_name(HS.masks, mask.Name);
       this.addMask(mask, m);
     }, this);
   },
 
   addMask: function(mask, m) {
+    const HS = this.hashstate;
     var aEl = document.createElement('a');
     aEl = Object.assign(aEl, {
-      className: this.hashstate.m.includes(m) ? 'nav-link active' : 'nav-link',
+      className: HS.m.includes(m) ? 'nav-link active' : 'nav-link',
       href: 'javascript:;',
       innerText: mask.Name,
       title: mask.Path,
       id: mask.Path,
     });
-    var ariaSelected = this.hashstate.m.includes(m) ? true : false;
+    var ariaSelected = HS.m.includes(m) ? true : false;
     aEl.setAttribute('aria-selected', ariaSelected);
 
     // Append everything
@@ -630,13 +635,14 @@ Render.prototype = {
   },
 
   addGroups: function() {
+    const HS = this.hashstate;
     $('#channel-groups').empty();
     $('#channel-groups-legend').empty();
-    const cgs_names = this.hashstate.waypoint.Groups || [];
-    const cgs = this.hashstate.cgs.filter(group => {
+    const cgs_names = HS.waypoint.Groups || [];
+    const cgs = HS.cgs.filter(group => {
       return cgs_names.includes(group.Name);
     });
-    if (cgs.length || this.hashstate.edit) {
+    if (cgs.length || HS.edit) {
       $('#channel-label').show()
     }
     else {
@@ -644,14 +650,14 @@ Render.prototype = {
     }
     // Add some channel groups to waypoint
     cgs.forEach(function(group) {
-      const g = index_name(this.hashstate.cgs, group.Name);
+      const g = index_name(HS.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups', false);
     }, this);
 
-    const cgs_multi = this.hashstate.cgs.filter(group => {
+    const cgs_multi = HS.cgs.filter(group => {
       return group.Channels.length > 1;
     });
-    const cgs_single = this.hashstate.cgs.filter(group => {
+    const cgs_single = HS.cgs.filter(group => {
       return group.Channels.length == 1;
     });
     const cg_legend = document.getElementById('channel-groups-legend');
@@ -663,7 +669,7 @@ Render.prototype = {
     }
     // Add all channel groups to legend
     cgs_multi.forEach(function(group) {
-      const g = index_name(this.hashstate.cgs, group.Name);
+      const g = index_name(HS.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups-legend', true);
     }, this);
     if (cgs_single.length > 0) {
@@ -673,13 +679,14 @@ Render.prototype = {
       cg_legend.appendChild(h);
     }
     cgs_single.forEach(function(group) {
-      const g = index_name(this.hashstate.cgs, group.Name);
+      const g = index_name(HS.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups-legend', true);
     }, this);
   },
   addGroup: function(group, g, el_id, show_more) {
+    const HS = this.hashstate;
     var aEl = document.createElement('a');
-    var selected = this.hashstate.g === g ? true : false;
+    var selected = HS.g === g ? true : false;
     aEl = Object.assign(aEl, {
       className: selected ? 'nav-link active' : 'nav-link',
       style: 'padding-right: 40px; position: relative;',
@@ -692,9 +699,9 @@ Render.prototype = {
 
     // Set story and waypoint for this marker
     var s_w = undefined;
-    for (var s in this.hashstate.stories) {
-      for (var w in this.hashstate.stories[s].Waypoints) {
-        var waypoint = this.hashstate.stories[s].Waypoints[w];  
+    for (var s in HS.stories) {
+      for (var w in HS.stories[s].Waypoints) {
+        var waypoint = HS.stories[s].Waypoints[w];  
         if (waypoint.Group == group.Name) {
           // Select the first waypoint or the definitive
           if (s_w == undefined || waypoint.DefineGroup) {
@@ -717,7 +724,6 @@ Render.prototype = {
 
       // Update Waypoint
       $(moreEl).click(this, function(e) {
-        HS = e.data.hashstate;
         HS.s = s_w[0];
         HS.w = s_w[1];
         HS.pushState();
@@ -730,7 +736,6 @@ Render.prototype = {
     
     // Update Channel Group
     $(aEl).click(this, function(e) {
-      HS = e.data.hashstate;
       HS.g = g;
       HS.pushState();
       window.onpopstate();
@@ -739,8 +744,9 @@ Render.prototype = {
   },
 
   addChannelLegends: function() {
+    const HS = this.hashstate;
     $('#channel-legend').empty();
-    this.hashstate.channels.forEach(this.addChannelLegend, this);
+    HS.channels.forEach(this.addChannelLegend, this);
   },
 
   // Add channel legend label
@@ -772,7 +778,8 @@ Render.prototype = {
   },
 
   indexColor: function(i, empty) {
-    const colors = this.hashstate.colors;
+    const HS = this.hashstate;
+    const colors = HS.colors;
     if (i === undefined) {
       return empty;
     }
@@ -781,16 +788,17 @@ Render.prototype = {
 
   newStories: function() {
 
+    const HS = this.hashstate;
     const items = document.getElementById('story-container');
     // Remove existing stories
     clearChildren(items);
 
-    if (this.hashstate.waypoint.Mode == 'outline') {
+    if (HS.waypoint.Mode == 'outline') {
       var toc_label = document.createElement('p');
       toc_label.innerText = 'Table of Contents';
       items.appendChild(toc_label);
       // Add configured stories
-      this.hashstate.stories.forEach(function(story, sid) {
+      HS.stories.forEach(function(story, sid) {
         if (story.Mode == undefined) {
           this.addStory(story, sid, items);
         }
@@ -798,7 +806,7 @@ Render.prototype = {
     }
 
     const footer = document.createElement('p')
-    const md = this.hashstate.design.footer;
+    const md = HS.design.footer;
     footer.innerHTML = this.showdown.makeHtml(md);
     items.appendChild(footer);
   },
@@ -844,13 +852,15 @@ Render.prototype = {
   },
 
   fillWaypointView: function() {
-    const waypoint = this.hashstate.waypoint;
+
+    const HS = this.hashstate;
+    const waypoint = HS.waypoint;
     const wid_waypoint = document.getElementById('viewer-waypoint');
     const waypointName = document.getElementById("waypointName");
     const waypointCount = document.getElementById("waypointCount");
 
-    if (this.hashstate.currentCount != 1) {
-      waypointCount.innerText = (this.hashstate.currentCount - 1) + '/' + (this.hashstate.totalCount - 1);
+    if (HS.currentCount != 1) {
+      waypointCount.innerText = (HS.currentCount - 1) + '/' + (HS.totalCount - 1);
     }
     else {
       waypointCount.innerText = '';
@@ -898,7 +908,6 @@ Render.prototype = {
     const renderedVis = new Set();
 
     const THIS = this;
-    const HS = this.hashstate;
     const finish_waypoint = function(visType) {
       renderedVis.add(visType);
       if ([...waypointVis].every(v => renderedVis.has(v))) {
@@ -951,7 +960,8 @@ Render.prototype = {
   },
   colorMarkerText: function (wid_waypoint) {
     // Color code elements
-    const channelOrders = this.channelOrders(this.hashstate.channels);
+    const HS = this.hashstate;
+    const channelOrders = this.channelOrders(HS.channels);
     const wid_code = wid_waypoint.getElementsByTagName('code');
     for (var i = 0; i < wid_code.length; i ++) {
       var code = wid_code[i];
@@ -973,14 +983,14 @@ Render.prototype = {
     }
   },
   fillWaypointEdit: function() {
-    
+    const HS = this.hashstate;
     const wid_waypoint = document.getElementById('viewer-waypoint');
     $(wid_waypoint).empty();
     const form_proto = document.getElementsByClassName('save_edits_form')[0]
     const form = form_proto.cloneNode(true);
     wid_waypoint.appendChild(form);
 
-    const arrow_0 = this.hashstate.waypoint.Arrows[0];
+    const arrow_0 = HS.waypoint.Arrows[0];
     if (arrow_0.HideArrow == true) {
        $('#edit_toggle_arrow').css('opacity', '0.5');
     }
@@ -991,8 +1001,8 @@ Render.prototype = {
     const wid_txt = $(wid_waypoint).find('.edit_text')[0];
     const wid_txt_name = $(wid_waypoint).find('.edit_name')[0];
     const wid_txt_arrow = $(wid_waypoint).find('.edit_arrow_text')[0];
-    const wid_describe = decode(this.hashstate.d);
-    const wid_name = decode(this.hashstate.n);
+    const wid_describe = decode(HS.d);
+    const wid_name = decode(HS.n);
 
     $(wid_txt_arrow).on('input', this, function(e) {
       const HS = e.data.hashstate;
@@ -1000,7 +1010,7 @@ Render.prototype = {
       HS.waypoint.Arrows[0].Text = this.value;
       THIS.newView(false);
     });
-    wid_txt_arrow.value = this.hashstate.waypoint.Arrows[0].Text || '';
+    wid_txt_arrow.value = HS.waypoint.Arrows[0].Text || '';
 
     $(wid_txt_name).on('input', this, function(e) {
       const HS = e.data.hashstate;
