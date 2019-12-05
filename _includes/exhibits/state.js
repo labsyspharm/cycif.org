@@ -1,3 +1,48 @@
+const CognitoUser = AmazonCognitoIdentity.CognitoUser;
+const CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
+const AuthenticationDetails = AmazonCognitoIdentity.AuthenticationDetails;
+
+/*
+ * from /sorgerlab/minerva-client-js/master/index.js
+ */
+
+const authenticateUser = function(cognitoUser, authenticationDetails) {
+  return new Promise(function(resolve, reject) {
+    cognitoUser.authenticateUser(authenticationDetails, {
+      onSuccess: result => resolve(result),
+      onFailure: err => reject(err),
+      mfaRequired: codeDeliveryDetails => reject(codeDeliveryDetails),
+      newPasswordRequired: (fields, required) => reject({fields, required})
+    });
+  });
+};
+
+const authenticate = function(username, pass) {
+
+  return pass.then(function(password) {
+
+    const minervaPoolId = 'us-east-1_YuTF9ST4J'; 
+    const minervaClientId = '6ctsnjjglmtna2q5fgtrjug47k';
+    const minervaPool = new CognitoUserPool({
+      UserPoolId : minervaPoolId,
+      ClientId : minervaClientId
+    });
+
+    const cognitoUser = new CognitoUser({
+      Username: username,
+      Pool: minervaPool
+    });
+
+    const authenticationDetails = new AuthenticationDetails({
+      Username: username,
+      Password: password
+    });
+
+    return authenticateUser(cognitoUser, authenticationDetails)
+      .then(response => response.getIdToken().getJwtToken());
+  });
+}
+
 const pos_modulo = function(i, n) {
   return ((i % n) + n) % n;
 };
