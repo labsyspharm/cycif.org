@@ -7,12 +7,10 @@ const flatten = function(items) {
 const round1 = function(n) {
   return Math.round(n * 10) / 10;
 };
+
 const round4 = function(n) {
   const N = Math.pow(10, 4);
   return Math.round(n * N) / N;
-};
-const show5 = function(n) {
-  return ('' + n).slice(0, 5);
 };
 
 const modulo = function(i, n) {
@@ -37,19 +35,6 @@ const decode = function(txt) {
   catch (e) {
     return '';
   }
-};
-
-const arrayEqual = function(a, b) {
-  if (a.length != b.length) {
-    return false;
-  }
-  var pairs = [];
-  for (var i = 0; i < a.length; i++) {
-    pairs.push([a[i], b[i]]);
-  }
-  return pairs.every(function(p) {
-    return p[0] == p[1];
-  });
 };
 
 const dFromWaypoint = function(waypoint) {
@@ -1267,9 +1252,6 @@ HashState.prototype = {
       'tag': this.active_masks.filter(mask => mask.Name).map(mask => mask.Name),
     }[mode];
 
-    console.log(this.m)
-    console.log(this.active_masks)
-
     return {
       Mode: mode,
       Description: '',
@@ -1957,8 +1939,32 @@ HashState.prototype = {
       const g = index_name(this.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups', false);
     }, this);
+
+    const cgs_multi = this.cgs.filter(group => {
+      return group.Channels.length > 1;
+    });
+    const cgs_single = this.cgs.filter(group => {
+      return group.Channels.length == 1;
+    });
+    const cg_legend = document.getElementById('channel-groups-legend');
+    if (cgs_multi.length > 0) {
+      h = document.createElement('h6');
+      h.innerText = 'Channel Groups:'
+      h.className = 'm-1'
+      cg_legend.appendChild(h);
+    }
     // Add all channel groups to legend
-    this.cgs.forEach(function(group) {
+    cgs_multi.forEach(function(group) {
+      const g = index_name(this.cgs, group.Name);
+      this.addGroup(group, g, 'channel-groups-legend', true);
+    }, this);
+    if (cgs_single.length > 0) {
+      h = document.createElement('h6');
+      h.innerText = 'Channels:'
+      h.className = 'm-1'
+      cg_legend.appendChild(h);
+    }
+    cgs_single.forEach(function(group) {
       const g = index_name(this.cgs, group.Name);
       this.addGroup(group, g, 'channel-groups-legend', true);
     }, this);
@@ -1968,7 +1974,7 @@ HashState.prototype = {
     var selected = this.g === g ? true : false;
     aEl = Object.assign(aEl, {
       className: selected ? 'nav-link active' : 'nav-link',
-      style: 'padding-right: 40px;',
+      style: 'padding-right: 50px; position: relative;',
       href: 'javascript:;',
       innerText: group.Name,
       title: group.Path,
@@ -1995,7 +2001,7 @@ HashState.prototype = {
       const opacity = 'opacity: ' +  + ';';
       moreEl = Object.assign(moreEl, {
         className : 'text-white',
-        style: 'position: absolute; right: 10px;',
+        style: 'position: absolute; right: 5px;',
         href: 'javascript:;',
         innerText: 'MORE',
       });
