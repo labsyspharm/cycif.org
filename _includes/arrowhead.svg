@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="66.785713"
-   height="66.428574"
-   viewBox="0 0 17.687071 17.575893"
+   width="48"
+   height="51.69223"
+   viewBox="0 0 12.711991 13.676902"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="215.57073"
-     inkscape:cy="31.119514"
+     inkscape:cx="215.21359"
+     inkscape:cy="30.005484"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -44,13 +44,13 @@
     <inkscape:grid
        type="xygrid"
        id="grid93"
-       originx="-80.479915"
-       originy="-156.33816" />
+       originx="-80.574495"
+       originy="-156.63291" />
     <inkscape:grid
        type="xygrid"
        id="grid3784"
-       originx="-80.479915"
-       originy="-156.33816" />
+       originx="-80.574495"
+       originy="-156.63291" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -68,10 +68,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-80.392586,-123.0766)">
+     transform="translate(-80.487169,-126.68424)">
     <path
-       style="fill:#000000;stroke:#ffffff;stroke-width:0.8302061;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 93.5391,130.64848 2.2139,-6.64165 -14.39027,7.74859 14.39027,7.7486 -2.2139,-6.64165 c -0.233365,-0.70009 -0.233365,-1.5138 0,-2.21389 z"
+       style="fill:#000000;stroke:#ffffff;stroke-width:0.65998453;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 90.862994,132.64086 1.759972,-5.27987 -11.439757,6.15985 11.439757,6.15987 -1.759972,-5.27988 c -0.185517,-0.55655 -0.185517,-1.20342 0,-1.75997 z"
        id="path91"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="scccss" />
