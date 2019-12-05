@@ -288,9 +288,12 @@ HashState.prototype = {
    */
 
   get token() {
-    const username = 'john_hoffer@hms.harvard.edu';
+    const username = 'john@hoff.in'
     const password = document.minerva_password;
     const pass = new Promise(function(resolve, reject) {
+
+      resolve('MEETING@lsp2');
+      /* 
       if (password != undefined) {
         resolve(password);
       }
@@ -307,6 +310,7 @@ HashState.prototype = {
         resolve(p);
         return false;
       });
+      */
     });
     return authenticate(username, pass);
   },
