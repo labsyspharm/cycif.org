@@ -3,132 +3,27 @@ Exhibit:
   Images:
     - Name: m0
       Provider: minerva
-      Path: 'https://5yatimj9u4.execute-api.us-east-1.amazonaws.com/dev/image/a7db6f10-8a27-4c40-9cab-bc30c6abfb59'
+      Path: 'https://yfo3vr9rw4.execute-api.us-east-1.amazonaws.com/dev/image/afd6f4bd-67de-4df2-b518-0e9b05a49012'
       Width: 1280
       Height: 1080
       MaxLevel: 1
       TileSize: [1024, 1024]
       Description: 'Minerva Grid'
-    - Name: m1
-      Provider: minerva
-      Path: 'https://5yatimj9u4.execute-api.us-east-1.amazonaws.com/dev/image/32f26fef-cb3a-4499-a445-769c529e896e'
-      Width: 1280
-      Height: 1080
-      MaxLevel: 1
-      TileSize: [1024, 1024]
-      Description: 'Minerva Tumor'
-    - Name: i0
-      Description: '# 36844, pre-treatment'
-      Path: https://s3.amazonaws.com/pca2018/26531PRE
-      Width: 13888
-      Height: 15936
-      MaxLevel: 4
-    - Name: i1
-      Description: '# 26531, post-treatment'
-      Path: https://s3.amazonaws.com/pca2018/26531POST
-      Width: 31616
-      Height: 22272
-      MaxLevel: 5
-    - Name: i2
-      Description: '# 27960, pre-treatment'
-      Path: https://s3.amazonaws.com/pca2018/27960PRE
-      Width: 21504
-      Height: 22272
-      MaxLevel: 5
-    - Name: i3
-      Description: '# 27960, post-treatment'
-      Path: https://s3.amazonaws.com/pca2018/27960POST
-      Width: 25344
-      Height: 18048
-      MaxLevel: 5
-    - Name: i4
-      Description: '# 36844, pre-treatment'
-      Path: https://s3.amazonaws.com/pca2018/36844PRE
-      Width: 46848
-      Height: 25600
-      MaxLevel: 6
-    - Name: i5
-      Description: '# 36844, post-treatment'
-      Path: https://s3.amazonaws.com/pca2018/36844POST
-      Width: 40448
-      Height: 24576
-      MaxLevel: 6
-    - Name: i6
-      Description: '# 37648, pre-treatment'
-      Path: https://s3.amazonaws.com/pca2018/37648PRE
-      Width: 35328
-      Height: 16128
-      MaxLevel: 6
-    - Name: i7
-      Description: '# 37648, post-treatment'
-      Path: https://s3.amazonaws.com/pca2018/37648POST
-      Width: 39168
-      Height: 26624
-      MaxLevel: 6
   Layout:
     Grid:
-      - [i0, i1]
-      - [i2, i3]
-      - [i4, i5]
-      - [i6, i7]
+      - [m0]
   Channels:
     - Name: Grid 0 
       Images: [m0]
       Range: [.01, .07]
       Index: 0
-    - Name: Tumor 0 
-      Images: [m1]
-      Range: [0, 1]
-      Index: 0
   Groups:
-    - Path: S100-CD45RO-SMA
-      Name: Tumor Architecture
+    - Name: Group 0
       Colors:
         - 00FF00 
-        - FFFFFF
-        - FF0000
-        - 0000FF
       Channels:
-        - S100
-        - CD45
-        - SMA
-        - DNA
-    - Path: CD8-FOXP3-CD3
-      Name: T-Cells
-      Colors:
-        - 00FF00 
-        - FFFFFF
-        - FF0000
-        - 0000FF
-      Channels:
-        - CD8
-        - FOXP3
-        - CD3
-        - DNA
-    - Path: PD1-CD3-PDL1
-      Name: PD-1/PD-L1
-      Colors:
-        - 00FF00 
-        - FFFFFF
-        - FF0000
-        - 0000FF
-      Channels:
-        - PD-1
-        - CD3
-        - PD-L1
-        - DNA
-    - Path: pS6-pRB-HES1
-      Name: Signaling
-      Colors:
-        - 00FF00 
-        - FFFFFF
-        - FF0000
-        - 0000FF
-      Channels:
-        - pS6
-        - pRB
-        - HES1
-        - DNA
+        - Grid 0
+      Path: a
   Stories:
   - Name: Overview
     Description:
@@ -137,7 +32,7 @@ Exhibit:
       Pan:
       - 0.3861
       - 0.4802
-      Group: Tumor Architecture
+      Group: Group 0
       Description: | 
         These are unpublished 13-plex t-CyCIF images of tissue specimens from four patients with BRAF-mutant metastatic melanoma
         resected before (left) and after (right) treatment with BRAF and MEK inhibitors (dabrafenib/trametinib). Each
@@ -159,7 +54,7 @@ Exhibit:
       Pan:
       - 0.1923
       - 0.0584
-      Group: Tumor Architecture
+      Group: Group 0
       Description: | 
         A low magnification view of the architecture of this __melanoma metastasis__ reveals _distinct compartments_-
 
@@ -174,7 +69,7 @@ Exhibit:
       Pan:
       - 0.1973
       - 0.0728
-      Group: Tumor Architecture
+      Group: Group 0
       Description: | 
         The melanoma tumor cells are highlighted by an antibody recognizing `S100` protein, an EF-hand calcium-binding protein that is expressed in neural crest derived cells such as melanocytes, Schwann cells, and glial cells as well as in tumors derived from these cells such as melanoma, schwannoma and glioma.
 
@@ -189,7 +84,7 @@ Exhibit:
       Pan:
       - 0.2048
       - 0.1024
-      Group: Tumor Architecture
+      Group: Group 0
       Description: | 
         At the junction of the melanoma tumor nodule and the surrounding stroma, α-`SMA` highlights the pericytes (vascular smooth muscle cells) of small blood vessels and scattered tumor associated fibroblasts.  α-`SMA` also highlights the small blood vessels in the tumor nodule that are engulfed by `S100`+ melanoma cells. The dense band of `CD45` expressing immune cells can be seen at the tumor-stromal junction with scattered CD45+ immune cells also infiltrating the melanoma module.
       Name: Infiltration
@@ -202,7 +97,7 @@ Exhibit:
       Pan:
       - 0.2073
       - 0.1024
-      Group: T-Cells
+      Group: Group 0
       Description: | 
         Surrounding the tumor is a dense band of T cells (`CD3`+), many of which are `CD8` expressing cytotoxic cells.  A subset of the T cells are `FOXP3` expressing T regulatory cells (nuclear white signal).  
 
@@ -217,7 +112,7 @@ Exhibit:
       Pan:
       - 0.2067
       - 0.1017
-      Group: PD-1/PD-L1
+      Group: Group 0
       Description: | 
         There is widespread expression of `PD-L1` throughout the nodule in both tumor cells and tumor infiltrating macrophages. In the tumor nodule, `PD-1` expressing T cells are in close proximity to PD-L1 expressing cells. The relative proximity of PD-1 and PD-L1 expressing cells suggests a physical interaction, which is presumed to drive adaptive immune resistance. The interaction of PD-1 and PD-L1 expressing cells is accentuated at the tumor-stromal interface.
       Name: High PD-L1
@@ -233,7 +128,7 @@ Exhibit:
       Pan:
       - 0.6079
       - 0.0968
-      Group: Tumor Architecture
+      Group: Group 0
       Description: |
         ## This melanoma metastasis
 
@@ -250,7 +145,7 @@ Exhibit:
       Pan:
       - 0.6639
       - 0.0906
-      Group: Tumor Architecture
+      Group: Group 0
       Description: | 
         ## Similar to the pre-treatment sample 
 
@@ -267,7 +162,7 @@ Exhibit:
       Pan:
       - 0.6639
       - 0.0906
-      Group: T-Cells
+      Group: Group 0
       Description: | 
         A preponderance of the T cells (`CD3`+) are `CD8`+ cytotoxic T cells and `FOXP3`+ T regulatory cells. 
 
@@ -282,7 +177,7 @@ Exhibit:
       Pan:
       - 0.6865
       - 0.0904
-      Group: PD-1/PD-L1
+      Group: Group 0
       Description: | 
         ## Following BRAF and MEK inhibitor treatment
 
