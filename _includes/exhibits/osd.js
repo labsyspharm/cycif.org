@@ -305,6 +305,7 @@ RenderOSD.prototype = {
       this.activateViewport();
       newMarkers(this.tileSources, HS.group, HS.active_masks);
     }
+    this.viewer.forceRedraw();
   },
 
   addPolygon: function(id, polygon) {
