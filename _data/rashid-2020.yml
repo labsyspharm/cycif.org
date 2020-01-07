@@ -1,0 +1,40 @@
+publication:
+  title: Tools for analyzing and sharing multiplex tissue images for digital pathology and atlas construction
+  authors: |
+    Rumana Rashid, Yu-An Chen, John Hoffer, Jeremy Muhlich, Jia-Ren Lin, Robert Kreuger, Sandro Santagata, and Peter K. Sorger
+  journal: 
+  link: 
+    name: 
+    url: 
+
+stitched mosaic images:
+  - title: 'LUNG-3-PR: Primary lung squamous cell carcinoma'
+    description: Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
+    thumbnail file name: du-lin-rashid-2019/lung_3.jpg
+    links:
+      - Lung image: /featured-paper/du-lin-rashid-2019/figures/osd-LUNG_3 
+  - title: 'Patient with multiple myocardial infarctions'
+    description: 
+    thumbnail file name: rashid-2020/heart-chart.png
+    links:
+      - Heart images: /data/rashid-perspective-mi-2019/
+  - title: 'Colon Adenocarcinoma'
+    description: 
+    thumbnail file name: rashid-2020/adenocarcinoma.png
+    links:
+      - Colon image: /featured-paper/gaglia-2018/figures/osd-colon_1
+  - title: 'Melanoma Exceptional Responder'
+    description: 
+    thumbnail file name: rashid-2020/melanoma.png
+    links:
+      - Skin images: /data/liu-lin-2019/
+  - title: 'Melanoma in situ, invasive melanoma'
+    description: 
+    thumbnail file name: pca-2019/pickseq_3_cycif.jpg
+    links:
+      - Skin image: /data/pca-2019/osd-3_cycif
+  - title: 'CNS Manifestations of Neurofibromatosis'
+    description: 
+    thumbnail file name: coy-acta-neuropathol-2019/4_VestibularSchwannoma.jpg 
+    links:
+      - Nerve images: /featured-paper/coy-acta-neuropathol-2019/figures/
