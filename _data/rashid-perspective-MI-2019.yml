@@ -1,7 +1,6 @@
 publication:
   title: |
     Heart
-
   authors: |
     
     
@@ -35,20 +34,18 @@ publication:
     at autopsy. Present are multiple myocardial infarctions, occurring days (acute), 
     weeks (subacute), and years (remote) prior to death, in both 
     the left and right ventricles along with severe atherosclerosis in the arteries.
-
-
   journal: 
   link: 
     # name: Publication summary
     # url: http://lincs.hms.harvard.edu/lin-elife-2018/
 
 stitched mosaic images:
-  - title: Left atrium
+  - title: left atrium
     description: 
     thumbnail file name: A1_left_atrium.PNG
     links: 
       - Image: osd-A1_left_atrium
-  - title: Anterior left ventricle
+  - title: anterior left ventricle
     description: 
     thumbnail file name: A2_anterior_left_ventricle.PNG
     links:
@@ -58,12 +55,12 @@ stitched mosaic images:
     thumbnail file name: A3_interventricular_septum.PNG
     links:
       - Image: osd-A3_interventricular_septum
-  - title: Posterior left ventricle
+  - title: posterior left ventricle
     description: 
     thumbnail file name: A4_posterior_left_ventricle.PNG
     links:
       - Image: osd-A4_posterior_left_ventricle
-  - title: Posterior left ventricle
+  - title: posterior left ventricle
     description: 
     thumbnail file name: A5_posterior_left_ventricle.PNG
     links:
@@ -75,40 +72,37 @@ stitched mosaic images:
     links:
       - Image: osd-A6_posterior_left_ventricle
 
-  - title: Lateral left ventricle
+  - title: lateral left ventricle
     description: 
     thumbnail file name: A7_lateral_left_ventricle.PNG
     links:
       - Image: osd-A7_lateral_left_ventricle
 
-  - title: Right ventricle
+  - title: right ventricle
     description: 
     thumbnail file name: A8_right_ventricle.PNG
     links:
       - Image: osd-A8_right_ventricle
 
-  - title: Mid distal right coronary artery
+  - title: mid distal right coronary artery
     description: 
     thumbnail file name: A17_mid_distal_right_coronary_artery.PNG
     links:
       - Image: osd-A17_mid_distal_right_coronary_artery
 
-  - title: Left anterior descending artery
+  - title: left anterior descending artery
     description: 
     thumbnail file name: A18_left_anterior_descending_artery.PNG
     links:
       - Image: osd-A18_left_anterior_descending_artery
 
-  - title: Left anterior descending artery
+  - title: left anterior descending artery
     description: 
     thumbnail file name: A19_left_anterior_descending_artery.PNG
     links:
       - Image: osd-A19_left_anterior_descending_artery
-  - title: Left circumflex artery
+  - title: left circumflex artery
     description: 
     thumbnail file name: A20_left_circumflex_artery.PNG
     links:
       - Image: osd-A20_left_circumflex_artery
-
-
-
