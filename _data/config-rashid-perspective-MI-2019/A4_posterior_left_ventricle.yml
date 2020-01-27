@@ -45,69 +45,16 @@ Exhibit:
           height: 0.1994
       Arrows:
         - Point:
-            - 0.5154296875
-            - 0.5021809895833333
-          Text: acute myocardial infarction
-          HideArrow: true
-        - Point:
-            - 0.19062966145983146
-            - 0.29104136824782123
+            - 0.24296167510030375
+            - 0.21357658993881312
           Text: subacute myocardial infarction
           HideArrow: true
+        - Point:
+            - 0.693498629290553
+            - 0.3800201776962399
+          Text: acute myocardial infarction
+          HideArrow: true
 
-
-    - Name: Coagulative Necrosis
-      Group: H&E
-      Description: |
-        A high magnification view of the myocardial wall shows a region with hypereosinophilic 
-        and thinned myocytes starting to undergo coagulative necrosis. 
-        
-        Numerous neutrophils fill the interstitial space between the myocytes. 
-        
-        Acute inflammation is a feature that is characteristic of an acute myocardial 
-        infarction (approximately 7-10 days).
-      Zoom: 2.0946
-      Pan:
-        - 0.5005
-        - 0.4880
-      Overlay:
-        x: 0.3776
-        y: 0.4012
-        width: 0.3174
-        height: 0.1994
-      Arrows:
-        - Point:
-            - 0.5215865151900161
-            - 0.49676335261092014
-          Text: neutrophils
-          HideArrow: false
-          Angle: 60
-        - Point:
-            - 0.5364913488537837
-            - 0.4726751991956371
-          Text: early coagulative necrosis
-          HideArrow: true
-        - Point:
-            - 0.5108117424594032
-            - 0.49381298350758024
-          Text: relatively viable myocytes
-          HideArrow: true
-        - Point:
-            - 0.5260184791892127
-            - 0.49284987151808884
-          Text: neutrophils
-          HideArrow: true
-        - Point:
-            - 0.5327227677875132
-            - 0.4712468681629986
-          Text: karyolysis
-          HideArrow: false
-      Polygon: >-
-          AwOgrAzAbAnAHAGlAFismAmJ5pkSqMARmG0igywMnxymCpFTDEcjAHYJtmOiyILZD0JwoA1o1T1a7YBxFQI-UJGQdhBKPQHJkKptphhdRKVC4nVECDFIEOO64IUO7AiBm4E4yNjYYRODBNHAxCIK4BDGArQ0wDSCI4GBEYPQEiDld42EyKHg5gYETldULgDOsiWwqI6oxQ9WA4WQhgGG8mPk8BeVp1IlY+5DjBmBzIYF6UDgwsvsbCr1CpkuW4LtZ4VNnlSYwJrvVBOO28vbEyQ-ruvy2bpo1y1RupDmJ7cDfC1i-zr7qELiV4wJzdPCJG6Aj5g65gmFKM43MaOKBQiYg7oWB7wHLqKDBPqBWZ8VbtDqFOa7HDTLHqDhXazTfGMyqLAaM+CLekcTo0qYQTnGM7tYg8OAMUrAbQSjr+eRSOBmBXZCVEPx9SXqzhaprKxx9YzqiZGmnIODzf7KGoSrxYpKHO0hTIQfGWwmZVB2vmZPgS9r+GIDTZEB2ecUoUOTTz+qM2jzzAPrZx4O1E5yWn3k+7Otp6emW2rWVDuyjhsAkpiWoilEIGC3JAUuJVh0VgY1RjVtCghszNtDm5VEAdzdXyASwd0dLZu5RyiwCRyAyUWpfpOXhASbQvFWdiBt81rb9yzCalGAawrGWfpVmXtrnwopSbIYqssSrN8YVG+RJv0ZnwWVQ3zTWZJS2N9NipXwyH0GUqSUOCzFRSxkKFKl2RAjVWUJV8smORxdWwlJCiUAU-FrMjYjg+ZzVhf57lRMBFxA8JOUgNg-GVQp0C4w53lGWQ-A3WY9EY9peX0B1kGUVFbAomxWWgCTI26QQuMEJ4bE0ljCmUCS426DAM3AWTYNmcJILfVl5hk-RURiRjZJhLJhPEwo2zgk5PJM7y4FZWthMrXlKhkyt8VgGAKOIMZYGgkDtjSMCzMgSLOn-SBzVgSlEogJpCU9PLjkJDs4MgEq-3KvyfEocrgMMPlMqrUtWLM9BIo+M49ACkQ0JAoS+q8bzNQcKiBrqrQ4RAhTFCzGa9K0dBaO5LQljYw0tGSWj9EUcazJHeltGKdCBkIS84JaOKWK4ypAUIYszJKEq-gECZzGIfdTWoMxt21H7-F8SL0FFS0zotUGwxECGlyZQwIaAA
-      Polygon: >-
-          AwOgrATAzAnAHAGlAFgOzIGxSeaqM5rJhg6RTISHpipkQQzDWbL0QktzaiQOkpUYAIw9cwmAJBowyGPWGoxMjHV4RgcAoIzDE64MmY7d9YMGX4tZCemro2vCRmPTU7teAmZqcYVJEYCH03OFQqJxhFXxhPQItqGCgAvTh5QRgMEJEwiOk4cxS4WkIC4hs-T2Q-BKclKWq9YRsMVtLoPJEsBrgILBbhV2rg5qcSR3yKbS8RUcnJG2IezFcRSjzquXSvWCri5JsKIeK0w+EJ6t044T6Qy4wUjTuw5DnZkVLUKJtBve5OwZgZRwEEBYCxPYwapkcFyUqxCZgcESQhMPQwsJDJi9DEMVGiVbAITTOTOGGofyoiDlXjALBVJJ42lgJKoqAPGGBVGUOKGNooKFKGFQU4CsAuYVGVEs7ZI6B3TJ+GESDaxanKsAK-CEwaqvxvczIC7wISomBQs1QBkIs34M3QGF0rEgxHAUQKrQ6uDG7hg6ANeDCA2MEmxArCpUC-CywwaVHamGXeMlZmoLUS2lYVVWGGtUN+bJEqB6uy09zKc1Ssvmx1EjHCaZIoOu33C4sYg60iiF7iEq09lFd2L1g2vHvmRNV8BE4e0tAxr68uSFtON4CQMHuMG0A1CMGtQlKQtZXkUsRIinHr7k5DnulTi9hTlP2l+V20QkgwuyNdJNeQA1YjXOQAU0QlKDeINBmFC0nEUA0oE7LwIEpWlGERG4KRhalGwJV0NHPURKA1AFXjvINSKFWkiQBJFC0MDCgTvN1cPFCt4FlBsoDmLYHwbWdpA4lIj1RLRIPwfNEIqddRInJx9njdkKm4eM6RsKJtjkVpOMkAMMBQsxakEoEAg0DhuXgMwg2lQwzAEuQjVlFDgm5TQFHcNlxXYOMBW488GEsgUOnobiGQ0RFoA5AV-AioxVUGRtqQoVEiVWaksIFddEtoVVCnoGV4QWdQs3hKjcFUSEoDSs9SjSRL6lqjz1DTP4jMgfVPhTXBuB43InLE0pVGyYImvyDAjXoEESTE-ymGmzVOkYJl8iBRKkj2JFZq8lBvRU9RYmWbbcDDUpKGGk1SlgN5GFFSZwjIKq5MmJCgUNdpMge8xpogUtwEezTenRXh-tKPQnPNPZzlM81epuaG7R28FFqhC4CgzY7wVKN1zuW6pzEWkEeK+RhJqkwRQXoNMLjTD5mom8m+kp8zyaB8rArcL5EtUIZ3CyegHiqdwfGK4WOZ+-n2x0EF+Z8txxtM3QNnwVDypuagWUWxX1f5cq3XVl6OCYdXWY3MqiFZdQSE09AMCc1aWFefLrMEI1rpAh3ErQEkaDd4iXdkehKEsYhkCAA    
-      Polygon: >-
-        AwOgrALMDM0DSggdgBxLA80CcbPOwEZ5QwcwAmfJbMbTM7YANmu3YehRQ0RWEKtSXLvn4QSWJMxRjgKSWSQV6fQoQidmzTWrDAt0XSAgpCSJJzApjpisGNlIQkygoVeWfbbcQXZCDBPO2ZFWDw+FUdYUT5oQlUsCm4xIzCKP1SyTkFZOPQc6Es+KCphQmBE0wkyrHkXaqDOBwabbGK6wmCeCFqyYGBa0zBmRMpcQjFmCoYVZgM+HTGVeKnaWaYO0yRoBfBk5TFpPP2FE9Mzf2TgLe4R2dQ9i6YHiEm+bA8H+TFaDsptA0mDNSBRQlUmEZZvNbExRrMRkMiIQTpQwIJ8EQkO99oFgp9CH0MvZMRQcLMuEiKNiKUVMfEiQd6RJZhlYdAZLMUfioMt1EC-J5KDdJBBaO5Zg5RbRsqCBDixXQcejcE9sKE9irKJjmNIGAlYiZ2jB9UxYeghSjOYh2u19fwtrhevqLECUKEXdB8ShPvrmPcbdgxX7gPinfqgmMBmSIxLSANmH0NBFwAIfqQNPMGAJTPrApqBDo8w5s-YkxzlYMYxn4gWPMrCbLU8kxoSKJX4o51EHs7B-OoWfGOaiKrhe+sMyw+lKuw5HA4A+AKtTs8h+wnV+7s+qo5R50HUaG3tmfbvDvG0IfrNP3dO6Dfktm6FH+IoWOnU+go4np9j-ixYGzXVvyzeN-UrGR-w1bNsUPaYCyQXN42vGCFCfQdUzcIVQwxC9tXjZA33df8IGPC8eF7Cxt0NfRoBXeN2mwlRsPYN8wX+CpiFLDl9Rgf97E1Coi3jQRW3kbDiAbdRsMqJMujfFgOISadQw49xD1DQTkn8AYdn1XZ5wqEcDOzcwR2SecPEURt+P4fUMjfDkk3sRyUgzFEC16ayNGwvxBPUf99EtSodJGayAKAlFeK+MCmgYnswLQhi9PjJATQYpt9EQw8iEPVAXzsi8vRPUiTwo1K7Qy-8dmndhqtDXjzCAtyl0UoDAl4l4wPbfUunnEZLTJAsyAbalsP0QS6OnZBLRwN8JEtCR5ygBtkA7MAOLIHT4msjbLKSpdE346w-RS5sEk9CS9QzGg3zbe1H3jG4Rx4FSNtNBqnvUU1kExHdJRYP7ALlYGjSYIV7Hwo1uCJCpYRsf521A6GotBDJ8XQVF3DHG1lERjlYVGZUMiam1-SxvxCYu0ELkxOgIZVOng1BSBHRGhFUDpjRoXem0xWJ7E1T8AWobFCRFGpH1MSgCXfHpGhZh9JEjER7BdnpdXQVoBVPgS-ZcCpOK6kqUlVmEFh8W5ZoOBtLpUU7NVKmVeJpkxQZohRWFdM4exbnYaIyW6dp0iN0w1ftiyxB9aJ4luBQxlgejXDcPo+yqNAuqwN5bldTg7COTJhH0dOdjCAaphTLa6KmassH9dPrE1DkiDEAFODS842iFIozdcGp29KkoS2EMwngURDOHddOvVT7hp+K4RPlFBQBE4bWxA8BPcG6dxlSgQYxASRxSmXnyGCgDq+Eqf4L87wYxlvtg9cgI82EH8AL9sfLgCAA
 
     - Name: Granulation Tissue
       Group: H&E
@@ -219,4 +166,58 @@ Exhibit:
       Polygon: >-
         AwOgjArAHAbAzAGlAJgJzRk8EDsxVZoRgAsWk8yhqJs5EEyZKNUiokJcmLJOE9OKmDU+7bMiaia9fDxBEwBDiVRRmC9HCjlatahBhUVOVQZgCV8ZZuiXwJYjmowwxhyWDu08e6TQiLDD6KmA48j44OirAcGDUOELk2qg2aDio4mDcUGlqEIHgcCQkEalg8tnFGmjo8RxwyPxYcMDAbsnIwNEgrcAwPdlgwBqtpIXZXj1jbOS17q1dlWhhLV5JHMhszqCLqXPh9q3Vc8E7vSPdc4xHI1D14JIwNq1Gg8ik4q04FXP9D99XOQwFAfmsoMRgeEFvh2sDggC5DYwJAoAthtlgRAuC1hnxgbRCnF+hMUTjdijUOdhuhznE0INuuhcXBtORulsWThqcBTNNSIZ2RY6ZA4H5gIYvhUuuyxLjnho8ZBcVFkbEYCKoOp2elceh3Bjni0unAeW15I1hvJ8OgLR9uFgbf1jZIHvh1C9kGL3O6msaSKtQPgotNkMQfVSIF9kPA3VTisacF7HfHRk0tSnEgCVnHTNG1IV3XDdq1ySB3SQFsSeu6qS04gMU6x6yb2V5Ro0zBx2mgWyidWCSyCsrECvXUbKrkPk93StNWtru4wXq0IGq7PXYoreSNjfH2Um6T5Kt1WnvSuyqaHUEpgSNPcJKjSj7lFW54MbQYMqnbYG-HNG6jUpAIKfviHCQIOvRbBs4BhCUiaoAaw5HE04TAje0bhKSqQLDG+ybHcxowCRcxuKGCJzFsoYYNcHz+gRjwbrsTBdo8JF2p4ExNJCLHcA85GssaDZzLkqExtxdQuvgyRtJ6FQCaWqHZNScTYsa3QTKya56hmDQBkcSjNPpmR6sEyRrgCShGMkwT8jQiraMqFLCIpmRWaCWRCPcuKwFkni-BSEKKgGUS+QmKhoSqdYqGpKphbFpkUqYIWqCKeATI4jjyhCuj8Pyby6BCUrQAaqi9hSUbIqoMiVYF2BhCKJQTIwF4UtogxRh07WwaKiQsjJHDYmiuJMNSDCChSkgtQM6JhAauCzBS5H0BCRI0lklkirEyJrrxFxUpUa5QESTLIjAbR0t0zngBdgYXCl5AXWW3xshwF2NrsO5+BdPlfRYP3umsx1PSiXwSme71uODtAGq4M4XEIcPQ2srKDK4-ZfauT02msYbUh9twguj7RE4N2CoBqayjvQSGFLUIQU+TtRTkz9NqP1Q3CD06RLUzPPxp13MuHpFPDC42hAA
 
+
+
+    - Name: Coagulative Necrosis
+      Group: H&E
+      Description: |
+        A high magnification view of the myocardial wall shows a region with hypereosinophilic 
+        and thinned myocytes starting to undergo coagulative necrosis. 
+        
+        Numerous neutrophils fill the interstitial space between the myocytes. 
+        
+        Acute inflammation is a feature that is characteristic of an acute myocardial 
+        infarction (approximately 7-10 days).
+      Zoom: 2.0946
+      Pan:
+        - 0.5005
+        - 0.4880
+      Overlay:
+        x: 0.3776
+        y: 0.4012
+        width: 0.3174
+        height: 0.1994
+      Arrows:
+        - Point:
+            - 0.5215865151900161
+            - 0.49676335261092014
+          Text: neutrophils
+          HideArrow: false
+          Angle: 60
+        - Point:
+            - 0.5364913488537837
+            - 0.4726751991956371
+          Text: early coagulative necrosis
+          HideArrow: true
+        - Point:
+            - 0.5108117424594032
+            - 0.49381298350758024
+          Text: relatively viable myocytes
+          HideArrow: true
+        - Point:
+            - 0.5260184791892127
+            - 0.49284987151808884
+          Text: neutrophils
+          HideArrow: true
+        - Point:
+            - 0.5327227677875132
+            - 0.4712468681629986
+          Text: karyolysis
+          HideArrow: false
+      Polygon: >-
+          AwOgrAzAbAnAHAGlAFismAmJ5pkSqMARmG0igywMnxymCpFTDEcjAHYJtmOiyILZD0JwoA1o1T1a7YBxFQI-UJGQdhBKPQHJkKptphhdRKVC4nVECDFIEOO64IUO7AiBm4E4yNjYYRODBNHAxCIK4BDGArQ0wDSCI4GBEYPQEiDld42EyKHg5gYETldULgDOsiWwqI6oxQ9WA4WQhgGG8mPk8BeVp1IlY+5DjBmBzIYF6UDgwsvsbCr1CpkuW4LtZ4VNnlSYwJrvVBOO28vbEyQ-ruvy2bpo1y1RupDmJ7cDfC1i-zr7qELiV4wJzdPCJG6Aj5g65gmFKM43MaOKBQiYg7oWB7wHLqKDBPqBWZ8VbtDqFOa7HDTLHqDhXazTfGMyqLAaM+CLekcTo0qYQTnGM7tYg8OAMUrAbQSjr+eRSOBmBXZCVEPx9SXqzhaprKxx9YzqiZGmnIODzf7KGoSrxYpKHO0hTIQfGWwmZVB2vmZPgS9r+GIDTZEB2ecUoUOTTz+qM2jzzAPrZx4O1E5yWn3k+7Otp6emW2rWVDuyjhsAkpiWoilEIGC3JAUuJVh0VgY1RjVtCghszNtDm5VEAdzdXyASwd0dLZu5RyiwCRyAyUWpfpOXhASbQvFWdiBt81rb9yzCalGAawrGWfpVmXtrnwopSbIYqssSrN8YVG+RJv0ZnwWVQ3zTWZJS2N9NipXwyH0GUqSUOCzFRSxkKFKl2RAjVWUJV8smORxdWwlJCiUAU-FrMjYjg+ZzVhf57lRMBFxA8JOUgNg-GVQp0C4w53lGWQ-A3WY9EY9peX0B1kGUVFbAomxWWgCTI26QQuMEJ4bE0ljCmUCS426DAM3AWTYNmcJILfVl5hk-RURiRjZJhLJhPEwo2zgk5PJM7y4FZWthMrXlKhkyt8VgGAKOIMZYGgkDtjSMCzMgSLOn-SBzVgSlEogJpCU9PLjkJDs4MgEq-3KvyfEocrgMMPlMqrUtWLM9BIo+M49ACkQ0JAoS+q8bzNQcKiBrqrQ4RAhTFCzGa9K0dBaO5LQljYw0tGSWj9EUcazJHeltGKdCBkIS84JaOKWK4ypAUIYszJKEq-gECZzGIfdTWoMxt21H7-F8SL0FFS0zotUGwxECGlyZQwIaAA
+      Polygon: >-
+          AwOgrATAzAnAHAGlAFgOzIGxSeaqM5rJhg6RTISHpipkQQzDWbL0QktzaiQOkpUYAIw9cwmAJBowyGPWGoxMjHV4RgcAoIzDE64MmY7d9YMGX4tZCemro2vCRmPTU7teAmZqcYVJEYCH03OFQqJxhFXxhPQItqGCgAvTh5QRgMEJEwiOk4cxS4WkIC4hs-T2Q-BKclKWq9YRsMVtLoPJEsBrgILBbhV2rg5qcSR3yKbS8RUcnJG2IezFcRSjzquXSvWCri5JsKIeK0w+EJ6t044T6Qy4wUjTuw5DnZkVLUKJtBve5OwZgZRwEEBYCxPYwapkcFyUqxCZgcESQhMPQwsJDJi9DEMVGiVbAITTOTOGGofyoiDlXjALBVJJ42lgJKoqAPGGBVGUOKGNooKFKGFQU4CsAuYVGVEs7ZI6B3TJ+GESDaxanKsAK-CEwaqvxvczIC7wISomBQs1QBkIs34M3QGF0rEgxHAUQKrQ6uDG7hg6ANeDCA2MEmxArCpUC-CywwaVHamGXeMlZmoLUS2lYVVWGGtUN+bJEqB6uy09zKc1Ssvmx1EjHCaZIoOu33C4sYg60iiF7iEq09lFd2L1g2vHvmRNV8BE4e0tAxr68uSFtON4CQMHuMG0A1CMGtQlKQtZXkUsRIinHr7k5DnulTi9hTlP2l+V20QkgwuyNdJNeQA1YjXOQAU0QlKDeINBmFC0nEUA0oE7LwIEpWlGERG4KRhalGwJV0NHPURKA1AFXjvINSKFWkiQBJFC0MDCgTvN1cPFCt4FlBsoDmLYHwbWdpA4lIj1RLRIPwfNEIqddRInJx9njdkKm4eM6RsKJtjkVpOMkAMMBQsxakEoEAg0DhuXgMwg2lQwzAEuQjVlFDgm5TQFHcNlxXYOMBW488GEsgUOnobiGQ0RFoA5AV-AioxVUGRtqQoVEiVWaksIFddEtoVVCnoGV4QWdQs3hKjcFUSEoDSs9SjSRL6lqjz1DTP4jMgfVPhTXBuB43InLE0pVGyYImvyDAjXoEESTE-ymGmzVOkYJl8iBRKkj2JFZq8lBvRU9RYmWbbcDDUpKGGk1SlgN5GFFSZwjIKq5MmJCgUNdpMge8xpogUtwEezTenRXh-tKPQnPNPZzlM81epuaG7R28FFqhC4CgzY7wVKN1zuW6pzEWkEeK+RhJqkwRQXoNMLjTD5mom8m+kp8zyaB8rArcL5EtUIZ3CyegHiqdwfGK4WOZ+-n2x0EF+Z8txxtM3QNnwVDypuagWUWxX1f5cq3XVl6OCYdXWY3MqiFZdQSE09AMCc1aWFefLrMEI1rpAh3ErQEkaDd4iXdkehKEsYhkCAA    
+      Polygon: >-
+        AwOgrALMDM0DSggdgBxLA80CcbPOwEZ5QwcwAmfJbMbTM7YANmu3YehRQ0RWEKtSXLvn4QSWJMxRjgKSWSQV6fQoQidmzTWrDAt0XSAgpCSJJzApjpisGNlIQkygoVeWfbbcQXZCDBPO2ZFWDw+FUdYUT5oQlUsCm4xIzCKP1SyTkFZOPQc6Es+KCphQmBE0wkyrHkXaqDOBwabbGK6wmCeCFqyYGBa0zBmRMpcQjFmCoYVZgM+HTGVeKnaWaYO0yRoBfBk5TFpPP2FE9Mzf2TgLe4R2dQ9i6YHiEm+bA8H+TFaDsptA0mDNSBRQlUmEZZvNbExRrMRkMiIQTpQwIJ8EQkO99oFgp9CH0MvZMRQcLMuEiKNiKUVMfEiQd6RJZhlYdAZLMUfioMt1EC-J5KDdJBBaO5Zg5RbRsqCBDixXQcejcE9sKE9irKJjmNIGAlYiZ2jB9UxYeghSjOYh2u19fwtrhevqLECUKEXdB8ShPvrmPcbdgxX7gPinfqgmMBmSIxLSANmH0NBFwAIfqQNPMGAJTPrApqBDo8w5s-YkxzlYMYxn4gWPMrCbLU8kxoSKJX4o51EHs7B-OoWfGOaiKrhe+sMyw+lKuw5HA4A+AKtTs8h+wnV+7s+qo5R50HUaG3tmfbvDvG0IfrNP3dO6Dfktm6FH+IoWOnU+go4np9j-ixYGzXVvyzeN-UrGR-w1bNsUPaYCyQXN42vGCFCfQdUzcIVQwxC9tXjZA33df8IGPC8eF7Cxt0NfRoBXeN2mwlRsPYN8wX+CpiFLDl9Rgf97E1Coi3jQRW3kbDiAbdRsMqJMujfFgOISadQw49xD1DQTkn8AYdn1XZ5wqEcDOzcwR2SecPEURt+P4fUMjfDkk3sRyUgzFEC16ayNGwvxBPUf99EtSodJGayAKAlFeK+MCmgYnswLQhi9PjJATQYpt9EQw8iEPVAXzsi8vRPUiTwo1K7Qy-8dmndhqtDXjzCAtyl0UoDAl4l4wPbfUunnEZLTJAsyAbalsP0QS6OnZBLRwN8JEtCR5ygBtkA7MAOLIHT4msjbLKSpdE346w-RS5sEk9CS9QzGg3zbe1H3jG4Rx4FSNtNBqnvUU1kExHdJRYP7ALlYGjSYIV7Hwo1uCJCpYRsf521A6GotBDJ8XQVF3DHG1lERjlYVGZUMiam1-SxvxCYu0ELkxOgIZVOng1BSBHRGhFUDpjRoXem0xWJ7E1T8AWobFCRFGpH1MSgCXfHpGhZh9JEjER7BdnpdXQVoBVPgS-ZcCpOK6kqUlVmEFh8W5ZoOBtLpUU7NVKmVeJpkxQZohRWFdM4exbnYaIyW6dp0iN0w1ftiyxB9aJ4luBQxlgejXDcPo+yqNAuqwN5bldTg7COTJhH0dOdjCAaphTLa6KmassH9dPrE1DkiDEAFODS842iFIozdcGp29KkoS2EMwngURDOHddOvVT7hp+K4RPlFBQBE4bWxA8BPcG6dxlSgQYxASRxSmXnyGCgDq+Eqf4L87wYxlvtg9cgI82EH8AL9sfLgCAA
 
