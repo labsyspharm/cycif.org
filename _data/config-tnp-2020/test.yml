@@ -1,0 +1,279 @@
+Exhibit:
+  Groups:
+  - Channels:
+    - DNA_1
+    - AF488
+    Colors:
+    - 0000ff
+    - 00ff00
+    Name: AF488 autofluorescence
+    Path: AF488-autofluorescence_0__DNA_1--1__AF488
+  - Channels:
+    - DNA_1
+    - AF555
+    Colors:
+    - 0000ff
+    - ffffff
+    Name: AF555 autofluorescence
+    Path: AF555-autofluorescence_0__DNA_1--2__AF555
+  - Channels:
+    - DNA_1
+    - AF647
+    Colors:
+    - 0000ff
+    - ff0000
+    Name: AF647 autofluorescence
+    Path: AF647-autofluorescence_0__DNA_1--3__AF647
+  - Channels:
+    - DNA_1
+    - Keratin
+    - aSMA
+    - Ki67
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+    - ffffff
+    Name: proliferation
+    Path: proliferation_0__DNA_1--10__Keratin--11__aSMA--9__Ki67
+  - Channels:
+    - DNA_1
+    - Keratin
+    - aSMA
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+    Name: structural
+    Path: structural_0__DNA_1--10__Keratin--11__aSMA
+  - Channels:
+    - DNA_1
+    - Keratin
+    - CD20
+    - CD3
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+    - ffffff
+    Name: B Cells and T Cells
+    Path: B-Cells-and-T-Cells_0__DNA_1--10__Keratin--25__CD20--6__CD3
+  - Channels:
+    - DNA_1
+    - Keratin
+    - CD45
+    Colors:
+    - 0000ff
+    - 00ff00
+    - 00ffff
+    Name: immune
+    Path: immune_0__DNA_1--10__Keratin--15__CD45
+  - Channels:
+    - DNA_1
+    - NaKATPase
+    - Ki67
+    Colors:
+    - 0000ff
+    - ffff00
+    - ff00ff
+    Name: NaKATPase
+    Path: NaKATPase_0__DNA_1--5__NaKATPase--9__Ki67
+  - Channels:
+    - DNA_1
+    - Keratin
+    - p53
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff00ff
+    Name: DNAdamage
+    Path: DNAdamage_0__DNA_1--10__Keratin--7__p53
+  Images:
+  - Description: ''
+    Height: 23109
+    MaxLevel: 5
+    Name: i0
+    Path: https://s3.amazonaws.com/www.cycif.org/tnp-2020/colon-case-1
+    Width: 27545
+  Layout:
+    Grid:
+    - - i0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+    - Arrows:
+      - Point:
+        - 0.24738039578494497
+        - 0.0967952205049295
+      - Point:
+        - 0.37924600752671767
+        - 0.4327658660730983
+      - Point:
+        - 0.7874560751795099
+        - 0.16903464258955286
+      - Point:
+        - 0.44001885467727386
+        - 0.7859363740423678
+      - Point:
+        - 0.918175029427876
+        - 0.7870830315357746
+      Description: "This tissue specimen was resected from a 69-year old white male\
+        \ and is a stage IIIB colon adenocarcinoma with a BRAF (V600E) mutation. \n\
+        \nThe epithelium is marked by `Keratin` expression and the stroma, which is\
+        \ the supportive tissue consisting of blood vessels, connective tissue, and\
+        \ smooth muscle cells that line the intestinal wall and aid peristalsis, are\
+        \ marked by `aSMA`.\n\nThe tumor cells are of epithelial origin and multiple\
+        \ stages of disease progression can be observed in different regions of the\
+        \ tissue. \n"
+      Group: structural
+      Name: Disease Pathology
+      Overlays: []
+      Pan:
+      - 0.5317514541498115
+      - 0.4895254119967309
+      Zoom: 0.45421875
+    - Arrows: []
+      Description: Fluorescence imaging is a powerful tool that adds fluorescent molecules
+        to tissue to specifically identify and characterize biological structures
+        in cells and tissues. Here, blue-fluorescent light is emitted by the stain
+        called `DAPI,` which labels all cell nuclei. But many biomolecules in tissue
+        naturally emit light as well � a term called �autofluorescence.� Autofluorescence
+        in the green channel (`AF488`) is shown. During analysis, it is important
+        to distinguish between light emitted from fluorescence that was artificially
+        added and that which naturally occurs in tissue, for each channel imaged.
+      Group: AF488 autofluorescence
+      Name: 'Autofluorescence '
+      Overlays: []
+      Pan:
+      - 0.521431536709151
+      - 0.46773891962200326
+      Zoom: 0.45421875
+    - Arrows: []
+      Description: Local autofluorescence, in addition to average autofluorescence,
+        should also be considered. The colon crypts � which are responsible for renewing
+        the lining of the intestine and making mucus � tend to autofluoresce more
+        than some other structures.
+      Group: AF488 autofluorescence
+      Name: Colonic Crypts
+      Overlays:
+      - height: 0.0666689712651582
+        width: 0.0702184766797384
+        x: 0.3224651049726421
+        y: 0.017450980635060682
+      Pan:
+      - 0.34484438734821915
+      - 0.046988929925296526
+      Zoom: 5.320670673386061
+    - Arrows:
+      - Point:
+        - 0.5916186311532049
+        - 0.23383433535733017
+      Description: 'Canonically, cancer cells divide more rapidly than non-malignant
+        cells. A physician may order a `Ki-67` test to determine the rate of cell
+        division in a specimen that may be suspected of cancer, as a way of measuring
+        how quickly cells are dividing. While `Ki-67` is prevalent in both normal
+        and tumor cells, in this colorectal cancer specimen, the frequency of `Ki-67`
+        positive cells seem to be higher in the tumor (`Keratin`) region than the
+        stroma (`aSMA`). '
+      Group: proliferation
+      Name: Proliferation
+      Overlays:
+      - height: 0.08310747406559424
+        width: 0.12001149965184743
+        x: 0.5193512906071486
+        y: 0.20060592248166328
+      Pan:
+      - 0.5742470005193364
+      - 0.2399345511668883
+      Zoom: 5.320670673386061
+    - Arrows: []
+      Description: An orchestrated immune response to cancer depends on the ability
+        of white blood cells (lymphocytes) to successfully infiltrate the tumor region
+        and interact with the cancer cells.  But tumors can be resistant to immune
+        responses, making immune infiltration an important prognostic marker. The
+        density of these immune populations changes across the tissue and it is therefore
+        important to compare these changes across regions of tumor and stroma. In
+        this colon adenocarcinoma tissue, it appears that T cells (`CD3`) can more
+        successfully infiltrate the tumor region than B cells (`CD20`).
+      Group: B Cells and T Cells
+      Name: Immunoprofiling
+      Overlays:
+      - height: 0.08203069878323674
+        width: 0.1188368357074574
+        x: 0.5240691289411676
+        y: 0.19853958494713123
+      Pan:
+      - 0.566259142277176
+      - 0.23970176733179835
+      Zoom: 5.320670673386062
+    - Arrows:
+      - Point:
+        - 0.5737568838836153
+        - 0.3945208091663304
+      - Point:
+        - 0.570893989061017
+        - 0.4805379347492539
+      - Point:
+        - 0.766972420433566
+        - 0.5883237391294855
+      - Point:
+        - 0.6511600135994873
+        - 0.6823496535888366
+      - Point:
+        - 0.5731873040478304
+        - 0.9908005193152443
+      - Point:
+        - 0.5525474691665095
+        - 0.9564007945130426
+      - Point:
+        - 0.37252224270165446
+        - 0.8543482775998446
+      - Point:
+        - 0.3289492579521991
+        - 0.7958687454361019
+      - Point:
+        - 0.6018537413829983
+        - 0.8830147149350125
+      - Point:
+        - 0.6883645187732639
+        - 0.8447295552520782
+      - Point:
+        - 0.6684554307917042
+        - 0.8192478176627833
+      - Point:
+        - 0.648548182642282
+        - 0.792970250105546
+      - Point:
+        - 0.2707165407437204
+        - 0.04628574124759796
+      - Point:
+        - 0.3075846796436275
+        - 0.09546326230738612
+      Description: 'Small aggregations of T cells (`CD3`), and to a larger extent
+        B cells (`CD20`), mark lymphoid follicles. These structures are involved in
+        immune surveillance and normal mucosal regeneration. However, the number,
+        diameter, density, and activation of lymphoid follicles can be increased during
+        tumor invasion. '
+      Group: B Cells and T Cells
+      Name: Lymphoid Follicles
+      Overlays: []
+      Pan:
+      - 0.5178944990807597
+      - 0.44700416910145313
+      Zoom: 0.4542187500000001
+    - Arrows: []
+      Description: A single lymphoid follicle is comprised primarily of B cells (`CD20`).
+        In this follicle, it appears as though the B cells are spread throughout the
+        follicle, while the T cells (`CD3`) cluster around the outside of the follicle.
+      Group: B Cells and T Cells
+      Name: Lymphoid Follicles (cont.)
+      Overlays:
+      - height: 0.06148360683342369
+        width: 0.06815050395993949
+        x: 0.5517848259708885
+        y: 0.3705069100927625
+      Pan:
+      - 0.5724865028900562
+      - 0.3902415652274898
+      Zoom: 4.049860000481279
