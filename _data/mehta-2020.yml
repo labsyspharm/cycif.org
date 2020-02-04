@@ -1,0 +1,20 @@
+publication:
+  title: TNBC
+  authors: Mehta et al., 2020
+  journal: 
+  link: 
+    # name: Publication summary
+    # url: http://lincs.hms.harvard.edu/lin-elife-2018/
+
+stitched mosaic images:
+  - title: 4m33118
+    description: 
+    thumbnail file name: jenntnbc4m33118.jpg
+    links: 
+      - CyCIF image: osd-jenntnbc4m33118
+  - title: 1892-21591
+    description: 
+    thumbnail file name: jenntnbc1892-21591.jpg
+    links:
+      - CyCIF image : osd-jenntnbc1892-21591
+
