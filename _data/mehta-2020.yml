@@ -1,18 +1,13 @@
 publication:
-  title: TNBC
-  authors: Mehta et al., 2020
+  title: Tumor associated macrophage phenotype and function is directly regulated by PARP inhibition and can be harnessed to overcome PARP-inhibitor resistance in _BRCA_-mutant triple negative breast cancer
+  authors: Anita K. Mehta, Emily M. Cheney, Jessica A. Castrillon, Jia-Ren Lin, Mateus de Oliveira Taveira, Christina A. Hartl, Nathan T. Johnson, , William M. Oldham, Marian Kalocsay, Matthew J. Berberich, Sarah A. Boswell, Constantia Pantelidou, Brett P. Gross, Shawn Johnson, Deborah A. Dillon, Mikel Lipschitz, Scott Rodig, Sandro Santagata, Judy E. Garber, Nadine Tung, Elizabeth A. Mittendorf, Geoffrey I. Shapiro, Peter K. Sorger, Jennifer L. Guerriero
   journal: 
   link: 
     # name: Publication summary
     # url: http://lincs.hms.harvard.edu/lin-elife-2018/
 
 stitched mosaic images:
-  - title: 4m33118
-    description: 
-    thumbnail file name: jenntnbc4m33118.jpg
-    links: 
-      - CyCIF image: osd-jenntnbc4m33118
-  - title: 1892-21591
+  - title: BRCA-WT vs BRCA1-associated TNBC
     description: 
     thumbnail file name: jenntnbc1892-21591.jpg
     links:

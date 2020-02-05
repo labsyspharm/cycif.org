@@ -1,16 +1,27 @@
 Exhibit:
-  Name: jenntnbc1892-21591
+  Name: BRCA-WT vs BRCA1-associated TNBC
+  Header: |
+    We profiled both T-cell and macrophage populationsn in tissue resection specimens from untreated patients with either _BRCA_-WT or _BRCA1_-associated TNBC.
+
+    t-CyCIF was performed on formalin-fixed, paraffin-embedded (FFPE) tumors. Entire tissue sections were analyzed yielding ~ 2 x 10<sup>5</sup> segmented and profiled cells per specimen.
+  Footer: ''
   PixelsPerMicron: 1.5385
   Images:
   - Name: i0
-    Description: 1892-21591
+    Description: BRCA-wildtype TNBC
+    Path: https://s3.amazonaws.com/www.cycif.org/mehta-2020/jenntnbc4m33118
+    Width: 15731
+    Height: 12120
+    MaxLevel: 4
+  - Name: i1
+    Description: BRCA1-associated TNBC
     Path: https://s3.amazonaws.com/www.cycif.org/mehta-2020/jenntnbc1892-21591
     Width: 20550
     Height: 11113
     MaxLevel: 5
   Layout:
     Grid:
-    - - i0
+    - [i0, i1]
   Groups:
   - Channels:
     - Hoechst
@@ -21,14 +32,14 @@ Exhibit:
     - 0000ff
     - 00ff00
     - ff0000
-    - ffff00
-    Name: Macrophage
+    - ffffff
+    Name: Macrophages
     Path: Macrophage_12__Hoechst--17__CD163--13__CD68--18__Keratin
   - Channels:
     - Hoechst
     - CD4
     - CD8a
-    - FOP3
+    - FOXP3
     Colors:
     - 0000ff
     - 00ff00
@@ -53,33 +64,119 @@ Exhibit:
     Name: Nuclei
     Path: Nuclei_12__Hoechst
   Stories:
-  - Name: Overview
+  - Name: ''
     Description: null
     Waypoints:
-    - Zoom: 0.39
+    - Name: Overview
+      Group: Macrophages
+      Description: |
+        Example t-CyCIF whole tissue images of _BRCA_-WT TNBC (left) and _BRCA1_-associated TNBC (right). 
+      Zoom: 0.2776
       Pan:
-      - 0.924592819221
-      - 0.52
-      Group: Macrophage
-      Name: The Waypoint
-      Description: ''
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-  - Name: About
-    Description: null
-    Waypoints:
-    - Name: Waypoint 1
-      Group: T Cells
-      Description: ''
-      Overlay:
-        x: -100
-        y: -100
-        width: 200
-        height: 200
-      Pan:
-      - 0.924592819221
+      - 1.6398
       - 0.5
-      Zoom: 0.6
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+      Arrows:
+        - Point:
+            - 1.20
+            - 0.15
+          Text: BRCA-WT TNBC
+          HideArrow: true
+        - Point:
+            - 2.05
+            - 0.15
+          Text: BRCA1-associated TNBC
+          HideArrow: true
+    - Name: Macrophages in BRCA-WT TNBC
+      Group: Macrophages
+      Description: |
+        The tumor cells in this _BRCA_-WT TNBC tissue section were labeled with `keratin`. Macrophages are shown in gree, red and yellow in the image (`CD68` positive or/and CD163 positive).
+      Zoom: 1.2395
+      Pan:
+      - 0.4500
+      - 0.2198
+      Overlay:
+        x: 0.2643
+        y: 0.0765
+        width: 0.3867
+        height: 0.314
+    - Name: T cells in BRCA-WT TNBC
+      Group: T Cells
+      Description: |
+        The cloud of red (`CD8a`), green (`CD4`), and white (`FoxP3`) cells is showing that T cells are excluded and outlined in the periphery of the tumor.
+      Zoom: 1.4395
+      Pan:
+      - 0.4500
+      - 0.2198
+      Overlay:
+        x: 0.2643
+        y: 0.0765
+        width: 0.3867
+        height: 0.314
+    - Name: Macrophages in BRCA1-associated TNBC
+      Group: Macrophages
+      Description: |
+       In the overview, the _BRCA1_-associated TNBC appears to have more intermingled green and white compoents as compared to the _BRCA_-WT TNBC.
+      Overlay:
+        x: 2.596
+        y: 0.6925
+        width: 0.1683
+        height: 0.1013
+      Pan:
+      - 2.6638
+      - 0.4099
+      Zoom: 0.4626
+    - Name: Macrophages in BRCA1-associated TNBC (cont.)
+      Group: Macrophages
+      Description: |
+        When zoomed-in to the single cells, `keratin` positive tumor cells are surrounded and infilterated by macrophages (`CD68` positive or/and `CD163` positive).
+      Overlay:
+        x: 2.596
+        y: 0.6925
+        width: 0.1683
+        height: 0.1013
+      Pan:
+      - 2.6779
+      - 0.7401
+      Zoom: 2.8692
+    - Name: T Cells in BRCA1-associated TNBC
+      Group: T Cells
+      Description: |
+        Significant increases in the presence of cytotoxic T lymphocytes (`CD8a` positive), which have the potential to directly kill tumor cells, and regulatory T-cells (`CD4` positive and `FoxP3` positive) are also observed.  
+      Overlay:
+        x: 2.596
+        y: 0.6925
+        width: 0.1683
+        height: 0.1013
+      Pan:
+      - 2.6779
+      - 0.7401
+      Zoom: 3.8692
+    - Name: Conclusion
+      Group: Macrophages
+      Description: |
+        t-CyCIF images of _BRCA_-WT (n=6) and _BRCA1_-associated (n=9) TNBC were analyzed and not only T-cells were abundant in _BRCA1_-associated TNBC, the _BRCA1_-associated TNBC exhibited a 10-fold increase of `CD68`+`CD163`+ macrophages as compared to _BRCA_-WT TNBC.
+      Zoom: 0.2776
+      Pan:
+      - 1.6398
+      - 0.5
+      Overlay:
+        x: -100
+        y: -100
+        width: 200
+        height: 200
+      Arrows:
+        - Point:
+            - 1.20
+            - 0.15
+          Text: BRCA-WT TNBC
+          HideArrow: true
+        - Point:
+            - 2.05
+            - 0.15
+          Text: BRCA1-associated TNBC
+          HideArrow: true
