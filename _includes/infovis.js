@@ -40,7 +40,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata, events){
                 //END PREPROCESSING
 
                 //all framing stuff
-                vis.margin = { top: 40, right: 80, bottom: 0, left: 70 };
+                vis.margin = { top: 40, right: 70, bottom: 0, left: 80 };
                 vis.size = wid_waypoint.clientWidth;
                 vis.width = vis.size - vis.margin.left - vis.margin.right;
                 vis.cellPadding = 4;
