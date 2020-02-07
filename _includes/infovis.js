@@ -88,7 +88,9 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata, events){
                         return rowNames[i];
                     })
                     .style('opacity', 1)
-                    //.on("click", function(d,i) { alert('clicked on row' + i); });
+                    .on("click", function(d,i) {
+                      events.clickHandler(rowNames[i], '')
+                    });
 
                 // the cells (colored rectangles)
                 var cell = row.selectAll(".matrix-cell-business")
@@ -143,7 +145,9 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata, events){
                     .text(function(d,i){
                         return d;
                     })
-                    //.on("click", function(d,i) { alert('clicked on column' + i); });;
+                    .on("click", function(d,i) {
+                      events.clickHandler('', data.columns[i])
+                    });
 
                 //dynamic legend
                 vis.svg.append("g")

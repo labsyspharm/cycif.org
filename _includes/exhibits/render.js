@@ -932,10 +932,17 @@ Render.prototype = {
       if (m >= 0) {
         HS.m = [m];
       }
-      const re_chan = RegExp(chan,'gi');
-      const c = index_regex(HS.cgs, re_chan);
+      
+      const c = index_name(HS.cgs, chan);
       if (c >= 0) {
         HS.g = c;
+      }
+      else {
+        const re_chan = RegExp(chan,'gi');
+        const r_c = index_regex(HS.cgs, re_chan);
+        if (r_c >= 0) {
+          HS.g = r_c;
+        }
       }
       THIS.newView(true);
     }
