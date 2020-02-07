@@ -391,13 +391,13 @@ polygon {
 }
 
 .matrix-label {
-    font-size:8px;
+    font-size: 8px;
     color: white;
     fill : white;
 }
 
 .matrix-row-label {
-    font-size:8px;
+    font-size: 8px;
     color: white;
     fill : white;
     border: 1px;
