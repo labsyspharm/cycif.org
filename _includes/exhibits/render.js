@@ -926,6 +926,21 @@ Render.prototype = {
       THIS.newView(true);
     }
 
+    const chanAndMaskHandler = function(mask, chan) {
+      const re_mask = RegExp(mask,'gi');
+      const m = index_regex(HS.masks, re_mask);
+      if (m >= 0) {
+        HS.m = [m];
+      }
+      const re_chan = RegExp(chan,'gi');
+      const c = index_regex(HS.cgs, re_chan);
+      if (c >= 0) {
+        HS.g = c;
+      }
+      THIS.newView(true);
+    }
+
+
     //VIS
     const renderVis = function(visType, el, id) {
       const renderer = {
@@ -933,8 +948,13 @@ Render.prototype = {
         'VisBarChart': infovis.renderBarChart,
         'VisScatterplot': infovis.renderScatterplot
       }[visType]
+      const clickHandler = {
+        'VisMatrix': chanAndMaskHandler,
+        'VisBarChart': maskHandler,
+        'VisScatterplot': undefined
+      }[visType]
       const tmp = renderer(el, id, waypoint[visType], {
-        'clickHandler': maskHandler
+        'clickHandler': clickHandler
       });
       tmp.then(() => finish_waypoint(visType));
     }

@@ -1,7 +1,7 @@
 
 infovis = {};
 
-infovis.renderMatrix = function(wid_waypoint, id, visdata){
+infovis.renderMatrix = function(wid_waypoint, id, visdata, events){
     return d3.csv(visdata)
         .then(function(data) {
 
@@ -124,6 +124,10 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata){
                         tooltip.transition()
                             .duration(500)
                             .style("opacity", 0);
+                    })
+                    .on("click", function(d,i) {
+                      var j = this.parentElement.id.split('_')[1];
+                      events.clickHandler(rowNames[j], data.columns[i])
                     });
 
                 // the x-axis labels (top)
