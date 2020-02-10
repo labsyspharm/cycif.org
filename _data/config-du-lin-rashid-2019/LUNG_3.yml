@@ -146,6 +146,12 @@ Exhibit:
         - FFFFFF
       Channels:
         - Hoechst
+    - Path: KERATIN_14__KERATIN
+      Name: KERATIN
+      Colors:
+        - FFFFFF
+      Channels:
+        - KERATIN
     - Path: ASMA_34__ASMA
       Name: ASMA
       Colors:
