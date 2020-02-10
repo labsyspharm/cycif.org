@@ -248,11 +248,11 @@ infovis.renderBarChart = function(wid_waypoint, id, visdata, events){
 
             //little animation
             vis.svg.selectAll("rect")
-                .transition()
-                .duration(800)
+                // .transition()
+                // .duration(800)
                 .attr("y", function(d) { return vis.y(d.frequency); })
                 .attr("height", function(d) { return vis.height - vis.y(d.frequency); })
-                .delay(function(d,i){return(i*100)})
+                // .delay(function(d,i){return(i*100)})
 
             //interaction
             vis.svg.selectAll("rect")
@@ -414,5 +414,4 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
     }).catch((error) => {
         throw error;
     });
-}
-
+};
