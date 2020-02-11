@@ -290,22 +290,31 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
     var margin = {top: 20, right: 20, bottom: 30, left: 40};
     var width = wid_waypoint.clientWidth - margin.left - margin.right;
     var height = width;
-
+    var formatter = d3.format(".2n");
+    var visdata = visdata;
 
     // setup x
-    var xValue = function(d) { return Object.values(d)[1];},
+    var xValue = function(d) {
+        return d[visdata.axes.x];
+        },
         xScale = d3.scaleLinear().range([0, width]),
-        xMap = function(d) { return xScale(xValue(d));},
+        xMap = function(d) {
+        return xScale(xValue(d));
+        },
         xAxis = d3.axisBottom(xScale);
 
     // setup y
-    var yValue = function(d) { return Object.values(d)[2];},
+    var yValue = function(d) {
+        return d[visdata.axes.y];
+        },
         yScale = d3.scaleLinear().range([height, 0]),
-        yMap = function(d) { return yScale(yValue(d));},
+        yMap = function(d) {
+        return yScale(yValue(d));
+        },
         yAxis = d3.axisLeft(yScale);
 
     // setup fill color
-    var cValue = function(d) { return d.Cluster;},
+    var cValue = function(d) { return d.clust_ID;},
         color = d3.scaleOrdinal(d3.schemeCategory10);;
 
     // add the graph canvas to the body of the webpage
@@ -321,17 +330,18 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
         .style("opacity", 0);
 
     // load data
-    return d3.csv(visdata).then(function(data) {
-
-        // change string (from CSV) into number format
+    return d3.csv(visdata.data).then(function(data) {
+        //change string (from CSV) into number format
         data.forEach(function (d) {
-            d[Object.keys(d)[1]] = +Object.values(d)[1];
-            d[Object.keys(d)[2]] = +Object.values(d)[2];
+            d[visdata.axes.x] = +d[visdata.axes.x];
+            d[visdata.axes.y] = +d[visdata.axes.y];
         });
-
+    //console.log(tedf)
         // don't want dots overlapping axis, so add in buffer to data domain
-        xScale.domain([d3.min(data, xValue) - 50, d3.max(data, xValue) + 50]);
-        yScale.domain([d3.min(data, yValue) - 50, d3.max(data, yValue) + 50]);
+        var dataRange = (Math.abs(d3.max(data, xValue)) + Math.abs(d3.min(data, xValue)) );
+        var tenPercentBorder = dataRange/10;
+        xScale.domain([d3.min(data, xValue) - tenPercentBorder, d3.max(data, xValue) + tenPercentBorder]);
+        yScale.domain([d3.min(data, yValue) - tenPercentBorder, d3.max(data, yValue) + tenPercentBorder]);
 
         // x-axis
         svg.append("g")
@@ -343,7 +353,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
             .attr("x", width)
             .attr("y", -6)
             .style("text-anchor", "end")
-            .text(Object.keys(data[0])[1])
+            .text(visdata.axes.x)
             .attr('fill', 'white');
 
         // y-axis
@@ -356,34 +366,45 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text(Object.keys(data[0])[2])
+            .text(visdata.axes.y)
             .attr('fill', 'white');
+
+        // define dot size and opacity depending on data size (more instances lead to smaller more transparent points)
+        var relSize = 1.5, opacity = 0.5;
+        if (data.length <= 100){
+            relSize = 3.5; opacity = 1.0;
+        }
+        else if (data.length <= 1000){
+            relSize = 2; opacity = 0.75;
+        }
 
         // draw dots
         svg.selectAll(".dot")
             .data(data)
             .enter().append("circle")
             .attr("class", "dot")
-            .attr("r", 3.5)
+            .attr("r", relSize)
             .attr("cx", xMap)
             .attr("cy", yMap)
             .style("fill", function (d) {
                 return color(cValue(d));
             })
-            // .on("mouseover", function (d) {
-            //     tooltip.transition()
-            //         .duration(200)
-            //         .style("opacity", .9);
-            //     tooltip.html(d.Cluster + "<br/> (" + xValue(d)
-            //         + ", " + yValue(d) + ")")
-            //         .style("left", (d3.event.pageX + 5) + "px")
-            //         .style("top", (d3.event.pageY - 28) + "px");
-            // })
-            // .on("mouseout", function (d) {
-            //     tooltip.transition()
-            //         .duration(500)
-            //         .style("opacity", 0);
-            // });
+            .attr('fill-opacity', opacity)
+            .on("mouseover", function (d) {
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                tooltip.html("Cluster: " + d.clust_ID + "<br/> (" +
+                    formatter(parseFloat(xValue(d))) + ", " +
+                    formatter(parseFloat(yValue(d))) + ")")
+                    .style("left", (d3.event.pageX + 5) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+            })
+            .on("mouseout", function (d) {
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
 
         // draw legend
         var legend = svg.selectAll(".legend")
@@ -409,7 +430,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
             .style("text-anchor", "end")
             .text(function (d) {
                 return d;
-            })
+            }).attr('font-size', '0.8em')
             .attr('fill', 'white');
     }).catch((error) => {
         throw error;
