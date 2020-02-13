@@ -21,8 +21,8 @@ const authenticate = function(username, pass) {
 
   return pass.then(function(password) {
 
-    const minervaPoolId = 'us-east-1_YuTF9ST4J'; 
-    const minervaClientId = '6ctsnjjglmtna2q5fgtrjug47k';
+    const minervaPoolId = 'us-east-1_d3Wusx6qp';
+    const minervaClientId = 'cvuuuuogh6nmqm8491iiu1lh5';
     const minervaPool = new CognitoUserPool({
       UserPoolId : minervaPoolId,
       ClientId : minervaClientId
@@ -331,7 +331,7 @@ HashState.prototype = {
 
 
   get token() {
-    const username = 'john@hoff.in'
+    const username = 'john_hoffer@hms.harvard.edu'
     const pass = new Promise(function(resolve, reject) {
 
       resolve('MEETING@lsp2');
@@ -1064,10 +1064,15 @@ const getGetTileUrl = function(image, layer, channelSettings) {
       }
       return list;
     }, []);
-    const channelPath = channelList.join('/');
+
+    let channelPath = channelList.join('/');
+    let api = image.Path + '/render-tile/';
+    if (image.Path.includes('/prerendered-tile/')) {
+      channelPath = layer.Path;
+      api = image.Path;
+    }
 
     const getMinervaTile = function(level, x, y) {
-      const api = image.Path + '/render-tile/';
       const lod = (image.MaxLevel - level) + '/';
       const pos = x + '/' + y + '/0/0/';
       const url = api + pos + lod + channelPath;
