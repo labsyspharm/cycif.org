@@ -772,7 +772,7 @@ HashState.prototype = {
     const name = {
       'explore': 'Free Explore',
       'tag': 'Shared Link',
-      'outline': ' '
+      'outline': 'Introduction'
     }[mode];
 
     const groups = {

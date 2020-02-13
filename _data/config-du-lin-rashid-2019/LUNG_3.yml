@@ -370,8 +370,12 @@ Exhibit:
       VisBarChart: /assets/visdata/cellCounts.csv
       VisScatterplot:
         data: /assets/visdata/scatterplotExampleData_Medium.csv
+        clusters:
+          labels: Tumor,Other,Immune,Stromal
+          colors: e41a1c,984ea3,4daf4a,377eb8
+          reorder: Tumor,Stromal,Immune,Other
         axes:
-          x: KERATIN
+          x: ASMA
           y: CD45
       Description: |
         When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
@@ -386,6 +390,10 @@ Exhibit:
         The number of cells belonging to each cluster is shown in the bar chart.
       
         `VisBarChart`
+
+        The Scatterplot shows log normalized mean instensities (au) of KERATIN and CD45 for a sample of cells.
+
+        `VisScatterplot`
       
         Click on each of the clusters below to see which cells in the image belong to each cluster.
 

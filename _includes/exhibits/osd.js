@@ -41,7 +41,7 @@ const newMarkers = function(tileSources, group, active_masks) {
 };
 
 
-const RenderOSD = function(hashstate, viewer, tileSources) {
+const RenderOSD = function(hashstate, viewer, tileSources, eventHandler) {
 
   this.svg_overlay = d3.select(viewer.svgOverlay().node());
   this.tileSources = tileSources;
@@ -49,6 +49,7 @@ const RenderOSD = function(hashstate, viewer, tileSources) {
   this.viewer = viewer;
   this.mouseEvent = {};
   this.trackers = [];
+  this.eventHandler = eventHandler;
 
   this.init();
 }
@@ -131,11 +132,17 @@ RenderOSD.prototype = {
     this.viewer.addHandler('canvas-click', function(e) {
       const THIS = e.userData;
       const HS = THIS.hashstate;
+
+      const position = THIS.normalize(e.position);
+      //trigger event
+      var imageCoordinates =  THIS.viewer.viewport.viewportToImageCoordinates(position.x, position.y);
+      THIS.eventHandler.trigger(THIS.eventHandler.events.osdClickEvent, {'x': imageCoordinates.x, "y" : imageCoordinates.y});
+
       if (HS.drawType == "lasso") {
         return;
       }
       if (HS.drawType == "arrow") {
-        const position = THIS.normalize(e.position);
+        // const position = THIS.normalize(e.position);
         if (HS.drawing == 1) {
           HS.a = [position.x, position.y];
           HS.finishDrawing();
@@ -145,8 +152,6 @@ RenderOSD.prototype = {
         }
         return;
       }
-
-      const position = THIS.normalize(e.position);
 
       if (HS.drawing == 1) {
         HS.drawing = 2;

@@ -165,11 +165,20 @@ const build_page = function(exhibit, options) {
     color: 'rgb(255, 255, 255)'
   })
 
+  //set up event handler
+  const eventHandler = new SimpleEventHandler(d3.select('body').node());
+
   const hashstate = new HashState(exhibit, options);
   const tileSources = {};
-  const osd = new RenderOSD(hashstate, viewer, tileSources);
-  const render = new Render(hashstate, osd);
+  const osd = new RenderOSD(hashstate, viewer, tileSources, eventHandler);
+  const render = new Render(hashstate, osd, eventHandler);
   const init = render.init.bind(render);
+
+  // //callback method
+  // const actionTestExecution = (d) => {
+  //   console.log(d.message);
+  // }//register method with event handler
+  // eventHandler.bind(eventHandler.events.testEvent, actionTestExecution);
 
   arrange_images(viewer, tileSources, hashstate, init);
 }
