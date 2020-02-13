@@ -940,6 +940,15 @@ Render.prototype = {
       THIS.newView(true);
     }
 
+      const arrowHandler = function(cellPosition){
+          var viewportCoordinates = THIS.osd.viewer.viewport.imageToViewportCoordinates(cellPosition[0], cellPosition[1]);
+          //change hashstate vars
+          HS.a = [viewportCoordinates.x,viewportCoordinates.y];
+          HS.v = [ 10, viewportCoordinates.x, viewportCoordinates.y]
+          //render without menu redraw
+          THIS.osd.newView(true);
+      }
+
 
     //VIS
     const renderVis = function(visType, el, id) {
@@ -951,7 +960,7 @@ Render.prototype = {
       const clickHandler = {
         'VisMatrix': chanAndMaskHandler,
         'VisBarChart': maskHandler,
-        'VisScatterplot': undefined
+        'VisScatterplot': arrowHandler
       }[visType]
       const tmp = renderer(el, id, waypoint[visType], {
         'clickHandler': clickHandler

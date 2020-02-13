@@ -286,12 +286,16 @@ infovis.renderBoxPlot = function(wid_waypoint, id, visdata){
     //to be implemented
 }
 
-infovis.renderScatterplot = function(wid_waypoint, id, visdata){
+infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
     var margin = {top: 20, right: 20, bottom: 30, left: 40};
     var width = wid_waypoint.clientWidth - margin.left - margin.right;
     var height = width;
     var formatter = d3.format(".2n");
     var visdata = visdata;
+
+    //strings to arrays
+    var labels = visdata.clusters.labels.split(',');
+    var colors = visdata.clusters.colors.split(',');
 
     // setup x
     var xValue = function(d) {
@@ -313,9 +317,26 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
         },
         yAxis = d3.axisLeft(yScale);
 
+    var cellPos = function(d){
+        return [parseInt(d['X_position']), parseInt(d['Y_position'])];
+    }
+
     // setup fill color
-    var cValue = function(d) { return d.clust_ID;},
-        color = d3.scaleOrdinal(d3.schemeCategory10);;
+    var cValue = function(d) {
+        return labels[parseInt(d.clust_ID)-1]; //starts with cluster 1, but first array field is 0
+    };
+
+    //old automatic color function
+    // var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+    // color = function(c){
+    //     return d3.rgb("#" + clusters.colors[c-1]);
+    // }
+
+    //config driven color coding
+    var color = d3.scaleOrdinal()
+        .domain(labels)
+        .range(colors);
 
     // add the graph canvas to the body of the webpage
     var svg = d3.select("#"+id).append("svg")
@@ -327,7 +348,8 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
     // add the tooltip area to the webpage
     var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip")
-        .style("opacity", 0);
+        .style("opacity", 0)
+        .style('width', '100px');
 
     // load data
     return d3.csv(visdata.data).then(function(data) {
@@ -390,13 +412,16 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata){
                 return color(cValue(d));
             })
             .attr('fill-opacity', opacity)
+            .on('click', function (d){
+                events.clickHandler(cellPos(d));
+            })
             .on("mouseover", function (d) {
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", .9);
-                tooltip.html("Cluster: " + d.clust_ID + "<br/> (" +
-                    formatter(parseFloat(xValue(d))) + ", " +
-                    formatter(parseFloat(yValue(d))) + ")")
+                tooltip.html(cValue(d) + "<br/> (" +
+                    "x: " + formatter(parseFloat(xValue(d))) + ", " +
+                    "y: " + formatter(parseFloat(yValue(d))) + ")")
                     .style("left", (d3.event.pageX + 5) + "px")
                     .style("top", (d3.event.pageY - 28) + "px");
             })
