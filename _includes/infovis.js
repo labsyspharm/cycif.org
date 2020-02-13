@@ -296,6 +296,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
     //strings to arrays
     var labels = visdata.clusters.labels.split(',');
     var colors = visdata.clusters.colors.split(',');
+    var order =  visdata.clusters.reorder.split(',');
 
     // setup x
     var xValue = function(d) {
@@ -337,6 +338,14 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
     var color = d3.scaleOrdinal()
         .domain(labels)
         .range(colors);
+
+    // the legend shows the clusters in a different order, defined by the user
+    sortedColors = colors.slice().sort(function(a, b){
+        return order.indexOf(labels[colors.indexOf(a)] ) - order.indexOf(labels[colors.indexOf(b)]);
+    });
+    var sortedColor = d3.scaleOrdinal()
+        .domain(order)
+        .range(sortedColors);
 
     // add the graph canvas to the body of the webpage
     var svg = d3.select("#"+id).append("svg")
@@ -433,7 +442,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
 
         // draw legend
         var legend = svg.selectAll(".legend")
-            .data(color.domain())
+            .data(sortedColor.domain())
             .enter().append("g")
             .attr("class", "legend")
             .attr("transform", function (d, i) {
@@ -445,7 +454,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
             .attr("x", width - 18)
             .attr("width", 18)
             .attr("height", 18)
-            .style("fill", color);
+            .style("fill", sortedColor);
 
         // draw legend text
         legend.append("text")

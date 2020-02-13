@@ -379,7 +379,7 @@ Exhibit:
         clusters:
           labels: Tumor,Other,Immune,Stromal
           colors: e41a1c,377eb8,4daf4a,984ea3
-          reorder: 1,4,3,2
+          reorder: Tumor,Stromal,Immune,Other
         axes:
           x: KERATIN
           y: CD45
