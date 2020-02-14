@@ -470,3 +470,265 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
         throw error;
     });
 };
+
+infovis.renderCanvasScatterplot = function(wid_waypoint, id, visdata, events){
+    // constants
+    var numberPoints = visdata.data.length;
+    var subsetSize = 0; //later..
+    var pointRadius = 1;
+    var zoomEndDelay = 200;
+
+    //zoom
+    var k = 1;
+
+    //meta
+    //strings to arrays
+    var labels = visdata.clusters.labels.split(',');
+    var colors = visdata.clusters.colors.split(',');
+    var order =  visdata.clusters.reorder.split(',');
+
+    // timeout function
+    var zoomEndTimeout;
+
+    // save the index of the currently selected point
+    var selectedPoint;
+
+    // define all size variables
+    var margin = {top: 10, right: 10, bottom: 30, left: 20};
+    var fullWidth = wid_waypoint.clientWidth - margin.left - margin.right;
+    var fullHeight = fullWidth;
+    var formatter = d3.format(".2n");
+    var width = fullWidth - margin.left - margin.right;
+    var height = fullHeight - margin.top - margin.bottom;
+
+    // var fullWidth = 250;
+    // var fullHeight = 250;
+    // var margin = {top: 10, right: 10, bottom: 30, left: 30};
+    // var width = fullWidth - margin.left - margin.right;
+    // var height = fullHeight - margin.top - margin.bottom;
+
+    //add svg (for axis and stuff)
+
+    var div = d3.select("#"+id).append('div')
+        .style('width', fullWidth + 'px')
+        .style('height', fullHeight  + 'px')
+        .style('background-color', 'black');
+
+    div.append("svg")
+        .attr('id', 'axis-svg')
+        .attr('class', 'plot');
+
+    //add canvas (for the actual plot)
+    div.append('canvas')
+        .attr('id', 'plot-canvas')
+        .attr('class', 'plot');
+
+    //load data
+    return d3.csv(visdata.data).then(function(dat) {
+        subsetSize = Math.min(dat.length,10000);
+
+        console.log('shifting data');
+        var data = dat.map(function(d, i) {
+            return [parseFloat(d[visdata.axes.x]), parseFloat(d[visdata.axes.y]), d, i,false]
+        });
+
+        // create a quadtree for fast hit detection
+        var quadTree = d3.quadtree(data);
+
+        // selected sample random numbers -- this is the subset of points
+        // drawn during 'zoom' events
+        var randomIndex = _.sampleSize(data, subsetSize);
+
+
+
+        // the canvas is shifted by 1px to prevent any artefacts
+        // when the svg axis and the canvas overlap
+        var canvas = d3.select("#plot-canvas")
+            .attr("width", width - 1)
+            .attr("height", height - 1)
+            .style("transform", "translate(" + (margin.left + 1) +
+                "px" + "," + (margin.top + 1) + "px" + ")");
+
+        var svg = d3.select("#axis-svg")
+            .attr("width", fullWidth)
+            .attr("height", fullHeight)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," +
+                margin.top + ")");
+
+        // ranges, scales, axis, objects
+        var xRange = d3.extent(data, function(d) { return d[0] });
+        var yRange = d3.extent(data, function(d) { return d[1] });
+
+        var xScale = d3.scaleLinear()
+            .domain([xRange[0], xRange[1] + 1])
+            .range([0, width]);
+        var x2 = xScale.copy();
+
+        var yScale = d3.scaleLinear()
+            .domain([yRange[0], yRange[1] + 1])
+            .range([height, 0]);
+        var y2 = yScale.copy()
+
+        var xAxis = d3.axisBottom()
+            .scale(xScale)
+            .tickSizeInner(-height)
+            .tickSizeOuter(0)
+            .tickPadding(10)
+
+        var yAxis = d3.axisLeft()
+            .scale(yScale)
+            .tickSizeInner(-width)
+            .tickSizeOuter(0)
+
+        // create zoom behaviour
+        var zoomBehaviour = d3.zoom()
+            .scaleExtent([1, 100])
+            .on("zoom",onZoom)
+            .on("end", onZoomEnd);
+
+        // append x-axis, y-axis
+        var xAxisSvg = svg.append('g')
+            .attr('class', 'x axis')
+            .attr('transform', 'translate(0,' + height + ')')
+            .call(xAxis);
+
+        var yAxisSvg = svg.append('g')
+            .attr('class', 'y axis')
+            .call(yAxis);
+
+        // on onclick handler
+        canvas.on("click", onClick);
+
+        // add zoom behaviour
+        canvas.call(zoomBehaviour);
+
+        // get the canvas drawing context
+        var context = canvas.node().getContext('2d');
+
+        draw();
+
+        function onClick() {
+            var mouse = d3.mouse(this);
+
+            // map the clicked point to the data space
+            var xClicked = xScale.invert(mouse[0]);
+            var yClicked = yScale.invert(mouse[1]);
+
+            // find the closest point in the dataset to the clicked point
+            var closest = quadTree.find(xClicked, yClicked);
+
+            // map the co-ordinates of the closest point to the canvas space
+            var dX = xScale(closest[0]);
+            var dY = yScale(closest[1]);
+
+            // register the click if the clicked point is in the radius of the point
+            var distance = euclideanDistance(mouse[0], mouse[1], dX, dY);
+
+            if(distance < pointRadius*10) {
+                if(selectedPoint) {
+                    data[selectedPoint][4] = false;
+                }
+                closest[4] = true;
+                selectedPoint = closest[3];
+
+                // redraw the points
+                draw();
+            }
+        }
+
+        function onZoom() {
+            xScale = d3.event.transform.rescaleX(x2);
+            xAxis.scale(xScale);
+            xAxisSvg.call(xAxis);
+
+            yScale = d3.event.transform.rescaleY(y2);
+            yAxis.scale(yScale);
+            yAxisSvg.call(yAxis);
+
+            k = d3.event.transform.k;
+
+            clearTimeout(zoomEndTimeout);
+            if (k <5){
+                draw(randomIndex);
+            }else{
+                draw();
+            }
+        }
+
+        function onZoomEnd() {
+            // when zooming is stopped, create a delay before
+            // redrawing the full plot
+            zoomEndTimeout = setTimeout(function() {
+                draw();
+            }, zoomEndDelay);
+        }
+
+
+        // the draw function draws the full dataset if no index
+        // parameter supplied, otherwise it draws a subset according
+        // to the indices in the index parameter
+        function draw(index) {
+            var active;
+
+            context.clearRect(0, 0, fullWidth, fullHeight);
+            context.fillStyle = "rgba(255, 255, 255, 0.5)";
+            context.strokeWidth = 1;
+            context.strokeStyle = 'white';
+
+            // if an index parameter is supplied, we only want to draw points
+            // with indices in that array
+            if(index) {
+                index.forEach(function(i) {
+                    var point = data[i[3]];
+                    if(!point[4]) {
+                        drawPoint(point, pointRadius);
+                    }
+                    else {
+                        active = point;
+                    }
+                });
+            }
+            // draw the full dataset otherwise
+            else {
+                data.forEach(function(point) {
+                    if(!point[4]) {
+                        drawPoint(point, pointRadius);
+                    }
+                    else {
+                        active = point;
+                    }
+                });
+            }
+
+            // ensure that the actively selected point is drawn last
+            // so it appears at the top of the draw order
+            if(active) {
+                context.fillStyle = 'red';
+                drawPoint(active, pointRadius);
+                context.fillStyle = "rgba(255, 255, 255, 0.5)";
+            }
+        }
+
+        function drawPoint(point, r) {
+            var cx = xScale(point[0]);
+            var cy = yScale(point[1]);
+
+            // NOTE; each point needs to be drawn as its own path
+            // as every point needs its own stroke. you can get an insane
+            // speed up if the path is closed after all the points have been drawn
+            // and don't mind points not having a stroke
+            var hexColor = colors[point[2].clust_ID-1];
+            var color = d3.rgb("#" + hexColor);
+            color.opacity = 0.5;
+            context.fillStyle = color + "";
+            context.beginPath();
+            context.arc(cx, cy, r * (k/10.0), 0, 2 * Math.PI);
+            context.fill();
+        }
+
+        function euclideanDistance(x1, y1, x2, y2) {
+            return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        }
+    });
+}

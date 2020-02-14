@@ -378,10 +378,10 @@ Exhibit:
         data: /assets/visdata/scatterplotExampleData_Medium.csv
         clusters:
           labels: Tumor,Other,Immune,Stromal
-          colors: e41a1c,377eb8,4daf4a,984ea3
+          colors: e41a1c,984ea3,4daf4a,377eb8
           reorder: Tumor,Stromal,Immune,Other
         axes:
-          x: KERATIN
+          x: ASMA
           y: CD45
       Description: |
         When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
