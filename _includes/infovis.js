@@ -109,6 +109,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata, events){
                         return myColor(d);
                     })
                     .on("mouseover", function(d, i) {
+                        d3.select(this).style("cursor", "pointer");
                         d3.select(this).attr('stroke', 'white')
                             .attr('stroke-width', '2');
                         tooltip.transition()
@@ -121,6 +122,7 @@ infovis.renderMatrix = function(wid_waypoint, id, visdata, events){
                             * (vis.cellHeight + vis.cellPadding) + "px");
                     })
                     .on("mouseout", function(d) {
+                        d3.select(this).style("cursor", "default");
                         d3.select(this).attr('stroke', 'black')
                             .attr('stroke-width', '0');
                         tooltip.transition()
@@ -257,6 +259,7 @@ infovis.renderBarChart = function(wid_waypoint, id, visdata, events){
             //interaction
             vis.svg.selectAll("rect")
                 .on("mouseover", function(d) {
+                    d3.select(this).style("cursor", "pointer");
                     d3.select(this).attr('stroke', 'white')
                         .attr('stroke-width', '2');
                     vis.tooltip.transition()
@@ -267,6 +270,7 @@ infovis.renderBarChart = function(wid_waypoint, id, visdata, events){
                         .style("top", (d3.select(this).attr('y') - vis.margin.top) + "px");
                 })
                 .on("mouseout", function(d) {
+                    d3.select(this).style("cursor", "default");
                     d3.select(this).attr('stroke', 'black')
                         .attr('stroke-width', '0');
                     vis.tooltip.transition()
