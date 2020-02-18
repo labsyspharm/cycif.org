@@ -425,6 +425,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
                 events.clickHandler(cellPos(d));
             })
             .on("mouseover", function (d) {
+                d3.select(this).style("cursor", "pointer");
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -435,6 +436,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
                     .style("top", (d3.event.pageY - 28) + "px");
             })
             .on("mouseout", function (d) {
+                d3.select(this).style("cursor", "default");
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
