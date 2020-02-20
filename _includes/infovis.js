@@ -312,6 +312,9 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
         },
         xAxis = d3.axisBottom(xScale);
 
+    xAxis.ticks(5)
+        .tickFormat(d3.format(".1f"))
+
     // setup y
     var yValue = function(d) {
         return d[visdata.axes.y];
@@ -321,6 +324,9 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
         return yScale(yValue(d));
         },
         yAxis = d3.axisLeft(yScale);
+
+    yAxis.ticks(5)
+        .tickFormat(d3.format(".1f"))
 
     var cellPos = function(d){
         return [parseInt(d['X_position']), parseInt(d['Y_position'])];
@@ -410,7 +416,7 @@ infovis.renderScatterplot = function(wid_waypoint, id, visdata, events){
             relSize = 3.5; opacity = 1.0;
         }
         else if (data.length <= 1000){
-            relSize = 2; opacity = 0.75;
+            relSize = 2; opacity = 0.95;
         }
 
         // draw dots
@@ -481,7 +487,6 @@ infovis.renderCanvasScatterplot = function(wid_waypoint, id, visdata, events){
     // constants
     var numberPoints = visdata.data.length;
     var subsetSize = 0; //later..
-    var pointRadius = 1;
     var zoomEndDelay = 200;
 
     //zoom
@@ -545,7 +550,22 @@ infovis.renderCanvasScatterplot = function(wid_waypoint, id, visdata, events){
         // drawn during 'zoom' events
         var randomIndex = _.sampleSize(data, subsetSize);
 
-
+        var pointRadius = 1.5, opacity = 0.5;
+        if (data.length <= 100){
+            pointRadius = 5.5; opacity = 1.0;
+        }
+        else if (data.length <= 1000){
+            pointRadius = 4; opacity = 0.90;
+        }
+        else if (data.length <= 10000){
+            pointRadius = 3; opacity = 0.85;
+        }
+        else if (data.length <= 100000){
+            pointRadius = 2; opacity = 0.70;
+        }
+        else if (data.length <= 1000000){
+            pointRadius = 1; opacity = 0.60;
+        }
 
         // the canvas is shifted by 1px to prevent any artefacts
         // when the svg axis and the canvas overlap
@@ -726,15 +746,55 @@ infovis.renderCanvasScatterplot = function(wid_waypoint, id, visdata, events){
             // and don't mind points not having a stroke
             var hexColor = colors[point[2].clust_ID-1];
             var color = d3.rgb("#" + hexColor);
-            color.opacity = 0.5;
+            color.opacity = opacity;
             context.fillStyle = color + "";
             context.beginPath();
-            context.arc(cx, cy, r * (k/10.0), 0, 2 * Math.PI);
+            context.arc(cx, cy, r * (k/5.0), 0, 2 * Math.PI);
             context.fill();
         }
 
         function euclideanDistance(x1, y1, x2, y2) {
             return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         }
+
+        //config driven color coding
+        var color = d3.scaleOrdinal()
+            .domain(labels)
+            .range(colors);
+
+        // the legend shows the clusters in a different order, defined by the user
+        sortedColors = colors.slice().sort(function(a, b){
+            return order.indexOf(labels[colors.indexOf(a)] ) - order.indexOf(labels[colors.indexOf(b)]);
+        });
+        var sortedColor = d3.scaleOrdinal()
+            .domain(order)
+            .range(sortedColors);
+
+        // draw legend
+        var legend = svg.selectAll(".legend")
+            .data(sortedColor.domain())
+            .enter().append("g")
+            .attr("class", "legend")
+            .attr("transform", function (d, i) {
+                return "translate(0," + i * 20 + ")";
+            });
+
+        // draw legend colored rectangles
+        legend.append("rect")
+            .attr("x", width - 18)
+            .attr("width", 18)
+            .attr("height", 18)
+            .style("fill", sortedColor);
+
+        // draw legend text
+        legend.append("text")
+            .attr("x", width - 24)
+            .attr("y", 9)
+            .attr("dy", ".35em")
+            .style("text-anchor", "end")
+            .text(function (d) {
+                return d;
+            }).attr('font-size', '0.8em')
+            .attr('fill', 'white');
     });
 }
