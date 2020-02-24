@@ -395,7 +395,8 @@ Exhibit:
       
         `VisBarChart`
 
-        The Scatterplot shows log normalized mean instensities (au) of KERATIN and CD45 for a sample of cells.
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
+
       ActiveMasks:
         - Cluster 1 - Tumor Cells
         - Cluster 2 - Other Cells
