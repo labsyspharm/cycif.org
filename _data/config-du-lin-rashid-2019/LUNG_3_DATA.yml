@@ -421,8 +421,6 @@ Exhibit:
     - Name: Scatter Plot
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
-      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
-      VisBarChart: /assets/visdata/cellCounts.csv
       VisScatterplot:
         data: /assets/visdata/scatterplotExampleData_Medium.csv
         clusters:
@@ -435,6 +433,7 @@ Exhibit:
       Description: |
 
         The Scatterplot shows log normalized mean instensities (au) of KERATIN and CD45 for a sample of cells.
+        Click on a data point in the plot to be taken to the cell in the image.
 
         `VisScatterplot`
       
