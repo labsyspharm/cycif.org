@@ -418,6 +418,43 @@ Exhibit:
         - 0.5
         - 0.5
 
+    - Name: Scatter Plot
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
+      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
+      VisBarChart: /assets/visdata/cellCounts.csv
+      VisScatterplot:
+        data: /assets/visdata/scatterplotExampleData_Medium.csv
+        clusters:
+          labels: Tumor,Other,Immune,Stromal
+          colors: e41a1c,377eb8,4daf4a,984ea3
+          reorder: Tumor,Stromal,Immune,Other
+        axes:
+          x: KERATIN
+          y: CD45
+      Description: |
+
+        The Scatterplot shows log normalized mean instensities (au) of KERATIN and CD45 for a sample of cells.
+
+        `VisScatterplot`
+      
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
+
+      ActiveMasks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Masks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Zoom: 0.5
+      Pan:
+        - 0.5
+        - 0.5
+
 
     - Name: UMAP
       Group: Structural Components
