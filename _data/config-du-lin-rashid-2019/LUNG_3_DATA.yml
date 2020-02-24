@@ -455,7 +455,7 @@ Exhibit:
       Group: Structural Components
       Audio: /assets/audio/speech_20190918201156545.mp3
       VisScatterplot:
-        data: /assets/visdata/LUNG_3_TSNE_data_20200219.csv
+        data: /assets/visdata/LUNG_3_TSNE_data_20200224.csv
         clusters:
           labels: Tumor,Other,Immune,Stromal
           colors: e41a1c,377eb8,4daf4a,984ea3
