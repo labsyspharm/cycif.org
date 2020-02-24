@@ -357,6 +357,9 @@ Exhibit:
         - 0.741
       ActiveMasks:
         - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
       Masks:
         - Cluster 1 - Tumor Cells
         - Cluster 2 - Other Cells
