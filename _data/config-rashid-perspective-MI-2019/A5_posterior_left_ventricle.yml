@@ -10,6 +10,7 @@ Exhibit:
   Layout:
     Grid:
       - [i0]
+  PixelsPerMicron: 3.0769
   Groups:
     - Path: '477612'
       Name: H&E
