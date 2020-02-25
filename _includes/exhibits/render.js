@@ -798,11 +798,16 @@ Render.prototype = {
       toc_label.innerText = 'Table of Contents';
       items.appendChild(toc_label);
       // Add configured stories
+
+      var sid_item = document.createElement('div');
+      var sid_list = document.createElement('ol');
       HS.stories.forEach(function(story, sid) {
-        if (story.Mode == undefined) {
-          this.addStory(story, sid, items);
+        if (story.Mode == undefined || story.Mode == 'outline') {
+          this.addStory(story, sid, sid_list);
         }
       }, this);
+      sid_item.appendChild(sid_list);
+      items.appendChild(sid_item);
     }
 
     const footer = document.createElement('p')
@@ -811,21 +816,14 @@ Render.prototype = {
     items.appendChild(footer);
   },
 
-  addStory: function(story, sid, items) {
+  addStory: function(story, sid, sid_list) {
 
-    var sid_item = document.createElement('div');
-    var sid_list = document.createElement('ul');
-    var sid_label = document.createElement('p');
-    sid_label.innerText = story.Name;
 
     // Add configured waypoints
     story.Waypoints.forEach(function(waypoint, wid) {
       this.addWaypoint(waypoint, wid, sid, sid_list);
     }, this);
 
-    sid_item.appendChild(sid_label);
-    sid_item.appendChild(sid_list);
-    items.appendChild(sid_item);
   },
 
   addWaypoint: function(waypoint, wid, sid, sid_list) {
@@ -859,12 +857,7 @@ Render.prototype = {
     const waypointName = document.getElementById("waypointName");
     const waypointCount = document.getElementById("waypointCount");
 
-    if (HS.currentCount != 1) {
-      waypointCount.innerText = (HS.currentCount - 1) + '/' + (HS.totalCount - 1);
-    }
-    else {
-      waypointCount.innerText = '';
-    }
+    waypointCount.innerText = HS.currentCount + '/' + HS.totalCount;
 
     waypointName.innerText = waypoint.Name;
 
