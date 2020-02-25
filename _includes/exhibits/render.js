@@ -859,7 +859,12 @@ Render.prototype = {
 
     waypointCount.innerText = HS.currentCount + '/' + HS.totalCount;
 
-    waypointName.innerText = waypoint.Name;
+    if (waypoint.Mode !== 'outline') {
+      waypointName.innerText = waypoint.Name;
+    }
+    else {
+      waypointName.innerText = '';
+    }
 
     const scroll_dist = $('.waypoint-content').scrollTop();
     $(wid_waypoint).css('height', $(wid_waypoint).height());
