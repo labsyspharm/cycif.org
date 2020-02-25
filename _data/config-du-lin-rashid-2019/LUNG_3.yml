@@ -1,9 +1,10 @@
 Exhibit:
   Name: LUNG_3
   Header: |
-    An interactive tour of squamous cell lung cancer.
+  
+    [Data Analysis Story of this image available here.](https://johnhoffer-cycif-org.netlify.com/featured-paper/du-lin-rashid-2019/figures/osd-lung_3_data#s=0#w=0#g=0#m=-1#a=-100_-100#v=0.5_0.5_0.5#o=-100_-100_1_1#p=Q)
     
-    The tissue consists of a primary lung tumor and adjacent normal lung epithelium surgically resected from a 44 year old female patient.
+    An interactive tour of squamous cell primary lung tumor and adjacent normal epithelium surgically resected from a 44 year old female patient.
     
     Multiplexed images of immune markers were generated using tissue-based cyclic immunofluorescence (t-CyCIF) with a 40X/0.6NA objective.
     
@@ -12,7 +13,7 @@ Exhibit:
   PixelsPerMicron: 3.0769
   Images:
     - Name: i0
-      Description: 'Primary Lung Cancer [Minerva 003]'
+      Description: 'Primary Lung Cancer [M-003]'
       Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3
       Width: 14448
       Height: 11101
@@ -368,53 +369,6 @@ Exhibit:
         y: 0.5642
         width: 0.5934
         height: 0.4357
-
-    - Name: K-means Clustering
-      Group: Structural Components
-      Audio: /assets/audio/speech_20190918201156545.mp3
-      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
-      VisBarChart: /assets/visdata/cellCounts.csv
-      VisScatterplot:
-        data: /assets/visdata/scatterplotExampleData_Medium.csv
-        clusters:
-          labels: Tumor,Other,Immune,Stromal
-          colors: e41a1c,984ea3,4daf4a,377eb8
-          reorder: Tumor,Stromal,Immune,Other
-        axes:
-          x: ASMA
-          y: CD45
-      Description: |
-        When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
-        using the k-means algorithm, the cells fall into four cardinal clusters `:` 
-        1) A cluster of tumor cells with high keratin expression, 
-        2) a cluster of stromal cells with high `a-SMA` expression, 
-        3) a cluster of immune cells with high `CD45` expression, and 
-        4) a cluster of cells with low expression of all three markers.
-
-        `VisMatrix`
-
-        The number of cells belonging to each cluster is shown in the bar chart.
-      
-        `VisBarChart`
-
-        The Scatterplot shows log normalized mean instensities (au) of KERATIN and CD45 for a sample of cells.
-
-        `VisScatterplot`
-      
-        Click on each of the clusters below to see which cells in the image belong to each cluster.
-
-      ActiveMasks:
-        - Cluster 1 - Tumor Cells
-      Masks:
-        - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
-        - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
-      Zoom: 0.5
-      Pan:
-        - 0.5
-        - 0.5
-
 
 
     - Name: PD-L1 Expression
