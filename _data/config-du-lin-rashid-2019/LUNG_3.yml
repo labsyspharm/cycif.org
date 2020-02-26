@@ -1,15 +1,14 @@
 Exhibit:
   Name: LUNG_3
   Header: |
-  
-    [Data Analysis Story of this image available here.](https://johnhoffer-cycif-org.netlify.com/featured-paper/du-lin-rashid-2019/figures/osd-lung_3_data)
-    
-    An interactive tour of squamous cell primary lung tumor and adjacent normal epithelium surgically resected from a 44 year old female patient.
-    
-    Multiplexed images of immune markers were generated using tissue-based cyclic immunofluorescence (t-CyCIF) with a 40X/0.6NA objective.
-    
-    Note that the immunofluorescence signal for some markers (Keratin, IBA1, etc.) in this dataset are overexposured.
+    An interactive tour of squamous cell primary lung tumor and adjacent normal epithelium surgically resected from a 44 year old female patient. Multiple
+
+    [Explore another story](https://johnhoffer-cycif-org.netlify.com/featured-paper/du-lin-rashid-2019/figures/osd-lung_3_data) on quantitative 
+    single-cell data analysis for this sample.
   Footer: |
+        Multiplexed images of immune markers were generated using tissue-based cyclic immunofluorescence (t-CyCIF) with a 40X/0.6NA objective.
+        
+        Note that the immunofluorescence signal for some markers (Keratin, IBA1, etc.) in this dataset are overexposured.
   PixelsPerMicron: 3.0769
   Images:
     - Name: i0

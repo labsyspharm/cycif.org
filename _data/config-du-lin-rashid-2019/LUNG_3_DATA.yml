@@ -1,13 +1,13 @@
 Exhibit:
   Name: LUNG_3_DATA
   Header: |
-    An interactive tour of single-cell data analysis in a squamous cell lung cancer.
-    
-    The tissue consists of a primary lung tumor and adjacent normal lung epithelium surgically resected from a 44 year old female patient.
-    
-    Note that the immunofluorescence signal for some markers (Keratin, IBA1, etc.) in this dataset are overexposured.
+    An interactive tour of single-cell data analysis in a squamous cell lung cancer surgically resected from a 44 year old female patient.
+
+    [Explore another story](https://johnhoffer-cycif-org.netlify.com/featured-paper/du-lin-rashid-2019/figures/osd-lung_3) on histologic features 
+    for this sample.
   Footer: |
-# Reminder to add in scale bar code here
+    Note that the immunofluorescence signal for some markers (Keratin, IBA1, etc.) in this dataset are overexposured.
+  PixelsPerMicron: 3.0769
   Images:
     - Name: i0
       Description: 'Primary Lung Cancer [Minerva 003]'
