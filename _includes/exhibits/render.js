@@ -511,18 +511,11 @@ Render.prototype = {
   },
 
   loadPolly: function(txt) {
-    const HS = this.hashstate;
-    var polly_url = this.pollycache[HS.currentCount];
+    const hash = Sha1.hash(txt);
+    const polly_url = 'https://s3.amazonaws.com/www.cycif.org/speech/' + hash + '.mp3';
     if (polly_url) {
       document.getElementById('audioSource').src = polly_url;
       document.getElementById('audioPlayback').load();
-    }
-    else {
-      speakText(txt).then(function(url) {
-        HS.pollycache[HS.currentCount] = url;
-        document.getElementById('audioSource').src = url;
-        document.getElementById('audioPlayback').load();
-      });
     }
   },
 
