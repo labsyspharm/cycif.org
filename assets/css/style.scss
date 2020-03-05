@@ -82,3 +82,8 @@ svg a:hover text {
 .tick line{
   opacity: 0.2;
 }
+
+.legend{
+  z-index: 3;
+  float:left;
+}
