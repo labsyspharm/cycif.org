@@ -184,8 +184,9 @@ const newCopyButton = function() {
   });
 };
 
-const Render = function(hashstate, osd) {
+const Render = function(hashstate, osd, eventHandler) {
 
+  this.eventHandler = eventHandler;
   this.trackers = hashstate.trackers;
   this.pollycache = hashstate.pollycache;
   this.showdown = new showdown.Converter();
@@ -893,7 +894,7 @@ Render.prototype = {
     });
 
 
-    const allVis = ['VisMatrix', 'VisBarChart', 'VisScatterplot'];
+    const allVis = ['VisMatrix', 'VisBarChart', 'VisScatterplot', "VisCanvasScatterplot"];
     
     const waypointVis = new Set(allVis.filter(v => waypoint[v]));
     const renderedVis = new Set();
@@ -954,16 +955,18 @@ Render.prototype = {
       const renderer = {
         'VisMatrix': infovis.renderMatrix,
         'VisBarChart': infovis.renderBarChart,
-        'VisScatterplot': infovis.renderScatterplot
+        'VisScatterplot': infovis.renderScatterplot,
+        'VisCanvasScatterplot': infovis.renderCanvasScatterplot
       }[visType]
       const clickHandler = {
         'VisMatrix': chanAndMaskHandler,
         'VisBarChart': maskHandler,
-        'VisScatterplot': arrowHandler
+        'VisScatterplot': arrowHandler,
+        'VisCanvasScatterplot': arrowHandler
       }[visType]
       const tmp = renderer(el, id, waypoint[visType], {
         'clickHandler': clickHandler
-      });
+      }, THIS.eventHandler);
       tmp.then(() => finish_waypoint(visType));
     }
 
