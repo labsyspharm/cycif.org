@@ -1,0 +1,546 @@
+Exhibit:
+  Name: LUNG_3_DATA
+  Header: |
+    An interactive tour of a primary squamous cell carcinoma of the lung and adjacent non-neoplastic tissue surgically resected 
+    from a 44 year old female patient.
+    
+    [Explore another story](https://johnhoffer-cycif-org.netlify.com/featured-paper/du-lin-rashid-2019/figures/osd-lung_3) on histologic features 
+    for this sample.
+  Footer: |
+    Note that the immunofluorescence signal for some markers (Keratin, IBA1, etc.) in this dataset are overexposed.
+  PixelsPerMicron: 3.0769
+  Images:
+    - Name: i0
+      Description: 'Primary Lung Cancer [M-003]'
+      Path: https://s3.amazonaws.com/www.cycif.org/Nature-protocol-2019/LUNG_3
+      Width: 14448
+      Height: 11101
+      MaxLevel: 4
+  Layout:
+    Grid:
+      - [i0]
+  DefaultGroup: Nuclei
+  Groups:
+    - Path: Structural-Components_0__DAPI--14__KERATIN--34__ASMA--22__CD45--33__IBA1
+      Name: Structural Components
+      Colors:
+        - 0000FF
+        - FFFFFF
+        - FF0000
+        - 00FF00
+        - 00FFFF
+      Channels:
+        - DNA
+        - Keratin
+        - α-SMA
+        - CD45
+        - IBA1
+    - Path: PDL1-Expression_0__DAPI--14__KERATIN--19__PDL1--33__IBA1
+      Name: PD-L1 Expression
+      Colors:
+        - 0000FF
+        - FFFFFF
+        - FF0000 
+        - 00FFFF
+      Channels:
+        - DNA
+        - Keratin
+        - PD-L1
+        - IBA1
+    - Path: B-Cells-and-T-Cells_0__DAPI--18__CD3D--35__CD20
+      Name: Lymphocytes
+      Colors:
+        - 0000FF
+        - FF0000
+        - FFFFFF
+      Channels:
+        - DNA
+        - CD3d
+        - CD20
+    - Path: Regulatory-T-Cells-2_0__DAPI--18__CD3D--21__CD4--30__FOXP3
+      Name: Regulatory T-Cells
+      Colors:
+        - 0000FF
+        - FF0000
+        - 00FF00
+        - FFFFFF
+      Channels:
+        - DNA
+        - CD3d
+        - CD4
+        - FOXP3
+    - Path: Cytotoxic-T-Cells_0__DAPI--18__CD3D--23__CD8A
+      Name: Cytotoxic T-Cells
+      Colors:
+        - 0000FF
+        - FF0000
+        - 00FF00
+      Channels:
+        - DNA
+        - CD3d
+        - CD8
+    - Path: Inhibitory-T-Cells_0__DAPI--18__CD3D--15__PD1--30__FOXP3
+      Name: Inhibitory T-Cells
+      Colors:
+        - 0000FF
+        - FF0000
+        - 00FF00
+        - FFFFFF
+      Channels:
+        - DNA
+        - CD3d
+        - PD1
+        - FOXP3
+    - Path: Rare-Immune-Population-1_0__DAPI--21__CD4--23__CD8A--30__FOXP3
+      Name: CD8+/FOXP3+ T Cells
+      Colors:
+        - 0000FF
+        - 00FF00
+        - FF0000
+        - FFFFFF
+      Channels:
+        - DNA
+        - CD4
+        - CD8A
+        - FOXP3
+    - Path: Rare-Immune-Population-2_0__DAPI--21__CD4--23__CD8A--15__PD1--10__LAG3
+      Name: PD1+/LAG3+ T Cells
+      Colors:
+        - 0000FF
+        - 00FF00
+        - FF0000
+        - 00FFFF
+        - FFFFFF
+      Channels:
+        - DNA
+        - CD4
+        - CD8A
+        - PD1
+        - LAG3
+    - Path: Macrophages_0__DAPI--33__IBA1--25__CD163
+      Name: Macrophages
+      Colors:
+        - 00FF00
+        - FF0000 
+        - 0000FF
+      Channels:
+        - IBA1
+        - CD163
+        - DNA
+    - Path: Macrophages-(cont.)_0__DAPI--26__CD68--29__CD11B--27__CD14
+      Name: Macrophages (cont.)
+      Colors:
+        - 0000FF
+        - 00FF00
+        - FFFFFF
+        - FF0000
+      Channels:
+        - DNA
+        - CD68
+        - CD11B
+        - CD14
+    - Path: Nuclei_0__DAPI
+      Name: Nuclei
+      Colors:
+        - FFFFFF
+      Channels:
+        - Hoechst
+    - Path: KERATIN_14__KERATIN
+      Name: KERATIN
+      Colors:
+        - FFFFFF
+      Channels:
+        - KERATIN
+    - Path: ASMA_34__ASMA
+      Name: ASMA
+      Colors:
+        - FF0000
+      Channels:
+        - ASMA
+    - Path: CD45_22__CD45
+      Name: CD45
+      Colors:
+        - 00FF00
+      Channels:
+        - CD45
+    - Path: IBA1_33__IBA1
+      Name: IBA1
+      Colors:
+        - 00FFFF
+      Channels:
+        - IBA1
+    - Path: PDL1_19__PDL1
+      Name: PDL1
+      Colors:
+        - FF0000
+      Channels:
+        - PDL1
+    - Path: CD3D_18__CD3D
+      Name: CD3d
+      Colors:
+        - FF0000
+      Channels:
+        - CD3d
+    - Path: CD20_35__CD20
+      Name: CD20
+      Colors:
+        - FFFFFF
+      Channels:
+        - CD20
+    - Path: CD4_21__CD4
+      Name: CD4
+      Colors:
+        - 00FF00
+      Channels:
+        - CD4
+    - Path: FOXP3_30__FOXP3
+      Name: FOXP3
+      Colors:
+        - FF0000
+      Channels:
+        - FOXP3
+    - Path: CD8A_23__CD8A
+      Name: CD8A
+      Colors:
+        - 00FF00
+      Channels:
+        - CD8A
+    - Path: PD1_15__PD1
+      Name: PD1
+      Colors:
+        - 00FF00
+      Channels:
+        - PD1
+    - Path: CD163_25__CD163
+      Name: CD163
+      Colors:
+        - FF0000
+      Channels:
+        - CD163
+    - Path: CD68_26__CD68
+      Name: CD68
+      Colors:
+        - 00FF00
+      Channels:
+        - CD68
+    - Path: CD11B_29__CD11B
+      Name: CD11B
+      Colors:
+        - FFFFFF
+      Channels:
+        - CD11B
+    - Path: 
+      Name: CD14_27__CD14
+      Colors: CD14
+        - FF0000
+      Channels:
+        - CD14
+    - Path: LAG3_10__LAG3
+      Name: LAG3
+      Colors:
+        - FFFFFF
+      Channels:
+        - LAG3
+
+
+
+
+  Masks:
+    # - Name: Segmentation Mask
+    #   Path: datalayer/segmentation
+    # - Name: Cluster_1 Stroma
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_1
+    # - Name: Cluster_2 Others
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_2
+    # - Name: Cluster_3 Immune
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_3
+    # - Name: Cluster_4 Tumor
+    #   Path: datalayer/clustering/merged_s40/level_0/cluster_id_4
+    - Name: Cluster 1 - Tumor Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_1
+      Colors:
+        - F44336
+      Channels:
+        - Tumor
+    - Name: Cluster 2 - Other Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_2
+      Colors:
+        - 673AB7
+      Channels:
+        - Other
+    - Name: Cluster 3 - Immune Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_3
+      Colors:
+        - 4CAF50
+      Channels:
+        - Immune
+    - Name: Cluster 4 - Stromal Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_4
+      Colors:
+        - 03A9F4
+      Channels:
+        - Stromal
+    - Name: All Clusters
+      Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
+      Colors:
+        - F44336
+      Channels:
+        - Segmentation
+  Stories:
+  - Name: ''
+    Waypoints:
+
+    - Name: Data Aquisition
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201043160.mp3
+      Description: |
+        Tissue cyclic immunofluorescence (t-CyCIF) was used to generate the fluorescence images.
+        
+        The RareCyte CyteFinder microscope was used with a 40X/0.6NA objective.
+
+        The images were artifact corrected using the BaSiC tool, stitched and registered using the ASHLAR algorithm, 
+        and segmented using ilastik software and MATLAB. Single-cell features were then extracted from these images using HistoCAT software.
+
+        ![image](../../../assets/img/du-lin-rashid-2019/Fig1_Rashid_SciData.JPG)
+
+        Read more about the t-CyCIF method and this data in the following papers:
+
+        [Lin et al., eLife, 2018](https://elifesciences.org/articles/31657)
+
+        [Du, Lin, and Rashid et al., Nature Methods, 2019](https://www-nature-com.ezp-prod1.hul.harvard.edu/articles/s41596-019-0206-y)
+
+        [Rashid et al., Scientific Data, 2019](https://www-nature-com.ezp-prod1.hul.harvard.edu/articles/s41597-019-0332-y)
+      Zoom: 0.5
+      Pan:
+        - 0.5
+        - 0.5
+      Overlay:
+        x: 0.8681
+        y: 0.5487
+        width: 0
+        height: 0
+
+    - Name: Cell Segmentation
+      Group: Nuclei
+      Audio: /assets/audio/speech_20190918201043160.mp3
+      Description: |
+        Cells in the image were segmented using an object detection method. Here, we used the Ilastik software
+        to train a model that classifies pixels into three classes (nucleus, cytoplasm, and background). 
+        Probability masks generated by the model were used to perform morphological manipulations and 
+        watershed in MATLAB to identify cells. 
+
+        While ~90% of the cells in this tissue are segmented accurately, there are some errors including 
+        fusions (undersegmented cells) and fissions (over segmented cells) as shown here.
+        Cell segmentation is a critical component of extracting quality single-cell data and 
+        can affect the quality of downstream analysis; segmentation is thus an active area of development
+        in the image analysis community.
+
+        Pan around the image and toggle the segmentation mask to inspect the accuracy.
+      Arrows:
+        - Point:
+            - 0.48260891055109445
+            - 0.7350125259339746
+          Text: fission
+          HideArrow: false
+        - Point:
+            - 0.4766678746076962
+            - 0.7409351253006583
+          Text: fusion
+          HideArrow: false
+      Overlays:
+        - x: 0.4601
+          y: 0.7272
+          width: 0.0421
+          height: 0.0271
+      Zoom: 10.019
+      Pan:
+        - 0.4774
+        - 0.741
+      ActiveMasks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Masks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+        - Cluster All
+
+
+
+    - Name: K-means Clustering
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
+      VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
+      VisBarChart: /assets/visdata/cellCounts.csv
+      clusters:
+        labels: Tumor,Other,Immune,Stromal
+        colors: e41a1c,377eb8,4daf4a,984ea3
+        reorder: Tumor,Stromal,Immune,Other
+      axes:
+        x: KERATIN
+        y: CD45
+      Description: |
+        When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
+        using the k-means algorithm, the cells fall into four cardinal clusters `:` 
+        1) A cluster of tumor cells with high keratin expression, 
+        2) a cluster of stromal cells with high `a-SMA` expression, 
+        3) a cluster of immune cells with high `CD45` expression, and 
+        4) a cluster of cells with low expression of all three markers.
+
+        `VisMatrix`
+
+        The number of cells belonging to each cluster is shown in the bar chart.
+      
+        `VisBarChart`
+
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
+
+      ActiveMasks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Masks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Zoom: 0.5
+      Pan:
+        - 0.5
+        - 0.5
+
+    - Name: Scatter Plot
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
+      VisScatterplot:
+        data: /assets/visdata/scatterplotExampleData_Medium.csv
+        clusters:
+          labels: Tumor,Other,Immune,Stromal
+          colors: e41a1c,984ea3,4daf4a,377eb8
+          reorder: Tumor,Stromal,Immune,Other
+        axes:
+          x: KERATIN
+          y: CD45
+      Description: |
+
+        The Scatterplot shows log normalized mean instensities (au) of KERATIN and CD45 for a sample of cells.
+        Click on a data point in the plot to be taken to the cell in the image.
+
+        `VisScatterplot`
+      
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
+
+      ActiveMasks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Masks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Zoom: 0.5
+      Pan:
+        - 0.5
+        - 0.5
+
+
+    - Name: UMAP
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
+      VisScatterplot:
+        data: /assets/visdata/LUNG_3_UMAP_data_20200218.csv
+        clusters:
+          labels: Tumor,Other,Immune,Stromal
+          colors: e41a1c,377eb8,4daf4a,984ea3
+          reorder: Tumor,Stromal,Immune,Other
+        axes:
+          x: UMAP_D1
+          y: UMAP_D2
+      Description: |
+
+        `VisScatterplot`
+      
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
+
+      ActiveMasks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Masks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Zoom: 0.5
+      Pan:
+        - 0.5
+        - 0.5
+
+
+
+    - Name: t-SNE
+      Group: Structural Components
+      Audio: /assets/audio/speech_20190918201156545.mp3
+      VisScatterplot:
+        data: /assets/visdata/LUNG_3_TSNE_data_20200224.csv
+        clusters:
+          labels: Tumor,Other,Immune,Stromal
+          colors: e41a1c,377eb8,4daf4a,984ea3
+          reorder: Tumor,Stromal,Immune,Other
+        axes:
+          x: TSNE_D1
+          y: TSNE_D2
+      Description: |
+
+        `VisScatterplot`
+      
+        Click on each of the clusters below to see which cells in the image belong to each cluster.
+
+      ActiveMasks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Masks:
+        - Cluster 1 - Tumor Cells
+        - Cluster 2 - Other Cells
+        - Cluster 3 - Immune Cells
+        - Cluster 4 - Stromal Cells
+      Zoom: 0.5
+      Pan:
+        - 0.5
+        - 0.5
+
+
+
+    - Name: Immune Populations
+      Group: Lymphocytes
+      Audio: /assets/audio/speech_20190918201656247.mp3
+      Description: |
+        Many immune populations are present in this lung cancer and are often 
+        enriched in the tumor region.
+        
+        When the subset of CD45 positive cells was clustered based on expression 
+        of CD45, CD3d, CD8A, CD4, CD20, PD1, and FOXP3 using k-means, 
+        seven distinct immune cell populations emerged.
+        
+        The populations are shown in the heat map below, where each row represents 
+        a cluster and each column represents an immune marker. 
+        The color represents the expression level of each marker.
+      VisMatrix: /assets/visdata/clust7hpdat_LUNG-3-PR.csv
+      Zoom: 5.5411
+      Pan:
+        - 1.0500
+        - 0.3216
+      Overlay:
+        x: 1.0132
+        y: 0.2906
+        width: 0.0947
+        height: 0.0671

@@ -25,18 +25,22 @@ Exhibit:
     - Name: Overview
       Group: H&E
       Description: |
-        Description here
+        In the anterior view of the left ventricle, a coronary artery can be seen on the upper left.
+
+        Trabeculations are observed projecting from the ventricle wall.
+
+        A prominent region of scar tissue can be observed in low power, with wavy collagen fibers surrounding some viable myocytes.
       Zoom: 0.553
       Pan:
         - 0.820
         - 0.498
       Arrows:
         - Point:
-            - 0.4033718744913736
-            - 0.3842366695404052
+            - 0.4472113800048828
+            - 0.3803591918945312
           Text: coronary artery
           HideArrow: false
-          Angle: 120
+          Angle: 60
         - Point:
             - 1.0323103730989287
             - 0.6331769664301579
