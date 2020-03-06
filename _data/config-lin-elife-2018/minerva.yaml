@@ -1,0 +1,35 @@
+Exhibit:
+  Groups:
+  - Channels:
+    - '0'
+    - '1'
+    Colors:
+    - 7f00ff
+    - ffa900
+    Name: colors
+    Path: 5a19da7e-fd93-48b0-8629-116d11615bad
+  Images:
+  - Description: ''
+    Height: 9539
+    MaxLevel: 4
+    Name: i0
+    Path: https://3v21j4dh1d.execute-api.us-east-1.amazonaws.com/dev/image/4b7274d1-44de-4bda-989d-9ed48d24c1ac/prerendered-tile/
+    Provider: minerva
+    Width: 11362
+  Layout:
+    Grid:
+    - - i0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+    - Arrows: []
+      Description: Hello
+      Group: colors
+      Name: Hello
+      Overlays: []
+      Pan:
+      - 0.46624832470716326
+      - 0.43676341795171836
+      Zoom: 0.8652798717525104
+

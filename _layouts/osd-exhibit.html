@@ -335,7 +335,9 @@
     <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.551.0.min.js"></script>
 
-
+    <script>
+        {% include amazon-cognito-identity.min.js %}
+    </script>
     <script>
         {% include polyfills.js %}
     </script>
@@ -355,6 +357,9 @@
         {% include d3.min.js %}
     </script>
     <script>
+        {% include lodash.js %}
+    </script>
+    <script>
         {% include colorbrewer.v1.min.js %}
     </script>
     <script>
@@ -364,16 +369,28 @@
         {% include openseadragon-svg-overlay.js %}
     </script>
     <script>
+        {% include exhibits/simpleEventHandler.js %}
+    </script>
+    <script>
         {% include infovis.js %}
     </script>
     <script>
         {% include openseadragon-scalebar.js %}
     </script>
     <script>
-        {% include polly-speak.js %}
+        {% include sha1.js %}
     </script>
     <script>
-        {% include exhibits.js %}
+        {% include exhibits/state.js %}
+    </script>
+    <script>
+        {% include exhibits/render.js %}
+    </script>
+    <script>
+        {% include exhibits/osd.js %}
+    </script>
+    <script>
+        {% include exhibits/main.js %}
     </script>
     <script>
         const exhibit = {{ exhibit | jsonify }};

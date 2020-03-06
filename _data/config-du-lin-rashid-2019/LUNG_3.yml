@@ -368,6 +368,15 @@ Exhibit:
       Audio: /assets/audio/speech_20190918201156545.mp3
       VisMatrix: /assets/visdata/clust4hpdat_LUNG-3-PR.csv
       VisBarChart: /assets/visdata/cellCounts.csv
+      VisScatterplot:
+        data: /assets/visdata/scatterplotExampleData_Medium.csv
+        clusters:
+          labels: Tumor,Other,Immune,Stromal
+          colors: e41a1c,984ea3,4daf4a,377eb8
+          reorder: Tumor,Stromal,Immune,Other
+        axes:
+          x: ASMA
+          y: CD45
       Description: |
         When single cells are clustered based on their expression of `Keratin`, `a-SMA`, and `CD45` 
         using the k-means algorithm, the cells fall into four cardinal clusters `:` 
@@ -381,6 +390,10 @@ Exhibit:
         The number of cells belonging to each cluster is shown in the bar chart.
       
         `VisBarChart`
+
+        The Scatterplot shows log normalized mean instensities (au) of KERATIN and CD45 for a sample of cells.
+
+        `VisScatterplot`
       
         Click on each of the clusters below to see which cells in the image belong to each cluster.
 

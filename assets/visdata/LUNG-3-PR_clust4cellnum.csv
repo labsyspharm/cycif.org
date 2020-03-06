@@ -1,5 +1,5 @@
-ClustName,clust_id,num_cells
-Tumor,1,22323
-Stromal,4,32439
-Immune,3,32836
-Other,2,22965
+clust_id, ClustName,num_cells
+1,Tumor,22323
+4,Stromal,32439
+3,Immune,32836
+2,Other,22965
