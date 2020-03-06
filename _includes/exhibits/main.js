@@ -21,10 +21,10 @@ const arrange_images = function(viewer, tileSources, hashstate, init) {
 
   const images = hashstate.images;
 
-  if (images.length == 1) {
-    const imageName = document.getElementById('imageName');
-    imageName.innerText = images[0].Description;
-  }
+  const imageName = document.getElementById('imageName');
+  imageName.innerText = images.length == 1
+    ? images[0].Description
+    : exhibit.Name
 
   const numRows = grid.length;
   const numColumns = grid[0].length;
