@@ -1,0 +1,97 @@
+---
+layout: default
+title: Minerva Story
+---
+
+{% assign pubData=site.data.rashid-2020 %}
+<section id="lin-elife-2018-paper">
+
+<h2 class="h4">
+    {{ pubData.publication.title }}
+</h2>
+<p class="">
+    {{ pubData.publication.authors }}
+    <br> {{ pubData.publication.journal }}
+</p>
+<a href="{{ pubData.publication.link.url }}" target="_blank" class="lead">{{ pubData.publication.link.name }}</a>
+
+<h3>Featured Stories</h3>
+
+<div class="row">
+{% for img in pubData['stitched mosaic images'] %}
+<div class="media col-md-4 my-4">
+    <img class="mt-1 mr-3 w-50" src="{{ site.baseurl }}{{ "/assets/img/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
+    <div class="media-body">
+        <h5 class="mt-0 mb-2">{{ img.title }}</h5>
+    <!--    <p>
+            {{ img.description }}
+    </p> -->
+        {% for link_hash in img.links %}
+            {% for link in link_hash %}
+            <a class="btn btn-outline-primary m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+</div>
+
+<h3>Code</h3>
+<ul>
+  <li>
+<a href="https://github.com/labsyspharm/minerva-story" target="_blank" class="lead">Github</a>
+  </li>
+  <li>
+<a href="https://github.com/labsyspharm/minerva-story/wiki" target="_blank" class="lead">Installation</a>
+  </li>
+</ul>
+
+<table>
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td>Minerva Story</td>
+<td>Minerva Author</td>
+</tr>
+<td>View tiled Images</td>
+<td> 	✅ </td>
+<td> ✅  </td>
+<tr>
+<tr>
+<td>Make shareable links</td>
+<td> ✅  </td>
+<td> ❌ </td>
+</tr>
+<td>Navigate stories</td>
+<td> 	✅ </td>
+<td> TODO </td>
+</tr>
+<tr>
+<td>Create Stories</td>
+<td> ❌ </td>
+<td> TODO </td>
+</tr>
+<tr>
+<td>Create channel groups</td>
+<td> ❌ </td>
+<td> ✅  </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+</section>

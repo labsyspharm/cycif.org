@@ -116,3 +116,16 @@ layout: data
     </p>
   </div>
 </div>
+<div class="row mb-4">
+  <div class="col-md-2">
+    <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/mehta-2020/cover.jpg" alt="nat_medicine">
+  </div>
+  <div class="col">
+    <a href="{{ site.baseurl }}/data/mehta-2020/">
+      <h5 class="mt-0">Mehta et al., 2020 (submitted)</h5>
+    </a>
+    <p>
+
+    </p>
+  </div>
+</div>
