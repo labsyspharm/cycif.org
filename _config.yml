@@ -8,5 +8,6 @@ sass:
 plugins:
     - jekyll-redirect-from
 exclude: []
+include: [".nojekyll"]
 google_analytics: UA-41775478-2
 repository: labsyspharm/cycif.org
