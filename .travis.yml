@@ -8,7 +8,6 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: false
-  repo: labsyspharm/cycif.org-production
   local_dir: _site
   on:
     branch: master
