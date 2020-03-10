@@ -1,0 +1,14 @@
+language: ruby
+install:
+  - gem install jekyll bundler
+  - bundle install
+script: bundle exec jekyll build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: false
+  repo: labsyspharm/cycif.org-production
+  local_dir: _site
+  on:
+    branch: master
