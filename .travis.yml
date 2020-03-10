@@ -1,13 +1,23 @@
-language: ruby
-install:
-  - gem install jekyll bundler
-  - bundle install
-script: bundle exec jekyll build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: false
-  local_dir: _site
-  on:
-    branch: master
+matrix:
+  include:
+    - language: python
+      python: 3.7
+      before_install:
+        - cd scripts
+      install:
+        - pip install -r requirements.txt
+      script:
+        - python run_polly.py
+    - language: ruby
+      install:
+        - gem install jekyll bundler
+        - bundle install
+      script: bundle exec jekyll build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        keep_history: false
+        local_dir: _site
+        on:
+          branch: master
