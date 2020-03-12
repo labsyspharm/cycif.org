@@ -2,9 +2,13 @@ import hashlib
 import pathlib
 import boto3
 import yaml
+from bs4 import BeautifulSoup
+from markdown import markdown
 
-def upload_hash(text, text_key):
+def upload_hash(text_md, text_key):
     polly_client = boto3.client('polly')
+    text_html = BeautifulSoup(markdown(text_md), features="html.parser")
+    text = ''.join(text_html.findAll(text=True))
     response = polly_client.synthesize_speech(Text=text, OutputFormat="mp3", VoiceId="Matthew")
     audio = response['AudioStream'].read()
     s3_client = boto3.client("s3")
