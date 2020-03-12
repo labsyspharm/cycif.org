@@ -1,6 +1,6 @@
 import hashlib
+import pathlib
 import boto3
-import glob
 import yaml
 
 def upload_hash(text, text_key):
@@ -25,8 +25,8 @@ def list_hash():
 def do_sha1(text):
     return hashlib.sha1(text.encode("utf-8")).hexdigest()
 
-def yield_texts():
-    cycif_paths = glob.glob('../_data/*/*.yml')
+def yield_texts(data_path):
+    cycif_paths = data_path.glob('*/*.yml')
     for path in cycif_paths:
         with open(path, 'r') as op:
             parsed = yaml.load(op, Loader=yaml.FullLoader)
@@ -44,7 +44,8 @@ def yield_texts():
 if __name__ == "__main__":
 
     a = list_hash()
-    texts = [t for t in yield_texts()]
+    root = pathlib.Path(__file__).resolve().parents[1]
+    texts = [t for t in yield_texts(root / "_data")]
     sha1_texts = {do_sha1(t):t for t in texts} 
 
     needed_sha1 = set(sha1_texts.keys())
