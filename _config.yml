@@ -4,10 +4,15 @@ description: A Simple Approach to Highly Multiplexed Cell and Tissue Imaging
 sass:
     load_paths:
         - _scss
-        - node_modules
+        - node_modules/bootstrap
 plugins:
     - jekyll-redirect-from
-exclude: []
+exclude: [
+  "node_modules/balanced-match",
+  "node_modules/brace-expansion",
+  "node_modules/decode-uri-component",
+  "node_modules/fsevents"
+]
 include: [".nojekyll"]
 google_analytics: UA-41775478-2
 repository: labsyspharm/cycif.org

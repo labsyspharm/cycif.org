@@ -8,3 +8,4 @@ yarn.lock
 .eslintrc
 *.swp
 package-lock.json
+node_modules
