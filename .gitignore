@@ -6,3 +6,5 @@ yarn.lock
 
 .DS_Store
 .eslintrc
+*.swp
+package-lock.json
