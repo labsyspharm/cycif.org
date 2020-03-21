@@ -1,0 +1,282 @@
+Exhibit:
+  Name: TNP Colon (Case 1)
+  Header: |
+    The NCI-funded [Human Tumor Atlas Network (HTAN)](https://humantumoratlas.org/) is a 
+    multi-institutional effort to collect, analyze, and create a database of multi-omic data 
+    for a variety of human cancers. 
+
+    The SARDANA trans-network project (TNP) was designed to optimize the repeatability, 
+    interpretability, and accessibility of data for the atlas. The SARDANA TNP will 
+    distribute a set of common tissue samples to participating HTAN centers, allowing them 
+    to generate a spatial cell census using each center’s imaging method of choice. 
+    Data generated during the TNP will be used to stress-test data standards and informatic 
+    systems and compare results across experimental approaches and organizations.
+
+    In this Minerva Story, we share multiplexed immunofluorescence images of a single serial 
+    section of this tissue collected using the CyCIF method at Harvard. This story introduces 
+    viewers to structural features and cell populations that can be visualized using carefully 
+    selected markers. 
+
+  Footer: |
+PixelsPerMicron: 3.0769 
+
+  Images:
+  - Description: 'TNP Colon (Case 1)'
+    Width: 27545
+    Height: 23109
+    MaxLevel: 5
+    Name: i0
+    Path: https://s3.amazonaws.com/www.cycif.org/tnp-2020/colon-case-1
+  Layout:
+    Grid:
+    - - i0
+
+  Groups:
+  - Name: Tissue Architecture
+    Path: structural_0__DNA_1--10__Keratin--11__aSMA
+    Channels:
+    - DNA
+    - Keratin
+    - aSMA
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+  - Name: Immune
+    Path: immune_0__DNA_1--10__Keratin--15__CD45
+    Channels:
+    - DNA
+    - Keratin
+    - CD45
+    Colors:
+    - 0000ff
+    - 00ff00
+    - 00ffff
+  - Name: B-Cells and T-Cells
+    Path: B-Cells-and-T-Cells_0__DNA_1--10__Keratin--25__CD20--6__CD3
+    Channels:
+    - DNA
+    - Keratin
+    - CD20
+    - CD3
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+    - ffffff
+  - Name: Proliferation
+    Path: proliferation_0__DNA_1--10__Keratin--11__aSMA--9__Ki67
+    Channels:
+    - DNA
+    - Keratin
+    - aSMA
+    - Ki67
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff0000
+    - ffffff
+  - Name: Na+/K+ ATPase
+    Path: NaKATPase_0__DNA_1--5__NaKATPase--9__Ki67
+    Channels:
+    - DNA
+    - NaKATPase
+    - Ki67
+    Colors:
+    - 0000ff
+    - ffff00
+    - ff00ff
+  - Name: DNA Damage
+    Path: DNAdamage_0__DNA_1--10__Keratin--7__p53
+    Channels:
+    - DNA
+    - Keratin
+    - p53
+    Colors:
+    - 0000ff
+    - 00ff00
+    - ff00ff
+  - Name: Autofluorescence (FITC)
+    Path: AF488-autofluorescence_0__DNA_1--1__AF488
+    Channels:
+    - DNA
+    - AF FITC
+    Colors:
+    - 0000ff
+    - 00ff00
+  - Name: Autofluorescence (Cy3)
+    Path: AF555-autofluorescence_0__DNA_1--2__AF555
+    Channels:
+    - DNA
+    - AF Cy3
+    Colors:
+    - 0000ff
+    - ffffff
+  - Name: Autofluorescence (Cy5)
+    Path: AF647-autofluorescence_0__DNA_1--3__AF647
+    Channels:
+    - DNA
+    - AF Cy5
+    Colors:
+    - 0000ff
+    - ff0000
+
+
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+
+    - Name: Case Overview
+      Group: Tissue Architecture
+      Arrows:
+      - Point:
+        - 0.24738039578494497
+        - 0.0967952205049295
+        Text: Normal epithelium
+        HideArrow: true
+      - Point:
+        - 0.7874560751795099
+        - 0.16903464258955286
+        Text: Invasive colonic adenocarcinoma
+        HideArrow: true
+      - Point:
+        - 0.44001885467727386
+        - 0.7859363740423678
+        Text: Muscularis propria
+        HideArrow: true
+      Description: The tissue was resected from a 69-year-old man with a recent history 
+      of both cutaneous melanoma and gastric marginal zone lymphoma of MALT type. He 
+      presented to medical attention following recurrent syncopal episodes (fainting spells) 
+      and falls secondary to anemia and orthostatic hypotension (decreased blood pressure 
+      upon standing). A colonoscopy identified a large mass in the right colon. Resection 
+      of a portion of the right colon and terminal ileum revealed a 6.2 cm hard, exophytic 
+      mass in the cecum immediately adjacent to the ileocecal valve. In this
+      area of the specimen, the tumor has invaded the muscularis propria (`aSMA`) of the bowel 
+      wall into the peri-colonic epithelial tissue (`keratin`). There is also a region of 
+      neighboring normal epithelium. 
+      Overlays: []
+      Pan:
+      - 0.5317514541498115
+      - 0.4895254119967309
+      Zoom: 0.45421875
+
+    - Name: Proliferation
+      Group: Proliferation
+      Description: Proliferating cells are marked by `Ki-67`, a protein upregulated
+        during the S-phase of the cell cycle. 
+      Overlays:
+      - height: 0.08310747406559424
+        width: 0.12001149965184743
+        x: 0.5193512906071486
+        y: 0.20060592248166328
+      Pan:
+      - 0.5742470005193364
+      - 0.2399345511668883
+      Zoom: 5.320670673386061
+
+    - Name: Immune Profile
+      Group: B-Cells and T-Cells
+      Arrows: []
+      Description: The density of immune populations can differ across the tissue
+        tumor and stroma. In this tissue, there seems to be more T cell (`CD3`) 
+        infiltration than  B cell (`CD20`) infiltration
+        in the tumor regions.
+      Overlays:
+      - height: 0.08310747406559424
+        width: 0.12001149965184743
+        x: 0.5193512906071486
+        y: 0.20060592248166328
+      Pan:
+      - 0.5742470005193364
+      - 0.2399345511668883
+      Zoom: 5.320670673386061
+
+    - Name: Lymphoid Follicles
+      Group: B-Cells and T-Cells
+      Arrows:
+      - Point:
+        - 0.2557046210296988
+        - 0.040763673890608365
+        Angle: 0
+        HideArrow: false
+      - Point:
+        - 0.5652768732926559
+        - 0.4092495111417723
+        Text: Lymphoid follicle
+        Angle: 120
+        HideArrow: false
+      - Point:
+        - 0.7780882079430644
+        - 0.5607780287667523
+        Angle: -60
+        HideArrow: false
+      - Point:
+        - 0.6868635899923086
+        - 0.8135650662865617
+        Angle: 0
+        HideArrow: false
+      - Point:
+        - 0.35577707911969025
+        - 0.8327244135975566
+        Angle: -120
+        HideArrow: false
+      Description: Small aggregations of T cells (`CD3`), and to a larger extent
+        B cells (`CD20`), mark lymphoid follicles. These structures are involved in
+        immune surveillance and normal mucosal regeneration. However, the number, diameter, 
+        density, and activation of lymphoid follicles can increase during tumor 
+        invasion.
+
+      Overlays: []
+      Pan:
+      - 0.5317514541498115
+      - 0.4895254119967309
+      Zoom: 0.45421875
+
+    - Name: Lymphoid Follicles (cont.)
+      Group: B-Cells and T-Cells
+      Arrows: []
+      Description: A single lymphoid follicle is comprised primarily of B cells (`CD20`).
+        Here the B cells are spread throughout the follicle, while the T cells (`CD3`) 
+        are located on the periphery.
+    
+      Overlays:
+      - x: 0.5514
+        y: 0.3732
+        width: 0.0628
+        height: 0.0559
+      Pan:
+      - 0.5805
+      - 0.398
+      Zoom: 5.3497
+
+    - Name: Colonic Crypts
+      Group: Autofluorescence (FITC)
+      Arrows: []
+      Description: The colon crypts are responsible for renewing
+        the lining of the intestine and making mucus, tend to autofluoresce 
+        more than some other structures.
+
+      Overlays:
+      - height: 0.0666689712651582
+        width: 0.0702184766797384
+        x: 0.3224651049726421
+        y: 0.017450980635060682
+      Pan:
+      - 0.34484438734821915
+      - 0.046988929925296526
+      Zoom: 5.320670673386061
+      
+      - Name: Autofluorescence
+      Group: Autofluorescence (FITC)
+      Arrows: []
+      Description: Autofluorescence, or native tissue fluorescence occurs 
+      because of the intrinsic biomolecules in the tissue acting as 
+      endogenous fluorophores. Green channel (AF488) autofluorescence is 
+      shown here.
+
+      Overlays: []
+      Pan:
+      - 0.521431536709151
+      - 0.46773891962200326
+      Zoom: 0.45421875
