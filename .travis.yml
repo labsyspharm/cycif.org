@@ -13,8 +13,10 @@ matrix:
         - gem install jekyll bundler
         - bundle install
         - npm install
+        - npm install webpack
+        - npm install webpack-cli
       script: 
-        - webpack --mode development
+        - ./node_modules/.bin/webpack --mode production
         - bundle exec jekyll build
       deploy:
         provider: pages
