@@ -49,18 +49,18 @@ def yield_texts(data_path):
                         yield w['Description']
 
 if __name__ == "__main__":
-
-    try:
-        list_hash()
-    except botocore.exceptions.NoCredentialsError as e:
-        print('No Available AWS Credentials')
-        sys.exit(0)
-       
+  
     parser = argparse.ArgumentParser()
     parser.add_argument("bucket")
     args = parser.parse_args()
     bucket = args.bucket
 
+    try:
+        list_hash(bucket)
+    except botocore.exceptions.NoCredentialsError as e:
+        print('No Available AWS Credentials')
+        sys.exit(0)
+ 
     root = pathlib.Path(__file__).resolve().parents[1]
     texts = [t for t in yield_texts(root / "_data")]
     sha1_texts = {do_sha1(t):t for t in texts} 
