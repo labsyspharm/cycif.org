@@ -1,7 +1,9 @@
 import hashlib
 import pathlib
+import botocore
 import boto3
 import yaml
+import sys
 from bs4 import BeautifulSoup
 from markdown import markdown
 
@@ -47,7 +49,12 @@ def yield_texts(data_path):
 
 if __name__ == "__main__":
 
-    a = list_hash()
+    try:
+        a = list_hash()
+    except botocore.exceptions.NoCredentialsError as e:
+        print('No Available AWS Credentials')
+        sys.exit(0)
+        
     root = pathlib.Path(__file__).resolve().parents[1]
     texts = [t for t in yield_texts(root / "_data")]
     sha1_texts = {do_sha1(t):t for t in texts} 
