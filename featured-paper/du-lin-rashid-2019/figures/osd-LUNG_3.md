@@ -5,5 +5,6 @@ paper: config-du-lin-rashid-2019
 figure: LUNG_3
 redirect_from:
     - /MinervaLungHistology
+    - /minervalunghistology
     - /lungadenotour
 ---
