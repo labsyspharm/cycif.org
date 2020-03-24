@@ -7,5 +7,7 @@ yarn.lock
 .DS_Store
 .eslintrc
 *.swp
+
 package-lock.json
 node_modules
+_includes/bundle.js
