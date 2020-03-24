@@ -19,6 +19,7 @@
   {% assign config_paper = site.data[page.paper] %}
   {% assign config_figure = config_paper[page.figure] %}
   {% assign exhibit = config_figure.Exhibit %}
+  {% assign speech_bucket = site.speech_bucket %}
 
     <header class="m-0">
         {% include nav.html %}
@@ -345,6 +346,7 @@
        {% include bundle.js %}
     </script>
     <script>
+	const speech_bucket = "{{ speech_bucket }}";
         const exhibit = {{ exhibit | jsonify }};
         const marker_data = {{ marker_data | jsonify }};
         const cell_type_data = {{ cell_type_data | jsonify }};
