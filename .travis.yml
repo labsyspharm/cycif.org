@@ -12,7 +12,10 @@ matrix:
       install:
         - gem install jekyll bundler
         - bundle install
-      script: bundle exec jekyll build
+        - npm install
+      script: 
+        - webpack --mode development
+        - bundle exec jekyll build
       deploy:
         provider: pages
         skip_cleanup: true
