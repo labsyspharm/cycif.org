@@ -7,12 +7,7 @@ sass:
         - node_modules/bootstrap
 plugins:
     - jekyll-redirect-from
-exclude: [
-  "node_modules/balanced-match",
-  "node_modules/brace-expansion",
-  "node_modules/decode-uri-component",
-  "node_modules/fsevents"
-]
+exclude: ["node_modules"]
 include: [".nojekyll"]
 google_analytics: UA-41775478-2
 repository: labsyspharm/cycif.org
