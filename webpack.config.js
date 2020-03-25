@@ -1,6 +1,6 @@
 const path = require('path')
 
-module.exports = {
+IndexLoader = {
   entry: './index.js',
   output: {
     filename: 'bundle.js',
@@ -9,3 +9,13 @@ module.exports = {
     library: 'MinervaStory'
   }
 }
+
+ScriptsLoader = {
+  entry: './scripts.js',
+  output: {
+    filename: 'scripts.js',
+    path: path.resolve(__dirname, '_includes')
+  }
+}
+
+module.exports = [IndexLoader, ScriptsLoader]
