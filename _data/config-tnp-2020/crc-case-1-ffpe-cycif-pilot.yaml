@@ -1,11 +1,11 @@
 Exhibit:
-  Name: TNP Colon (Case 1)
+  Name: TNP SARDANA - Colorectal Cancer Case 1 (FFPE)
   Header: |
     The NCI-funded [Human Tumor Atlas Network (HTAN)](https://humantumoratlas.org/) is a 
     multi-institutional effort to collect, analyze, and create a database of multi-omic data 
     for a variety of human cancers. 
 
-    The SARDANA trans-network project (TNP) was designed to optimize the repeatability, 
+    The [SARDANA trans-network project (TNP)](https://www.synapse.org/#!Synapse:syn18434611) was designed to optimize the repeatability, 
     interpretability, and accessibility of data for the atlas. The SARDANA TNP will 
     distribute a set of common tissue samples to participating HTAN centers, allowing them 
     to generate a spatial cell census using each center’s imaging method of choice. 
@@ -17,11 +17,11 @@ Exhibit:
     viewers to structural features and cell populations that can be visualized using carefully 
     selected markers. 
 
-  Footer: |
+  Footer:
   PixelsPerMicron: 3.0769 
 
   Images:
-  - Description: 'TNP Colon (Case 1)'
+  - Description: TNP SARDANA - Colorectal Cancer Case 1 (FFPE) Pilot Using CyCIF
     Width: 27545
     Height: 23109
     MaxLevel: 5

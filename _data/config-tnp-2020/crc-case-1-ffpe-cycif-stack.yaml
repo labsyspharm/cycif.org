@@ -1,0 +1,330 @@
+Exhibit:
+  3D: True
+  Name: TNP SARDANA - Colorectal Cancer Case 1 (FFPE)
+  Header: |
+    The NCI-funded [Human Tumor Atlas Network (HTAN)](https://humantumoratlas.org/) is a 
+    multi-institutional effort to collect, analyze, and create a database of multi-omic data 
+    for a variety of human cancers. 
+
+    The [SARDANA trans-network project (TNP)](https://www.synapse.org/#!Synapse:syn18434611) was designed to optimize the repeatability, 
+    interpretability, and accessibility of data for the atlas. The SARDANA TNP will 
+    distribute a set of common tissue samples to participating HTAN centers, allowing them 
+    to generate a spatial cell census using each center’s imaging method of choice. 
+    Data generated during the TNP will be used to stress-test data standards and informatic 
+    systems and compare results across experimental approaches and organizations.
+
+    In this Minerva Story, we share multiplexed immunofluorescence images of 25 
+    section of this tissue collected using the CyCIF method at Harvard. Images shown here are from cycle 3.
+  PixelsPerMicron: 1.5385
+  ZPerMicron: 0.05
+  Images:
+    - Name: i0
+      Description: TNP SARDANA - Z-stack of Colorectal Cancer Case 1 FFPE Sections
+      Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1
+      Width: 30000
+      Height: 30000
+      MaxLevel: 5
+  Layout:
+    Grid:
+      - [i0]
+  Groups:
+  - Path: TNP002/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z0
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP007/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z1
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP014/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z2
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP020/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z3
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP025/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z4
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP029/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z5
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP034/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z6
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP039/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z7
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP044/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z8
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP049/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z9
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP050/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z10
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP051/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z11
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP052/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z12
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP054/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z13
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP059/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z14
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP064/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z15
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP069/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z16
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP074/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z17
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP078/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z18
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP084/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z19
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP086/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z20
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP091/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z21
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP097/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z22
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP102/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z23
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
+  - Path: TNP106/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
+    Name: Z24
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FFFFFF
+    - FF0000
+    Channels:
+    - Hoechst3
+    - Ki67
+    - panKeratin
+    - aSMA
