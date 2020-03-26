@@ -16,7 +16,6 @@ Exhibit:
     In this Minerva Story, we share multiplexed immunofluorescence images of 25 
     section of this tissue collected using the CyCIF method at Harvard. Images shown here are from cycle 3.
   PixelsPerMicron: 1.5385
-  ZPerMicron: 0.05
   Images:
     - Name: i0
       Description: TNP SARDANA - Z-stack of Colorectal Cancer Case 1 FFPE Sections
