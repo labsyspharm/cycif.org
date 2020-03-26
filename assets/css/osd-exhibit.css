@@ -443,6 +443,7 @@ polygon {
 /*}*/
 
 /* Start CSS Style Generator for Range Inputs */
+/* http://danielstern.ca/range.css/#/ */
 input[type=range] {
   -webkit-appearance: none;
   width: 100%;
