@@ -28,7 +28,7 @@ Exhibit:
       - [i0]
   Groups:
   - Path: TNP002/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z0
+    Name: TNP002
     Colors:
     - 0000FF
     - 00FF00
@@ -40,7 +40,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP007/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z1
+    Name: TNP007
     Colors:
     - 0000FF
     - 00FF00
@@ -52,7 +52,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP014/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z2
+    Name: TNP014
     Colors:
     - 0000FF
     - 00FF00
@@ -64,7 +64,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP020/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z3
+    Name: TNP020
     Colors:
     - 0000FF
     - 00FF00
@@ -76,7 +76,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP025/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z4
+    Name: TNP025
     Colors:
     - 0000FF
     - 00FF00
@@ -88,7 +88,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP029/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z5
+    Name: TNP029
     Colors:
     - 0000FF
     - 00FF00
@@ -100,7 +100,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP034/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z6
+    Name: TNP034
     Colors:
     - 0000FF
     - 00FF00
@@ -112,7 +112,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP039/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z7
+    Name: TNP039
     Colors:
     - 0000FF
     - 00FF00
@@ -124,7 +124,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP044/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z8
+    Name: TNP044
     Colors:
     - 0000FF
     - 00FF00
@@ -136,7 +136,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP049/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z9
+    Name: TNP049
     Colors:
     - 0000FF
     - 00FF00
@@ -148,7 +148,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP050/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z10
+    Name: TNP050
     Colors:
     - 0000FF
     - 00FF00
@@ -160,7 +160,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP051/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z11
+    Name: TNP051
     Colors:
     - 0000FF
     - 00FF00
@@ -172,7 +172,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP052/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z12
+    Name: TNP052
     Colors:
     - 0000FF
     - 00FF00
@@ -184,7 +184,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP054/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z13
+    Name: TNP054
     Colors:
     - 0000FF
     - 00FF00
@@ -196,7 +196,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP059/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z14
+    Name: TNP059
     Colors:
     - 0000FF
     - 00FF00
@@ -208,7 +208,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP064/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z15
+    Name: TNP064
     Colors:
     - 0000FF
     - 00FF00
@@ -220,7 +220,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP069/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z16
+    Name: TNP069
     Colors:
     - 0000FF
     - 00FF00
@@ -232,7 +232,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP074/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z17
+    Name: TNP074
     Colors:
     - 0000FF
     - 00FF00
@@ -244,7 +244,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP078/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z18
+    Name: TNP078
     Colors:
     - 0000FF
     - 00FF00
@@ -256,7 +256,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP084/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z19
+    Name: TNP084
     Colors:
     - 0000FF
     - 00FF00
@@ -268,7 +268,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP086/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z20
+    Name: TNP086
     Colors:
     - 0000FF
     - 00FF00
@@ -280,7 +280,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP091/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z21
+    Name: TNP091
     Colors:
     - 0000FF
     - 00FF00
@@ -292,7 +292,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP097/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z22
+    Name: TNP097
     Colors:
     - 0000FF
     - 00FF00
@@ -304,7 +304,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP102/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z23
+    Name: TNP102
     Colors:
     - 0000FF
     - 00FF00
@@ -316,7 +316,7 @@ Exhibit:
     - panKeratin
     - aSMA
   - Path: TNP106/Cycle-3_12__Hoechst3--13__Ki67--14__panKeratin--15__aSMA
-    Name: Z24
+    Name: TNP106
     Colors:
     - 0000FF
     - 00FF00
