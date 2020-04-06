@@ -457,7 +457,7 @@ Exhibit:
         data: /assets/visdata/LUNG_3_UMAP_data_20200218.csv
         clusters:
           labels: Tumor,Other,Immune,Stromal
-          colors: e41a1c,377eb8,4daf4a,984ea3
+          colors: e41a1c,984ea3,4daf4a,377eb8
           reorder: Tumor,Stromal,Immune,Other
         axes:
           x: UMAP_D1
@@ -492,7 +492,7 @@ Exhibit:
         data: /assets/visdata/LUNG_3_TSNE_data_20200224.csv
         clusters:
           labels: Tumor,Other,Immune,Stromal
-          colors: e41a1c,377eb8,4daf4a,984ea3
+          colors: e41a1c,984ea3,4daf4a,377eb8
           reorder: Tumor,Stromal,Immune,Other
         axes:
           x: TSNE_D1
