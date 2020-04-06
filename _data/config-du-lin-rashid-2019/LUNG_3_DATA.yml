@@ -262,24 +262,24 @@ Exhibit:
         - F44336
       Channels:
         - Tumor
-    - Name: Cluster 2 - Other Cells # new
-      Path: datalayer/clustering/all_cell_types/cluster_2
+    - Name: Cluster 2 - Stromal Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_4
       Colors:
-        - 673AB7
+        - 03A9F4
       Channels:
-        - Other
+        - Stromal
     - Name: Cluster 3 - Immune Cells # new
       Path: datalayer/clustering/all_cell_types/cluster_3
       Colors:
         - 4CAF50
       Channels:
         - Immune
-    - Name: Cluster 4 - Stromal Cells # new
-      Path: datalayer/clustering/all_cell_types/cluster_4
+    - Name: Cluster 4 - Other Cells # new
+      Path: datalayer/clustering/all_cell_types/cluster_2
       Colors:
-        - 03A9F4
+        - 673AB7
       Channels:
-        - Stromal
+        - Other
     - Name: All Clusters
       Path: datalayer/clustering/merged_s40/level_0/cluster_id_all
       Colors:
@@ -335,7 +335,7 @@ Exhibit:
         can affect the quality of downstream analysis; segmentation is thus an active area of development
         in the image analysis community.
 
-        Pan around the image and toggle the segmentation mask to inspect the accuracy.
+        Pan around the image and toggle the segmentation mask, or "data layer" below, to inspect the accuracy.
       Arrows:
         - Point:
             - 0.48260891055109445
@@ -358,14 +358,14 @@ Exhibit:
         - 0.741
       ActiveMasks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 2 - Stromal Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 4 - Other Cells
       Masks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 2 - Stromal Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 4 - Other Cells
         - Cluster All
 
 
@@ -390,24 +390,27 @@ Exhibit:
         3) a cluster of immune cells with high `CD45` expression, and 
         4) a cluster of cells with low expression of all three markers.
 
+        Click on each square of the heatmap to see the corresponsing cluster and immunoflourescence channel.
+
         `VisMatrix`
 
         The number of cells belonging to each cluster is shown in the bar chart.
       
         `VisBarChart`
 
-        Click on each of the clusters below to see which cells in the image belong to each cluster.
+        Click on each of the clusters below to see which cells in the image belong to each cluster. You can also click on each bar of the chart to 
+        see corresponding cells in the image.
 
       ActiveMasks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Masks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Zoom: 0.5
       Pan:
         - 0.5
@@ -436,14 +439,14 @@ Exhibit:
 
       ActiveMasks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Masks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Zoom: 0.5
       Pan:
         - 0.5
@@ -464,20 +467,23 @@ Exhibit:
           y: UMAP_D2
       Description: |
 
+        A random sample of 2000 cells were selected and Uniform Manifold Approximation and Projection for Dimension Reduction (UMAP) 
+        was performed. Click on a data point in the plot to be taken to the cell in the image.
+
         `VisScatterplot`
       
         Click on each of the clusters below to see which cells in the image belong to each cluster.
 
       ActiveMasks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Masks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Zoom: 0.5
       Pan:
         - 0.5
@@ -499,20 +505,23 @@ Exhibit:
           y: TSNE_D2
       Description: |
 
+        A random sample of 2000 cells were selected and t-Distributed Stochastic Neighbor Embedding (t-SNE) 
+        was performed. Click on a data point in the plot to be taken to the cell in the image.
+
         `VisScatterplot`
       
         Click on each of the clusters below to see which cells in the image belong to each cluster.
 
       ActiveMasks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Masks:
         - Cluster 1 - Tumor Cells
-        - Cluster 2 - Other Cells
+        - Cluster 4 - Other Cells
         - Cluster 3 - Immune Cells
-        - Cluster 4 - Stromal Cells
+        - Cluster 2 - Stromal Cells
       Zoom: 0.5
       Pan:
         - 0.5
