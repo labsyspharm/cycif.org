@@ -1,5 +1,15 @@
 Exhibit:
   Name: PCA_Z136_10b
+  Images:
+  - Description: ''
+    Height: 55714
+    MaxLevel: 6
+    Name: i0
+    Path: https://s3.amazonaws.com/www.cycif.org/pca2020/PCA_Z136_10b
+    Width: 29562
+  Layout:
+    Grid:
+    - - i0
   Groups:
   - Channels:
     - DNA
@@ -74,16 +84,7 @@ Exhibit:
     Name: T-Cell Co-Stimulation Cont_
     Path: T-Cell-Co-Stim-2_10__CD3E--22__CD3D--33__CD30--43__TIM3--18__FOXP3--14__KERATIN
 
-  Images:
-  - Description: ''
-    Height: 55714
-    MaxLevel: 6
-    Name: i0
-    Path: https://s3.amazonaws.com/www.cycif.org/pca2020/PCA_Z136_10b
-    Width: 29562
-  Layout:
-    Grid:
-    - - i0
+
   Stories:
   - Description: ''
     Name: ''
