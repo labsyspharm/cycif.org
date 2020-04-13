@@ -22,7 +22,10 @@ layout: data
   <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a> and the zoomable image viewer implemented using
   <a href="https://openseadragon.github.io/" target="_blank">OpenSeaDragon</a>.
 </p>
-
+<div class="mb-5">
+    <select class="select2-search" name="figures">
+    </select>
+</div>
 <div class="row mb-4">
   <div class="col-md-2">
     <img class="img-fluid mb-3 w-100" src="{{ site.baseurl }}/assets/img/cycifviewer/pca-2019.jpg" alt="Generic placeholder image">
