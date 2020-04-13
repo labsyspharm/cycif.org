@@ -10,7 +10,11 @@
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-top: $headings-margin-bottom * 2.5;
+  margin-top: $headings-margin-bottom * 1.5;
+}
+
+section#main_content {
+    @extend .mt-5
 }
 
 body {
@@ -35,30 +39,14 @@ svg a:hover text {
   }
 }
 
-@include media-breakpoint-down(xs) { 
-  .display-4 {
-    font-size: 2rem;
-    margin-top: 1rem;
-  }  
+hr {
+    height: 0.1rem;
+    @extend .my-5
 }
 
 .select2-results ul {
   color: black;
 }
-
-
-
-
-
-
-
-
-
-
-
-//text {
-//  font: 10px sans-serif;
-//}
 
 .plot {
   position: absolute;

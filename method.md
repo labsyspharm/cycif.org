@@ -2,7 +2,7 @@
 title: Methods and Materials
 ---
 
-### The t-CyCIF Process
+## The t-CyCIF Process
 
 In t-CyCIF, a form of 
 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3718135/" target="_blank">
@@ -40,7 +40,7 @@ segmentation to identify cells and other structures.
     </div>
 </div>
 
-### Imaging
+## Imaging
 
 Imaging of t-CyCIF specimens can be performed on a variety of fluorescent
 microscopes each of which represent a different tradeoff between data
@@ -60,7 +60,7 @@ illumination microscopes.
     </div>
 </figure>
 
-### Antibodies for tissue-based CyCIF
+## Antibodies for tissue-based CyCIF
 
 In the first cycle of t-CyCIF is possible to use indirect immunofluorescence and
 secondary antibodies. In all other cycles antibodies are directly conjugated to
@@ -119,7 +119,7 @@ database of matched t-CyCIF and IHC
 images across multiple tissues and knockdown cell lines to further advance
 antibody validation. This date will be available near the end of 2018.
 
-### Image processing and data analysis
+## Image processing and data analysis
 
 Image processing and data analysis are demanding in the case of high-plex tissue
 images; we use software tools developed by others supplemented by a growing
@@ -140,13 +140,13 @@ in much the same way as with mass cytometry and other high-dimensional data
     </div>
 </figure>
 
-### Human subjects disclaimer
+## Human subjects disclaimer
 
 Human specimens were retrieved from the archives of the Brigham and Women’s
 Hospital under a discarded/excess tissue protocol as detailed in Institutional
 Review Board (IRB) protocol IRB17-1688 (2018) for research deemed to “involve no
 more than minimal risk to the subjects.”
 
-### Funding
+## Funding
 
 This work was made possible by NIH grants P50-GM107618, U54-HL127365, U2C-CA233262, U2C-CA233280, U54-CA225088, the Ludwig Center at Harvard, and the Ludwig Cancer Research Foundation.
