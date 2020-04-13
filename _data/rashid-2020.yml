@@ -8,33 +8,57 @@ publication:
     url: 
 
 stitched mosaic images:
-  - title: 'LUNG-3-PR: Primary lung squamous cell carcinoma'
+# lung histology
+  - title: 'Lung Adenocarcinoma (Histology)'
     description: Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
-    thumbnail file name: du-lin-rashid-2019/lung_3.jpg
+    thumbnail file name: /minerva/tn_lung_hist.jpg
     links:
-      - Lung image: /featured-paper/du-lin-rashid-2019/figures/osd-LUNG_3 
-  - title: 'Patient with multiple myocardial infarctions'
+      - Explore: /featured-paper/du-lin-rashid-2019/figures/osd-LUNG_3
+# lung data
+  - title: 'Lung Adenocarcinoma (Data Analysis)'
+    description: Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
+    thumbnail file name: /minerva/tn_lung_data.jpg
+    links:
+      - Explore: /featured-paper/du-lin-rashid-2019/figures/osd-LUNG_3_DATA 
+# heart
+  - title: 'Multiple Myocardial Infarcts'
     description: 
-    thumbnail file name: rashid-2020/heart-chart.png
+    thumbnail file name: /minerva/tn_heart.jpg
     links:
-      - Heart images: /data/rashid-perspective-mi-2019/
-  - title: 'Colon Adenocarcinoma'
+      - Explore: /data/rashid-perspective-mi-2019/
+# colon tnp
+  - title: 'Colorectal Adenocarcinoma'
     description: 
-    thumbnail file name: rashid-2020/adenocarcinoma.png
+    thumbnail file name: /minerva/tn_crc_tnp.jpg
     links:
-      - Colon image: /featured-paper/gaglia-2018/figures/osd-colon_1
+      - Explore: /data/tnp-2020/osd-crc-case-1-ffpe-cycif-pilot
+# melanoma exceptional responder
   - title: 'Melanoma Exceptional Responder'
     description: 
-    thumbnail file name: rashid-2020/melanoma.png
+    thumbnail file name: /minerva/tn_melanoma_excep.jpg #rashid-2020/melanoma.jpg
     links:
-      - Skin images: /data/liu-lin-2019/
-  - title: 'Melanoma in situ, invasive melanoma'
+      - Explore: /data/liu-lin-2019/
+# melanoma
+  - title: 'Melanoma'
     description: 
-    thumbnail file name: pca-2019/pickseq_3_cycif.jpg
+    thumbnail file name: /minerva/tn_melanoma.jpg
     links:
-      - Skin image: /data/pca-2019/osd-3_cycif
+      - Explore: /data/pca-2019/osd-3_cycif
+# schwanomma
   - title: 'CNS Manifestations of Neurofibromatosis'
     description: 
-    thumbnail file name: coy-acta-neuropathol-2019/4_VestibularSchwannoma.jpg 
+    thumbnail file name: /minerva/tn_schwanomma.jpg
     links:
-      - Nerve images: /featured-paper/coy-acta-neuropathol-2019/figures/
+      - Explore: /featured-paper/coy-acta-neuropathol-2019/figures/
+# TNP 3D
+  - title: 'Colorectal Adenocarcinoma (3D Stack)'
+    description: 
+    thumbnail file name: /minerva/tn_tnp_zstack.jpg
+    links:
+      - Explore: /data/tnp-2020/osd-crc-case-1-ffpe-cycif-stack #/featured-paper/coy-acta-neuropathol-2019/figures/
+# breast cancer
+  - title: 'BRCA Mut v. WT Breast Cancer'
+    description: 
+    thumbnail file name: /minerva/tn_breast_brca.jpg
+    links:
+      - Explore: data/mehta-2020/BRCA-WT-vs-BRCA1-associated-TNBC/
