@@ -1,16 +1,12 @@
 - label: Data
-  url: /data.html
+  url: /data
 - label: Methods and Reagents
   url: /method.html
 - label: Antibodies
   url: /antibodies
-# - label: Featured Paper
-#   url: /featured-paper/lin-elife-2018/
 - label: Publications
   url: /publications.html
 - label: People
   url: /people.html
-- label: Training
-  url: /training.html
 - label: Funding
   url: /funding
