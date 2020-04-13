@@ -53,7 +53,7 @@ grants:
           Funded By:
         </h5>
         <p>{{ grant['funding'] }}</p>
-        <img src="{{ site.baseurl }}/assets/img/{{ grant['funding-image'] }}" alt="" class="img-fluid">
+        <img src="{{ site.baseurl }}/assets/img/{{ grant['funding-image'] }}" alt="" class="img-fluid" style="max-height: 32px">
     </div>
 </div>
 {% endfor %}
