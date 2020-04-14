@@ -1,0 +1,128 @@
+publication:
+  title: Genomic, Immunologic, and Functional Evolution of Resistance to Immunotherapy in a Melanoma Exceptional Responder
+  authors: David Liu*, Jia-Ren Lin* (equal contribution), Gyulnara G Kasumova, Alex Heyde, Alvin Shi, Adam Kraya, Gao Zhang, Tabea Moll, Dennie T Frederick, Yu-An Chen, Denis Schapiro, Shu Wang, Kevin Bi, Avinash Sahu, Shaolin Mei, Benchun Miao, Tatyana Sharova, Tommy Kim, Riley Fadden, Donald Lawrence, Mai P Hoang, Daniel P Cahill, Mohsen Malehmir, Christine Lian, Eytan Ruppin, Benjamin Izar, Meenhard Herlyn, Martin A Nowak, Eliezer M Van Allen, Katherine Nathanson, Keith T Flaherty, Ryan J Sullivan, Manolis Kellis, Peter K Sorger, Genevieve M Boland
+  journal: 
+  # links: 
+  #   link name: url
+
+stitched mosaic images:
+- thumbnail file name: N2.jpg
+  description: ''
+  links:
+  - CyCIF image: N2
+  title: Day -55, L6 - Skin Left Forearm
+- thumbnail file name: P6.jpg
+  description: ''
+  links:
+  - CyCIF image: P6
+  title: Day -22, L2 - Skin Right Nasolabial Fold
+- thumbnail file name: P8.jpg
+  description: ''
+  links:
+  - CyCIF image: P8
+  title: Day 27, L1 - Skin Chin
+- thumbnail file name: P7.jpg
+  description: ''
+  links:
+  - CyCIF image: P7
+  title: Day 27, L4 - Skin Upper Lip
+- thumbnail file name: P9.jpg
+  description: ''
+  links:
+  - CyCIF image: P9
+  title: Day 27, L5 - Skin Left Brow
+- thumbnail file name: PA.jpg
+  description: ''
+  links:
+  - CyCIF image: PA
+  title: Day 27, L5 - Skin Right Ear
+- thumbnail file name: PF.jpg
+  description: ''
+  links:
+  - CyCIF image: PF
+  title: Day 39, L1 - Skin Left Arm
+- thumbnail file name: PB.jpg
+  description: ''
+  links:
+  - CyCIF image: PB
+  title: Day 39, L2 - Skin Right Posterior Scalp
+- thumbnail file name: PE.jpg
+  description: ''
+  links:
+  - CyCIF image: PE
+  title: Day 39, L2 - Skin Posterior Neck
+- thumbnail file name: PC.jpg
+  description: ''
+  links:
+  - CyCIF image: PC
+  title: Day 39, L3 - Skin Left Posterior Scalp
+- thumbnail file name: PG.jpg
+  description: ''
+  links:
+  - CyCIF image: PG
+  title: Day 62, L1 - Skin Right Neck
+- thumbnail file name: PH.jpg
+  description: ''
+  links:
+  - CyCIF image: PH
+  title: Day 62, L1 - Skin Left Wrist
+- thumbnail file name: PL.jpg
+  description: ''
+  links:
+  - CyCIF image: PL
+  title: Day 76, L1 - Skin Left Leg
+- thumbnail file name: PJ.jpg
+  description: ''
+  links:
+  - CyCIF image: PJ
+  title: Day 76, L4 - Skin Right Neck
+- thumbnail file name: PK.jpg
+  description: ''
+  links:
+  - CyCIF image: PK
+  title: Day 76, L4 - Skin Right Nasolabial Fold
+- thumbnail file name: P1.jpg
+  description: ''
+  links:
+  - CyCIF image: P1
+  title: Day 83, L1 - Skin Left Posterior Shoulder
+- thumbnail file name: PM.jpg
+  description: ''
+  links:
+  - CyCIF image: PM
+  title: Day 92, L1 - Skin Left Groin
+- thumbnail file name: PO.jpg
+  description: ''
+  links:
+  - CyCIF image: PO
+  title: Day 92, L1 - Skin Left Neck
+- thumbnail file name: PP.jpg
+  description: ''
+  links:
+  - CyCIF image: PP
+  title: Day 92, L3 - Skin Right Upper Lip
+- thumbnail file name: P2.jpg
+  description: ''
+  links:
+  - CyCIF image: P2
+  title: Day 109, L1 - Skin Left Ring Finger
+- thumbnail file name: P4.jpg
+  description: ''
+  links:
+  - CyCIF image: P4
+  title: Day 1028, L3 - Jejunum
+# - thumbnail file name: P5.jpg
+#   description: ''
+#   links:
+#   - CyCIF image: P5
+#   title: Day 1169, L3 - Brain, Right Occipital Lesion (image id mapping might be incorrect)
+- thumbnail file name: N1.jpg
+  description: ''
+  links:
+  - CyCIF image: N1
+  title: Day 1849, L6 - Skin Left Neck
+- thumbnail file name: N3.jpg
+  description: ''
+  links:
+  - CyCIF image: N3
+  title: Day 1862, L6 - Skin Left Neck

@@ -1,0 +1,28 @@
+publication:
+  title: Melanoma Pre-Cancer Atlas (HTAN)
+  authors: Unpublished t-CyCIF images of melanoma and precursor fields from two patients. The specimen from patient 1 illustrates different regions of melanoma progression from relatively normal melanocytes to precursor melanocytic dysplasia to invasive melanoma. In addition, the specimen shows different regions representing immune responses to early melanoma (inflammatory regression) as well as to invasive melanoma in the form of a brisk immune infiltrative immune response (tumor infiltrating lymphocytes “TILs”). The excision specimen from patient 2 illustrates the histologic evolution of melanoma from a precursor field to melanoma in situ, and ultimately to polypoidal invasive melanoma.
+  journal: 
+  # links: 
+  #   link name: url
+
+stitched mosaic images:
+  - title: Patient 1
+    description: Severely atypical lentiginous junctional dysplastic nevus with halo-like immune response.
+    thumbnail file name: PC1_40a_153.jpg
+    links: 
+      - CyCIF image: osd-PC1_40a_153
+  - title: Patient 2
+    description: Melanoma in situ, invasive and polypoid melanoma 
+    thumbnail file name: pickseq_1_cycif.jpg
+    links:
+      - CyCIF image : osd-1_cycif
+  - title: Patient 2
+    description: Inflammatory regression and brisk TILs
+    thumbnail file name: pickseq_2_cycif.jpg
+    links:
+      - CyCIF image: osd-2_cycif
+  - title: Patient 2
+    description: Melanoma in situ, invasive melanoma, precursor field and inflammatory regression
+    thumbnail file name: pickseq_3_cycif.jpg
+    links:
+      - CyCIF imagee: osd-3_cycif
