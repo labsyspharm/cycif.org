@@ -13,13 +13,13 @@ stitched mosaic images:
     description: Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
     thumbnail file name: /minerva/tn_lung_hist.jpg
     links:
-      - Explore: /featured-paper/du-lin-rashid-2019/figures/osd-LUNG_3
+      - Explore: /data/du-lin-rashid-nat-protoc-2019/osd-LUNG_3
 # lung data
   - title: 'Lung Adenocarcinoma (Data Analysis)'
     description: Representative t-CyCIF image of a squamous cell carcinoma of the lung stitched together using ASHLAR software from 132 fields using a 40X/0.6NA objective.
     thumbnail file name: /minerva/tn_lung_data.jpg
     links:
-      - Explore: /featured-paper/du-lin-rashid-2019/figures/osd-LUNG_3_DATA 
+      - Explore: /data/du-lin-rashid-nat-protoc-2019/osd-LUNG_3_DATA 
 # heart
   - title: 'Multiple Myocardial Infarcts'
     description: 
@@ -49,16 +49,16 @@ stitched mosaic images:
     description: 
     thumbnail file name: /minerva/tn_schwanomma.jpg
     links:
-      - Explore: /featured-paper/coy-acta-neuropathol-2019/figures/
+      - Explore: /data/coy-acta-neuropathol-2019/
 # TNP 3D
   - title: 'Colorectal Adenocarcinoma (3D Stack)'
     description: 
     thumbnail file name: /minerva/tn_tnp_zstack.jpg
     links:
-      - Explore: /data/tnp-2020/osd-crc-case-1-ffpe-cycif-stack #/featured-paper/coy-acta-neuropathol-2019/figures/
+      - Explore: /data/tnp-2020/osd-crc-case-1-ffpe-cycif-stack 
 # breast cancer
   - title: 'BRCA Mut v. WT Breast Cancer'
     description: 
     thumbnail file name: /minerva/tn_breast_brca.jpg
     links:
-      - Explore: data/mehta-2020/BRCA-WT-vs-BRCA1-associated-TNBC/
+      - Explore: /data/mehta-2020/BRCA-WT-vs-BRCA1-associated-TNBC
