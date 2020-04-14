@@ -2,14 +2,21 @@
 layout: default
 title: Data
 ---
+{% assign sectionId = page.url | split: '/' | last %}
+{% assign config = sectionId | prepend: 'config-' %}
 
-{% assign pubData=site.data.liu-2019 %}
-<section id="lin-elife-2018-paper">
+{% for yml_hash in site.data[config] %}
+    {% if yml_hash[0] == 'index' %}
+        {% assign pubData=yml_hash[1] %}
+    {% endif %}
+{% endfor %}
 
-<h2 class="h4">
+<section id="{{ sectionId }}">
+
+<h2>
     {{ pubData.publication.title }}
 </h2>
-<p class="">
+<p>
     {{ pubData.publication.authors }}
     <br> {{ pubData.publication.journal }}
 </p>
@@ -19,10 +26,10 @@ title: Data
 <h3>Available images</h3>
 <div class="row bg-white">
     <div class="col-12">
-        <img class="img-fluid w-100 px-4 bg-white pt-2 mb-0" src="/assets/img/liu-2019/fig1_top.jpg" alt="">
+        <img class="img-fluid w-100 px-4 bg-white pt-2 mb-0" src="/assets/img/{{ sectionId }}/fig1_top.jpg" alt="">
     </div>
     <div class="col-12 collapse" id="fig1_bottom">
-        <img class="img-fluid w-100 px-4 bg-white pb-2 mb-0" src="/assets/img/liu-2019/fig1_bottom.jpg" alt="">
+        <img class="img-fluid w-100 px-4 bg-white pb-2 mb-0" src="/assets/img/{{ sectionId }}/fig1_bottom.jpg" alt="">
     </div>
     <div class="col-12 text-center text-dark">
             <p class="h6 my-3">Jump to an image by clicking the dots.</p>
@@ -46,7 +53,7 @@ title: Data
 <div class="row">
 {% for img in pubData['stitched mosaic images'] %}
 <div class="media col-md-6 py-4" id="{{ img['thumbnail file name'] | replace: '.jpg', '' }}">
-    <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}{{ "/assets/img/liu-2019/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
+    <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}/assets/img/{{ sectionId }}/{{ img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
     <div class="media-body">
         <h5 class="mt-0 mb-2">{{ img.title }}</h5>
         <p>

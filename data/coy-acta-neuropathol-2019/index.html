@@ -1,0 +1,59 @@
+---
+layout: default
+title: Data
+redirect_from: 
+  - /featured-paper/coy-acta-neuropathol-2019/figures/
+---
+{% assign sectionId = page.url | split: '/' | last %}
+{% assign config = sectionId | prepend: 'config-' %}
+
+{% for yml_hash in site.data[config] %}
+    {% if yml_hash[0] == 'index' %}
+        {% assign pubData=yml_hash[1] %}
+    {% endif %}
+{% endfor %}
+<section id="{{ sectionId }}">
+
+<h2>
+    {{ pubData.publication.title }}
+</h2>
+<p>
+    {{ pubData.publication.authors }}
+    <br> {{ pubData.publication.journal }}
+</p>
+
+<a href="{{ pubData.publication.link.url }}" target="_blank" class="lead">{{ pubData.publication.link.name }}</a>
+
+<h3>Available images</h3>
+
+<div class="row">
+{% for img_hash in pubData.images %}
+    <div class="col-12">
+        <h5>
+            {{ img_hash[0] }}
+        </h5>
+    </div>
+    {% for img in img_hash[1] %}
+        {% if img.title == 'break' %}
+        <div class="col-12"></div>
+        {% else %}
+        <div class="media col-md-6 my-4">
+            <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}{{ "/assets/img/coy-acta-neuropathol-2019/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
+            <div class="media-body">
+                <h5 class="mt-0 mb-2">{{ img.title }}</h5>
+                <p>
+                    {{ img.description }}
+                </p>
+                {% for link_hash in img.links %}
+                    {% for link in link_hash %}
+                    <a class="btn btn-outline-primary m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+</div>
+
+</section>
