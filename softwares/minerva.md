@@ -26,9 +26,6 @@ The Minerva suite includes [Minerva Story](https://github.com/labsyspharm/minerv
     <img class="mt-1 mr-3 w-50" src="{{ site.baseurl }}{{ "/assets/img/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
     <div class="media-body">
         <h5 class="mt-0 mb-2">{{ img.title }}</h5>
-        <p>
-            {{ img.description }}
-        </p>
         {% for link_hash in img.links %}
             {% for link in link_hash %}
             <a class="btn btn-outline-primary m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a>
