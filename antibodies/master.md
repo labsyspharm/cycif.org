@@ -1,27 +1,11 @@
 ---
-title: Antibodies - Core
+title: Antibodies - Master
 ---
 
-<nav>
-    <ol class="breadcrumb px-0 bg-transparent">
-        <li class="breadcrumb-item">
-            <a href="{{ site.baseurl }}/">HOME</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="{{ site.baseurl }}/antibodies">ANTIBODIES</a>
-        </li>
-        <li class="breadcrumb-item">
-            CORE
-        </li>
-    </ol>
-</nav>
-
-#### Core Antibodies for tCyCIF (Image available, November 2018)
-
-This is a work in progress. Our goal is to share __annotated raw images__ for each antibodies tested to achieve..... 
+#### Antibodies Tested for Tissue-based CyCIF (Master table, May 2018)
 
 You can navigate through, search, and sort (by clicking the table column heading) 
-the following table.
+the following table as well as [download a spreadsheet copy]({{ "/assets/data/CyCIF-Tested-Antibodies-May2018.xlsx" | absolute_url }}).
 
 <hr class="my-5">
 
@@ -40,7 +24,7 @@ Antibodies have been tested for a mimum level of perfomance as descrbed in footn
 }
 </style>
 
-{% assign abData=site.data.core-validation-set-Nov2018 %}
+{% assign abData=site.data.CyCIF-Tested-Antibodies-May2018 %}
 <div class="container-fluid px-0" id="abSearchContainer">
 <div class="input-group py-5 container" >
   <div class="input-group-prepend">
@@ -64,7 +48,7 @@ Antibodies have been tested for a mimum level of perfomance as descrbed in footn
                 {% if cell[0] contains 'Link' %}
                     <td><a href="{{ cell[1] }}" target="_blank">link</a></td>
                 {% elsif cell[0] contains 'Image' %}
-                    <td><a href="{{ 'antibody-lists/core-validation-set-Nov2018/' | relative_url }}{{ cell[1] }}/" >View</a></td>
+                    <td><a href="antibody-lists/core-validation-set-Nov2018/{{ cell[1] }}/" >View</a></td>
                 {% else %}
                     <td>{{ cell[1] }}</td>
                 {% endif %}

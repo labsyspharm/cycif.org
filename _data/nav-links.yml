@@ -1,7 +1,7 @@
 - label: Data
   url: /data
-- label: Methods and Reagents
-  url: /method.html
+- label: Methods
+  url: /methods
 - label: Antibodies
   url: /antibodies
 - label: Publications
