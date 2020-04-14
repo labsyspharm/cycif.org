@@ -1,5 +1,5 @@
 ---
-title: Methods and Materials
+title: Methods and Reagents
 ---
 
 ## The t-CyCIF Process

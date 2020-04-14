@@ -1,0 +1,23 @@
+{% assign home = 'home ' | split: ' ' %}
+{% assign crumbs = page.url | split: '/' | slice: 1, 50 %}
+{% assign crumbs = home | concat: crumbs %}
+
+<ol class="breadcrumb p-0 m-0 bg-transparent">
+    {% for crumb in crumbs %}
+    {% assign t = crumbs | slice: 0, (forloop.index - 1) | join: '/' %}
+    {% unless t contains '/'%}
+        {% assign t = t | append: '/' %}
+    {% endunless %}
+    {% assign siteBase = site.baseurl | append: '/' %}
+    <li class="breadcrumb-item {% if forloop.last == true %}active{% endif %}">
+        {% unless forloop.last == true %}
+        <a href="{{ t | replace: 'home/', siteBase }}">
+            {{ crumb | remove: '.html' | upcase }}
+        </a>
+        {% else %}
+        {{ crumb | remove: '.html' | upcase }}
+        {% endunless %}
+
+    </li>
+    {% endfor %}
+</ol>
