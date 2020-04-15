@@ -63,10 +63,11 @@ title: CyCIF - Cyclic Immunofluorescence
     <div class="col-md-4 offset-md-1">
             <h3 class="h2 bd-highlight">Explore t-CyCIF</h3>
         <div class="d-flex flex-column flex-wrap justify-content-center">
-            <a href="{{ site.baseurl }}/method" class="btn btn-outline-primary m-2">Method</a>
-            <a href="http://lincs.hms.harvard.edu/lin-elife-2018/" target="_blank" class="btn btn-outline-primary m-2">Data &amp; code</a>
+            <a href="{{ site.baseurl }}/methods/" class="btn btn-outline-primary m-2">Methods</a>
+            <a href="{{ site.baseurl }}/data/" class="btn btn-outline-primary m-2">Data</a>
+            <a href="{{ site.baseurl }}/software/" class="btn btn-outline-primary m-2">Software</a>
             <a href="{{ site.baseurl }}/publications" class="btn btn-outline-primary m-2">Publications</a>
-            <a href="{{ site.baseurl }}/data" class="btn btn-primary m-2">CyCIF Viewer</a>
+            <a href="{{ site.baseurl }}/software/minerva" class="btn btn-primary m-2">Minerva</a>
         </div>
     </div>
 </div>

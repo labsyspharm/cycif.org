@@ -71,13 +71,13 @@ Rashid R, Chen YA, Hoffer J, Muhlich JL, Lin JR, Krueger R, Pfister H, Mitchell 
 
 {% capture heavy_check_mark %}![alt text]({{ site.baseurl }}/assets/img/minerva/gemoji-heavy_check_mark.png "Logo Title Text 1"){: .h-25}{% endcapture %}
 
-|  	        | Concept | Req. Review | Production | Documentation |  Stage  | Rollout | Publication |
-| :---        |     :---:      |     :---:     |     :---:      |     :---:    |     :---:      |     :---:     |     :---:     |
-| **Minerva Story**   |{{ heavy_check_mark }}|{{ heavy_check_mark }}|{{ heavy_check_mark }}     |{{ heavy_check_mark }}|beta|v1.0.0  |.    |
-| **Minerva Author**   |{{ heavy_check_mark }}| {{ heavy_check_mark }}| {{ heavy_check_mark }}   |{{ heavy_check_mark }} |beta|v1.0.0|. |
-| **Minerva Cloud**   |{{ heavy_check_mark }}|{{ heavy_check_mark }}| {{ heavy_check_mark }}   | | | | |
-| **Minerva Analysis**   |{{ heavy_check_mark }}|{{ heavy_check_mark }}| {{ heavy_check_mark }}   | | | ||
-| **Minerva Atlas**   |{{ heavy_check_mark }}|{{ heavy_check_mark }}| {{ heavy_check_mark }}    || | |  |
+|                      |        Concept         |      Req. Review       |       Production       |     Documentation      | Stage | Rollout | Publication |
+|:---------------------|:----------------------:|:----------------------:|:----------------------:|:----------------------:|:-----:|:-------:|:-----------:|
+| **Minerva Story**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.0.0  |      .      |
+| **Minerva Author**   | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.0.0  |      .      |
+| **Minerva Cloud**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
+| **Minerva Analysis** | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
+| **Minerva Atlas**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
 {:class="table table-dark"}
 
 </div>
