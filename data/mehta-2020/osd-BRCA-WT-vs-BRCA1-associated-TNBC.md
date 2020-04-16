@@ -1,5 +1,5 @@
 ---
-title: jenntnbc1892-21591
+title: BRCA WT vs BRCA1 associated TNBC
 layout: osd-exhibit
 paper: config-mehta-2020
 figure: BRCA-WT-vs-BRCA1-associated-TNBC

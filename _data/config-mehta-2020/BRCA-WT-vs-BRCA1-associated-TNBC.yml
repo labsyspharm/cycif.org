@@ -46,7 +46,7 @@ Exhibit:
 
   - Name: m1
     Description: BRCA1-associated TNBC 1
-    Path: https://s3.amazonaws.com/www.cycif.org/mehta-2020/jenntnbc1892-21591
+    Path: https://s3.amazonaws.com/www.cycif.org/mehta-2020/jenntnbc18_92-21591
     Width: 20550
     Height: 11113
     MaxLevel: 5
