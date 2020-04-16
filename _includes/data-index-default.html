@@ -4,7 +4,9 @@
     </h2>
     <p>
         {{ include.pubData.publication.authors }}
-        <br> {{ include.pubData.publication.journal }}
+    </p>
+    <p>
+        <em>{{ include.pubData.publication.journal }}</em>
     </p>
 
     {% for link_hash in include.pubData.publication.links %}
@@ -34,4 +36,35 @@
     </div>
     {% endfor %}
     </div>
+
+    <div>
+        {% for group in include.pubData['group object'] %}
+        <h4>{{ group[0] | markdownify }}</h4>
+        <div class="row">
+            {% for img in group[1] %}
+            <div class="media col-md-6 my-4">
+                {% capture imgSrc %}
+                {{ site.baseurl }}/assets/img/{{ include.thumbnailDir }}/{{ img['thumbnail file name'] }}
+                {% endcapture %}
+                {% if img['thumbnail file name'] contains 'http' %}
+                    {% assign imgSrc = img['thumbnail file name']%}
+                {% endif %}
+                <img class="mt-1 mr-3 w-25" src="{{ imgSrc }}" alt="{{ img['thumbnail file name'] }}">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-2">{{ img.title | markdownify }}</h5>
+                    <p>
+                        {{ img.description | markdownify }}
+                    </p>
+                    {% for link_hash in img.links %}
+                        {% for link in link_hash %}
+                        <a class="btn btn-outline-primary m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    
 </section>
