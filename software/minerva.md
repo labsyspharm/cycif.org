@@ -73,7 +73,13 @@ Rashid R, Chen YA, Hoffer J, Muhlich JL, Lin JR, Krueger R, Pfister H, Mitchell 
 
 |                      |        Concept         |      Req. Review       |       Development       |     Documentation      | Stage | Rollout | Publication |
 |:---------------------|:----------------------:|:----------------------:|:----------------------:|:----------------------:|:-----:|:-------:|:-----------:|
-| **Minerva Story**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.0.0  |      .      |
+| **Minerva Story**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mar|                      |        Concept         |      Req. Review       |       Development       |     Documentation      | Release | Version | Publication |
+|:---------------------|:----------------------:|:----------------------:|:----------------------:|:----------------------:|:-----:|:-------:|:-----------:|
+| **Minerva Story**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }}   | v1.0.0  |      .      |
+| **Minerva Author**   | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }}   | v1.1.0  |      .      |
+| **Minerva Cloud**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
+| **Minerva Analysis** | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
+| **Minerva Atlas**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |k }} | {{ heavy_check_mark }} | beta  | v1.0.0  |      .      |
 | **Minerva Author**   | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.0.0  |      .      |
 | **Minerva Cloud**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
 | **Minerva Analysis** | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
