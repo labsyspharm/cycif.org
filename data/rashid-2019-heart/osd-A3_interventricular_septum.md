@@ -1,6 +1,6 @@
 ---
 title: A3_interventricular_septum
 layout: osd-exhibit
-paper: config-rashid-perspective-MI-2019
+paper: config-rashid-2019-heart
 figure: A3_interventricular_septum
 ---

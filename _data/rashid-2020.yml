@@ -25,7 +25,7 @@ stitched mosaic images:
     description: 
     thumbnail file name: /minerva/tn_heart.jpg
     links:
-      - Explore: /data/rashid-perspective-mi-2019/
+      - Explore: /data/rashid-2019-heart/
 # colon tnp
   - title: 'Colorectal Adenocarcinoma'
     description: 
@@ -61,4 +61,4 @@ stitched mosaic images:
     description: 
     thumbnail file name: /minerva/tn_breast_brca.jpg
     links:
-      - Explore: /data/mehta-2020/BRCA-WT-vs-BRCA1-associated-TNBC
+      - Explore: /data/mehta-2020/osd-BRCA-WT-vs-BRCA1-associated-TNBC

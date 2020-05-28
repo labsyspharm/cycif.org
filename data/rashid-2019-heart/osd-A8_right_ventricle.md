@@ -1,6 +1,6 @@
 ---
 title: A8_right_ventricle
 layout: osd-exhibit
-paper: config-rashid-perspective-MI-2019
+paper: config-rashid-2019-heart
 figure: A8_right_ventricle
 ---
