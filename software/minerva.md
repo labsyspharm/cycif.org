@@ -75,8 +75,8 @@ Rashid R, Chen YA, Hoffer J, Muhlich JL, Lin JR, Krueger R, Pfister H, Mitchell 
 
 |                      |        Concept         |      Req. Review       |       Development      |     Documentation      | Stage | Rollout | Publication |
 |:---------------------|:----------------------:|:----------------------:|:----------------------:|:----------------------:|:-----:|:-------:|:-----------:|
-| **Minerva Story**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.1.0  |      .      |
-| **Minerva Author**   | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.0.0  |      .      |
+| **Minerva Story**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.0.0  |      .      |
+| **Minerva Author**   | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} | beta  | v1.2.0  |      .      |
 | **Minerva Cloud**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
 | **Minerva Analysis** | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
 | **Minerva Atlas**    | {{ heavy_check_mark }} | {{ heavy_check_mark }} | {{ heavy_check_mark }} |                        |       |         |             |
