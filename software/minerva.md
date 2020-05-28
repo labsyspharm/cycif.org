@@ -1,5 +1,7 @@
 ---
 title: Minerva
+redirect_from: 
+  - /data/rashid-perspective-mi-2019/
 ---
 ## What is Minerva?
 
