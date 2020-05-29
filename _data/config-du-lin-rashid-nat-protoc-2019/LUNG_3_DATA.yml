@@ -301,7 +301,7 @@ Exhibit:
         The images were artifact corrected using the BaSiC tool, stitched and registered using the ASHLAR algorithm, 
         and segmented using ilastik software and MATLAB. Single-cell features were then extracted from these images using HistoCAT software.
 
-        ![image](../../../assets/img/du-lin-rashid-2019/Fig1_Rashid_SciData.JPG)
+        ![image](../../../assets/img/du-lin-rashid-nat-protoc-2019/Fig1_Rashid_SciData.JPG)
 
         Read more about the t-CyCIF method and this data in the following papers:
 
