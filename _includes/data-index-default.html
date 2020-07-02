@@ -20,7 +20,7 @@
 
     <div class="row">
     {% for img in include.pubData['stitched mosaic images'] %}
-    <div class="media col-md-6 my-4">
+    <div class="media col-md-6 my-4" id="{{ img['thumbnail file name'] | replace: '.jpg', '' }}">
         <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}/assets/img/{{ include.thumbnailDir }}/{{ img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
         <div class="media-body">
             <h5 class="mt-0 mb-2">{{ img.title }}</h5>
@@ -42,7 +42,7 @@
         <h4>{{ group[0] | markdownify }}</h4>
         <div class="row">
             {% for img in group[1] %}
-            <div class="media col-md-6 my-4">
+            <div class="media col-md-6 my-4" id="{{ img['thumbnail file name'] | replace: '.jpg', '' }}">
                 {% capture imgSrc %}
                 {{ site.baseurl }}/assets/img/{{ include.thumbnailDir }}/{{ img['thumbnail file name'] }}
                 {% endcapture %}
