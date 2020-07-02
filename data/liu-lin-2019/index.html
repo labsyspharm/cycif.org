@@ -29,22 +29,33 @@ title: Data
         {% include svg-liu-lin-2019.html %}
     </div>
 </div>
+
+{% for group in pubData['group object'] %}
+<h4>{{ group[0] | markdownify }}</h4>
 <div class="row">
-{% for img in pubData['stitched mosaic images'] %}
-<div class="media col-md-6 py-4" id="{{ img['thumbnail file name'] | replace: '.jpg', '' }}">
-    <img class="mt-1 mr-3 w-25" src="{{ site.baseurl }}/assets/img/{{ sectionId }}/{{ img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
-    <div class="media-body">
-        <h5 class="mt-0 mb-2">{{ img.title }}</h5>
-        <p>
-            {{ img.description }}
-        </p>
-        {% for link_hash in img.links %}
-            {% for link in link_hash %}
-            <a class="btn btn-outline-primary m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a>
+    {% for img in group[1] %}
+    <div class="media col-md-6 my-4" id="{{ img['thumbnail file name'] | replace: '.jpg', '' }}">
+        {% capture imgSrc %}
+        {{ site.baseurl }}/assets/img/{{ sectionId }}/{{ img['thumbnail file name'] }}
+        {% endcapture %}
+        {% if img['thumbnail file name'] contains 'http' %}
+            {% assign imgSrc = img['thumbnail file name']%}
+        {% endif %}
+        <img class="mt-1 mr-3 w-25" src="{{ imgSrc }}" alt="{{ img['thumbnail file name'] }}">
+        <div class="media-body">
+            <h5 class="mt-0 mb-2">{{ img.title | markdownify }}</h5>
+            <p>
+                {{ img.description | markdownify }}
+            </p>
+            {% for link_hash in img.links %}
+                {% for link in link_hash %}
+                <a class="btn btn-outline-primary m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
+        </div>
     </div>
+    {% endfor %}
 </div>
 {% endfor %}
-</div>
+
 </section>
