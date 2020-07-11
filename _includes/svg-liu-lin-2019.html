@@ -11,13 +11,13 @@
     @keyframes changeSize {
         0% {transform: scale(1);}
         30% {transform: scale(1);}
-        35% {transform: scale(1.3);}
+        35% {transform: scale(1.6);}
         40% {transform: scale(1);}
         60% {transform: scale(1);}
         70% {transform: scale(1);}
-        75% {transform: scale(1.3);}
+        75% {transform: scale(1.6);}
         80% {transform: scale(1);}
-        85% {transform: scale(1.3);}
+        85% {transform: scale(1.6);}
         90% {transform: scale(1);}
     } 
     @keyframes constantLarge {
@@ -37,11 +37,35 @@
 </style>
 
 <script>
+const paperConfig = {{ site.data.config-liu-lin-2019.index | jsonify }};
+const {Biopsies, Autopsies} = paperConfig['group object'];
+const biopsiesObj = Biopsies.reduce((ac, el) => {
+    ac[el['thumbnail file name'].split('.')[0]] = el;
+    return ac;
+}, {});
+
 var callback = function(){
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            placement: 'bottom',
+            html: true
+        });
+    });
+    $("[id^='image-']").each((idx, el) => {
+        $(el).attr('data-toggle', 'tooltip');
+        let caseName = el.id.split('-')[1];
+        var tooltipStr = `
+            <h6 class="my-2 text-left">${ biopsiesObj[caseName]['title'] }</h6>
+            <img class="w-100" 
+            src="{{ site.baseurl }}/assets/img/liu-lin-2019/${ biopsiesObj[caseName]['thumbnail file name'] }">
+        `;
+        $(el).attr('title', tooltipStr);
+    });
     $("[id^='image-']").on('click', (el)=>{
-        console.log(el.target.id);
-        onClickScrollToImg(el.target.id.split('-').pop())
-    })
+        let caseName = el.target.id.split('-')[1];
+        window.location.href = `${ biopsiesObj[caseName].links[0]['CyCIF image'] }`;
+        // onClickScrollToImg(el.target.id.split('-').pop())
+    });
 
     function scrollToAnchor(aid){
         console.warn(aid);
