@@ -1,0 +1,17 @@
+publication:
+  title: Clinical efficacy and molecular response correlates of the Wee1 inhibitor adavosertib with cisplatin in metastatic triple-negative breast cancer (mTNBC)
+  authors: Keenan T., Li T., Vallius T., Guerriero J.L., Tayob N., Kochupurakkal B., Davis J., Pastorello R., Tahara R.K., Anderson L., Conway J., He M.X., Shannon E., Godin R.E., Sorger P.K., D’Andrea A., Overmoyer B.,  Winer E.P., Mittendorf E.A., Van Allen E.*, Shapiro G.I.*, Tolaney S.M.*
+  journal: Manuscript in preparation
+  links: 
+
+stitched mosaic images:
+  - title: Clinical Benefit - Cisplatin Biopsy
+    description: CyCIF image of a biopsy from a patient with triple-negative breast cancer (TNBC) liver metastasis. This biopsy was obtained after the first infusion of Cisplatin (Cis) chemotherapy, before Wee1 inhibitor therapy.
+    thumbnail file name: cis.jpg
+    links:
+      - CyCIF image: osd-cis.html
+  - title: Clinical Benefit - Cis Wee1i Biopsy
+    description: CyCIF image of a biopsy from a patient with triple-negative breast cancer (TNBC) liver metastasis, after combination therapy with Cisplatin and the Wee1 inhibitor Adavosertib.
+    thumbnail file name: Wee1.jpg
+    links:
+      - CyCIF image: osd-Wee1.html

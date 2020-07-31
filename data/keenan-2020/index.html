@@ -1,0 +1,17 @@
+---
+layout: default
+title: Data
+---
+{% assign sectionId = page.url | split: '/' | last %}
+{% assign config = sectionId | prepend: 'config-' %}
+
+{% for yml_hash in site.data[config] %}
+    {% if yml_hash[0] == 'index' %}
+        {% assign pubData=yml_hash[1] %}
+    {% endif %}
+{% endfor %}
+
+{% include data-index-default.html
+    sectionId = sectionId
+    pubData=pubData
+    thumbnailDir=sectionId %}
