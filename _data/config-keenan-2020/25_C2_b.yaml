@@ -1,0 +1,126 @@
+Exhibit:
+  Groups:
+  - Channels:
+    - DNA
+    - pCDK1/2/3/5
+    - pHH3
+    - panCK
+    Colors:
+    - 000fff
+    - ff0000
+    - 00ff00
+    - ffffff
+    Name: Cell Cycle
+    Path: Cell-Cycle_0__DNA0--5__CDK1235--30__pH3--10__panCK
+  - Channels:
+    - DNA
+    - panCK
+    - CD4
+    - CD8a
+    Colors:
+    - 000fff
+    - ffffff
+    - 00ff00
+    - ff0000
+    Name: T cells
+    Path: T-cells_0__DNA0--10__panCK--17__CD4--19__CD8a
+  - Channels:
+    - DNA
+    - panCK
+    - CD163
+    - CD68
+    - CD14
+    Colors:
+    - 000fff
+    - ffffff
+    - 00ff00
+    - ff0000
+    - ff00ff
+    Name: Macrophages
+    Path: Macrophages_0__DNA0--10__panCK--21__CD163--22__CD68--23__CD14
+  Header: This is a CyCIF image of a biopsy from a patient with triple-negative breast
+    cancer (TNBC) liver metastasis. The biopsy was obtained after combination therapy
+    with Cisplatin and the Wee1 inhibitor Adavosertib at cycle 2. According to the
+    RECIST 1.1 response evaluation criteria, this patient was classified as having
+    progressive disease (PD) after the combination therapy.
+  Images:
+  - Description: No Clinical Benefit - Cis Wee1i Biopsy
+    Height: 13607
+    MaxLevel: 5
+    Name: i0
+    Path: https://s3.amazonaws.com/www.cycif.org/keenan-2020/25_C2_b
+    Width: 22397
+  Layout:
+    Grid:
+    - - i0
+  Rotation: 0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+    - Arrows: []
+      Description: We detected changes in cell cycle markers in the biopsy obtained
+        after the combination therapy of Cisplatin and Wee1 inhibitor. Within the
+        `pan-cytokeratin`+ tumor cell population, CyCIF revealed that pCDK1/2/3/5 expression
+        decreased on average 56%, from monotherapy to combination therapy biopsies,
+        indicating target engagement of the Wee1 inhibitor. Similarly, the number
+        of pHH3+ tumor cells increased by an average of 28-fold from monotherapy to
+        combination therapy biopsies, suggesting increased entry into mitosis after
+        Wee1 inhibitor therapy.
+      Group: Cell Cycle
+      Name: Cell Cycle (I)
+      Overlays:
+      - height: 0.031314043276649994
+        width: 0.03262353963185538
+        x: 0.9149173132106434
+        y: 0.6309991588716538
+      Pan:
+      - 0.9348120450504332
+      - 0.6389454609775886
+      Zoom: 7.637586357679526
+    - Arrows: []
+      Description: 'The decreased expression of pCDK1/2/3/5 and the increased expression
+        of pHistone H3 in the pan-cytokeratin+ tumor cell population were seen in
+        multiple areas in this biopsy.
+
+
+        Note that the immunofluorescence signal for pan-cytokeratin in this image
+        is partially overexposed.'
+      Group: Cell Cycle
+      Name: Cell Cycle (II)
+      Overlays: []
+      Pan:
+      - 0.8272007730947245
+      - 0.7407201693829668
+      Zoom: 7.637586357679526
+    - Arrows: []
+      Description: Patients with progressive disease (PD) after combination therapy had
+        smaller increases in CD3+CD4+ and CD3+CD8a+ T cells following Wee1 inhibitor
+        therapy versus those with either a partial response (PR) or stable disease
+        (SD).
+      Group: T cells
+      Name: T cells
+      Overlays:
+      - height: 0.024006897065193877
+        width: 0.02723249336690503
+        x: 0.8644597306955237
+        y: 0.655124347634728
+      Pan:
+      - 0.8520142779370194
+      - 0.6664322707329942
+      Zoom: 8.223418910457106
+    - Arrows: []
+      Description: We observed no change in the CD68+ macrophages and a small decrease
+        in the CD163+ macrophage population after Wee1 inhibition therapy in this
+        patient with PD in response to combination therapy.
+      Group: Macrophages
+      Name: Macrophages
+      Overlays:
+      - height: 0.035635964912280604
+        width: 0.04451754385964912
+        x: 0.9719315949476389
+        y: 0.5565947197092675
+      Pan:
+      - 0.9897301487250348
+      - 0.5704571716489544
+      Zoom: 9.868102692548527

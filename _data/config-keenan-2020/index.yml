@@ -15,3 +15,13 @@ stitched mosaic images:
     thumbnail file name: Wee1.jpg
     links:
       - CyCIF image: osd-Wee1.html
+  - title: No Clinical Benefit - Cisplatin Biopsy
+    description: CyCIF image of a biopsy from a patient with triple-negative breast cancer (TNBC) liver metastasis. This biopsy was obtained after the first infusion of Cisplatin (Cis) chemotherapy, before Wee1 inhibitor therapy.
+    thumbnail file name: 25_C1_a.jpg
+    links:
+      - CyCIF image: osd-25_C1_a.html
+  - title: No Clinical Benefit - Cis Wee1i Biopsy
+    description: CyCIF image of a biopsy from a patient with triple-negative breast cancer (TNBC) liver metastasis, after combination therapy with Cisplatin and the Wee1 inhibitor Adavosertib.
+    thumbnail file name: 25_C2_b.jpg
+    links:
+      - CyCIF image: osd-25_C2_b.html
