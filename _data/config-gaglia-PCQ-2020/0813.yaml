@@ -300,7 +300,7 @@ Exhibit:
     dynamics in tissue sections.
     
     This story contextualizes these new metrics of Multivariate Proliferation Index (MPI) and cell 
-    cycle harmony in an untreated human HER2 positive primary breast cancer resection.
+    cycle coherence in an untreated human HER2 positive primary breast cancer resection.
 
     First, we use established lineage markers (CD45, Vimentin, e-Cadherin and aSMA) to distinguish 
     epithelial cells from immune and stromal cells (Waypoint 3. Cell Typing).
@@ -581,7 +581,7 @@ Exhibit:
         - MPI = +1
         - MPI = 0
         - MPI = -1
-    - Name: 'Cell Cycle Harmony'
+    - Name: 'Cell Cycle Coherence'
       Group: Cell Cycle
       Overlays: []
       Pan:
@@ -711,13 +711,13 @@ Exhibit:
           - 0.8047000000000000
       Description: "Following a pathology review of the tissue, we created an toric cell\
       \ cycle plot for each distinct ROI and fit a circle to the 2D dimensionally reduced plot.\
-      \ To determine the cell cycle harmony, we looked at\
+      \ To determine the cell cycle coherence, we looked at\
       \ two metrics: the angular and radial distribution of the cells around the torus.\
       \ These two metrics are illustrated in the image below.\n\
 
       \ ![image](/assets/img/gaglia-PCQ-2020/Torus_Def.png)\n\
 
-      \ A cell population displays cell cycle harmony when the cell cycle protein markers\
+      \ A cell population displays cell cycle coherence when the cell cycle protein markers\
       \ fluctuate in an organized and coordinated pattern across the populations of cells.\
       \ When this is the case the points in the reduced dimensionality plot (i.e. the cells'\
       \ representation) are both 1) spread out and close to outer toric shape and 2)\
@@ -730,6 +730,6 @@ Exhibit:
 
       \ ![image](/assets/img/gaglia-PCQ-2020/ROI_Tori.png)\n\
       
-      \ Below is a static plot showing all the ROIs' cell cycle harmony metrics.\n\n\
+      \ Below is a static plot showing all the ROIs' cell cycle coherence metrics.\n\n\
 
       \ ![image](/assets/img/gaglia-PCQ-2020/Harmony.png) "
