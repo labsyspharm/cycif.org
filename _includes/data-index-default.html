@@ -6,7 +6,10 @@
         {{ include.pubData.publication.authors }}
     </p>
     <p>
-        <em>{{ include.pubData.publication.journal }}</em>
+        <em>{{ include.pubData.publication.journal | markdownify}}</em>
+    </p>
+    <p>
+        {{ include.pubData.publication.description | markdownify}}
     </p>
 
     {% for link_hash in include.pubData.publication.links %}
