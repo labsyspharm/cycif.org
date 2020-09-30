@@ -1,7 +1,7 @@
 publication:
   title: |
     Heart
-  authors: |
+  description: |
     
     
     Explore images of heart tissue from a patient who experienced 
@@ -34,6 +34,7 @@ publication:
     at autopsy. Present are multiple myocardial infarctions, occurring days (acute), 
     weeks (subacute), and years (remote) prior to death, in both 
     the left and right ventricles along with severe atherosclerosis in the arteries.
+  authors:
   journal: 
   link: 
     # name: Publication summary
