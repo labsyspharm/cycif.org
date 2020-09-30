@@ -26,10 +26,11 @@ title: Data
 <h3>Available images</h3>
 <div class="row px-2">
     <div class="col-12 bg-white">
-        {% include svg-liu-lin-2019.html %}
+        {% include_relative svg-liu-lin-2019.html %}
     </div>
 </div>
 
+<div class='d-block d-xl-none'>
 {% for group in pubData['group object'] %}
 <h4>{{ group[0] | markdownify }}</h4>
 <div class="row">
@@ -57,5 +58,6 @@ title: Data
     {% endfor %}
 </div>
 {% endfor %}
+</div>
 
 </section>

@@ -1,0 +1,105 @@
+<!-- svg generated from illustrator -->
+{% include_relative figure1_a_v14.svg %}
+
+<style>
+    @keyframes hideshow {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    } 
+    @keyframes constantShow {
+        0% { opacity: 1; }
+        100% { opacity: 1; }
+    } 
+    @keyframes changeSize {
+        0% {transform: scale(1);}
+        30% {transform: scale(1);}
+        35% {transform: scale(1.6);}
+        40% {transform: scale(1);}
+        60% {transform: scale(1);}
+        70% {transform: scale(1);}
+        75% {transform: scale(1.6);}
+        80% {transform: scale(1);}
+        85% {transform: scale(1.6);}
+        90% {transform: scale(1);}
+    } 
+    @keyframes constantLarge {
+        0% {transform: scale(1.4);}
+        100% {transform: scale(1.4);}
+    } 
+    path[id*=image-] {
+        /* animation: hideshow 0.6s ease-in-out infinite alternate; */
+        cursor: pointer;
+        transform-origin: 0% 50%;
+        transform-box: fill-box;
+        animation: changeSize 2.5s ease-in-out infinite;
+    }
+    path[id*=image-]:hover { 
+        animation: constantLarge 1s ease infinite;
+    }
+</style>
+
+<script>
+const paperConfig = {{ site.data.config-liu-lin-2019.index | jsonify }};
+const {Biopsies, Autopsies} = paperConfig['group object'];
+const AllSamples = [...Biopsies, ...Autopsies]
+const biopsiesObj = AllSamples.reduce((ac, el) => {
+    ac[el['thumbnail file name'].split('.')[0]] = el;
+    return ac;
+}, {});
+
+var callback = function(){
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            placement: 'bottom',
+            html: true
+        });
+    });
+    $("[id^='image-']").each((idx, el) => {
+        $(el).attr('data-toggle', 'tooltip');
+        let caseName = el.id.split('-')[1];
+        var tooltipStr = `
+            <h6 class="my-2 text-left">${ biopsiesObj[caseName]['title'] }</h6>
+            <img class="w-100" 
+            src="{{ site.baseurl }}/assets/img/liu-lin-2019/${ biopsiesObj[caseName]['thumbnail file name'] }">
+        `;
+        $(el).attr('title', tooltipStr);
+    });
+    $("[id^='image-']").on('click', (el)=>{
+        let caseName = el.target.id.split('-')[1];
+        window.location.href = `${ biopsiesObj[caseName].links[0]['CyCIF image'] }`;
+        // onClickScrollToImg(el.target.id.split('-').pop())
+    });
+
+    function scrollToAnchor(aid){
+        console.warn(aid);
+        var aTag = $("div.media[id='"+ aid +"']");
+        $('html,body').animate(
+            {scrollTop: aTag.offset().top - 80},
+            'slow'
+        );
+    }
+    function onClickScrollToImg(imageId) {
+        window.location.href = `./#${imageId}`;
+        window.scrollBy(0, -80);
+        var targetEl = document.getElementById(`${imageId}`)
+        targetEl.style.transition = 'background-color 1.5s ease';
+        targetEl.style.backgroundColor = '#444';
+        setTimeout(
+            () => {
+                targetEl.style.backgroundColor = 'inherit';
+            },
+            3000
+        );
+
+    }
+};
+
+if (
+    document.readyState === "complete" ||
+    (document.readyState !== "loading" && !document.documentElement.doScroll)
+) {
+  callback();
+} else {
+  document.addEventListener("DOMContentLoaded", callback);
+}
+</script>

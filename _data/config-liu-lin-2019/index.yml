@@ -11,7 +11,7 @@ group object:
       description: ''
       links:
       - CyCIF image: N2
-      title: Day -55, L6 - Skin Left Forearm
+      title: Day -55, Skin Left Forearm
     - thumbnail file name: P6.jpg
       description: ''
       links:
@@ -21,7 +21,7 @@ group object:
       description: ''
       links:
       - CyCIF image: P8
-      title: Day 27, L1 - Skin Chin
+      title: Day 27, L6 - Skin Chin
     - thumbnail file name: P7.jpg
       description: ''
       links:
@@ -91,7 +91,7 @@ group object:
       description: ''
       links:
       - CyCIF image: PM
-      title: Day 92, L1 - Skin Left Groin
+      title: Day 92, L6 - Skin Left Groin
     - thumbnail file name: PO.jpg
       description: ''
       links:
@@ -121,12 +121,12 @@ group object:
       description: ''
       links:
       - CyCIF image: N1
-      title: Day 1849, L6 - Skin Left Neck
+      title: Day 1849, L3 - Skin Left Neck
     - thumbnail file name: N3.jpg
       description: ''
       links:
       - CyCIF image: N3
-      title: Day 1862, L6 - Skin Left Neck
+      title: Day 1862, L3 - Skin Left Neck
   Autopsies:
     - thumbnail file name: AL1.jpg
       description: ''
