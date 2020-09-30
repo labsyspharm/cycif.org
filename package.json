@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "bootstrap": "4.4.1",
+    "jquery": "3.4.1",
+    "minerva-browser": "1.1.6",
+    "popper.js": "1.16.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "develop": "webpack --mode development",
+    "build": "webpack --mode production"
+  }
+}

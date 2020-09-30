@@ -1,0 +1,83 @@
+body {
+  background: black;
+}
+
+/* position: absolute; top: 0; bottom: 0; width: 100%; */
+#openseadragon1 {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; */
+  width: 100%;
+  height: 90vh;
+  pointer-events: fill;
+  border: 1px solid #aaa;
+}
+
+.overlap {
+  position: relative;
+  pointer-events: none;
+}
+
+a, .navbar-toggler {
+  pointer-events: auto;
+}
+
+.bg-trans {
+    background: hsla(0, 0%, 0%, 0.5);
+}
+
+#legend ul {
+   margin-bottom: 0;
+}
+
+.legend-label {
+    display: inline-block;
+    /* width: 4.5em; */
+}
+
+.legend-color {
+    margin-left: 0.5em;
+    width: 1.5em;
+    border-radius: 0;
+    vertical-align: middle;
+}
+
+.legend-green {
+    background-color: #00FF00;
+}
+
+.legend-white {
+    background-color: #FFFFFF;
+}
+
+.legend-red {
+    background-color: #FF0000;
+}
+
+.legend-blue {
+    background-color: #0000FF;
+}
+
+.overlay-title {
+    color: white;
+    text-align: center;
+}
+
+.slide-border {
+    border: 1px solid hsl(0, 0%, 20%);
+}
+
+.channel-picker {
+    border-style: solid;
+    border-color: hsl(0, 0%, 70%);
+    border-width: 1px 0;
+}
+
+.channel-picker:first-child {
+    border-left-width: 1px;
+}
+
+.channel-picker:last-child {
+    border-right-width: 1px;
+}

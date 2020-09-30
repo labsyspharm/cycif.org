@@ -1,0 +1,8 @@
+ClustName,clust_id,num_cells
+Regulatory T,1,4198
+Helper T,2,4522
+CD45+ Immune,3,7238
+CD45+ Immune ,4,6398
+B Cell,5,5010
+Cytotoxic T,6,3099
+PD1+ Cytotoxic T,7,2365
