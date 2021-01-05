@@ -24,7 +24,7 @@ The Minerva suite includes [Minerva Story](https://github.com/labsyspharm/minerv
 
 <div class="row">
 {% for img in pubData['stitched mosaic images'] %}
-<div class="media col-md-4 my-4">
+<div class="media col-sm-6 col-lg-4 my-4">
     <img class="mt-1 mr-3 w-50" src="{{ site.baseurl }}{{ "/assets/img/" | append: img['thumbnail file name'] }}" alt="{{ img['thumbnail file name'] }}">
     <div class="media-body">
         <h5 class="mt-0 mb-2">{{ img.title }}</h5>
@@ -63,6 +63,9 @@ Check out the [Minerva Wiki](https://github.com/labsyspharm/minerva-story/wiki){
 ## Publications
 
 Rashid R, Chen YA, Hoffer J, Muhlich JL, Lin JR, Krueger R, Pfister H, Mitchell R, Santagata S, and Sorger PK. Interpretative guides for interacting with tissue atlas and digital pathology data using the Minerva browser. *BioRxiv*. (2020) <a href="https://doi.org/10.1101/2020.03.27.001834" target="_blank"> https://doi.org/10.1101/2020.03.27.001834</a>.
+
+Hoffer J, Rashid R, Muhlich JL, Chen Y-A, Russell DPW, Ruokonen J, Krueger R, Pfister H, Santagata S, Sorger PK. Minerva: a light-weight, narrative image browser for multiplexed tissue images. J Open Source Software. 2020 Oct 15;5(54):2579. 
+
 
 
 ## Development Chart
