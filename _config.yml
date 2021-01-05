@@ -9,6 +9,7 @@ plugins:
     - jekyll-redirect-from
 exclude: ["node_modules"]
 include: [".nojekyll"]
+github: [metadata]
 google_analytics: UA-41775478-2
 repository: labsyspharm/cycif.org
 speech_bucket: www.cycif.org
