@@ -2,9 +2,10 @@ name: Python package
 
 on: [push]
 
+environment: python_polly
+
 jobs:
   build:
-    environment: python_polly
     working-directory: ./scripts
     runs-on: ubuntu-latest
     strategy:
