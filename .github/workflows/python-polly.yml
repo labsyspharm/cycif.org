@@ -3,8 +3,8 @@ name: Python package
 on: [push]
 
 jobs:
-  environment: python_polly
   build:
+    environment: python_polly
     working-directory: ./scripts
     runs-on: ubuntu-latest
     strategy:

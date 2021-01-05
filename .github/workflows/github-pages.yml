@@ -10,6 +10,14 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
+      - name: Install NPM Dependencies
+        run: |
+          npm install
+          npm install webpack
+          npm install webpack-cli
+      - name: Build with Webpack
+        run: |
+          ./node_modules/.bin/webpack --mode production
       - uses: helaili/jekyll-action@2.0.1
         env:
           JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
