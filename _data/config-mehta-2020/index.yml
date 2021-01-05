@@ -1,10 +1,10 @@
 publication:
-  title: Targeting immunosuppressive macrophages overcomes PARP-inhibitor resistance in BRCA1-associated triple-negative breast cancer
+  title: Targeting immunosuppressive macrophages overcomes PARP inhibitor resistance in _BRCA1_-associated triple-negative breast cancer
   description: Despite objective responses to PARP inhibition and improvements in progression-free survival compared to standard chemotherapy in patients with BRCA-associated triple-negative breast cancer (TNBC), benefits are transitory. Using high dimensional single-cell profiling of human TNBC, here we demonstrate that macrophages are the predominant infiltrating immune cell type in BRCA-associated TNBC. Through multi-omics profiling we show that PARP inhibitors enhance both anti- and pro-tumor features of macrophages through glucose and lipid metabolic reprogramming driven by the sterol regulatory element-binding protein 1 (SREBP-1) pathway. Combined PARP inhibitor therapy with CSF-1R blocking antibodies significantly enhanced innate and adaptive anti-tumor immunity and extends survival in BRCA-deficient tumors in vivo and is mediated by CD8+ T-cells. Collectively, our results uncover macrophage-mediated immune suppression as a liability of PARP inhibitor treatment and demonstrate combined PARP inhibition and macrophage targeting therapy induces a durable reprogramming of the tumor microenvironment, thus constituting a promising therapeutic strategy for TNBC.
   authors: Anita K. Mehta, Emily M. Cheney, Christina A. Hartl, Constantia Pantelidou, Madisson Oliwa,  Jessica A. Castrillon, Jia-Ren Lin, Katie E. Hurst, Mateus de Oliveira Taveira, Nathan T. Johnson, William M. Oldham, Marian Kalocsay, Matthew J. Berberich, Sarah A. Boswell, Aditi Kothari, Shawn Johnson, Deborah A. Dillon, Mikel Lipschitz, Scott Rodig, Sandro Santagata, Judy E. Garber, Nadine Tung, José Yélamos, Jessica E. Thaxton, Elizabeth A. Mittendorf, Peter K. Sorger, Geoffrey I. Shapiro and Jennifer L. Guerriero  
-  journal: Manuscript under review
-  # links: 
-  #   link name: url
+  journal: "Nat Cancer. 2020 Dec 14;1–17."
+  links: 
+    - Publisher Page: https://www.nature.com/articles/s43018-020-00148-7
 
 group object:
   Wildtype vs mutant:
