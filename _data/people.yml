@@ -1,4 +1,4 @@
-- name: Peter Sorger
+- name: Peter K Sorger
   affiliations:
     - Head of the Harvard Program in Therapeutic Science
     - Harvard Medical school
@@ -32,15 +32,27 @@
     - github: https://github.com/vcg
     - google schloar: https://scholar.google.com/citations?user=tvBEoaMAAAAJ&hl=en
 
+- name: Jennifer L Guerriero
+  affiliations:
+    - Lead Investigator
+    - Brigham & Women’s Hospital
+  image: jennifer_guerriero.jpg
+  role: 
+  email: Jennifer_Guerriero@dfci.harvard.edu
+  links:
+    - lab: https://guerrierolab.bwh.harvard.edu/
+    - google schloar: https://scholar.google.com/citations?user=WsikoGcAAAAJ&hl
+    
 - name: Benjamin Izar
   affiliations:
-    - Dana-Farber Cancer Institute
-    - Broad Institute of Harvard and MIT
-  image: http://www.dana-farber.org/uploadedImages/Pages/Find_a_Doctor/benjamin-izar.jpg
+    - Assistant Professor of Medicine
+    - Columbia University Irving Medical Center
+  image: ben_izar.jpg
   role: 
   email: bizar@bidmc.harvard.edu
   links:
-    - google schloar: https://scholar.google.com/citations?hl=en&user=_m4wVXYAAAAJ
+    - lab: https://cancer.columbia.edu/the-izar-lab
+    - google schloar: https://scholar.google.com/citations?user=_m4wVXYAAAAJ
 
 - name: Alyce Chen
   affiliations:
@@ -60,7 +72,7 @@
   email: madison_tyler@hms.harvard.edu
   links:
 
-- name: Jia-Ren Lin
+- name: Jerry (Jia-Ren) Lin
   affiliations:
     - Research Associate
     - Laboratory of Systems Pharmacology
@@ -84,7 +96,7 @@
 
 - name: Jeremy Muhlich
   affiliations: 
-    - Deputy Director of Modeling and Informatics
+    - Director of Software Engineering
     - Laboratory of Systems Pharmacology
   image: http://hits.harvard.edu/wp-content/uploads/2013/10/Jeremy-Muhlich.jpg
   role: Research Scientist
@@ -125,6 +137,30 @@
   links:
     - GitHub: https://github.com/DenisSch
 
+- name: Robert Krueger
+  affiliations:
+    - Postdoctoral Researcher
+    - Laboratory of Systems Pharmacology
+  image: robert_krueger.jpg
+  role: 
+  email: krueger@g.harvard.edu
+  links:
+    - bio: https://kruegert.github.io/
+    - google scholar: https://scholar.google.de/citations?user=UHmEAooAAAAJ&hl=de&oi=sra
+    - GitHub: https://github.com/kruegert
+
+- name: Ajit Johnson Nirmal
+  affiliations:
+    - Postdoctoral research fellow
+    - Harvard Medical School, Dana-Farber Cancer Institute
+  image: ajit_johnson.jpg
+  role:
+  email: ajitj_nirmal@dfci.harvard.edu
+  links:
+    - Bio: https://scholar.harvard.edu/ajitjohnson
+    - Github: https://github.com/ajitjohnson/
+    - Google scholar: https://scholar.google.com/citations?user=H3ueJ_8AAAAJ
+    
 - name: Shaolin Mei
   affiliations: 
     - Research Associate
@@ -136,13 +172,22 @@
 
 - name: Connor Jacobson
   affiliations: 
-    - Research Assistant I
+    - Research Associate
     - Laboratory of Systems Pharmacology
   image: http://hits.harvard.edu/wp-content/uploads/2017/03/Connor-Jacobson-214x300.jpg
   role: 
   email: connor_jacobson@hms.harvard.edu
   links: 
     - bio: https://scholar.harvard.edu/connorjacobson/home
+
+- name: Roxanne Pelletier
+  affiliations: 
+    - Research Associate
+    - Laboratory of Systems Pharmacology
+  image: roxanne_pelletier.png
+  role: 
+  email: roxanne_pelletier@hms.harvard.edu
+  links: 
 
 - name: Artem Sokolov
   affiliations:
