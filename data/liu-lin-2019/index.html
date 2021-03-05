@@ -13,14 +13,25 @@ title: Data
 
 <section id="{{ sectionId }}">
 
-<h2>
-    {{ pubData.publication.title }}
-</h2>
-<p>
-    {{ pubData.publication.authors }}
-    <br> {{ pubData.publication.journal }}
-</p>
-<a href="{{ pubData.publication.link.url }}" target="_blank" class="lead">{{ pubData.publication.link.name }}</a>
+    <h2>
+        {{ pubData.publication.title | markdownify }}
+    </h2>
+    <p>
+        {{ pubData.publication.authors }}
+    </p>
+    <p>
+        <em>{{ pubData.publication.journal | markdownify}}</em>
+    </p>
+    <p>
+        {{ pubData.publication.description | markdownify}}
+    </p>
+
+    {% for link_hash in pubData.publication.links %}
+        {% for link in link_hash %}
+        <a class="m-1" href="{{ link[1] }}" {% if link[1] contains 'http' %} target="_blank" {% endif %}>{{ link[0] }}</a> 
+        {% endfor %}
+        {% if forloop.last == false %} | {% endif %}
+    {% endfor %}
 
 
 <h3>Available images</h3>
