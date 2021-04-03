@@ -3,29 +3,9 @@ layout: base
 ---
 
 {% assign idx = page.index | minus: 1 %}
-{% assign abData=site.data.CyCIF-Tested-Antibodies-May2018[idx] %}
+{% assign abData=site.data.antibody-tables.CyCIF-Tested-Antibodies-May2018[idx] %}
 
 <div class="container">
-    <nav>
-        <ol class="breadcrumb px-0 bg-transparent">
-            <li class="breadcrumb-item">
-                <a href="{{ site.baseurl }}/">HOME</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ site.baseurl }}/antibodies">ANTIBODIES</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="{{ 'antibodies/tcycif-core' | absolute_url }}">CORE</a>
-            </li>
-            <li class="breadcrumb-item">
-                {% for cell in abData %}
-                    {% if forloop.first %}
-                        {{ cell[1] }}
-                    {% endif %}
-                {% endfor %}
-            </li>
-        </ol>
-    </nav>
     <section class="">
         <div class="row">
             {% for cell in abData %}

@@ -2,7 +2,7 @@
 title: Antibodies - Master
 ---
 
-#### Antibodies Tested for Tissue-based CyCIF (Master table, May 2018)
+#### Antibodies Tested for Tissue-based CyCIF (Master table, May 2018, [Lin, et al. eLife 2018]({{ site.baseurl }}/publications#lin-elife-2018-paper))
 
 You can navigate through, search, and sort (by clicking the table column heading) 
 the following table as well as [download a spreadsheet copy]({{ "/assets/data/CyCIF-Tested-Antibodies-May2018.xlsx" | absolute_url }}).
@@ -24,7 +24,7 @@ Antibodies have been tested for a mimum level of perfomance as descrbed in footn
 }
 </style>
 
-{% assign abData=site.data.CyCIF-Tested-Antibodies-May2018 %}
+{% assign abData=site.data.antibody-tables.CyCIF-Tested-Antibodies-May2018 %}
 <div class="container-fluid px-0" id="abSearchContainer">
 <div class="input-group py-5 container" >
   <div class="input-group-prepend">

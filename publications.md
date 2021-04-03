@@ -52,7 +52,8 @@ title: Publications
    <br/>
    [Available images]({{ "data/du-lin-rashid-nat-protoc-2019/" | absolute_url }})
 
-1. Lin J-R, Izar B, Wang S, Yapp C, Mei S, Shah PM, Santagata S, Sorger PK.
+1. {: #lin-elife-2018-paper}
+   Lin J-R, Izar B, Wang S, Yapp C, Mei S, Shah PM, Santagata S, Sorger PK.
    Highly multiplexed immunofluorescence imaging of human tissues and tumors
    using t-CyCIF and conventional optical microscopes. Elife. 2018 Jul 11;7.
    PMCID: [PMC6075866](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6075866/)
