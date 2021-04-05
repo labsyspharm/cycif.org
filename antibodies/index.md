@@ -36,7 +36,7 @@ Last updated: February 2021
 
 #### Archived Lists
 
-1. [2018 full table]({{ site.baseurl }}/antibodies/archived/2018-master): The
+1. [2018 full table]({{ site.baseurl }}/antibodies/archived/2018-full): The
     qualified list of 300 antibodies used in the [Lin, et al. eLife 2018
     paper]({{ site.baseurl }}/publications#lin-elife-2018-paper)
 
