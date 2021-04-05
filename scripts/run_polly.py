@@ -5,6 +5,7 @@ import boto3
 import yaml
 import sys
 import argparse
+import itertools
 from bs4 import BeautifulSoup
 from markdown import markdown
 
