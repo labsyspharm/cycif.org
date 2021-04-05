@@ -8,6 +8,7 @@ import argparse
 import itertools
 from bs4 import BeautifulSoup
 from markdown import markdown
+from botocore.errorfactory import TextLengthExceededException
 
 def upload_hash(text_md, text_key, bucket):
     polly_client = boto3.client('polly')
@@ -33,22 +34,26 @@ def list_hash(bucket):
 def do_sha1(text):
     return hashlib.sha1(text.encode("utf-8")).hexdigest()
 
-def yield_texts(data_path):
+def yield_paths(data_path):
     yml_paths = data_path.glob('*/*.yml')
     yaml_paths = data_path.glob('*/*.yaml')
     for path in itertools.chain(yml_paths, yaml_paths):
+        yield path
+
+def yield_texts(paths):
+    for path in paths:
         with open(path, 'r') as op:
             parsed = yaml.load(op, Loader=yaml.FullLoader)
             exhibit = parsed.get('Exhibit', {})
             stories = exhibit.get('Stories', [])
             header = exhibit.get('Header', '')
             if len(header):
-                yield header
+                yield (path, 'header', header)
             for s_id, s in enumerate(stories):
                 waypoints = s.get('Waypoints', [])
                 for w_id, w in enumerate(waypoints):
                     if len(w['Description']):
-                        yield w['Description']
+                        yield (path, f'{s_id}:{w_id}', w['Description'])
 
 if __name__ == "__main__":
   
@@ -65,16 +70,23 @@ if __name__ == "__main__":
         sys.exit(0)
  
     root = pathlib.Path(__file__).resolve().parents[1]
-    texts = [t for t in yield_texts(root / "_data")]
-    sha1_texts = {do_sha1(t):t for t in texts} 
+    paths = [p for p in yield_paths(root / "_data")]
+    sha1_texts = {do_sha1(t):(p,k,t) for (p,k,t) in yield_texts(paths)}
 
     needed_sha1 = set(sha1_texts.keys())
     existing_sha1 = set(list_hash(bucket))
 
     for h in needed_sha1 - existing_sha1:
-        upload_hash(sha1_texts[h], h, bucket)
-        print(f'uploaded {h}')
+        path, key, text = sha1_texts[h]
+        try:
+            upload_hash(text, h, bucket)
+            print(f'uploaded {path} {key} to {h}')
+        except TextLengthExceededException as e:
+            print(f'{path} {key} text is too long.')
+            short_text = text[:3000]
+            upload_hash(short_text, h, bucket)
+            percent = 100 * len(short_text) / len(text)
+            print(f'uploaded {percent:.2f}% of {path} {key} to {h}')
     for h in existing_sha1 - needed_sha1:
         delete_hash(h, bucket)
         print(f'deleted {h}')
-    
