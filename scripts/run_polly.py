@@ -33,8 +33,9 @@ def do_sha1(text):
     return hashlib.sha1(text.encode("utf-8")).hexdigest()
 
 def yield_texts(data_path):
-    cycif_paths = data_path.glob('*/*.yml')
-    for path in cycif_paths:
+    yml_paths = data_path.glob('*/*.yml')
+    yaml_paths = data_path.glob('*/*.yaml')
+    for path in itertools.chain(yml_paths, yaml_paths):
         with open(path, 'r') as op:
             parsed = yaml.load(op, Loader=yaml.FullLoader)
             exhibit = parsed.get('Exhibit', {})
