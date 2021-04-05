@@ -60,6 +60,7 @@ if __name__ == "__main__":
         list_hash(bucket)
     except botocore.exceptions.NoCredentialsError as e:
         print('No Available AWS Credentials')
+        print(e)
         sys.exit(0)
  
     root = pathlib.Path(__file__).resolve().parents[1]
