@@ -105,6 +105,7 @@ if __name__ == "__main__":
     existing_sha1 = set(list_hash(bucket))
     current_tasks = []
 
+    print(f'{len(needed_sha1)} mp3 files total, {len(existing_sha1)} mp3 files on s3')
     for h in needed_sha1 - existing_sha1:
         path, key, text = sha1_texts[h]
         if len(text) > 3000:
