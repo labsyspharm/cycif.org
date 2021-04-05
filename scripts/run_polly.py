@@ -13,24 +13,22 @@ from markdown import markdown
 def make_key(text_key):
     return f"speech/{text_key}.mp3"
 
-def upload_hash(polly_client, text_md, text_key, bucket):
+def upload_hash(s3_client, polly_client, text_md, text_key, bucket):
     text_html = BeautifulSoup(markdown(text_md), features="html.parser")
     text = ''.join(text_html.findAll(text=True))
     response = polly_client.synthesize_speech(Text=text, OutputFormat="mp3", VoiceId="Matthew", Engine="standard")
     audio = response['AudioStream'].read()
-    s3_client = boto3.client("s3")
     s3_client.put_object(ACL="public-read", Body=audio, Bucket=bucket, ContentType="audio/mpeg", StorageClass="REDUCED_REDUNDANCY", Key=make_key(text_key))
 
 def upload_hash_async(polly_client, text_md, text_key, bucket):
     text_html = BeautifulSoup(markdown(text_md), features="html.parser")
     text = ''.join(text_html.findAll(text=True))
     response = polly_client.start_speech_synthesis_task(Text=text, OutputFormat="mp3", VoiceId="Matthew", Engine="standard",
-                                                        OutputS3BucketName=bucket, OutputS3KeyPrefix=make_key(text_key))
+                                                        OutputS3BucketName=bucket, OutputS3KeyPrefix="speech/")
     task = response.get('SynthesisTask', {})
     return {
         'status': task.get('TaskStatus', 'failed'),
         'id': task.get('TaskId', ''),
-        'key': make_key(text_key),
         'hash': text_key,
         'bucket': bucket
     }
@@ -39,16 +37,18 @@ def filter_current_tasks(current_tasks):
     filtered_tasks = []
     for task in current_tasks:
         if task['status'] in ['scheduled', 'inProgress']:
-            if all([task.get(k) for k in ['id', 'bucket', 'key', 'hash']]):
+            if all([task.get(k) for k in ['id', 'bucket', 'hash']]):
                 filtered_tasks.append(task)
     return filtered_tasks
 
 def awaiting_any_tasks(current_tasks):
     return len(filter_current_tasks(current_tasks)) > 0
 
-def delete_hash(text_key, bucket):
-    s3_client = boto3.client("s3")
-    s3_client.delete_object(Bucket=bucket, Key=f"speech/{text_key}.mp3")
+def delete_full_key(s3_client, full_key, bucket):
+    s3_client.delete_object(Bucket=bucket, Key=full_key)
+
+def delete_hash(s3_client, text_key, bucket):
+    delete_full_key(s3_client, make_key(text_key), bucket)
 
 def list_hash(bucket):
     s3_client = boto3.client("s3")
@@ -83,7 +83,8 @@ def yield_texts(paths):
                         yield (path, f'{s_id}:{w_id}', w['Description'])
 
 if __name__ == "__main__":
-  
+
+    s3_client = boto3.client("s3")
     polly_client = boto3.client('polly')
     parser = argparse.ArgumentParser()
     parser.add_argument("bucket")
@@ -96,7 +97,7 @@ if __name__ == "__main__":
         print('No Available AWS Credentials')
         print(e)
         sys.exit(0)
- 
+
     root = pathlib.Path(__file__).resolve().parents[1]
     paths = [p for p in yield_paths(root / "_data")]
     sha1_texts = {do_sha1(t):(p,k,t) for (p,k,t) in yield_texts(paths)}
@@ -113,20 +114,30 @@ if __name__ == "__main__":
             current_tasks.append(latest_task)
             print(f'scheduled upload of {path} {key} to {h}')
         else:
-            upload_hash(polly_client, text, h, bucket)
+            upload_hash(s3_client, polly_client, text, h, bucket)
             print(f'uploaded {path} {key} to {h}')
     for h in existing_sha1 - needed_sha1:
-        delete_hash(h, bucket)
+        delete_hash(s3_client, h, bucket)
         print(f'deleted {h}')
 
     while awaiting_any_tasks(current_tasks):
         filtered_tasks = filter_current_tasks(current_tasks)
-        print(f'Checking {len(filtered_tasks)} scheduled uploads')
+        print(f'Checking {len(filtered_tasks)} scheduled uploads...')
         for task in filtered_tasks:
-            response = polly_client.get_speech_synthesis_task(TaskId=task['id'])
+            h = task['hash']
+            task_id = task['id']
+            task_bucket = task['bucket']
+            response = polly_client.get_speech_synthesis_task(TaskId=task_id)
+
             new_task = response.get('SynthesisTask', {})
             task['status'] = new_task.get('TaskStatus', task['status'])
-            if task['status'] == 'completed' and task['hash'] in sha1_texts:
-                path, key, text = sha1_texts.get(task['hash'])
-                print(f'Finished upload of {path} {key} to {h}')
+            source_full_uri = new_task.get('OutputUri', '')
+            source_key = source_full_uri.split(task_bucket + '/')[-1]
+            source_uri = f'/{task_bucket}/{source_key}'
+
+            if source_key and task['status'] == 'completed':
+                s3_client.copy_object(ACL="public-read", ContentType="audio/mpeg", StorageClass="REDUCED_REDUNDANCY",
+                                      Bucket=task_bucket, Key=make_key(h), CopySource=source_uri)
+                delete_full_key(s3_client, source_key, bucket)
+                print(f'Finished upload to {h}')
         time.sleep(5)
