@@ -77,15 +77,15 @@ if __name__ == "__main__":
 
     for h in needed_sha1 - existing_sha1:
         path, key, text = sha1_texts[h]
-        try:
-            upload_hash(text, h, bucket)
-            print(f'uploaded {path} {key} to {h}')
-        except botocore.exceptions.TextLengthExceededException as e:
+        if len(text) > 3000:
             print(f'{path} {key} text is too long.')
             short_text = text[:3000]
             upload_hash(short_text, h, bucket)
             percent = 100 * len(short_text) / len(text)
             print(f'uploaded {percent:.2f}% of {path} {key} to {h}')
+        else:
+            upload_hash(text, h, bucket)
+            print(f'uploaded {path} {key} to {h}')
     for h in existing_sha1 - needed_sha1:
         delete_hash(h, bucket)
         print(f'deleted {h}')
