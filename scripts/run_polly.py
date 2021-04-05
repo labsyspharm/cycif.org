@@ -4,19 +4,47 @@ import botocore
 import boto3
 import yaml
 import sys
+import time
 import argparse
 import itertools
 from bs4 import BeautifulSoup
 from markdown import markdown
 
-def upload_hash(text_md, text_key, bucket):
-    polly_client = boto3.client('polly')
+def make_key(text_key):
+    return f"speech/{text_key}.mp3"
+
+def upload_hash(polly_client, text_md, text_key, bucket):
     text_html = BeautifulSoup(markdown(text_md), features="html.parser")
     text = ''.join(text_html.findAll(text=True))
-    response = polly_client.synthesize_speech(Text=text, OutputFormat="mp3", VoiceId="Matthew")
+    response = polly_client.synthesize_speech(Text=text, OutputFormat="mp3", VoiceId="Matthew", Engine="standard")
     audio = response['AudioStream'].read()
     s3_client = boto3.client("s3")
-    s3_client.put_object(ACL="public-read", Body=audio, Bucket=bucket, ContentType="audio/mpeg", StorageClass="REDUCED_REDUNDANCY", Key=f"speech/{text_key}.mp3")
+    s3_client.put_object(ACL="public-read", Body=audio, Bucket=bucket, ContentType="audio/mpeg", StorageClass="REDUCED_REDUNDANCY", Key=make_key(text_key))
+
+def upload_hash_async(polly_client, text_md, text_key, bucket):
+    text_html = BeautifulSoup(markdown(text_md), features="html.parser")
+    text = ''.join(text_html.findAll(text=True))
+    response = polly_client.start_speech_synthesis_task(Text=text, OutputFormat="mp3", VoiceId="Matthew", Engine="standard",
+                                                        OutputS3BucketName=bucket, OutputS3KeyPrefix=make_key(text_key))
+    task = response.get('SynthesisTask', {})
+    return {
+        'status': task.get('TaskStatus', 'failed'),
+        'id': task.get('TaskId', ''),
+        'key': make_key(text_key),
+        'hash': text_key,
+        'bucket': bucket
+    }
+
+def filter_current_tasks(current_tasks):
+    filtered_tasks = []
+    for task in current_tasks:
+        if task['status'] in ['scheduled', 'inProgress']:
+            if all([task.get(k) for k in ['id', 'bucket', 'key', 'hash']]):
+                filtered_tasks.append(task)
+    return filtered_tasks
+
+def awaiting_any_tasks(current_tasks):
+    return len(filter_current_tasks(current_tasks)) > 0
 
 def delete_hash(text_key, bucket):
     s3_client = boto3.client("s3")
@@ -56,6 +84,7 @@ def yield_texts(paths):
 
 if __name__ == "__main__":
   
+    polly_client = boto3.client('polly')
     parser = argparse.ArgumentParser()
     parser.add_argument("bucket")
     args = parser.parse_args()
@@ -74,18 +103,29 @@ if __name__ == "__main__":
 
     needed_sha1 = set(sha1_texts.keys())
     existing_sha1 = set(list_hash(bucket))
+    current_tasks = []
 
     for h in needed_sha1 - existing_sha1:
         path, key, text = sha1_texts[h]
         if len(text) > 3000:
-            print(f'{path} {key} text is too long.')
-            short_text = text[:3000]
-            upload_hash(short_text, h, bucket)
-            percent = 100 * len(short_text) / len(text)
-            print(f'uploaded {percent:.2f}% of {path} {key} to {h}')
+            latest_task = upload_hash_async(polly_client, text, h, bucket)
+            current_tasks.append(latest_task)
+            print(f'scheduled upload of {path} {key} to {h}')
         else:
-            upload_hash(text, h, bucket)
+            upload_hash(polly_client, text, h, bucket)
             print(f'uploaded {path} {key} to {h}')
     for h in existing_sha1 - needed_sha1:
         delete_hash(h, bucket)
         print(f'deleted {h}')
+
+    while awaiting_any_tasks(current_tasks):
+        filtered_tasks = filter_current_tasks(current_tasks)
+        print(f'Checking {len(filtered_tasks)} scheduled uploads')
+        for task in filtered_tasks:
+            response = polly_client.get_speech_synthesis_task(task['id'])
+            new_task = response.get('SynthesisTask', {})
+            task['status'] = new_task.get('TaskStatus', task['status'])
+            if task['status'] == 'completed' and task['hash'] in sha1_texts:
+                path, key, text = sha1_texts.get(task['hash'])
+                print(f'Finished upload of {path} {key} to {h}')
+        time.sleep(5)
