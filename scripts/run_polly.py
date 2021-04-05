@@ -122,7 +122,7 @@ if __name__ == "__main__":
         filtered_tasks = filter_current_tasks(current_tasks)
         print(f'Checking {len(filtered_tasks)} scheduled uploads')
         for task in filtered_tasks:
-            response = polly_client.get_speech_synthesis_task(task['id'])
+            response = polly_client.get_speech_synthesis_task(TaskId=task['id'])
             new_task = response.get('SynthesisTask', {})
             task['status'] = new_task.get('TaskStatus', task['status'])
             if task['status'] == 'completed' and task['hash'] in sha1_texts:
