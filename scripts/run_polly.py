@@ -8,7 +8,6 @@ import argparse
 import itertools
 from bs4 import BeautifulSoup
 from markdown import markdown
-from botocore.errorfactory import TextLengthExceededException
 
 def upload_hash(text_md, text_key, bucket):
     polly_client = boto3.client('polly')
@@ -81,7 +80,7 @@ if __name__ == "__main__":
         try:
             upload_hash(text, h, bucket)
             print(f'uploaded {path} {key} to {h}')
-        except TextLengthExceededException as e:
+        except botocore.exceptions.TextLengthExceededException as e:
             print(f'{path} {key} text is too long.')
             short_text = text[:3000]
             upload_hash(short_text, h, bucket)
