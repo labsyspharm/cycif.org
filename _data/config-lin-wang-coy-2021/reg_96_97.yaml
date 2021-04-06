@@ -1,13 +1,13 @@
 Exhibit:
+  Name: |
+    Multiplexed 3D atlas of state transitions and immune interactions in colorectal cancer (Introduction)
   Groups:
   - Channels:
-    - HE_r
-    - HE_g
-    - HE_b
+    - Hematoxylin
+    - Eosin
     Colors:
-    - ff0000
-    - 00ff00
-    - 0000ff
+    - 8233CC
+    - FF8080
     Name: Histology
     Path: Histology_40__HE-r--41__HE-g--42__HE-b
   - Channels:
@@ -261,12 +261,13 @@ Exhibit:
     \ 2D and 3D imaging to understand tumor biology at different levels of tissue organization.\
     \ \n"
   Images:
-  - Description: TNP SARDANA
+  - Description: CRC01-096 and CRC01-097
     Height: 27120
     MaxLevel: 5
     Name: i0
     Path: https://s3.amazonaws.com/www.cycif.org/lin-wang-coy-2021/reg_96_97
     Width: 26139
+  - Name: workaround-decouple-storyname-image-description
   Layout:
     Grid:
     - - i0
@@ -1256,7 +1257,7 @@ Exhibit:
         \ differentiated clusters (PDCs) refers to similar collections of cells at the\
         \ invasive front that have lost glandular differentiation, but which form larger\
         \ clusters and do not meet the definition of tumor budding (>=5 cells) [5].\
-        \ \n\nPathologic examination of the TNP SARDANA tissue specimen revealed a region\
+        \ \n\nPathologic examination of the CRC01 tissue specimen revealed a region\
         \ of prominent tumor budding near the invasive front of the tumor. Tumor budding\
         \ cells were annotated by a pathologists using the ITBCC consensus criteria\
         \ of <=4 cells and were segmented and analyzed for marker expression and neighborhood\

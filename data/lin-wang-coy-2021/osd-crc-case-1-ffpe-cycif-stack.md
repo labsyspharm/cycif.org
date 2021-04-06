@@ -1,9 +1,9 @@
 ---
-title: crc-case-1-ffpe-cycif-stack
+title: CRC01 - Z-stack - Lin, Wang, Coy et al, 2021
 layout: osd-exhibit
-paper: config-tnp-2020
+paper: config-lin-wang-coy-2021
 figure: crc-case-1-ffpe-cycif-stack
-home: /software/minerva
 redirect_from:
     - /crc1-3d
+    - /crc01-3d
 ---
