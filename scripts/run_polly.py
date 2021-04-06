@@ -13,13 +13,6 @@ from markdown import markdown
 def make_key(text_key):
     return f"speech/{text_key}.mp3"
 
-def upload_hash(s3_client, polly_client, text_md, text_key, bucket):
-    text_html = BeautifulSoup(markdown(text_md), features="html.parser")
-    text = ''.join(text_html.findAll(text=True))
-    response = polly_client.synthesize_speech(Text=text, OutputFormat="mp3", VoiceId="Matthew", Engine="standard")
-    audio = response['AudioStream'].read()
-    s3_client.put_object(ACL="public-read", Body=audio, Bucket=bucket, ContentType="audio/mpeg", StorageClass="REDUCED_REDUNDANCY", Key=make_key(text_key))
-
 def upload_hash_async(polly_client, text_md, text_key, bucket):
     text_html = BeautifulSoup(markdown(text_md), features="html.parser")
     text = ''.join(text_html.findAll(text=True))
@@ -109,13 +102,9 @@ if __name__ == "__main__":
     print(f'{len(needed_sha1)} mp3 files total, {len(existing_sha1)} mp3 files on s3')
     for h in needed_sha1 - existing_sha1:
         path, key, text = sha1_texts[h]
-        if len(text) > 3000:
-            latest_task = upload_hash_async(polly_client, text, h, bucket)
-            current_tasks.append(latest_task)
-            print(f'scheduled upload of {path} {key} to {h}')
-        else:
-            upload_hash(s3_client, polly_client, text, h, bucket)
-            print(f'uploaded {path} {key} to {h}')
+        latest_task = upload_hash_async(polly_client, text, h, bucket)
+        current_tasks.append(latest_task)
+        print(f'scheduled upload of {path} {key} to {h}')
     for h in existing_sha1 - needed_sha1:
         delete_hash(s3_client, h, bucket)
         print(f'deleted {h}')
