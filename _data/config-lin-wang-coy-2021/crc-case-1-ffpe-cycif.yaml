@@ -1,172 +1,155 @@
 Exhibit:
-  Name: TNP SARDANA - Colorectal Cancer Case 1 (FFPE), t-CyCIF
-  Header: |
-    In this Minerva Story, we share multiplexed immunofluorescence images of 25 sections collected
-    using the CyCIF method at Harvard. The image names reflect the numbering of the serial
-    sectioning. There are adjacent sections, e.g., TNP049-TNP052, and also sections that are a
-    couple of sections apart, e.g., TNP002, TNP007, TNP014. [Detailed sectioning
-    plan](https://www.synapse.org/#!Synapse:syn18434611/wiki/601452) can be found on the [Synapse
-    project page](https://www.synapse.org/#!Synapse:syn18434611).
-
-    The NCI-funded [Human Tumor Atlas Network (HTAN)](https://humantumoratlas.org/) is a 
-    multi-institutional effort to collect, analyze, and create a database of multi-omic data 
-    for a variety of human cancers. 
-
-    The [SARDANA trans-network project (TNP)](https://www.synapse.org/#!Synapse:syn18434611) was
-    designed to optimize the repeatability, interpretability, and accessibility of data for the
-    atlas. The SARDANA TNP will distribute a set of common tissue samples to participating HTAN
-    centers, allowing them to generate a spatial cell census using each center’s imaging method of
-    choice. Data generated during the TNP will be used to stress-test data standards and informatic
-    systems and compare results across experimental approaches and organizations.
+  Name: Multiplexed 3D atlas of state transitions and immune interactions in colorectal cancer (CRC01 25 sections)
+  Header: 
 
   PixelsPerMicron: 1.5385
   Images:
   - Name: i0
-    Description: TNP002
+    Description: CRC01-002
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP002
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i1
-    Description: TNP007
+    Description: CRC01-007
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP007
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i2
-    Description: TNP014
+    Description: CRC01-014
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP014
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i3
-    Description: TNP020
+    Description: CRC01-020
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP020
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i4
-    Description: TNP025
+    Description: CRC01-025
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP025
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i5
-    Description: TNP029
+    Description: CRC01-029
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP029
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i6
-    Description: TNP034
+    Description: CRC01-034
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP034
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i7
-    Description: TNP039
+    Description: CRC01-039
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP039
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i8
-    Description: TNP044
+    Description: CRC01-044
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP044
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i9
-    Description: TNP049
+    Description: CRC01-049
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP049
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i10
-    Description: TNP050
+    Description: CRC01-050
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP050
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i11
-    Description: TNP051
+    Description: CRC01-051
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP051
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i12
-    Description: TNP052
+    Description: CRC01-052
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP052
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i13
-    Description: TNP054
+    Description: CRC01-054
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP054
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i14
-    Description: TNP059
+    Description: CRC01-059
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP059
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i15
-    Description: TNP064
+    Description: CRC01-064
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP064
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i16
-    Description: TNP069
+    Description: CRC01-069
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP069
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i17
-    Description: TNP074
+    Description: CRC01-074
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP074
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i18
-    Description: TNP078
+    Description: CRC01-078
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP078
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i19
-    Description: TNP084
+    Description: CRC01-084
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP084
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i20
-    Description: TNP086
+    Description: CRC01-086
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP086
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i21
-    Description: TNP091
+    Description: CRC01-091
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP091
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i22
-    Description: TNP097
+    Description: CRC01-097
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP097
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i23
-    Description: TNP102
+    Description: CRC01-102
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP102
     Width: 30000
     Height: 30000
     MaxLevel: 5
   - Name: i24
-    Description: TNP106
+    Description: CRC01-106
     Path: https://s3.amazonaws.com/www.cycif.org/tnp-sardana/ffpe/crc-case-1/TNP106
     Width: 30000
     Height: 30000
