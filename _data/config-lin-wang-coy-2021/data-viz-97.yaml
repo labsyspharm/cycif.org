@@ -1,0 +1,296 @@
+Exhibit:
+  PixelsPerMicron: 1.5385
+  Header: ''
+  Images:
+  - Description: ''
+    Height: 27120
+    MaxLevel: 5
+    Name: i0
+    Path: https://s3.amazonaws.com/www.cycif.org/lin-wang-coy-2021/data-viz-97
+    Width: 26139
+  Layout:
+    Grid:
+    - - i0
+  Groups:
+  - Channels:
+    - Hoechst2
+    - panKeratin
+    - aSMA
+    - CD4
+    - CD20
+    - CD31
+    Colors:
+    - 0000ff
+    - ffff00
+    - ff0000
+    - 00ff00
+    - ffffff
+    - ff00ff
+    Name: Figure 1
+    Path: figure1_8__Hoechst2--14__panKeratin--15__aSMA--17__CD4--21__CD20--35__CD31
+  - Channels:
+    - panKeratin
+    - E-Cadherin
+    - PCNA
+    Colors:
+    - e8e8e8
+    - 00b3ff
+    - ff0000
+    Name: Figure 2
+    Path: figure2_14__panKeratin--29__E-Cadherin--37__PCNA
+  - Channels:
+    - Hoechst2
+    - CD45
+    - E-Cadherin
+    - Desmin
+    - CD8a
+    Colors:
+    - 0000ff
+    - ffffff
+    - 00ff00
+    - ff009c
+    - ffbf00
+    Name: Structure
+    Path: structure_8__Hoechst2--18__CD45--29__E-Cadherin--34__Desmin--23__CD8a
+  - Channels:
+    - Hematoxylin
+    - Eosin
+    Colors:
+    - 8233CC
+    - FF8080
+    Name: Adjacent H&E
+    Path: Histology_40__HE-r--41__HE-g--42__HE-b
+  - Channels:
+    - Hoechst2
+    - CD4
+    - FOXP3
+    - PD-1
+    - PD-L1
+    - panKeratin
+    Colors:
+    - '909090'
+    - 9600ff
+    - ffff00
+    - 00ff00
+    - 00ffff
+    - ff0000
+    Name: Immune supression
+    Path: immune-supression_8__Hoechst2--17__CD4--26__FOXP3--19__PD-1--27__PD-L1--14__panKeratin
+  - Channels:
+    - Hoechst2
+    - Ki67
+    - CD68
+    - CD45
+    - CD163
+    Colors:
+    - 0000ff
+    - ffff00
+    - ff0000
+    - ffffff
+    - 00ff00
+    Name: Macrophages
+    Path: macrophage_8__Hoechst2--13__Ki67--22__CD68--18__CD45--25__CD163
+  - Channels:
+    - Hoechst2
+    - panKeratin
+    Colors:
+    - '898989'
+    - d70000
+    Name: Tumor/Epithelia
+    Path: DNA-CK_8__Hoechst2--14__panKeratin
+  - Channels:
+    - Hoechst2
+    Colors:
+    - '898989'
+    Name: DNA
+    Path: DNA_8__Hoechst2
+  Masks:
+  - Name: 3 Classes
+    Path: TNP097_3Cats
+    Colors:
+    - 0000FF
+    - 00FF00
+    - FF0000
+    Channels:
+    - Tumor/Epi.
+    - Stroma
+    - Immune
+  - Name: 21 Classes
+    Path: TNP097_21types
+    Colors:
+    - 1000CB
+    - 1600F5
+    - 1629F5
+    - 2254F5
+    - 377DF7
+    - 4BA8F8
+    - 60D0FA
+    - 75FBFD
+    - 7AFBD6
+    - 89FCB1
+    - A0FC8E
+    - BCFD70
+    - DCFD5B
+    - FEFF54
+    - F8D548
+    - F3AE3D
+    - EF8632
+    - EC622B
+    - EA4325
+    - EA3423
+    - C2281B
+    Channels:
+    - Tumor/Epi.
+    - Ki-67+ Tumor/Epi
+    - PD-L1+ Tumor/Epi
+    - Endothelial
+    - Muscle/Fibroblast
+    - Other
+    - Macrophage (I)
+    - B cell
+    - DN Lymphocyte
+    - T helper
+    - Macrophage (II)
+    - DP Lymphocyte
+    - Treg
+    - PD1+ T helper
+    - Lymphocyte (III)
+    - Macrophage (III)
+    - PD-L1+ Macrophage
+    - Macrophage (V)
+    - Tc cell
+    - PD1+ Tc cell
+    - PD-L1+ Lymphocyte
+  - Name: TNP097_ClusterSize
+    Path: TNP097_ClusterSize
+    Colors:
+    - E7322C
+    - EA33C0
+    - EA33C0
+    - 1629F5
+    - 75FBE7
+    - 74FA82
+    - 88FB4D
+    - FCEF50
+    Channels:
+    - 2^0
+    - 2^2
+    - 2^4
+    - 2^6
+    - 2^8
+    - 2^10
+    - 2^12
+    - 2^14
+  - Name: Glandular PP
+    Path: kNN_gland
+    Colors:
+    - 3e26a8
+    - 4742e6
+    - 4367fd
+    - 2d8bf4
+    - 1caadf
+    - 14beb8
+    - 48cb86
+    - a1c840
+    - eaba30
+    - fad52e
+    Channels:
+    - '0.1'
+    - '0.2'
+    - '0.3'
+    - '0.4'
+    - '0.5'
+    - '0.6'
+    - '0.7'
+    - '0.8'
+    - '0.9'
+    - '1.0'
+  - Name: Mucinous PP
+    Path: kNN_muc
+    Colors:
+    - 3e26a8
+    - 4742e6
+    - 4367fd
+    - 2d8bf4
+    - 1caadf
+    - 14beb8
+    - 48cb86
+    - a1c840
+    - eaba30
+    - fad52e
+    Channels:
+    - '0.1'
+    - '0.2'
+    - '0.3'
+    - '0.4'
+    - '0.5'
+    - '0.6'
+    - '0.7'
+    - '0.8'
+    - '0.9'
+    - '1.0'
+  - Name: Normal PP
+    Path: kNN_norm
+    Colors:
+    - 3e26a8
+    - 4742e6
+    - 4367fd
+    - 2d8bf4
+    - 1caadf
+    - 14beb8
+    - 48cb86
+    - a1c840
+    - eaba30
+    - fad52e
+    Channels:
+    - '0.1'
+    - '0.2'
+    - '0.3'
+    - '0.4'
+    - '0.5'
+    - '0.6'
+    - '0.7'
+    - '0.8'
+    - '0.9'
+    - '1.0'
+  - Name: Solid PP
+    Path: kNN_solid
+    Colors:
+    - 3e26a8
+    - 4742e6
+    - 4367fd
+    - 2d8bf4
+    - 1caadf
+    - 14beb8
+    - 48cb86
+    - a1c840
+    - eaba30
+    - fad52e
+    Channels:
+    - '0.1'
+    - '0.2'
+    - '0.3'
+    - '0.4'
+    - '0.5'
+    - '0.6'
+    - '0.7'
+    - '0.8'
+    - '0.9'
+    - '1.0'
+  Rotation: 0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+    - ActiveMasks: []
+      Arrows: []
+      Description: ''
+      Group: figure2
+      Masks: []
+      Name: ''
+      Overlays: []
+      Pan:
+      - 0.5
+      - 0.5
+      Zoom: 1
+
