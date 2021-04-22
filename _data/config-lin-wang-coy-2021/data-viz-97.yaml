@@ -106,7 +106,7 @@ Exhibit:
     Path: DNA_8__Hoechst2
   Masks:
   - Name: 3 Classes
-    Path: TNP097_3Cats
+    Path: with-dilation/TNP097_3Cats_d9
     Colors:
     - 0000FF
     - 00FF00
@@ -116,7 +116,7 @@ Exhibit:
     - Stroma
     - Immune
   - Name: 21 Classes
-    Path: TNP097_21types
+    Path: with-dilation/TNP097_21types_d9
     Colors:
     - 1000CB
     - 1600F5
@@ -162,7 +162,7 @@ Exhibit:
     - PD1+ Tc cell
     - PD-L1+ Lymphocyte
   - Name: TNP097_ClusterSize
-    Path: TNP097_ClusterSize
+    Path: with-dilation/TNP097_ClusterSize
     Colors:
     - E7322C
     - EA33C0
@@ -181,8 +181,28 @@ Exhibit:
     - 2^10
     - 2^12
     - 2^14
-  - Name: Glandular PP
-    Path: kNN_gland
+  - Name: TNP097_ClusterSize_mono
+    Path: with-dilation/TNP097_ClusterSize_mono
+    Colors:
+    - E7322C
+    - EA33C0
+    - EA33C0
+    - 1629F5
+    - 75FBE7
+    - 74FA82
+    - 88FB4D
+    - FCEF50
+    Channels:
+    - 2^0
+    - 2^2
+    - 2^4
+    - 2^6
+    - 2^8
+    - 2^10
+    - 2^12
+    - 2^14
+  - Name: predicted morphology
+    Path: with-dilation/kNN_rgba
     Colors:
     - 3e26a8
     - 4742e6
@@ -205,78 +225,102 @@ Exhibit:
     - '0.8'
     - '0.9'
     - '1.0'
-  - Name: Mucinous PP
-    Path: kNN_muc
-    Colors:
-    - 3e26a8
-    - 4742e6
-    - 4367fd
-    - 2d8bf4
-    - 1caadf
-    - 14beb8
-    - 48cb86
-    - a1c840
-    - eaba30
-    - fad52e
-    Channels:
-    - '0.1'
-    - '0.2'
-    - '0.3'
-    - '0.4'
-    - '0.5'
-    - '0.6'
-    - '0.7'
-    - '0.8'
-    - '0.9'
-    - '1.0'
-  - Name: Normal PP
-    Path: kNN_norm
-    Colors:
-    - 3e26a8
-    - 4742e6
-    - 4367fd
-    - 2d8bf4
-    - 1caadf
-    - 14beb8
-    - 48cb86
-    - a1c840
-    - eaba30
-    - fad52e
-    Channels:
-    - '0.1'
-    - '0.2'
-    - '0.3'
-    - '0.4'
-    - '0.5'
-    - '0.6'
-    - '0.7'
-    - '0.8'
-    - '0.9'
-    - '1.0'
-  - Name: Solid PP
-    Path: kNN_solid
-    Colors:
-    - 3e26a8
-    - 4742e6
-    - 4367fd
-    - 2d8bf4
-    - 1caadf
-    - 14beb8
-    - 48cb86
-    - a1c840
-    - eaba30
-    - fad52e
-    Channels:
-    - '0.1'
-    - '0.2'
-    - '0.3'
-    - '0.4'
-    - '0.5'
-    - '0.6'
-    - '0.7'
-    - '0.8'
-    - '0.9'
-    - '1.0'
+  # - Name: Glandular PP
+  #   Path: kNN_gland
+  #   Colors:
+  #   - 3e26a8
+  #   - 4742e6
+  #   - 4367fd
+  #   - 2d8bf4
+  #   - 1caadf
+  #   - 14beb8
+  #   - 48cb86
+  #   - a1c840
+  #   - eaba30
+  #   - fad52e
+  #   Channels:
+  #   - '0.1'
+  #   - '0.2'
+  #   - '0.3'
+  #   - '0.4'
+  #   - '0.5'
+  #   - '0.6'
+  #   - '0.7'
+  #   - '0.8'
+  #   - '0.9'
+  #   - '1.0'
+  # - Name: Mucinous PP
+  #   Path: kNN_muc
+  #   Colors:
+  #   - 3e26a8
+  #   - 4742e6
+  #   - 4367fd
+  #   - 2d8bf4
+  #   - 1caadf
+  #   - 14beb8
+  #   - 48cb86
+  #   - a1c840
+  #   - eaba30
+  #   - fad52e
+  #   Channels:
+  #   - '0.1'
+  #   - '0.2'
+  #   - '0.3'
+  #   - '0.4'
+  #   - '0.5'
+  #   - '0.6'
+  #   - '0.7'
+  #   - '0.8'
+  #   - '0.9'
+  #   - '1.0'
+  # - Name: Normal PP
+  #   Path: kNN_norm
+  #   Colors:
+  #   - 3e26a8
+  #   - 4742e6
+  #   - 4367fd
+  #   - 2d8bf4
+  #   - 1caadf
+  #   - 14beb8
+  #   - 48cb86
+  #   - a1c840
+  #   - eaba30
+  #   - fad52e
+  #   Channels:
+  #   - '0.1'
+  #   - '0.2'
+  #   - '0.3'
+  #   - '0.4'
+  #   - '0.5'
+  #   - '0.6'
+  #   - '0.7'
+  #   - '0.8'
+  #   - '0.9'
+  #   - '1.0'
+  # - Name: Solid PP
+  #   Path: kNN_solid
+  #   Colors:
+  #   - 3e26a8
+  #   - 4742e6
+  #   - 4367fd
+  #   - 2d8bf4
+  #   - 1caadf
+  #   - 14beb8
+  #   - 48cb86
+  #   - a1c840
+  #   - eaba30
+  #   - fad52e
+  #   Channels:
+  #   - '0.1'
+  #   - '0.2'
+  #   - '0.3'
+  #   - '0.4'
+  #   - '0.5'
+  #   - '0.6'
+  #   - '0.7'
+  #   - '0.8'
+  #   - '0.9'
+  #   - '1.0'
   Rotation: 0
   Stories:
   - Description: ''
