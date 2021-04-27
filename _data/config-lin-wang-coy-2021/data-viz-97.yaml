@@ -31,7 +31,7 @@ Exhibit:
   - Channels:
     - DNA
     - CD45
-    - E-Cadherin
+    - E-cadherin
     - Desmin
     - CD8a
     Colors:
@@ -44,7 +44,7 @@ Exhibit:
     Path: structure_8__Hoechst2--18__CD45--29__E-Cadherin--34__Desmin--23__CD8a
   - Channels:
     - Pan-cytokeratin
-    - E-Cadherin
+    - E-cadherin
     - PCNA
     Colors:
     - e8e8e8
@@ -105,6 +105,10 @@ Exhibit:
     Name: DNA
     Path: DNA_8__Hoechst2
   Masks:
+  - Name: Pathology annotation
+    Path: fig1_pathlogy_label
+    Colors: []
+    Channels: []
   - Name: 3 categories
     Path: with-dilation/TNP097_3Cats_d9
     Colors:
@@ -161,6 +165,14 @@ Exhibit:
     - Tc cell
     - PD1+ Tc cell
     - PD-L1+ Lymphocyte
+  - Name: Annotated tumor buds
+    Path: TNP097_annBuds
+    Colors:
+    - ffffff
+    - 333333
+    Channels:
+    - Tumor buds
+    - Other cells
   - Name: Cluster size
     Path: with-dilation/TNP097_ClusterSize
     Colors:
@@ -296,15 +308,286 @@ Exhibit:
   - Description: ''
     Name: ''
     Waypoints:
-    - ActiveMasks: []
-      Arrows: []
-      Description: ''
-      Group: Figure 1
-      Masks: [3 categories, 21 clusters, Cluster size, Cluster size grayscale, Predicted morphology]
-      Name: ''
+    - ActiveMasks: ['Pathology annotation']
+      Arrows:
+      - Point:
+        - 0.30499313536110713
+        - 0.43615868484715237
+        Text: Stromal/muscular
+        HideArrow: true
+      - Point:
+        - 0.6421011204293514
+        - 0.3110379198378558
+        Text: Adjacent normal colon
+        HideArrow: true
+      - Point:
+        - 0.7849403514849437
+        - 0.5335050456806337
+        Text: Tumor
+        HideArrow: true
+      - Point:
+        - 0.6217715257383356
+        - 0.781247673958678
+        Text: Tumor
+        HideArrow: true
+      - Point:
+        - 0.14471186752874749
+        - 0.7578149404367969
+        Text: Tumor
+        HideArrow: true
+      # 1
+      Name: Overview of CRC1 section 096
+      Description: |
+        The resected tumor and adjacent normal tissue in CRC1 is from the cecum of a 69-year old male; pathology revealed a poorly differentiated stage IIIB adenocarcinoma (pT3N1bM0) (Weiser, 2018) with microsatellite instability (MSI-H) and a BRAFV600E (c.1799T>A) mutation. The tumor had an extended front invading into underlying muscle (muscularis propria) and connective tissue giving rise to a "budding margin" (A, red-dotted line) adjacent to normal colon epithelium, a "mucinous margin" in the middle of the specimen (B, blue-dotted line), and a deep "pushing margin" (C, gray-dotted line) 
+      Group: Adjacent H&E
+      Masks: [Pathology annotation]
       Overlays: []
       Pan:
-      - 0.5
-      - 0.5
-      Zoom: 1
+      - 0.482
+      - 0.484
+      Zoom: 0.5
+    
+    - ActiveMasks: [Pathology annotation]
+      Arrows: []
+      # 2
+      Name: CyCIF profiling of CRC1 section 097
+      Description: |
+        The 24-plex CyCIF (section 097) images from CRC1. Tumor (`Pan-cytoeratin`), stromal (`α-SMA` & `CD31`) and immune (`CD4`/`CD20`) markers are highlighted here, showing distinct tumor, stromal and adjacent normal colon tissue. Tertiary lymphoid structures (TLSs) also appear throughout the specimen, highlighted by `CD20` (white) and `CD4` (green).
+      Group: Figure 1
+      Masks: [Pathology annotation]
+      Overlays: []
+      Pan:
+      - 0.482
+      - 0.484
+      Zoom: 0.5
+    
+    - ActiveMasks: [3 categories]
+      Arrows: []
+      # 3
+      Name: Single-cell data with spatial context
+      Description: |
+        Using the MCMICRO software pipeline (Schapiro et al., 2021), images were segmented, fluorescence intensities quantified on a per-cell basis, and cell types assigned using lineage-specific marker expression; a total of ~5 x 10<sup>7</sup> cells were successfully identified in a tissue volume of 1.2 x 10<sup>11</sup> µm<sup>3</sup>. Cells are labeled above by whether their type belongs to a tumor, stroma, or immune category. Overlaying the image with cell type calling allows for analysis of different spatial features and cell-cell interactions in various tumor regions. 
+      Group: DNA
+      Masks: [3 categories]
+      Overlays: []
+      Pan:
+      - 0.482
+      - 0.484
+      Zoom: 0.5594
+
+    - ActiveMasks: [3 categories]
+      Arrows:
+      - Point:
+        - 0.6911667467179969
+        - 0.5188582711076485
+        Text: Tumor/Epithelia
+        HideArrow: true
+      - Point:
+        - 0.7454513510307945
+        - 0.5355648284525144
+        Text: Immune
+        HideArrow: true
+      - Point:
+        - 0.6856428998102303
+        - 0.5506432971405159
+        Text: Stromal
+        HideArrow: true
+      # 4
+      Name: Single-cell data with spatial context (cont.)
+      Description: |
+        Cell type calling recapitulate the multiplex CyCIF signals: the dense immune cells inhabit the tertiary lymphoid structures (blue) are well separated from the tumor/epithelial compartments (blue) and the surrounding stromal cells (green, endothelial cells & fibroblasts). Note that some cells are excluded due to segmentation errors for which the segmentation algorithm couldn’t effectively separate single cells.
+      Group: DNA
+      Masks: [3 categories]
+      Overlays: []
+      Pan:
+      - 0.7329
+      - 0.5303
+      Zoom: 4.6372
+
+    - ActiveMasks: []
+      Arrows: 
+      - Point:
+        - 0.7289638792595
+        - 0.5160393768280793
+      - Point:
+        - 0.7274416553069968
+        - 0.5216228237581101
+      - Point:
+        - 0.731762571334893
+        - 0.5231570014619463
+      - Point:
+        - 0.7327488685468048
+        - 0.5199419123665427
+      # 5
+      Name: Tumor microenvironments
+      Description: |
+        In this region, which there is a tertiary lymphoid structure near the tumor and normal tissue junction, we notice small clusters of tumor cells, known as “tumor buds” (Pan-cytokeratin<sup>+</sup>). For diagnostic purposes, tumor buds are defined as clusters of ≤4 tumor cells along the invasive front (Lugli et al., 2017b), and less commonly the non-marginal "internal" stroma of the tumor mass (Lugli et al., 2011). Tumor buds are thought to associate with tumor metastasis as well as other aggressive phenotypes, but its relationship with immunosurveillance is not fully understood. 
+      Group: Figure 1
+      Masks: [Annotated tumor buds]
+      Overlays: []
+      Pan:
+      - 0.728
+      - 0.5208
+      Zoom: 16.6158
+
+    - ActiveMasks: []
+      Arrows: 
+      - Point:
+        - 0.7289638792595
+        - 0.5160393768280793
+      - Point:
+        - 0.7274416553069968
+        - 0.5216228237581101
+      - Point:
+        - 0.731762571334893
+        - 0.5231570014619463
+      - Point:
+        - 0.7327488685468048
+        - 0.5199419123665427
+      # 6
+      Name: De-differentiated tumor buds
+      Description: |
+        In solid tumors, an EMT-like transition at the invasive front gives rise to small clusters of “de-differentiated” tumor buds is likely involved in metastatic dissemination (Zlobec and Lugli, 2010). Lower `E-cadherin` expression is observed in the tumor buds. And they seem to evade the immunosurveillance from the surrounding immune cells, which includes a high abundance of `CD8`<sup>+</sup> effector T cells.
+      Group: Figure 2
+      Masks: [Annotated tumor buds]
+      Overlays: []
+      Pan:
+      - 0.728
+      - 0.5208
+      Zoom: 16.6158
+
+    - ActiveMasks: []
+      Arrows: 
+      Arrows: 
+      - Point:
+        - 0.7289638792595
+        - 0.5160393768280793
+      - Point:
+        - 0.7274416553069968
+        - 0.5216228237581101
+      - Point:
+        - 0.731762571334893
+        - 0.5231570014619463
+      - Point:
+        - 0.7327488685468048
+        - 0.5199419123665427
+      # 7
+      Name: Immune supression in the budding area
+      Description: |
+        High abundance of T<sub>reg</sub> (`CD4`<sup>+</sup> and `FOXP3`<sup>+</sup>) is also present in this area. Moreover, immune checkpoint proteins, `PD-1` and `PD-L1` expression, are found in the same area.
+      Group: Immune supression
+      Masks: [Annotated tumor buds]
+      Overlays: []
+      Pan:
+      - 0.742
+      - 0.53
+      Zoom: 13.8465
+
+    - ActiveMasks: [21 clusters]
+      Arrows: []
+      # 8
+      Name: immune census with spatial resolution
+      Description: |
+        Highly multiplexed CyCIF data allow further dissection of cells into different subtypes, including 3 tumor/epi types, 3 stroma cell types and 15 different immune subpopulations. Thus, we can enumerate all these cell types in different tumor regions, and evaluate compositions and potential cell-cell interactions with spatial context. In this tumor budding region, we observe an enrichment of immunosuppression subtypes (e.g. T<sub>reg</sub>, PD-L1 macrophage and `PD-1`<sup>+</sup> cells) in close-proximity of budding tumor. INSERT IMAGE
+      Group: DNA
+      Masks: [21 clusters]
+      Overlays: []
+      Pan:
+      - 0.742
+      - 0.53
+      Zoom: 13.8465
+
+    - ActiveMasks: [Annotated tumor buds]
+      Arrows: []
+      # 9
+      Name: Annotate tumor buds
+      Description: All quantitative analysis of different markers in these budding cells, blah blah blah… LINK to VIDEO ; INSERT IMAGE
+      Group: Structure
+      Masks: [Annotated tumor buds]
+      Overlays: []
+      Pan:
+      - 0.742
+      - 0.53
+      Zoom: 13.8465
+    
+    - ActiveMasks: [Cluster size grayscale]
+      Arrows:
+      - Point:
+        - 0.6956075768325325
+        - 0.5697874721854945
+        Text: Large cluster, High PCNA, High E-cadherin
+        HideArrow: true
+      - Point:
+        - 0.6277176880705782
+        - 0.6525386423824076
+        Text: Small cluster, Low PCNA, Low E-cadherin
+        HideArrow: true
+      # 10
+      Name: Cluster size of tumor/epithelia is related to its expression profile
+      Description: |
+        Instead of separating tumor cells into the discrete category of “buds”, we also quantified the cluster size of all epithelial cells using Delaunay triangulation to estimate adjacency relations between cells. We found that expression varied gradually with cluster size, with the expression profile of buds (e.g. low `PCNA` and low `E-cadherin`) representing the extreme of an expression-cluster size continuum. 
+      Group: Figure 2
+      Masks: [Cluster size, Cluster size grayscale]
+      Overlays: 
+      - x: 0.6801
+        y: 0.5645
+        width: 0.1318
+        height: 0.0692
+      - x: 0.6122
+        y: 0.6476
+        width: 0.0573
+        height: 0.0373
+      Pan:
+      - 0.6849
+      - 0.6249
+      Zoom: 3.1009
+      # 2.2363_0.6958_0.6004
+    
+    - ActiveMasks: [Predicted morphology]
+      Arrows: []
+      # 11
+      Name: Predict tumor morphology using expression data
+      Description: |
+        A kNN classifier was trained to predict other archetypal features of tumor morphology (glandular, solid, mucinous), using only the CyCIF marker expression of individual epithelial cells. The classifier outputs the probability of a cell belonging to a region of each morphological archetype, and the relative proportion of each archetype is represented by hue.
+      Group: DNA
+      Masks: [Predicted morphology]
+      Overlays: 
+      - x: 0.6707
+        y: 0.6605
+        width: 0.0951
+        height: 0.0545
+      Pan:
+      - 0.482
+      - 0.484
+      Zoom: 0.5594
+
+    - ActiveMasks: [Predicted morphology]
+      Arrows: []
+      # 12
+      Name: Validate morphology prediction with adjacent H&E section
+      Description: |
+        The classifier predicts various transition regions between the three tumor morphologies. For example, here, the classifier expects the left-region to be mucinous (blue), transitioning to glandular (red) in the center, and patches of solid (green) towards the top. The adjacent H&E section supports the classifier predictions: contiguous patches of blue cells are indeed in close proximity to mucin, groups of red cells are often part of gland-like structures, while contiguous patches of green cells form solid sheets. Intermediate hues and mixed-color patches of cells suggest intermediate morphologies along a transition gradient.
+      Group: Adjacent H&E
+      Masks: [Predicted morphology]
+      Overlays: 
+      - x: 0.6707
+        y: 0.6605
+        width: 0.0951
+        height: 0.0545
+      Pan:
+      - 0.7197
+      - 0.6858
+      Zoom: 5.3673
+
+    # - ActiveMasks: []
+    #   Arrows: []
+    #   Description: ''
+    #   Group: Figure 1
+    #   Masks: [3 categories, 21 clusters, Cluster size, Cluster size grayscale, Predicted morphology]
+    #   Name: ''
+    #   Overlays: []
+    #   Pan:
+    #   - 0.5
+    #   - 0.5
+    #   Zoom: 1
 
