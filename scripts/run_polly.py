@@ -67,7 +67,7 @@ def yield_texts(paths):
             exhibit = parsed.get('Exhibit', {})
             stories = exhibit.get('Stories', [])
             header = exhibit.get('Header', '')
-            if len(header):
+            if header and len(header):
                 yield (path, 'header', header)
             for s_id, s in enumerate(stories):
                 waypoints = s.get('Waypoints', [])
