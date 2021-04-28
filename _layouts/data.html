@@ -44,8 +44,8 @@ layout: base
         {% if config[1].Exhibit.Name %} 
           {
             id: {{ id }},
-            text: "{{ config[1].Exhibit.Name }}",
-            channels: "{{ channels | join: " " }}",
+            text: `{{ config[1].Exhibit.Name }}`,
+            channels: `{{ channels | join: " " }}`,
             url: config_to_web.get("{{config_path}}")
           },
         {% endif %}
