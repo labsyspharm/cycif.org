@@ -267,7 +267,7 @@ Exhibit:
     Name: i0
     Path: https://s3.amazonaws.com/www.cycif.org/lin-wang-coy-2021/reg_96_97
     Width: 26139
-  - Name: workaround-decouple-storyname-image-description
+  - Name: WORKAROUND-decouple-storyname-image-description
   Layout:
     Grid:
     - - i0

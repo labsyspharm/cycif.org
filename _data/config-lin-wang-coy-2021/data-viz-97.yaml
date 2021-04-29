@@ -1,8 +1,13 @@
 Exhibit:
+  Name: |
+    Multiplexed 3D atlas of state transitions and immune interactions in colorectal cancer (Minerva Abstract)
+  Header: |
+    Advanced solid cancers are complex assemblies of cancer, immune and stromal cells that invade adjacent tissue. Here we use multiplexed tissue imaging, spatial statistics, and machine learning to identify cell states underlying morphological features of known prognostic significance in colorectal cancer. We find that the necessary spatial analysis requires extended tumor domains, not tissue microarrays or small view-fields. When this condition is met, the data reveal frequent transitions between histological archetypes (tumor grades and morphologies) correlated with molecular gradients. At tumor invasive margins, where tumor, normal, and immune cells compete, localized features in 2D such as tumor buds and mucin pools are seen in 3D to be large connected structures having continuously varying molecular properties. Immunosuppressive cell-cell interactions also exhibit graded variation in type and frequency. Thus, whereas scRNA-Seq emphasizes discrete changes in tumor state, whole-specimen imaging reveals the presence of multi-scale spatial gradients analogous to those in developing tissues.
+  Footer: ''
   PixelsPerMicron: 1.5385
-  Header: ''
   Images:
-  - Description: ''
+  - Name: WORKAROUND-decouple-storyname-image-description
+  - Description: CRC01
     Height: 27120
     MaxLevel: 5
     Name: i0
@@ -214,7 +219,7 @@ Exhibit:
     Waypoints:
     - ActiveMasks: []
       Arrows: []
-      # 1
+      # 2
       Name: CyCIF profiling of CRC1 sample
       Description: |
         The 24-plex CyCIF (section 097) images from CRC1. Tumor (`Pan-cytoeratin`), stromal (`α-SMA` & `CD31`) and immune (`CD4`/`CD20`) markers are highlighted here, showing distinct tumor, stromal and adjacent normal colon tissue. Tertiary lymphoid structures (TLSs) also appear throughout the specimen, highlighted by `CD20` (white) and `CD4` (green).
@@ -253,7 +258,7 @@ Exhibit:
         - 0.7578149404367969
         Text: Tumor
         HideArrow: true
-      # 2
+      # 3
       Name: Histopathological view of CRC1 sample
       Description: |
         The resected tumor and adjacent normal tissue in CRC1 is from the cecum of a 69-year old male; pathology revealed a poorly differentiated stage IIIB adenocarcinoma (pT3N1bM0) (Weiser, 2018) with microsatellite instability (MSI-H) and a BRAFV600E (c.1799T>A) mutation. The tumor had an extended front invading into underlying muscle (muscularis propria) and connective tissue giving rise to a "budding margin" (A, red-dotted line) adjacent to normal colon epithelium, a "mucinous margin" in the middle of the specimen (B, blue-dotted line), and a deep "pushing margin" (C, gray-dotted line) 
@@ -267,8 +272,8 @@ Exhibit:
     
     - ActiveMasks: [Pathology annotation, 3 categories]
       Arrows: []
-      # 3
-      Name: Single-cell data with spatial context and pathological annotation
+      # 4
+      Name: Single-cell data with spatial context 1 - pathological annotation
       Description: |
         Using the MCMICRO software pipeline (Schapiro et al., 2021), images were segmented, fluorescence intensities quantified on a per-cell basis, and cell types assigned using lineage-specific marker expression; a total of ~5 x 10<sup>7</sup> cells were successfully identified in a tissue volume of 1.2 x 10<sup>11</sup> µm<sup>3</sup>. Cells are labeled above by whether their type belongs to a tumor, stroma, or immune category. Overlaying the image with cell type calling allows for analysis of different spatial features and cell-cell interactions in various tumor regions. 
       Group: Adjacent H&E
@@ -300,8 +305,8 @@ Exhibit:
         - 0.5506432971405159
         Text: Stromal
         HideArrow: true
-      # 4
-      Name: Single-cell data with spatial context (cont.)
+      # 5
+      Name: Single-cell data with spatial context 2
       Description: |
         Cell type calling recapitulate the multiplex CyCIF signals: the dense immune cells inhabit the tertiary lymphoid structures (red) are well separated from the tumor/epithelial compartments (blue) and the surrounding stromal cells (green, endothelial cells & fibroblasts). Note that some cells are excluded due to segmentation errors for which the segmentation algorithm couldn’t effectively separate single cells.
       Group: DNA
@@ -340,9 +345,8 @@ Exhibit:
         - 0.5202005141190915
         Text: Tumor
         HideArrow: true
-
-      # 5
-      Name: Tumor buds
+      # 6
+      Name: Tumor buds 1
       Description: |
         Zooming into one of the TLS near the tumor and normal tissue junction, we notice small clusters of tumor cells, known as “tumor buds”. For diagnostic purposes, tumor buds are defined as clusters of ≤4 tumor cells along the invasive front (Lugli et al., 2017b), and less commonly the non-marginal "internal" stroma of the tumor mass (Lugli et al., 2011). Tumor buds are thought to associate with tumor metastasis as well as other aggressive phenotypes, but their relationship with immunosurveillance is not fully understood. 
       Group: Overview 1
@@ -367,8 +371,8 @@ Exhibit:
       - Point:
         - 0.7327488685468048
         - 0.5199419123665427
-      # 6
-      Name: Tumor buds (cont.)
+      # 7
+      Name: Tumor buds 2
       Description: |
         In solid tumors, an EMT-like transition at the invasive front gives rise to small clusters of “dedifferentiated” tumor buds likely involved in metastatic dissemination (Zlobec and Lugli, 2010). Lower `E-cadherin` expression is observed in the tumor buds. They also seem to be evading immunosurveillance, e.g. of the nearby `CD8`<sup>+</sup> effector T cells. 
       Group: Overview 2
@@ -393,8 +397,8 @@ Exhibit:
       - Point:
         - 0.7327488685468048
         - 0.5199419123665427
-      # 7
-      Name: Immune supression in the budding area
+      # 8
+      Name: Tumor buds 3 - immune supression
       Description: |
         A large abundance of T<sub>reg</sub> (`CD4`<sup>+</sup> and `FOXP3`<sup>+</sup>) are also present in this area, alongside expression of the immune checkpoint proteins `PD-1` and `PD-L1`.
       Group: Immune supression
@@ -418,8 +422,9 @@ Exhibit:
         - 0.5231570014619463
       - Point:
         - 0.7327488685468048
-        - 0.5199419123665427      # 8
-      Name: Immune census with spatial context
+        - 0.5199419123665427      
+      # 9
+      Name: Tumor buds 4 - immune census with spatial context
       Description: |
         Highly multiplexed CyCIF data allow further dissection of cells into different subtypes, including 3 tumor/epi types, 3 stroma cell types and 15 different immune subpopulations. Thus, we can enumerate all these cell types in different tumor regions, and evaluate compositions and potential cell-cell interactions with spatial context. 
         
@@ -435,23 +440,12 @@ Exhibit:
       Zoom: 13.8465
 
     - ActiveMasks: [Annotated tumor buds]
-      Arrows: 
-      - Point:
-        - 0.7289638792595
-        - 0.5160393768280793
-      - Point:
-        - 0.7274416553069968
-        - 0.5216228237581101
-      - Point:
-        - 0.731762571334893
-        - 0.5231570014619463
-      - Point:
-        - 0.7327488685468048
-        - 0.5199419123665427      # 9
-      Name: Tumor buds - summary
+      Arrows: []
+      # 10
+      Name: Tumor buds 5 - summary
       Description: |
         Multiple immunosuppressive interactions have been described in colorectal cancer involving ingress of Tregs and expression of checkpoint proteins on both tumor and immune cells.  The established connection between tumor budding, metastasis and disease recurrence is likely to reflect the presence of tumor cells undergoing EMT (and developing the ability to disseminate) as well as a permissive and immunosuppressive environment.
-      Group: Overview 2
+      Group: Immune supression
       Masks: [Annotated tumor buds]
       Overlays: []
       Pan:
@@ -459,6 +453,28 @@ Exhibit:
       - 0.5184
       Zoom: 5.5646
     
+    - ActiveMasks: [Cluster size]
+      Arrows: []
+      # 11
+      Name: Tumor cluster size 1
+      Description: |
+        Instead of separating tumor cells into the discrete category of “buds”, we also quantified the cluster size of all epithelial cells using Delaunay triangulation to estimate adjacency relations between cells.
+      Group: Adjacent H&E
+      Masks: [Cluster size, Cluster size grayscale]
+      Overlays: 
+      - x: 0.6801
+        y: 0.5645
+        width: 0.1318
+        height: 0.0692
+      - x: 0.6122
+        y: 0.6476
+        width: 0.0573
+        height: 0.0373
+      Pan:
+      - 0.482
+      - 0.484
+      Zoom: 0.5594
+
     - ActiveMasks: [Cluster size grayscale]
       Arrows:
       - Point:
@@ -471,10 +487,10 @@ Exhibit:
         - 0.6525386423824076
         Text: Small cluster, Low PCNA, Low E-cadherin
         HideArrow: true
-      # 10
-      Name: Cluster size of tumor/epithelia is related to its expression profile
+      # 12
+      Name: Tumor cluster size 2 - cluster size is related to its expression profile
       Description: |
-        Instead of separating tumor cells into the discrete category of “buds”, we also quantified the cluster size of all epithelial cells using Delaunay triangulation to estimate adjacency relations between cells. We found that expression varied gradually with cluster size, with the expression profile of buds (e.g. low `PCNA` and low `E-cadherin`) representing the extreme of an expression-cluster size continuum. 
+        We found that expression varied gradually with cluster size, with the expression profile of buds (e.g. low `PCNA` and low `E-cadherin`) representing the extreme of an expression-cluster size continuum. 
       Group: Tumor/Epi only
       Masks: [Cluster size, Cluster size grayscale]
       Overlays: 
@@ -490,12 +506,11 @@ Exhibit:
       - 0.6849
       - 0.6249
       Zoom: 3.1009
-      # 2.2363_0.6958_0.6004
     
     - ActiveMasks: [Predicted morphology]
       Arrows: []
-      # 11
-      Name: Predicting tumor morphology using expression data
+      # 13
+      Name: Predicting tumor morphology using expression data 1
       Description: |
         A kNN classifier was trained to predict other archetypal features of tumor morphology (glandular, solid, mucinous), using only the CyCIF marker expression of individual epithelial cells. The classifier outputs the probability of a cell belonging to a region of each morphological archetype, and the relative proportion of each archetype is represented by hue.
       Group: DNA
@@ -512,8 +527,8 @@ Exhibit:
 
     - ActiveMasks: [Predicted morphology]
       Arrows: []
-      # 12
-      Name: Validating morphology predictions with adjacent H&E section
+      # 14
+      Name: Predicting tumor morphology using expression data 2 - validation using adjacent H&E section
       Description: |
         The classifier predicts various transition regions between the three tumor morphologies. For example, here, the classifier expects the left-region to be mucinous (blue), transitioning to glandular (red) in the center, and patches of solid (green) towards the top. The adjacent H&E section supports the classifier predictions: contiguous patches of blue cells are indeed in close proximity to mucin, groups of red cells are often part of gland-like structures, while contiguous patches of green cells form solid sheets. Intermediate hues and mixed-color patches of cells suggest intermediate morphologies along a transition gradient.
       Group: Adjacent H&E
@@ -528,6 +543,22 @@ Exhibit:
       - 0.6858
       Zoom: 5.3673
 
+    - ActiveMasks: []
+      Arrows: []
+      # 15
+      Name: Summary
+      Description: |
+        Advanced solid cancers are complex assemblies of cancer, immune and stromal cells that invade adjacent tissue. Here we use multiplexed tissue imaging, spatial statistics, and machine learning to identify cell states underlying morphological features of known prognostic significance in colorectal cancer. We find that the necessary spatial analysis requires extended tumor domains, not tissue microarrays or small view-fields. When this condition is met, the data reveal frequent transitions between histological archetypes (tumor grades and morphologies) correlated with molecular gradients. At tumor invasive margins, where tumor, normal, and immune cells compete, localized features in 2D such as tumor buds and mucin pools are seen in 3D to be large connected structures having continuously varying molecular properties. Immunosuppressive cell-cell interactions also exhibit graded variation in type and frequency. Thus, whereas scRNA-Seq emphasizes discrete changes in tumor state, whole-specimen imaging reveals the presence of multi-scale spatial gradients analogous to those in developing tissues.
+
+        ##### Acknowledgements
+        We thank Alyce Chen, Raquel Arias-Camison, Zoltan Maliga and Jeremy Muhlich and for help in all stages of this project, and Hung-Yi Wu for image registration used in this Minerva story. This work was supported by NIH grants U54-CA225088 (PKS, SS), U2C- CA233262 (PKS, SS), U54-CA225088 (PKS, SS), U2C- CA233291 (CNH, KSL), R01-DK103831 (CNH, KSL), NIH training grant T32-GM007748 (SC)) and the Ludwig Center at Harvard (PKS, SS). All HTAN consortium members are named at (humantumoratlas.org). We thank Dana-Farber/Harvard Cancer Center for the use of the Specialized Histopathology Core, which provided histopathology services supported by P30-CA06516.
+      Group: Overview 1
+      Masks: []
+      Overlays: []
+      Pan:
+      - 0.482
+      - 0.484
+      Zoom: 0.5
     # - ActiveMasks: []
     #   Arrows: []
     #   Description: ''
