@@ -111,7 +111,7 @@ Exhibit:
     Path: DNA_8__Hoechst2
   Masks:
   - Name: 3 categories
-    Path: with-dilation/TNP097_3Cats_d9
+    Path: MASKS/TNP097_3Cats
     Colors:
     - 0000FF
     - 00FF00
@@ -121,7 +121,7 @@ Exhibit:
     - Stroma
     - Immune
   - Name: 21 clusters
-    Path: with-dilation/TNP097_21types_d9
+    Path: MASKS/TNP097_21types
     Colors:
     - 1000CB
     - 1600F5
@@ -167,7 +167,7 @@ Exhibit:
     - PD1+ Tc cell
     - PD-L1+ Lymphocyte
   - Name: Cluster size grayscale
-    Path: with-dilation/TNP097_ClusterSize_mono
+    Path: MASKS/TNP097_ClusterSize_mono
     Colors:
     - f2f2f2
     - a6a6a6
@@ -177,7 +177,7 @@ Exhibit:
     - Medium cluster
     - Large cluster
   - Name: Cluster size
-    Path: with-dilation/TNP097_ClusterSize
+    Path: MASKS/TNP097_ClusterSize
     Colors:
     - 0000ff
     - 00ffff
@@ -191,7 +191,7 @@ Exhibit:
     - M/L cluster
     - Large cluster
   - Name: Predicted morphology
-    Path: with-dilation/kNN_rgba
+    Path: MASKS/kNN_rgba
     Colors:
     - ff0000
     - 00ff00
@@ -201,7 +201,7 @@ Exhibit:
     - Solid
     - Mucinous
   - Name: Annotated tumor buds
-    Path: TNP097_annBuds
+    Path: MASKS/TNP097_annBuds
     Colors:
     - ffffff
     - 333333
@@ -209,7 +209,7 @@ Exhibit:
     - Tumor buds
     - Other cells
   - Name: Pathology annotation
-    Path: fig1_pathlogy_label
+    Path: MASKS/fig1_pathlogy_label
     Colors: []
     Channels: []
   Rotation: 0
