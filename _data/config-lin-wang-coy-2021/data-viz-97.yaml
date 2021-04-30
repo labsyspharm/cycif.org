@@ -179,11 +179,11 @@ Exhibit:
   - Name: Cluster size
     Path: MASKS/TNP097_ClusterSize
     Colors:
-    - 0000ff
-    - 00ffff
-    - 00ff00
-    - ffc800
-    - ff0000
+    - ff0017
+    - 4e00ff
+    - 00c7ff
+    - 66ff00
+    - ff8700
     Channels:
     - Small cluster
     - S/M cluster
