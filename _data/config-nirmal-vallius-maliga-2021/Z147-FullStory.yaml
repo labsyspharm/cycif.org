@@ -1,0 +1,807 @@
+Exhibit: 
+  Groups:
+  - Channels:
+    - DNA
+    - CD3D
+    - CD11C
+    - CD163
+    - Pan-CK
+    - SOX10
+    Colors:
+    - 0000ff
+    - ff0000
+    - ffbb00
+    - ffbb00
+    - ffffff
+    - 00ff00
+    Name: Tissue architecture MIS
+    Path: Tissue-architecture-MIS_0__DNA--10__CD3D--30__CD11C--9__CD163--6__Pan-CK--3__SOX10
+  - Channels:
+    - DNA
+    - CD3D
+    - CD8A
+    - CD11C
+    - PDL1
+    Colors:
+    - ffffff
+    - ff0000
+    - ff0000
+    - 00ff00
+    - ff00ff
+    Name: Single-cell phenotyping
+    Path: Single-cell-phenotyping_0__DNA--10__CD3D--11__CD8A--30__CD11C--15__PDL1
+  - Channels:
+    - CD8A
+    - LAG3
+    - PD1
+    - SOX10
+    - TIM3
+    Colors:
+    - ffffff
+    - ff00ff
+    - 0000ff
+    - 00ff00
+    - ff0000
+    Name: T cell exhaustion
+    Path: T-cell-exhaustion_11__CD8A--18__LAG3--31__PD1--3__SOX10--19__TIM3
+  - Channels:
+    - DNA
+    - HLADPB1
+    - SOX10
+    Colors:
+    - 0000ff
+    - ff0000
+    - 00ff00
+    Name: MHC-II-high cluster T5a
+    Path: MHC-II-high-cluster-T5a_0__DNA--27__HLADPB1--3__SOX10
+  - Channels:
+    - CCND1
+    - SOX10
+    Colors:
+    - ff0000
+    - 00ff00
+    Name: CCND1-high cluster T5b
+    Path: CCND1-high-cluster-T5b_37__CCND1--3__SOX10
+  - Channels:
+    - DNA
+    - aSMA
+    - CD31
+    - Pan-CK
+    - SOX10
+    Colors:
+    - 0000ff
+    - 00ffff
+    - ff0000
+    - ffffff
+    - 00ff00
+    Name: Tissue architecture
+    Path: Tissue-architecture_0__DNA--26__aSMA--39__CD31--6__Pan-CK--3__SOX10
+  - Channels:
+    - DNA
+    - aSMA
+    - CD3D
+    - CD11C
+    - CD31
+    - SOX10
+    Colors:
+    - 0000ff
+    - ffff00
+    - ff0000
+    - ffb600
+    - ffff00
+    - 00ff00
+    Name: Tissue architecture IM
+    Path: Tissue-architecture-IM_0__DNA--26__aSMA--10__CD3D--30__CD11C--39__CD31--3__SOX10
+  - Channels:
+    - aSMA
+    - CD3D
+    - CD11C
+    - CD31
+    - SOX10
+    Colors:
+    - ff0000
+    - ffff00
+    - ff00ff
+    - ff0000
+    - 00ff00
+    Name: Tissue architecture EM
+    Path: Tissue-architecture-EM_26__aSMA--10__CD3D--30__CD11C--39__CD31--3__SOX10
+  - Channels:
+    - CD8A
+    - Pan-CK
+    - LAG3
+    - PD1
+    - SOX10
+    - TIM3
+    Colors:
+    - ffffff
+    - ffbb00
+    - ff00ff
+    - 0000ff
+    - 00ff00
+    - ff0000
+    Name: Cytotoxic T cells MIS
+    Path: Cytotoxic-T-cells-MIS_11__CD8A--6__Pan-CK--18__LAG3--31__PD1--3__SOX10--19__TIM3
+  - Channels:
+    - CD8A
+    - CD11C
+    - PDL1
+    - SOX10
+    - TIM3
+    Colors:
+    - ffffff
+    - a800ff
+    - 0000ff
+    - 00ff00
+    - ff0000
+    Name: Cell to cell interactions
+    Path: Cell-to-cell-interactions_11__CD8A--30__CD11C--15__PDL1--3__SOX10--19__TIM3
+  - Channels:
+    - DNA
+    - Pan-CK
+    Colors:
+    - 0000ff
+    - ffffff
+    Name: Tumor clusters
+    Path: Tumor-clusters_0__DNA--6__Pan-CK
+  - Channels:
+    - SOX10
+    - CD11C
+    - PDL1
+    - CD8A
+    - FOXP3
+    Colors:
+    - 00ff00
+    - 00ffff
+    - ff00ff
+    - ffff00
+    - ff0000
+    Name: Immune suppression
+    Path: Immune-suppression_3__SOX10--30__CD11C--15__PDL1--11__CD8A--14__FOXP3
+  - Channels:
+    - DNA
+    - SOX10
+    - CD8A
+    - PD1
+    - TIM3
+    Colors:
+    - 0000ff
+    - 00ff00
+    - 00ffff
+    - ffffff
+    - ff0000
+    Name: Immune editing
+    Path: Immune-editing_0__DNA--3__SOX10--11__CD8A--31__PD1--19__TIM3
+  - Channels:
+    - CD8A
+    - CD11C
+    - PDL1
+    - SOX10
+    - TIM3
+    Colors:
+    - 00ffff
+    - ff0000
+    - ffff00
+    - 00ff00
+    - ff0000
+    Name: Intratumor heterogeneity
+    Path: Intratumor-heterogeneity_11__CD8A--30__CD11C--15__PDL1--3__SOX10--19__TIM3
+  Header: Waypoint 1
+  Images:
+  - Description: Waypoint 1
+    Height: 25808
+    MaxLevel: 6
+    Name: i0
+    Path: https://s3.amazonaws.com/www.cycif.org/nirmal-vallius-maliga-2021/Z147-FullStory
+    Width: 36857
+  Layout:
+    Grid:
+    - - i0
+  Masks:
+  - Channels:
+    - all cells
+    Colors:
+    - ffffff
+    Name: all cells
+    Path: all-cells
+  - Channels:
+    - Unknown
+    Colors:
+    - 308e36
+    Name: Unknown
+    Path: Unknown
+  - Channels:
+    - Blood Vessels
+    Colors:
+    - ff0000
+    Name: Blood Vessels
+    Path: Blood-Vessels
+  - Channels:
+    - CD11C+ CD163- cells
+    Colors:
+    - ffbb00
+    Name: CD11C+ CD163- cells
+    Path: CD11C-CD163-cells
+  - Channels:
+    - Keratinocytes
+    Colors:
+    - 00ffff
+    Name: Keratinocytes
+    Path: Keratinocytes
+  - Channels:
+    - Other APCs
+    Colors:
+    - ffbb00
+    Name: Other APCs
+    Path: Other-APCs
+  - Channels:
+    - Myofibroblast
+    Colors:
+    - 2e41a5
+    Name: Myofibroblast
+    Path: Myofibroblast
+  - Channels:
+    - Regulatory T cells
+    Colors:
+    - 00ffff
+    Name: Regulatory T cells
+    Path: Regulatory-T-cells
+  - Channels:
+    - T cells
+    Colors:
+    - 00ffff
+    Name: T cells
+    Path: T-cells
+  - Channels:
+    - Mast cells
+    Colors:
+    - ffbb00
+    Name: Mast cells
+    Path: Mast-cells
+  - Channels:
+    - CD163+ CD11C+ macrophages
+    Colors:
+    - ffbb00
+    Name: CD163+ CD11C+ macrophages
+    Path: CD163-CD11C-macrophages
+  - Channels:
+    - T1
+    Colors:
+    - '299429'
+    Name: T1
+    Path: T1
+  - Channels:
+    - CD11C+ CD163- PDL1+ cells
+    Colors:
+    - ffbb00
+    Name: CD11C+ CD163- PDL1+ cells
+    Path: CD11C-CD163-PDL1-cells
+  - Channels:
+    - Melanocytes
+    Colors:
+    - '299429'
+    Name: Melanocytes
+    Path: Melanocytes
+  - Channels:
+    - Partially Exhausted T cells
+    Colors:
+    - 00ffff
+    Name: Partially Exhausted T cells
+    Path: Partially-Exhausted-T-cells
+  - Channels:
+    - CD163+ CD11C-  macrophages
+    Colors:
+    - ffbb00
+    Name: CD163+ CD11C-  macrophages
+    Path: CD163-CD11C-macrophages-0
+  - Channels:
+    - Terminally Exhausted T cells
+    Colors:
+    - 00ffff
+    Name: Terminally Exhausted T cells
+    Path: Terminally-Exhausted-T-cells
+  - Channels:
+    - T2
+    Colors:
+    - '299429'
+    Name: T2
+    Path: T2
+  - Channels:
+    - T4
+    Colors:
+    - '299429'
+    Name: T4
+    Path: T4
+  - Channels:
+    - T3-1
+    Colors:
+    - '299429'
+    Name: T3-1
+    Path: T3-1
+  - Channels:
+    - CD163+ CD11C+ PDL1+ macrophages
+    Colors:
+    - ffbb00
+    Name: CD163+ CD11C+ PDL1+ macrophages
+    Path: CD163-CD11C-PDL1-macrophages
+  - Channels:
+    - Cytotoxic T cells
+    Colors:
+    - 00ffff
+    Name: Cytotoxic T cells
+    Path: Cytotoxic-T-cells
+  - Channels:
+    - Langerhan cells
+    Colors:
+    - ffbb00
+    Name: Langerhan cells
+    Path: Langerhan-cells
+  - Channels:
+    - T3-0
+    Colors:
+    - '299429'
+    Name: T3-0
+    Path: T3-0
+  - Channels:
+    - T5
+    Colors:
+    - '299429'
+    Name: T5
+    Path: T5
+  Rotation: 0
+  Stories:
+  - Description: ''
+    Name: ''
+    Waypoints:
+    - ActiveMasks: []
+      Arrows: []
+      Description: 'In this Story, we are giving a tour of a unique sample of a NF1
+        mut, BRAF wt melanoma, which contains multiple fields of disease progression.
+        From left to right, the regions highlighted show melanoma in situ, polypoid
+        exophytic tumor growth, and regions of invasive melanoma. Throughout this Story,
+        we present findings from our paper that describe and deeply characterize these
+        unique regions by CyCIF, single-cell profiling, and microregional sequencing.
+        Each of these heterogeneous areas are comprised of different cell types ranging
+        from keratinocytes (Pan-CK+) and melanocytes (SOX10+) to various subsets of
+        immune (CD3d+ T cells, CD11C+ and/or CD163+ myeloid cells) and stromal cells,
+        which we will discuss and highlight later.
+
+        '
+      Group: Tissue architecture
+      Masks: []
+      Name: Overview of sample MEL1-F8
+      Overlays:
+      - height: 0.09859522816110622
+        width: 0.12083475331022786
+        x: 0.4970893426396783
+        y: 0.526789269856613
+      - height: 0.04765307532752594
+        width: 0.15141380386326814
+        x: 0.3150818397894717
+        y: 0.7425803905703474
+      - height: 0.2079057560660611
+        width: 0.28783994693804027
+        x: 0.8980634145625118
+        y: 0.3728847577874439
+      Pan:
+      - 0.5936986108576682
+      - 0.5857864007830037
+      Zoom: 0.8096268069425859
+    - ActiveMasks: []
+      Arrows: []
+      Description: 'A closer look of the Melanoma In Situ (MIS) region illustrates the
+        horizontal axis of melanoma regression from left to right with a decreasing
+        number of melanocytes (SOX10+, green) in the Pan-CK (pan Cytokeratin)+ epidermis.
+        The region highlighted in the left contains MIS with dermal macrophages and
+        a moderate T cell (CD3d+) infiltration in the adjacent dermal region. The MIS
+        region with inflammatory regression in the middle is characterized by the presence
+        and abundance of T cells and myeloid cells (CD11c+ and/or CD163+) in the dermal
+        field which directly abuts epidermis. Notably, a majority of the T cells infiltrating
+        into epidermis within this region are exhausted (PD1+ TIM3+ and/or LAG3+; data
+        shown in Waypoint #13). The terminal regression of melanoma does not contain
+        any melanocytes, but harbors a dense infiltrate of T cells.
+
+
+        '
+      Group: Tissue architecture MIS
+      Masks: []
+      Name: Melanoma in Situ
+      Overlays:
+      - height: 0.02334809973718477
+        width: 0.03778705615360167
+        x: 0.42432201930199176
+        y: 0.7523015075590233
+      - height: 0.015360591932358392
+        width: 0.05550293884892177
+        x: 0.3679486469102363
+        y: 0.7530695371556412
+      - height: 0.03220604108484493
+        width: 0.029389932563912424
+        x: 0.4627234991328878
+        y: 0.7347392307830267
+      Pan:
+      - 0.41382561481488017
+      - 0.7600842074714181
+      Zoom: 6.076694881172611
+    - ActiveMasks: []
+      Arrows:
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.9694848528812916
+        - 0.575879617745158
+        Text: ''
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 1.125781563822966
+        - 0.4891504988958153
+        Text: ''
+      Description: The invasive melanoma region has an abundance of SOX10+ tumor cells
+        invading into the dermis (highlighted with arrows). The adjacent stroma harbors
+        dense infiltrates of T cells (CD3d+) and dendritic cells (CD11C+). The endothelial
+        cells (CD31+) and myofibroblasts (aSMA+) are forming vascular structures.
+      Group: Tissue architecture IM
+      Masks: []
+      Name: Invasive melanoma
+      Overlays: []
+      Pan:
+      - 0.9870851678261275
+      - 0.48611801152649436
+      Zoom: 1.949434859886262
+    - ActiveMasks: []
+      Arrows:
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.5405100124587578
+        - 0.5983856292167941
+        Text: ''
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.5865300617309137
+        - 0.5977735124791959
+        Text: ''
+      Description: 'The exophytic tumor component has dense areas of SOX10+ tumor cells.
+        CD11C+ myeloid cells (magenta) line the vascular structures (CD31+, red), but
+        can also be seen infiltrating the tumor region (arrows). The CD3+ T cells (yellow)
+        are however restricted to the regions surrounding the vasculature and are being
+        excluded from the tumor region.
+
+        '
+      Group: Tissue architecture EM
+      Masks: []
+      Name: Exophytic tumor growth
+      Overlays: []
+      Pan:
+      - 0.5586509266821228
+      - 0.5826931819438219
+      Zoom: 5.605249030285797
+    - ActiveMasks: []
+      Arrows: []
+      Description: Immune active and suppressive regions can exist close to one another
+        in the same sample. The left-hand box is a region of inflammatory regression
+        and the right-hand box is the stroma adjacent to the invasive boundary. Although
+        both of these regions contain abundant exhausted T cells, the outcome of the
+        immune editing process depends on their interactions with other neighboring
+        stromal cells and their proximity to tumor cells (i.e. different immune editing
+        in the melanoma in situ (MIS) versus invasive melanoma (IM); leading to tumor
+        regression in the MIS and the formation of a resulting protective tumor microenvironment
+        in the IM).
+      Group: Immune editing
+      Masks: []
+      Name: Fields of active immune editing
+      Overlays:
+      - height: 0.03220177191387408
+        width: 0.0381239368635522
+        x: 0.9735529382196777
+        y: 0.557137937912678
+      - height: 0.02146784794258283
+        width: 0.04996826676290811
+        x: 0.42316173320897876
+        y: 0.752199245942697
+      Pan:
+      - 0.6154470264188363
+      - 0.596927483668327
+      Zoom: 1.0863348142548606
+    - ActiveMasks: []
+      Arrows: []
+      Description: Here we highlight a niche of PDL1 positive myeloid cells which lines
+        the invasive boundary as an immune suppressive barrier. Regulatory T cells were
+        uniformly distributed within the different regions of the tumor, however, the
+        invasive boundary was the only region where an interaction between regulatory
+        T cells and exhausted T cells was observed.
+      Group: Immune suppression
+      Masks: []
+      Name: Immune suppression
+      Overlays: []
+      Pan:
+      - 0.9740026416224572
+      - 0.5632577493524179
+      Zoom: 8.071558603611548
+    - ActiveMasks:
+      - T1
+      - T2
+      - T3-0
+      - T3-1
+      - T4
+      - T5
+      - Melanocytes
+      - Blood Vessels
+      - Mast cells
+      - CD163+ CD11C+ macrophages
+      - CD11C+ CD163- cells
+      - CD163+ CD11C-  macrophages
+      - CD163+ CD11C+ PDL1+ macrophages
+      - CD11C+ CD163- PDL1+ cells
+      - Langerhan cells
+      - Other APCs
+      - Cytotoxic T cells
+      - Keratinocytes
+      - T cells
+      - Regulatory T cells
+      - Partially Exhausted T cells
+      - Terminally Exhausted T cells
+      Arrows: []
+      Description: 'This macro-level view of the entire specimen illustrates the single-cell
+        phenotyping performed for quantification. After single-cell segmentation, each
+        individual cell was assigned into a specific phenotypic category. Here, the
+        broad phenotypic categories are highlighted with colored segmentation masks:
+        tumor (green), T cells (cyan), myeloid cells (yellow) and vasculature (red).'
+      Group: Single-cell phenotyping
+      Masks:
+      - T1
+      - T2
+      - T3-0
+      - T3-1
+      - T4
+      - T5
+      - Melanocytes
+      - Blood Vessels
+      - Mast cells
+      - CD163+ CD11C+ macrophages
+      - CD11C+ CD163- cells
+      - CD163+ CD11C-  macrophages
+      - CD163+ CD11C+ PDL1+ macrophages
+      - CD11C+ CD163- PDL1+ cells
+      - Langerhan cells
+      - Other APCs
+      - Cytotoxic T cells
+      - Keratinocytes
+      - T cells
+      - Regulatory T cells
+      - Partially Exhausted T cells
+      - Terminally Exhausted T cells
+      Name: Single-cell segmentation and phenotyping
+      Overlays: []
+      Pan:
+      - 0.5541660309962447
+      - 0.5581545916997968
+      Zoom: 0.7847093024552003
+    - ActiveMasks:
+      - T1
+      - T2
+      - T3-0
+      - T3-1
+      - T4
+      - T5
+      - Melanocytes
+      - Blood Vessels
+      - Mast cells
+      - CD163+ CD11C+ macrophages
+      - CD11C+ CD163- cells
+      - CD163+ CD11C-  macrophages
+      - CD163+ CD11C+ PDL1+ macrophages
+      - CD11C+ CD163- PDL1+ cells
+      - Langerhan cells
+      - Other APCs
+      - Cytotoxic T cells
+      - Keratinocytes
+      - T cells
+      - Regulatory T cells
+      - Partially Exhausted T cells
+      - Terminally Exhausted T cells
+      Arrows: []
+      Description: This view represents the single-cell phenotyping within the invasive
+        melanoma region. The broad phenotypes highlighted here are tumor (green), T
+        cells (cyan), myeloid cells (yellow) and vasculature (red). Identifying specific
+        phenotypes allows us to study cell-to-cell interactions and the tissue structure
+        in great detail.
+      Group: Single-cell phenotyping
+      Masks:
+      - T1
+      - T2
+      - T3-0
+      - T3-1
+      - T4
+      - T5
+      - Melanocytes
+      - Blood Vessels
+      - Mast cells
+      - CD163+ CD11C+ macrophages
+      - CD11C+ CD163- cells
+      - CD163+ CD11C-  macrophages
+      - CD163+ CD11C+ PDL1+ macrophages
+      - CD11C+ CD163- PDL1+ cells
+      - Langerhan cells
+      - Other APCs
+      - Cytotoxic T cells
+      - Keratinocytes
+      - T cells
+      - Regulatory T cells
+      - Partially Exhausted T cells
+      - Terminally Exhausted T cells
+      Name: Detailed cell phenotyping in the invasive region
+      Overlays: []
+      Pan:
+      - 1.107390076882973
+      - 0.47635531376622875
+      Zoom: 6.287892256926162
+    - ActiveMasks:
+      - T1
+      - T2
+      - T3-0
+      - T3-1
+      - T4
+      - T5
+      Arrows: []
+      Description: To study similarities and differences among SOX10+ tumor cells, we
+        performed unsupervised clustering using 30 different CyCIF markers following
+        single-cell phenotyping. This yielded six clusters (T1-4, T5a and T5b), which
+        were differentiated by the expression of melanoma associated markers. The violin
+        plot below illustrates the marker expression as well as the percentage of total
+        tumor cells that make up each tumor cell cluster. The spatial information linked
+        to the single-cell data allowed us to observe that a proportion of the clusters
+        were spatially organized.
+      Group: Tumor clusters
+      Masks:
+      - T1
+      - T2
+      - T3-0
+      - T3-1
+      - T4
+      - T5
+      Name: Intratumor heterogeneity
+      Overlays: []
+      Pan:
+      - 0.5557071303437275
+      - 0.6107415395692443
+      Zoom: 4.835065383003301
+    - ActiveMasks: []
+      Arrows:
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.5682151599494634
+        - 0.5792353770384463
+        Text: ''
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.5822731935776629
+        - 0.5777838783464333
+        Text: ''
+      Description: 'One of the spatially restricted clusters (cluster T5b) was characterized
+        by Cyclin D1+ tumor cells, which primarily surrounded perivascular spaces within
+        the exophytic tumor region. These cells had a distinct spindle-like morphology
+        with lengthened nuclei (arrows).
+
+        '
+      Group: CCND1-high cluster T5b
+      Masks: []
+      Name: Spatially restricted tumor states I
+      Overlays: []
+      Pan:
+      - 0.5765747172312417
+      - 0.5795848119087457
+      Zoom: 11.60415691920792
+    - ActiveMasks: []
+      Arrows:
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 1.1292582657321801
+        - 0.4360924375867877
+        Text: ''
+      Description: Another spatially restricted cluster (T5a) had SOX10+ tumor cells
+        expressing high levels of major histocompatibility complex-II (MHC-II). Although
+        MHC-II is primarily expressed on antigen presenting immune cells, exposure to
+        interferon gamma (IFNy) can lead to up-regulation of MHC-II also in tumor cells.
+        These MHC-II+ cells were enriched at the leading edge of the invasive melanoma
+        adjacent to the stroma (arrow) suggesting signals from the tumor microenvironment
+        can drive tumor heterogeneity. We observed an up-regulation of interferon-gamma
+        in the invasive boundary of the invasive melanoma via microregional transcriptomics
+        (inset top). Additionally, neighborhood analysis revealed there was a significant
+        co-occurrence between PDL1+ macrophages and cells in cluster T5a (inset bottom).
+      Group: MHC-II-high cluster T5a
+      Masks: []
+      Name: Spatially restricted tumor states II
+      Overlays: []
+      Pan:
+      - 1.1114773674443403
+      - 0.4348273648811096
+      Zoom: 5.397512046283908
+    - ActiveMasks: []
+      Arrows:
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.9961082856413875
+        - 0.5470280717889902
+        Text: ''
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.9630887512160567
+        - 0.5452756383977017
+        Text: ''
+      Description: When evaluating the immune subsets in the various stages of melanoma
+        progression, we observed that T cells were abundant in the stromal region adjacent
+        to the invasive tumor boundary -- this is what we refer to as the brisk tumor
+        infiltrating lymphocyte (bTIL) region outlined in the box. Although a minor
+        proportion of T cells are infiltrating the tumor region (arrows), the majority
+        of T cells are restricted to the stroma. Here, the majority of CD8+ T cells
+        (refered to as CTLs) are either activated (PD1+) or exhausted (PD1+ TIM3+ and/or
+        LAG3+). TIM3+ CD8- cells were further identified as CD11C+ dendritic cells (data
+        not shown). Microregional transcriptomics highlights that genes related to T
+        cell exhaustion were up-regulated within the bTIL region in comparison to the
+        exophytic melanoma (EM) region (inset).
+      Group: T cell exhaustion
+      Masks: []
+      Name: T cell exhaustion in the invasive region
+      Overlays:
+      - height: 0.016048600530747303
+        width: 0.020337450672584967
+        x: 0.9818582351701205
+        y: 0.5704092225622341
+      Pan:
+      - 0.9731652432159656
+      - 0.5574504388003376
+      Zoom: 8.718992249502227
+    - ActiveMasks: []
+      Arrows:
+      - Angle: 60
+        HideArrow: false
+        Point:
+        - 0.44445356605377934
+        - 0.7674636440913258
+        Text: ''
+      Description: 'In this sample, the cytotoxic CD8+ T cells (white) that did not
+        express any exhaustion markers (arrow) were in the minority (0.1% of all cells).
+        However, they were notably enriched in the dermal region of MIS with inflammatory
+        regression (highlighted with a rectangle and seen in the inset). We also observed
+        epidermal infiltration of exhausted T cells (TIM3+: red, and/or LAG3+: magenta)
+        within this specific region.'
+      Group: Cytotoxic T cells MIS
+      Masks: []
+      Name: Cytotoxic T cell enrichment in the region of inflammatory regression
+      Overlays:
+      - height: 0.02338421370630317
+        width: 0.03608902272783798
+        x: 0.41791673230498827
+        y: 0.7531915052242946
+      Pan:
+      - 0.4331294018565221
+      - 0.7587652773225894
+      Zoom: 9.733242876834158
+    - ActiveMasks:
+      - CD11C+ CD163- PDL1+ cells
+      - Terminally Exhausted T cells
+      Arrows: []
+      Description: The spatial cell to cell proximity analysis revealed significant
+        co-localization of CD11C+ PD-L1+ dendritic cells (orange) and terminally exhausted
+        TIM3+ T cells (cyan), suggesting PDL1-PD1 ligand-receptor interactions between
+        these cell types and that PDL1+ myeloid cells are one major driver of immune
+        suppression within melanoma tumor microenvironment.
+      Group: Cell to cell interactions
+      Masks:
+      - CD11C+ CD163- PDL1+ cells
+      - Terminally Exhausted T cells
+      Name: Identification and characterization of cell to cell interactions
+      Overlays: []
+      Pan:
+      - 0.9502161635608937
+      - 0.5521550802969822
+      Zoom: 7.517169492586512
+
