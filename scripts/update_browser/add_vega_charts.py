@@ -221,9 +221,9 @@ def modify_charts(data):
     for story in data.get("Stories", []):
         for waypoint in story.get("Waypoints", []):
 
-            if "VisBarchart" in waypoint:
-                barchart_path = waypoint["VisBarchart"]
-                waypoint["VisBarchart"] = update_barchart(barchart_path)
+            if "VisBarChart" in waypoint:
+                barchart_path = waypoint["VisBarChart"]
+                waypoint["VisBarChart"] = update_barchart(barchart_path)
 
             if "VisMatrix" in waypoint:
                 matrix_path = waypoint["VisMatrix"]
