@@ -179,7 +179,7 @@ def update_scatterplot(path, axes, labels, colors):
                 }
             },
             {
-                "filter": "(datum.Cluster !== None)"
+                "filter": "(datum.Cluster !== null)"
             }
         ],
         "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
@@ -206,12 +206,15 @@ def update_scatterplot(path, axes, labels, colors):
         "width": "container"
     }
 
+def add_hash(color):
+    return color if color[0] == '#' else f'#{color}'
+
 def update_scatterplot_from_dict(config):
     axes = config["axes"]
     data = config["data"]
     clusters = config["clusters"]
     labels = clusters["labels"].split(',')
-    colors = clusters["colors"].split(',')
+    colors = list(map(add_hash, clusters["colors"].split(',')))
     return update_scatterplot(data, axes, labels, colors)
 
 def modify_charts(data):
