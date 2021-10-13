@@ -17,7 +17,7 @@
 
   {% assign config_paper = site.data[page.paper] %}
   {% assign config_figure = config_paper[page.figure] %}
-  {% assign exhibit = config_figure.Exhibit %}
+  {% assign exhibit = config_figure %}
 
   {% assign home_end = page.url | split: '/' | size | minus: 1 %}
   {% assign home_parent = page.url | split: '/' | slice: 0, home_end | join: '/' %}
