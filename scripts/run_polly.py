@@ -2,7 +2,7 @@ import hashlib
 import pathlib
 import botocore
 import boto3
-import yaml
+import json
 import sys
 import time
 import argparse
@@ -55,16 +55,14 @@ def do_sha1(text):
     return hashlib.sha1(text.encode("utf-8")).hexdigest()
 
 def yield_paths(data_path):
-    yml_paths = data_path.glob('*/*.yml')
-    yaml_paths = data_path.glob('*/*.yaml')
-    for path in itertools.chain(yml_paths, yaml_paths):
+    json_paths = data_path.glob('*/*.json')
+    for path in json_paths:
         yield path
 
 def yield_texts(paths):
     for path in paths:
         with open(path, 'r') as op:
-            parsed = yaml.load(op, Loader=yaml.FullLoader)
-            exhibit = parsed.get('Exhibit', {})
+            exhibit = json.load(op)
             stories = exhibit.get('Stories', [])
             header = exhibit.get('Header', '')
             if header and len(header):
