@@ -40,11 +40,11 @@ layout: base
       {% for config in data[1] %}
         {% assign figure_name = config[0] | prepend: "/" %}
         {% assign config_path = path_name | append: figure_name %}
-        {% assign channels = config[1].Exhibit.Groups | map: "Channels" %}
-        {% if config[1].Exhibit.Name %} 
+        {% assign channels = config[1].Groups | map: "Channels" %}
+        {% if config[1].Name %} 
           {
             id: {{ id }},
-            text: `{{ config[1].Exhibit.Name }}`,
+            text: `{{ config[1].Name }}`,
             channels: `{{ channels | join: " " }}`,
             url: config_to_web.get("{{config_path}}")
           },
