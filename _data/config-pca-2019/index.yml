@@ -14,16 +14,16 @@ stitched mosaic images:
       - CyCIF image: osd-PC1_40a_153
   - title: Patient 2
     description: Melanoma in situ, invasive and polypoid melanoma 
-    thumbnail file name: pickseq_1_cycif.jpg
+    thumbnail file name: 1_cycif.jpg
     links:
       - CyCIF image : osd-1_cycif
   - title: Patient 2
     description: Inflammatory regression and brisk TILs
-    thumbnail file name: pickseq_2_cycif.jpg
+    thumbnail file name: 2_cycif.jpg
     links:
       - CyCIF image: osd-2_cycif
   - title: Patient 2
     description: Melanoma in situ, invasive melanoma, precursor field and inflammatory regression
-    thumbnail file name: pickseq_3_cycif.jpg
+    thumbnail file name: 3_cycif.jpg
     links:
       - CyCIF imagee: osd-3_cycif

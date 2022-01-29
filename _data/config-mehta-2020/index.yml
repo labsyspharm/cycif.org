@@ -10,90 +10,90 @@ group object:
   Wildtype vs mutant:
     - title: _BRCA_-WT vs _BRCA1_-associated TNBC
       description: 
-      thumbnail file name: wt_v_mutant.jpg
+      thumbnail file name: BRCA-WT-vs-BRCA1-associated-TNBC.jpg
       links:
         - CyCIF image: osd-BRCA-WT-vs-BRCA1-associated-TNBC
   
   _BRCA_-wildtype TNBC:
     - title: _BRCA_-WT TNBC 1
       description: 
-      thumbnail file name: jenntnbc4_m33118.jpg
+      thumbnail file name: BRCA-WT-1.jpg
       links:
         - CyCIF image: osd-BRCA-WT-1
     - title: _BRCA_-WT TNBC 2
       description: 
-      thumbnail file name: jenntnbc16_r32213.jpg
+      thumbnail file name: BRCA-WT-2.jpg
       links:
         - CyCIF image: osd-BRCA-WT-2
     - title: _BRCA_-WT TNBC 3
       description: 
-      thumbnail file name: jenntnbc3_d07862.jpg
+      thumbnail file name: BRCA-WT-3.jpg
       links:
         - CyCIF image: osd-BRCA-WT-3
     - title: _BRCA_-WT TNBC 4
       description: 
-      thumbnail file name: jenntnbc6_n06101.jpg
+      thumbnail file name: BRCA-WT-4.jpg
       links:
         - CyCIF image: osd-BRCA-WT-4
     - title: _BRCA_-WT TNBC 5
       description: 
-      thumbnail file name: jenntnbc7_r36964.jpg
+      thumbnail file name: BRCA-WT-5.jpg
       links:
         - CyCIF image: osd-BRCA-WT-5
     - title: _BRCA_-WT TNBC 6
       description: 
-      thumbnail file name: jenntnbc9_g51128.jpg
+      thumbnail file name: BRCA-WT-6.jpg
       links:
         - CyCIF image: osd-BRCA-WT-6
 
   _BRCA1_-associated TNBC:
     - title: _BRCA1_-associated TNBC 1
       description: 
-      thumbnail file name: jenntnbc18_92-21591.jpg
+      thumbnail file name: BRCA1-associated-1.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-1
     - title: _BRCA1_-associated TNBC 2
       description: 
-      thumbnail file name: jenntnbc1_96-10290l.jpg
+      thumbnail file name: BRCA1-associated-2.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-2
     - title: _BRCA1_-associated TNBC 3
       description: 
-      thumbnail file name: jenntnbc10_06-27750s.jpg
+      thumbnail file name: BRCA1-associated-3.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-3
     - title: _BRCA1_-associated TNBC 4
       description: 
-      thumbnail file name: jenntnbc11_05-13673m.jpg
+      thumbnail file name: BRCA1-associated-4.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-4
     - title: _BRCA1_-associated TNBC 5
       description: 
-      thumbnail file name: jenntnbc12_99-49519l.jpg
+      thumbnail file name: BRCA1-associated-5.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-5
     - title: _BRCA1_-associated TNBC 6
       description: 
-      thumbnail file name: jenntnbc13_14-14294b.jpg
+      thumbnail file name: BRCA1-associated-6.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-6
     - title: _BRCA1_-associated TNBC 7
       description: 
-      thumbnail file name: jenntnbc14_08-39026e.jpg
+      thumbnail file name: BRCA1-associated-7.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-7
     - title: _BRCA1_-associated TNBC 8
       description: 
-      thumbnail file name: jenntnbc17_92-11325c.jpg
+      thumbnail file name: BRCA1-associated-8.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-8
     - title: _BRCA1_-associated TNBC 9
       description: 
-      thumbnail file name: jenntnbc2_00-22507q.jpg
+      thumbnail file name: BRCA1-associated-9.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-9
     - title: _BRCA1_-associated TNBC 10
       description: 
-      thumbnail file name: jenntnbc8_05-32514g.jpg
+      thumbnail file name: BRCA1-associated-10.jpg
       links:
         - CyCIF image: osd-BRCA1-associated-10
