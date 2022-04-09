@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/select2.min.css' | relative_url }}">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-
+  
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include google-analytics.html %}
+  {% endif %}
 </head>
 
 <body class="d-flex flex-column h-100">
