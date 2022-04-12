@@ -1,0 +1,15 @@
+---
+publication:
+  title: "Tuberculosis Granulomas"
+  authors: "Amanda Martinot, Bree Aldridge, Zoltan Maliga, Juliann Tefft, Han Xu, Peter K. Sorger"
+  journal: ""
+  links: []
+
+stitched mosaic images:
+  - title: Tuberculosis Granulomas
+    description: Exploring features and stages of tuberculosis granulomas
+    thumbnail file name: tb.jpg
+    links:
+      - Features: features
+      - Stages: stages
+---
