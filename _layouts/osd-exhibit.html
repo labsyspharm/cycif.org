@@ -15,6 +15,13 @@
   {% assign cell_type_data = site.data.cell_type_links_database %}
   {% assign marker_data = site.data.marker_links_database %}
 
+  {% if page.cell_type_data != nil %}
+    {% assign cell_type_data = page.cell_type_data %}
+  {% endif %}
+  {% if page.marker_data != nil %}
+    {% assign marker_data = page.marker_data %}
+  {% endif %}
+
   {% assign config_paper = site.data[page.paper] %}
   {% assign config_figure = config_paper[page.figure] %}
   {% assign exhibit = config_figure %}
