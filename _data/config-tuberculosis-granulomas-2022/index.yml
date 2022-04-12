@@ -10,6 +10,6 @@ stitched mosaic images:
     description: Tuberculosis Granulomas
     thumbnail file name: tb.jpg
     links:
-      - PAGE TITLE: features
-      - PAGE TITLE: stages
+      - Features: features
+      - Stages: stages
 ---
