@@ -7,7 +7,7 @@ publication:
 
 stitched mosaic images:
   - title: Tuberculosis Granulomas
-    description: Tuberculosis Granulomas
+    description: Exploring features and stages of tuberculosis granulomas
     thumbnail file name: tb.jpg
     links:
       - Features: features
