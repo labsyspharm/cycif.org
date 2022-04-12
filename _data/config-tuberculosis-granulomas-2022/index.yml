@@ -1,4 +1,4 @@
-```
+---
 publication:
   title: "TBA"
   authors: "TBA"
@@ -8,9 +8,8 @@ publication:
 Tuberculosis Granulomas:
   - title: Tuberculosis Granulomas
     description: Tuberculosis Granulomas
-    thumbnail file name: tuberculosis-granulomas-2022
-.jpg
+    thumbnail file name: tuberculosis-granulomas-2022.jpg
     links:
       - PAGE TITLE: features
       - PAGE TITLE: stages
-```
+---
