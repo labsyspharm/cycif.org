@@ -8,7 +8,6 @@ yarn.lock
 .eslintrc
 *.swp
 
-package-lock.json
 node_modules
 _includes/bundle.js
 _includes/scripts.js
