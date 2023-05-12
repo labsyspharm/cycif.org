@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}" class="h-100">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- style="position:relative" -->
+
+  {% assign config_paper = site.data[page.paper] %}
+  {% assign config_figure = config_paper[page.figure] %}
+  {% assign exhibit = config_figure %}
+
+  {% assign home_end = page.url | split: '/' | size | minus: 1 %}
+  {% assign home_parent = page.url | split: '/' | slice: 0, home_end | join: '/' %}
+
+    <header class="m-0">
+        {% include nav.html %}
+    </header>
+
+    <div style="height:100%" id="minerva-browser"></div>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/minerva-browser@3.14.6/build/bundle.js"></script>
+    <script>
+        window.viewer = MinervaStory.default.build_page({
+          embedded: true,
+          id: "minerva-browser",
+          exhibit: {{ exhibit | jsonify }},
+          homeUrl: "{{ page.home | default: home_parent }}"
+        });
+        document.getElementsByClassName("minerva-legend")[0].style.top = "4em";
+        document.getElementsByClassName("minerva-sidebar-menu")[0].style.top = "4em";
+    </script>
+</body>
+
+</html>
