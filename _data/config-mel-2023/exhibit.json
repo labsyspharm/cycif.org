@@ -9,7 +9,7 @@
       "MaxLevel": 6
     }
   ],
-  "Header": "Melanoma is an aggressive form of skin cancer that originates from melanocytes, the pigment producing cells in our skin. It is sometimes called the \u201cthe most serious type of skin cancer\u201d. \n\nIn honor of the National Melanoma/Skin Cancer Detection and Awareness Month of May, we showcase a melanoma patient sample that shines light into how our immune system can fail to detect and eradicate cancer in the early stages. \n\nStudying the interactions between tumor and immune cells in samples like this helps us understand the factors that lead to melanoma growth, tumor progression, and the development of resistance to targeted and immune checkpoint blockade therapies. This understanding ultimately enables better melanoma treatment.\n\n***About Minerva Stories:***\n\nWe present this sample and our findings in the form of a Minerva Story. You can advance the story and follow our narrative by clicking the right arrow above the description. At any point of the story, you also have the option to freely explore the sample by panning and zooming, as well as changing the channel groups to highlight different parts of the sample. Use the arrows to come back to the story any time. The lensing feature shows the Hematoxylin & Eosin (H&E) staining of the area around your cursor. \n\n***About the sample:***\n\nThis sample was formalin fixed paraffin embedded (FFPE), a common form of a diagnostic clinical tissue sample. 5 \u00b5m thick sections of the sample were imaged using cyclic multiplex immunofluorescence imaging (CyCIF). CyCIF allows us to image up to ~60 markers on the same sample while preserving the spatial context necessary to understand intricate cell-cell interactions like the ones in this story. \n\nThese findings are published in *Cancer Discovery*, by Nirmal AJ, Maliga Z, Vallius T *et.al.* in 2022.  [DOI: 10.1158/2159-8290.CD-21-1357](https://aacrjournals.org/cancerdiscovery/article/12/6/1518/699151/The-Spatial-Landscape-of-Progression-and). PMID: 35404441; PMCID: PMC9167783.",
+  "Header": "Melanoma is an aggressive form of skin cancer that originates from melanocytes, the pigment producing cells in our skin. It is sometimes called the \u201cthe most serious type of skin cancer\u201d. \n\nIn honor of the National Melanoma/Skin Cancer Detection and Awareness Month of May, we showcase a melanoma patient sample that shines light into how our immune system can fail to detect and eradicate cancer in the early stages. \n\nStudying the interactions between tumor and immune cells in samples like this helps us understand the factors that lead to melanoma growth, tumor progression, and the development of resistance to targeted and immune checkpoint blockade therapies. This understanding ultimately enables better melanoma treatment.\n\n***About Minerva Stories:***\n\nWe present this sample and our findings in the form of a Minerva Story. You can advance the story and follow our narrative by clicking the right arrow above the descriptions. At any point of the story, you also have the option to freely explore the sample by panning and zooming, as well as changing the channel groups to highlight different parts of the sample. Use the arrows to come back to the story any time. \n\n***About the sample:***\n\nThis sample was formalin fixed paraffin embedded (FFPE), a common form of a diagnostic clinical tissue sample. 5 \u00b5m thick sections of the sample were imaged using cyclic multiplex immunofluorescence imaging (CyCIF). CyCIF allows us to image up to ~60 markers on the same sample while preserving the spatial context necessary to understand intricate cell-cell interactions like the ones in this story. \n\nThese findings are published in *Cancer Discovery*, by Nirmal AJ, Maliga Z, Vallius T *et.al.* in 2022.  [DOI: 10.1158/2159-8290.CD-21-1357](https://aacrjournals.org/cancerdiscovery/article/12/6/1518/699151/The-Spatial-Landscape-of-Progression-and). PMID: 35404441; PMCID: PMC9167783.",
   "Rotation": 0,
   "Layout": {
     "Grid": [
@@ -35,11 +35,7 @@
           "Pan": [
             0.3721064642409466,
             0.6657622412271402
-          ],
-          "Lensing": {
-            "Group": "H&E",
-            "Rad": 150
-          }
+          ]
         },
         {
           "Name": "1/2 - Immune suppression via myeloid and T cell interactions",
@@ -90,11 +86,7 @@
           "Pan": [
             0.8600268065801084,
             0.5196726596499821
-          ],
-          "Lensing": {
-            "Group": "H&E",
-            "Rad": 150
-          }
+          ]
         },
         {
           "Name": "2/2 - Immune exhaustion within the tumor",
@@ -145,26 +137,12 @@
           "Pan": [
             0.8687315679043063,
             0.5088657918684093
-          ],
-          "Lensing": {
-            "Group": "H&E",
-            "Rad": 150
-          }
+          ]
         }
       ]
     }
   ],
   "Channels": [
-    {
-      "Rendered": true,
-      "Name": "Hematoxylin",
-      "Path": "HE-0_0__HE"
-    },
-    {
-      "Rendered": true,
-      "Name": "Eosin",
-      "Path": "HE-0_0__HE"
-    },
     {
       "Rendered": false,
       "Name": "DNA",
@@ -257,21 +235,6 @@
         "",
         ""
       ]
-    },
-    {
-      "Name": "H&E",
-        "Colors": [
-          "ff00ff",
-          "800080"
-        ],
-        "Channels": [
-          "Hematoxylin",
-          "Eosin"
-        ],
-        "Descriptions": [
-          "Hematoxylin brightfield",
-          "Eosin brightfield"
-        ]
-     }
+    }
   ]
 }
