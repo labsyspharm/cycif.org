@@ -27,6 +27,7 @@
     <script>
         window.viewer = MinervaStory.default.build_page({
           embedded: true,
+          hideWelcome: true,
           id: "minerva-browser",
           exhibit: {{ exhibit | jsonify }},
           homeUrl: "{{ page.home | default: home_parent }}"
