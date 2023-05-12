@@ -18,10 +18,6 @@
   {% assign home_end = page.url | split: '/' | size | minus: 1 %}
   {% assign home_parent = page.url | split: '/' | slice: 0, home_end | join: '/' %}
 
-    <header class="m-0">
-        {% include nav.html %}
-    </header>
-
     <div style="height:100%" id="minerva-browser"></div>
 
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
