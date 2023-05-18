@@ -1,11 +1,8 @@
 ---
 ---
-// @import "{{ site.theme }}";
-// @import "fonts";
-// @import "theme_customizations";
-@import "scss/functions";
+@import "bootstrap/functions";
+@import "bootstrap/bootstrap";
 @import "variables";
-@import "scss/bootstrap";
 @import "img_video";
 
 h1, h2, h3, h4, h5, h6,
@@ -14,7 +11,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 section#main_content {
-    @extend .mt-5
+  @extend .mt-5
 }
 
 body {

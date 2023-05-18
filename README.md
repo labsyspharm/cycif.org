@@ -9,11 +9,6 @@ gem install jekyll bundler
 bundle install
 ```
 
-```bash
-npm i
-npm run build
-```
-
 ### Run development server
 
 ```bash

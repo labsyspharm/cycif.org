@@ -1,13 +1,13 @@
-theme: jekyll-theme-hacker
+remote_theme: pages-themes/hacker@v0.2.0
+plugins:
+  - jekyll-remote-theme
 title: CyCIF
 description: A Simple Approach to Highly Multiplexed Cell and Tissue Imaging
 sass:
-    load_paths:
-        - _scss
-        - node_modules/bootstrap
+  sass_dir: _scss
 plugins:
     - jekyll-redirect-from
-exclude: ["node_modules", "vendor"]
+exclude: []
 include: [".nojekyll"]
 github: [metadata]
 google_analytics: UA-41775478-2
