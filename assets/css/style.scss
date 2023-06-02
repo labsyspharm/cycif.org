@@ -1,56 +1,24 @@
 ---
 ---
-@import "bootstrap/functions";
-@import "bootstrap/bootstrap";
-
-@font-face {
-  font-family: 'Hind Vadodara';
-  font-style: normal;
-  font-weight: 500;
-  src: url(https://fonts.gstatic.com/s/hindvadodara/v13/neIQzCKvrIcn5pbuuuriV9tTSGH2uXQ-pQ.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 200;
-  src: url(https://fonts.gstatic.com/s/overpass/v12/qFda35WCmI96Ajtm83upeyoaX6QPnlo6fPPbPpqP.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Overpass';
-  font-style: normal;
-  font-weight: 800;
-  src: url(https://fonts.gstatic.com/s/overpass/v12/qFda35WCmI96Ajtm83upeyoaX6QPnlo6fPTbPpqP.ttf) format('truetype');
-}
-
-* {
-  --font-family-sans-serif: Overpass, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-heading: "Hind Vadodara", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --headings-margin-bottom: 0.5rem;
-  --font-size-base: 0.9rem;
-  --body-color: #eee;
-  --body-bg: #111;
-}
+// @import "{{ site.theme }}";
+// @import "fonts";
+// @import "theme_customizations";
+@import "scss/functions";
+@import "variables";
+@import "scss/bootstrap";
+@import "img_video";
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-top: var(--headings-margin-bottom);
-  font-family: var(--font-family-heading);
+  margin-top: $headings-margin-bottom * 1.5;
 }
 
 section#main_content {
-  @extend .mt-5
+    @extend .mt-5
 }
 
 body {
   letter-spacing: 0.02em;
-  font-family: var(--font-family-sans-serif);
-  font-size: var(--font-size-base);
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-  text-align: left;
-  color: var(--body-color);
-  background-color: var(--body-bg);
 }
 
 svg a:hover text {
@@ -106,21 +74,4 @@ hr {
 .legend{
   z-index: 3;
   float:left;
-}
-
-div.datalist-wrapper {
-  gap: 1em;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 10em;
-}
-
-div.datalist-wrapper > h1 {
-  margin: 0;
-}
-
-div.datalist-wrapper > datalist {
-  display: block;
-  overflow: scroll;
-  grid-column: 1 / 3;
 }
