@@ -1,6 +1,6 @@
 ---
 title: LSP16697
-layout: single-channel-exhibit
-paper: config-LSP16697
-figure: exhibit
+layout: minerva-1-5
+exhibit: config-LSP16697
+images: https://s3.amazonaws.com/www.cycif.org/LSP16697-2023
 ---
