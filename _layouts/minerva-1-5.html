@@ -11,9 +11,8 @@
 <body class="d-flex flex-column h-100">
     <!-- style="position:relative" -->
 
-  {% assign config_paper = site.data[page.paper] %}
-  {% assign config_figure = config_paper[page.figure] %}
-  {% assign exhibit = config_figure %}
+  {% assign config_paper = site.data[page.exhibit] %}
+  {% assign exhibit = config_paper.exhibit %}
 
   {% assign home_end = page.url | split: '/' | size | minus: 1 %}
   {% assign home_parent = page.url | split: '/' | slice: 0, home_end | join: '/' %}
@@ -23,13 +22,19 @@
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/minerva-browser@3.15.4/build/bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minerva-browser@3.17.0/build/bundle.js"></script>
     <script>
+        const exhibit = {{ exhibit | jsonify }};
+        const image_path = "{{ page.images }}";
+        /* Overwrite image path from config */
+        if (image_path.length > 0) {
+          exhibit.Images.forEach(img => img.Path = image_path);
+        }
         window.viewer = MinervaStory.default.build_page({
           embedded: true,
           hideWelcome: true,
           id: "minerva-browser",
-          exhibit: {{ exhibit | jsonify }},
+          exhibit: exhibit,
           homeUrl: "{{ page.home | default: home_parent }}"
         });
         document.getElementsByClassName("minerva-legend")[0].style.top = "4em";
