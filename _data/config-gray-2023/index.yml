@@ -6,6 +6,50 @@ publication:
   links: 
 
 group object:
+  STIC Story:
+  - title: Ovarian Cancer with Annotation - LSP15343
+    description: 
+    thumbnail file name: LSP15343.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/gray-stic-1
+  - title: Ovarian Cancer with Annotation - LSP15327
+    description: 
+    thumbnail file name: LSP15327.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/gray-stic-2
+  - title: MITI - LSP15343
+    description: 
+    thumbnail file name: LSP15343.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/gray-stic-1-mini
+  
+  STIC Overview:
+  - title: LSP16696
+    description: 
+    thumbnail file name: LSP16696.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/LSP16696
+  - title: LSP16697
+    description: 
+    thumbnail file name: LSP16697.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/LSP16697
+  - title: LSP16698
+    description: 
+    thumbnail file name: LSP16698.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/LSP16698
+  - title: LSP16699
+    description: 
+    thumbnail file name: LSP16699.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/LSP16699
+  - title: LSP16814
+    description: 
+    thumbnail file name: LSP16814.jpg
+    links:
+      - CyCIF image: https://www.cycif.org/data/LSP16814
+
   BRCA1/2 Story:
   - title: CK16 (BRCA wildtype)
     description: 
