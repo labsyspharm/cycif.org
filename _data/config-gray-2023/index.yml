@@ -7,294 +7,296 @@ publication:
 
 group object:
   BRCA1/2 Story:
-  - title: CK16
+  - title: CK16 (BRCA wildtype)
     description: 
     thumbnail file name: CK16.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/minerva-story-CK16/index.html
-  - title: K20
+  - title: K20 (BRCA mutant)
     description: 
     thumbnail file name: K20.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/minerva-story-K20/index.html
+  
   BRCA1/2 Overview:
-  - title: CK1
+  - title: CK1 (BRCA wildtype)
     description: 
     thumbnail file name: CK1.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK1/index.html
-  - title: CK10
-    description: 
-    thumbnail file name: CK10.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK10/index.html
-  - title: CK11
-    description: 
-    thumbnail file name: CK11.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK11/index.html
-  - title: CK12
-    description: 
-    thumbnail file name: CK12.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK12/index.html
-  - title: CK13
-    description: 
-    thumbnail file name: CK13.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK13/index.html
-  - title: CK14
-    description: 
-    thumbnail file name: CK14.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK14/index.html
-  - title: CK15
-    description: 
-    thumbnail file name: CK15.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK15/index.html
-  - title: CK16
-    description: 
-    thumbnail file name: CK16.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK16/index.html
-  - title: CK17_M
-    description: 
-    thumbnail file name: CK17_M.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK17_M/index.html
-  - title: CK18_P
-    description: 
-    thumbnail file name: CK18_P.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK18_P/index.html
-  - title: CK19_BCC2
-    description: 
-    thumbnail file name: CK19_BCC2.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK19_BCC2/index.html
-  - title: CK2
+  - title: CK2 (BRCA wildtype)
     description: 
     thumbnail file name: CK2.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK2/index.html
-  - title: CK20
-    description: 
-    thumbnail file name: CK20.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK20/index.html
-  - title: CK21
-    description: 
-    thumbnail file name: CK21.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK21/index.html
-  - title: CK23
-    description: 
-    thumbnail file name: CK23.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK23/index.html
-  - title: CK24
-    description: 
-    thumbnail file name: CK24.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK24/index.html
-  - title: CK25_R
-    description: 
-    thumbnail file name: CK25_R.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK25_R/index.html
-  - title: CK26
-    description: 
-    thumbnail file name: CK26.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK26/index.html
-  - title: CK3_R
+  - title: CK3_R (BRCA wildtype)
     description: 
     thumbnail file name: CK3_R.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK3_R/index.html
-  - title: CK4_P
+  - title: CK4_P (BRCA wildtype)
     description: 
     thumbnail file name: CK4_P.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK4_P/index.html
-  - title: CK4_R
+  - title: CK4_R (BRCA wildtype)
     description: 
     thumbnail file name: CK4_R.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK4_R/index.html
-  - title: CK5
+  - title: CK5 (BRCA wildtype)
     description: 
     thumbnail file name: CK5.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK5/index.html
-  - title: CK6
+  - title: CK6 (BRCA wildtype)
     description: 
     thumbnail file name: CK6.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK6/index.html
-  - title: CK7
+  - title: CK7 (BRCA wildtype)
     description: 
     thumbnail file name: CK7.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK7/index.html
-  - title: CK8
+  - title: CK8 (BRCA wildtype)
     description: 
     thumbnail file name: CK8.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK8/index.html
-  - title: CK9
+  - title: CK9 (BRCA wildtype)
     description: 
     thumbnail file name: CK9.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK9/index.html
-  - title: Ck19_BCC
+  - title: CK10 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK10.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK10/index.html
+  - title: CK11 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK11.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK11/index.html
+  - title: CK12 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK12.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK12/index.html
+  - title: CK13 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK13.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK13/index.html
+  - title: CK14 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK14.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK14/index.html
+  - title: CK15 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK15.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK15/index.html
+  - title: CK16 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK16.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK16/index.html
+  - title: CK17_M (BRCA wildtype)
+    description: 
+    thumbnail file name: CK17_M.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK17_M/index.html
+  - title: CK18_P (BRCA wildtype)
+    description: 
+    thumbnail file name: CK18_P.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK18_P/index.html
+  - title: CK19_BCC (BRCA wildtype)
     description: 
     thumbnail file name: Ck19_BCC.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/Ck19_BCC/index.html
-  - title: Ck22
+  - title: CK19_BCC2 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK19_BCC2.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK19_BCC2/index.html
+  - title: CK20 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK20.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK20/index.html
+  - title: CK21 (BRCA wildtype)
+    description: 
+    thumbnail file name: CK21.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK21/index.html
+  - title: CK22 (BRCA wildtype)
     description: 
     thumbnail file name: Ck22.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/Ck22/index.html
-  - title: K1
+  - title: CK23 (BRCA wildtype)
     description: 
-    thumbnail file name: K1.jpg
+    thumbnail file name: CK23.jpg
     links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K1/index.html
-  - title: K10
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK23/index.html
+  - title: CK24 (BRCA wildtype)
     description: 
-    thumbnail file name: K10.jpg
+    thumbnail file name: CK24.jpg
     links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K10/index.html
-  - title: K11
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK24/index.html
+  - title: CK25_R (BRCA wildtype)
     description: 
-    thumbnail file name: K11.jpg
+    thumbnail file name: CK25_R.jpg
     links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K11/index.html
-  - title: K12
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK25_R/index.html
+  - title: CK26 (BRCA wildtype)
     description: 
-    thumbnail file name: K12.jpg
+    thumbnail file name: CK26.jpg
     links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K12/index.html
-  - title: K13
-    description: 
-    thumbnail file name: K13.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K13/index.html
-  - title: K14
-    description: 
-    thumbnail file name: K14.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K14/index.html
-  - title: K15
-    description: 
-    thumbnail file name: K15.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K15/index.html
-  - title: K16
-    description: 
-    thumbnail file name: K16.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K16/index.html
-  - title: K17
-    description: 
-    thumbnail file name: K17.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K17/index.html
-  - title: K18
-    description: 
-    thumbnail file name: K18.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K18/index.html
-  - title: K19
-    description: 
-    thumbnail file name: K19.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K19/index.html
-  - title: K2
-    description: 
-    thumbnail file name: K2.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K2/index.html
-  - title: K20
-    description: 
-    thumbnail file name: K20.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K20/index.html
-  - title: K21
-    description: 
-    thumbnail file name: K21.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K21/index.html
-  - title: K22
-    description: 
-    thumbnail file name: K22.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K22/index.html
-  - title: K23
-    description: 
-    thumbnail file name: K23.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K23/index.html
-  - title: K24
-    description: 
-    thumbnail file name: K24.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K24/index.html
-  - title: K26
-    description: 
-    thumbnail file name: K26.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K26/index.html
-  - title: K27
-    description: 
-    thumbnail file name: K27.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K27/index.html
-  - title: K3
-    description: 
-    thumbnail file name: K3.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K3/index.html
-  - title: K4
-    description: 
-    thumbnail file name: K4.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K4/index.html
-  - title: K5
-    description: 
-    thumbnail file name: K5.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K5/index.html
-  - title: K6
-    description: 
-    thumbnail file name: K6.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K6/index.html
-  - title: K7
-    description: 
-    thumbnail file name: K7.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K7/index.html
-  - title: K8
-    description: 
-    thumbnail file name: K8.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K8/index.html
-  - title: K9
-    description: 
-    thumbnail file name: K9.jpg
-    links:
-      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K9/index.html
-  - title: W2BC_3
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/CK26/index.html
+  - title: W2BC_3 (BRCA wildtype)
     description: 
     thumbnail file name: W2BC_3.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/W2BC_3/index.html
-  - title: W8B_4
+  - title: W8B_4 (BRCA wildtype)
     description: 
     thumbnail file name: W8B_4.jpg
     links:
       - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/W8B_4/index.html
+  - title: K1 (BRCA mutant)
+    description: 
+    thumbnail file name: K1.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K1/index.html
+  - title: K2 (BRCA mutant)
+    description: 
+    thumbnail file name: K2.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K2/index.html
+  - title: K3 (BRCA mutant)
+    description: 
+    thumbnail file name: K3.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K3/index.html
+  - title: K4 (BRCA mutant)
+    description: 
+    thumbnail file name: K4.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K4/index.html
+  - title: K5 (BRCA mutant)
+    description: 
+    thumbnail file name: K5.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K5/index.html
+  - title: K6 (BRCA mutant)
+    description: 
+    thumbnail file name: K6.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K6/index.html
+  - title: K7 (BRCA mutant)
+    description: 
+    thumbnail file name: K7.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K7/index.html
+  - title: K8 (BRCA mutant)
+    description: 
+    thumbnail file name: K8.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K8/index.html
+  - title: K9 (BRCA mutant)
+    description: 
+    thumbnail file name: K9.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K9/index.html
+
+  - title: K10 (BRCA mutant)
+    description: 
+    thumbnail file name: K10.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K10/index.html
+  - title: K11 (BRCA mutant)
+    description: 
+    thumbnail file name: K11.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K11/index.html
+  - title: K12 (BRCA mutant)
+    description: 
+    thumbnail file name: K12.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K12/index.html
+  - title: K13 (BRCA mutant)
+    description: 
+    thumbnail file name: K13.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K13/index.html
+  - title: K14 (BRCA mutant)
+    description: 
+    thumbnail file name: K14.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K14/index.html
+  - title: K15 (BRCA mutant)
+    description: 
+    thumbnail file name: K15.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K15/index.html
+  - title: K16 (BRCA mutant)
+    description: 
+    thumbnail file name: K16.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K16/index.html
+  - title: K17 (BRCA mutant)
+    description: 
+    thumbnail file name: K17.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K17/index.html
+  - title: K18 (BRCA mutant)
+    description: 
+    thumbnail file name: K18.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K18/index.html
+  - title: K19 (BRCA mutant)
+    description: 
+    thumbnail file name: K19.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K19/index.html
+  - title: K20 (BRCA mutant)
+    description: 
+    thumbnail file name: K20.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K20/index.html
+  - title: K21 (BRCA mutant)
+    description: 
+    thumbnail file name: K21.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K21/index.html
+  - title: K22 (BRCA mutant)
+    description: 
+    thumbnail file name: K22.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K22/index.html
+  - title: K23 (BRCA mutant)
+    description: 
+    thumbnail file name: K23.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K23/index.html
+  - title: K24 (BRCA mutant)
+    description: 
+    thumbnail file name: K24.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K24/index.html
+  - title: K26 (BRCA mutant)
+    description: 
+    thumbnail file name: K26.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K26/index.html
+  - title: K27 (BRCA mutant)
+    description: 
+    thumbnail file name: K27.jpg
+    links:
+      - CyCIF image: https://s3.amazonaws.com/www.cycif.org/110-Komen_BRCA/K27/index.html
