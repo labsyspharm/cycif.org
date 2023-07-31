@@ -1,0 +1,15 @@
+channel,type,frequency
+clust_id,Regulatory T,1
+clust_id,Helper T,2
+clust_id,CD45+ Immune,3
+clust_id,CD45+ Immune ,4
+clust_id,B Cell,5
+clust_id,Cytotoxic T,6
+clust_id,PD1+ Cytotoxic T,7
+num_cells,Regulatory T,4198
+num_cells,Helper T,4522
+num_cells,CD45+ Immune,7238
+num_cells,CD45+ Immune ,6398
+num_cells,B Cell,5010
+num_cells,Cytotoxic T,3099
+num_cells,PD1+ Cytotoxic T,2365

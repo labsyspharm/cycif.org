@@ -1,0 +1,5 @@
+clust_id, ClustName,num_cells
+1,Tumor,22323
+4,Stromal,32439
+3,Immune,32836
+2,Other,22965
