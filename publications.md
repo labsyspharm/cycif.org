@@ -1,5 +1,7 @@
 ---
 title: Publications
+redirect_to:
+  - http://tissue-atlas.org/publications
 ---
 
 ## Our Publications

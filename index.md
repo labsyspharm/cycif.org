@@ -1,5 +1,7 @@
 ---
 redirect_from: /pca2018/
+redirect_to:
+  - http://tissue-atlas.org
 active: home
 title: CyCIF - Cyclic Immunofluorescence
 ---

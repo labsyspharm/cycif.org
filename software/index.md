@@ -1,5 +1,7 @@
 ---
 title: Software
+redirect_to:
+  - http://tissue-atlas.org/software
 ---
 ## Software solutions for CyCIF and beyond
 We develop opensource software to tackle common challenges imposed by the highly-multiplexed whole slide imaging.

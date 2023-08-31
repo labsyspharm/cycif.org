@@ -1,5 +1,7 @@
 ---
 title: Funding
+redirect_to:
+  - http://tissue-atlas.org/funding
 grants: 
     - name: Center for Pre-cancer Atlases of Cutaneous and Hematologic Origin (PATCH)
       link: patch

@@ -26,6 +26,24 @@ svg a:hover text {
   fill: #0fabff;
 }
 
+.navbar-light {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(255, 255, 255, 0.86);
+}
+.navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: #0a59a8;
+}
+
+.navbar-light .container > .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.86);
+  grid-template-rows: 0.2em auto 1fr;
+}
+.navbar-light .container > .navbar-toggler > span {
+  margin-top: 0.15em;
+  display: block;
+}
+
+
 .banner-text-container,
 .banner-tall {
   background-color: rgba(0, 0, 0, 0.3);
