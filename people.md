@@ -1,5 +1,7 @@
 ---
 title: People
+redirect_to:
+  - http://tissue-atlas.org/people
 ---
 
 
