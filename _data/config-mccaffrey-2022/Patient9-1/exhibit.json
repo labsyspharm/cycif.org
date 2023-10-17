@@ -1,0 +1,261 @@
+{
+    "Images": [
+        {
+            "Name": "i0",
+            "Description": "",
+            "Path": "https://s3.amazonaws.com/www.cycif.org/mccaffrey-2022/Patient9-1",
+            "Width": 1024,
+            "Height": 1024,
+            "MaxLevel": 0
+        }
+    ],
+    "Header": "# Metadata about this sample  \n\n**Tissue**: Vertebral BodyT7  \n**Specimen**: Biopsy  \n**PCR**: Positive  \n**AFB**: Positive  \n\n**Species**: Human  \n**Sex**: M  \n**Source**: Stanford Hosptial  \n**Country**: United States  \n**Age range (years)**: Not reported  \n**HIV Status**: Negative  \n\n### Attribution \n**Please cite the publication and underlying data as**: McCaffrey, E.F., Donato, M., Keren, L. et al. The immunoregulatory landscape of human tuberculosis granulomas. Nat Immunol 23, 318\u2013329 (2022).  \n\n### Sample Identifiers  \n**Sample Name**: Patient9-1  \n**Patient ID**: 9  ",
+    "Rotation": 0,
+    "Layout": {
+        "Grid": [
+            [
+                "i0"
+            ]
+        ]
+    },
+    "Stories": [
+        {
+            "Name": "",
+            "Description": "",
+            "Waypoints": []
+        }
+    ],
+    "Channels": [
+        {
+            "Rendered": false,
+            "Name": "CD45",
+            "Path": "CD45_13__CD45"
+        },
+        {
+            "Rendered": false,
+            "Name": "Collagen-1",
+            "Path": "Collagen-1_17__Collagen-1"
+        },
+        {
+            "Rendered": false,
+            "Name": "HH3",
+            "Path": "HH3_23__HH3"
+        },
+        {
+            "Rendered": false,
+            "Name": "Au",
+            "Path": "Au_0__Au"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD103",
+            "Path": "CD103_1__CD103"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11b",
+            "Path": "CD11b_2__CD11b"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11c",
+            "Path": "CD11c_3__CD11c"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD14",
+            "Path": "CD14_4__CD14"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD163",
+            "Path": "CD163_5__CD163"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD16",
+            "Path": "CD16_6__CD16"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD206",
+            "Path": "CD206_7__CD206"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD209",
+            "Path": "CD209_8__CD209"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD20",
+            "Path": "CD20_9__CD20"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD31",
+            "Path": "CD31_10__CD31"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD36",
+            "Path": "CD36_11__CD36"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD3",
+            "Path": "CD3_12__CD3"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD4",
+            "Path": "CD4_14__CD4"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD68",
+            "Path": "CD68_15__CD68"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD8",
+            "Path": "CD8_16__CD8"
+        },
+        {
+            "Rendered": false,
+            "Name": "C",
+            "Path": "C_18__C"
+        },
+        {
+            "Rendered": false,
+            "Name": "E-cadherin",
+            "Path": "E-cadherin_19__E-cadherin"
+        },
+        {
+            "Rendered": false,
+            "Name": "Foxp3",
+            "Path": "Foxp3_20__Foxp3"
+        },
+        {
+            "Rendered": false,
+            "Name": "gdTCR",
+            "Path": "gdTCR_21__gdTCR"
+        },
+        {
+            "Rendered": false,
+            "Name": "H3K9Ac",
+            "Path": "H3K9Ac_22__H3K9Ac"
+        },
+        {
+            "Rendered": false,
+            "Name": "HLA-Class-1",
+            "Path": "HLA-Class-1_24__HLA-Class-1"
+        },
+        {
+            "Rendered": false,
+            "Name": "HLA-DR-DQ-DP",
+            "Path": "HLA-DR-DQ-DP_25__HLA-DR-DQ-DP"
+        },
+        {
+            "Rendered": false,
+            "Name": "IDO",
+            "Path": "IDO_26__IDO"
+        },
+        {
+            "Rendered": false,
+            "Name": "IFNg",
+            "Path": "IFNg_27__IFNg"
+        },
+        {
+            "Rendered": false,
+            "Name": "iNOS",
+            "Path": "iNOS_28__iNOS"
+        },
+        {
+            "Rendered": false,
+            "Name": "Keratin-pan",
+            "Path": "Keratin-pan_29__Keratin-pan"
+        },
+        {
+            "Rendered": false,
+            "Name": "Ki67",
+            "Path": "Ki67_30__Ki67"
+        },
+        {
+            "Rendered": false,
+            "Name": "Lag3",
+            "Path": "Lag3_31__Lag3"
+        },
+        {
+            "Rendered": false,
+            "Name": "MastChyTry",
+            "Path": "MastChyTry_32__MastChyTry"
+        },
+        {
+            "Rendered": false,
+            "Name": "MPO",
+            "Path": "MPO_33__MPO"
+        },
+        {
+            "Rendered": false,
+            "Name": "NaKATPase",
+            "Path": "NaKATPase_34__NaKATPase"
+        },
+        {
+            "Rendered": false,
+            "Name": "Na",
+            "Path": "Na_35__Na"
+        },
+        {
+            "Rendered": false,
+            "Name": "PD-1",
+            "Path": "PD-1_36__PD-1"
+        },
+        {
+            "Rendered": false,
+            "Name": "PD-L1",
+            "Path": "PD-L1_37__PD-L1"
+        },
+        {
+            "Rendered": false,
+            "Name": "SMA",
+            "Path": "SMA_38__SMA"
+        },
+        {
+            "Rendered": false,
+            "Name": "Vimentin",
+            "Path": "Vimentin_39__Vimentin"
+        }
+    ],
+    "Groups": [
+        {
+            "Name": "overview",
+            "Colors": [
+                "e900ff",
+                "00ffff",
+                "0049ff"
+            ],
+            "Channels": [
+                "CD45",
+                "Collagen-1",
+                "HH3"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                ""
+            ]
+        }
+    ],
+    "Masks": [],
+    "PixelsPerMicron": 0,
+    "FirstGroup": "overview",
+    "Name": "Patient9-1",
+    "FirstViewport": {
+        "Pan": [
+            0.5,
+            0.5
+        ],
+        "Zoom": 1.0
+    }
+}
