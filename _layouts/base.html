@@ -49,8 +49,10 @@
 
   <div class="flex-grow-1"></div>
 
-  <footer class="mt-5">
+  {% unless page.no_brand %}
     {% include footer.html %}
+  {% endunless %}
+  <footer class="mt-5">
   </footer>
 
   <script>

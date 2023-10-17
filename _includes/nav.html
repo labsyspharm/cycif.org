@@ -3,6 +3,7 @@
     <a class="navbar-brand" href="{{ site.baseurl }}/">
       <img src="https://www.tissue-atlas.org/assets/img/logo-hta.svg" height="25"/>
     </a>
+    {% unless page.no_brand %}
     <button class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="text-black">MENU</span>
@@ -18,5 +19,6 @@
         {% endfor %}
       </ul>
     </div>
+    {% endunless %}
   </div>
 </nav>
