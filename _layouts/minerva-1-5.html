@@ -11,7 +11,12 @@
 <body class="d-flex flex-column h-100">
     <!-- style="position:relative" -->
 
-  {% assign config_paper = site.data[page.exhibit] %}
+  {% assign config_paper = site.data %}
+  {% assign subdirs = page.exhibit | split: "/" %}
+  {% for key in subdirs %}
+    {% assign config_paper = config_paper[key] %}
+  {% endfor %}
+
   {% assign exhibit = config_paper.exhibit %}
 
   {% assign home_end = page.url | split: '/' | size | minus: 1 %}
