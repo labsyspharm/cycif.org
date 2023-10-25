@@ -1,1 +1,346 @@
-{"Images": [{"Name": "i0", "Description": "MEL-3D-MIS-2", "Path": "https://s3.amazonaws.com/www.cycif.org/MEL-3D-MIS-2/images/MEL-3D-MIS-2", "Width": 10908, "Height": 5508, "MaxLevel": 4}], "Header": "An interactive tour of a primary melanoma from a BRAF-negative patient (male, age 61 years) who underwent a wide excision of the skin of right forearm. The patient was diagnosed with Stage IIC, anatomic level IV malignant melanoma, superficial spreading subtype. The tumor was present approximately 1 year before the excision and had a depth of 14.0 mm. Images are maximum projections of 3D optically sectioned data.\n\nDiagnosis:\nAge at diagnosis: 61\nPrimary diagnosis: malignant melanoma\nSubtype: superficial spreading\nSurgery type: wide excision\nStage at diagnosis: IIC\nAnatomic (Clark) level: IV\nBreslow depth: 14.0 mm\nBRAF mutation: negative (IHC)\n\nDemographics:\nSpecies: human\nSex: male\nRace: white\nEthnicity: not Hispanic\nAge at surgery: 61\nVital status at last follow-up: alive\nAge at last follow-up: 66\n\nImaging:\nImaging assay type: 3D-CyCIF\nFixative type: FFPE\nMicroscope: Zeiss LSM980 confocal\nObjective: 40x/01.3NA\nBinned: No\n\nIDs:\nLSP ID: LSP13626\nHTAN ID: HTA7_1\nInternal ID: MEL1\n", "Rotation": 0, "Layout": {"Grid": [["i0"]]}, "Stories": [{"Name": "", "Description": "", "Waypoints": [{"Name": "Tissue Architecture", "Description": "", "Arrows": [], "Overlays": [], "Group": "tissue_architecture", "Masks": [], "ActiveMasks": [], "Zoom": 0.3461337209302326, "Pan": [0.9199752604000353, 0.5138803828707528]}, {"Name": "immune cells", "Description": "", "Arrows": [], "Overlays": [], "Group": "immune cells", "Masks": [], "ActiveMasks": [], "Zoom": 0.4153604651162791, "Pan": [1.008435000992375, 0.5188441794670147]}, {"Name": "MX1 domains along DEJ", "Description": "", "Arrows": [], "Overlays": [], "Group": "inflammation", "Masks": [], "ActiveMasks": [], "Zoom": 2.5482377419078985, "Pan": [0.07960521474071758, 0.8533234203797183]}, {"Name": "blood vessel", "Description": "", "Arrows": [], "Overlays": [], "Group": "blood vessel and b cell", "Masks": [], "ActiveMasks": [], "Zoom": 3.057885290289478, "Pan": [0.49281888527784246, 0.7692583020000742]}, {"Name": "direct interaction between immune cells", "Description": "", "Arrows": [], "Overlays": [], "Group": "direct interaction", "Masks": [], "ActiveMasks": [], "Zoom": 4.403354818016848, "Pan": [1.7059108325012462, 0.25204581792556047]}]}], "Channels": [{"Rendered": false, "Name": "DNA_10", "Path": "DNA-10-0_0__DNA-10"}, {"Rendered": false, "Name": "collagen (SHG)", "Path": "collagen-SHG_69__collagen-SHG"}, {"Rendered": false, "Name": "CD31", "Path": "CD31-0_19__CD31"}, {"Rendered": false, "Name": "panCK", "Path": "panCK_13__panCK"}, {"Rendered": false, "Name": "MART1", "Path": "MART1_3__MART1"}, {"Rendered": false, "Name": "CD8a", "Path": "CD8a_35__CD8a"}, {"Rendered": false, "Name": "CD4", "Path": "CD4-0_25__CD4"}, {"Rendered": false, "Name": "cd15", "Path": "cd15_55__cd15"}, {"Rendered": false, "Name": "CD11c", "Path": "CD11c_42__CD11c"}, {"Rendered": false, "Name": "CD11b", "Path": "CD11b-0_37__CD11b"}, {"Rendered": false, "Name": "CD103", "Path": "CD103_48__CD103"}, {"Rendered": false, "Name": "DNA_10", "Path": "DNA-10-0_0__DNA-10"}, {"Rendered": false, "Name": "mast cell tryptase", "Path": "mast-cell-tryptase_54__mast-cell-tryptase"}, {"Rendered": false, "Name": "CD20", "Path": "CD20_27__CD20"}, {"Rendered": false, "Name": "MX1", "Path": "MX1_2__MX1"}, {"Rendered": false, "Name": "IRF1", "Path": "IRF1_31__IRF1"}, {"Rendered": false, "Name": "CD11c", "Path": "CD11c_42__CD11c"}, {"Rendered": false, "Name": "CD31", "Path": "CD31-0_19__CD31"}, {"Rendered": false, "Name": "CD11b", "Path": "CD11b-0_37__CD11b"}, {"Rendered": false, "Name": "CD11c", "Path": "CD11c_42__CD11c"}, {"Rendered": false, "Name": "catalase", "Path": "catalase_59__catalase"}, {"Rendered": false, "Name": "B-catenin", "Path": "B-catenin_33__B-catenin"}, {"Rendered": false, "Name": "CD4", "Path": "CD4-0_25__CD4"}], "Masks": [], "Groups": [{"Name": "tissue_architecture", "Colors": ["0505cc", "ffbf00", "00e9ff", "f900d5", "37ec01"], "Channels": ["DNA_10", "collagen (SHG)", "CD31", "panCK", "MART1"], "Descriptions": ["", "", "", "", ""]}, {"Name": "immune cells", "Colors": ["ff0000", "00ff00", "3400ff", "a800ff", "00fff2", "00ff25", "ffffff", "0000ff", "0052ff"], "Channels": ["CD8a", "CD4", "cd15", "CD11c", "CD11b", "CD103", "DNA_10", "mast cell tryptase", "CD20"], "Descriptions": ["", "", "", "", "", "", "", "", ""]}, {"Name": "inflammation", "Colors": ["a800ff", "ffe300", "00d7ff", "00ff37"], "Channels": ["MART1", "MX1", "IRF1", "CD11c"], "Descriptions": ["", "", "", ""]}, {"Name": "blood vessel and b cell", "Colors": ["00ff5a", "efff00", "f800ff", "ff8a00", "00e0ff", "ff0000", "6900ff"], "Channels": ["CD31", "CD20", "CD11b", "CD11c", "CD4", "catalase", "B-catenin"], "Descriptions": ["", "", "", "", "", "", ""]}, {"Name": "direct interaction", "Colors": ["ff00fe", "00ffc5"], "Channels": ["CD4", "CD11c"], "Descriptions": ["", ""]}], "PixelsPerMicron": 7.142857142857142}
+{
+    "Images": [
+        {
+            "Name": "i0",
+            "Description": "MEL-3D-MIS-2",
+            "Path": "https://s3.amazonaws.com/www.cycif.org/MEL-3D-MIS-2/images/MEL-3D-MIS-2",
+            "Width": 10908,
+            "Height": 5508,
+            "MaxLevel": 4
+        }
+    ],
+    "Header": "An interactive tour of a primary melanoma from a BRAF-negative patient (male, age 61 years) who underwent a wide excision of the skin of right forearm. The patient was diagnosed with Stage IIC, anatomic level IV malignant melanoma, superficial spreading subtype. The tumor was present approximately 1 year before the excision and had a depth of 14.0 mm. Images are maximum projections of 3D optically sectioned data.\n\nDiagnosis:\nAge at diagnosis: 61\nPrimary diagnosis: malignant melanoma\nSubtype: superficial spreading\nSurgery type: wide excision\nStage at diagnosis: IIC\nAnatomic (Clark) level: IV\nBreslow depth: 14.0 mm\nBRAF mutation: negative (IHC)\n\nDemographics:\nSpecies: human\nSex: male\nRace: white\nEthnicity: not Hispanic\nAge at surgery: 61\nVital status at last follow-up: alive\nAge at last follow-up: 66\n\nImaging:\nImaging assay type: 3D-CyCIF\nFixative type: FFPE\nMicroscope: Zeiss LSM980 confocal\nObjective: 40x/01.3NA\nBinned: No\n\nIDs:\nLSP ID: LSP13626\nHTAN ID: HTA7_1\nInternal ID: MEL1\n",
+    "Rotation": 0,
+    "Layout": {
+        "Grid": [
+            [
+                "i0"
+            ]
+        ]
+    },
+    "Stories": [
+        {
+            "Name": "",
+            "Description": "",
+            "Waypoints": [
+                {
+                    "Name": "Tissue Architecture",
+                    "Description": "",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "tissue_architecture",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 0.3461337209302326,
+                    "Pan": [
+                        0.9199752604000353,
+                        0.5138803828707528
+                    ]
+                },
+                {
+                    "Name": "immune cells",
+                    "Description": "",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "immune cells",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 0.4153604651162791,
+                    "Pan": [
+                        1.008435000992375,
+                        0.5188441794670147
+                    ]
+                },
+                {
+                    "Name": "MX1 domains along DEJ",
+                    "Description": "",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "inflammation",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 2.5482377419078985,
+                    "Pan": [
+                        0.07960521474071758,
+                        0.8533234203797183
+                    ]
+                },
+                {
+                    "Name": "blood vessel",
+                    "Description": "",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "blood vessel and b cell",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 3.057885290289478,
+                    "Pan": [
+                        0.49281888527784246,
+                        0.7692583020000742
+                    ]
+                },
+                {
+                    "Name": "direct interaction between immune cells",
+                    "Description": "",
+                    "Arrows": [],
+                    "Overlays": [],
+                    "Group": "direct interaction",
+                    "Masks": [],
+                    "ActiveMasks": [],
+                    "Zoom": 4.403354818016848,
+                    "Pan": [
+                        1.7059108325012462,
+                        0.25204581792556047
+                    ]
+                }
+            ]
+        }
+    ],
+    "Channels": [
+        {
+            "Rendered": false,
+            "Name": "DNA_10",
+            "Path": "DNA-10-0_0__DNA-10"
+        },
+        {
+            "Rendered": false,
+            "Name": "collagen (SHG)",
+            "Path": "collagen-SHG_69__collagen-SHG"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD31",
+            "Path": "CD31-0_19__CD31"
+        },
+        {
+            "Rendered": false,
+            "Name": "panCK",
+            "Path": "panCK_13__panCK"
+        },
+        {
+            "Rendered": false,
+            "Name": "MART1",
+            "Path": "MART1_3__MART1"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD8a",
+            "Path": "CD8a_35__CD8a"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD4",
+            "Path": "CD4-0_25__CD4"
+        },
+        {
+            "Rendered": false,
+            "Name": "cd15",
+            "Path": "cd15_55__cd15"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11c",
+            "Path": "CD11c_42__CD11c"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11b",
+            "Path": "CD11b-0_37__CD11b"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD103",
+            "Path": "CD103_48__CD103"
+        },
+        {
+            "Rendered": false,
+            "Name": "DNA_10",
+            "Path": "DNA-10-0_0__DNA-10"
+        },
+        {
+            "Rendered": false,
+            "Name": "mast cell tryptase",
+            "Path": "mast-cell-tryptase_54__mast-cell-tryptase"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD20",
+            "Path": "CD20_27__CD20"
+        },
+        {
+            "Rendered": false,
+            "Name": "MX1",
+            "Path": "MX1_2__MX1"
+        },
+        {
+            "Rendered": false,
+            "Name": "IRF1",
+            "Path": "IRF1_31__IRF1"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11c",
+            "Path": "CD11c_42__CD11c"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD31",
+            "Path": "CD31-0_19__CD31"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11b",
+            "Path": "CD11b-0_37__CD11b"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11c",
+            "Path": "CD11c_42__CD11c"
+        },
+        {
+            "Rendered": false,
+            "Name": "catalase",
+            "Path": "catalase_59__catalase"
+        },
+        {
+            "Rendered": false,
+            "Name": "B-catenin",
+            "Path": "B-catenin_33__B-catenin"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD4",
+            "Path": "CD4-0_25__CD4"
+        }
+    ],
+    "Masks": [],
+    "Groups": [
+        {
+            "Name": "tissue_architecture",
+            "Colors": [
+                "0505cc",
+                "ffbf00",
+                "00e9ff",
+                "f900d5",
+                "37ec01"
+            ],
+            "Channels": [
+                "DNA_10",
+                "collagen (SHG)",
+                "CD31",
+                "panCK",
+                "MART1"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "Name": "immune cells",
+            "Colors": [
+                "ff0000",
+                "00ff00",
+                "3400ff",
+                "a800ff",
+                "00fff2",
+                "00ff25",
+                "ffffff",
+                "0000ff",
+                "0052ff"
+            ],
+            "Channels": [
+                "CD8a",
+                "CD4",
+                "cd15",
+                "CD11c",
+                "CD11b",
+                "CD103",
+                "DNA_10",
+                "mast cell tryptase",
+                "CD20"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "Name": "inflammation",
+            "Colors": [
+                "a800ff",
+                "ffe300",
+                "00d7ff",
+                "00ff37"
+            ],
+            "Channels": [
+                "MART1",
+                "MX1",
+                "IRF1",
+                "CD11c"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "Name": "blood vessel and b cell",
+            "Colors": [
+                "00ff5a",
+                "efff00",
+                "f800ff",
+                "ff8a00",
+                "00e0ff",
+                "ff0000",
+                "6900ff"
+            ],
+            "Channels": [
+                "CD31",
+                "CD20",
+                "CD11b",
+                "CD11c",
+                "CD4",
+                "catalase",
+                "B-catenin"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "Name": "direct interaction",
+            "Colors": [
+                "ff00fe",
+                "00ffc5"
+            ],
+            "Channels": [
+                "CD4",
+                "CD11c"
+            ],
+            "Descriptions": [
+                "",
+                ""
+            ]
+        }
+    ],
+    "PixelsPerMicron": 7.142857142857142
+}
