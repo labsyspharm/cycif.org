@@ -99,13 +99,13 @@
     "Channels": [
         {
             "Rendered": false,
-            "Name": "DNA_10",
-            "Path": "DNA-10-0_0__DNA-10"
+            "Name": "CD4",
+            "Path": "CD4-0_25__CD4"
         },
         {
             "Rendered": false,
-            "Name": "collagen (SHG)",
-            "Path": "collagen-SHG_69__collagen-SHG"
+            "Name": "CD11c",
+            "Path": "CD11c_42__CD11c"
         },
         {
             "Rendered": false,
@@ -114,8 +114,33 @@
         },
         {
             "Rendered": false,
-            "Name": "panCK",
-            "Path": "panCK_13__panCK"
+            "Name": "CD20",
+            "Path": "CD20_27__CD20"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11b",
+            "Path": "CD11b-0_37__CD11b"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11c",
+            "Path": "CD11c_42__CD11c"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD4",
+            "Path": "CD4-0_25__CD4"
+        },
+        {
+            "Rendered": false,
+            "Name": "catalase",
+            "Path": "catalase_59__catalase"
+        },
+        {
+            "Rendered": false,
+            "Name": "B-catenin",
+            "Path": "B-catenin_33__B-catenin"
         },
         {
             "Rendered": false,
@@ -124,13 +149,18 @@
         },
         {
             "Rendered": false,
-            "Name": "CD8a",
-            "Path": "CD8a_35__CD8a"
+            "Name": "MX1",
+            "Path": "MX1_2__MX1"
         },
         {
             "Rendered": false,
-            "Name": "CD4",
-            "Path": "CD4-0_25__CD4"
+            "Name": "IRF1",
+            "Path": "IRF1_31__IRF1"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD8a",
+            "Path": "CD8a_35__CD8a"
         },
         {
             "Rendered": false,
@@ -164,23 +194,13 @@
         },
         {
             "Rendered": false,
-            "Name": "CD20",
-            "Path": "CD20_27__CD20"
+            "Name": "DNA_10",
+            "Path": "DNA-10-0_0__DNA-10"
         },
         {
             "Rendered": false,
-            "Name": "MX1",
-            "Path": "MX1_2__MX1"
-        },
-        {
-            "Rendered": false,
-            "Name": "IRF1",
-            "Path": "IRF1_31__IRF1"
-        },
-        {
-            "Rendered": false,
-            "Name": "CD11c",
-            "Path": "CD11c_42__CD11c"
+            "Name": "collagen (SHG)",
+            "Path": "collagen-SHG_69__collagen-SHG"
         },
         {
             "Rendered": false,
@@ -189,50 +209,71 @@
         },
         {
             "Rendered": false,
-            "Name": "CD11b",
-            "Path": "CD11b-0_37__CD11b"
-        },
-        {
-            "Rendered": false,
-            "Name": "CD11c",
-            "Path": "CD11c_42__CD11c"
-        },
-        {
-            "Rendered": false,
-            "Name": "catalase",
-            "Path": "catalase_59__catalase"
-        },
-        {
-            "Rendered": false,
-            "Name": "B-catenin",
-            "Path": "B-catenin_33__B-catenin"
-        },
-        {
-            "Rendered": false,
-            "Name": "CD4",
-            "Path": "CD4-0_25__CD4"
+            "Name": "panCK",
+            "Path": "panCK_13__panCK"
         }
     ],
-    "Masks": [],
     "Groups": [
         {
-            "Name": "tissue_architecture",
+            "Name": "direct interaction",
             "Colors": [
-                "0505cc",
-                "ffbf00",
-                "00e9ff",
-                "f900d5",
-                "37ec01"
+                "ff00fe",
+                "00ffc5"
             ],
             "Channels": [
-                "DNA_10",
-                "collagen (SHG)",
-                "CD31",
-                "panCK",
-                "MART1"
+                "CD4",
+                "CD11c"
             ],
             "Descriptions": [
                 "",
+                ""
+            ]
+        },
+        {
+            "Name": "blood vessel and b cell",
+            "Colors": [
+                "00ff5a",
+                "efff00",
+                "f800ff",
+                "ff8a00",
+                "00e0ff",
+                "ff0000",
+                "6900ff"
+            ],
+            "Channels": [
+                "CD31",
+                "CD20",
+                "CD11b",
+                "CD11c",
+                "CD4",
+                "catalase",
+                "B-catenin"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "Name": "inflammation",
+            "Colors": [
+                "a800ff",
+                "ffe300",
+                "00d7ff",
+                "00ff37"
+            ],
+            "Channels": [
+                "MART1",
+                "MX1",
+                "IRF1",
+                "CD11c"
+            ],
+            "Descriptions": [
                 "",
                 "",
                 "",
@@ -276,71 +317,29 @@
             ]
         },
         {
-            "Name": "inflammation",
+            "Name": "tissue_architecture",
             "Colors": [
-                "a800ff",
-                "ffe300",
-                "00d7ff",
-                "00ff37"
+                "0505cc",
+                "ffbf00",
+                "00e9ff",
+                "f900d5",
+                "37ec01"
             ],
             "Channels": [
-                "MART1",
-                "MX1",
-                "IRF1",
-                "CD11c"
-            ],
-            "Descriptions": [
-                "",
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "Name": "blood vessel and b cell",
-            "Colors": [
-                "00ff5a",
-                "efff00",
-                "f800ff",
-                "ff8a00",
-                "00e0ff",
-                "ff0000",
-                "6900ff"
-            ],
-            "Channels": [
+                "DNA_10",
+                "collagen (SHG)",
                 "CD31",
-                "CD20",
-                "CD11b",
-                "CD11c",
-                "CD4",
-                "catalase",
-                "B-catenin"
+                "panCK",
+                "MART1"
             ],
             "Descriptions": [
                 "",
                 "",
                 "",
-                "",
-                "",
-                "",
-                ""
-            ]
-        },
-        {
-            "Name": "direct interaction",
-            "Colors": [
-                "ff00fe",
-                "00ffc5"
-            ],
-            "Channels": [
-                "CD4",
-                "CD11c"
-            ],
-            "Descriptions": [
                 "",
                 ""
             ]
         }
     ],
-    "PixelsPerMicron": 7.142857142857142
+    "Masks": []
 }
