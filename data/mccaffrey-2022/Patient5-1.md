@@ -1,7 +1,7 @@
 ---
 title: Patient 5 Sample 1 (McCaffrey 2022)
 no_brand: true
-layout: minerva-1-5
-exhibit: config-mccaffrey-2022/Patient5-1 
+redirect_to:
+  - http://labsyspharm.github.io/mccaffrey-2022/Patient5-1
 images: https://s3.amazonaws.com/www.cycif.org/mccaffrey-2022/Patient5-1
 ---
