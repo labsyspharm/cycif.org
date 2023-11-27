@@ -99,6 +99,171 @@
     "Channels": [
         {
             "Rendered": false,
+            "Name": "5hmc",
+            "Path": "5hmc_1__5hmc"
+        },
+        {
+            "Rendered": false,
+            "Name": "b-actin",
+            "Path": "b-actin_53__b-actin"
+        },
+        {
+            "Rendered": false,
+            "Name": "BAF1",
+            "Path": "BAF1_51__BAF1"
+        },
+        {
+            "Rendered": false,
+            "Name": "b-tubulin",
+            "Path": "b-tubulin_58__b-tubulin"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD163",
+            "Path": "CD163_30__CD163"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD206",
+            "Path": "CD206_21__CD206"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD3E",
+            "Path": "CD3E_34__CD3E"
+        },
+        {
+            "Rendered": false,
+            "Name": "COX4",
+            "Path": "COX4_43__COX4"
+        },
+        {
+            "Rendered": false,
+            "Name": "CyclinD1",
+            "Path": "CyclinD1_50__CyclinD1"
+        },
+        {
+            "Rendered": false,
+            "Name": "DNA",
+            "Path": "DNA_0__DNA"
+        },
+        {
+            "Rendered": false,
+            "Name": "e-cadherin",
+            "Path": "e-cadherin_62__e-cadherin"
+        },
+        {
+            "Rendered": false,
+            "Name": "FOXP3",
+            "Path": "FOXP3_38__FOXP3"
+        },
+        {
+            "Rendered": false,
+            "Name": "GranzymeB",
+            "Path": "GranzymeB_65__GranzymeB"
+        },
+        {
+            "Rendered": false,
+            "Name": "H3K27me3",
+            "Path": "H3K27me3_68__H3K27me3"
+        },
+        {
+            "Rendered": false,
+            "Name": "Ki67",
+            "Path": "Ki67_41__Ki67"
+        },
+        {
+            "Rendered": false,
+            "Name": "LAG3",
+            "Path": "LAG3_26__LAG3"
+        },
+        {
+            "Rendered": false,
+            "Name": "laminABC",
+            "Path": "laminABC_14__laminABC"
+        },
+        {
+            "Rendered": false,
+            "Name": "lysozymeC",
+            "Path": "lysozymeC_45__lysozymeC"
+        },
+        {
+            "Rendered": false,
+            "Name": "MHC-I",
+            "Path": "MHC-I_6__MHC-I"
+        },
+        {
+            "Rendered": false,
+            "Name": "MHC-II",
+            "Path": "MHC-II_67__MHC-II"
+        },
+        {
+            "Rendered": false,
+            "Name": "MITF",
+            "Path": "MITF_10__MITF"
+        },
+        {
+            "Rendered": false,
+            "Name": "PD1",
+            "Path": "PD1_39__PD1"
+        },
+        {
+            "Rendered": false,
+            "Name": "PDL1",
+            "Path": "PDL1_15__PDL1"
+        },
+        {
+            "Rendered": false,
+            "Name": "PMEL",
+            "Path": "PMEL_47__PMEL"
+        },
+        {
+            "Rendered": false,
+            "Name": "pMLC2",
+            "Path": "pMLC2_22__pMLC2"
+        },
+        {
+            "Rendered": false,
+            "Name": "podoplanin",
+            "Path": "podoplanin_56__podoplanin"
+        },
+        {
+            "Rendered": false,
+            "Name": "PRAME",
+            "Path": "PRAME_29__PRAME"
+        },
+        {
+            "Rendered": false,
+            "Name": "S100A",
+            "Path": "S100A_18__S100A"
+        },
+        {
+            "Rendered": false,
+            "Name": "S100B",
+            "Path": "S100B_9__S100B"
+        },
+        {
+            "Rendered": false,
+            "Name": "SOX10",
+            "Path": "SOX10_7__SOX10"
+        },
+        {
+            "Rendered": false,
+            "Name": "Sox9",
+            "Path": "Sox9_46__Sox9"
+        },
+        {
+            "Rendered": false,
+            "Name": "vimentin",
+            "Path": "vimentin_63__vimentin"
+        },
+        {
+            "Rendered": false,
+            "Name": "yH2AX",
+            "Path": "yH2AX_60__yH2AX"
+        },
+        {
+            "Rendered": false,
             "Name": "CD4",
             "Path": "CD4-0_25__CD4"
         },
