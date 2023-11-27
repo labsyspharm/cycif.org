@@ -349,18 +349,8 @@
         },
         {
             "Rendered": false,
-            "Name": "DNA_10",
-            "Path": "DNA-10-0_0__DNA-10"
-        },
-        {
-            "Rendered": false,
             "Name": "mast cell tryptase",
             "Path": "mast-cell-tryptase_54__mast-cell-tryptase"
-        },
-        {
-            "Rendered": false,
-            "Name": "DNA_10",
-            "Path": "DNA-10-0_0__DNA-10"
         },
         {
             "Rendered": false,
@@ -465,7 +455,7 @@
                 "CD11c",
                 "CD11b",
                 "CD103",
-                "DNA_10",
+                "DNA",
                 "mast cell tryptase",
                 "CD20"
             ],
@@ -491,7 +481,7 @@
                 "37ec01"
             ],
             "Channels": [
-                "DNA_10",
+                "DNA",
                 "collagen (SHG)",
                 "CD31",
                 "panCK",
