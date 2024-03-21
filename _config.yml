@@ -10,6 +10,6 @@ plugins:
 exclude: ["node_modules", "vendor"]
 include: [".nojekyll"]
 github: [metadata]
-google_analytics: UA-41775478-2
+google_analytics: G-GDJDMQ1Y7F
 repository: labsyspharm/cycif.org
 speech_bucket: www.cycif.org
