@@ -13,6 +13,9 @@
   }
   {% endunless %}
   </style>
+  {% if site.google_analytics %}
+  {% include google-analytics.html %}
+  {% endif %}
 </head>
 
 <body class="d-flex flex-column h-100">
