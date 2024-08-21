@@ -26,6 +26,10 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 3.0
+      # FIXME temporary workaround
+      # https://github.com/actions/runner-images/issues/10215
+      - name: Change permissions
+        run: chmod -R o-w /opt/hostedtoolcache/Ruby
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
