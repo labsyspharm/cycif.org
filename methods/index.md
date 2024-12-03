@@ -1,5 +1,7 @@
 ---
 title: Methods and Reagents
+redirect_to:
+  - https://www.tissue-atlas.org/methods
 ---
 
 ## The t-CyCIF Process
