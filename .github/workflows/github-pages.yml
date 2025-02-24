@@ -41,7 +41,8 @@ jobs:
           ls -lha _site
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
-        path: _site/
+        with:
+          path: _site/
 
   # Deployment job
   deploy-pages:
