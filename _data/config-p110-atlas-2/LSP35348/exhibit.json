@@ -1,0 +1,1097 @@
+{
+    "Images": [
+        {
+            "Name": "i0",
+            "Description": "",
+            "Path": "https://s3.amazonaws.com/www.cycif.org/p110-atlas-2/LSP35348",
+            "Width": 38245,
+            "Height": 27888,
+            "MaxLevel": 6
+        }
+    ],
+    "Header": "## Metadata  \n\n### Demographics  \n**Race:** Unknown   \n**Ethnicity:** non-Hispanic, non-Latino   \n**Age at Diagnosis:** 67   \n\n### Diagnosis  \n\n**BRCA-mut:** WT  \n**BRCA:** WT  \n**STIC Morphology:** BLAD  \n**Incidental:** N  \n\n### Associated Identifiers\n\n| ID Type | ID |\n| -- | -- |\n| **LSP Slide ID** | LSP35348 |\n",
+    "Rotation": 0,
+    "Layout": {
+        "Grid": [
+            [
+                "i0"
+            ]
+        ]
+    },
+    "Stories": [
+        {
+            "Name": "",
+            "Description": "",
+            "Waypoints": [
+                {
+                    "Name": "001 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.5083524967151953,
+                        0.5486771314089971
+                    ],
+                    "Polygon": "AwOgrMAswEwDSjJAbAdjA8VUE5NLAEYAOfYVYw-FHZM4y63YfQ4HPRSWuxQmZL3BEBrQgGZSiMDEJU+wYOPxFCqejhbTFWrKmQYuOCGQPzwkYrLIjqyHOsRRYd9EA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "002 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.5054650329791952,
+                        0.5426552244550148
+                    ],
+                    "Polygon": "AwOgrMDMAsBsA0oxxo8xpkm5ECcOwuO00kwhWAjCZAEwVIYDsNS0Veb6YsB7dKmEqw6JOgA5mlPNnaRYcnhIkloDQqOgkICJs1h7wcDUwmRp7Pt3yYSzCdqRVgefsa5PwVckrD53MCpSPyDYRm8giP8iS29oKBI8MFVnSCo45AlYTKo6O3YDYWcfI2QtHBcwTMwfQjxJWmhU9AkMWjoxfVISKhVCZiwSVxtgWGhAyDxmLp5YFuQfPwwJQISqMtiFyClojBScCypRmGLwBWA9zrLIFLOIVy8scKMJ6fuLS7QJ1cydjm+bgB7GAQkIoKeHHmhGCawUswgdDcOgShBgZRQ0CAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "003 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4785054370539535,
+                        0.5414960515539119
+                    ],
+                    "Polygon": "AwOgLAHAnAbBA0oCsSJLI8UBMxiZQmwHZMwoBGaApGAZijJ2EeXTSYrGxrqqeDYKBckjpkIxYgmRgYQiXWLjZLJBIqaCdNDDJSIKkGOJh1oMMRgwMyOqmEXTxR8brkeTrp7d06+CxgpWzcKHTJ6K21gFwi8PTsKQTIkWHM3blZwGDCZX1oI7CgQsXc8uQdtbEMI4mwfMXIE8GJgBm04I0t6ozEYJACW7galSn10dLEodqdidBEY0iccXrAKHA0-EQopCUFJ4fTILhKwHSXwQzoGsFuLyH9V9B9INdX6Logcm6hgZsgXK50L8spAYLAaIJPtJmiguPdoNUaJBytA4DQ0GAgA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "004 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4729540551724175,
+                        0.5491198308134085
+                    ],
+                    "Polygon": "AwOgLAHGCsBsA0o5gMwseKAmA7B60AnDoRpClhPgcWRFtAIzXRgKiSMqlLQo5g6jaFV5ZYPcCUKSCwVGRxL2IVjmDBFKCOiSolWsMz1gsWLePxgwMxY1on+is9CvdJYHI2tusuqcBobiiuHBL0VpSaYRA45nqUeGFxgnoowPHgsBIqrH6ZbNA4uaZOYUyZrGiiWWAakSgqbKbRqkY4oVniqW3AhAWwwOr47jUwMv58-T0wEBDGqtoQTSI2I8Wts2Yj0LhkBFA7cPuw2utxJ4SdU9scIgxWwCL7hBCtrPZNsIy3bdZJXRwNVYcABzT2eiI-kKOEmMC8ZFgXgBILqiLeC1YbAGVx6IK4iiGlTYsBmcXSVnoY1h3ishAoihg12gGWhxQgsiYu0U9HerFJikInmosCwmxIPl4AjGbyG1A5m3mYvw3wpHDeyxVDAWnFg11OsBlMFypLQQA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "005 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.48429111888788745,
+                        0.5394256512132479
+                    ],
+                    "Polygon": "AwOgLAnArATAbAGlFKwCMangjVWVhgAcWkaA7OflBsKUUTvmHAMwz1TTPxj2F1kYYCnoxi+VkS6ly0VpLgQ+oMOSLAVIKKzgwFq8nDhVkrWCUOs0USbsHglRTGbTcry-DDkHwRJRxm5GC+kOym2iGwpNDw1OhoQA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "006 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.473471608868244,
+                        0.5571377999645617
+                    ],
+                    "Polygon": "AwOgLAHAjBDsA0oCsA2WwCcjwWGAzNqgEzTZiwYaHJIZhTmyUK1L6OgUpJhFLF8xJmBQp+wCFi6xiBImAyw+M4MSQKUU8lpQ0Qvdq3BpgnA2CQQNXFGGLDko5jpRQbBpFEk6M6-tQq4MqURGL44jJSQagYUEGQMMao6BhAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "007 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.43352430092267136,
+                        0.5780416456720262
+                    ],
+                    "Polygon": "AwOgLAzBwQNKBWA7AJgQRnuKEAcXkUwBOLSCJORVEsiMYfatTUSMSA1BBOsJJiEIA2FHQxjmSVtgRhezXDMjJBhYmDrD0wLtFJsIwsDOQQ0W6Xo5biBoZWN1UwvbleGkGLg3uQkSJrU7M7EHg5g2nRK4chguH54EAoOGEjR3tRy6YbuKciq0QJc2rq5uGpIxpLYCbFVXnTEwDXISMCJzTkOgVTYzfZtxYYDXEo1kF1jkU0wY0rRxJXE6CmQCWUOGoLruJvIS8p4wmp76EG1cgR78tEQg3tV0SimSsBreC3X6PTOe9-CTb+BCndDuZxQa4vIEUYCxXAoSGGYTDIQIq7I2iIBGULRgqErcS4fK4aDhFQIVqklAwjCnKATeik670I4cbogpl8dCvZJ9ciBFkIck4enIOjQXk8OgoYQk5JHFAoB70C6QdDEPqc5J0VYqoi6izYiA8ugdKnKj5w14oVGQGD7dE7aDAG0UMjK3HYl5q5X8b4VD3EJUAibK4COn6+3BIB46NYodyO4CNNiJzjY4A2NMI06u5SJ9D1Yh2xNwrgaBOx5Y6D2xrUCJ5p2P7AQmOsJMbl5vBrgBIG2sJ9owevYN9oD8YlYTkxOIkrmUfurJ2UeUrjC2cx1sIHU5ztZLNB03BVPgZW-YL+tPEBCDQI0oPEvS3s3oVqUKyGLOmSgIGEpr+UAwjoH4moyUZcJ6uoolBzKGDSra2oyiIXCI-LmCcUHChKczMBgQA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "008 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.44577485754287316,
+                        0.5747865223408803
+                    ],
+                    "Polygon": "AwOgLGCsCM0DSkgdmAJgBwPFMwvLUiwgPxVTGKgE5qzCqA2VOxcpJyTN4AZlSboOPXt2xJoRHmEZUkYXvUizQEJCnqMxa6ipAF08VWHSoBPXVXRhh+idHPYheNtF4un1R8mhhW2al8yaEZ-CGpeSldqD3DIbyRUBypdf2RUXj1w9Ck7VEZYv1oyDFyoYFgyXkrVSDQjO15RYjr3KsYo8FbbZF4vFuAwBKHYuqgyCG0xvWQbLOmyMYGFRaaBvsXGBvK1ti4ptE7kLfmKo6QOxVrgNDJGUJT0NIvqMr8kK7tEwteZ9QgUrweupGLZwtBgUgnlZXmR0MAwiZEnCMFYTHCZFYMnDmHJLGwhGC5s90NDjPIPMgYtsbDU7IFCloEoFtDJ4mQvJ0IMxmajjJB+mwIoVlA0qW1+dUOSwqHUxUgvG9adLChBmW4qGAgkLBlRRH8np8ILwBXDDHrdnZ0KC9cAxMgcjSMOd0JEqPkEoYskMtWQFW8zPL-u6+H72cZoNa-TKIxI-cA3pJ7RcFVRfH9GJAjVrMndUESHMmCoUHAl0mmIYsARHtXYYN7YJ9ZkIK+caBW-goS0kJrcI-mqvI0262JEC9XGqgS5BzixsyFgflWZH5RR59RF9BEUlzlvvRkEhCuUNw3ZJNn87vLWr8WfJHqp-RqKzIrkDNmgfLgBpjH1kwnWRPeh0WMKAmxQXBNVMehrygOkCAwIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "009 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.45838509489891677,
+                        0.5740464705961559
+                    ],
+                    "Polygon": "AwOgLArA7BEDSggNgByoeaKCcHlrA0hQCYBmPVJEoiFaStC0Y7ARkaSVuxPkVRQOLCNjqMouEdnaMUKIkmDlGMxcFiV2zcEvpaSClkjZt+IZNkiK2YQgOxJ7utkK0pnYE9iMWowDUUSYLx-QyCvUI0aYxIkKCioXy9DBMQhQOMyTL82Mh0vMhD0tiQCsrJuEuxysjBfaGDPMvF0virdSo7G+UUyKBi-IsHCmFCyTSyobqgybGA+6dCwEmb+wehiPvjl3j7RUIgSNM6wKT9kBaz+w6s+4r9qDsLgGaRW3UMG6d7Y9HShMlqJEASDPg9oFBZjZsCdIT4bG50qRhC4wDosOibLZQkx1B5cShUV4NBikrD1BDJKYePNQrwCqIGOkap5RHx6WBiXQ9iywCdiEp6RBuaQ4ZIjrQJcLudMyVZktAyKjoFZGf4rn4auZIFxzqq4rQyt9tEbgN8cOdIKrCYzYCqkk5aEdnJi2WdxSjaPyNlCKSI7PqoUjMCsZlA7N7XqEhM8IGQUOKqLRKkH3jr4xBXdNVimubduUUg7ArfG2MXDSJlb6zozsuLIKXstmwyngNm5iN4zklQcq8Ag0U48rsyQaimqXFC0VQsEm5HqgLM99Skv+tm8mveblzd62L7zZrIOiyaTvcgosdvUSosA7cA4UgfEfYHUtH3MMgMU+wC-RN-eC7YEtAfI0LwEHA2VQBpoPVEgVUENkYHMfBUCAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "010 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4408628766009652,
+                        0.5612084754718016
+                    ],
+                    "Polygon": "AwOgLGDsCcYDSgKwDZUGYHjQDkfJy00ymYai2JBuAjKWsgEzaYrI35ZSSvJrQ9QZHNF41knMs0S9g7emEZ0kFSI3qJIMlYmAYhDZIJCJEOY2UhpgrPM3rZGx02GDasxGyrSLSrvrbk7hA++iYoNBYhLDpQfmRe4WCO8WDK4YwSfhLuptZhEJDYzihKftjAJdjifpA06abY2KJCYITOyMA0BWCaHYy9tTTqBFCJhbC86EA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "011 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.44723569714028827,
+                        0.5834062780013508
+                    ],
+                    "Polygon": "AwOgLArFDMA0oQBwQJzHuMLGI0g7AGwQZhkQBMeihi+p0NY1UKpYwje+iYVoZPnASJgARhICIwDt2zopEfMJBIx0QqSgQVSVMCA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "012 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4636207076452295,
+                        0.5822529196451037
+                    ],
+                    "Polygon": "AwOgLArAnAjAbAGlBAHGA7I0koCYxIiq64yFhwxi6GrARbhwlS0rAflwDMcKt6KHi7QIbDty7pcrZCm4x+2PuklyIMGsrhglRNFHQjpbXrKYRga-bnRHlGYG1wRrFMMC37uwAsplictwuXKRkQbhulOhOcrgojBTAKOHeYOZJwkFQseDQ8GwYcEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "013 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.46733599646111373,
+                        0.5724520877098357
+                    ],
+                    "Polygon": "AwOgLAbAnATAzAGlAVgOxisJ5pwttCYVbSKKARgNVRitElQoA5rmLEGJl5rpWuYVFhRMepbmE4hk0KCS7CwBfsglpps2Mq48oK5nAU5kYATO6UJTfCggQ49HFGQiLUIqWFHqMYLeduajBxLlhNdEwgA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "014 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4535608220385647,
+                        0.5624352674382895
+                    ],
+                    "Polygon": "AwOgLArA7MCcA0oIDZmwo8ECMbPWGACZNJiAOfVbAZlJ1gSWSOynuyOHwnOnsLIeEMJVCRa7JCLBDxEIv2mi682apAQUsMPWS8e5KHKzJZVbOfkwmm1OiA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "015 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.45682018114937,
+                        0.5546545070550013
+                    ],
+                    "Polygon": "AwOgLAbMDMAcA0oCsUnUeJBOMYMuFggzCVmGOWxxJQEYEqB2OpWsJxkJHz91-D1gAmWsIhsqkPKFLAw6KtGCTwYLE1FVhwuiXXlBwJjMxhx+dSxIQ6cQdAiVwEYVi48I0VZBgfU0EA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "016 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4324824335512238,
+                        0.5563332011518781
+                    ],
+                    "Polygon": "AwOgLATAzArAHAGlDAbHMwngmAnAdi1Slyi0n302Rlwl3KmGBSJin0VDCghkJrA41cFCgBGVsjzAY5MGBQQ24uMu48UUkDHbAw8vnJpQe84PjI0IKAaLj4G1-MdGWrO9jkYxZbEnY8kE6eVOKMOHa6uGiMwOLqOijAEOHcEMIGyEou5BAuUShglHm0rqhoadiKWUlw7HmwXHUYQA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "017 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4247742353538382,
+                        0.5537812681642168
+                    ],
+                    "Polygon": "AwOgLATAzMwDSgKwDYAcB2RDwEYCc662Kyee2ksUxyYGF+BNO+DeUOxii6Yb6ELjkIUIYzkjCIIyUWHQSQiSKmqhIaRcoipFkPMkGSwJih2DlJiA2bFql81JfBQIOWZLyqz71EIhE6jDyXBCm6hB4YPBIiFDsohgxStzSoujIHimo0aLIrjTAqH4RYDhYSPlMETBGSsgKzpAwySgYiEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "018 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.41306551781265044,
+                        0.571600014757445
+                    ],
+                    "Polygon": "AwOgLMDsYJwDSgKwA5bIeYBmSwMoCYsBGDCVMfSLANlNDGMhkqUQONfGJiPxsQ4yxZDRr9ReBiMRSQiSMVnDqWKmBrppiZUkjJiBYVgJb5yKGulRxSZFhJkosfKhjIgA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "019 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.39672560622057557,
+                        0.5170992749179841
+                    ],
+                    "Polygon": "AwOgzAnArBBsA0opgCywaSKCMB2RIyATCgBwFalgHLAT6bTblJjCoXSzA1vBSduDQnyKDsPJEVKkIgotSmkUk8HFwCl2MY1zoaRbizXRVUQ9hSdSsRYSJRsc3aR32UubJ1yeDYGN5EZgqkmmqwOH6wxpDmxuZg0pwo0AZEeMlEzvbYUGFYlgbApF6MYD5FYBhq-lZITomcVWbMWU2yNMzA1ZCo1Y5QsMJYwG6OqDEQKOad2E7ipYQSuHVqA53AEpzmq1DFHYwoYHZ7Q4tYM0j8uKq9kVfT5xBgpMJ7RCTJhVdzt1PYJ0202SxwIKQgrkE5RowHYq0gsACPygk242T2eHh0F8Vyy2QRQRh5TcsSmMJQKUEKDG-Fg+PoiJhuEajAgwF2xQqrKguwkJU49De2kJjBsQrIWNgn3qeUmMH62GiWMGJ1adli-PqEMl3AMAKxGkW5lyTyo8XSEIFmvsJDsKm6wX8YRUzBODm0YM2VAMtmE9uUBlwRGGEFD-WkbAF33szz+ynRWUg1mlIn4JPo-l4lkmnn6iXu4SqvDY9PlvDQsCAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "020 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3825386751589391,
+                        0.5070659753825882
+                    ],
+                    "Polygon": "AwOgzAHA7MCsA0pYEYKUeCKBsGVWwBYNJDYo9lZySIAmLSsZMWu5ZPYATm29uBUuEYBBJRuorrBHjuYfkmB0Yc6hkLd5CUJEFjQm7CwERch7oSidd9YOZBHsOzMi0atcNqqWiXkVAolMCs2e2kfTDpCYC4CVltCOlilekVMFDouLSzbahsQTKggzGwIdJQwa1prBMKqMhqvJFRIIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "021 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.38865256534067144,
+                        0.49521440896673263
+                    ],
+                    "Polygon": "AwOgzAHATALFA0oYE4Cs7HggRgGwHZMUx9lNIZcwjkxdtyJcoIapthH8JCllt8vLMnZsYQsMmBSaMMKnIiouWTkUlWfVNgWhJqMAz64IMdbhV8IGPSOxmrMTeH50a3Z5J2c++bEZdgUV8eRloyX38w4GotSEYIYF0QFBgYHyxBZ2I4RhMIlOR05Mh8ZRpUAkZUKAKUXFpGMDAHQvoAyFgELXQgA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "022 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.4032786291625958,
+                        0.5189510392775862
+                    ],
+                    "Polygon": "AwOgLMCsBsDMA0pICYAcVHmM6BOTK6kmEysyByYkxosuustIKwu0m9A7GKpWxzrtqBAIxcu+IVzRi4FUBGBMx1BIuCjoXMaNTqskbLuUlgXaHySimgrJNH9cYMzAOEoQA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "023 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3812425529500895,
+                        0.5296532105075185
+                    ],
+                    "Polygon": "AwOgzA7AHFBsA0oCsAWMYBMjwVkq2qGGY2kcAnIWCvmRBUgIyEbC5lQaynJP69wUFLAJ8IkTrRbJiJKShSsIKGUNpLZFKEk5gkWZOmDBOGbdSQQ1YKExQRqOsUP6aQqYAc7AmVZCgYUI6gkNruRIz0FCimATQ20HCEaJhAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "024 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.38659747491876945,
+                        0.5834188103123621
+                    ],
+                    "Polygon": "AwOgzAHArBYDSigdgGxICwPBFAmeiqSwWkKKmh5EpExlIyaJokGDTGtSEHqEARloR8WJgE4hrCDlxikxAtgjjx8pAJrTxYFOrBRa4pHMJIoh1uODAk61KWvopjHjce2lyEZfCTgfNCmfgJgXjwijgIoLsiSSmCSdPLi6L6JuAIsrsZqVvjBMMACDBlQhRDAUC4ZKHmMlSqOuLBigi3N4r4w0Vp+YFVtuMB9iWACFbjo9WPRQ5KO430wYQk6AnaIsOaLoW3Om-22+1Az4rjiy9Du+ThtUM7NJveCzRZteDXnuh8o2RklD7GKLWNpIMClSQUMF1KIGNqVYKJLLdGQQjzPLY4SHASAInQeYAVSQzFTQrapJEqXCo8QoBIyaBtS41GToDgqOnCYpiawjbgwXnFPTSDReayZWjkeqnIlUvAcCX-aCVIWA6RQeGIPnpXgLCkE6TsmUqJCk9DHCkxWi6Q4wVKssAXZmaWgXCoqBk0u0yNBumkIsCHSACVIIy3YaIihoKXUlWJ0R7SAQbMHAaOQYBcrbS2i2H30qnp7IwU4MgLR0sPPPorbVUqIry8cF5gSo9BOvNZtqJZU2VEQ0k2DkDUaVQZbXB+6Q2K64KetjmaDOIiolYOVMJtLJD9CVyqY7Dppu4lcjBM2KlZQpmlBjibdM0-ZPVFLp2gbZY8BRu-mEPVuha8giFSuAtmYlw2t2Zg7NIEKPuYDaQDe4K6ugkpmKmRrWmYuK0FAPJUKCGrofId6sisZEYEAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "025 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3996212536785104,
+                        0.5855564298745622
+                    ],
+                    "Polygon": "AwOgzAnAHFCsA0pZWANgCyPBCBGTSKquWkE6BIyawpOA7GFtcVusB04Wpe8GACZmRCGw6tu9VGOB5hwKL2C5co7hASh2+KMNwKxuKXoFCtwAfz2QxptVSi5Y9W7E0OjL8wJR7oYsCtCUxJzQWlg9Hd2MHQIhwF6UJAY1HdkARwAqC4HQS8U-izCMFh49nRcMzyocuB0AUpkSoKK2OEKewqGjscxCl1CWFxciuHhWCj+2FzkZ1b62GrkVANzKNpCDE3CinTa+h22+2RD5Lad08D+y2F6ZH7gAtO4AIhZmBUA+kGHHLqwKthHAuvxKsCoNUYrdCBAgoVMr9kBBTLZ7sJyEcLLBLlANAtTB8IIxDBB4sioAtcKgkXjioURki4fpDGsqHCYYUns8OQt6uS4WBRhwnMxBb8yDkxfUdmQltLwaAyJzYHD2HQYEz+AVIHAtUKNT5pQJ4pB6P4kMydcTUCc4Wg6PRFQ4cJQzfgMea6DTaWTcpBUBgMVMlWTnciBO4A7hffDIKraTBZfiTjA3HQyslkDlk5N9ih-RproR6E6M0Y7nEMw6S9S6OhicIaVHyHim+nQ+hFE2BIWu7jVdVIOgfhMgZ3R0MjZ3fIQG9au01FIH62256V64258AWzjnjl0aHhrTYqai1mcjGM1XgnIj6gPiaz8gL41kgHlMIBFfQ6hUYRVBbDAlyMN0yRpPQO2wW1lkcMAJWJH8PH-bAnRAtkzSSeQNEdelqG7UNIVpJ4zzgckRA1V5uAwIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "026 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.38682696572584285,
+                        0.5506905347667955
+                    ],
+                    "Polygon": "AwOgzAHALMBMA0oCsA2GBGR4DsBOJwWqqKWYeshyKY6EZeYVISSu0ZE62pySYMTmBS8WUCF040oRKKlyds42VBRJFubLOH1QkPAuRRYKQ+AnYtR2FBl7cwKJiPA0ZXLEhFyed2BPeEMBg7qoIyMJ07qxm-CjAzGD4YCFG3FbgDtjqRhCaitlESOhIuubYEkVQKZxITkW46IlcEKksKE1mkDDh7RhAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "027 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.32504495729931926,
+                        0.509836479563722
+                    ],
+                    "Polygon": "AwOgzATAHMwDSgKzCogjA8EBsAWA7JumnppIvtkWhLomRBDdY-KJGLmESgJxtYuUHtnQMYA5KjRA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "028 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3145300029490048,
+                        0.5857517404389119
+                    ],
+                    "Polygon": "AwOgzMCcBsAcA0oCsskCYDsjzFpALNitMEthLGpEbNGmucNPtcrBgIxmgRJjQ1OWHsHwZWIYpG458cGigkQMlGvjAIeHYGkJswYDuQ5okR-S2P56apAK1mJKfByUcM0Gc9rl6qtiTC4GgawDTQzL4uXuywmsGuepLskG7SSSgYSDKGsCaCnsbQHoLAQYYhMUgYYIww8SjoGEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "029 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.2645331736524569,
+                        0.5848769102895109
+                    ],
+                    "Polygon": "AwOgTAbArALAjAGlFAnMGUnghAzMLVOeLSCOFQlMGXUiGRquADk1EhjHZCODHq4oA5CxRjBEFoRazpHPAHZFMxSzoKYwAqIYjsuBjKjLBcHbzZx9kbpVGMVCsMHmWwYRM-4zXTg1AWUCzAcBrYWuEmsjD0wl68amxxpshJFpCoQYooxHHUhDk49OT6JihQ4WRw-sHa9tjkDXUoVThwCcHWPJnqMp490MWi+P6ZirEOihk4wBCqEGM43DJoDdWTvGiQcSTIaBhAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "030 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.2889342833270208,
+                        0.6014383464327189
+                    ],
+                    "Polygon": "AwOgTAHAnFYDSgGzAMyIKwPBA7AFhy2TwEZEtIdE8jgz5RLFylhhEHsJ0oseocmRhFw1QPXIWFRqfKBDBjwUdsDlQSQ7PM7JUnMCpJrWYFFO2xaadEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "031 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3007226152658873,
+                        0.5896542109976987
+                    ],
+                    "Polygon": "AwOgTAnArALAHAGlFOEBsBGJ5pS8uQ4bSODMbFOAdkVAGZhh6pKaJ7tH766QryXYDDTU2qMQ2FhiyCMDCSQ3eJXkR8yhRln8NUClOARDejLBIR5SqBpibSMCGuApLcGDdRXLsPinQMIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "032 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3691912657037037,
+                        0.6130228438464097
+                    ],
+                    "Polygon": "AwOgzA7ATArAHAGlANgIxwJzCeCwAsGOaccqOYycEyx6w5olEMtKqyGMFyyUYdGGERNeUIu3xQR4XsCh0oqRrOQx8dYBAGiIyzWBXMMClMBMTZGfBGLngO3Kgd2uR6PE2pLkGP0X4bLiQ2OxKPnpkdBy2THgMrhiOlJixIGj8obIQGDJolMnI0Gn5OTx4eagw1eUYQWisWSkwKmh6QSH67DAmFHgQGuzaTXr4WST47rCVmMBAA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "033 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3387672587211894,
+                        0.6000699990595094
+                    ],
+                    "Polygon": "AwOgzALMwQNKA2a17ggRjAJlU4AOATlUnXX12HQFYLRT91L0tqSIsNmB2OejKJU500BbkOpt6Ybtykgk6OSTAJuYSlT7gZM1NUJEEKxfsKFVK6sHkGixaRGo5QBwhxVOXIOxBFgwWhEDWWNpfGpxV0NqbQDCbmAzfG4w0QtksAc0LHQ0uwRsyGhtPGggA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "034 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.3314221193660151,
+                        0.5623309918805306
+                    ],
+                    "Polygon": "AwOgzATBAcCcA0oCsA2FZiPBJwAsWqe0SWkKxhFSEZEA7LKchRnfcMyEcAIztQqYXv1CRowelQh4EYiLF5dUEYCjIZo0KsFhSxYPL33ckJAgYqZkZwQY7XTJdfd4vTsCGA0o4O+lxgYDSi3CgQvNoGGI6owd4GwFpUxO7iblRIGfIo+JnBdHhgUWHotPJgsBZh0CJ0MHKlGEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "035 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6843870439749675,
+                        0.354544032792408
+                    ],
+                    "Polygon": "AwOgbAnALAzA7AGlDKEAcBGJ4ICZeLICsum2kwaa2MRUYR5aEEwNdEjoYaRcE7NMAHc08LiFp4YTDLjDt0ucnGbVialXFwyNwNtzgNdkvhgPgjMLMSIst19rAWGIGCbQIvwQquwwMTDDA3rTAfEzQ6pKoIUzMhDHoNj6YUOzAMCI+qsrElNE8YKr+wkxgFf5QiTxEmf48QXCJtBjQQZXEuBAmPDrpxDDFTLgYJrSwKcUQjcTFNWjyKbRgBEFxtlAWtVvsMGgLcFDRtEOFB0N7uNvMs6b4C6x5phhwvcwo-jC9rKgZuAMcBhqhk7OQ8Bhlqg4FMejoaLFAZBYC1UJggA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "036 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6947937938607226,
+                        0.3534668640483951
+                    ],
+                    "Polygon": "AwOgbAHArBDsA0oDMYkEY2PBALGqWSUAnEsVpMVMIVLMAqGMQEwa045gWtiMhEWxHDyh1COCFJ6w0-JJ2IQs9YMHLJOaFiuBDlyamgPhhMWrFkVocQqgxA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "037 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6657539847027056,
+                        0.3305298497510442
+                    ],
+                    "Polygon": "AwOgbALAnFwDSgMyOMA7A8BWAjAJgk0TwA40TMxdgwi808pKsSIs6ThFLIx4l6jSmnx46WNBlBg0sHHXK1pJHCqLFYPBlJDINzMHiW7EfY1UbskiXPOlYWY6xER3sWYE2t5gV7HhZ1HAh+cGhNa1Q0IA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "038 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6399836454327369,
+                        0.330522883814482
+                    ],
+                    "Polygon": "AwOgbAzBCsBMA0oKwOzQByPBM0xeRWBS0hQBYBOA2dSiUiNBJCARlgdEnXRNfblGlFPxBQ2wNqXIchrYOXzdZEaklgjMKzV3G100GeVQ0UlYDIxGNRaSpToW+njMpOaYSjfBLo8-XN1X2gmGko2ALByckNwxxk1YKhgTRlNZwkwZ2jI7XFCMUh3ZJhgfJ5YHyhoVMYwdHsCiHQomEpM5DZlbBhM1AwgA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "039 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.621896458147384,
+                        0.33350525869143577
+                    ],
+                    "Polygon": "AwOgbATA7AjGA0oDMEAcUAsjwTMByScE2kSAnMNkkgKy1WiQzlTVJRJZMQxKrso5cqQj42hVMCSkWRQahizUuQdNlCJIGrSkbytdhl3LghwtBFMYqWle1EYWsDc7t89l+RiMH0kjwwJoTS3DjAwAKENFHgNirstNCiwGiJMGGQwBj2OuSZYuQyhGAYvlmwidmiTrlc8jwQ5AQOHMU40EoWejxEYTTARaIYNtRNtAWwLSjoGEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "040 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6648191746309624,
+                        0.3257787307113129
+                    ],
+                    "Polygon": "AwOgbArAzFBMA0o4HZjMeCAWGG5iwA4NJDclYxgBGEq4LPWCATjDuDFoqsdDDCxqxChC50oLbiDjYodCGKbQE-AQSZYWLOoULBNEVeFQsRM2Dh39kUI00nsbEWw+TpnhaxaJOTWJVFYbzBkaiw+CwhqENCiZWRY6AgmLljLaXxkSIFqQItkWAN+CEIsYxQsYsxobxQ7Emg4JlRkIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "041 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6474772004991307,
+                        0.5563257694277235
+                    ],
+                    "Polygon": "AwOgbArAzAjA7AGlBMMAcwnmgTk8sAJgBYotIoc0sUoTyJgx8RaNzid4aiJiO4cQj3gswxYnBw9gTDsRgwaKONVDjCwYcggxxHQnDDLgaROuKEY-HcGsG0ZZMTRgn4CVpovYHMKu8cYmMLI3cIRjcOPG1WCEI0G2w7WIj46XVoKxlUBlhzVlQMIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "042 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6593782592963268,
+                        0.5498547975470235
+                    ],
+                    "Polygon": "AwOgbGDsAcCsA0pawMzQIyPBSKvNnQCYsIAWaEpWMgTk1HNjH1TKuzLFtZWD0ZhYRBiGRFICQWWCRWRdqTApmrdGA4QJLaulRKihtSh6DgsOdRHBSsaFDVHGdojaQVap8BZGtzm5DJRGk9RIRMOEOAvcOhofAoLWxUvGmhzWyJoSzEKYkzZBMgwMltzAVywdAqhLLdc1BiaCCK+W24KmkgiJrgcrrIa2FoyUvcYHK1aKVyR+MENTuFCJRgZ5DR0IA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "043 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.663588585394833,
+                        0.5462488546136355
+                    ],
+                    "Polygon": "AwOgbA7AjATMA0oCsSoE4yPGAHAFgWSQGZiIswxi1CQk80k0KmMt6ICWwpj29KOFkjB5+SGOVBgUjfqRgUwwGIuTViUJXjj8YxTNMiV+A2pGAN+OERWgxmRYMCHT7tFOjBA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "044 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.6461540116224099,
+                        0.5715393663112829
+                    ],
+                    "Polygon": "AwOgbALGYEwDSgKwA4CMyDsDyOH7iGAnMvKGIuhAWMcNpBBETaswxDEfUpMi+QDMRXDQyCs5TskEEM0MuCiwCaTEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "045 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.8484572861287315,
+                        0.9430961499781549
+                    ],
+                    "Polygon": "AwOgHALArMDsA0oCcMBsDSQgJjIkSES2AjPpFAMyX6HBQTkRiyq2VgmOZVTbuxY3cFUHsU-HiWzBaECJVmYIQmsmYqmMDATSwgA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "046 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.8411707475544107,
+                        0.9364739432319377
+                    ],
+                    "Polygon": "AwOgHALGCc0DSmgZgKwCYIPBAbNAjFsgOw7BaRTFFI5hIUT47WK3Saj3Q440eEutUvzCtwtJOOR1yQnLRpIwKClJhLgnCWHwM2KfPCHFiaGsWDmhK6VL2Ng0O7kHYk+OSGQQkXyLxeyOh8XFCwNOgQQA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "047 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.8519350676629314,
+                        0.9513502614031987
+                    ],
+                    "Polygon": "AwOgHArALA7GA0oCcEIGY2PBATDJWKEAbAaGFEmjoRAIw5RYVKOGVTDMTAx3v5M5XBDIgkUMDAjc0pdmGD9hnJsh4pZi2jk3C0wLuqh0EKuLXRogA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "048 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.8464423838186338,
+                        0.9685025930177317
+                    ],
+                    "Polygon": "AwOgHALAnAbMA0pZgKwEZHmhATJqA7GjhqJKgfkWFJpDFHktQMx0QrCkiHAG1kILNCnwwwYBIJwxKSWWjlYWwsXCbK4YlDvYocYbSvZgDaiDHaMpPGHYhWwl+QT5Wt81GiA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "049 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.8553146190167756,
+                        0.9696338542996586
+                    ],
+                    "Polygon": "AwOgHArAnAzMA0ooHYCMA2BpJnexIKATJgZOsvkmmACxkQxREFTpRsOpRaHp0tsEbslYVgvSDFT0k41A1rQxyYQ3S1RcqLUnQ4rNJiA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "050 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.8590156546320135,
+                        0.9517396088932742
+                    ],
+                    "Polygon": "AwOgHArGBsBMA0oCcEmUeCEAsYMugGYkNJc9kJCBGa0rbO5bQsYesdZ4bbU6arAogk2CNWj0A7LCn5s0KX1CQpUpiNzYSKomDnM0B8AOrCUwQghVRCheUikR6SQu0rUkGmNSnmqYvxSwM6UWDom0EjuIhDQYBEwQsqxUvEccPiokEA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "051 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.8389005160763595,
+                        0.9293015998998582
+                    ],
+                    "Polygon": "AwOgHALBCsCcA0pYGZUHZHgsYFMuwEZMxkA2Q5fZQ7E9KpZYaDUUgJjnw7GmPapuSDhTD0y0RiFgcIZDiSICZc2UtxtVZMgnYRCsYDzTr9MaCeiXzsLbJQrIhBdVx5zaDzOaSlMPR90IA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "052 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.15952937400986594,
+                        0.9309434211622751
+                    ],
+                    "Polygon": "AwOgjAbArFYDSgJwGYAcyIPNATAFixUT2S0jCgHZDkUoyIwdUbKdgypUma8LPkleEmRhInHJVIjgGCZWpJJ0Cc0L5xoCmhzrkcrTBz0leKBy0RZFkIhwRUBSzmLqFiBlcxLH37G2lbFyFPMECUSEDIPFcRcgYmFjioJ2xmJNtkfFTI4EVM0V1nRA8RPGBS7HKTTJIbSCh8GihGBhhhTPQIIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "053 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.14528708615576488,
+                        0.9408086976624199
+                    ],
+                    "Polygon": "AwOgjALAnArAbAGlLMAmRpLuEkUIQAcA7LmAMwwyq5SWqFnmHy3nDpnRQ7LnFwIZGP0bIIqfsLAwh46nPAioUWjGDFFkWBjww0cIA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "054 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.09334447858293858,
+                        0.8638122236003644
+                    ],
+                    "Polygon": "AwOmE4A5wdgGlJAbNSCxQKwGZ3MjAEzoQyTGIrjgmw55LjBqgSMCMD47wtS2SBpGi0ALMAoh87eK3DZsLKTGDZOcwklF4V4bXPbhJBZoIPtclSPVbJC+qVqglIMs4-aRet0c8SYkMhcYUVkpTBhwdwhgCDwAglpCIniYGHUMUWF47iUITEJjJFjvDAjMBgtLDDJS5AgMiBNKyAceWIy7dnd2zAcu0p52UIZCbnQeQmwi7HAK0EnmBlFsNtVCecdyiYkkTq1Zndmw5F8aBeAsk8DyHdFRTZMYTabYISggA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "055 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.10736196362882511,
+                        0.8554144037635649
+                    ],
+                    "Polygon": "AwOmE5wDgRgGlFArAJgGwHYEhsALAMzjZR4bra5rIlLCaXAbDyKrh6Mam1HGi5w5WnjqMo4FLTQpWOGCha0MSLAJgFuytMEoxCBWskPq0MOcg6d1K6yCg6G6qJpIyNejK8QyUSPWb+PjDguupEUj4QkfLoaG4scuYwGHYOTPzywFBQCUgmOExoBZYombh4aPFsqTG4KHhpSKrVYJCwtOgYQA",
+                    "Group": "general"
+                },
+                {
+                    "Name": "056 | Full ROI",
+                    "Description": "",
+                    "Zoom": 3,
+                    "Pan": [
+                        0.12339483313570822,
+                        0.8677195971597356
+                    ],
+                    "Polygon": "AwOgjATALMCsA0oAcB2KUGjGAnBFiISAbEjkodjAMyEnVjCVgYHLG4Va5S3vVRilCBA51icNuGoRqOOijBJM4aHAXpYQA",
+                    "Group": "general"
+                }
+            ]
+        }
+    ],
+    "Channels": [
+        {
+            "Rendered": false,
+            "Name": "Hoechst1",
+            "Path": "Hoechst1_0__Hoechst1"
+        },
+        {
+            "Rendered": false,
+            "Name": "Rabbit IgG",
+            "Path": "Rabbit-IgG_1__Rabbit-IgG"
+        },
+        {
+            "Rendered": false,
+            "Name": "Sheep IgG",
+            "Path": "Sheep-IgG_2__Sheep-IgG"
+        },
+        {
+            "Rendered": false,
+            "Name": "Mouse IgG",
+            "Path": "Mouse-IgG_3__Mouse-IgG"
+        },
+        {
+            "Rendered": false,
+            "Name": "DNA",
+            "Path": "Hoechst2_4__Hoechst2"
+        },
+        {
+            "Rendered": false,
+            "Name": "HLA-E",
+            "Path": "HLA-E_5__HLA-E"
+        },
+        {
+            "Rendered": false,
+            "Name": "STING",
+            "Path": "STING_6__STING"
+        },
+        {
+            "Rendered": false,
+            "Name": "MCT1",
+            "Path": "MCT1_7__MCT1"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst3",
+            "Path": "Hoechst3_8__Hoechst3"
+        },
+        {
+            "Rendered": false,
+            "Name": "Empty",
+            "Path": "Empty_9__Empty"
+        },
+        {
+            "Rendered": false,
+            "Name": "SLC38A2",
+            "Path": "SLC38A2_10__SLC38A2"
+        },
+        {
+            "Rendered": false,
+            "Name": "p53",
+            "Path": "p53_11__p53"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst4",
+            "Path": "Hoechst4_12__Hoechst4"
+        },
+        {
+            "Rendered": false,
+            "Name": "PanCK",
+            "Path": "PanCK_13__PanCK"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD68",
+            "Path": "CD68_14__CD68"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD8a",
+            "Path": "CD8a_15__CD8a"
+        },
+        {
+            "Rendered": false,
+            "Name": "alpha-SMA",
+            "Path": "alpha-SMA_16__alpha-SMA"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst5",
+            "Path": "Hoechst5_17__Hoechst5"
+        },
+        {
+            "Rendered": false,
+            "Name": "ORF1p",
+            "Path": "ORF1p_18__ORF1p"
+        },
+        {
+            "Rendered": false,
+            "Name": "HLA-DR",
+            "Path": "HLA-DR_19__HLA-DR"
+        },
+        {
+            "Rendered": false,
+            "Name": "PD1",
+            "Path": "PD1_20__PD1"
+        },
+        {
+            "Rendered": false,
+            "Name": "LaminB1",
+            "Path": "LaminB1_21__LaminB1"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst6",
+            "Path": "Hoechst6_22__Hoechst6"
+        },
+        {
+            "Rendered": false,
+            "Name": "Mx1",
+            "Path": "Mx1_23__Mx1"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD11c",
+            "Path": "CD11c_24__CD11c"
+        },
+        {
+            "Rendered": false,
+            "Name": "MCT4",
+            "Path": "MCT4_25__MCT4"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst7",
+            "Path": "Hoechst7_26__Hoechst7"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD4",
+            "Path": "CD4_27__CD4"
+        },
+        {
+            "Rendered": false,
+            "Name": "Tbet",
+            "Path": "Tbet_28__Tbet"
+        },
+        {
+            "Rendered": false,
+            "Name": "TIM3",
+            "Path": "TIM3_29__TIM3"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst8",
+            "Path": "Hoechst8_30__Hoechst8"
+        },
+        {
+            "Rendered": false,
+            "Name": "Ki67",
+            "Path": "Ki67_31__Ki67"
+        },
+        {
+            "Rendered": false,
+            "Name": "pTBK1 ",
+            "Path": "pTBK1_32__pTBK1"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD163",
+            "Path": "CD163_33__CD163"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst9",
+            "Path": "Hoechst9_34__Hoechst9"
+        },
+        {
+            "Rendered": false,
+            "Name": "NCAD",
+            "Path": "NCAD_35__NCAD"
+        },
+        {
+            "Rendered": false,
+            "Name": "PKM2",
+            "Path": "PKM2_36__PKM2"
+        },
+        {
+            "Rendered": false,
+            "Name": "PD1-repeat",
+            "Path": "PD1-repeat_37__PD1-repeat"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst10",
+            "Path": "Hoechst10_38__Hoechst10"
+        },
+        {
+            "Rendered": false,
+            "Name": "LDH",
+            "Path": "LDH_39__LDH"
+        },
+        {
+            "Rendered": false,
+            "Name": "gH2Ax",
+            "Path": "gH2Ax_40__gH2Ax"
+        },
+        {
+            "Rendered": false,
+            "Name": "NKG2A",
+            "Path": "NKG2A_41__NKG2A"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst11",
+            "Path": "Hoechst11_42__Hoechst11"
+        },
+        {
+            "Rendered": false,
+            "Name": "FASN",
+            "Path": "FASN_43__FASN"
+        },
+        {
+            "Rendered": false,
+            "Name": "FoxP3",
+            "Path": "FoxP3_44__FoxP3"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD103",
+            "Path": "CD103_45__CD103"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst12",
+            "Path": "Hoechst12_46__Hoechst12"
+        },
+        {
+            "Rendered": false,
+            "Name": "pSTAT1 ",
+            "Path": "pSTAT1_47__pSTAT1"
+        },
+        {
+            "Rendered": false,
+            "Name": "LAG3",
+            "Path": "LAG3_48__LAG3"
+        },
+        {
+            "Rendered": false,
+            "Name": "ENO1",
+            "Path": "ENO1_49__ENO1"
+        },
+        {
+            "Rendered": false,
+            "Name": "Hoechst13",
+            "Path": "Hoechst13_50__Hoechst13"
+        },
+        {
+            "Rendered": false,
+            "Name": "OAS1",
+            "Path": "OAS1_51__OAS1"
+        },
+        {
+            "Rendered": false,
+            "Name": "CD40",
+            "Path": "CD40_52__CD40"
+        },
+        {
+            "Rendered": false,
+            "Name": "pSTAT3",
+            "Path": "pSTAT3_53__pSTAT3"
+        }
+    ],
+    "Groups": [
+        {
+            "Name": "general",
+            "Channels": [
+                "DNA",
+                "p53",
+                "PanCK",
+                "alpha-SMA",
+                "Ki67",
+                "gH2Ax"
+            ],
+            "Colors": [
+                "0000ff",
+                "ff00ff",
+                "00ff00",
+                "ffff00",
+                "00ffff",
+                "ff0000"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "Masks": [
+                {
+                    "Path": "rois",
+                    "Name": "ROIs",
+                    "Channels": [
+                        "Annotations"
+                    ],
+                    "Colors": [
+                        "ffffff"
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "metabolism",
+            "Channels": [
+                "DNA",
+                "LDH",
+                "FASN",
+                "ENO1"
+            ],
+            "Colors": [
+                "0000ff",
+                "ff0000",
+                "00ff00",
+                "00ffff"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "Masks": [
+                {
+                    "Path": "rois",
+                    "Name": "ROIs",
+                    "Channels": [
+                        "Annotations"
+                    ],
+                    "Colors": [
+                        "ffffff"
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "T cell",
+            "Channels": [
+                "DNA",
+                "CD8a",
+                "CD4",
+                "TIM3",
+                "NKG2A"
+            ],
+            "Colors": [
+                "0000ff",
+                "ff0000",
+                "00ff00",
+                "00ffff",
+                "ff00ff"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "Masks": [
+                {
+                    "Path": "rois",
+                    "Name": "ROIs",
+                    "Channels": [
+                        "Annotations"
+                    ],
+                    "Colors": [
+                        "ffffff"
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "APC",
+            "Channels": [
+                "DNA",
+                "CD68",
+                "HLA-DR",
+                "CD11c",
+                "CD163"
+            ],
+            "Colors": [
+                "0000ff",
+                "ff0000",
+                "00ff00",
+                "00ffff",
+                "ff00ff"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "Masks": [
+                {
+                    "Path": "rois",
+                    "Name": "ROIs",
+                    "Channels": [
+                        "Annotations"
+                    ],
+                    "Colors": [
+                        "ffffff"
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "IFN",
+            "Channels": [
+                "DNA",
+                "HLA-E",
+                "ORF1p",
+                "Mx1"
+            ],
+            "Colors": [
+                "0000ff",
+                "ff0000",
+                "00ff00",
+                "00ffff"
+            ],
+            "Descriptions": [
+                "",
+                "",
+                "",
+                ""
+            ],
+            "Masks": [
+                {
+                    "Path": "rois",
+                    "Name": "ROIs",
+                    "Channels": [
+                        "Annotations"
+                    ],
+                    "Colors": [
+                        "ffffff"
+                    ]
+                }
+            ]
+        }
+    ],
+    "Masks": []
+}
