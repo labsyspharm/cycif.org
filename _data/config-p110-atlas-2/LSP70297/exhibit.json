@@ -32,7 +32,13 @@
                         0.5436298370683778
                     ],
                     "Polygon": "AwOgbA7AHAnGA0oCsAWCSKPFYThdQgEYAmLMKAZgn2TxJXJwoKRKiXIgjE7pNJdKDAilh9wNEchRI5XYESiiS1IZQlJKUMES4owMApUPLQkQwmTUSZc923GkMM9mDpjaCRRSynaJl1NGz1zKDFg6EomJSNrKAEuWFCQVGBgK0kwMFpUlCIcrmdXVBNXC3ZRFBhGew5MGV04yVhMwgwgA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "002 | Full ROI",
@@ -43,7 +49,13 @@
                         0.5411816818304364
                     ],
                     "Polygon": "AwOgbAHArAzGA0opWMCjwRlAnBqALDgVBpAIwHD4FhgBMZE991SJYBTU9p7A7OTyhI-WDSj824HOXrCQhegXQicaLkhj8cCyBDDl8MFX0wQCMY8tWYcU45WlgcMFo+Zl75M7HouvHDBpWB49XSxjQ0Y1WVtYfhhpKVR4mCCjWJx4glZMmSCFQgJ+GJksfhpmfJcoCByIYAQ1QWbFEkovFxz6fkqW7BpgEy8dHNRne1ljC0nqqMFR4ONYSbqy2Fpw3PzNxK96GCstKHI2l3SQ7TgvDuNdTRkCHxozyZLd3JhbC9caIjKF2ARVoyC85CSNESxxkwFOVT6TAsIPsMMgdDahGIj0gsExKDQQA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "003 | Full ROI",
@@ -54,7 +66,13 @@
                         0.541579278078783
                     ],
                     "Polygon": "AwOgbA7ArGAcA0ooGZiUeClgagJgE5kINIwAWARlzzGT1Ij2ASVomtDDjBzakoMuFIjVgEh4OuRJJk3WVORQCuKhNLdgiqOTC7N+ziF2x0w2JR1Q0fTMDzJc+CK0zJBz8h8YQC1-UlICTBcXggnLlhaOxg0RTg8SmMoKFgIOzhKKmdYcjc4YBykGHzGf1US8gMuLA0SvBVGatiUYGNIZHJJVMpgKEYinvyzTQIwYYjMuGq1XQHhDNCkbphNNPI1YGRKqTACBZNkWGBpuEOUY8PuGB16K0NeXFRyXe4TzbYCWGu4b+eHMt7K4aBJMhw8mJCIxKLBIkdTkEIms5Gg3tA8D0PLDGDA3G1IEA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "004 | Full ROI",
@@ -65,7 +83,13 @@
                         0.5439191786421936
                     ],
                     "Polygon": "AwOg7MDMwCwDSgKwwJwDYCMCRpSgHPtoohvsNrvssagExGgTB0q0wTbPnGQp1ouwYLl5pIgpiwzwkkRAKF9JIZCzBcMURLUh8hYfUg5QhMQrplK0FY9DpC6iDcZgY2U6FmMRv4KLC06BhAA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "005 | Full ROI",
@@ -76,7 +100,13 @@
                         0.5420137748177688
                     ],
                     "Polygon": "AwOgbAHArA7FA0ooBYwCYaPBNBOZWKUAjAaJMGAkslPlmDBMNSEcWAzGJIcgMwwy4GLhjA+wfp3LRkmJPxzEGEOLkLTaDXMGRpJaCbJwaayYAdmxWKdDCA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "006 | Full ROI",
@@ -87,7 +117,13 @@
                         0.5309533449789632
                     ],
                     "Polygon": "AwOgbGAsDMCMA0oCskAcTWPEsrhZVgE4kswklgFkAmI4Isi6R2mpGs8gdn2WOidQEIt1JtY0LpEh8QHbt0zCw7Kcmhoh4VWDmFU1HTCMp0qIA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "007 | Full ROI",
@@ -98,7 +134,13 @@
                         0.5284412133834635
                     ],
                     "Polygon": "AwOgbMBMCsDMA0o4E5KUSazkHYAcGcOALMYbscIbDsAIznR0FKx4nmQ4OvRjpI8eWGEKQ8daITxhkUpGjA5pxHKKTM20yGBaZJxeZhzIIhYNnWY8FvdAt0ygusgQa6+bcjuPYb66r+THw81nikYpCwodB4pkbQOjjKSMguVAreQahy1OIJyIYCmLBwGZhyYDF+sMjk3gmwxHjFEJC5rGrlbXDUqJBAA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "008 | Full ROI",
@@ -109,7 +151,13 @@
                         0.5244295065941298
                     ],
                     "Polygon": "AwOgbMDMwEwDSgKyTARlQkiCcYAcwmyMA7JEdgCxpGSQyFLazZEyJRF7TlLqokulRHiLBsJUUjw4pWVKUFNUwREVSUSlCpTzakMVGH3hgwVHMSkLmCJDyXoE21Fi00qIA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "009 | Full ROI",
@@ -120,7 +168,13 @@
                         0.522590708321502
                     ],
                     "Polygon": "AwOgrA7AHAnMA0owCYYDYKPBCBGBSqALAdmilinspdLjJcmGkZVMBo2sgMxs8Q+hNDwZIoRSYzAy2RHrkYlF44D1ZJcUCkhwwx4XGA6002yrlE1dYKCsMkwtGfbC5kaNLSIsLCg5ACmJrIEBrYyFDWhhxeNkQBwOikkHiuuPjRkHAp7qhswIUWknHgdjy5nkJlPGi5MFDVtpCuyB5O4hDAHeAeEmxouKVgCkRZEp6UClDBZd1NFcBQtLApqBhAA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "010 | Full ROI",
@@ -131,7 +185,13 @@
                         0.520422641865194
                     ],
                     "Polygon": "AwOgrA7AbMYDSjAJigZgg8EAcBODiSALEqpmNkhAIzlJiq2KXXB0rbk5XnVTYEsRCLl6pcSLkmqdE1Gm0TRYdNBCA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "011 | Full ROI",
@@ -142,7 +202,13 @@
                         0.5596883941894021
                     ],
                     "Polygon": "AwOgrAnAzMwDSjANiQJnoiqwEYHiQA4cB2fSYQqcosVcwiAFj0RVIaWHrahOsSFsSGlBxgGwKDwLAu5EhDCFyYEsCaSsqsFIaoIGcGDBMRgpoSMmS8wY3PGIhMphzQaciZiZRvxkiYIciVDVRwYENxWcCZ1FUxCJhlTElwQwjpwlwykfxslDIjRHBjIQMdkXWDMGGsUdCA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "012 | Full ROI",
@@ -153,7 +219,13 @@
                         0.553168214601354
                     ],
                     "Polygon": "AwOgrAnAjA7AzAGlGSAmCTwA5gBZiYpxYbJbq6G4wBsYhWWUp4YqwByEqc9y1WPuAjUWYXBDaFo8QmghA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "013 | Full ROI",
@@ -164,7 +236,13 @@
                         0.3860408191440776
                     ],
                     "Polygon": "AwOgrAbAzATAHAGlFAnFOB2J4IEYAsM2qMa2kw+uxKlU5Yc0xmKRoYYGuELGMYBl2B9ggjmHwREyOHB4N8UcSHQo47cJMo0YzCXs2oC9CVDwsIYahOinVcMMF4S45ll3zkIwMZbbeUNw0lDY4UL6WGCKuMEZw+MCanGAoLg4RMlr4acQYGKlCuFlB+EwMGIl5Uumc0DGqGExhnPn26LjW3jCELOhZkE4q6BD53mBxIZyB8DToGEA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "014 | Full ROI",
@@ -175,7 +253,13 @@
                         0.3366049002411742
                     ],
                     "Polygon": "AwOgrAbATAHGA0oDMSCcqCMjzTtpALBqjNpGgOz4FgWmjmoHUwb04ZLAtTMNgxgEamGB9wkCFWRokUMpBhJ8SCBGX8CqBDK3d+SClhnAK0icGAaQctdbBgUw5FApIdEiqJUEI7B6hQ8jIQvgqowMY2BGLikMTiKBQEcWCoXj5Q+p4RKhjA-mAEsPhQAqgKftlyxfYCbqV0wRxEKsCYZNCcKlBMnWnNKL4ekoYqEN4M6n4qcBVTsB4o6BhAA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "015 | Full ROI",
@@ -186,7 +270,13 @@
                         0.24880922385341656
                     ],
                     "Polygon": "AwOgrATGCcEDSigZgBz1GJAWA7EhIUYwKBmAbOcAcjqRkmGjWAIzn4PAk1bTFkIEWLxTAsg4NE6EsMcmVZ56s1BIxKmvbmEVJoOGvoiGNqBYiyspisOXSyIuW0guysEGWzA5qlmLoaOFh+suQogeAQwNi80OSsgihY6oTEyWTYUCxI4oLkdCys8YIwDshoQA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "016 | Full ROI",
@@ -197,7 +287,13 @@
                         0.39583372499758357
                     ],
                     "Polygon": "AwOgrGBsAcCcA0oDMtbGI8YAsB2DysS2ATJhGLNJktNLkuWLlTXAIyTmTCuFIlc3MMCGFIYdtxIkpobMBLRGoCDASE0wIA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "017 | Full ROI",
@@ -208,7 +304,13 @@
                         0.3820349899094548
                     ],
                     "Polygon": "AwOgrAbAHAjGA0oDMVYBZHggJgJwUxSWwNDDF2CkNjk3IHYpSQkH2EyKYW2I6y-JLwa402ehAbYJyUTFngGwbEhopck2J1aoYaIA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "018 | Full ROI",
@@ -219,7 +321,13 @@
                         0.33350213813073376
                     ],
                     "Polygon": "AwOgrAbBAsDsA0oDMZgCZqPDaStOgEZoAOLSEkifJCQhUMME4YfNJWATnKkLHyEoZRiWLVkSLrDyMocfKgxA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "019 | Full ROI",
@@ -230,7 +338,13 @@
                         0.36623345291582154
                     ],
                     "Polygon": "AwOgLAbAzGDsA0orRo8tjLcgnJtcUAjFNrEWGAeRWRAExWiQAcjdwwBEYLpSselmYMcCJBFhwCAVhZzsEGUQiziRbDJyVZk1Uhm8c3GOJDIoMIA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 },
                 {
                     "Name": "020 | Full ROI",
@@ -241,7 +355,13 @@
                         0.3798491907316309
                     ],
                     "Polygon": "AwOgLA7MDMBsA0poA5gE42PBMaCMWcyy0WYJyCSqEpo5YwB10ArGGRBMh9cmq04wqIFOjRA",
-                    "Group": "general"
+                    "Group": "general",
+                    "ActiveMasks": [
+                        "rois"
+                    ],
+                    "Masks": [
+                        "rois"
+                    ]
                 }
             ]
         }
@@ -534,18 +654,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -567,18 +675,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -603,18 +699,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -639,18 +723,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -672,20 +744,20 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         }
     ],
-    "Masks": []
+    "Masks": [
+        {
+            "Path": "rois",
+            "Name": "ROIs",
+            "Channels": [
+                "Annotations"
+            ],
+            "Colors": [
+                "ffffff"
+            ],
+            "Shown": true
+        }
+    ]
 }

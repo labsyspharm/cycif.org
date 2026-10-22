@@ -313,18 +313,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -343,18 +331,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -379,18 +355,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -415,18 +379,6 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         },
         {
@@ -448,20 +400,20 @@
                 "",
                 "",
                 ""
-            ],
-            "Masks": [
-                {
-                    "Path": "rois",
-                    "Name": "ROIs",
-                    "Channels": [
-                        "Annotations"
-                    ],
-                    "Colors": [
-                        "ffffff"
-                    ]
-                }
             ]
         }
     ],
-    "Masks": []
+    "Masks": [
+        {
+            "Path": "rois",
+            "Name": "ROIs",
+            "Channels": [
+                "Annotations"
+            ],
+            "Colors": [
+                "ffffff"
+            ],
+            "Shown": true
+        }
+    ]
 }
