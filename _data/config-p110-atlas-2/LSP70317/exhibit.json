@@ -34,10 +34,10 @@
                     "Polygon": "AwOgTA7ALMYDSilArAZlQ8FU00iEAHJpGAGwCceUhF8okwFGiUFUAjCWbVa4cGIMeyLq2Rl64SqgjUwyKCQjBF1WCyzA2eWWmUcOQkFHSoxWVKt0cwwZcmBzEV9MoIXTHUcsKHdqGT2DBAUBLowweAC5rrIYBaQFMCesmTI7rK6FOwOAtRGzlhQEBmsVsaQMJpIJVJVsNRoqEA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -51,10 +51,10 @@
                     "Polygon": "AwOgTAHALGDMA0oq2FCjwRQdg84ArAIwaRl6xEykRUlKUEBsp2EELDwAnGKxGGAVgqVtjC4uRBKAnYC6JGG5FF4bEyZClEbNvVbueZbDUTiRpb0vrYBPjrCd1UIvpgECNucDUw73tjY3H5gUISs3AQyIP5ONERMBMawUFAJHMauzpCwqVnsNDA2MNh5NLBsxtDJstBMJSYxkP7CaEA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -68,10 +68,10 @@
                     "Polygon": "AwOgTAbA7AHGA0oAsSCsbHgjAnEzKYY+okOEEBSwcmZUqBAzOY6djAIxWdOXtc2IFDSh1oMfsOpIm42N2QtUCdjk5ilMJDjpRgqRcKapcemsGbVLpKJ2rMwwTeChMmL2cCY3XwTrrIYHgkWDiovl6cQmD6SDDMAaGxwGBCskzE5jTMJoFhPrno8jiqxnzJ2Jxlsqio+ZDQckpQTuIQxS0wzVgQqczdLpBIYD2yODC+w8ChhDhDHahjaDgNFFBSKFAb8rTIaGhAA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -85,10 +85,10 @@
                     "Polygon": "AwOgTAbALAjMA0ooWATgMyPBdYCsWyweEWkMA7JkngByxk5hiF4V4GiR7qk0VxGAlvwi1GtCHxBQ6tBFwiow1GXlTQyFYjFb0oWytNk5VYCuYVr14rlWC21U6eZh1Wy3XeBgrRKCLYkqpEbEL4hCjAXtgQMDGyqGGKePEe6oxQwAY0qDAuOKgUHhSombKRwCiZgkgoGEA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -102,10 +102,10 @@
                     "Polygon": "AwOgTAnAjMBsA0oAswCssKPADlksWKSA7AaGNqlGSCmMAMxYVLbFYMS7bNsM2dijXhDQcIDbE3LQ44iqmYQwUJONSQlUCItCds2TDIb9CwYNjUyYCZGgxA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -119,10 +119,10 @@
                     "Polygon": "AwOgTAHBCcBsA0oAswCstiPNAjD1WKsOA7FmNMAMxWE5qagVrR0UFOUx02uelgeEDtipgRSHFRyDOSJGWT1YIigoiFgJCEnJxUtZMAp9ssEopAoZjbBClYq0C5ZM5doJzo-YS0Q1bGYAEUxD4oEJB6qMAaSmCwPhSQOHSoSCGU0HFW+InkUNk8MQUQVJaSsaaQMAhG6MBAA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -136,10 +136,10 @@
                     "Polygon": "AwOgTAHAbAnBA0oAsBmArAdgIyPNFSuqSYUukUUwRKYaY50WGNwGZok7LykMPefgJIYk1TjGCUidMDHKSMCXmCQC5WLChlYo6yRHEgSwLMsFiizCDk7QYhZFgOMxj485RHIqo0mbA5pBiflpQtnhQKPJOcjF4hqGk8ZAQSlYoENoSwKRWaDARGnlOGGhoCmYR-jBUCmCqOmWVMNnGYLQc4DBgWH6qtZVmMhAkjK0MyF4Y3hA2wii07hRwNJhYQA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -153,10 +153,10 @@
                     "Polygon": "AwOgTAHAzArAnAGlAFgIxgOxSeCYww5ozAY6SmEqrIYTl15GrrINyRHAQvkTDJgXAGzIwffFRCCMMKZCidqwFX1iJqmKEA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -170,10 +170,10 @@
                     "Polygon": "AwOgTAHA7ALMA0oYEYx0eCBWKA2DKaUGkMEAnAcsMBCRLsAMwHC5MKiS5ZatbN6EGCyTAsFIWD5i8MelEVVxYBeiSo4QA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -187,10 +187,10 @@
                     "Polygon": "AwOgTAHALA7ArAGlHGxgSeC7HIGwCceYmYMBBGycUeVWwAjAZjTNqe3I61GGD1Bk8MKKwDM0XOFFQxycZOCcY4+SDjia40tkbqaaQVjLGazaZChrecO7vFgWyKBEm6UzjVEr1IxEmpGCECsYmk7KGBQyDUzODxuXTAk6ghmD2DWOAJ2DxRWYgIdIQg4MBKNPB91f0Y8Qpgm3VgI1HQgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -204,10 +204,10 @@
                     "Polygon": "AwOgTA7AbAnBA0oCsBmAjDMjwUi7qwwALNpGsfsmJAqJEkqcmmsDGRLsyEkVGk6YOyIjU4AOKEgLAkaKEKRYWRKjgjFgBNBOCD6EPnV41iInAJ7LixRYfkzqSGBM5RiJ5VyeW4BdEwgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -221,10 +221,10 @@
                     "Polygon": "AwOgTAzALArGA0ooDYCMdHgmGFMogE4B2TMMADgqn2TGJjPuGVuEqbtKRmLFSYV0+XDGBkIqZIx45WoSBGIUREYAIXQ1ImIQSb68kLCHjNsfcbRwgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -238,10 +238,10 @@
                     "Polygon": "AwOgTAbAzALArAGlFA7FAnFJ4IEY67aowbZhzqZEq7oxkVpETrBaiS7DDNwAcEMhDBg+zGHxRCYuQcghwaQuFELyUMOTjgzmdRBwgx0W1LR6HYBkKgxQgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -255,10 +255,10 @@
                     "Polygon": "AwOgTAnBBs0DSgMwUQDgIwPBVxNIjGmC0lWnxDQHYBWMUqMWrNdRRR1AFniTu6pWwYLlawILJHnqtaEatUYxKiWrWCdpYdEqTqweqpo5yeqzdQjj0OYYZJJoVo4jzAG-dKOEnW1ZG5fXn9qcl9mVgwrX0Q+KlREQV9aIKRUVNcRdCF06nQpbBh45DYgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -272,10 +272,10 @@
                     "Polygon": "AwOgTAnAHGYDSgMwFZjPqSA2LwEhWDD0wnS30QBYsb9JEBGKSqq4C0xsR15xelAgB2ZJURREAzFGRYMBFFTEziJRRJXgYYKuMZZp24RPFN1kRsHVSsw4fQiIwDpFUYHHyVK0TCLEFhQnARsTI5QwEbUQRARsJSo6EA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -289,10 +289,10 @@
                     "Polygon": "AwOgTAzA7ALFA0oZgBxseaZgeVMCoYMwwMuxAbBBsTCoSMmGAKy30CMnFnrltVsACc5JGwhjwrTijAUYEGkVYxkC6oNbFcEYKkERh8pJNKC+KXTEoCiMYf12Rhg4K0bI57FWVfjKKCt7YXcFFDtwOE5-JkhOEyj+WORWCB8osEpE5EoEjmBOSLx02iNCimEisthPVDQgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -306,10 +306,10 @@
                     "Polygon": "AwOmFYGYIGlAWaxJzOAjATgEyvt-FUYeTZPbSSeVEzcYC9ADk1vmefApKLHgDswAGw9ho4vHDYJIfNnCze6Ggmzp0SxM3R4WzXJIHDmexY0lkBZlbQas9xi2mxkewa8XBDZ+TYbRmIQpETzQBBzVhATYvaG4EJEggA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -323,10 +323,10 @@
                     "Polygon": "AwOmHYFYGZwGlAFmARmAJgWc12K8hPqBOutAcMAJzVYRUBsW0twk9j41KL14wABydG0YaFbRE8EozmYJPSM1mDoFCYOrpg9cGnEgx4RsWwpquzVzokciXpu4rskSDKOXoj1ygWedDyJBM1ZGYBcIOVtPakEgqFhKNHQgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -340,10 +340,10 @@
                     "Polygon": "AwOmFZwNgFgGlDAjAJgBz1BAzGg7AiMumoRCjFITMAJwVnhK3jXB5Ktbgw9tMFueYFUQQowRtiZtseUWEi1SobLVqxG+TCDV4UCkdC5FgSPDpESVp8PjKwDbCUgfYYNmimyGJ0Qmq0Fox4uGwUJuLYKLIy3BgmNDyG0FAxYsKu3DDuzjlS2NhsaHKM0DrEGEA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -357,10 +357,10 @@
                     "Polygon": "AwOgTAbBCsAsA0pawBxhY8E3U8g7AIwCcmkK2eq0wZEx0EVx+toYRYYzKhZ+kbkljFI-AMwRxeGrHz9CUGYRTT2RFcuil1KtSFg1o+joWBCDNDv2DiESaIXEnWKXA5IWOt+Q7CFfLDQ2S0JYPnYoFEDDQkIvKEkZYGQ6GHsDVHQgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -374,10 +374,10 @@
                     "Polygon": "AwOgTAjBwKwDSgGyIMwHY0PMAHI4WyEAnDlmLmCoTACxhmgVhrGG3HHVPCqMiJa6ROWARE8JPWCYeYGCKQpiwAk2gt2EHLPAQwkdrkV7aMCEcQX1HSQJgyTkcdfsK7z2IVQYgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -391,10 +391,10 @@
                     "Polygon": "AwOgjAzArA7ATAGlFOMbCeCAWAnFTFbGADkzG2BI2TgoNAux0Liu3OOwZCjBO7kUwRMgpweYKFAgA2QmDgkYQgRzGKa4KLiUK4EMEP48+MXPMbZqWlGHyc4s0bwMlcnMMBW1sgq8D2rNhBjBDKlq6wLpDRrGjAQA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -408,10 +408,10 @@
                     "Polygon": "AwOgjAzAbGwDSgCwE4rMQ8FE0y7AHJpAOwQBMe6Byxis8SyYUloYiEJJeBEYPdohIFGIYdzDEArORLS8JclEHhpicgqQlEBDO2kRgERbqgzywWtqhGZwSIu4mhza+JLIvdeVKQE5fXBEaXReaWBVDmkSP3ECPnMhCGktcWRgciJknCoBdw5IoJQcFyxuMRQSYCDIGErUdCA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -425,10 +425,10 @@
                     "Polygon": "AwOgjALAnGDMA0oIA4BsFWPBA7AJgixQFZlktIo9gjkxg8Loocic1NQxjvykccsQl2IRirfjgiMRpTiFw5UM8OOVsqNWbCi1gAij3y08UpjARI0GIA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -442,10 +442,10 @@
                     "Polygon": "AwOgjALAnBDMA0oCsYBsYGkgdm5kKSRi4ES2YJKqSEJksATKlWgBz4PCOtsSVYIwKNl5so9WNhqsRLLLDLBewNpNhhRyRrCTzwsJnW1Jgyhf3xJGENuYOmBBRo2mTU2Y88hJJ2KE7WwKheGFA2VIzAcPRCUPZBboKMUBLawOSxEKg8yGBQbL6C2EhWmnaxMGXosEA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -459,10 +459,10 @@
                     "Polygon": "AwOmE4HZgNgGlAVgMwA4aQWcrLyQCyzBYQwpaIHLj7YHSUHkmgQCMM7TkiqpqcIjpVIyZAJjMm1bm3TgJhYInClwAJliVkGxBvVolIFAQ11gqVPqYQCA1DSa7MbcO1rPO66CLQYgA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -476,10 +476,10 @@
                     "Polygon": "AwOgjGCcwGwDSgKwQEwBYHjDYZPOAA55QwVEB2YTNSC5TMAZjEMRsjWCcab-dC1EaQoxQU0FDpymkUKQniTBE8xlFj5UaIA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -493,10 +493,10 @@
                     "Polygon": "AwOgjBxgNKAsBOBBmGpIA4OxIgbGMjmAEzJ4k5wYDsYexJArHjVRkyXIzSu1E2LIo2eBjB90JVgnYYSo8CWBYqCML2Jg4FNXVnpIaXElRA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -510,10 +510,10 @@
                     "Polygon": "AwOgTA7AbAnAHAGlAVlhCTwQMwBZubKqyaS6qG64mhizZiHbIQCMpEwyjKUwEPLNmCCWrVlA6xEvGOiA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 },
                 {
@@ -527,10 +527,10 @@
                     "Polygon": "AwOgjAzALATAHAGlLCBWMTwRqgbJ2MKDUSXMAdgLFzUyLwE4DhHHh7Ud9QI25EpPKiq9GUEZzgUOY2syERgqFmij0ocVIJDEwMBeFhbqqYLKwUKPXWDi4bkYwRhowQA",
                     "Group": "general",
                     "ActiveMasks": [
-                        "rois"
+                        "Annotations"
                     ],
                     "Masks": [
-                        "rois"
+                        "Annotations"
                     ]
                 }
             ]
@@ -920,7 +920,7 @@
     "Masks": [
         {
             "Path": "rois",
-            "Name": "ROIs",
+            "Name": "Annotations",
             "Channels": [
                 "Annotations"
             ],

@@ -419,7 +419,7 @@
     "Masks": [
         {
             "Path": "rois",
-            "Name": "ROIs",
+            "Name": "Annotations",
             "Channels": [
                 "Annotations"
             ],
